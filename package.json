@@ -2,14 +2,6 @@
   "name": "reactive-bulma",
   "version": "0.0.1",
   "description": "A typescript-react-based library using bulma",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NicolasOmar/reactive-bulma.git"
-  },
   "keywords": [
     "typescript",
     "react",
@@ -18,15 +10,35 @@
   ],
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
+  "homepage": "https://github.com/NicolasOmar/reactive-bulma#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasOmar/reactive-bulma.git"
+  },
   "bugs": {
     "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
   },
-  "homepage": "https://github.com/NicolasOmar/reactive-bulma#readme",
+  "type": "module",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^10.0.1",
     "@types/react": "^18.0.26",
     "bulma": "^0.9.4",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
+    "rollup": "^3.9.1",
+    "rollup-plugin-dts": "^5.1.0",
+    "tslib": "^2.4.1",
     "typescript": "^4.9.4"
-  }
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
 }
