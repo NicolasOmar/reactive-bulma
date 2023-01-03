@@ -1,0 +1,32 @@
+{
+  "name": "reactive-bulma",
+  "version": "0.0.1",
+  "description": "A typescript-react-based library using bulma",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasOmar/reactive-bulma.git"
+  },
+  "keywords": [
+    "typescript",
+    "react",
+    "bulma",
+    "component-library"
+  ],
+  "author": "Nicolás Omar González Passerino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
+  },
+  "homepage": "https://github.com/NicolasOmar/reactive-bulma#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "bulma": "^0.9.4",
+    "node-sass": "^8.0.0",
+    "react": "^18.2.0",
+    "typescript": "^4.9.4"
+  }
+}
