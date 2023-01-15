@@ -19,7 +19,7 @@
     "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
