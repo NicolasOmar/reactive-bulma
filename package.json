@@ -18,17 +18,29 @@
   "bugs": {
     "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
   },
-  "type": "module",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^10.0.1",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.26",
+    "babel-loader": "^8.3.0",
     "bulma": "^0.9.4",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.0",
     "rollup-plugin-postcss": "^4.0.2",
