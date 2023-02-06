@@ -1,11 +1,17 @@
 {
   "name": "reactive-bulma",
   "version": "1.2.0",
-  "description": "A typescript-react-based library using bulma",
+  "description": "A typescript-react-based component library based on bulma",
   "keywords": [
     "typescript",
     "react",
     "bulma",
+    "rollup",
+    "semantic-release",
+    "jest",
+    "prettier",
+    "eslint",
+    "husky",
     "component-library"
   ],
   "author": "Nicolás Omar González Passerino",
@@ -18,13 +24,23 @@
   "bugs": {
     "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
   },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
     "test": "jest --watchAll=false --verbose",
     "test:ci": "npm test -- --coverage",
+    "lint": "eslint src/**/*.tsx",
+    "prettier": "prettier src/**/*.{tsx,ts} --write",
+    "lint-staged": "lint-staged -v",
+    "setup": "npm i && husky install",
     "prepare": "npm run build",
     "build": "rollup -c --bundleConfigAsCjs",
-    "build-storybook": "build-storybook",
+    "build:storybook": "build-storybook",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
@@ -53,11 +69,18 @@
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.26",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "babel-jest": "^29.4.1",
     "babel-loader": "^8.3.0",
     "bulma": "^0.9.4",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-react": "^7.32.2",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.9.1",
@@ -65,12 +88,13 @@
     "rollup-plugin-postcss": "^4.0.2",
     "semantic-release": "^20.1.0",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "husky": "^8.0.0"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts"
+  "lint-staged": {
+    "src/**/*.(ts|tsx)": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
 }
