@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.2.0...v1.3.0) (2023-02-06)
+
+
+### Features
+
+* Setup linter suite ([#18](https://github.com/NicolasOmar/reactive-bulma/issues/18)) ([#13](https://github.com/NicolasOmar/reactive-bulma/issues/13)) ([9f84ec3](https://github.com/NicolasOmar/reactive-bulma/commit/9f84ec3e303eefa0e9834ad0f5bd4c6b3adb3721))
+
 # [1.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.1.0...v1.2.0) (2023-02-06)
 
 
