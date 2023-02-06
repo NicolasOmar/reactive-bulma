@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.1.0...v1.2.0) (2023-02-06)
+
+
+### Features
+
+* Setting up Jest ([#17](https://github.com/NicolasOmar/reactive-bulma/issues/17)) ([#14](https://github.com/NicolasOmar/reactive-bulma/issues/14)) ([e2b7837](https://github.com/NicolasOmar/reactive-bulma/commit/e2b78372f2f611c9f2002f4887bedf027ca9a996))
+
 # [1.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.0.0...v1.1.0) (2023-02-05)
 
 
