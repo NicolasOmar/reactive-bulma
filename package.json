@@ -1,11 +1,17 @@
 {
   "name": "reactive-bulma",
   "version": "1.2.0",
-  "description": "A typescript-react-based library using bulma",
+  "description": "A typescript-react-based component library based on bulma",
   "keywords": [
     "typescript",
     "react",
     "bulma",
+    "rollup",
+    "semantic-release",
+    "jest",
+    "prettier",
+    "eslint",
+    "husky",
     "component-library"
   ],
   "author": "Nicolás Omar González Passerino",
@@ -18,6 +24,12 @@
   "bugs": {
     "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
   },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
     "test": "jest --watchAll=false --verbose",
@@ -25,7 +37,8 @@
     "lint": "eslint src/**/*.tsx",
     "prettier": "prettier src/**/*.{tsx,ts} --write",
     "lint-staged": "lint-staged -v",
-    "prepare": "npm run build && husky install",
+    "setup": "npm i && husky install",
+    "prepare": "npm run build",
     "build": "rollup -c --bundleConfigAsCjs",
     "build:storybook": "build-storybook",
     "semantic-release": "semantic-release"
@@ -83,11 +96,5 @@
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts"
+  }
 }
