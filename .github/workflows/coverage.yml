@@ -1,4 +1,4 @@
-name: Collect test coverage
+name: Collect tests coverage
 
 on: [push]
 
