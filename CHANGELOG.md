@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.3.0...v1.4.0) (2023-02-09)
+
+
+### Features
+
+* Integrate Codecov to repository through Github Action ([#21](https://github.com/NicolasOmar/reactive-bulma/issues/21)) ([#19](https://github.com/NicolasOmar/reactive-bulma/issues/19)) ([55575f5](https://github.com/NicolasOmar/reactive-bulma/commit/55575f5a451c7763b179c3ec79961c973d1618c4))
+
 # [1.3.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.2.0...v1.3.0) (2023-02-06)
 
 
