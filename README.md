@@ -1,4 +1,4 @@
-# Reactive bulma ![Reactive bulma version](https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?color=success&label=%20&style=flat-square)
+# Reactive bulma ![reactive-bulma version](https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?label=npm&logo=npm&labelColor=535353&color=success&style=flat-square) ![reactive-bulma Coverage](https://img.shields.io/codecov/c/github/nicolasomar/reactive-bulma?label=coverage&labelColor=535353&logo=codecov&style=flat-square) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NicolasOmar_reactive-bulma) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=NicolasOmar_reactive-bulma) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=NicolasOmar_reactive-bulma)
 Component library based on React, typescript and bulma
 
 ## What do I need?
