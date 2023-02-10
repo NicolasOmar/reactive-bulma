@@ -32,6 +32,8 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
+    - name: Install depedencies
+      run: npm ci
     - name: Run build package script
       run: npm run build
       
@@ -47,5 +49,7 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
+    - name: Install depedencies
+      run: npm ci
     - name: Run build Storybook script
       run: npm run build:storybook
