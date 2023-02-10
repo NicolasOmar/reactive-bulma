@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.4.0...v1.5.0) (2023-02-10)
+
+
+### Features
+
+* Integrate SonarCloud into project's workflow ([#24](https://github.com/NicolasOmar/reactive-bulma/issues/24)) ([#23](https://github.com/NicolasOmar/reactive-bulma/issues/23)) ([cdb79c6](https://github.com/NicolasOmar/reactive-bulma/commit/cdb79c663bcc5e6aded8472933f2741b20eb9e31))
+
 # [1.4.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.3.0...v1.4.0) (2023-02-09)
 
 

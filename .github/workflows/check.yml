@@ -1,0 +1,55 @@
+name: Build check
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Use Node.js v18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install depedencies
+      run: npm ci
+    - name: Run unit tests suite script
+      run: npm run test:ci
+      
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Use Node.js v18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    - name: Install depedencies
+      run: npm ci
+    - name: Run build package script
+      run: npm run build
+      
+  build-storybook:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Use Node.js v18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    - name: Install depedencies
+      run: npm ci
+    - name: Run build Storybook script
+      run: npm run build:storybook
