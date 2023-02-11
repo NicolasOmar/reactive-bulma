@@ -18,10 +18,18 @@ jobs:
           scan-type: 'fs'
           ignore-unfixed: false
           vuln-type: 'library'
-          format: 'sarif,table'
+          format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'MEDIUM,HIGH,CRITICAL'
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'
+      - name: Run Trivy vulnerability scanner in table mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: false
+          vuln-type: 'library'
+          format: 'table'
+          severity: 'MEDIUM,HIGH,CRITICAL'
