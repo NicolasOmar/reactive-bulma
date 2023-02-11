@@ -6,17 +6,18 @@ on:
 
 jobs:
   publish:
+    - name: Execute release process
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
+    - name: 1/4 | Checkout repo
       uses: actions/checkout@v3
-    - name: Setup Node environment
+    - name: 2/4 | Setup Node environment
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
-    - name: Install dependencies
+    - name: 3/4 | Install dependencies
       run: npm ci
-    - name: Run Semantic Release script
+    - name: 4/4 | Run Semantic Release script
       run: npm run semantic-release
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
