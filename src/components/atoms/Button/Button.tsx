@@ -1,8 +1,5 @@
 import React from 'react'
-
-interface ButtonProps {
-  text?: string
-}
+import { ButtonProps } from '../../../interfaces/atomProps'
 
 const Button: React.FC<ButtonProps> = ({ text = '' }) => (
   <button className='button'>{text}</button>
