@@ -1,6 +1,8 @@
 import React from 'react'
 // PROPS
 import { ColumnProps } from '../../../interfaces/atomProps'
+// PARSERS
+import { parseClasses } from '../../../functions/persers'
 
 const Column: React.FC<ColumnProps> = ({
   size = null,
@@ -8,9 +10,13 @@ const Column: React.FC<ColumnProps> = ({
   isNarrow = false,
   children = null
 }) => {
-  const classes = ['column', size, offset, isNarrow ? 'is-narrow' : null]
-    .filter(_class => _class)
-    .join(' ')
+  const classes = parseClasses([
+    'column',
+    size,
+    offset,
+    isNarrow ? 'is-narrow' : null
+  ])
+
   return (
     <section
       data-testid='test-column'
