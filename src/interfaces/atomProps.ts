@@ -5,7 +5,8 @@ export interface ButtonProps {
   text?: string
 }
 
-export interface ColumnProps {
+export interface ColumnProps extends React.ComponentPropsWithoutRef<'section'> {
   size?: columnSizeType
   offset?: columnOffsetType
+  isNarrow?: boolean
 }
