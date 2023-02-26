@@ -10,12 +10,20 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
-    - name: 1/2 | Checkout repo
+    - name: 1/5 | Checkout repo
       uses: actions/checkout@v3
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
-    - name: 2/2 | Run SonarCloud Scanner
+    - name: 2/5 | Setup Node environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: 3/5 | Install depedencies
+      run: npm ci
+    - name: 4/5 | Run unit tests suite script
+      run: npm run test:ci
+    - name: 5/5 | Run SonarCloud Scanner
       uses: sonarsource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
