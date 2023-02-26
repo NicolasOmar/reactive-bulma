@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.5.0...v1.6.0) (2023-02-26)
+
+
+### Features
+
+* Create component "Column" ([#22](https://github.com/NicolasOmar/reactive-bulma/issues/22)) ([#15](https://github.com/NicolasOmar/reactive-bulma/issues/15)) ([b40661e](https://github.com/NicolasOmar/reactive-bulma/commit/b40661e5358a58509d43e019e058ab4d95489278))
+
 # [1.5.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.4.0...v1.5.0) (2023-02-10)
 
 
