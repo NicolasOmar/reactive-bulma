@@ -1,5 +1,11 @@
 {
   "dummyText": "Hello there",
+  "testStyles": {
+    "paddingTop": "10px",
+    "color": "red",
+    "margin": "0px 0px 0px 3px",
+    "backgroundColor": "blue"
+  },
   "testClasses": {
     "isLightColor": "is-light",
     "isInvertedColor": "is-inverted",

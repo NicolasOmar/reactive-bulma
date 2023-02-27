@@ -8,6 +8,7 @@ import {
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   text?: string
+  style?: React.CSSProperties
   color?: basicColorType
   isLightColor?: boolean
   isInvertedColor?: boolean
