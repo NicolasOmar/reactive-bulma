@@ -2,8 +2,9 @@ module.exports = {
   testEnvironment: 'jsdom',
   verbose: true,
   collectCoverageFrom: [
-    'src/**/*.tsx',
-    '!src/**/*.stories.tsx'
+    'src/components/**/*.tsx',
+    '!src/components/**/*.stories.tsx',
+    'src/functions/**.ts'
   ],
   coverageThreshold: {
     global: {

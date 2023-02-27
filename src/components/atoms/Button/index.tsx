@@ -6,14 +6,15 @@ import { parseClasses } from '../../../functions/persers'
 
 const Button: React.FC<ButtonProps> = ({
   text = null,
-  color = null,
-  isLightColor = null,
-  isInvertedColor = null,
-  isOutlined = null,
-  isRounded = null,
-  isLoading = null,
+  color = 'is-white',
+  isLightColor = false,
+  isInvertedColor = false,
+  isOutlined = false,
+  isRounded = false,
+  isLoading = false,
   isDisabled = false,
-  size = null
+  size = null,
+  onClick = () => console.warn('Button clicked')
 }) => {
   const buttonClasses = parseClasses([
     'button',
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
       data-testid='test-button'
       className={buttonClasses}
       disabled={isDisabled}
+      onClick={onClick}
     >
       {text}
     </button>

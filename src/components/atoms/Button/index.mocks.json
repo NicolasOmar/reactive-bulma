@@ -1,0 +1,10 @@
+{
+  "dummyText": "Hello there",
+  "testClasses": {
+    "isLightColor": "is-light",
+    "isInvertedColor": "is-inverted",
+    "isOutlined": "is-outlined",
+    "isRounded": "is-rounded",
+    "isLoading": "is-loading"
+  }
+}
