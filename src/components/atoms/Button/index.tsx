@@ -6,6 +6,7 @@ import { parseClasses } from '../../../functions/persers'
 
 const Button: React.FC<ButtonProps> = ({
   text = null,
+  type = 'button',
   color = 'is-white',
   isLightColor = false,
   isInvertedColor = false,
@@ -13,8 +14,9 @@ const Button: React.FC<ButtonProps> = ({
   isRounded = false,
   isLoading = false,
   isDisabled = false,
+  isStatic = false,
   size = null,
-  onClick = () => console.warn('Button clicked')
+  onClick = null
 }) => {
   const buttonClasses = parseClasses([
     'button',
@@ -24,15 +26,17 @@ const Button: React.FC<ButtonProps> = ({
     isOutlined ? 'is-outlined' : null,
     isRounded ? 'is-rounded' : null,
     isLoading ? 'is-loading' : null,
+    isStatic ? 'is-static' : null,
     size
   ])
 
   return (
     <button
       data-testid='test-button'
+      type={type}
       className={buttonClasses}
-      disabled={isDisabled}
-      onClick={onClick}
+      disabled={isDisabled ?? false}
+      onClick={onClick ?? undefined}
     >
       {text}
     </button>

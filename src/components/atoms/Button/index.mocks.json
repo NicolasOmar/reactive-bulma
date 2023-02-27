@@ -5,6 +5,7 @@
     "isInvertedColor": "is-inverted",
     "isOutlined": "is-outlined",
     "isRounded": "is-rounded",
-    "isLoading": "is-loading"
+    "isLoading": "is-loading",
+    "isStatic": "is-static"
   }
 }

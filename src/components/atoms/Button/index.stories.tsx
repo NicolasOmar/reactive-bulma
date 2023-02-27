@@ -69,3 +69,10 @@ Disabled.args = {
   ...Colored.args,
   isDisabled: true
 }
+
+export const Static = Template.bind({})
+Static.storyName = 'Static'
+Static.args = {
+  ...Colored.args,
+  isStatic: true
+}

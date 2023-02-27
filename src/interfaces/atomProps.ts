@@ -15,7 +15,9 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   isRounded?: boolean
   isLoading?: boolean
   isDisabled?: boolean
+  isStatic?: boolean
   size?: sizeType
+  onClick?: () => void
 }
 
 export interface ColumnProps extends React.ComponentPropsWithoutRef<'section'> {
