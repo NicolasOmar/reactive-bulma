@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.6.0...v1.7.0) (2023-02-27)
+
+
+### Features
+
+* Create component "Button" ([#44](https://github.com/NicolasOmar/reactive-bulma/issues/44)) ([#28](https://github.com/NicolasOmar/reactive-bulma/issues/28)) ([bbb936d](https://github.com/NicolasOmar/reactive-bulma/commit/bbb936d7298dda1bcd4b6d3bdbe2d96155c33e92))
+
 # [1.6.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.5.0...v1.6.0) (2023-02-26)
 
 
