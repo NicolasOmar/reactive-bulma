@@ -35,3 +35,19 @@ export type columnOffsetType =
   | 'is-offset-10'
   | 'is-offset-11'
   | 'is-offset-12'
+
+export type basicColorType =
+  | 'is-white'
+  | 'is-light'
+  | 'is-dark'
+  | 'is-black'
+  | 'is-text'
+  | 'is-ghost'
+  | 'is-primary'
+  | 'is-link'
+  | 'is-info'
+  | 'is-success'
+  | 'is-warning'
+  | 'is-danger'
+
+export type sizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
