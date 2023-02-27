@@ -6,6 +6,12 @@ import {
   sizeType
 } from '../types/styleTypes'
 
+export interface ColumnProps extends React.ComponentPropsWithoutRef<'section'> {
+  size?: columnSizeType
+  offset?: columnOffsetType
+  isNarrow?: boolean
+}
+
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   text?: string
   style?: React.CSSProperties
@@ -21,8 +27,12 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   onClick?: () => void
 }
 
-export interface ColumnProps extends React.ComponentPropsWithoutRef<'section'> {
-  size?: columnSizeType
-  offset?: columnOffsetType
-  isNarrow?: boolean
+export interface ProgressBarProps
+  extends React.ComponentPropsWithoutRef<'progress'> {
+  value?: number
+  max?: number
+  style?: React.CSSProperties
+  color?: basicColorType
+  size?: sizeType
+  isLoading?: boolean
 }
