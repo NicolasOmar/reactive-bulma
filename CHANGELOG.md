@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.7.0...v1.8.0) (2023-03-05)
+
+
+### Features
+
+* Create component "ProgressBar" ([#45](https://github.com/NicolasOmar/reactive-bulma/issues/45)) ([#31](https://github.com/NicolasOmar/reactive-bulma/issues/31)) ([a2cd427](https://github.com/NicolasOmar/reactive-bulma/commit/a2cd4275b2f239a9d6be0a28299939d371fcae4e))
+
 # [1.7.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.6.0...v1.7.0) (2023-02-27)
 
 
