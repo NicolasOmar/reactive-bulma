@@ -26,7 +26,7 @@ describe('ProgressBar', () => {
   })
 
   test('Should render the loading/indeterminated logic with its value', () => {
-    inputValues.forEach((_input, i) => {
+    inputValues.forEach(_input => {
       render(
         <ProgressBar
           value={_input}
