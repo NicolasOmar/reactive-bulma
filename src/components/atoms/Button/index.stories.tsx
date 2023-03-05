@@ -13,7 +13,7 @@ export default {
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />
 
 export const NoText = Template.bind({})
-NoText.storyName = 'No Text'
+NoText.storyName = 'Basic'
 
 export const WithText = Template.bind({})
 WithText.storyName = 'With Text'
@@ -25,7 +25,7 @@ export const Colored = Template.bind({})
 Colored.storyName = 'Colored'
 Colored.args = {
   ...WithText.args,
-  color: 'is-success'
+  color: 'is-danger'
 }
 
 export const InvertedColor = Template.bind({})
@@ -50,7 +50,7 @@ Rounded.args = {
 }
 
 export const Loading = Template.bind({})
-Loading.storyName = 'Loading'
+Loading.storyName = 'Loading State'
 Loading.args = {
   ...Colored.args,
   isLoading: true
