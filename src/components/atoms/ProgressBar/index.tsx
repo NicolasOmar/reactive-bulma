@@ -10,7 +10,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   size = null,
   isLoading = false
 }) => {
-  const progressClasses = parseClasses(['progress', color, size])
+  const progressClasses: string = parseClasses(['progress', color, size])
+  const fixedValue: number = value > max || value < 0 ? 0 : value
 
   return (
     <progress
@@ -20,7 +21,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       value={isLoading ? undefined : value}
       max={max}
     >
-      {`${isLoading ? 0 : value > max ? 0 : value}%`}
+      {`${isLoading ? 0 : fixedValue}%`}
     </progress>
   )
 }
