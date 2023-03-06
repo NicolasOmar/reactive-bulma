@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.8.0...v1.9.0) (2023-03-06)
+
+
+### Features
+
+* Create Component "Block" ([#46](https://github.com/NicolasOmar/reactive-bulma/issues/46)) ([#29](https://github.com/NicolasOmar/reactive-bulma/issues/29)) ([35fe823](https://github.com/NicolasOmar/reactive-bulma/commit/35fe823a917a2cdb045973b8bbc1369dfa717495))
+
 # [1.8.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.7.0...v1.8.0) (2023-03-05)
 
 
