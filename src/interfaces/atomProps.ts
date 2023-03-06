@@ -36,3 +36,7 @@ export interface ProgressBarProps
   size?: sizeType
   isLoading?: boolean
 }
+
+export interface BlockProps extends React.ComponentPropsWithoutRef<'section'> {
+  testId?: string
+}
