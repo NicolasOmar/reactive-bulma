@@ -1,10 +1,15 @@
 // TYPES
+import React from 'react'
 import {
   basicColorType,
   columnOffsetType,
   columnSizeType,
   sizeType
 } from '../types/styleTypes'
+
+interface BasicProps {
+  style?: React.CSSProperties
+}
 
 export interface ColumnProps extends React.ComponentPropsWithoutRef<'section'> {
   size?: columnSizeType
@@ -39,4 +44,12 @@ export interface ProgressBarProps
 
 export interface BlockProps extends React.ComponentPropsWithoutRef<'section'> {
   testId?: string
+}
+
+export interface TagProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'span'> {
+  text: string
+  color?: basicColorType
+  size?: Exclude<sizeType, 'is-normal'>
 }

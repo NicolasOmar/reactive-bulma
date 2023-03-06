@@ -1,12 +1,19 @@
-import { parseClasses } from '../persers'
+import { parseClasses, parseTestId } from '../persers'
 // MOCKS
 import mocks from '../mocks/parsers.mocks.json'
 
 describe('Parsers', () => {
-  test('Should return a string of classes from an array', () => {
-    mocks.inputs.forEach((_input, i) => {
+  test('parseClasses', () => {
+    mocks.parseClasses.inputs.forEach((_input, i) => {
       const parseResult = parseClasses(_input)
-      expect(parseResult).toBe(mocks.outputs[i])
+      expect(parseResult).toBe(mocks.parseClasses.outputs[i])
+    })
+  })
+
+  test('parseTestId', () => {
+    mocks.parseTestId.inputs.forEach((_input, i) => {
+      const parseResult = parseTestId('button', _input)
+      expect(parseResult).toBe(mocks.parseTestId.outputs[i])
     })
   })
 })
