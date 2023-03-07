@@ -5,7 +5,7 @@ import { TagProps } from '../../../interfaces/atomProps'
 const Tag: React.FC<TagProps> = ({
   text,
   style = null,
-  color = 'is-primar',
+  color = 'is-primary',
   size = 'is-medium'
 }) => {
   const tagClasses = parseClasses(['tag', color, size])

@@ -1,0 +1,6 @@
+{
+  "test": {
+    "testText": "Test text",
+    "colors": ["is-black", "is-danger", "is-warning"]
+  }
+}
