@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.9.0...v1.10.0) (2023-03-07)
+
+
+### Features
+
+* Create Component "Tag" ([#48](https://github.com/NicolasOmar/reactive-bulma/issues/48)) ([#35](https://github.com/NicolasOmar/reactive-bulma/issues/35)) ([225378c](https://github.com/NicolasOmar/reactive-bulma/commit/225378c3779a0bc75fe1dc3c45196aad88b96b2a))
+
 # [1.9.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.8.0...v1.9.0) (2023-03-06)
 
 
