@@ -1,4 +1,5 @@
 {
+  "basicTestId": "test-button-primary",
   "dummyText": "Hello there",
   "testStyles": {
     "paddingTop": "10px",

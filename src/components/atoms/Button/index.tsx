@@ -2,11 +2,12 @@ import React from 'react'
 // COMPONENT
 import { ButtonProps } from '../../../interfaces/atomProps'
 // PARSERS
-import { parseClasses } from '../../../functions/persers'
+import { parseClasses, parseTestId } from '../../../functions/persers'
 
 const Button: React.FC<ButtonProps> = ({
   text = null,
   type = 'button',
+  testId = null,
   style = null,
   color = 'is-primary',
   isLightColor = false,
@@ -30,10 +31,12 @@ const Button: React.FC<ButtonProps> = ({
     isStatic ? 'is-static' : null,
     size
   ])
+  const _testId =
+    testId ?? parseTestId({ tag: 'button', parsedClasses: buttonClasses })
 
   return (
     <button
-      data-testid='test-button'
+      data-testid={_testId}
       type={type}
       className={buttonClasses}
       style={style ?? undefined}

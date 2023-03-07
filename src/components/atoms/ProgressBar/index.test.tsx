@@ -7,19 +7,18 @@ import ProgressBar from '.'
 import mocks from './index.mocks.json'
 
 describe('ProgressBar', () => {
-  const progressBarId = 'test-progress-bar'
   const { inputValues, outputValues } = mocks.test
 
   test('Should render without any props', () => {
     render(<ProgressBar />)
-    const testProgressBar = screen.getByTestId(progressBarId)
+    const testProgressBar = screen.getByTestId(mocks.basicTestId)
     expect(testProgressBar).toBeInTheDocument()
   })
 
   test('Should render the value having in mind fixed logic', () => {
     inputValues.forEach((_input, i) => {
       render(<ProgressBar value={_input} />)
-      const testInputProgress = screen.getByTestId(progressBarId)
+      const testInputProgress = screen.getByTestId(mocks.basicTestId)
       expect(testInputProgress.innerHTML).toBe(`${outputValues[i]}%`)
       cleanup()
     })
@@ -33,7 +32,7 @@ describe('ProgressBar', () => {
           isLoading={true}
         />
       )
-      const testInputProgress = screen.getByTestId(progressBarId)
+      const testInputProgress = screen.getByTestId(mocks.basicTestId)
       expect(testInputProgress.innerHTML).toBe('0%')
       cleanup()
     })

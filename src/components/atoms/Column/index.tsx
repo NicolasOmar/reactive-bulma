@@ -2,25 +2,30 @@ import React from 'react'
 // PROPS
 import { ColumnProps } from '../../../interfaces/atomProps'
 // PARSERS
-import { parseClasses } from '../../../functions/persers'
+import { parseClasses, parseTestId } from '../../../functions/persers'
 
 const Column: React.FC<ColumnProps> = ({
+  testId = null,
+  style = null,
   size = null,
   offset = null,
   isNarrow = false,
   children = null
 }) => {
-  const classes = parseClasses([
+  const columnClasses = parseClasses([
     'column',
     size,
     offset,
     isNarrow ? 'is-narrow' : null
   ])
+  const _testId =
+    testId ?? parseTestId({ tag: 'column', parsedClasses: columnClasses })
 
   return (
     <section
-      data-testid='test-column'
-      className={classes}
+      data-testid={_testId}
+      className={columnClasses}
+      style={style || undefined}
     >
       {children}
     </section>

@@ -1,4 +1,5 @@
 // TYPES
+import React from 'react'
 import {
   basicColorType,
   columnOffsetType,
@@ -6,13 +7,22 @@ import {
   sizeType
 } from '../types/styleTypes'
 
-export interface ColumnProps extends React.ComponentPropsWithoutRef<'section'> {
+interface BasicProps {
+  testId?: string
+  style?: React.CSSProperties
+}
+
+export interface ColumnProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'section'> {
   size?: columnSizeType
   offset?: columnOffsetType
   isNarrow?: boolean
 }
 
-export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+export interface ButtonProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'button'> {
   text?: string
   style?: React.CSSProperties
   color?: basicColorType
@@ -28,7 +38,8 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 }
 
 export interface ProgressBarProps
-  extends React.ComponentPropsWithoutRef<'progress'> {
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'progress'> {
   value?: number
   max?: number
   style?: React.CSSProperties
@@ -37,6 +48,23 @@ export interface ProgressBarProps
   isLoading?: boolean
 }
 
-export interface BlockProps extends React.ComponentPropsWithoutRef<'section'> {
+export interface BlockProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'section'> {
   testId?: string
+}
+
+export interface TagProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'span'> {
+  text: string
+  color?: basicColorType
+  isLight?: boolean
+  isRounded?: boolean
+  size?: Exclude<sizeType, 'is-normal'>
+  withDelete?: boolean
+  withAddon?: boolean
+  addonText?: string
+  addonColor?: basicColorType
+  onDeleteClick?: () => void
 }

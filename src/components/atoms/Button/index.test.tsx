@@ -7,11 +7,9 @@ import Button from '.'
 import mocks from './index.mocks.json'
 
 describe('Button', () => {
-  const buttonTestId = 'test-button'
-
   test('Should render the Button without text', () => {
     render(<Button />)
-    const testButton = screen.getByTestId(buttonTestId)
+    const testButton = screen.getByTestId(mocks.basicTestId)
     expect(testButton).toBeInTheDocument()
   })
 
@@ -26,7 +24,7 @@ describe('Button', () => {
       const styleValue = (mocks.testStyles as any)[prop]
       const styleObj = { [prop]: styleValue }
       render(<Button style={styleObj} />)
-      const styleButton = screen.getByTestId(buttonTestId)
+      const styleButton = screen.getByTestId(mocks.basicTestId)
       expect(styleButton.style[prop as any]).toContain(styleValue)
       cleanup()
     })
@@ -36,8 +34,12 @@ describe('Button', () => {
     Object.keys(mocks.testClasses).forEach(prop => {
       const classValue = (mocks.testClasses as any)[prop]
       const classObj = { [prop]: classValue }
+      const testIdWithClass = `${mocks.basicTestId}-${classValue.replace(
+        'is-',
+        ''
+      )}`
       render(<Button {...classObj} />)
-      const classButton = screen.getByTestId(buttonTestId)
+      const classButton = screen.getByTestId(testIdWithClass)
       expect(classButton.className).toContain(classValue)
       cleanup()
     })
@@ -46,7 +48,7 @@ describe('Button', () => {
   test('Should check that the button has been clicked', () => {
     const clickeableConfig = { onClick: jest.fn() }
     render(<Button {...clickeableConfig} />)
-    const clickButton = screen.getByTestId(buttonTestId)
+    const clickButton = screen.getByTestId(mocks.basicTestId)
     fireEvent.click(clickButton)
     expect(clickeableConfig.onClick).toHaveBeenCalled()
     expect(clickeableConfig.onClick).toHaveBeenCalledTimes(1)
@@ -59,7 +61,7 @@ describe('Button', () => {
     }
 
     render(<Button {...notClickeableBtn} />)
-    const disabledButton = screen.getByTestId(buttonTestId)
+    const disabledButton = screen.getByTestId(mocks.basicTestId)
 
     fireEvent.click(disabledButton)
     expect(notClickeableBtn.onClick).not.toHaveBeenCalled()
