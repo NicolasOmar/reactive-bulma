@@ -21,10 +21,9 @@ describe('Tag', () => {
   test('Should render with different colors', () => {
     mocks.test.colors.forEach(_color => {
       tagConfig = { text: mocks.test.testText, color: _color as basicColorType }
+      const coloredTestId = `test-tag-${_color.replace('is-', '')}`
       render(<Tag {...tagConfig} />)
-      const testColorTag = screen.getByTestId(
-        `test-tag-${_color.replace('is-', '')}-medium`
-      )
+      const testColorTag = screen.getByTestId(coloredTestId)
       expect(testColorTag.classList).toContain(_color)
     })
   })

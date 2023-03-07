@@ -59,5 +59,12 @@ export interface TagProps
     React.ComponentPropsWithoutRef<'span'> {
   text: string
   color?: basicColorType
+  isLight?: boolean
+  isRounded?: boolean
   size?: Exclude<sizeType, 'is-normal'>
+  withDelete?: boolean
+  withAddon?: boolean
+  addonText?: string
+  addonColor?: basicColorType
+  onDeleteClick?: () => void
 }

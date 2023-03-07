@@ -13,7 +13,7 @@ export default {
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />
 
 export const NoText = Template.bind({})
-NoText.storyName = 'Basic'
+NoText.storyName = 'No Text'
 
 export const WithText = Template.bind({})
 WithText.storyName = 'With Text'
