@@ -6,7 +6,7 @@ const Tag: React.FC<TagProps> = ({
   text,
   testId = null,
   style = null,
-  color = 'is-primary',
+  color = null,
   isLight = null,
   isRounded = null,
   size = null,
@@ -26,7 +26,6 @@ const Tag: React.FC<TagProps> = ({
   ])
   const tagsWrapperClasses = parseClasses([
     'tags',
-    'has-addons',
     size ? size.replace('is-', 'are-') : null
   ])
   const addonTagClasses = parseClasses(['tag', addonColor])
@@ -42,6 +41,7 @@ const Tag: React.FC<TagProps> = ({
       <span className={tagClasses}>{text}</span>
       {withDelete ? (
         <a
+          data-testid={`${_testId}-delete`}
           className='tag is-delete'
           onClick={onDeleteClick || undefined}
         ></a>
@@ -58,6 +58,7 @@ const Tag: React.FC<TagProps> = ({
       {text}
       {withDelete ? (
         <button
+          data-testid={`${_testId}-delete`}
           className='delete'
           onClick={onDeleteClick || undefined}
         />

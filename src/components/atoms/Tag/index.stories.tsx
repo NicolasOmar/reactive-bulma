@@ -14,9 +14,7 @@ const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'With a text'
-BasicExample.args = {
-  text: mocks.test.testText
-}
+BasicExample.args = { ...mocks.test.baseConfig }
 
 export const Colored = Template.bind({})
 Colored.storyName = 'Colored'
