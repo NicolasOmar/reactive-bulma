@@ -21,9 +21,8 @@ describe('Tag', () => {
 
   test('Should render with different colors', () => {
     colors.forEach(_color => {
-      tagConfig = { ...baseConfig, color: _color as basicColorType }
       const coloredTestId = `test-tag-${_color.replace('is-', '')}`
-      render(<Tag {...tagConfig} />)
+      render(<Tag {...{ ...baseConfig, color: _color as basicColorType }} />)
       const testColorTag = screen.getByTestId(coloredTestId)
       expect(testColorTag.classList).toContain(_color)
     })
@@ -31,12 +30,12 @@ describe('Tag', () => {
 
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
-      tagConfig = {
-        ...baseConfig,
-        size: _size as Exclude<sizeType, 'is-normal'>
-      }
       const coloredTestId = `test-tag-${_size.replace('is-', '')}`
-      render(<Tag {...tagConfig} />)
+      render(
+        <Tag
+          {...{ ...baseConfig, size: _size as Exclude<sizeType, 'is-normal'> }}
+        />
+      )
       const testColorTag = screen.getByTestId(coloredTestId)
       expect(testColorTag.classList).toContain(_size)
     })
@@ -45,9 +44,8 @@ describe('Tag', () => {
   test('Should render with different classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as any)[prop]
-      tagConfig = { ...baseConfig, [prop]: classValue }
       const testIdWithClass = `test-tag-${classValue.replace('is-', '')}`
-      render(<Tag {...tagConfig} />)
+      render(<Tag {...{ ...baseConfig, [prop]: classValue }} />)
       const classButton = screen.getByTestId(testIdWithClass)
       expect(classButton.className).toContain(classValue)
       cleanup()
@@ -64,9 +62,8 @@ describe('Tag', () => {
   })
 
   test('Should render the tags variation with its addon text', () => {
-    tagConfig = { ...baseConfig, ...addonConfig }
-    const tagsTestId = 'test-tags'
-    render(<Tag {...tagConfig} />)
+    const tagsTestId = 'test-tags-has-addons'
+    render(<Tag {...{ ...baseConfig, ...addonConfig }} />)
     const testTags = screen.getByTestId(tagsTestId)
     expect(testTags).toBeInTheDocument()
   })
@@ -79,7 +76,7 @@ describe('Tag', () => {
       onDeleteClick: jest.fn()
     }
     render(<Tag {...tagConfig} />)
-    const clickButton = screen.getByTestId('test-tags-delete')
+    const clickButton = screen.getByTestId('test-tags-has-addons-delete')
     fireEvent.click(clickButton)
     expect(tagConfig.onDeleteClick).toHaveBeenCalled()
     expect(tagConfig.onDeleteClick).toHaveBeenCalledTimes(1)

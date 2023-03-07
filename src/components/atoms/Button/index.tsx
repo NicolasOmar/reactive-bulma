@@ -31,7 +31,8 @@ const Button: React.FC<ButtonProps> = ({
     isStatic ? 'is-static' : null,
     size
   ])
-  const _testId = testId ?? parseTestId('button', buttonClasses)
+  const _testId =
+    testId ?? parseTestId({ tag: 'button', parsedClasses: buttonClasses })
 
   return (
     <button

@@ -26,11 +26,17 @@ const Tag: React.FC<TagProps> = ({
   ])
   const tagsWrapperClasses = parseClasses([
     'tags',
+    'has-addons',
     size ? size.replace('is-', 'are-') : null
   ])
   const addonTagClasses = parseClasses(['tag', addonColor])
   const _testId =
-    testId ?? parseTestId(tagLabel, withAddon ? tagsWrapperClasses : tagClasses)
+    testId ??
+    parseTestId({
+      tag: tagLabel,
+      parsedClasses: withAddon ? tagsWrapperClasses : tagClasses,
+      separator: withAddon ? '-' : ''
+    })
 
   return withAddon ? (
     <section

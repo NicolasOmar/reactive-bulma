@@ -18,7 +18,8 @@ const Column: React.FC<ColumnProps> = ({
     offset,
     isNarrow ? 'is-narrow' : null
   ])
-  const _testId = testId ?? parseTestId('column', columnClasses)
+  const _testId =
+    testId ?? parseTestId({ tag: 'column', parsedClasses: columnClasses })
 
   return (
     <section

@@ -12,7 +12,7 @@ describe('Parsers', () => {
 
   test('parseTestId', () => {
     mocks.parseTestId.inputs.forEach((_input, i) => {
-      const parseResult = parseTestId('button', _input)
+      const parseResult = parseTestId({ tag: 'button', parsedClasses: _input })
       expect(parseResult).toBe(mocks.parseTestId.outputs[i])
     })
   })
