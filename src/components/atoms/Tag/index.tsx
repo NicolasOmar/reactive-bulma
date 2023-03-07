@@ -4,15 +4,17 @@ import { TagProps } from '../../../interfaces/atomProps'
 
 const Tag: React.FC<TagProps> = ({
   text,
+  testId = null,
   style = null,
   color = 'is-primary',
   size = 'is-medium'
 }) => {
   const tagClasses = parseClasses(['tag', color, size])
-  const parsedTestId = parseTestId('tag', tagClasses)
+  const _testId = testId ?? parseTestId('tag', tagClasses)
+
   return (
     <span
-      data-testid={parsedTestId}
+      data-testid={_testId}
       style={style || undefined}
       className={tagClasses}
     >

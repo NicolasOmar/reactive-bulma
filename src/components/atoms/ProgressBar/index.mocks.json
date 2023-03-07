@@ -1,4 +1,5 @@
 {
+  "basicTestId": "test-progress-primary",
   "test": {
     "inputValues": [0, 20, 100, 130, 200, -1, -20],
     "outputValues": [0, 20, 100, 0, 0, 0, 0]

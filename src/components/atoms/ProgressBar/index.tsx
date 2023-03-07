@@ -1,21 +1,23 @@
 import React from 'react'
-import { parseClasses } from '../../../functions/persers'
+import { parseClasses, parseTestId } from '../../../functions/persers'
 import { ProgressBarProps } from '../../../interfaces/atomProps'
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
   value = 0,
   max = 100,
+  testId = null,
   style = null,
   color = 'is-primary',
   size = null,
   isLoading = false
 }) => {
-  const progressClasses: string = parseClasses(['progress', color, size])
   const fixedValue: number = value > max || value < 0 ? 0 : value
+  const progressClasses: string = parseClasses(['progress', color, size])
+  const _testId = testId ?? parseTestId('progress', progressClasses)
 
   return (
     <progress
-      data-testid='test-progress-bar'
+      data-testid={_testId}
       className={progressClasses}
       style={style ?? undefined}
       value={isLoading ? undefined : value}
