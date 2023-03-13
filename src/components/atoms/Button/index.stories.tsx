@@ -7,7 +7,10 @@ import mocks from './index.mocks.json'
 
 export default {
   title: 'Atoms/Button',
-  component: Button
+  component: Button,
+  argTypes: {
+    ...mocks.storybook
+  }
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />
@@ -18,7 +21,7 @@ NoText.storyName = 'No Text'
 export const WithText = Template.bind({})
 WithText.storyName = 'With Text'
 WithText.args = {
-  text: mocks.dummyText
+  text: mocks.testing.dummyText
 }
 
 export const Colored = Template.bind({})

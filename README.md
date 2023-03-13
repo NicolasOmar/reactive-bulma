@@ -7,7 +7,11 @@
 
 <h1 align="center">Reactive Bulma</h1>
 
+<div align="center">
+
 Component library based on React, Bulma, Typescript and Rollup
+
+<div align="left">
 
 ## Table of contents
 
@@ -61,7 +65,7 @@ Several quick start options are available:
 
 - Clone the repo: `git clone https://github.com/NicolasOmar/reactive-bulma.git`
 - Install with [npm](https://www.npmjs.com/package/reactive-bulma): `npm install reactive-bulma@latest`
-  - Before cloning this repo, I recommend installing [Node](https://nodejs.org/en/download/) `>=18` to install packages
+  - Before cloning this repo, I recommend installing [Node](https://nodejs.org/en/download/) `>=18` to install packages.
 
 ## Folder structure
 
@@ -80,7 +84,7 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 - Go to `reactive-bulma` folder (where you cloned the repo before).
 - Run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
 - Run `npm start`.
-- Wait until a new tab opens with url <http://localhost:6006/> in your browser.
+- Wait until a new tab opens with url <http://localhost:6006/> in your browser. 
 
 Learn more about using `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
@@ -116,8 +120,8 @@ Having in mind the [versioning section](#versioning), repo's status in a glance 
 | :---: | :---: | :---: | :---: |
 | `v1.0.0` | ![reactive-bulma, v1.0.0, progress][badge-progress-100] | ![reactive-bulma, v1.0.0, open issues][badge-issues-open-100] | ![reactive-bulma, v1.0.0, closed issues][badge-issues-closed-100] |
 | `v2.0.0` | ![reactive-bulma, v2.0.0, progress][badge-progress-200] | ![reactive-bulma, v2.0.0, open issues][badge-issues-open-200] | ![reactive-bulma, v2.0.0, closed issues][badge-issues-closed-200] |
-| `v3.0.0` | - | - | - |
-| `v4.0.0` | - | - | - |
+| `v3.0.0` | ![reactive-bulma, v3.0.0, progress][badge-progress-300] | ![reactive-bulma, v3.0.0, open issues][badge-issues-open-300] | ![reactive-bulma, v3.0.0, closed issues][badge-issues-closed-300] |
+| `v4.0.0` | ![reactive-bulma, v4.0.0, progress][badge-progress-400] | ![reactive-bulma, v4.0.0, open issues][badge-issues-open-400] | ![reactive-bulma, v4.0.0, closed issues][badge-issues-closed-400] |
 
 [badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat
 [badge-issues-open-100]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/1?label=%20&style=flat
