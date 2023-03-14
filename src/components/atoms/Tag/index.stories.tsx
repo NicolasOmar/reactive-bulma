@@ -7,14 +7,15 @@ import mocks from './index.mocks.json'
 
 export default {
   title: 'Atoms/Tag',
-  component: Tag
+  component: Tag,
+  argTypes: mocks.storybook,
+  args: mocks.testing.baseConfig
 } as ComponentMeta<typeof Tag>
 
 const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'With a text'
-BasicExample.args = { ...mocks.test.baseConfig }
 
 export const Colored = Template.bind({})
 Colored.storyName = 'Colored'

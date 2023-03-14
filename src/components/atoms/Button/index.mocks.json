@@ -19,7 +19,7 @@
   },
   "storybook": {
     "text": {
-      "description": "The text will be shown in the button"
+      "description": "The text will be shown in the `Button`"
     },
     "type": {
       "description": "What type of button will be implemented",
@@ -65,7 +65,7 @@
       "description": "Similar to `isDisabled`, but will remove any color style"
     },
     "size": {
-      "description": "Button size"
+      "description": "Set button's size"
     },
     "onClick": {
       "description": "Click function, alone does not nothing, but can be reused for other components"

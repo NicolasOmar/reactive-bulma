@@ -10,7 +10,7 @@ import { TagProps } from '../../../interfaces/atomProps'
 import mocks from './index.mocks.json'
 
 describe('Tag', () => {
-  const { baseConfig, colors, testClasses, addonConfig, sizes } = mocks.test
+  const { baseConfig, colors, testClasses, addonConfig, sizes } = mocks.testing
   let tagConfig: TagProps = baseConfig
 
   test('Should render with required props only', () => {
