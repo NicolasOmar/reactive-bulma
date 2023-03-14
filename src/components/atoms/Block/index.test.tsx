@@ -7,6 +7,8 @@ import Block from '.'
 import mocks from './index.mocks.json'
 
 describe('Block', () => {
+  const { testId } = mocks.testing
+
   test('Should not render without children', () => {
     render(<Block />)
     expect(() => screen.getByTestId('test-block')).toThrow()
@@ -19,8 +21,8 @@ describe('Block', () => {
   })
 
   test('Should render having a different test id', () => {
-    render(<Block testId={mocks.testId}>{<p></p>}</Block>)
-    const testBlockId = screen.getByTestId(mocks.testId)
+    render(<Block testId={testId}>{<p></p>}</Block>)
+    const testBlockId = screen.getByTestId(testId)
     expect(testBlockId).toBeInTheDocument()
   })
 })

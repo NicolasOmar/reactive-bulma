@@ -8,7 +8,8 @@ import mocks from './index.mocks.json'
 
 export default {
   title: 'Atoms/Column',
-  component: Column
+  component: Column,
+  argTypes: mocks.storybook
 } as ComponentMeta<typeof Column>
 
 const Template: ComponentStory<typeof Column> = args => <Column {...args} />
@@ -19,13 +20,13 @@ BasicExample.storyName = 'No children'
 export const WithParagraph = Template.bind({})
 WithParagraph.storyName = 'With a paragraph'
 WithParagraph.args = {
-  children: <p>{mocks.testParagraph}</p>
+  children: <p>{mocks.testing.testParagraph}</p>
 }
 
 export const WithLargeParagraph = Template.bind({})
 WithLargeParagraph.storyName = 'With a large paragraph'
 WithLargeParagraph.args = {
-  children: <p>{mocks.testLargeParagraph}</p>
+  children: <p>{mocks.testing.testLargeParagraph}</p>
 }
 
 export const WithButton = Template.bind({})

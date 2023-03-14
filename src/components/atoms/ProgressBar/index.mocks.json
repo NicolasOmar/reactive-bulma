@@ -1,7 +1,30 @@
 {
-  "basicTestId": "test-progress-primary",
-  "test": {
+  "testing": {
+    "basicTestId": "test-progress-primary",
     "inputValues": [0, 20, 100, 130, 200, -1, -20],
     "outputValues": [0, 20, 100, 0, 0, 0, 0]
+  },
+  "storybook": {
+    "value": {
+      "description": "Sets colored bar at the level against `max` value (`100` by default)"
+    },
+    "max": {
+      "description": "Sets the entire bar length comparing with current `value`"
+    },
+    "testId": {
+      "description": "ID used to locate the element in unit test suites"
+    },
+    "style": {
+      "description": "Custom styling applicable for specific cases"
+    },
+    "color": {
+      "description": "Color based on bulma's color tokens"
+    },
+    "size": {
+      "description": "Set progress bar's size"
+    },
+    "isLoading": {
+      "description": "Will change `value` for a animated loading"
+    }
   }
 }
