@@ -1,6 +1,6 @@
 {
   "name": "reactive-bulma",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "A typescript-react-based component library based on bulma",
   "keywords": [
     "typescript",

@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.0...v1.10.1) (2023-03-12)
+
+
+### Bug Fixes
+
+* Adding the dependabot job ([#51](https://github.com/NicolasOmar/reactive-bulma/issues/51)) ([#52](https://github.com/NicolasOmar/reactive-bulma/issues/52)) ([35e2062](https://github.com/NicolasOmar/reactive-bulma/commit/35e2062b08a7862f168fba5baf907e8574162251))
+
 # [1.10.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.9.0...v1.10.0) (2023-03-07)
 
 
