@@ -2,7 +2,7 @@ import React from 'react'
 // COMPONENT
 import { ButtonProps } from '../../../interfaces/atomProps'
 // PARSERS
-import { parseClasses, parseTestId } from '../../../functions/persers'
+import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Button: React.FC<ButtonProps> = ({
   text = null,

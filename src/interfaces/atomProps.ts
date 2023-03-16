@@ -1,5 +1,5 @@
-// TYPES
 import React from 'react'
+// TYPES
 import {
   basicColorType,
   columnOffsetType,
