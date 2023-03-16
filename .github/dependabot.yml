@@ -10,15 +10,20 @@ updates:
     schedule:
       interval: "weekly"
       day: "saturday"
+      time: "09:00"
+      timezone: "America/Argentina/Cordoba"
     assignees:
       - "nicolasomar"
     target-branch: "main"
+    versioning-strategy: increase-if-necessary
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "saturday"
+      time: "09:00"
+      timezone: "America/Argentina/Cordoba"
     assignees:
       - "nicolasomar"
     target-branch: "main"
