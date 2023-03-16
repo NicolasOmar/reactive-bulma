@@ -1,0 +1,66 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+export const solidColors ={
+  white: '#ffffff',
+  black: '#0a0a0a',
+  light: '#f5f5f5',
+  dark: '#363636',
+  primary: '#00d1b2',
+  link: '#3273dc',
+  info: '#209cee',
+  success: '#23d160',
+  warning: '#ffdd57',
+  danger: '#ff3860'
+}
+
+export const monoColors = {
+  'black-bis': '#121212',
+  'black-ter': '#242424',
+  'grey-darker': '#363636',
+  'grey-dark': '#4a4a4a',
+  'grey': '#7a7a7a',
+  'grey-light': '#b5b5b5',
+  'grey-lighter': '#dbdbdb',
+  'white-ter': '#f5f5f5',
+  'white-bis': '#fafafa'
+}
+
+export const lightColors = {
+  'primary-light': '#ebfffc',
+  'link-light': '#eef3fc',
+  'info-light': '#eef6fc',
+  'success-light': '#effaf3',
+  'warning-light': '#fffbeb',
+  'danger-light': '#feecf0',
+  'primary-dark': '#00947e',
+  'link-dark': '#2160c4',
+  'info-dark': '#1d72aa',
+  'success-dark': '#257942',
+  'warning-dark': '#947600',
+  'danger-dark': '#cc0f35'
+}
+
+<Meta title="Colors" />
+
+# Colors
+
+Used for two main cases:
+- **text:** use prefix `has-text-` (for example `has-text-white`)
+- **background:** use prefix `has-background-` (for example `has-background-white`)
+
+<ColorPalette>
+  <ColorItem
+    title="Monochromatic"
+    colors={monoColors}
+  />
+  
+  <ColorItem
+    title="Solid"
+    colors={solidColors}
+  />
+
+  <ColorItem
+    title="Light"
+    colors={lightColors}
+  />
+</ColorPalette>
