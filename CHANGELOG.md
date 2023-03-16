@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.2...v1.10.3) (2023-03-16)
+
+
+### Bug Fixes
+
+* Adding Snyk workflow to the project ([#58](https://github.com/NicolasOmar/reactive-bulma/issues/58)) ([#50](https://github.com/NicolasOmar/reactive-bulma/issues/50)) ([0329160](https://github.com/NicolasOmar/reactive-bulma/commit/03291607ec2caf338636978c3185deb0caddfc4c))
+
 ## [1.10.2](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.1...v1.10.2) (2023-03-16)
 
 
