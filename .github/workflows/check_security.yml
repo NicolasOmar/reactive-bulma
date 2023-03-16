@@ -1,0 +1,29 @@
+name: Check code security
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+    
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 1/3 | Checkout repo
+      uses: actions/checkout@v3
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+    - name: 2/3 | Run Snyk Scanner
+      uses: snyk/actions/node@master
+      continue-on-error: true
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        command: test
+        args: --sarif-file-output=snyk.sarif --all-projects --dev --detection-depth=4 --show-vulnerable-paths=all
+    - name: 3/3 | Upload Snyk result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: snyk.sarif
