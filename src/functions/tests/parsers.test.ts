@@ -1,4 +1,4 @@
-import { parseClasses, parseTestId } from '../persers'
+import { parseClasses, parseTestId } from '../parsers'
 // MOCKS
 import mocks from '../mocks/parsers.mocks.json'
 

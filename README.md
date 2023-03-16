@@ -16,6 +16,7 @@ Component library based on React, Bulma, Typescript and Rollup
 ## Table of contents
 
 - [Status](#status)
+- [Dependencies](#dependencies)
 - [Quick start](#quick-start)
 - [Folder structure](#folder-structure)
 - [Documentation](#documentation)
@@ -58,6 +59,30 @@ Component library based on React, Bulma, Typescript and Rollup
 [badge-github-last-commit]: https://img.shields.io/github/last-commit/nicolasomar/reactive-bulma?logo=github
 [badge-semantic-commits]: https://img.shields.io/badge/using-conventional%20commits-e10079?logo=conventional-commits
 [link-semantic-commits]: https://github.com/semantic-release/semantic-release
+
+## Dependencies
+
+![reactive-bulma, react dependency][badge-dependency-react]
+![reactive-bulma, bulma dependency][badge-dependency-bulma]
+![reactive-bulma, typescript dependency][badge-dependency-typescript]
+![reactive-bulma, rollup dependency][badge-dependency-rollup]
+![reactive-bulma, semantic-release dependency][badge-dependency-semantic-release]
+![reactive-bulma, jest dependency][badge-dependency-jest]
+![reactive-bulma, prettier dependency][badge-dependency-prettier]
+![reactive-bulma, eslint dependency][badge-dependency-eslint]
+![reactive-bulma, husky dependency][badge-dependency-husky]
+![reactive-bulma, babel dependency][badge-dependency-babel]
+
+[badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
+[badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
+[badge-dependency-typescript]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/typescript/main?logo=typescript
+[badge-dependency-rollup]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/rollup/main?logo=rollup.js
+[badge-dependency-semantic-release]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/semantic-release/main?logo=semantic-release
+[badge-dependency-jest]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/jest/main?logo=jest
+[badge-dependency-prettier]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/prettier/main?logo=prettier
+[badge-dependency-eslint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/eslint/main?logo=eslint
+[badge-dependency-husky]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/husky/main?logo=husky
+[badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 
 ## Quick start
 

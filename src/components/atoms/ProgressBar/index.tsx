@@ -1,5 +1,5 @@
 import React from 'react'
-import { parseClasses, parseTestId } from '../../../functions/persers'
+import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { ProgressBarProps } from '../../../interfaces/atomProps'
 
 const ProgressBar: React.FC<ProgressBarProps> = ({

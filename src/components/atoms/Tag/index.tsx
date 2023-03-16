@@ -1,5 +1,5 @@
 import React from 'react'
-import { parseClasses, parseTestId } from '../../../functions/persers'
+import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { TagProps } from '../../../interfaces/atomProps'
 
 const Tag: React.FC<TagProps> = ({

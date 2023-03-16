@@ -21,6 +21,13 @@ WithText.storyName = 'With Text'
 WithText.args = {
   text: mocks.testing.dummyText
 }
+WithText.parameters = {
+  docs: {
+    source: {
+      format: true
+    }
+  }
+}
 
 export const Colored = Template.bind({})
 Colored.storyName = 'Colored'
