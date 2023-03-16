@@ -15,15 +15,15 @@ jobs:
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
-    - name: 2/3 | Run Snyk to check for vulnerabilities
+    - name: 2/3 | Run Snyk Scanner
       uses: snyk/actions/node@master
       continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         command: test
-        args: --sarif-file-output=snyk.sarif --all-projects
-    - name: 3/3 | Upload result to GitHub Code Scanning
+        args: --sarif-file-output=snyk.sarif --all-projects --detection-depth=4 --print-deps --dev --show-vulnerable-paths=all
+    - name: 3/3 | Upload Snyk result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: snyk.sarif
