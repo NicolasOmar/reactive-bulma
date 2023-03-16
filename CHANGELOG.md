@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.1...v1.10.2) (2023-03-16)
+
+
+### Bug Fixes
+
+* Improve repo's documentation ([#49](https://github.com/NicolasOmar/reactive-bulma/issues/49)) ([#47](https://github.com/NicolasOmar/reactive-bulma/issues/47)) ([1664a90](https://github.com/NicolasOmar/reactive-bulma/commit/1664a900266168f898a54a04bcf7ff439b5d1a07))
+
 ## [1.10.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.0...v1.10.1) (2023-03-12)
 
 
