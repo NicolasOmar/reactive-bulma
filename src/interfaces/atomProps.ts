@@ -4,6 +4,7 @@ import {
   basicColorType,
   columnOffsetType,
   columnSizeType,
+  fixedImageSizeType,
   sizeType
 } from '../types/styleTypes'
 
@@ -67,4 +68,12 @@ export interface TagProps
   addonText?: string
   addonColor?: basicColorType
   onDeleteClick?: () => void
+}
+
+export interface ImageProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'figure'> {
+  src: string
+  fixedSize?: fixedImageSizeType
+  isRounded?: boolean
 }

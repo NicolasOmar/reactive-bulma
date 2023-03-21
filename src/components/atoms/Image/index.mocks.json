@@ -1,0 +1,9 @@
+{
+  "testing": {
+    "basicTestId": "test-image-1by1",
+    "testSrc": "https://bulma.io/images/placeholders/128x128.png"
+  },
+  "storybook": {
+    
+  }
+}

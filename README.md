@@ -66,23 +66,25 @@ Component library based on React, Bulma, Typescript and Rollup
 ![reactive-bulma, bulma dependency][badge-dependency-bulma]
 ![reactive-bulma, typescript dependency][badge-dependency-typescript]
 ![reactive-bulma, rollup dependency][badge-dependency-rollup]
+![reactive-bulma, storybook dependency][badge-dependency-storybook]
 ![reactive-bulma, semantic-release dependency][badge-dependency-semantic-release]
+![reactive-bulma, babel dependency][badge-dependency-babel]
 ![reactive-bulma, jest dependency][badge-dependency-jest]
 ![reactive-bulma, prettier dependency][badge-dependency-prettier]
 ![reactive-bulma, eslint dependency][badge-dependency-eslint]
 ![reactive-bulma, husky dependency][badge-dependency-husky]
-![reactive-bulma, babel dependency][badge-dependency-babel]
 
 [badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
 [badge-dependency-typescript]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/typescript/main?logo=typescript
 [badge-dependency-rollup]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/rollup/main?logo=rollup.js
+[badge-dependency-storybook]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@storybook/react/main?logo=storybook
 [badge-dependency-semantic-release]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/semantic-release/main?logo=semantic-release
+[badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 [badge-dependency-jest]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/jest/main?logo=jest
 [badge-dependency-prettier]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/prettier/main?logo=prettier
 [badge-dependency-eslint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/eslint/main?logo=eslint
 [badge-dependency-husky]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/husky/main?logo=husky
-[badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 
 ## Quick start
 
@@ -148,18 +150,18 @@ Having in mind the [versioning section](#versioning), repo's status in a glance 
 | `v3.0.0` | ![reactive-bulma, v3.0.0, progress][badge-progress-300] | ![reactive-bulma, v3.0.0, open issues][badge-issues-open-300] | ![reactive-bulma, v3.0.0, closed issues][badge-issues-closed-300] |
 | `v4.0.0` | ![reactive-bulma, v4.0.0, progress][badge-progress-400] | ![reactive-bulma, v4.0.0, open issues][badge-issues-open-400] | ![reactive-bulma, v4.0.0, closed issues][badge-issues-closed-400] |
 
-[badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat
-[badge-issues-open-100]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/1?label=%20&style=flat
-[badge-issues-closed-100]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/1?label=%20&style=flat
-[badge-progress-200]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/2?label=%20&style=flat
-[badge-issues-open-200]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/2?label=%20&style=flat
-[badge-issues-closed-200]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/2?label=%20&style=flat
-[badge-progress-300]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/3?label=%20&style=flat
-[badge-issues-open-300]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/3?label=%20&style=flat
-[badge-issues-closed-300]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/3?label=%20&style=flat
-[badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat
-[badge-issues-open-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat
-[badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat
+[badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=informational
+[badge-issues-open-100]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=yellow
+[badge-issues-closed-100]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=success
+[badge-progress-200]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/2?label=%20&style=flat&color=informational
+[badge-issues-open-200]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/2?label=%20&style=flat&color=yellow
+[badge-issues-closed-200]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/2?label=%20&style=flat&color=success
+[badge-progress-300]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/3?label=%20&style=flat&color=informational
+[badge-issues-open-300]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/3?label=%20&style=flat&color=yellow
+[badge-issues-closed-300]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/3?label=%20&style=flat&color=success
+[badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=informational
+[badge-issues-open-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=yellow
+[badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=success
 
 In case you want the short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
 
