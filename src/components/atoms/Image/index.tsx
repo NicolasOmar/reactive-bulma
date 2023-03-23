@@ -11,11 +11,7 @@ const Image: React.FC<ImageProps> = ({
   fixedSize = 'is-1by1',
   style = null
 }) => {
-  const figureClasses = parseClasses([
-    'image',
-    isRounded ? 'is-rounded' : null,
-    fixedSize
-  ])
+  const figureClasses = parseClasses(['image', fixedSize])
   const imageClasses = isRounded ? 'is-rounded' : undefined
   const _testId =
     testId ?? parseTestId({ tag: 'image', parsedClasses: figureClasses })
