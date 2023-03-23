@@ -29,19 +29,20 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ## Status
 
- ![reactive-bulma, Npm Version][badge-npm-version]
- ![reactive-bulma, Npm Bundle Size][badge-npm-size]
- ![reactive-bulma, Npm Downloads][badge-npm-downloads]
- [![reactive-bulma, Netlify Status][badge-netlify-status]][link-netlify-status]
- ![reactive-bulma, Code Coverage][badge-code-coverage]
- [![reactive-bulma, Quality Gate Status][badge-soundcloud-quality]][link-soundcloud-status]
- [![reactive-bulma, Maintainability Rating][badge-soundcloud-maintanibility]][link-soundcloud-status]
- [![reactive-bulma, Security Rating][badge-soundcloud-security]][link-soundcloud-status]
- [![reactive-bulma, Technical Debt][badge-soundcloud-tech-debt]][link-soundcloud-status]
- ![reactive-bulma, GitHub Repo stars][badge-github-repo-stars]
- ![reactive-bulma, GitHub commit activity][badge-github-commits]
- ![reactive-bulma, GitHub last commit][badge-github-last-commit]
- [![reactive-bulma, Semantic Commits][badge-semantic-commits]][link-semantic-commits]
+ ![Npm Version][badge-npm-version]
+ ![Npm Bundle Size][badge-npm-size]
+ ![Npm Downloads][badge-npm-downloads]
+ [![Netlify Status][badge-netlify-status]][link-netlify-status]
+ [![Code Coverage][badge-code-coverage]][link-code-coverage]
+ [![Quality Gate Status][badge-soundcloud-quality]][link-soundcloud-status]
+ [![Maintainability Rating][badge-soundcloud-maintanibility]][link-soundcloud-status]
+ [![Security Rating][badge-soundcloud-security]][link-soundcloud-status]
+ [![Technical Debt][badge-soundcloud-tech-debt]][link-soundcloud-status]
+ [![Known Vulnerabilities][badge-snyk-status]][link-snyk-status]
+ ![GitHub Repo stars][badge-github-repo-stars]
+ ![GitHub commit activity][badge-github-commits]
+ ![GitHub last commit][badge-github-last-commit]
+ [![Semantic Commits][badge-semantic-commits]][link-semantic-commits]
 
 [badge-npm-version]: https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?label=npm%20version&logo=npm&labelColor=535353&color=success&style=flat
 [badge-npm-size]: https://img.shields.io/bundlephobia/min/reactive-bulma?label=bundle%20size&labelColor=535353&logo=npm&style=flat
@@ -49,11 +50,14 @@ Component library based on React, Bulma, Typescript and Rollup
 [badge-netlify-status]: https://api.netlify.com/api/v1/badges/3101f2b5-0e28-4734-b749-ebb0e3e413c6/deploy-status
 [link-netlify-status]: https://app.netlify.com/sites/reactivebulma/deploys
 [badge-code-coverage]: https://img.shields.io/codecov/c/github/nicolasomar/reactive-bulma?label=coverage&labelColor=535353&logo=codecov&style=flat
+[link-code-coverage]: https://app.codecov.io/gh/NicolasOmar/reactive-bulma
 [badge-soundcloud-quality]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=alert_status
 [badge-soundcloud-maintanibility]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=sqale_rating
 [badge-soundcloud-security]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=security_rating
 [badge-soundcloud-tech-debt]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=sqale_index
 [link-soundcloud-status]: https://sonarcloud.io/summary/new_code?id=NicolasOmar_reactive-bulma
+[badge-snyk-status]: https://img.shields.io/snyk/vulnerabilities/github/nicolasomar/reactive-bulma?logo=snyk
+[link-snyk-status]: https://snyk.io/test/github/nicolasomar/reactive-bulma
 [badge-github-repo-stars]: https://img.shields.io/github/stars/nicolasomar/reactive-bulma?label=stars&logo=github&labelColor=535353&style=flat
 [badge-github-commits]: https://img.shields.io/github/commit-activity/m/nicolasomar/reactive-bulma?logo=github
 [badge-github-last-commit]: https://img.shields.io/github/last-commit/nicolasomar/reactive-bulma?logo=github
@@ -62,27 +66,31 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ## Dependencies
 
-![reactive-bulma, react dependency][badge-dependency-react]
-![reactive-bulma, bulma dependency][badge-dependency-bulma]
-![reactive-bulma, typescript dependency][badge-dependency-typescript]
-![reactive-bulma, rollup dependency][badge-dependency-rollup]
-![reactive-bulma, semantic-release dependency][badge-dependency-semantic-release]
-![reactive-bulma, jest dependency][badge-dependency-jest]
-![reactive-bulma, prettier dependency][badge-dependency-prettier]
-![reactive-bulma, eslint dependency][badge-dependency-eslint]
-![reactive-bulma, husky dependency][badge-dependency-husky]
-![reactive-bulma, babel dependency][badge-dependency-babel]
+![react dependency][badge-dependency-react]
+![bulma dependency][badge-dependency-bulma]
+![typescript dependency][badge-dependency-typescript]
+![rollup dependency][badge-dependency-rollup]
+![storybook dependency][badge-dependency-storybook]
+![semantic-release dependency][badge-dependency-semantic-release]
+![babel dependency][badge-dependency-babel]
+![jest dependency][badge-dependency-jest]
+![react testing library dependency][badge-dependency-react-testing]
+![prettier dependency][badge-dependency-prettier]
+![eslint dependency][badge-dependency-eslint]
+![husky dependency][badge-dependency-husky]
 
 [badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
 [badge-dependency-typescript]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/typescript/main?logo=typescript
 [badge-dependency-rollup]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/rollup/main?logo=rollup.js
+[badge-dependency-storybook]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@storybook/react/main?logo=storybook
 [badge-dependency-semantic-release]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/semantic-release/main?logo=semantic-release
+[badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 [badge-dependency-jest]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/jest/main?logo=jest
+[badge-dependency-react-testing]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@testing-library/react/main?logo=testing-library
 [badge-dependency-prettier]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/prettier/main?logo=prettier
 [badge-dependency-eslint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/eslint/main?logo=eslint
 [badge-dependency-husky]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/husky/main?logo=husky
-[badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 
 ## Quick start
 
@@ -143,23 +151,23 @@ Having in mind the [versioning section](#versioning), repo's status in a glance 
 
 | Version | Progress | Open issues | Closed issues
 | :---: | :---: | :---: | :---: |
-| `v1.0.0` | ![reactive-bulma, v1.0.0, progress][badge-progress-100] | ![reactive-bulma, v1.0.0, open issues][badge-issues-open-100] | ![reactive-bulma, v1.0.0, closed issues][badge-issues-closed-100] |
-| `v2.0.0` | ![reactive-bulma, v2.0.0, progress][badge-progress-200] | ![reactive-bulma, v2.0.0, open issues][badge-issues-open-200] | ![reactive-bulma, v2.0.0, closed issues][badge-issues-closed-200] |
-| `v3.0.0` | ![reactive-bulma, v3.0.0, progress][badge-progress-300] | ![reactive-bulma, v3.0.0, open issues][badge-issues-open-300] | ![reactive-bulma, v3.0.0, closed issues][badge-issues-closed-300] |
-| `v4.0.0` | ![reactive-bulma, v4.0.0, progress][badge-progress-400] | ![reactive-bulma, v4.0.0, open issues][badge-issues-open-400] | ![reactive-bulma, v4.0.0, closed issues][badge-issues-closed-400] |
+| `v1.0.0` | ![v1.0.0, progress][badge-progress-100] | ![v1.0.0, open][badge-issues-open-100] | ![v1.0.0, closed][badge-issues-closed-100] |
+| `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
+| `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
+| `v4.0.0` | ![v4.0.0, progress][badge-progress-400] | ![v4.0.0, open][badge-issues-open-400] | ![v4.0.0, closed][badge-issues-closed-400] |
 
-[badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat
-[badge-issues-open-100]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/1?label=%20&style=flat
-[badge-issues-closed-100]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/1?label=%20&style=flat
-[badge-progress-200]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/2?label=%20&style=flat
-[badge-issues-open-200]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/2?label=%20&style=flat
-[badge-issues-closed-200]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/2?label=%20&style=flat
-[badge-progress-300]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/3?label=%20&style=flat
-[badge-issues-open-300]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/3?label=%20&style=flat
-[badge-issues-closed-300]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/3?label=%20&style=flat
-[badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat
-[badge-issues-open-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat
-[badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat
+[badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=informational
+[badge-issues-open-100]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=yellow
+[badge-issues-closed-100]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=success
+[badge-progress-200]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/2?label=%20&style=flat&color=informational
+[badge-issues-open-200]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/2?label=%20&style=flat&color=yellow
+[badge-issues-closed-200]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/2?label=%20&style=flat&color=success
+[badge-progress-300]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/3?label=%20&style=flat&color=informational
+[badge-issues-open-300]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/3?label=%20&style=flat&color=yellow
+[badge-issues-closed-300]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/3?label=%20&style=flat&color=success
+[badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=informational
+[badge-issues-open-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=yellow
+[badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=success
 
 In case you want the short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
 

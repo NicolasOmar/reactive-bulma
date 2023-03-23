@@ -1,0 +1,26 @@
+{
+  "testing": {
+    "basicTestId": "test-image-1by1",
+    "testSrc": "https://bulma.io/images/placeholders/256x256.png",
+    "testClasses": {
+      "isRounded": "is-rounded"
+    }
+  },
+  "storybook": {
+    "src": {
+      "description": "Required. The image source that will be shown"
+    },
+    "testId": {
+      "description": "ID used to locate the element in unit test suites"
+    },
+    "isRounded": {
+      "description": "Will add round borders to image's shape"
+    },
+    "fixedSize": {
+      "description": "Sets image size based on one of fixed ratios/fixed sizes"
+    },
+    "style": {
+      "description": "Custom styling applicable for specific cases"
+    }
+  }
+}
