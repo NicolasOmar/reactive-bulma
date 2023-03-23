@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.3...v1.11.0) (2023-03-23)
+
+
+### Features
+
+* Create component "Image" ([#78](https://github.com/NicolasOmar/reactive-bulma/issues/78)) ([#33](https://github.com/NicolasOmar/reactive-bulma/issues/33)) ([84ba022](https://github.com/NicolasOmar/reactive-bulma/commit/84ba022b0d16141e47a94894c54e7a53e8d15d4b))
+
 ## [1.10.3](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.2...v1.10.3) (2023-03-16)
 
 
