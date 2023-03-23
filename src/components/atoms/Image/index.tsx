@@ -16,7 +16,7 @@ const Image: React.FC<ImageProps> = ({
   const _testId =
     testId ?? parseTestId({ tag: 'image', parsedClasses: figureClasses })
 
-  return src ? (
+  return (
     <figure
       data-testid={_testId}
       className={figureClasses}
@@ -27,7 +27,7 @@ const Image: React.FC<ImageProps> = ({
         className={imageClasses}
       />
     </figure>
-  ) : null
+  )
 }
 
 export default Image
