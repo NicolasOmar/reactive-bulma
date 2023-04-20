@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.11.0...v1.11.1) (2023-04-20)
+
+
+### Bug Fixes
+
+* Update vulnerable packages ([#89](https://github.com/NicolasOmar/reactive-bulma/issues/89)) ([#53](https://github.com/NicolasOmar/reactive-bulma/issues/53)) ([#54](https://github.com/NicolasOmar/reactive-bulma/issues/54)) ([#85](https://github.com/NicolasOmar/reactive-bulma/issues/85)) ([#87](https://github.com/NicolasOmar/reactive-bulma/issues/87)) ([#88](https://github.com/NicolasOmar/reactive-bulma/issues/88)) ([8133bb3](https://github.com/NicolasOmar/reactive-bulma/commit/8133bb34a4875ecdc2b6a8796a006eade5f43881))
+
 # [1.11.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.10.3...v1.11.0) (2023-03-23)
 
 
