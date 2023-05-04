@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.11.1...v1.12.0) (2023-05-04)
+
+
+### Bug Fixes
+
+* Updating dependencies and adding component base files ([467facb](https://github.com/NicolasOmar/reactive-bulma/commit/467facb273aca5b725e824491321d8e54cdcb91b))
+
+
+### Features
+
+* Create component "Box" ([#97](https://github.com/NicolasOmar/reactive-bulma/issues/97)) ([#30](https://github.com/NicolasOmar/reactive-bulma/issues/30)) ([#90](https://github.com/NicolasOmar/reactive-bulma/issues/90)) ([#93](https://github.com/NicolasOmar/reactive-bulma/issues/93)) ([#94](https://github.com/NicolasOmar/reactive-bulma/issues/94)) ([#95](https://github.com/NicolasOmar/reactive-bulma/issues/95)) ([#96](https://github.com/NicolasOmar/reactive-bulma/issues/96)) ([1ad58be](https://github.com/NicolasOmar/reactive-bulma/commit/1ad58be4f0ba61241a91b92f0ee76b5a02feb2a6))
+
 ## [1.11.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.11.0...v1.11.1) (2023-04-20)
 
 
