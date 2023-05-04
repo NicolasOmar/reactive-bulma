@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Block from '.'
 // MOCKS
@@ -9,9 +9,9 @@ export default {
   title: 'Atoms/Block',
   component: Block,
   argTypes: mocks.storybook
-} as ComponentMeta<typeof Block>
+} as Meta<typeof Block>
 
-const Template: ComponentStory<typeof Block> = args => <Block {...args} />
+const Template: StoryFn<typeof Block> = args => <Block {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'No children'

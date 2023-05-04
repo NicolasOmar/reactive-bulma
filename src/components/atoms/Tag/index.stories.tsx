@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Tag from '.'
 // MOCKS
@@ -10,9 +10,9 @@ export default {
   component: Tag,
   argTypes: mocks.storybook,
   args: mocks.testing.baseConfig
-} as ComponentMeta<typeof Tag>
+} as Meta<typeof Tag>
 
-const Template: ComponentStory<typeof Tag> = args => <Tag {...args} />
+const Template: StoryFn<typeof Tag> = args => <Tag {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'With a text'

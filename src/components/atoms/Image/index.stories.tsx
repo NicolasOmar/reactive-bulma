@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Image from '.'
 // MOCKS
@@ -12,9 +12,9 @@ export default {
   args: {
     src: mocks.testing.testSrc
   }
-} as ComponentMeta<typeof Image>
+} as Meta<typeof Image>
 
-const Template: ComponentStory<typeof Image> = args => (
+const Template: StoryFn<typeof Image> = args => (
   <section style={{ maxWidth: '300px', maxHeight: '300px' }}>
     <Image {...args} />
   </section>
