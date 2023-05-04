@@ -22,17 +22,17 @@ WithParagraph.args = {
   children: <p>{mocks.testing.testParagraph}</p>
 }
 
-export const OneBlock = Template.bind({})
-OneBlock.storyName = 'Several paragraphs. One Box'
-OneBlock.args = {
+export const OneBox = Template.bind({})
+OneBox.storyName = 'Several paragraphs. One Box'
+OneBox.args = {
   children: Array(5)
     .fill(null)
     .map((_, i) => <p key={`block-p-${i}`}>{mocks.testing.testParagraph}</p>)
 }
 
-export const SeveralBlocks = Template.bind({})
-SeveralBlocks.storyName = 'Several paragraphs. Several Boxes'
-SeveralBlocks.args = {
+export const SeveralBoxes = Template.bind({})
+SeveralBoxes.storyName = 'Several paragraphs. Several Boxes'
+SeveralBoxes.args = {
   children: Array(5)
     .fill(null)
     .map((_, i) => (
