@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import ProgressBar from '.'
 // MOCKS
@@ -9,11 +9,9 @@ export default {
   title: 'Atoms/ProgressBar',
   component: ProgressBar,
   argTypes: mocks.storybook
-} as ComponentMeta<typeof ProgressBar>
+} as Meta<typeof ProgressBar>
 
-const Template: ComponentStory<typeof ProgressBar> = args => (
-  <ProgressBar {...args} />
-)
+const Template: StoryFn<typeof ProgressBar> = args => <ProgressBar {...args} />
 
 export const NoText = Template.bind({})
 NoText.storyName = 'Basic'

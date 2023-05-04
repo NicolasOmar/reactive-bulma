@@ -77,3 +77,7 @@ export interface ImageProps
   fixedSize?: fixedImageSizeType
   isRounded?: boolean
 }
+
+export interface BoxProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'section'> {}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Column from '.'
 import Button from '../Button'
@@ -10,9 +10,9 @@ export default {
   title: 'Atoms/Column',
   component: Column,
   argTypes: mocks.storybook
-} as ComponentMeta<typeof Column>
+} as Meta<typeof Column>
 
-const Template: ComponentStory<typeof Column> = args => <Column {...args} />
+const Template: StoryFn<typeof Column> = args => <Column {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'No children'

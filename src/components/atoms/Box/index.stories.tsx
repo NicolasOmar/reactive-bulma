@@ -1,17 +1,17 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
-import Block from '.'
+import Box from '.'
 // MOCKS
 import mocks from './index.mocks.json'
 
 export default {
-  title: 'Atoms/Block',
-  component: Block,
+  title: 'Atoms/Box',
+  component: Box,
   argTypes: mocks.storybook
-} as Meta<typeof Block>
+} as Meta<typeof Box>
 
-const Template: StoryFn<typeof Block> = args => <Block {...args} />
+const Template: StoryFn<typeof Box> = args => <Box {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'No children'
@@ -22,20 +22,20 @@ WithParagraph.args = {
   children: <p>{mocks.testing.testParagraph}</p>
 }
 
-export const OneBlock = Template.bind({})
-OneBlock.storyName = 'Several paragraphs. One Block'
-OneBlock.args = {
+export const OneBox = Template.bind({})
+OneBox.storyName = 'Several paragraphs. One Box'
+OneBox.args = {
   children: Array(5)
     .fill(null)
     .map((_, i) => <p key={`block-p-${i}`}>{mocks.testing.testParagraph}</p>)
 }
 
-export const SeveralBlocks = Template.bind({})
-SeveralBlocks.storyName = 'Several paragraphs. Several Blocks'
-SeveralBlocks.args = {
+export const SeveralBoxes = Template.bind({})
+SeveralBoxes.storyName = 'Several paragraphs. Several Boxes'
+SeveralBoxes.args = {
   children: Array(5)
     .fill(null)
     .map((_, i) => (
-      <Block key={`block-${i}`}>{<p>{mocks.testing.testParagraph}</p>}</Block>
+      <Box key={`block-${i}`}>{<p>{mocks.testing.testParagraph}</p>}</Box>
     ))
 }
