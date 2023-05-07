@@ -1,0 +1,28 @@
+{
+  "testing": {
+    "baseConfig": {
+      "main": {
+        "text": "Welcome to ReactiveBulma",
+        "prop": "title"
+      }
+    }
+  },
+  "storybook": {
+    "main": {
+      "description": "Main title configuration object",
+      "table": {
+        "type": {
+          "summary": "{ text: string, size?: titleSize, prop: 'title' | 'subtitle' }"
+        }
+      }
+    },
+    "secondary": {
+      "description": "Secondary title configuration object",
+      "table": {
+        "type": {
+          "summary": "{ text: string, size?: titleSize, prop: 'title' | 'subtitle' }"
+        }
+      }
+    }
+  }
+}

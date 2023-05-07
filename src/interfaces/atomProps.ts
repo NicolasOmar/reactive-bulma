@@ -5,7 +5,8 @@ import {
   columnOffsetType,
   columnSizeType,
   fixedImageSizeType,
-  sizeType
+  sizeType,
+  titleSize
 } from '../types/styleTypes'
 
 interface BasicProps {
@@ -81,3 +82,16 @@ export interface ImageProps
 export interface BoxProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'section'> {}
+
+export interface TitleSectionProps
+  extends BasicProps,
+    React.ComponentPropsWithoutRef<'p'> {
+  text: string
+  size?: titleSize
+  prop: 'title' | 'subtitle'
+}
+
+export interface TitleProps {
+  main?: TitleSectionProps
+  secondary?: TitleSectionProps
+}
