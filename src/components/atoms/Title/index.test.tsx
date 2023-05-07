@@ -1,5 +1,5 @@
 import React from 'react'
-import { cleanup, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENT
 import Title from '.'
@@ -29,15 +29,15 @@ describe('Title', () => {
       const alteredSizeConfig = {
         main: {
           ...baseConfig.main,
+          testId: _size,
           size: _size
         }
       } as TitleProps
 
       render(<Title {...alteredSizeConfig} />)
-      const sizedTestId = screen.getByTestId('title-test')
+      const sizedTestId = screen.getByTestId(_size)
       expect(sizedTestId).toBeInTheDocument()
       expect(sizedTestId.classList).toContain(_size)
-      cleanup()
     })
   })
 
@@ -48,5 +48,19 @@ describe('Title', () => {
 
     expect(titleTestId.innerHTML).toEqual(withSubtitle.main.text)
     expect(subtitleTestId.innerHTML).toEqual(withSubtitle.secondary.text)
+  })
+
+  test('Should be check the title with spaced css class', () => {
+    const spacedConfig = {
+      ...withSubtitle,
+      main: {
+        ...withSubtitle.main,
+        isSpaced: true
+      }
+    }
+    render(<Title {...(spacedConfig as TitleProps)} />)
+    const titleTestId = screen.getByTestId('title-test')
+
+    expect(titleTestId.classList).toContain('is-spaced')
   })
 })
