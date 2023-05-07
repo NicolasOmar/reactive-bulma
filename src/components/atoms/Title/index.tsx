@@ -5,11 +5,15 @@ import { parseClasses } from '../../../functions/parsers'
 const renderTitleSection = (
   section: TitleSectionProps
 ): React.ReactElement | null => {
-  const sectionClasses = parseClasses([section?.prop, section?.size ?? 'is-6'])
+  const sectionClasses = parseClasses([
+    section?.prop,
+    section?.size ?? 'is-6',
+    section?.prop === 'title' && section?.isSpaced ? 'is-spaced' : null
+  ])
 
   return section ? (
     <p
-      data-testid={section?.testId}
+      data-testid={section?.testId ?? `${section?.prop}-test`}
       className={sectionClasses}
     >
       {section?.text}

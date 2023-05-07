@@ -89,6 +89,7 @@ export interface TitleSectionProps
   text: string
   size?: titleSize
   prop: 'title' | 'subtitle'
+  isSpaced?: boolean
 }
 
 export interface TitleProps {
