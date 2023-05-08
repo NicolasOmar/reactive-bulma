@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.12.0...v1.13.0) (2023-05-08)
+
+
+### Features
+
+* Create component "Title" ([#103](https://github.com/NicolasOmar/reactive-bulma/issues/103)) ([#36](https://github.com/NicolasOmar/reactive-bulma/issues/36)) ([0d301cc](https://github.com/NicolasOmar/reactive-bulma/commit/0d301ccd1ac76217aeeec66f55f3aae130dcbb66))
+
 # [1.12.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.11.1...v1.12.0) (2023-05-04)
 
 
