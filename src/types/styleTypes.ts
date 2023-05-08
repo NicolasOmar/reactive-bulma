@@ -22,6 +22,8 @@ export type columnSizeType =
   | 'is-11'
   | 'is-12'
 
+export type titleSize = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
+
 export type columnOffsetType =
   | 'is-offset-1'
   | 'is-offset-2'

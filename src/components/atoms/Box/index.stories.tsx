@@ -27,7 +27,7 @@ OneBox.storyName = 'Several paragraphs. One Box'
 OneBox.args = {
   children: Array(5)
     .fill(null)
-    .map((_, i) => <p key={`block-p-${i}`}>{mocks.testing.testParagraph}</p>)
+    .map((_, i) => <p key={`box-p-${i}`}>{mocks.testing.testParagraph}</p>)
 }
 
 export const SeveralBoxes = Template.bind({})
@@ -36,6 +36,6 @@ SeveralBoxes.args = {
   children: Array(5)
     .fill(null)
     .map((_, i) => (
-      <Box key={`block-${i}`}>{<p>{mocks.testing.testParagraph}</p>}</Box>
+      <Box key={`box-${i}`}>{<p>{mocks.testing.testParagraph}</p>}</Box>
     ))
 }
