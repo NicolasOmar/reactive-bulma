@@ -1,0 +1,10 @@
+{
+  "storybook": {
+
+  },
+  "testing": {
+    "baseExample": {
+      "iconLabel": "home"
+    }
+  }
+}

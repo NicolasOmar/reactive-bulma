@@ -52,6 +52,18 @@ export type basicColorType =
   | 'is-warning'
   | 'is-danger'
 
+export type textColorType =
+  | 'has-text-white'
+  | 'has-text-black'
+  | 'has-text-light'
+  | 'has-text-dark'
+  | 'has-text-primary'
+  | 'has-text-link'
+  | 'has-text-info'
+  | 'has-text-success'
+  | 'has-text-warning'
+  | 'has-text-danger'
+
 export type fixedImageSizeType =
   | 'is-16x16'
   | 'is-24x24'

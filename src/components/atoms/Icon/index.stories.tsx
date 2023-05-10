@@ -3,12 +3,13 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Icon from '.'
 // MOCKS
-// import mocks from './index.mocks.json'
+import mocks from './index.mocks.json'
 
 export default {
   title: 'Atoms/Icon',
-  component: Icon
-  // argTypes: mocks.storybook
+  component: Icon,
+  // argTypes: mocks.storybook,
+  args: mocks.testing.baseExample
 } as Meta<typeof Icon>
 
 const Template: StoryFn<typeof Icon> = args => <Icon {...args} />
