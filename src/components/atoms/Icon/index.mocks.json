@@ -1,10 +1,51 @@
 {
   "storybook": {
-
+    "iconLabel": {
+      "description": "Sets the icon key work based on [Material Design icon list](https://pictogrammers.com/library/mdi/)"
+    },
+    "testId": {
+      "description": "ID used to locate the element in unit test suites"
+    },
+    "text": {
+      "description": "Sets the any text you want to show next to the icon"
+    },
+    "style": {
+      "description": "Custom styling applicable for specific cases"
+    },
+    "color": {
+      "description": "Color based on bulma's text color tokens"
+    },
+    "size": {
+      "description": "Set icons's size"
+    },
+    "colorMode": {
+      "description": "Special usage in case you want to set as dark or light mode"
+    },
+    "isSpinning": {
+      "description": "Animates the icon spinning 360°"
+    }
   },
   "testing": {
     "baseExample": {
       "iconLabel": "home"
+    },
+    "textIncluded": {
+      "text": "Home"
+    },
+    "otherIcon": {
+      "iconLabel": "snowflake"
+    },
+    "colored": {
+      "color": "has-text-info"
+    },
+    "bigSize": {
+      "size": "is-large"
+    },
+    "withDarkMode": {
+      "colorMode": "dark"
+    },
+    "withSpin": {
+      "isSpinning": true
     }
   }
 }
