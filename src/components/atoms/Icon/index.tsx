@@ -34,7 +34,22 @@ const Icon: React.FC<IconProps> = ({
     size ? `mdi-${iconSizes[size]}px` : 'mdi-24px'
   ])
   const _testId =
-    testId ?? parseTestId({ tag: 'icon', parsedClasses: iconClasses })
+    testId ??
+    parseTestId({
+      tag: 'icon',
+      parsedClasses: iconClasses,
+      rules: [
+        {
+          usedRegExp: /mdi-|mdi--/gm,
+          regExpReplacer: ''
+        },
+        {
+          usedRegExp: /mdi /gm,
+          regExpReplacer: '-'
+        }
+      ],
+      separator: '-'
+    })
   const iconComponent = (
     <span
       data-testid={_testId}
