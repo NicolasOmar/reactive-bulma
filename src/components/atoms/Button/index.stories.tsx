@@ -1,6 +1,6 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
-// COMPONENT
+// COMPONENTS
 import Button from '.'
 // MOCKS
 import mocks from './index.mocks.json'

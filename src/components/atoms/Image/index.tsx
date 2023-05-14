@@ -1,5 +1,5 @@
 import React from 'react'
-// PROPS
+// TYPES & INTERFACES
 import { ImageProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'

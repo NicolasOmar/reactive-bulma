@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import Image from '.'
 // MOCKS
 import mocks from './index.mocks.json'

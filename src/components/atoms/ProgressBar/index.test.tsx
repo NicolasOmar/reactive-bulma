@@ -1,7 +1,7 @@
 import React from 'react'
 import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import ProgressBar from '.'
 // MOCKS
 import mocks from './index.mocks.json'

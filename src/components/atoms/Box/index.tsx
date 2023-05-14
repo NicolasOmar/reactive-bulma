@@ -1,4 +1,5 @@
 import React from 'react'
+// TYPES & INTERFACES
 import { BoxProps } from '../../../interfaces/atomProps'
 
 const Box: React.FC<BoxProps> = ({
@@ -10,7 +11,7 @@ const Box: React.FC<BoxProps> = ({
     <section
       data-testid={testId}
       className='box'
-      style={style || undefined}
+      style={style ?? undefined}
     >
       {children}
     </section>

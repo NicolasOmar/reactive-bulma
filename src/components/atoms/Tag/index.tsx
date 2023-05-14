@@ -1,6 +1,8 @@
 import React from 'react'
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+// TYPES & INTERFACES
 import { TagProps } from '../../../interfaces/atomProps'
+// PARSERS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Tag: React.FC<TagProps> = ({
   text,
@@ -41,7 +43,7 @@ const Tag: React.FC<TagProps> = ({
   return withAddon ? (
     <section
       data-testid={_testId}
-      style={style || undefined}
+      style={style ?? undefined}
       className={tagsWrapperClasses}
     >
       <span className={tagClasses}>{text}</span>
@@ -58,7 +60,7 @@ const Tag: React.FC<TagProps> = ({
   ) : (
     <span
       data-testid={_testId}
-      style={style || undefined}
+      style={style ?? undefined}
       className={tagClasses}
     >
       {text}

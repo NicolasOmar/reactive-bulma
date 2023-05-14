@@ -1,5 +1,5 @@
 import React from 'react'
-// PROPS
+// TYPES & INTERFACES
 import { ColumnProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
@@ -25,7 +25,7 @@ const Column: React.FC<ColumnProps> = ({
     <section
       data-testid={_testId}
       className={columnClasses}
-      style={style || undefined}
+      style={style ?? undefined}
     >
       {children}
     </section>

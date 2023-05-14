@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import Title from '.'
 // TYPES & INTERFACES
 import { TitleProps } from '../../../interfaces/atomProps'

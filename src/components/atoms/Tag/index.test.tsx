@@ -1,7 +1,7 @@
 import React from 'react'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import Tag from '.'
 // TYPES & INTERFACES
 import { basicColorType, sizeType } from '../../../types/styleTypes'
