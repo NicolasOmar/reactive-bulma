@@ -5,7 +5,9 @@ import {
   columnOffsetType,
   columnSizeType,
   fixedImageSizeType,
+  iconColorModeType,
   sizeType,
+  textColorType,
   titleSize
 } from '../types/styleTypes'
 
@@ -95,4 +97,13 @@ export interface TitleSectionProps
 export interface TitleProps {
   main?: TitleSectionProps
   secondary?: TitleSectionProps
+}
+
+export interface IconProps extends BasicProps {
+  iconLabel: string
+  text?: string
+  color?: textColorType
+  size?: Exclude<sizeType, 'is-normal'>
+  colorMode?: iconColorModeType
+  isSpinning?: boolean
 }

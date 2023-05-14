@@ -30,14 +30,14 @@ describe('Tag', () => {
 
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
-      const coloredTestId = `test-tag-${_size.replace('is-', '')}`
+      const resizedTestId = `test-tag-${_size.replace('is-', '')}`
       render(
         <Tag
           {...{ ...baseConfig, size: _size as Exclude<sizeType, 'is-normal'> }}
         />
       )
-      const testColorTag = screen.getByTestId(coloredTestId)
-      expect(testColorTag.classList).toContain(_size)
+      const testSizedTag = screen.getByTestId(resizedTestId)
+      expect(testSizedTag.classList).toContain(_size)
     })
   })
 
