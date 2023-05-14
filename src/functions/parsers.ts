@@ -25,7 +25,7 @@ export const parseTestId = (config: ParseTestIdProps): string => {
       )
     }
   } else {
-    fixedClassString = config.parsedClasses
+    fixedClassString = fixedClassString
       .replace(`${config.tag}`, '')
       .replace(/is-/gm, '-')
   }

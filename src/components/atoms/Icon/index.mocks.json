@@ -26,7 +26,7 @@
     }
   },
   "testing": {
-    "baseExample": {
+    "baseConfig": {
       "iconLabel": "home"
     },
     "textIncluded": {
@@ -46,6 +46,16 @@
     },
     "withSpin": {
       "isSpinning": true
+    },
+    "baseIconTestId": "test-icon-home-24px",
+    "sizes": [
+      "is-small",
+      "is-medium",
+      "is-large"
+    ],
+    "testClasses": {
+      "colorMode": "light",
+      "isSpinning": "spin"
     }
   }
 }

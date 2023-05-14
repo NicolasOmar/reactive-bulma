@@ -10,7 +10,7 @@ export default {
   title: 'Atoms/Icon',
   component: Icon,
   argTypes: mocks.storybook,
-  args: mocks.testing.baseExample
+  args: mocks.testing.baseConfig
 } as Meta<typeof Icon>
 
 const Template: StoryFn<typeof Icon> = args => <Icon {...args} />

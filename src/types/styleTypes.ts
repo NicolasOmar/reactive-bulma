@@ -90,3 +90,5 @@ export type fixedImageSizeType =
   | 'is-1by3'
 
 export type sizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
+
+export type iconColorModeType = 'light' | 'dark'

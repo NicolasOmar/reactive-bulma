@@ -3,12 +3,7 @@ import { IconProps } from '../../../interfaces/atomProps'
 import { parseClasses } from '../../../functions/parsers'
 import { textColorType } from '../../../types/styleTypes'
 import { parseTestId } from '../../../functions/parsers'
-
-const iconSizes = {
-  'is-small': 24,
-  'is-medium': 36,
-  'is-large': 48
-}
+import { IconSizeEnum } from '../../../types/componentEnums'
 
 const generateIconContainer = (
   icon: React.ReactElement,
@@ -31,7 +26,7 @@ const Icon: React.FC<IconProps> = ({
     `mdi-${iconLabel}`,
     colorMode ? `mdi-${colorMode}` : null,
     isSpinning ? 'mdi-spin' : null,
-    size ? `mdi-${iconSizes[size]}px` : 'mdi-24px'
+    size ? `mdi-${IconSizeEnum[size]}px` : 'mdi-24px'
   ])
   const _testId =
     testId ??
@@ -50,13 +45,17 @@ const Icon: React.FC<IconProps> = ({
       ],
       separator: '-'
     })
+  const _internalTestId = `${_testId}-i`
   const iconComponent = (
     <span
       data-testid={_testId}
       style={style || undefined}
       className={iconSpanClasses}
     >
-      <i className={iconClasses}></i>
+      <i
+        data-testid={_internalTestId}
+        className={iconClasses}
+      ></i>
       {text ? <span>{text}</span> : null}
     </span>
   )

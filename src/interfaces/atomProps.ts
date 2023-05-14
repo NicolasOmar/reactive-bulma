@@ -5,6 +5,7 @@ import {
   columnOffsetType,
   columnSizeType,
   fixedImageSizeType,
+  iconColorModeType,
   sizeType,
   textColorType,
   titleSize
@@ -103,6 +104,6 @@ export interface IconProps extends BasicProps {
   text?: string
   color?: textColorType
   size?: Exclude<sizeType, 'is-normal'>
-  colorMode?: 'light' | 'dark'
-  isSpinning: boolean
+  colorMode?: iconColorModeType
+  isSpinning?: boolean
 }
