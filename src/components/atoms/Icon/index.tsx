@@ -11,7 +11,17 @@ const generateIconContainer = (
   color: textColorType | null
 ) => {
   const containerClasses = color ? `icon-text-${color}` : 'icon-text'
-  const containerTestId = `test-${containerClasses}-container`
+  const containerTestId = parseTestId({
+    tag: 'icon-container',
+    parsedClasses: color?.toString() ?? '',
+    rules: [
+      {
+        usedRegExp: /has-text/gm,
+        regExpReplacer: ''
+      }
+    ]
+  })
+
   return (
     <span
       data-testid={containerTestId}

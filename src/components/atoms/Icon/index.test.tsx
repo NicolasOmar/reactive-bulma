@@ -11,8 +11,14 @@ import { IconSizeEnum } from '../../../types/componentEnums'
 import mocks from './index.mocks.json'
 
 describe('Icon', () => {
-  const { baseIconTestId, baseConfig, textIncluded, sizes, testClasses } =
-    mocks.testing
+  const {
+    baseIconTestId,
+    baseConfig,
+    textIncluded,
+    colors,
+    sizes,
+    testClasses
+  } = mocks.testing
 
   test('Should render with required props only', () => {
     render(<Icon {...({ ...baseConfig } as IconProps)} />)
@@ -27,6 +33,23 @@ describe('Icon', () => {
     const testIconWithText = screen.getByText(textIncluded.text)
     expect(testIconWithText).toBeInTheDocument()
     expect(testIconWithText.innerHTML).toBe(textIncluded.text)
+  })
+
+  test('Should render with different colors', () => {
+    colors.forEach(_color => {
+      const coloredConfig = {
+        ...baseConfig,
+        ...textIncluded,
+        color: _color
+      } as IconProps
+      const coloredTestId = `test-icon-container-${_color.replace(
+        'has-text-',
+        ''
+      )}`
+      render(<Icon {...coloredConfig} />)
+      const testColoredIcon = screen.getByTestId(coloredTestId)
+      expect(testColoredIcon.classList).toContain(`icon-text-${_color}`)
+    })
   })
 
   test('Should render with different sizes', () => {
