@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.13.0...v1.14.0) (2023-05-14)
+
+
+### Bug Fixes
+
+* Fixing issue table sorting ([801a4c3](https://github.com/NicolasOmar/reactive-bulma/commit/801a4c3d3f8e41dfa89560a6fd3e3a011e96c20d))
+
+
+### Features
+
+* Create "Icon" component ([#104](https://github.com/NicolasOmar/reactive-bulma/issues/104)) ([#34](https://github.com/NicolasOmar/reactive-bulma/issues/34)) ([9c26b4c](https://github.com/NicolasOmar/reactive-bulma/commit/9c26b4cab24afad5b59069899bda21ce20c45343))
+
 # [1.13.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.12.0...v1.13.0) (2023-05-08)
 
 
