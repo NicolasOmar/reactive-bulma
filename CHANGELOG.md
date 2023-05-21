@@ -1,3 +1,17 @@
+# [1.15.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.14.0...v1.15.0) (2023-05-21)
+
+
+### Bug Fixes
+
+* Adding a new UT for colored icons with text for more coverage ([2b272a9](https://github.com/NicolasOmar/reactive-bulma/commit/2b272a9a97f4c192906f3c74ad7307708ed995c0))
+* Adding needed reference comments on imports and reducing code smells ([caa9188](https://github.com/NicolasOmar/reactive-bulma/commit/caa91884363bffff5e95654c4217c931b952b80e))
+* Small code improves in unit tests. Also README updated ([d2dd007](https://github.com/NicolasOmar/reactive-bulma/commit/d2dd007f81f7e46f9e814416b909fc63f4e91ffb))
+
+
+### Features
+
+* Create component "Input" ([#107](https://github.com/NicolasOmar/reactive-bulma/issues/107)) ([#40](https://github.com/NicolasOmar/reactive-bulma/issues/40)) ([5fc8207](https://github.com/NicolasOmar/reactive-bulma/commit/5fc8207259344b09f80ef6c01506a0009d57f89e))
+
 # [1.14.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.13.0...v1.14.0) (2023-05-14)
 
 
