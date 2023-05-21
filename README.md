@@ -29,20 +29,20 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ## Status
 
- ![Npm Version][badge-npm-version]
- ![Npm Bundle Size][badge-npm-size]
- ![Npm Downloads][badge-npm-downloads]
- [![Netlify Status][badge-netlify-status]][link-netlify-status]
- [![Code Coverage][badge-code-coverage]][link-code-coverage]
- [![Quality Gate Status][badge-soundcloud-quality]][link-soundcloud-status]
- [![Maintainability Rating][badge-soundcloud-maintanibility]][link-soundcloud-status]
- [![Security Rating][badge-soundcloud-security]][link-soundcloud-status]
- [![Technical Debt][badge-soundcloud-tech-debt]][link-soundcloud-status]
- [![Known Vulnerabilities][badge-snyk-status]][link-snyk-status]
- ![GitHub Repo stars][badge-github-repo-stars]
- ![GitHub commit activity][badge-github-commits]
- ![GitHub last commit][badge-github-last-commit]
- [![Semantic Commits][badge-semantic-commits]][link-semantic-commits]
+![Npm Version][badge-npm-version]
+![Npm Bundle Size][badge-npm-size]
+![Npm Downloads][badge-npm-downloads]
+[![Netlify Status][badge-netlify-status]][link-netlify-status]
+[![Code Coverage][badge-code-coverage]][link-code-coverage]
+[![Quality Gate Status][badge-soundcloud-quality]][link-soundcloud-status]
+[![Maintainability Rating][badge-soundcloud-maintanibility]][link-soundcloud-status]
+[![Security Rating][badge-soundcloud-security]][link-soundcloud-status]
+[![Technical Debt][badge-soundcloud-tech-debt]][link-soundcloud-status]
+[![Known Vulnerabilities][badge-snyk-status]][link-snyk-status]
+![GitHub Repo stars][badge-github-repo-stars]
+![GitHub commit activity][badge-github-commits]
+![GitHub last commit][badge-github-last-commit]
+[![Semantic Commits][badge-semantic-commits]][link-semantic-commits]
 
 [badge-npm-version]: https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?label=npm%20version&logo=npm&labelColor=535353&color=success&style=flat
 [badge-npm-size]: https://img.shields.io/bundlephobia/min/reactive-bulma?label=bundle%20size&labelColor=535353&logo=npm&style=flat
@@ -68,10 +68,11 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ![react dependency][badge-dependency-react]
 ![bulma dependency][badge-dependency-bulma]
+![material design dependency][badge-dependency-material-design]
 ![typescript dependency][badge-dependency-typescript]
 ![rollup dependency][badge-dependency-rollup]
 ![storybook dependency][badge-dependency-storybook]
-![semantic-release dependency][badge-dependency-semantic-release]
+![semantic release dependency][badge-dependency-semantic-release]
 ![babel dependency][badge-dependency-babel]
 ![jest dependency][badge-dependency-jest]
 ![react testing library dependency][badge-dependency-react-testing]
@@ -81,9 +82,10 @@ Component library based on React, Bulma, Typescript and Rollup
 
 [badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
+[badge-dependency-material-design]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@mdi/font/main?logo=materialdesignicons
 [badge-dependency-typescript]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/typescript/main?logo=typescript
 [badge-dependency-rollup]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/rollup/main?logo=rollup.js
-[badge-dependency-storybook]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@storybook/react/main?logo=storybook
+[badge-dependency-storybook]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/storybook/main?logo=storybook
 [badge-dependency-semantic-release]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/semantic-release/main?logo=semantic-release
 [badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 [badge-dependency-jest]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/jest/main?logo=jest
@@ -107,7 +109,10 @@ In case you have cloned the repo, it will show you the following folders:
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
 - `src:`
-  - `components:` Location of all used components, using [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/) (`atoms` -> `molecules` -> `organisms`).
+  - `components:` Location of all used components, using [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/)
+    - `atoms` (from `v1.0.0`).
+    - `molecules` (from `v2.0.0`).
+    - `organisms` (from `v3.0.0`).
 
 ## Documentation
 

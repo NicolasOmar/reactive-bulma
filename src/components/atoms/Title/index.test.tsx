@@ -57,10 +57,10 @@ describe('Title', () => {
         ...withSubtitle.main,
         isSpaced: true
       }
-    }
-    render(<Title {...(spacedConfig as TitleProps)} />)
-    const titleTestId = screen.getByTestId('title-test')
+    } as TitleProps
 
+    render(<Title {...spacedConfig} />)
+    const titleTestId = screen.getByTestId('title-test')
     expect(titleTestId.classList).toContain('is-spaced')
   })
 })

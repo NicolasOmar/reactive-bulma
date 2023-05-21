@@ -46,6 +46,7 @@ describe('Icon', () => {
         'has-text-',
         ''
       )}`
+
       render(<Icon {...coloredConfig} />)
       const testColoredIcon = screen.getByTestId(coloredTestId)
       expect(testColoredIcon.classList).toContain(`icon-text-${_color}`)

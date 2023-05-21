@@ -26,8 +26,8 @@ describe('Button', () => {
       const styleValue = (testStyles as any)[prop]
       const styleObj = { [prop]: styleValue }
       render(<Button style={styleObj} />)
-      const styleButton = screen.getByTestId(basicTestId)
-      expect(styleButton.style[prop as any]).toContain(styleValue)
+      const testStyleButton = screen.getByTestId(basicTestId)
+      expect(testStyleButton.style[prop as any]).toContain(styleValue)
       cleanup()
     })
   })
@@ -38,8 +38,8 @@ describe('Button', () => {
       const classObj = { [prop]: classValue }
       const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
       render(<Button {...classObj} />)
-      const classButton = screen.getByTestId(testIdWithClass)
-      expect(classButton.className).toContain(classValue)
+      const testClassButton = screen.getByTestId(testIdWithClass)
+      expect(testClassButton.className).toContain(classValue)
       cleanup()
     })
   })
