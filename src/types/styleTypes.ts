@@ -22,7 +22,7 @@ export type columnSizeType =
   | 'is-11'
   | 'is-12'
 
-export type titleSize = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
+export type titleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
 
 export type columnOffsetType =
   | 'is-offset-1'
@@ -89,6 +89,6 @@ export type fixedImageSizeType =
   | 'is-1by2'
   | 'is-1by3'
 
-export type sizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
+export type basicSizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
 
 export type iconColorModeType = 'light' | 'dark'

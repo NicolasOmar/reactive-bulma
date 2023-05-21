@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import Icon from '.'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
-import { sizeType } from '../../../types/styleTypes'
+import { basicSizeType } from '../../../types/styleTypes'
 import { IconSizeEnum } from '../../../types/componentEnums'
 // MOCKS
 import mocks from './index.mocks.json'
@@ -56,7 +56,7 @@ describe('Icon', () => {
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
       const sizedTestId = `test-icon-home-${
-        IconSizeEnum[_size as Exclude<sizeType, 'is-normal'>]
+        IconSizeEnum[_size as Exclude<basicSizeType, 'is-normal'>]
       }px`
       const sizedConfig = { ...baseConfig, size: _size } as IconProps
 

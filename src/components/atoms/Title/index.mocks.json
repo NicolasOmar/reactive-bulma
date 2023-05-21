@@ -52,7 +52,7 @@
       "description": "Main title configuration object",
       "table": {
         "type": {
-          "summary": "{ text: string, size?: titleSize, prop: 'title' | 'subtitle' }"
+          "summary": "{ text: string, size?: titleSizeType, prop: 'title' | 'subtitle' }"
         }
       }
     },
@@ -60,7 +60,7 @@
       "description": "Secondary title configuration object",
       "table": {
         "type": {
-          "summary": "{ text: string, size?: titleSize, prop: 'title' | 'subtitle' }"
+          "summary": "{ text: string, size?: titleSizeType, prop: 'title' | 'subtitle' }"
         }
       }
     }
