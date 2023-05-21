@@ -109,10 +109,9 @@ export interface IconProps extends BasicProps {
   isSpinning?: boolean
 }
 
-export interface InputProps
-  extends BasicProps,
-    React.ComponentPropsWithoutRef<'input'> {
+export interface InputProps extends BasicProps {
   type: inputTypes
+  text?: string
   isDisabled?: boolean
   isReadonly?: boolean
   color?: basicColorType
@@ -120,4 +119,6 @@ export interface InputProps
   isRounded?: boolean
   isHovered?: boolean
   isFocused?: boolean
+  onClick?: () => void
+  onChange?: () => void
 }

@@ -19,6 +19,10 @@ const Template: StoryFn<typeof Input> = args => <Input {...args} />
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'With required props only'
 
+export const WithText = Template.bind({})
+WithText.storyName = 'With Text'
+WithText.args = mocks.testing.withText as InputProps
+
 export const Colored = Template.bind({})
 Colored.storyName = 'Colored'
 Colored.args = mocks.testing.redColored as InputProps

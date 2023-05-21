@@ -35,8 +35,17 @@
     }
   },
   "testing": {
+    "basicTestId": "test-input",
+    "testClasses": {
+      "isRounded": "is-rounded",
+      "isHovered": "is-hovered",
+      "isFocused": "is-focused"
+    },
     "basicExample": {
       "type": "text"
+    },
+    "withText": {
+      "text": "Welcome to reactive-bulma"
     },
     "redColored": {
       "color": "is-danger"
