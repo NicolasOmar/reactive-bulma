@@ -37,6 +37,27 @@
   "testing": {
     "basicExample": {
       "type": "text"
+    },
+    "redColored": {
+      "color": "is-danger"
+    },
+    "bigSize": {
+      "size": "is-large"
+    },
+    "rounded": {
+      "isRounded": true
+    },
+    "hovered": {
+      "isHovered": true
+    },
+    "focused": {
+      "isFocused": true
+    },
+    "disabled": {
+      "isDisabled": true
+    },
+    "readOnly": {
+      "isReadonly": true
     }
   }
 }
