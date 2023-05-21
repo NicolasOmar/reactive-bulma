@@ -1,5 +1,5 @@
 import React from 'react'
-// COMPONENT
+// TYPES & INTERFACES
 import { ButtonProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'

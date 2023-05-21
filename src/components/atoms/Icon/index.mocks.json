@@ -48,11 +48,8 @@
       "isSpinning": true
     },
     "baseIconTestId": "test-icon-home-24px",
-    "sizes": [
-      "is-small",
-      "is-medium",
-      "is-large"
-    ],
+    "colors": ["has-text-black","has-text-danger","has-text-warning"],
+    "sizes": ["is-small","is-medium","is-large"],
     "testClasses": {
       "colorMode": "light",
       "isSpinning": "spin"

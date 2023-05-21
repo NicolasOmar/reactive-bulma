@@ -1,4 +1,5 @@
 import React from 'react'
+// TYPES & INTERFACES
 import { BlockProps } from '../../../interfaces/atomProps'
 
 const Block: React.FC<BlockProps> = ({
@@ -10,7 +11,7 @@ const Block: React.FC<BlockProps> = ({
     <section
       data-testid={testId}
       className='block'
-      style={style || undefined}
+      style={style ?? undefined}
     >
       {children}
     </section>

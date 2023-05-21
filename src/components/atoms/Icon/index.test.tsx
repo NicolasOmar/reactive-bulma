@@ -1,18 +1,24 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import Icon from '.'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
-import { sizeType } from '../../../types/styleTypes'
+import { basicSizeType } from '../../../types/styleTypes'
 import { IconSizeEnum } from '../../../types/componentEnums'
 // MOCKS
 import mocks from './index.mocks.json'
 
 describe('Icon', () => {
-  const { baseIconTestId, baseConfig, textIncluded, sizes, testClasses } =
-    mocks.testing
+  const {
+    baseIconTestId,
+    baseConfig,
+    textIncluded,
+    colors,
+    sizes,
+    testClasses
+  } = mocks.testing
 
   test('Should render with required props only', () => {
     render(<Icon {...({ ...baseConfig } as IconProps)} />)
@@ -29,10 +35,28 @@ describe('Icon', () => {
     expect(testIconWithText.innerHTML).toBe(textIncluded.text)
   })
 
+  test('Should render with different colors', () => {
+    colors.forEach(_color => {
+      const coloredConfig = {
+        ...baseConfig,
+        ...textIncluded,
+        color: _color
+      } as IconProps
+      const coloredTestId = `test-icon-container-${_color.replace(
+        'has-text-',
+        ''
+      )}`
+
+      render(<Icon {...coloredConfig} />)
+      const testColoredIcon = screen.getByTestId(coloredTestId)
+      expect(testColoredIcon.classList).toContain(`icon-text-${_color}`)
+    })
+  })
+
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
       const sizedTestId = `test-icon-home-${
-        IconSizeEnum[_size as Exclude<sizeType, 'is-normal'>]
+        IconSizeEnum[_size as Exclude<basicSizeType, 'is-normal'>]
       }px`
       const sizedConfig = { ...baseConfig, size: _size } as IconProps
 

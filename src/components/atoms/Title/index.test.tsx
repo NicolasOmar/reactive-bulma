@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import Title from '.'
 // TYPES & INTERFACES
 import { TitleProps } from '../../../interfaces/atomProps'
@@ -57,10 +57,10 @@ describe('Title', () => {
         ...withSubtitle.main,
         isSpaced: true
       }
-    }
-    render(<Title {...(spacedConfig as TitleProps)} />)
-    const titleTestId = screen.getByTestId('title-test')
+    } as TitleProps
 
+    render(<Title {...spacedConfig} />)
+    const titleTestId = screen.getByTestId('title-test')
     expect(titleTestId.classList).toContain('is-spaced')
   })
 })

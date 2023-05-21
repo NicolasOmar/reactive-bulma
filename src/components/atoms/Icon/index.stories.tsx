@@ -2,9 +2,10 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Icon from '.'
+// TYPES & INTERFACES
+import { IconProps } from '../../../interfaces/atomProps'
 // MOCKS
 import mocks from './index.mocks.json'
-import { IconProps } from '../../../interfaces/atomProps'
 
 export default {
   title: 'Atoms/Icon',

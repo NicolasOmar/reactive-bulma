@@ -22,7 +22,7 @@
       "description": "The text will be shown in the `Button`"
     },
     "type": {
-      "description": "What type of button will be implemented",
+      "description": "What type of button will be used",
       "table": {
         "type": {
           "summary": "button | reset | submit"

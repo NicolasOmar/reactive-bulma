@@ -1,6 +1,8 @@
 import React from 'react'
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+// TYPES & INTERFACES
 import { ProgressBarProps } from '../../../interfaces/atomProps'
+// PARSERS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
   value = 0,

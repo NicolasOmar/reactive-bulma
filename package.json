@@ -31,7 +31,7 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "storybook dev",
+    "start": "storybook dev --no-open -p 6006",
     "test": "jest --watchAll=false --verbose",
     "test:ci": "npm test -- --coverage",
     "lint": "eslint src/**/*.tsx",

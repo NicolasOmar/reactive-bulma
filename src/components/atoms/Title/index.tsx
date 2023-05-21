@@ -1,5 +1,7 @@
 import React from 'react'
+// TYPES & INTERFACES
 import { TitleProps, TitleSectionProps } from '../../../interfaces/atomProps'
+// PARSERS
 import { parseClasses } from '../../../functions/parsers'
 
 const renderTitleSection = (

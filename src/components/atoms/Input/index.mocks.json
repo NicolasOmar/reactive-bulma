@@ -1,0 +1,72 @@
+{
+  "storybook": {
+    "testId": {
+      "description": "ID used to locate the element in unit test suites"
+    },
+    "type": {
+      "description": "`Required`. What type of input will be used"
+    },
+    "isDisabled": {
+      "description": "Will disable the input"
+    },
+    "isReadonly": {
+      "description": "Will show the input as a normal one, but is not editable and has no shadow"
+    },
+    "style": {
+      "description": "Custom styling applicable for specific cases"
+    },
+    "color": {
+      "description": "Color based on bulma's text color tokens"
+    },
+    "size": {
+      "description": "Set input's size"
+    },
+    "isRounded": {
+      "description": "Will add round borders to input's shape"
+    },
+    "isHovered": {
+      "description": "Will add a specific border when the input is hovered by the user"
+    },
+    "isFocused": {
+      "description": "Will add a specific border when the input is focused by the user"
+    },
+    "onClick": {
+      "description": "Click function, alone does not nothing, but can be reused for other components"
+    }
+  },
+  "testing": {
+    "basicTestId": "test-input",
+    "testClasses": {
+      "isRounded": "is-rounded",
+      "isHovered": "is-hovered",
+      "isFocused": "is-focused"
+    },
+    "basicExample": {
+      "type": "text"
+    },
+    "withText": {
+      "text": "Welcome to reactive-bulma"
+    },
+    "redColored": {
+      "color": "is-danger"
+    },
+    "bigSize": {
+      "size": "is-large"
+    },
+    "rounded": {
+      "isRounded": true
+    },
+    "hovered": {
+      "isHovered": true
+    },
+    "focused": {
+      "isFocused": true
+    },
+    "disabled": {
+      "isDisabled": true
+    },
+    "readOnly": {
+      "isReadonly": true
+    }
+  }
+}

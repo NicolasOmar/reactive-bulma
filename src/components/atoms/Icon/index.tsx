@@ -1,14 +1,36 @@
 import React from 'react'
+// TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
-import { parseClasses } from '../../../functions/parsers'
 import { textColorType } from '../../../types/styleTypes'
-import { parseTestId } from '../../../functions/parsers'
 import { IconSizeEnum } from '../../../types/componentEnums'
+// PARSERS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const generateIconContainer = (
   icon: React.ReactElement,
   color: textColorType | null
-) => <span className={`icon-text${color ? ` ${color}` : ''}`}>{icon}</span>
+) => {
+  const containerClasses = color ? `icon-text-${color}` : 'icon-text'
+  const containerTestId = parseTestId({
+    tag: 'icon-container',
+    parsedClasses: color?.toString() ?? '',
+    rules: [
+      {
+        usedRegExp: /has-text/gm,
+        regExpReplacer: ''
+      }
+    ]
+  })
+
+  return (
+    <span
+      data-testid={containerTestId}
+      className={containerClasses}
+    >
+      {icon}
+    </span>
+  )
+}
 
 const Icon: React.FC<IconProps> = ({
   iconLabel,
@@ -49,7 +71,7 @@ const Icon: React.FC<IconProps> = ({
   const iconComponent = (
     <span
       data-testid={_testId}
-      style={style || undefined}
+      style={style ?? undefined}
       className={iconSpanClasses}
     >
       <i

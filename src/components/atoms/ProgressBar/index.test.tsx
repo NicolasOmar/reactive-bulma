@@ -1,8 +1,10 @@
 import React from 'react'
 import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-// COMPONENT
+// COMPONENTS
 import ProgressBar from '.'
+// TYPES & INTERFACES
+import { ProgressBarProps } from '../../../interfaces/atomProps'
 // MOCKS
 import mocks from './index.mocks.json'
 
@@ -26,12 +28,12 @@ describe('ProgressBar', () => {
 
   test('Should render the loading/indeterminated logic with its value', () => {
     inputValues.forEach(_input => {
-      render(
-        <ProgressBar
-          value={_input}
-          isLoading={true}
-        />
-      )
+      const testInputValueConfig = {
+        value: _input,
+        isLoading: true
+      } as ProgressBarProps
+
+      render(<ProgressBar {...testInputValueConfig} />)
       const testInputProgress = screen.getByTestId(basicTestId)
       expect(testInputProgress.innerHTML).toBe('0%')
       cleanup()

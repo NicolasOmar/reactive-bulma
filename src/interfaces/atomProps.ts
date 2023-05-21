@@ -6,10 +6,11 @@ import {
   columnSizeType,
   fixedImageSizeType,
   iconColorModeType,
-  sizeType,
+  basicSizeType,
   textColorType,
-  titleSize
+  titleSizeType
 } from '../types/styleTypes'
+import { inputTypes } from '../types/domTypes'
 
 interface BasicProps {
   testId?: string
@@ -37,7 +38,7 @@ export interface ButtonProps
   isLoading?: boolean
   isDisabled?: boolean
   isStatic?: boolean
-  size?: sizeType
+  size?: basicSizeType
   onClick?: () => void
 }
 
@@ -48,7 +49,7 @@ export interface ProgressBarProps
   max?: number
   style?: React.CSSProperties
   color?: basicColorType
-  size?: sizeType
+  size?: basicSizeType
   isLoading?: boolean
 }
 
@@ -65,7 +66,7 @@ export interface TagProps
   color?: basicColorType
   isLight?: boolean
   isRounded?: boolean
-  size?: Exclude<sizeType, 'is-normal'>
+  size?: Exclude<basicSizeType, 'is-normal'>
   withDelete?: boolean
   withAddon?: boolean
   addonText?: string
@@ -89,7 +90,7 @@ export interface TitleSectionProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'p'> {
   text: string
-  size?: titleSize
+  size?: titleSizeType
   prop: 'title' | 'subtitle'
   isSpaced?: boolean
 }
@@ -103,7 +104,21 @@ export interface IconProps extends BasicProps {
   iconLabel: string
   text?: string
   color?: textColorType
-  size?: Exclude<sizeType, 'is-normal'>
+  size?: Exclude<basicSizeType, 'is-normal'>
   colorMode?: iconColorModeType
   isSpinning?: boolean
+}
+
+export interface InputProps extends BasicProps {
+  type: inputTypes
+  text?: string
+  isDisabled?: boolean
+  isReadonly?: boolean
+  color?: basicColorType
+  size?: basicSizeType
+  isRounded?: boolean
+  isHovered?: boolean
+  isFocused?: boolean
+  onClick?: () => void
+  onChange?: () => void
 }
