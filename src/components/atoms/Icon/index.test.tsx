@@ -68,7 +68,7 @@ describe('Icon', () => {
 
   test('Should render with different classes', () => {
     Object.keys(testClasses).forEach(prop => {
-      const classValue = (testClasses as any)[prop]
+      const classValue = (testClasses as Record<string, string>)[prop]
       const testIdWithClass = `test-icon-home-${classValue}-24px-i`
       const classConfig = { ...baseConfig, [prop]: classValue }
 

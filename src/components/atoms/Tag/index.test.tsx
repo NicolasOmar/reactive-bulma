@@ -49,7 +49,7 @@ describe('Tag', () => {
 
   test('Should render with different classes', () => {
     Object.keys(testClasses).forEach(prop => {
-      const classValue = (testClasses as any)[prop]
+      const classValue = (testClasses as Record<string, string>)[prop]
       const testIdWithClass = `test-tag-${classValue.replace('is-', '')}`
       const testClassConfig = { ...baseConfig, [prop]: classValue }
 
