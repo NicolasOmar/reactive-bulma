@@ -9,7 +9,7 @@ import { TextAreaProps } from '../../../interfaces/atomProps'
 import mocks from './index.mocks.json'
 
 describe('TextArea', () => {
-  const { basicTestId, basicExample, testClasses } = mocks.testing
+  const { basicTestId, testClasses } = mocks.testing
 
   test('Should render with required props only', () => {
     render(<TextArea />)
@@ -19,7 +19,7 @@ describe('TextArea', () => {
 
   test('Should render with a value', () => {
     const testValue = '150'
-    const basicProps = { ...basicExample, text: testValue } as TextAreaProps
+    const basicProps = { text: testValue } as TextAreaProps
 
     render(<TextArea {...basicProps} />)
     const testAreaWithText = screen.getByText(testValue)
@@ -44,7 +44,6 @@ describe('TextArea', () => {
 
   test('Should check that the input has been clicked', () => {
     const clickeableConfig = {
-      ...basicExample,
       onClick: jest.fn()
     } as TextAreaProps
 
@@ -58,7 +57,6 @@ describe('TextArea', () => {
 
   test('Should check that it has not been clicked because it is disabled', () => {
     const notClickeableInput = {
-      ...basicExample,
       isDisabled: true,
       onClick: jest.fn()
     } as TextAreaProps

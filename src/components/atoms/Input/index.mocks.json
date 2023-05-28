@@ -6,6 +6,9 @@
     "type": {
       "description": "`Required`. What type of input will be used"
     },
+    "text": {
+      "description": "The value that will be shown on the input"
+    },
     "isDisabled": {
       "description": "Will disable the input"
     },
@@ -31,7 +34,10 @@
       "description": "Will add a specific border when the input is focused by the user"
     },
     "onClick": {
-      "description": "Click function, alone does not nothing, but can be reused for other components"
+      "description": "Click function. Alone does not nothing, but can be reused for other components"
+    },
+    "onChange": {
+      "description": "Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components"
     }
   },
   "testing": {

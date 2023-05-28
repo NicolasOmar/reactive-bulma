@@ -38,7 +38,7 @@ const Input: React.FC<InputProps> = ({
     <input
       data-testid={_testId}
       type={type}
-      value={text ?? undefined}
+      defaultValue={text ?? undefined}
       disabled={isDisabled}
       readOnly={isReadonly}
       style={style ?? undefined}

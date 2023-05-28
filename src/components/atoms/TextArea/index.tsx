@@ -48,6 +48,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   return (
     <textarea
       data-testid={_testId}
+      defaultValue={text ?? undefined}
       cols={cols ?? undefined}
       rows={rows ?? undefined}
       disabled={isDisabled}
@@ -56,9 +57,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       className={textAreaClasses}
       onClick={onClick ?? undefined}
       onChange={onChange ?? undefined}
-    >
-      {text}
-    </textarea>
+    />
   )
 }
 
