@@ -1,52 +1,64 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { InputProps } from '../../../interfaces/atomProps'
+import { TextAreaProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const Input: React.FC<InputProps> = ({
+const TextArea: React.FC<TextAreaProps> = ({
   testId = null,
-  type,
   text = null,
+  cols = null,
+  rows = null,
   isDisabled = false,
   isReadonly = false,
+  isFixedSize = false,
   style = null,
   color = null,
   size = null,
-  isRounded = null,
   isHovered = null,
   isFocused = null,
   onClick = null,
   onChange = null
 }) => {
-  const inputClasses = parseClasses([
-    'input',
+  const textAreaClasses = parseClasses([
+    'textarea',
     color,
     size,
-    isRounded ? 'is-rounded' : null,
     isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null
+    isFocused ? 'is-focused' : null,
+    isFixedSize ? 'has-fixed-size' : null
   ])
   const _testId =
     testId ??
     parseTestId({
-      tag: 'input',
-      parsedClasses: inputClasses
+      tag: 'textarea',
+      parsedClasses: textAreaClasses,
+      rules: [
+        {
+          usedRegExp: /textarea/gm,
+          regExpReplacer: ''
+        },
+        {
+          usedRegExp: /is-|has-/gm,
+          regExpReplacer: '-'
+        }
+      ]
     })
 
   return (
-    <input
+    <textarea
       data-testid={_testId}
-      type={type}
       defaultValue={text ?? undefined}
+      cols={cols ?? undefined}
+      rows={rows ?? undefined}
       disabled={isDisabled}
       readOnly={isReadonly}
       style={style ?? undefined}
-      className={inputClasses}
+      className={textAreaClasses}
       onClick={onClick ?? undefined}
       onChange={onChange ?? undefined}
     />
   )
 }
 
-export default Input
+export default TextArea

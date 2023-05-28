@@ -23,7 +23,7 @@ describe('Button', () => {
 
   test('Should render the Button with specfic CSS styles', () => {
     Object.keys(testStyles).forEach(prop => {
-      const styleValue = (testStyles as any)[prop]
+      const styleValue = (testStyles as Record<string, string>)[prop]
       const styleObj = { [prop]: styleValue }
       render(<Button style={styleObj} />)
       const testStyleButton = screen.getByTestId(basicTestId)
@@ -34,7 +34,7 @@ describe('Button', () => {
 
   test('Should render the Button with specfic classes', () => {
     Object.keys(testClasses).forEach(prop => {
-      const classValue = (testClasses as any)[prop]
+      const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue }
       const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
       render(<Button {...classObj} />)

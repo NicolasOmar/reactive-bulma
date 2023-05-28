@@ -122,3 +122,9 @@ export interface InputProps extends BasicProps {
   onClick?: () => void
   onChange?: () => void
 }
+
+export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
+  cols?: number
+  rows?: number
+  isFixedSize?: boolean
+}

@@ -3,17 +3,20 @@
     "testId": {
       "description": "ID used to locate the element in unit test suites"
     },
-    "type": {
-      "description": "`Required`. What type of input will be used"
-    },
     "text": {
-      "description": "The value that will be shown on the input"
+      "description": "The value that will be shown on the text area"
+    },
+    "cols": {
+      "description": "Text area's columns value that sets its width"
+    },
+    "rows": {
+      "description": "Text area's rows value that sets its height"
     },
     "isDisabled": {
-      "description": "Will disable the input"
+      "description": "Will disable the text area"
     },
     "isReadonly": {
-      "description": "Will show the input as a normal one, but is not editable and has no shadow"
+      "description": "Will show the text area as a normal one, but is not editable and has no shadow"
     },
     "style": {
       "description": "Custom styling applicable for specific cases"
@@ -22,33 +25,30 @@
       "description": "Color based on bulma's text color tokens"
     },
     "size": {
-      "description": "Set input's size"
-    },
-    "isRounded": {
-      "description": "Will add round borders to input's shape"
+      "description": "Set text area's size"
     },
     "isHovered": {
-      "description": "Will add a specific border when the input is hovered by the user"
+      "description": "Will add a specific border when the text area is hovered by the user"
     },
     "isFocused": {
-      "description": "Will add a specific border when the input is focused by the user"
+      "description": "Will add a specific border when the text area is focused by the user"
+    },
+    "isFixedSize": {
+      "description": "Will disable characteristic sizable property by removing its control on bottom-right corner"
     },
     "onClick": {
-      "description": "Click function. Alone does not nothing, but can be reused for other components"
+      "description": "Click function, alone does not nothing, but can be reused for other components"
     },
     "onChange": {
       "description": "Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components"
     }
   },
   "testing": {
-    "basicTestId": "test-input",
+    "basicTestId": "test-textarea",
     "testClasses": {
-      "isRounded": "is-rounded",
       "isHovered": "is-hovered",
-      "isFocused": "is-focused"
-    },
-    "basicExample": {
-      "type": "text"
+      "isFocused": "is-focused",
+      "isFixedSize": "has-fixed-size"
     },
     "withText": {
       "text": "Welcome to reactive-bulma"
@@ -58,9 +58,6 @@
     },
     "bigSize": {
       "size": "is-large"
-    },
-    "rounded": {
-      "isRounded": true
     },
     "hovered": {
       "isHovered": true
@@ -73,6 +70,9 @@
     },
     "readOnly": {
       "isReadonly": true
+    },
+    "fixedSize": {
+      "isFixedSize": true
     }
   }
 }

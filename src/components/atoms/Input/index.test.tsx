@@ -3,9 +3,10 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Input from '.'
+// TYPES & INTERFACES
+import { InputProps } from '../../../interfaces/atomProps'
 // MOCKS
 import mocks from './index.mocks.json'
-import { InputProps } from '../../../interfaces/atomProps'
 
 describe('Input', () => {
   const { basicTestId, basicExample, testClasses } = mocks.testing
@@ -20,6 +21,7 @@ describe('Input', () => {
   test('Should render with a text value', () => {
     const testValue = '150'
     const basicProps = { ...basicExample, text: testValue } as InputProps
+
     render(<Input {...basicProps} />)
     const testInputWithText = screen.getByTestId(basicTestId)
     expect(testInputWithText).toBeInTheDocument()
@@ -28,12 +30,13 @@ describe('Input', () => {
 
   test('Should render with specfic classes', () => {
     Object.keys(testClasses).forEach(prop => {
-      const classValue = (testClasses as any)[prop]
-      const classObj = { [prop]: classValue } as InputProps
+      const classValue = (testClasses as Record<string, string>)[prop]
+      const classObj = { ...basicExample, [prop]: classValue } as InputProps
       const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
+
       render(<Input {...classObj} />)
-      const testClassButton = screen.getByTestId(testIdWithClass)
-      expect(testClassButton.className).toContain(classValue)
+      const testClassInput = screen.getByTestId(testIdWithClass)
+      expect(testClassInput.className).toContain(classValue)
       cleanup()
     })
   })
@@ -43,8 +46,10 @@ describe('Input', () => {
       ...basicExample,
       onClick: jest.fn()
     } as InputProps
+
     render(<Input {...clickeableConfig} />)
     const clickInput = screen.getByTestId(basicTestId)
+
     fireEvent.click(clickInput)
     expect(clickeableConfig.onClick).toHaveBeenCalled()
     expect(clickeableConfig.onClick).toHaveBeenCalledTimes(1)
@@ -71,8 +76,10 @@ describe('Input', () => {
       ...basicExample,
       onChange: jest.fn()
     } as InputProps
+
     render(<Input {...changeableConfig} />)
     const testInputWithChange = screen.getByTestId(basicTestId)
+
     fireEvent.change(testInputWithChange, { target: { value: valueToChange } })
     expect(changeableConfig.onChange).toHaveBeenCalled()
     expect(changeableConfig.onChange).toHaveBeenCalledTimes(1)
