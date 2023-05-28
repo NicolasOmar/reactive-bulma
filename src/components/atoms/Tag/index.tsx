@@ -51,7 +51,7 @@ const Tag: React.FC<TagProps> = ({
         <a
           data-testid={`${_testId}-delete`}
           className='tag is-delete'
-          onClick={onDeleteClick || undefined}
+          onClick={onDeleteClick ?? undefined}
         ></a>
       ) : (
         <span className={addonTagClasses}>{addonText}</span>
@@ -68,7 +68,7 @@ const Tag: React.FC<TagProps> = ({
         <button
           data-testid={`${_testId}-delete`}
           className='delete'
-          onClick={onDeleteClick || undefined}
+          onClick={onDeleteClick ?? undefined}
         />
       ) : null}
     </span>
