@@ -126,4 +126,5 @@ export interface InputProps extends BasicProps {
 export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
   cols?: number
   rows?: number
+  isFixedSize?: boolean
 }

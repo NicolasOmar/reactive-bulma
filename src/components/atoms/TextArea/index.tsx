@@ -11,6 +11,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   rows = null,
   isDisabled = false,
   isReadonly = false,
+  isFixedSize = false,
   style = null,
   color = null,
   size = null,
@@ -24,18 +25,29 @@ const TextArea: React.FC<TextAreaProps> = ({
     color,
     size,
     isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null
+    isFocused ? 'is-focused' : null,
+    isFixedSize ? 'has-fixed-size' : null
   ])
   const _testId =
     testId ??
     parseTestId({
       tag: 'textarea',
-      parsedClasses: textAreaClasses
+      parsedClasses: textAreaClasses,
+      rules: [
+        {
+          usedRegExp: /textarea/gm,
+          regExpReplacer: ''
+        },
+        {
+          usedRegExp: /is-|has-/gm,
+          regExpReplacer: '-'
+        }
+      ]
     })
+
   return (
     <textarea
       data-testid={_testId}
-      value={text ?? undefined}
       cols={cols ?? undefined}
       rows={rows ?? undefined}
       disabled={isDisabled}
@@ -44,7 +56,9 @@ const TextArea: React.FC<TextAreaProps> = ({
       className={textAreaClasses}
       onClick={onClick ?? undefined}
       onChange={onChange ?? undefined}
-    />
+    >
+      {text}
+    </textarea>
   )
 }
 
