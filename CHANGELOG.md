@@ -1,3 +1,16 @@
+# [1.16.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.15.0...v1.16.0) (2023-05-28)
+
+
+### Bug Fixes
+
+* Adding small type changes for different UTs ([171dff8](https://github.com/NicolasOmar/reactive-bulma/commit/171dff8d493e3b41f5aab67795e58b55d4cf1110))
+* Updating dependencies version to latest ([3ec7d79](https://github.com/NicolasOmar/reactive-bulma/commit/3ec7d790ec83fce5a9dcbda3e275f082e7328d4d))
+
+
+### Features
+
+* Create component "TextArea" ([#115](https://github.com/NicolasOmar/reactive-bulma/issues/115)) ([#39](https://github.com/NicolasOmar/reactive-bulma/issues/39)) ([970900d](https://github.com/NicolasOmar/reactive-bulma/commit/970900d953ec40ebb0f3556f5c4253c142fdcabb))
+
 # [1.15.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.14.0...v1.15.0) (2023-05-21)
 
 
