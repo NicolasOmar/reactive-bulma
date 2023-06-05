@@ -1,3 +1,16 @@
+# [1.17.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.16.0...v1.17.0) (2023-06-05)
+
+
+### Bug Fixes
+
+* Changing some stories titles for better explanation to the user ([75fe308](https://github.com/NicolasOmar/reactive-bulma/commit/75fe308fc8703da4f52894ffebc63bbf728b6b6e))
+* Solving small code smells. Updating README with minor changes ([49dfe8e](https://github.com/NicolasOmar/reactive-bulma/commit/49dfe8e9f6218c9db3529eb6720948af3afcfe20))
+
+
+### Features
+
+* Create component "Delete" ([#116](https://github.com/NicolasOmar/reactive-bulma/issues/116)) ([#32](https://github.com/NicolasOmar/reactive-bulma/issues/32)) ([095a6e2](https://github.com/NicolasOmar/reactive-bulma/commit/095a6e2c84799c5abf6da3c99b9486a2671180bb))
+
 # [1.16.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.15.0...v1.16.0) (2023-05-28)
 
 
