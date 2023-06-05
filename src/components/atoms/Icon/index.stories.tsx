@@ -32,7 +32,7 @@ Colored.storyName = 'Colored'
 Colored.args = mocks.testing.colored as IconProps
 
 export const BigSize = Template.bind({})
-BigSize.storyName = 'Big Size'
+BigSize.storyName = 'With Big Size'
 BigSize.args = mocks.testing.bigSize as IconProps
 
 export const WithDarkMode = Template.bind({})

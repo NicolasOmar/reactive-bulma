@@ -20,7 +20,7 @@ export const BasicExample = Template.bind({})
 BasicExample.storyName = 'With minimum config'
 
 export const SmallSize = Template.bind({})
-SmallSize.storyName = 'Big Size'
+SmallSize.storyName = 'With Big Size'
 SmallSize.args = mocks.testing.smallSize as TitleProps
 
 export const WithSubtitle = Template.bind({})

@@ -19,5 +19,5 @@ export const BasicExample = Template.bind({})
 BasicExample.storyName = 'Basic Example'
 
 export const BigSize = Template.bind({})
-BigSize.storyName = 'Big Size'
+BigSize.storyName = 'With Big Size'
 BigSize.args = mocks.testing.bigSize as IconProps
