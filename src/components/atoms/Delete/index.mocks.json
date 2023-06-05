@@ -1,0 +1,21 @@
+{
+  "storybook": {
+    "testId": {
+      "description": "ID used to locate the element in unit test suites"
+    },
+    "style": {
+      "description": "Custom styling applicable for specific cases"
+    },
+    "size": {
+      "description": "Set icons's size"
+    },
+    "onClick": {
+      "description": "Click function. Alone does not nothing, but can be reused for other components"
+    }
+  },
+  "testing": {
+    "bigSize": {
+      "size": "is-large"
+    }
+  }
+}
