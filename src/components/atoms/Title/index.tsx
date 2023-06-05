@@ -17,7 +17,7 @@ const renderTitleSection = (
     <p
       data-testid={section?.testId ?? `${section?.prop}-test`}
       className={sectionClasses}
-      style={section.style || undefined}
+      style={section.style ?? undefined}
     >
       {section?.text}
     </p>

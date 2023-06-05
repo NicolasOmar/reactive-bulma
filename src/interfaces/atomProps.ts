@@ -128,3 +128,8 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
   rows?: number
   isFixedSize?: boolean
 }
+
+export interface DeleteProps extends BasicProps {
+  size?: Exclude<basicSizeType, 'is-normal'>
+  onClick?: () => void
+}

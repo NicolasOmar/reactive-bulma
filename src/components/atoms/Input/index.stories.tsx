@@ -28,7 +28,7 @@ Colored.storyName = 'Colored'
 Colored.args = mocks.testing.redColored as InputProps
 
 export const BigSize = Template.bind({})
-BigSize.storyName = 'BigSize'
+BigSize.storyName = 'With Big Size'
 BigSize.args = mocks.testing.bigSize as InputProps
 
 export const Rounded = Template.bind({})

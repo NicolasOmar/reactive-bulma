@@ -31,7 +31,7 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ![Npm Version][badge-npm-version]
 ![Npm Bundle Size][badge-npm-size]
-![Npm Downloads][badge-npm-downloads]
+[![Npm Downloads][badge-npm-downloads]][link-npm-downloads]
 [![Netlify Status][badge-netlify-status]][link-netlify-status]
 [![Code Coverage][badge-code-coverage]][link-code-coverage]
 [![Quality Gate Status][badge-soundcloud-quality]][link-soundcloud-status]
@@ -47,6 +47,7 @@ Component library based on React, Bulma, Typescript and Rollup
 [badge-npm-version]: https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?label=npm%20version&logo=npm&labelColor=535353&color=success&style=flat
 [badge-npm-size]: https://img.shields.io/bundlephobia/min/reactive-bulma?label=bundle%20size&labelColor=535353&logo=npm&style=flat
 [badge-npm-downloads]: https://img.shields.io/npm/dm/reactive-bulma?label=downloads&labelColor=535353&style=flat&logo=npm
+[link-npm-downloads]: https://www.npmjs.com/package/reactive-bulma?activeTab=versions
 [badge-netlify-status]: https://api.netlify.com/api/v1/badges/3101f2b5-0e28-4734-b749-ebb0e3e413c6/deploy-status
 [link-netlify-status]: https://app.netlify.com/sites/reactivebulma/deploys
 [badge-code-coverage]: https://img.shields.io/codecov/c/github/nicolasomar/reactive-bulma?label=coverage&labelColor=535353&logo=codecov&style=flat
@@ -123,6 +124,7 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 - Run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
 - Run `npm start`.
 - Wait until a new tab opens with url <http://localhost:6006/> in your browser. 
+  - In case you want to initiate it on the background, you can run `npm run start:off`.
 
 Learn more about using `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
