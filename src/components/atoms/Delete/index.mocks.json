@@ -14,8 +14,10 @@
     }
   },
   "testing": {
+    "baseDeleteTestId": "test-delete",
     "bigSize": {
       "size": "is-large"
-    }
+    },
+    "sizes": ["is-small","is-medium","is-large"]
   }
 }
