@@ -4,7 +4,7 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Select: React.FC<SelectProps> = ({
   testId = null,
-  showOptions = 3,
+  showOptions = 1,
   options = [],
   isMultiple = false,
   color = null,
