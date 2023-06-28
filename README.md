@@ -124,7 +124,7 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 - Run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
 - Run `npm start`.
 - Wait until a new tab opens with url <http://localhost:6006/> in your browser. 
-  - In case you want to initiate it on the background, you can run `npm run start:off`.
+  - In case you want to initiate it on the background, you can run `npm run start:cli`.
 
 Learn more about using `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 

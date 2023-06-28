@@ -32,7 +32,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "storybook dev -p 6006",
-    "start:off": "npm start -- --no-open",
+    "start:cli": "npm start -- --no-open",
     "test": "jest --watchAll=false --verbose",
     "test:ci": "npm test -- --coverage",
     "lint": "eslint src/**/*.tsx",
