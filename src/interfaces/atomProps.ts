@@ -151,3 +151,5 @@ export interface SelectProps extends BasicProps {
   isFocused?: boolean
   onClick?: () => void
 }
+
+export type FileProps = BasicProps

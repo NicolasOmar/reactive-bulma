@@ -1,5 +1,7 @@
 import React from 'react'
+// TYPES & INTERFACES
 import { SelectProps } from '../../../interfaces/atomProps'
+// PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Select: React.FC<SelectProps> = ({

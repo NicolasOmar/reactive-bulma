@@ -4,9 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Select from '.'
 // TYPES & INTERFACES
+import { SelectProps } from '../../../interfaces/atomProps'
 // MOCKS
 import mocks from './index.mocks.json'
-import { SelectProps } from '../../../interfaces/atomProps'
 
 const getTestIds = (baseTestId: string) => [
   screen.getByTestId(baseTestId),
