@@ -1,0 +1,104 @@
+{
+  "storybook": {
+    "testId": {
+      "description": "ID used to locate the element in unit test suites"
+    },
+    "showOptions": {
+      "description": "Indicates how many options will be shown at first glance (before looking for the whole list"
+    },
+    "options": {
+      "description": "Indicates the options contained on the select",
+      "table": {
+        "type": {
+          "summary": "Array<{ id: string | number, name: string }>"
+        }
+      }
+    },
+    "isMultiple": {
+      "description": "Will allow multiple selection"
+    },
+    "style": {
+      "description": "Custom styling applicable for specific cases"
+    },
+    "color": {
+      "description": "Color based on bulma's color tokens"
+    },
+    "size": {
+      "description": "Set select's size"
+    },
+    "isRounded": {
+      "description": "Will add round borders to input's shape"
+    },
+    "isHovered": {
+      "description": "Will add a specific border when the input is hovered by the user"
+    },
+    "isFocused": {
+      "description": "Will add a specific border when the input is focused by the user"
+    },
+    "onClick": {
+      "description": "Click function. Alone does not nothing, but can be reused for other components"
+    }
+  },
+  "testing": {
+    "basicTestId": "test-select",
+    "oneOption": {
+      "options": [
+        {
+          "id": 0,
+          "name": "Option"
+        }
+      ]
+    },
+    "severalOptions": {
+      "options": [
+        {
+          "id": 0,
+          "name": "Option 0"
+        },
+        {
+          "id": 1,
+          "name": "Option 1"
+        },
+        {
+          "id": 2,
+          "name": "Option 2"
+        },
+        {
+          "id": 3,
+          "name": "Option 3"
+        }
+      ]
+    },
+    "showsThreeOptions": {
+      "isMultiple": true,
+      "showOptions": 3
+    },
+    "firstOptionSelected": {
+      "options": [
+        {
+          "id": 0,
+          "name": "Option 0",
+          "selected": true
+        },
+        {
+          "id": 1,
+          "name": "Option 1"
+        },
+        {
+          "id": 2,
+          "name": "Option 2"
+        },
+        {
+          "id": 3,
+          "name": "Option 3"
+        }
+      ]
+    },
+    "testClasses": {
+      "isMultiple": "is-multiple",
+      "isRounded": "is-rounded",
+      "isHovered": "is-hovered",
+      "isFocused": "is-focused"
+    }
+  }
+}

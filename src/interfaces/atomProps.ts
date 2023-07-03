@@ -133,3 +133,21 @@ export interface DeleteProps extends BasicProps {
   size?: Exclude<basicSizeType, 'is-normal'>
   onClick?: () => void
 }
+
+export interface SelectOption {
+  id: string | number
+  name: string
+  selected?: boolean
+}
+
+export interface SelectProps extends BasicProps {
+  options?: SelectOption[]
+  showOptions?: number
+  isMultiple?: boolean
+  color?: basicColorType
+  size?: basicSizeType
+  isRounded?: boolean
+  isHovered?: boolean
+  isFocused?: boolean
+  onClick?: () => void
+}
