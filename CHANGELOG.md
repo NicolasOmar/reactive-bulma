@@ -1,3 +1,15 @@
+# [1.18.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.17.0...v1.18.0) (2023-07-03)
+
+
+### Bug Fixes
+
+* Changing storybook start command on cli mode ([6a17a5e](https://github.com/NicolasOmar/reactive-bulma/commit/6a17a5e4ec22029569d24c1935e68caabe934b36))
+
+
+### Features
+
+* Create component "Select" ([#126](https://github.com/NicolasOmar/reactive-bulma/issues/126)) ([#37](https://github.com/NicolasOmar/reactive-bulma/issues/37)) ([294a2ab](https://github.com/NicolasOmar/reactive-bulma/commit/294a2ab85ab8091484c0d952ef7f80b459f81bbc))
+
 # [1.17.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.16.0...v1.17.0) (2023-06-05)
 
 
