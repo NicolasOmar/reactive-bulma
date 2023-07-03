@@ -16,6 +16,7 @@ Component library based on React, Bulma, Typescript and Rollup
 ## Table of contents
 
 - [Status](#status)
+- [Purpose](#purpose)
 - [Dependencies](#dependencies)
 - [Quick start](#quick-start)
 - [Folder structure](#folder-structure)
@@ -26,6 +27,9 @@ Component library based on React, Bulma, Typescript and Rollup
 - [Changelog](#changelog)
 - [Credit](#credit)
 - [License](#license)
+
+## Purpose
+After studying [a Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I started this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
 
 ## Status
 
