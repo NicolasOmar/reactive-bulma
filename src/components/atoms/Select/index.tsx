@@ -40,10 +40,11 @@ const Select: React.FC<SelectProps> = ({
         size={showOptions}
         data-testid={selectTestId}
       >
-        {options.map(({ id, name }, i) => (
+        {options.map(({ id, name, selected }, i) => (
           <option
             data-testid={`${selectTestId}-option-${i}`}
             key={id.toString()}
+            selected={selected ?? false}
             onClick={onClick ?? undefined}
           >
             {name}

@@ -18,4 +18,22 @@ OnlyRequiredProps.storyName = 'Only Required props'
 
 export const WithOneOption = Template.bind({})
 WithOneOption.storyName = 'With 1 option'
-WithOneOption.args = { ...mocks.testing.oneOption }
+WithOneOption.args = mocks.testing.oneOption
+
+export const WithSeveralOptions = Template.bind({})
+WithSeveralOptions.storyName = 'With several options'
+WithSeveralOptions.args = mocks.testing.severalOptions
+
+export const ShowsSeveralOptions = Template.bind({})
+ShowsSeveralOptions.storyName = 'With several options'
+ShowsSeveralOptions.args = {
+  ...mocks.testing.severalOptions,
+  ...mocks.testing.showsThreeOptions
+}
+
+export const FirstOptionsSelected = Template.bind({})
+FirstOptionsSelected.storyName = 'First option selected'
+FirstOptionsSelected.args = {
+  ...mocks.testing.showsThreeOptions,
+  ...mocks.testing.firstOptionSelected
+}

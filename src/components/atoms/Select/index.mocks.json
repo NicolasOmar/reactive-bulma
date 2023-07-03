@@ -48,6 +48,57 @@
           "name": "Option"
         }
       ]
+    },
+    "severalOptions": {
+      "options": [
+        {
+          "id": 0,
+          "name": "Option 0"
+        },
+        {
+          "id": 1,
+          "name": "Option 1"
+        },
+        {
+          "id": 2,
+          "name": "Option 2"
+        },
+        {
+          "id": 3,
+          "name": "Option 3"
+        }
+      ]
+    },
+    "showsThreeOptions": {
+      "isMultiple": true,
+      "showOptions": 3
+    },
+    "firstOptionSelected": {
+      "options": [
+        {
+          "id": 0,
+          "name": "Option 0",
+          "selected": true
+        },
+        {
+          "id": 1,
+          "name": "Option 1"
+        },
+        {
+          "id": 2,
+          "name": "Option 2"
+        },
+        {
+          "id": 3,
+          "name": "Option 3"
+        }
+      ]
+    },
+    "testClasses": {
+      "isMultiple": "is-multiple",
+      "isRounded": "is-rounded",
+      "isHovered": "is-hovered",
+      "isFocused": "is-focused"
     }
   }
 }

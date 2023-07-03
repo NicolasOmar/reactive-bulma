@@ -137,6 +137,7 @@ export interface DeleteProps extends BasicProps {
 export interface SelectOption {
   id: string | number
   name: string
+  selected?: boolean
 }
 
 export interface SelectProps extends BasicProps {
