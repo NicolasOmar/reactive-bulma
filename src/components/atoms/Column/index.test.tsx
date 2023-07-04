@@ -14,6 +14,7 @@ describe('Column', () => {
     const columnTestId = screen.getByTestId(basicTestId)
     expect(columnTestId).toBeInTheDocument()
   })
+
   test('Should render the Button with specfic classes', () => {
     const classValue = 'is-narrow'
     const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
