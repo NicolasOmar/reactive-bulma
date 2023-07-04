@@ -7,11 +7,18 @@ import Column from '.'
 import mocks from './index.mocks.json'
 
 describe('Column', () => {
-  const { basicTestId } = mocks.testing
+  const { basicTestId, testNarrowColumn } = mocks.testing
 
   test('Should render without children', () => {
     render(<Column />)
     const columnTestId = screen.getByTestId(basicTestId)
     expect(columnTestId).toBeInTheDocument()
+  })
+  test('Should render the Button with specfic classes', () => {
+    const classValue = 'is-narrow'
+    const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
+    render(<Column {...testNarrowColumn} />)
+    const testClassColumn = screen.getByTestId(testIdWithClass)
+    expect(testClassColumn.className).toContain(classValue)
   })
 })

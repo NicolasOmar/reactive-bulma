@@ -31,14 +31,14 @@ describe('File', () => {
     expect(testDefaultIcon).toBeInTheDocument()
   })
 
-  test('Should render the Button with specfic classes', () => {
+  test('Should render the component with specfic classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue }
       const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
       render(<File {...classObj} />)
-      const testClassButton = screen.getByTestId(testIdWithClass)
-      expect(testClassButton.className).toContain(classValue)
+      const testClassFile = screen.getByTestId(testIdWithClass)
+      expect(testClassFile.className).toContain(classValue)
       cleanup()
     })
   })
