@@ -9,7 +9,9 @@ import File from '.'
 describe('File', () => {
   test('Should render without any props', () => {
     render(<File />)
-    const testFile = screen.getByText('Choose a file…')
+    const testFile = screen.getByTestId('test-file')
+    const testFileInput = screen.getByTestId('test-file-input')
     expect(testFile).toBeInTheDocument()
+    expect(testFileInput).toBeInTheDocument()
   })
 })

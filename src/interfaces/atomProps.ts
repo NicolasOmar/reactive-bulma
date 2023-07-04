@@ -152,4 +152,14 @@ export interface SelectProps extends BasicProps {
   onClick?: () => void
 }
 
-export type FileProps = BasicProps
+export interface FileProps extends BasicProps {
+  fileName?: string
+  uploadIcon?: IconProps
+  uploadText?: string
+  buttonOnRight?: boolean
+  isFullWidth?: boolean
+  isBoxed?: boolean
+  color?: basicColorType
+  size?: basicSizeType
+  onClick?: () => void
+}
