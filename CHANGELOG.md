@@ -1,3 +1,16 @@
+# [1.19.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.18.0...v1.19.0) (2023-07-05)
+
+
+### Bug Fixes
+
+* Adding purpose section to README ([188a2aa](https://github.com/NicolasOmar/reactive-bulma/commit/188a2aa0eadc40e49e2e8196224cd58dc0575ee8))
+* Updating dependencies to last versions ([72ab901](https://github.com/NicolasOmar/reactive-bulma/commit/72ab9010f44a6dd54391ed301d56c9c977c6fba8))
+
+
+### Features
+
+* Create component "File" ([#129](https://github.com/NicolasOmar/reactive-bulma/issues/129)) ([#38](https://github.com/NicolasOmar/reactive-bulma/issues/38)) ([c40fc8f](https://github.com/NicolasOmar/reactive-bulma/commit/c40fc8ff1258f1cd9de59c76e1d9a6b67b92ddc3))
+
 # [1.18.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.17.0...v1.18.0) (2023-07-03)
 
 
