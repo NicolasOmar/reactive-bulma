@@ -9,19 +9,19 @@ import mocks from './index.mocks.json'
 describe('Button', () => {
   const { basicTestId, dummyText, testStyles, testClasses } = mocks.testing
 
-  test('Should render the Button without text', () => {
+  test('Should render the button without text', () => {
     render(<Button />)
     const testButton = screen.getByTestId(basicTestId)
     expect(testButton).toBeInTheDocument()
   })
 
-  test('Should render the Button with a dummy Text', () => {
+  test('Should render the button with a dummy Text', () => {
     render(<Button text={dummyText} />)
     const textButton = screen.getByText(dummyText)
     expect(textButton).toBeInTheDocument()
   })
 
-  test('Should render the Button with specfic CSS styles', () => {
+  test('Should render the button with specfic CSS styles', () => {
     Object.keys(testStyles).forEach(prop => {
       const styleValue = (testStyles as Record<string, string>)[prop]
       const styleObj = { [prop]: styleValue }
@@ -32,7 +32,7 @@ describe('Button', () => {
     })
   })
 
-  test('Should render the Button with specfic classes', () => {
+  test('Should render the button with specfic classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue }
