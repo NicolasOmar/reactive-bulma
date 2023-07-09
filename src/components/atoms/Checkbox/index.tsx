@@ -4,6 +4,14 @@ import { CheckboxProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
+const parseContentTestId = (
+  content: string | React.ReactElement | null
+): string => {
+  if (typeof content === 'string') return `-${content?.toString()}`
+  if (content !== null) return '-with-component'
+  return ''
+}
+
 const Checkbox: React.FC<CheckboxProps> = ({
   testId = null,
   style = null,
@@ -16,12 +24,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     testId ??
     parseTestId({
       tag: 'checkbox',
-      parsedClasses:
-        typeof content === 'string'
-          ? `-${content?.toString()}`
-          : content !== null
-          ? '-with-component'
-          : ''
+      parsedClasses: parseContentTestId(content)
     })
   return (
     <label

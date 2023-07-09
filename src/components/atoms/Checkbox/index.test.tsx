@@ -5,6 +5,7 @@ import '@testing-library/jest-dom'
 import Checkbox from '.'
 // MOCKS
 import mocks from './index.mocks.json'
+import Tag from '../Tag'
 
 describe('Checkbox', () => {
   const { basicTestId, withTextContent, disabledMode } = mocks.testing
@@ -18,6 +19,17 @@ describe('Checkbox', () => {
     render(<Checkbox {...withTextContent} />)
     const testTextContentCheckbox = screen.getByTestId(
       `${basicTestId}-${withTextContent.content}`
+    )
+    expect(testTextContentCheckbox).toBeInTheDocument()
+  })
+
+  test('Should render with included text content', () => {
+    const componentContentConfig = {
+      content: <Tag text='test' />
+    }
+    render(<Checkbox {...componentContentConfig} />)
+    const testTextContentCheckbox = screen.getByTestId(
+      `${basicTestId}-with-component`
     )
     expect(testTextContentCheckbox).toBeInTheDocument()
   })
