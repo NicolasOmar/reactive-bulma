@@ -163,3 +163,9 @@ export interface FileProps extends BasicProps {
   size?: basicSizeType
   onClick?: () => void
 }
+
+export interface CheckboxProps extends BasicProps {
+  content?: string | React.ReactElement
+  isDisabled?: boolean
+  onChange?: () => void
+}
