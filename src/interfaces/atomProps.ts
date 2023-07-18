@@ -169,3 +169,15 @@ export interface CheckboxProps extends BasicProps {
   isDisabled?: boolean
   onChange?: () => void
 }
+
+interface RadioButtonItemProps {
+  label: string
+  name: string
+  isChecked?: boolean
+  isDisabled?: boolean
+}
+
+export interface RadioButtonProps extends BasicProps {
+  options: RadioButtonItemProps[]
+  onChange?: () => void
+}

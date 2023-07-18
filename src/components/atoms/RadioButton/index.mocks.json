@@ -1,0 +1,12 @@
+{
+  "testing": {
+    "basicExample": {
+      "options": [
+        {
+          "label": "Test checkbox",
+          "name": "test-checkbox"
+        }
+      ]
+    }
+  }
+}
