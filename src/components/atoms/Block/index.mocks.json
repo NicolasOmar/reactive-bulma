@@ -4,19 +4,12 @@
     "testId": "test-blocking-dom"
   },
   "storybook": {
-    "testId": {
-      "description": "ID used to locate the element in unit test suites"
-    },
-    "style": {
-      "description": "Custom styling applicable for specific cases"
-    },
     "children": {
-      "description": "Reffers to the component or array of components that will be shown inside the block",
       "table": {
         "type": {
-          "summary": "string | React.ReactElement | React.ReactFragment"
+          "summary": "string | React.ReactElement | React.ReactElement[]"
         }
       }
-    }
+    } 
   }
 }

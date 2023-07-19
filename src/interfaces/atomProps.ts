@@ -13,8 +13,12 @@ import {
 import { inputTypes } from '../types/domTypes'
 
 interface BasicProps {
+  /** ID used to locate the element in unit test suites (like Jest) */
   testId?: string
+  /** Custom styling applicable for specific scenarios */
   style?: React.CSSProperties
+  /** Custom CSS classes, applicable for specific scenarios */
+  cssClasses?: string
 }
 
 export interface ColumnProps
@@ -56,7 +60,8 @@ export interface ProgressBarProps
 export interface BlockProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'section'> {
-  testId?: string
+  /** Reffers to the component or array of components that will be shown inside the block */
+  children?: string | React.ReactElement | React.ReactElement[]
 }
 
 export interface TagProps
@@ -84,7 +89,10 @@ export interface ImageProps
 
 export interface BoxProps
   extends BasicProps,
-    React.ComponentPropsWithoutRef<'section'> {}
+    React.ComponentPropsWithoutRef<'section'> {
+  /** Reffers to the component or array of components that will be shown inside the box */
+  children?: string | React.ReactElement | React.ReactElement[]
+}
 
 export interface TitleSectionProps
   extends BasicProps,
@@ -164,8 +172,20 @@ export interface FileProps extends BasicProps {
   onClick?: () => void
 }
 
-export interface CheckboxProps extends BasicProps {
+export interface CheckBoxProps extends BasicProps {
   content?: string | React.ReactElement
   isDisabled?: boolean
+  onChange?: () => void
+}
+
+interface RadioButtonItemProps {
+  label: string
+  name: string
+  isChecked?: boolean
+  isDisabled?: boolean
+}
+
+export interface RadioButtonProps extends BasicProps {
+  options: RadioButtonItemProps[]
   onChange?: () => void
 }

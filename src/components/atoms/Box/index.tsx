@@ -5,12 +5,13 @@ import { BoxProps } from '../../../interfaces/atomProps'
 const Box: React.FC<BoxProps> = ({
   testId = 'test-box',
   style = null,
+  cssClasses = null,
   children = null
 }) =>
   children ? (
     <section
       data-testid={testId}
-      className='box'
+      className={cssClasses ?? 'box'}
       style={style ?? undefined}
     >
       {children}
