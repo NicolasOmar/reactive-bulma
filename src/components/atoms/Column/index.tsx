@@ -7,6 +7,7 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 const Column: React.FC<ColumnProps> = ({
   testId = null,
   style = null,
+  cssClasses = null,
   size = null,
   offset = null,
   isNarrow = false,
@@ -16,7 +17,8 @@ const Column: React.FC<ColumnProps> = ({
     'column',
     size,
     offset,
-    isNarrow ? 'is-narrow' : null
+    isNarrow ? 'is-narrow' : null,
+    cssClasses
   ])
   const _testId =
     testId ?? parseTestId({ tag: 'column', parsedClasses: columnClasses })

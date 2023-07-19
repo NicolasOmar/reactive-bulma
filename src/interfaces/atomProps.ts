@@ -19,30 +19,49 @@ interface BasicProps {
   style?: React.CSSProperties
   /** Custom CSS classes, applicable for specific scenarios */
   cssClasses?: string
+  /** *For container case*. ID used to locate the element in unit test suites (like Jest) */
+  containerTestId?: string
+  /** *For container case*. Custom styling applicable for specific scenarios */
+  containerStyle?: React.CSSProperties
+  /** *For container case*. Custom CSS classes, applicable for specific scenarios */
+  containerCssClasses?: string
 }
 
 export interface ColumnProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'section'> {
+  /** Set column's size */
   size?: columnSizeType
+  /** Set column's offset (moving it as you set its size */
   offset?: columnOffsetType
+  /** Set if the column only will take the space it needs */
   isNarrow?: boolean
 }
 
 export interface ButtonProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'button'> {
+  /** The text will be shown in the `Button` */
   text?: string
-  style?: React.CSSProperties
+  /** Color based on bulma's color tokens */
   color?: basicColorType
+  /** Will adjust the selected color with a ligther style */
   isLightColor?: boolean
+  /** Will invert button's colors (typography in color and background in white or black) */
   isInvertedColor?: boolean
+  /** Similar to `isInvertedColor`, but button's border will be colored */
   isOutlined?: boolean
+  /** Will add round borders to button's shape */
   isRounded?: boolean
+  /** Will change `text` for a animated spinner, but will remain clickeable */
   isLoading?: boolean
+  /** Will disable the button */
   isDisabled?: boolean
+  /** Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
+  /** Set button's size on bulma's size tokens */
   size?: basicSizeType
+  /** Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
 
@@ -173,8 +192,11 @@ export interface FileProps extends BasicProps {
 }
 
 export interface CheckBoxProps extends BasicProps {
+  /** Sets checkbox's text that will be shown next to its control */
   content?: string | React.ReactElement
+  /** Will disable the checkbox */
   isDisabled?: boolean
+  /** Click function, alone does not nothing, but can be reused for other components */
   onChange?: () => void
 }
 

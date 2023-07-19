@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   testId = null,
   style = null,
+  cssClasses = null,
   color = 'is-primary',
   isLightColor = false,
   isInvertedColor = false,
@@ -29,7 +30,8 @@ const Button: React.FC<ButtonProps> = ({
     isRounded ? 'is-rounded' : null,
     isLoading ? 'is-loading' : null,
     isStatic ? 'is-static' : null,
-    size
+    size,
+    cssClasses
   ])
   const _testId =
     testId ?? parseTestId({ tag: 'button', parsedClasses: buttonClasses })
