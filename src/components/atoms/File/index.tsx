@@ -8,10 +8,14 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const File: React.FC<FileProps> = ({
   testId = null,
+  containerTestId = null,
   fileName = null,
   uploadIcon = { iconLabel: 'upload' },
   uploadText = 'Choose a file…',
   style = null,
+  containerStyle = null,
+  cssClasses = null,
+  containerCssClasses = null,
   buttonOnRight = false,
   isFullWidth = false,
   isBoxed = false,
@@ -19,20 +23,21 @@ const File: React.FC<FileProps> = ({
   size = null,
   onClick = null
 }) => {
-  const fileClasses = parseClasses([
+  const fileContainerClasses = parseClasses([
     'file',
     fileName ? 'has-name' : null,
     buttonOnRight ? 'is-right' : null,
     isFullWidth ? 'is-fullwidth' : null,
     isBoxed ? 'is-boxed' : null,
     color,
-    size
+    size,
+    containerCssClasses
   ])
-  const fileTestId =
-    testId ??
+  const fileContainerTestId =
+    containerTestId ??
     parseTestId({
       tag: 'file',
-      parsedClasses: fileClasses,
+      parsedClasses: fileContainerClasses,
       rules: [
         {
           usedRegExp: /has/gm,
@@ -44,18 +49,20 @@ const File: React.FC<FileProps> = ({
         }
       ]
     })
-  const fileInputTestId = `${fileTestId}-input`
+  const fileClasses = cssClasses ?? 'file-input'
+  const fileInputTestId = testId ?? `${fileContainerTestId}-input`
 
   return (
     <section
-      data-testid={fileTestId}
-      className={fileClasses}
-      style={style ?? undefined}
+      data-testid={fileContainerTestId}
+      className={fileContainerClasses}
+      style={containerStyle ?? undefined}
     >
       <label className='file-label'>
         <input
           data-testid={fileInputTestId}
-          className='file-input'
+          className={fileClasses}
+          style={style ?? undefined}
           type='file'
           name='resume'
           onClick={onClick ?? undefined}

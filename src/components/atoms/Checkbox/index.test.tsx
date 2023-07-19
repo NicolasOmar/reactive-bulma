@@ -5,10 +5,11 @@ import '@testing-library/jest-dom'
 import CheckBox from '.'
 import Tag from '../Tag'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('CheckBox', () => {
-  const { basicTestId, withTextContent, disabledMode } = mocks.testing
+  const { basicTestId, withTextContent, disabledMode } = testing
+
   test('Should render with minimal config', () => {
     render(<CheckBox />)
     const minimalTestCheckBox = screen.getByTestId(basicTestId)

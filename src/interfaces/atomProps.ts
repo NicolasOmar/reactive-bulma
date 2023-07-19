@@ -101,8 +101,11 @@ export interface TagProps
 export interface ImageProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'figure'> {
+  /** *Required*. The image source that will be shown */
   src: string
+  /** Will add round borders to image's shape */
   fixedSize?: fixedImageSizeType
+  /** Sets image size based on one of fixed ratios/fixed sizes */
   isRounded?: boolean
 }
 
@@ -128,25 +131,42 @@ export interface TitleProps {
 }
 
 export interface IconProps extends BasicProps {
+  /** *Required*. Sets the icon key work based on [Material Design icon list](https://pictogrammers.com/library/mdi/) */
   iconLabel: string
+  /** Sets the any text you want to show next to the icon */
   text?: string
+  /** Color based on bulma's text color tokens */
   color?: textColorType
+  /** Set icons's size */
   size?: Exclude<basicSizeType, 'is-normal'>
+  /** Special usage in case you want to set as dark or light mode */
   colorMode?: iconColorModeType
+  /** Animates the icon spinning 360° */
   isSpinning?: boolean
 }
 
 export interface InputProps extends BasicProps {
+  /** *Required*. What type of input will be used */
   type: inputTypes
+  /** The value that will be shown on the input */
   text?: string
+  /** Will disable the input */
   isDisabled?: boolean
+  /** Will show the input as a normal one, but is not editable and has no shadow */
   isReadonly?: boolean
+  /** Color based on bulma's text color tokens */
   color?: basicColorType
+  /** Set input's size */
   size?: basicSizeType
+  /** Will add round borders to input's shape */
   isRounded?: boolean
+  /** Will add a specific border when the input is hovered by the user */
   isHovered?: boolean
+  /** Will add a specific border when the input is focused by the user */
   isFocused?: boolean
+  /** Click function. Alone does not nothing, but can be reused for other components */
   onClick?: () => void
+  /** Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components */
   onChange?: () => void
 }
 
@@ -157,7 +177,9 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
 }
 
 export interface DeleteProps extends BasicProps {
+  /** Set icons's size */
   size?: Exclude<basicSizeType, 'is-normal'>
+  /** Click function. Alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
 
@@ -180,14 +202,23 @@ export interface SelectProps extends BasicProps {
 }
 
 export interface FileProps extends BasicProps {
+  /** The name of the file to be uploaded */
   fileName?: string
+  /** The icon displayed in file's button" */
   uploadIcon?: IconProps
+  /** The text displayed in file's button */
   uploadText?: string
+  /** Changes button's position to its right */
   buttonOnRight?: boolean
+  /** The whole container (button and file name) will occupy its parent container width */
   isFullWidth?: boolean
+  /** Changes styling to a box style, making the button bigger and file name's position below the button */
   isBoxed?: boolean
+  /** Color based on bulma's color tokens */
   color?: basicColorType
+  /** Set button's size */
   size?: basicSizeType
+  /** Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
 

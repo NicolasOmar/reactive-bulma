@@ -7,24 +7,39 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 const Image: React.FC<ImageProps> = ({
   src,
   testId = null,
+  containerTestId = null,
   isRounded = false,
   fixedSize = 'is-1by1',
-  style = null
+  style = null,
+  containerStyle = null,
+  cssClasses = null,
+  containerCssClasses = null
 }) => {
-  const figureClasses = parseClasses(['image', fixedSize])
-  const imageClasses = isRounded ? 'is-rounded' : undefined
-  const _testId =
-    testId ?? parseTestId({ tag: 'image', parsedClasses: figureClasses })
+  const containerClasses = parseClasses([
+    'image',
+    fixedSize,
+    containerCssClasses
+  ])
+  const imageClasses = parseClasses([
+    isRounded ? 'is-rounded' : null,
+    cssClasses
+  ])
+  const _containerTestId =
+    containerTestId ??
+    parseTestId({ tag: 'image', parsedClasses: containerClasses })
+  const _testId = testId ?? `${_containerTestId}-img`
 
   return (
     <figure
-      data-testid={_testId}
-      className={figureClasses}
-      style={style ?? undefined}
+      data-testid={_containerTestId}
+      className={containerClasses}
+      style={containerStyle ?? undefined}
     >
       <img
         src={src}
+        data-testid={_testId}
         className={imageClasses}
+        style={style ?? undefined}
       />
     </figure>
   )

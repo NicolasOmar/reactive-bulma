@@ -35,23 +35,33 @@ const generateIconContainer = (
 const Icon: React.FC<IconProps> = ({
   iconLabel,
   testId = null,
+  containerTestId = null,
   text = null,
   style = null,
+  containerStyle = null,
+  cssClasses = null,
+  containerCssClasses = null,
   color = null,
   size = null,
   colorMode = null,
   isSpinning = false
 }) => {
-  const iconSpanClasses = parseClasses(['icon', color, size])
+  const iconContainerClasses = parseClasses([
+    'icon',
+    color,
+    size,
+    containerCssClasses
+  ])
   const iconClasses = parseClasses([
     'mdi',
     `mdi-${iconLabel}`,
     colorMode ? `mdi-${colorMode}` : null,
     isSpinning ? 'mdi-spin' : null,
-    size ? `mdi-${IconSizeEnum[size]}px` : 'mdi-24px'
+    size ? `mdi-${IconSizeEnum[size]}px` : 'mdi-24px',
+    cssClasses
   ])
-  const _testId =
-    testId ??
+  const _containerTestId =
+    containerTestId ??
     parseTestId({
       tag: 'icon',
       parsedClasses: iconClasses,
@@ -67,16 +77,17 @@ const Icon: React.FC<IconProps> = ({
       ],
       separator: '-'
     })
-  const _internalTestId = `${_testId}-i`
+  const _testId = testId ?? `${_containerTestId}-i`
   const iconComponent = (
     <span
-      data-testid={_testId}
-      style={style ?? undefined}
-      className={iconSpanClasses}
+      data-testid={_containerTestId}
+      className={iconContainerClasses}
+      style={containerStyle ?? undefined}
     >
       <i
-        data-testid={_internalTestId}
+        data-testid={_testId}
         className={iconClasses}
+        style={style ?? undefined}
       ></i>
       {text ? <span>{text}</span> : null}
     </span>

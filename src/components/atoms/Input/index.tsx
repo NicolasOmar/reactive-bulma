@@ -11,6 +11,7 @@ const Input: React.FC<InputProps> = ({
   isDisabled = false,
   isReadonly = false,
   style = null,
+  cssClasses = null,
   color = null,
   size = null,
   isRounded = null,
@@ -25,7 +26,8 @@ const Input: React.FC<InputProps> = ({
     size,
     isRounded ? 'is-rounded' : null,
     isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null
+    isFocused ? 'is-focused' : null,
+    cssClasses
   ])
   const _testId =
     testId ??

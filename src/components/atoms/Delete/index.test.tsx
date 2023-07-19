@@ -6,10 +6,10 @@ import Delete from '.'
 // TYPES & INTERFACES
 import { DeleteProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Delete', () => {
-  const { baseDeleteTestId, sizes } = mocks.testing
+  const { baseDeleteTestId, sizes } = testing
 
   test('Should render with required props only', () => {
     render(<Delete />)

@@ -5,11 +5,10 @@ import '@testing-library/jest-dom'
 import File from '.'
 // TYPES & INTERFACES
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('File', () => {
-  const { basicTestId, basicTestInputId, testClasses, withFileName } =
-    mocks.testing
+  const { basicTestId, basicTestInputId, testClasses, withFileName } = testing
 
   test('Should render without any props', () => {
     render(<File />)

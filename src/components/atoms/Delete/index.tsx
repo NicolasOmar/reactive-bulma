@@ -7,10 +7,11 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 const Delete: React.FC<DeleteProps> = ({
   testId = null,
   style = null,
+  cssClasses = null,
   size = null,
   onClick = null
 }) => {
-  const deleteClasses = parseClasses(['delete', size])
+  const deleteClasses = parseClasses(['delete', size, cssClasses])
   const _testId =
     testId ??
     parseTestId({
@@ -21,8 +22,8 @@ const Delete: React.FC<DeleteProps> = ({
   return (
     <button
       data-testid={_testId}
-      style={style ?? undefined}
       className={deleteClasses}
+      style={style ?? undefined}
       onClick={onClick ?? undefined}
     />
   )
