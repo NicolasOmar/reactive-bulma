@@ -4,8 +4,8 @@ import { BoxProps } from '../../../interfaces/atomProps'
 
 const Box: React.FC<BoxProps> = ({
   testId = 'test-box',
-  style = null,
   cssClasses = 'box',
+  style = null,
   children = null
 }) =>
   children ? (

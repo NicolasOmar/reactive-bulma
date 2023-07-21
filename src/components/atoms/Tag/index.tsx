@@ -5,20 +5,20 @@ import { TagProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Tag: React.FC<TagProps> = ({
-  text,
   testId = null,
   containerTestId = null,
-  style = null,
-  containerStyle = null,
   cssClasses = null,
   containerCssClasses = null,
+  style = null,
+  containerStyle = null,
+  text,
+  withDelete = false,
+  withAddon = false,
+  addonText = null,
   color = null,
   isLight = null,
   isRounded = null,
   size = null,
-  withDelete = false,
-  withAddon = false,
-  addonText = null,
   addonColor = null,
   onDeleteClick = null
 }) => {

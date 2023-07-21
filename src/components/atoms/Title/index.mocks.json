@@ -51,14 +51,16 @@
     "main": {
       "table": {
         "type": {
-          "summary": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+          "summary": "TitleSectionProps",
+          "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
         }
       }
     },
     "secondary": {
       "table": {
         "type": {
-          "summary": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+          "summary": "TitleSectionProps",
+          "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
         }
       }
     }

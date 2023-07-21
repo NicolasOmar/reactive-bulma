@@ -6,14 +6,14 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const TextArea: React.FC<TextAreaProps> = ({
   testId = null,
+  cssClasses = null,
+  style = null,
   text = null,
   cols = null,
   rows = null,
   isDisabled = false,
   isReadonly = false,
   isFixedSize = false,
-  style = null,
-  cssClasses = null,
   color = null,
   size = null,
   isHovered = null,
@@ -55,8 +55,8 @@ const TextArea: React.FC<TextAreaProps> = ({
       rows={rows ?? undefined}
       disabled={isDisabled}
       readOnly={isReadonly}
-      style={style ?? undefined}
       className={textAreaClasses}
+      style={style ?? undefined}
       onClick={onClick ?? undefined}
       onChange={onChange ?? undefined}
     />

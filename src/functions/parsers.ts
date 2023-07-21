@@ -4,8 +4,9 @@ import { ParseTestIdProps } from '../interfaces/functionProps'
  * @param { Array<string | null> } _classes Required. Array of classNames on `string` (or `null`) values
  * @returns { string } A single string product of merge all classNames, separated by spaces
  */
-export const parseClasses = (_classes: Array<string | null>): string =>
-  _classes.filter(_class => _class).join(' ')
+export const parseClasses = (
+  _classes: Array<string | null | undefined>
+): string => _classes.filter(_class => _class).join(' ')
 
 /**
  * @param { ParseTestIdProps } config Configuration object

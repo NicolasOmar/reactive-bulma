@@ -5,17 +5,17 @@ import { ImageProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Image: React.FC<ImageProps> = ({
-  src,
   testId = null,
   containerTestId = null,
-  isRounded = false,
-  fixedSize = 'is-1by1',
+  cssClasses = null,
+  containerCssClasses = null,
   style = null,
   containerStyle = null,
-  cssClasses = null,
-  containerCssClasses = null
+  src,
+  fixedSize = 'is-1by1',
+  isRounded = false
 }) => {
-  const containerClasses = parseClasses([
+  const imageContainerClasses = parseClasses([
     'image',
     fixedSize,
     containerCssClasses
@@ -24,22 +24,22 @@ const Image: React.FC<ImageProps> = ({
     isRounded ? 'is-rounded' : null,
     cssClasses
   ])
-  const _containerTestId =
+  const imageContainerTestId =
     containerTestId ??
-    parseTestId({ tag: 'image', parsedClasses: containerClasses })
-  const _testId = testId ?? `${_containerTestId}-img`
+    parseTestId({ tag: 'image', parsedClasses: imageContainerClasses })
+  const imageTestId = testId ?? `${imageContainerTestId}-img`
 
   return (
     <figure
-      data-testid={_containerTestId}
-      className={containerClasses}
+      data-testid={imageContainerTestId}
+      className={imageContainerClasses}
       style={containerStyle ?? undefined}
     >
       <img
-        src={src}
-        data-testid={_testId}
+        data-testid={imageTestId}
         className={imageClasses}
         style={style ?? undefined}
+        src={src}
       />
     </figure>
   )

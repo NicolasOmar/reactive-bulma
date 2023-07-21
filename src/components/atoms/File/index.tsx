@@ -9,13 +9,13 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 const File: React.FC<FileProps> = ({
   testId = null,
   containerTestId = null,
+  cssClasses = null,
+  containerCssClasses = null,
+  style = null,
+  containerStyle = null,
   fileName = null,
   uploadIcon = { iconLabel: 'upload' },
   uploadText = 'Choose a file…',
-  style = null,
-  containerStyle = null,
-  cssClasses = null,
-  containerCssClasses = null,
   buttonOnRight = false,
   isFullWidth = false,
   isBoxed = false,
@@ -49,7 +49,7 @@ const File: React.FC<FileProps> = ({
         }
       ]
     })
-  const fileClasses = cssClasses ?? 'file-input'
+  const fileInputClasses = cssClasses ?? 'file-input'
   const fileInputTestId = testId ?? `${fileContainerTestId}-input`
 
   return (
@@ -61,10 +61,10 @@ const File: React.FC<FileProps> = ({
       <label className='file-label'>
         <input
           data-testid={fileInputTestId}
-          className={fileClasses}
-          style={style ?? undefined}
           type='file'
           name='resume'
+          className={fileInputClasses}
+          style={style ?? undefined}
           onClick={onClick ?? undefined}
         />
         <span className='file-cta'>

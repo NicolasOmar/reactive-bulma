@@ -33,14 +33,14 @@ const generateIconContainer = (
 }
 
 const Icon: React.FC<IconProps> = ({
-  iconLabel,
   testId = null,
   containerTestId = null,
-  text = null,
-  style = null,
-  containerStyle = null,
   cssClasses = null,
   containerCssClasses = null,
+  style = null,
+  containerStyle = null,
+  iconLabel,
+  text = null,
   color = null,
   size = null,
   colorMode = null,
@@ -60,7 +60,7 @@ const Icon: React.FC<IconProps> = ({
     size ? `mdi-${IconSizeEnum[size]}px` : 'mdi-24px',
     cssClasses
   ])
-  const _containerTestId =
+  const iconContainertestId =
     containerTestId ??
     parseTestId({
       tag: 'icon',
@@ -77,15 +77,15 @@ const Icon: React.FC<IconProps> = ({
       ],
       separator: '-'
     })
-  const _testId = testId ?? `${_containerTestId}-i`
+  const iconTestId = testId ?? `${iconContainertestId}-i`
   const iconComponent = (
     <span
-      data-testid={_containerTestId}
+      data-testid={iconContainertestId}
       className={iconContainerClasses}
       style={containerStyle ?? undefined}
     >
       <i
-        data-testid={_testId}
+        data-testid={iconTestId}
         className={iconClasses}
         style={style ?? undefined}
       ></i>

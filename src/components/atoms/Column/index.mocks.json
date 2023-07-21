@@ -10,7 +10,6 @@
   },
   "storybook": {
     "children": {
-      "description": "Reffers to the component or array of components that will be shown inside the block",
       "table": {
         "type": {
           "summary": "string | React.ReactElement | React.ReactElement[]"

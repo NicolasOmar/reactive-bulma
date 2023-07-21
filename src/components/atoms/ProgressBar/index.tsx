@@ -5,11 +5,11 @@ import { ProgressBarProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
+  testId = null,
+  cssClasses = null,
+  style = null,
   value = 0,
   max = 100,
-  testId = null,
-  style = null,
-  cssClasses = null,
   color = 'is-primary',
   size = null,
   isLoading = false
@@ -21,7 +21,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     size,
     cssClasses
   ])
-  const _testId =
+  const progressTestId =
     testId ??
     parseTestId({
       tag: 'progress',
@@ -30,7 +30,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
   return (
     <progress
-      data-testid={_testId}
+      data-testid={progressTestId}
       className={progressClasses}
       style={style ?? undefined}
       value={isLoading ? undefined : value}

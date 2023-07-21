@@ -14,11 +14,11 @@ const parseContentTestId = (
 
 const CheckBox: React.FC<CheckBoxProps> = ({
   testId = null,
-  style = null,
-  cssClasses = null,
   containerTestId = null,
-  containerStyle = null,
+  cssClasses = null,
   containerCssClasses = null,
+  style = null,
+  containerStyle = null,
   content = null,
   isDisabled = null,
   onChange = null
