@@ -5,13 +5,12 @@ import Icon from '.'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Icon',
   component: Icon,
-  argTypes: mocks.storybook,
-  args: mocks.testing.baseConfig
+  args: testing.baseConfig
 } as Meta<typeof Icon>
 
 const Template: StoryFn<typeof Icon> = args => <Icon {...args} />
@@ -21,24 +20,24 @@ BasicExample.storyName = 'Basic Example'
 
 export const TextIncluded = Template.bind({})
 TextIncluded.storyName = 'With text'
-TextIncluded.args = mocks.testing.textIncluded as IconProps
+TextIncluded.args = testing.textIncluded as IconProps
 
 export const UsingOtherIcon = Template.bind({})
 UsingOtherIcon.storyName = 'With other icon'
-UsingOtherIcon.args = mocks.testing.otherIcon as IconProps
+UsingOtherIcon.args = testing.otherIcon as IconProps
 
 export const Colored = Template.bind({})
 Colored.storyName = 'Colored'
-Colored.args = mocks.testing.colored as IconProps
+Colored.args = testing.colored as IconProps
 
 export const BigSize = Template.bind({})
 BigSize.storyName = 'With Big Size'
-BigSize.args = mocks.testing.bigSize as IconProps
+BigSize.args = testing.bigSize as IconProps
 
 export const WithDarkMode = Template.bind({})
 WithDarkMode.storyName = 'With Dark Mode'
-WithDarkMode.args = mocks.testing.withDarkMode as IconProps
+WithDarkMode.args = testing.withDarkMode as IconProps
 
 export const Spinning = Template.bind({})
 Spinning.storyName = 'Spinning'
-Spinning.args = mocks.testing.withSpin as IconProps
+Spinning.args = testing.withSpin as IconProps

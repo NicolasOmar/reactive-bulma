@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.20.0...v1.20.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* Improve component typing comments and properties for containers ([#144](https://github.com/NicolasOmar/reactive-bulma/issues/144)) ([#143](https://github.com/NicolasOmar/reactive-bulma/issues/143)) ([ff0138e](https://github.com/NicolasOmar/reactive-bulma/commit/ff0138e5a5cf65370abd3f0c0a7b9ccb2fecc2cd))
+
 # [1.20.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.19.0...v1.20.0) (2023-07-09)
 
 
@@ -8,7 +15,7 @@
 
 ### Features
 
-* Create component "Checkbox" ([#135](https://github.com/NicolasOmar/reactive-bulma/issues/135)) ([#41](https://github.com/NicolasOmar/reactive-bulma/issues/41)) ([1c4e4aa](https://github.com/NicolasOmar/reactive-bulma/commit/1c4e4aae1ebf2b96ad40b0abe0ee3c61bcc828a0))
+* Create component "CheckBox" ([#135](https://github.com/NicolasOmar/reactive-bulma/issues/135)) ([#41](https://github.com/NicolasOmar/reactive-bulma/issues/41)) ([1c4e4aa](https://github.com/NicolasOmar/reactive-bulma/commit/1c4e4aae1ebf2b96ad40b0abe0ee3c61bcc828a0))
 
 # [1.19.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.18.0...v1.19.0) (2023-07-05)
 

@@ -3,12 +3,12 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Block from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Block',
   component: Block,
-  argTypes: mocks.storybook
+  argTypes: storybook
 } as Meta<typeof Block>
 
 const Template: StoryFn<typeof Block> = args => <Block {...args} />
@@ -19,7 +19,7 @@ BasicExample.storyName = 'No children'
 export const WithParagraph = Template.bind({})
 WithParagraph.storyName = 'With a paragraph'
 WithParagraph.args = {
-  children: <p>{mocks.testing.testParagraph}</p>
+  children: <p>{testing.testParagraph}</p>
 }
 
 export const OneBlock = Template.bind({})
@@ -27,7 +27,7 @@ OneBlock.storyName = 'Several paragraphs. One Block'
 OneBlock.args = {
   children: Array(5)
     .fill(null)
-    .map((_, i) => <p key={`block-p-${i}`}>{mocks.testing.testParagraph}</p>)
+    .map((_, i) => <p key={`block-p-${i}`}>{testing.testParagraph}</p>)
 }
 
 export const SeveralBlocks = Template.bind({})
@@ -36,6 +36,6 @@ SeveralBlocks.args = {
   children: Array(5)
     .fill(null)
     .map((_, i) => (
-      <Block key={`block-${i}`}>{<p>{mocks.testing.testParagraph}</p>}</Block>
+      <Block key={`block-${i}`}>{<p>{testing.testParagraph}</p>}</Block>
     ))
 }

@@ -18,9 +18,6 @@
     }
   },
   "storybook": {
-    "text": {
-      "description": "The text will be shown in the `Button`"
-    },
     "type": {
       "description": "What type of button will be used",
       "table": {
@@ -33,42 +30,6 @@
       },
       "control": "radio",
       "options": ["button", "reset", "submit"]
-    },
-    "testId": {
-      "description": "ID used to locate the element in unit test suites"
-    },
-    "style": {
-      "description": "Custom styling applicable for specific cases"
-    },
-    "color": {
-      "description": "Color based on bulma's color tokens"
-    },
-    "isLightColor": {
-      "description": "Will adjust the selected color with a ligther style"
-    },
-    "isInvertedColor": {
-      "description": "Will invert button's colors (typography in color and background in white or black)"
-    },
-    "isOutlined": {
-      "description": "Similar to `isInvertedColor`, but button's border will be colored"
-    },
-    "isRounded": {
-      "description": "Will add round borders to button's shape"
-    },
-    "isLoading": {
-      "description": "Will change `text` for a animated spinner, but will remain clickeable"
-    },
-    "isDisabled": {
-      "description": "Will disable the button"
-    },
-    "isStatic": {
-      "description": "Similar to `isDisabled`, but will remove any color style"
-    },
-    "size": {
-      "description": "Set button's size"
-    },
-    "onClick": {
-      "description": "Click function, alone does not nothing, but can be reused for other components"
     }
   }
 }

@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Button from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Button', () => {
-  const { basicTestId, dummyText, testStyles, testClasses } = mocks.testing
+  const { basicTestId, dummyText, testStyles, testClasses } = testing
 
   test('Should render the button without text', () => {
     render(<Button />)
@@ -27,7 +27,9 @@ describe('Button', () => {
       const styleObj = { [prop]: styleValue }
       render(<Button style={styleObj} />)
       const testStyleButton = screen.getByTestId(basicTestId)
-      expect(testStyleButton.style[prop as any]).toContain(styleValue)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      expect(testStyleButton.style[prop]).toContain(styleValue)
       cleanup()
     })
   })

@@ -32,43 +32,12 @@
       "isBoxed": "is-boxed"
     }},
   "storybook": {
-    "testId": {
-      "description": "ID used to locate the element in unit test suites"
-    },
-    "fileName": {
-      "description": "The name of the file to be uploaded"
-    },
     "uploadIcon": {
-      "description": "The icon displayed in file's button",
       "table": {
         "type": {
           "summary": "Icon"
         }
       }
-    },
-    "uploadText": {
-      "description": "The text displayed in file's button"
-    },
-    "style": {
-      "description": "Custom styling applicable for specific cases"
-    },
-    "buttonOnRight": {
-      "description": "Changes button's position to its right"
-    },
-    "isFullWidth": {
-      "description": "The whole container (button and file name) will occupy its parent container width"
-    },
-    "isBoxed": {
-      "description": "Changes styling to a box style, making the button bigger and file name's position below the button"
-    },
-    "color": {
-      "description": "Color based on bulma's color tokens"
-    },
-    "size": {
-      "description": "Set button's size"
-    },
-    "onClick": {
-      "description": "Click function, alone does not nothing, but can be reused for other components"
     }
   }
 }

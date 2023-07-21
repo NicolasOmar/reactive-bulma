@@ -5,23 +5,28 @@ import { TitleProps, TitleSectionProps } from '../../../interfaces/atomProps'
 import { parseClasses } from '../../../functions/parsers'
 
 const renderTitleSection = (
-  section: TitleSectionProps
+  section?: TitleSectionProps
 ): React.ReactElement | null => {
-  const sectionClasses = parseClasses([
-    section?.prop,
-    section?.size ?? 'is-6',
-    section?.prop === 'title' && section?.isSpaced ? 'is-spaced' : null
-  ])
+  if (!section) return null
 
-  return section ? (
+  const { type, size, isSpaced, cssClasses } = section
+  const sectionClasses = parseClasses([
+    type,
+    size ?? null,
+    type === 'title' && isSpaced ? 'is-spaced' : null,
+    cssClasses!
+  ])
+  const sectionTestId = section?.testId ?? `${section?.type}-test`
+
+  return (
     <p
-      data-testid={section?.testId ?? `${section?.prop}-test`}
+      data-testid={sectionTestId}
       className={sectionClasses}
-      style={section.style ?? undefined}
+      style={section?.style ?? undefined}
     >
       {section?.text}
     </p>
-  ) : null
+  )
 }
 
 const Title: React.FC<TitleProps> = ({ main, secondary }) => (

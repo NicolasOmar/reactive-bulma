@@ -5,26 +5,41 @@ import { ImageProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Image: React.FC<ImageProps> = ({
-  src,
   testId = null,
-  isRounded = false,
+  containerTestId = null,
+  cssClasses = null,
+  containerCssClasses = null,
+  style = null,
+  containerStyle = null,
+  src,
   fixedSize = 'is-1by1',
-  style = null
+  isRounded = false
 }) => {
-  const figureClasses = parseClasses(['image', fixedSize])
-  const imageClasses = isRounded ? 'is-rounded' : undefined
-  const _testId =
-    testId ?? parseTestId({ tag: 'image', parsedClasses: figureClasses })
+  const imageContainerClasses = parseClasses([
+    'image',
+    fixedSize,
+    containerCssClasses
+  ])
+  const imageClasses = parseClasses([
+    isRounded ? 'is-rounded' : null,
+    cssClasses
+  ])
+  const imageContainerTestId =
+    containerTestId ??
+    parseTestId({ tag: 'image', parsedClasses: imageContainerClasses })
+  const imageTestId = testId ?? `${imageContainerTestId}-img`
 
   return (
     <figure
-      data-testid={_testId}
-      className={figureClasses}
-      style={style ?? undefined}
+      data-testid={imageContainerTestId}
+      className={imageContainerClasses}
+      style={containerStyle ?? undefined}
     >
       <img
-        src={src}
+        data-testid={imageTestId}
         className={imageClasses}
+        style={style ?? undefined}
+        src={src}
       />
     </figure>
   )
