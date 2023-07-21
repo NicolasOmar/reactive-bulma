@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.20.0...v1.20.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* Improve component typing comments and properties for containers ([#144](https://github.com/NicolasOmar/reactive-bulma/issues/144)) ([#143](https://github.com/NicolasOmar/reactive-bulma/issues/143)) ([ff0138e](https://github.com/NicolasOmar/reactive-bulma/commit/ff0138e5a5cf65370abd3f0c0a7b9ccb2fecc2cd))
+
 # [1.20.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.19.0...v1.20.0) (2023-07-09)
 
 
