@@ -13,43 +13,5 @@
       "withAddon": true,
       "addonText": "Addon Text"
     }
-  },
-  "storybook": {
-    "text": {
-      "description": "`Required`. The text will be shown in the `Tag`"
-    },
-    "testId": {
-      "description": "ID used to locate the element in unit test suites"
-    },
-    "style": {
-      "description": "Custom styling applicable for specific cases"
-    },
-    "color": {
-      "description": "Color based on bulma's color tokens"
-    },
-    "isLight": {
-      "description": "Will adjust the selected color with a ligther style"
-    },
-    "isRounded": {
-      "description": "Will add round borders to tag's shape"
-    },
-    "size": {
-      "description": "Set tag's size"
-    },
-    "withDelete": {
-      "description": "Will add a delete button (for both single or addon cases)"
-    },
-    "withAddon": {
-      "description": "Will add a second tag element (that could have its own text, color and delete)"
-    },
-    "addonText": {
-      "description": "The text will be shown in the tag's addon"
-    },
-    "addonColor": {
-      "description": "Color on tag's addon based on bulma's color tokens"
-    },
-    "onDeleteClick": {
-      "description": "Click function for `delete` option, alone does not nothing, but can be reused for other components"
-    }
   }
 }

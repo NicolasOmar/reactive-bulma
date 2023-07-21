@@ -7,7 +7,7 @@ import Button from '.'
 import { testing } from './index.mocks.json'
 
 describe('Button', () => {
-  const { basicTestId, dummyText, testClasses } = testing
+  const { basicTestId, dummyText, testStyles, testClasses } = testing
 
   test('Should render the button without text', () => {
     render(<Button />)
@@ -21,16 +21,18 @@ describe('Button', () => {
     expect(textButton).toBeInTheDocument()
   })
 
-  // test('Should render the button with specfic CSS styles', () => {
-  //   Object.keys(testStyles).forEach(prop => {
-  //     const styleValue = (testStyles as Record<string, string>)[prop]
-  //     const styleObj = { [prop]: styleValue }
-  //     render(<Button style={styleObj} />)
-  //     const testStyleButton = screen.getByTestId(basicTestId)
-  //     expect(testStyleButton.style[prop]).toContain(styleValue)
-  //     cleanup()
-  //   })
-  // })
+  test('Should render the button with specfic CSS styles', () => {
+    Object.keys(testStyles).forEach(prop => {
+      const styleValue = (testStyles as Record<string, string>)[prop]
+      const styleObj = { [prop]: styleValue }
+      render(<Button style={styleObj} />)
+      const testStyleButton = screen.getByTestId(basicTestId)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      expect(testStyleButton.style[prop]).toContain(styleValue)
+      cleanup()
+    })
+  })
 
   test('Should render the button with specfic classes', () => {
     Object.keys(testClasses).forEach(prop => {

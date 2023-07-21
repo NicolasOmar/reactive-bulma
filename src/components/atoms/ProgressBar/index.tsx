@@ -9,12 +9,18 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   max = 100,
   testId = null,
   style = null,
+  cssClasses = null,
   color = 'is-primary',
   size = null,
   isLoading = false
 }) => {
   const fixedValue: number = value > max || value < 0 ? 0 : value
-  const progressClasses: string = parseClasses(['progress', color, size])
+  const progressClasses: string = parseClasses([
+    'progress',
+    color,
+    size,
+    cssClasses
+  ])
   const _testId =
     testId ??
     parseTestId({

@@ -6,10 +6,10 @@ import Title from '.'
 // TYPES & INTERFACES
 import { TitleProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Title', () => {
-  const { baseConfig, smallSize, sizes, withSubtitle } = mocks.testing
+  const { baseConfig, smallSize, sizes, withSubtitle } = testing
 
   test('Should render with required props only', () => {
     render(<Title {...(baseConfig as TitleProps)} />)

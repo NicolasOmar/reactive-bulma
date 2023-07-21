@@ -6,7 +6,7 @@ import Select from '.'
 // TYPES & INTERFACES
 import { SelectProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 const getTestIds = (baseTestId: string) => [
   screen.getByTestId(baseTestId),
@@ -14,7 +14,7 @@ const getTestIds = (baseTestId: string) => [
 ]
 
 describe('Select', () => {
-  const { basicTestId, oneOption, severalOptions, testClasses } = mocks.testing
+  const { basicTestId, oneOption, severalOptions, testClasses } = testing
 
   test('Should render without any props', () => {
     render(<Select />)

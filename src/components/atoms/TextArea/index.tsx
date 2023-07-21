@@ -13,6 +13,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   isReadonly = false,
   isFixedSize = false,
   style = null,
+  cssClasses = null,
   color = null,
   size = null,
   isHovered = null,
@@ -26,9 +27,10 @@ const TextArea: React.FC<TextAreaProps> = ({
     size,
     isHovered ? 'is-hovered' : null,
     isFocused ? 'is-focused' : null,
-    isFixedSize ? 'has-fixed-size' : null
+    isFixedSize ? 'has-fixed-size' : null,
+    cssClasses
   ])
-  const _testId =
+  const textAreaTestId =
     testId ??
     parseTestId({
       tag: 'textarea',
@@ -47,7 +49,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <textarea
-      data-testid={_testId}
+      data-testid={textAreaTestId}
       defaultValue={text ?? undefined}
       cols={cols ?? undefined}
       rows={rows ?? undefined}

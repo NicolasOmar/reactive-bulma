@@ -3,64 +3,62 @@
     "baseConfig": {
       "main": {
         "text": "Welcome to ReactiveBulma",
-        "prop": "title"
+        "type": "title"
       }
     },
     "smallSize": {
       "main": {
         "text": "Big size title",
-        "prop": "title",
+        "type": "title",
         "size": "is-1"
       }
     },
     "withSubtitle": {
       "main": {
         "text": "This is the title",
-        "prop": "title"
+        "type": "title"
           },
       "secondary": {
         "text": "And this, the subtitle",
-        "prop": "subtitle"
+        "type": "subtitle"
       }
     },
     "biggerSubtitle": {
       "main": {
         "text": "This is the title",
-        "prop": "title"
+        "type": "title"
       },
       "secondary": {
         "text": "And this, the subtitle",
-        "prop": "subtitle",
+        "type": "subtitle",
         "size": "is-1"
       }
     },
     "spacedTitle": {
       "main": {
         "text": "This is the title",
-        "prop": "title",
+        "type": "title",
         "isSpaced": true
       },
       "secondary": {
         "text": "And this, the subtitle",
-        "prop": "subtitle"
+        "type": "subtitle"
       }
     },
     "sizes": ["is-1", "is-2", "is-3", "is-4"]
   },
   "storybook": {
     "main": {
-      "description": "Main title configuration object",
       "table": {
         "type": {
-          "summary": "{ text: string, size?: titleSizeType, prop: 'title' | 'subtitle' }"
+          "summary": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
         }
       }
     },
     "secondary": {
-      "description": "Secondary title configuration object",
       "table": {
         "type": {
-          "summary": "{ text: string, size?: titleSizeType, prop: 'title' | 'subtitle' }"
+          "summary": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
         }
       }
     }

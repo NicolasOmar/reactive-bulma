@@ -68,11 +68,15 @@ export interface ButtonProps
 export interface ProgressBarProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'progress'> {
+  /** Sets colored bar at the level against `max` value (`100` by default) */
   value?: number
+  /** Sets the entire bar length comparing with current `value` */
   max?: number
-  style?: React.CSSProperties
+  /** Color based on bulma's color tokens */
   color?: basicColorType
+  /** Set progress bar's size */
   size?: basicSizeType
+  /** Will change `value` for a animated loading */
   isLoading?: boolean
 }
 
@@ -86,15 +90,25 @@ export interface BlockProps
 export interface TagProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'span'> {
+  /** `Required`. The text will be shown in the `Tag` */
   text: string
+  /** Color based on bulma's color tokens */
   color?: basicColorType
+  /** Will adjust the selected color with a ligther style */
   isLight?: boolean
+  /** Will add round borders to tag's shape */
   isRounded?: boolean
+  /** Set tag's size */
   size?: Exclude<basicSizeType, 'is-normal'>
+  /** Will add a delete button (for both single or addon cases) */
   withDelete?: boolean
+  /** Will add a second tag element (that could have its own text, color and delete) */
   withAddon?: boolean
+  /** The text will be shown in the tag's addon */
   addonText?: string
+  /** Color on tag's addon based on bulma's color tokens */
   addonColor?: basicColorType
+  /** Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
 }
 
@@ -119,21 +133,27 @@ export interface BoxProps
 export interface TitleSectionProps
   extends BasicProps,
     React.ComponentPropsWithoutRef<'p'> {
+  /** Sets the text you want to show */
   text: string
+  /** Set text size */
   size?: titleSizeType
-  prop: 'title' | 'subtitle'
+  /** Set type of title (`title` at top, `subtitle` at below) */
+  type: 'title' | 'subtitle'
+  /** Set text spacing at default or maximun length */
   isSpaced?: boolean
 }
 
 export interface TitleProps {
+  /** Main title configuration object */
   main?: TitleSectionProps
+  /** Subtitle title configuration object */
   secondary?: TitleSectionProps
 }
 
 export interface IconProps extends BasicProps {
   /** *Required*. Sets the icon key work based on [Material Design icon list](https://pictogrammers.com/library/mdi/) */
   iconLabel: string
-  /** Sets the any text you want to show next to the icon */
+  /** Sets the text you want to show next to the icon */
   text?: string
   /** Color based on bulma's text color tokens */
   color?: textColorType
@@ -171,8 +191,11 @@ export interface InputProps extends BasicProps {
 }
 
 export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
+  /** Text area's columns value that sets its width */
   cols?: number
+  /** Text area's rows value that sets its height */
   rows?: number
+  /** Will disable characteristic sizable property by removing its control on bottom-right corner */
   isFixedSize?: boolean
 }
 
@@ -190,14 +213,23 @@ export interface SelectOption {
 }
 
 export interface SelectProps extends BasicProps {
+  /** Indicates the options contained on the select */
   options?: SelectOption[]
+  /** Indicates how many options will be shown at first glance (before looking for the whole list */
   showOptions?: number
+  /** Will allow multiple selection */
   isMultiple?: boolean
+  /** Color based on bulma's color tokens */
   color?: basicColorType
+  /** Set select's size */
   size?: basicSizeType
+  /** Will add round borders to input's shape */
   isRounded?: boolean
+  /** Will add a specific border when the input is hovered by the user */
   isHovered?: boolean
+  /** Will add a specific border when the input is focused by the user */
   isFocused?: boolean
+  /** Click function. Alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
 
