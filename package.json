@@ -1,7 +1,7 @@
 {
   "name": "reactive-bulma",
   "version": "1.20.1",
-  "description": "A typescript-react-based component library based on bulma",
+  "description": "A component library based on React, Bulma, Typescript and Rollup",
   "keywords": [
     "typescript",
     "react",
@@ -16,7 +16,7 @@
   ],
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
-  "homepage": "https://github.com/NicolasOmar/reactive-bulma#readme",
+  "homepage": "https://reactivebulma.netlify.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/NicolasOmar/reactive-bulma.git"

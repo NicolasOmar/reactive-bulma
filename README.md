@@ -15,8 +15,8 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ## Table of contents
 
-- [Status](#status)
 - [Purpose](#purpose)
+- [Status](#status)
 - [Dependencies](#dependencies)
 - [Quick start](#quick-start)
 - [Folder structure](#folder-structure)
@@ -29,12 +29,12 @@ Component library based on React, Bulma, Typescript and Rollup
 - [License](#license)
 
 ## Purpose
-After studying [a Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I started this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
+After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I started this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
 
 ## Status
 
-![Npm Version][badge-npm-version]
-![Npm Bundle Size][badge-npm-size]
+[![Npm Version][badge-npm-version]][link-npm]
+[![Npm Bundle Size][badge-npm-size]][link-npm]
 [![Npm Downloads][badge-npm-downloads]][link-npm-downloads]
 [![Netlify Status][badge-netlify-status]][link-netlify-status]
 [![Code Coverage][badge-code-coverage]][link-code-coverage]
@@ -43,14 +43,15 @@ After studying [a Udemy course about Typescript](https://github.com/NicolasOmar/
 [![Security Rating][badge-soundcloud-security]][link-soundcloud-status]
 [![Technical Debt][badge-soundcloud-tech-debt]][link-soundcloud-status]
 [![Known Vulnerabilities][badge-snyk-status]][link-snyk-status]
-![GitHub Repo stars][badge-github-repo-stars]
-![GitHub commit activity][badge-github-commits]
-![GitHub last commit][badge-github-last-commit]
+[![GitHub Repo stars][badge-github-repo-stars]][link-github-stars]
+[![GitHub commit activity][badge-github-commits]][link-github-commit-activity]
+[![GitHub last commit][badge-github-last-commit]][link-github-commit-history]
 [![Semantic Commits][badge-semantic-commits]][link-semantic-commits]
 
 [badge-npm-version]: https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?label=npm%20version&logo=npm&labelColor=535353&color=success&style=flat
 [badge-npm-size]: https://img.shields.io/bundlephobia/min/reactive-bulma?label=bundle%20size&labelColor=535353&logo=npm&style=flat
 [badge-npm-downloads]: https://img.shields.io/npm/dm/reactive-bulma?label=downloads&labelColor=535353&style=flat&logo=npm
+[link-npm]: https://www.npmjs.com/package/reactive-bulma
 [link-npm-downloads]: https://www.npmjs.com/package/reactive-bulma?activeTab=versions
 [badge-netlify-status]: https://api.netlify.com/api/v1/badges/3101f2b5-0e28-4734-b749-ebb0e3e413c6/deploy-status
 [link-netlify-status]: https://app.netlify.com/sites/reactivebulma/deploys
@@ -66,24 +67,27 @@ After studying [a Udemy course about Typescript](https://github.com/NicolasOmar/
 [badge-github-repo-stars]: https://img.shields.io/github/stars/nicolasomar/reactive-bulma?label=stars&logo=github&labelColor=535353&style=flat
 [badge-github-commits]: https://img.shields.io/github/commit-activity/m/nicolasomar/reactive-bulma?logo=github
 [badge-github-last-commit]: https://img.shields.io/github/last-commit/nicolasomar/reactive-bulma?logo=github
+[link-github-stars]: https://github.com/NicolasOmar/reactive-bulma/activity
+[link-github-commit-activity]: https://github.com/NicolasOmar/reactive-bulma/activity
+[link-github-commit-history]: https://github.com/NicolasOmar/reactive-bulma/commits/main
 [badge-semantic-commits]: https://img.shields.io/badge/using-conventional%20commits-e10079?logo=conventional-commits
 [link-semantic-commits]: https://github.com/semantic-release/semantic-release
 
 ## Dependencies
 
-![react dependency][badge-dependency-react]
-![bulma dependency][badge-dependency-bulma]
-![material design dependency][badge-dependency-material-design]
-![typescript dependency][badge-dependency-typescript]
-![rollup dependency][badge-dependency-rollup]
-![storybook dependency][badge-dependency-storybook]
-![semantic release dependency][badge-dependency-semantic-release]
-![babel dependency][badge-dependency-babel]
-![jest dependency][badge-dependency-jest]
-![react testing library dependency][badge-dependency-react-testing]
-![prettier dependency][badge-dependency-prettier]
-![eslint dependency][badge-dependency-eslint]
-![husky dependency][badge-dependency-husky]
+[![react dependency][badge-dependency-react]][link-package-dependencies]
+[![bulma dependency][badge-dependency-bulma]][link-package-dependencies]
+[![material design dependency][badge-dependency-material-design]][link-package-dependencies]
+[![typescript dependency][badge-dependency-typescript]][link-package-dependencies]
+[![rollup dependency][badge-dependency-rollup]][link-package-dependencies]
+[![storybook dependency][badge-dependency-storybook]][link-package-dependencies]
+[![semantic release dependency][badge-dependency-semantic-release]][link-package-dependencies]
+[![babel dependency][badge-dependency-babel]][link-package-dependencies]
+[![jest dependency][badge-dependency-jest]][link-package-dependencies]
+[![react testing library dependency][badge-dependency-react-testing]][link-package-dependencies]
+[![prettier dependency][badge-dependency-prettier]][link-package-dependencies]
+[![eslint dependency][badge-dependency-eslint]][link-package-dependencies]
+[![husky dependency][badge-dependency-husky]][link-package-dependencies]
 
 [badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
@@ -98,6 +102,7 @@ After studying [a Udemy course about Typescript](https://github.com/NicolasOmar/
 [badge-dependency-prettier]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/prettier/main?logo=prettier
 [badge-dependency-eslint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/eslint/main?logo=eslint
 [badge-dependency-husky]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/husky/main?logo=husky
+[link-package-dependencies]: https://github.com/NicolasOmar/reactive-bulma/blob/main/package.json
 
 ## Quick start
 
