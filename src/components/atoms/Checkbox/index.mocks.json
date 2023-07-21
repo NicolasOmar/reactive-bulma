@@ -9,20 +9,12 @@
     }
   },
   "storybook": {
-    "testId": {
-      "description": "ID used to locate the element in unit test suites"
-    },
-    "style": {
-      "description": "Custom styling applicable for specific cases"
-    },
     "content": {
-      "description": "Sets checkbox's text that will be shown next to its control"
-    },
-    "isDisabled": {
-      "description": "Will disable the checkbox"
-    },
-    "onChange": {
-      "description": "Click function, alone does not nothing, but can be reused for other components"
+      "table": {
+        "type": {
+          "summary": "string | React.ReactElement | React.ReactElement[]"
+        }
+      }
     }
   }
 }

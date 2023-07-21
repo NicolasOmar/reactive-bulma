@@ -6,11 +6,12 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Input: React.FC<InputProps> = ({
   testId = null,
+  cssClasses = null,
+  style = null,
   type,
   text = null,
   isDisabled = false,
   isReadonly = false,
-  style = null,
   color = null,
   size = null,
   isRounded = null,
@@ -25,9 +26,10 @@ const Input: React.FC<InputProps> = ({
     size,
     isRounded ? 'is-rounded' : null,
     isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null
+    isFocused ? 'is-focused' : null,
+    cssClasses
   ])
-  const _testId =
+  const inputTestId =
     testId ??
     parseTestId({
       tag: 'input',
@@ -36,13 +38,13 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <input
-      data-testid={_testId}
+      data-testid={inputTestId}
       type={type}
       defaultValue={text ?? undefined}
       disabled={isDisabled}
       readOnly={isReadonly}
-      style={style ?? undefined}
       className={inputClasses}
+      style={style ?? undefined}
       onClick={onClick ?? undefined}
       onChange={onChange ?? undefined}
     />

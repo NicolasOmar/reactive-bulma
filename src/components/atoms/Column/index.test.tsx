@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Column from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Column', () => {
-  const { basicTestId, testNarrowColumn } = mocks.testing
+  const { basicTestId, testNarrowColumn } = testing
 
   test('Should render without children', () => {
     render(<Column />)

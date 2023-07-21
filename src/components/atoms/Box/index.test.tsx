@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Box from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Box', () => {
-  const { testId } = mocks.testing
+  const { testId } = testing
 
   test('Should not render without children', () => {
     render(<Box />)

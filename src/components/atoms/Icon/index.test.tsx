@@ -8,7 +8,7 @@ import { IconProps } from '../../../interfaces/atomProps'
 import { basicSizeType } from '../../../types/styleTypes'
 import { IconSizeEnum } from '../../../types/componentEnums'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Icon', () => {
   const {
@@ -18,7 +18,7 @@ describe('Icon', () => {
     colors,
     sizes,
     testClasses
-  } = mocks.testing
+  } = testing
 
   test('Should render with required props only', () => {
     render(<Icon {...({ ...baseConfig } as IconProps)} />)

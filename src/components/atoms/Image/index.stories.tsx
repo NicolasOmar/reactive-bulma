@@ -3,14 +3,13 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Image from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Image',
   component: Image,
-  argTypes: mocks.storybook,
   args: {
-    src: mocks.testing.testSrc
+    src: testing.testSrc
   }
 } as Meta<typeof Image>
 

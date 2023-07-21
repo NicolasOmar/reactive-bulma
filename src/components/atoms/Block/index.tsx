@@ -4,13 +4,14 @@ import { BlockProps } from '../../../interfaces/atomProps'
 
 const Block: React.FC<BlockProps> = ({
   testId = 'test-block',
+  cssClasses = 'block',
   style = null,
   children = null
 }) =>
   children ? (
     <section
       data-testid={testId}
-      className='block'
+      className={cssClasses}
       style={style ?? undefined}
     >
       {children}

@@ -6,10 +6,10 @@ import TextArea from '.'
 // TYPES & INTERFACES
 import { TextAreaProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('TextArea', () => {
-  const { basicTestId, testClasses } = mocks.testing
+  const { basicTestId, testClasses } = testing
 
   test('Should render with required props only', () => {
     render(<TextArea />)

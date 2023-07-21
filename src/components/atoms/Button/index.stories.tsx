@@ -3,12 +3,12 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Button from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Button',
   component: Button,
-  argTypes: mocks.storybook
+  argTypes: storybook
 } as Meta<typeof Button>
 
 const Template: StoryFn<typeof Button> = args => <Button {...args} />
@@ -19,14 +19,7 @@ NoText.storyName = 'No Text'
 export const WithText = Template.bind({})
 WithText.storyName = 'With Text'
 WithText.args = {
-  text: mocks.testing.dummyText
-}
-WithText.parameters = {
-  docs: {
-    source: {
-      format: true
-    }
-  }
+  text: testing.dummyText
 }
 
 export const Colored = Template.bind({})

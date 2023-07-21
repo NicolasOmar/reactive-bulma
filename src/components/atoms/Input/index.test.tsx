@@ -6,10 +6,10 @@ import Input from '.'
 // TYPES & INTERFACES
 import { InputProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Input', () => {
-  const { basicTestId, basicExample, testClasses } = mocks.testing
+  const { basicTestId, basicExample, testClasses } = testing
 
   test('Should render with required props only', () => {
     const basicProps = basicExample as InputProps

@@ -8,7 +8,7 @@
 
 ### Features
 
-* Create component "Checkbox" ([#135](https://github.com/NicolasOmar/reactive-bulma/issues/135)) ([#41](https://github.com/NicolasOmar/reactive-bulma/issues/41)) ([1c4e4aa](https://github.com/NicolasOmar/reactive-bulma/commit/1c4e4aae1ebf2b96ad40b0abe0ee3c61bcc828a0))
+* Create component "CheckBox" ([#135](https://github.com/NicolasOmar/reactive-bulma/issues/135)) ([#41](https://github.com/NicolasOmar/reactive-bulma/issues/41)) ([1c4e4aa](https://github.com/NicolasOmar/reactive-bulma/commit/1c4e4aae1ebf2b96ad40b0abe0ee3c61bcc828a0))
 
 # [1.19.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.18.0...v1.19.0) (2023-07-05)
 

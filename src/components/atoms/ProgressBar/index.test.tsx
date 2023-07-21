@@ -6,10 +6,10 @@ import ProgressBar from '.'
 // TYPES & INTERFACES
 import { ProgressBarProps } from '../../../interfaces/atomProps'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('ProgressBar', () => {
-  const { inputValues, outputValues, basicTestId } = mocks.testing
+  const { inputValues, outputValues, basicTestId } = testing
 
   test('Should render without any props', () => {
     render(<ProgressBar />)
