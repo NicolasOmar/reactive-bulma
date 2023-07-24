@@ -1,3 +1,17 @@
+# [1.21.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.20.1...v1.21.0) (2023-07-24)
+
+
+### Bug Fixes
+
+* README missing links and failed reference fixed. Minimal changes on package metadata ([6a8c55d](https://github.com/NicolasOmar/reactive-bulma/commit/6a8c55d3d195351fbfc96addb5e175a8fb97c27f))
+* Updating dependencies version ([0bde53c](https://github.com/NicolasOmar/reactive-bulma/commit/0bde53c65592414ed2236d3cd72f344dc3d5caec))
+* Updating Storybook. parseTestId arguments renamed. RadioButton code and stories improved ([c30ccc9](https://github.com/NicolasOmar/reactive-bulma/commit/c30ccc941c85eb88c5c0b5123afa67d91bafcf2b))
+
+
+### Features
+
+* Create component "RadioButton" ([#142](https://github.com/NicolasOmar/reactive-bulma/issues/142)) ([#42](https://github.com/NicolasOmar/reactive-bulma/issues/42)) ([680af4c](https://github.com/NicolasOmar/reactive-bulma/commit/680af4c911a3e2e7bc7b22aaaa689544765ead42))
+
 ## [1.20.1](https://github.com/NicolasOmar/reactive-bulma/compare/v1.20.0...v1.20.1) (2023-07-21)
 
 
