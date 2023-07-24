@@ -17,6 +17,7 @@ const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
     style = null,
     onChange
   } = config
+  const radioButtonTestId = testId ?? `test-radio-button-item-${index}`
 
   return (
     <label
@@ -24,7 +25,7 @@ const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
       className='radio'
     >
       <input
-        data-testid={testId}
+        data-testid={radioButtonTestId}
         type='radio'
         style={style ?? undefined}
         name={name}
