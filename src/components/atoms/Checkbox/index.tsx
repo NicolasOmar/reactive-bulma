@@ -27,13 +27,13 @@ const CheckBox: React.FC<CheckBoxProps> = ({
     'checkbox',
     containerCssClasses
   ])
-  const _containerTestId =
+  const checkboxContainerTestId =
     containerTestId ??
     parseTestId({
       tag: 'checkbox-container',
       parsedClasses: parseContentTestId(content)
     })
-  const _testId =
+  const checkboxTestId =
     testId ??
     parseTestId({
       tag: 'checkbox',
@@ -42,12 +42,12 @@ const CheckBox: React.FC<CheckBoxProps> = ({
 
   return (
     <label
-      data-testid={_containerTestId}
+      data-testid={checkboxContainerTestId}
       className={checkboxContainerClasses}
       style={containerStyle ?? undefined}
     >
       <input
-        data-testid={_testId}
+        data-testid={checkboxTestId}
         type='checkbox'
         className={cssClasses ?? undefined}
         style={style ?? undefined}

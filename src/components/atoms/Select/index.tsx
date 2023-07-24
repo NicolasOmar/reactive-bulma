@@ -56,7 +56,7 @@ const Select: React.FC<SelectProps> = ({
           <option
             data-testid={`${selectTestId}-option-${i}`}
             key={id.toString()}
-            selected={selected ?? false}
+            defaultChecked={selected ?? false}
             onClick={onClick ?? undefined}
           >
             {name}

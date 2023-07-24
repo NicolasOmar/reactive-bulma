@@ -11,7 +11,7 @@ import { testing } from './index.mocks.json'
 describe('RadioButton', () => {
   test('Should render with minimal config', () => {
     render(<RadioButton {...(testing.basicExample as RadioButtonProps)} />)
-    const minimalTestRadioButton = screen.getByTestId('test-radiobutton')
+    const minimalTestRadioButton = screen.getByTestId('test-container-control')
     expect(minimalTestRadioButton).toBeInTheDocument()
   })
 })

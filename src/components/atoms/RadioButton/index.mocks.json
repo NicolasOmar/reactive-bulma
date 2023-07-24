@@ -1,11 +1,18 @@
 {
   "testing": {
     "basicExample": {
+      "name": "basicExample",
       "options": [
-        {
-          "label": "Test checkbox",
-          "name": "test-checkbox"
-        }
+        { "label": "Test checkbox" }
+      ]
+    },
+    "severalOptions": {
+      "name": "severalExamples",
+      "options": [
+        { "label": "Test checkbox 1" },
+        { "label": "Test checkbox 2" },
+        { "label": "Test checkbox 3" },
+        { "label": "Test checkbox 4" }
       ]
     }
   }

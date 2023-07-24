@@ -1,6 +1,6 @@
 interface RegExpRule {
-  usedRegExp?: RegExp
-  regExpReplacer?: string
+  regExp?: RegExp
+  replacer?: string
 }
 
 export interface ParseTestIdProps {
