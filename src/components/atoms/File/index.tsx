@@ -40,12 +40,12 @@ const File: React.FC<FileProps> = ({
       parsedClasses: fileContainerClasses,
       rules: [
         {
-          usedRegExp: /has/gm,
-          regExpReplacer: '-has'
+          regExp: /has/gm,
+          replacer: '-has'
         },
         {
-          usedRegExp: /is|file/gm,
-          regExpReplacer: ''
+          regExp: /is|file/gm,
+          replacer: ''
         }
       ]
     })

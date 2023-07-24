@@ -1,7 +1,7 @@
 import { ParseTestIdProps } from '../interfaces/functionProps'
 
 /**
- * @param { Array<string | null> } _classes Required. Array of classNames on `string` (or `null`) values
+ * @param { Array<string | null> } _classes `Required`. Array of classNames on `string` (or `null`) values
  * @returns { string } A single string product of merge all classNames, separated by spaces
  */
 export const parseClasses = (
@@ -10,9 +10,9 @@ export const parseClasses = (
 
 /**
  * @param { ParseTestIdProps } config Configuration object
- * @param { string } config.tag Required. Component tag used between to build the final testId string.
- * @param { string } config.parsedClasses Required. A single string of previously parsed classes what will be joined with `tag` property.
- * @param { { usedRegExp?: RegExp, regExpReplacer?: string }[] } config.rules Optional. An array of objects used with a regular expression to check each case and a replacer for each one, giving oportunity to handle specific cases of component class names.
+ * @param { string } config.tag `Required`. Component tag used between to build the final testId string.
+ * @param { string } config.parsedClasses `Required`. A single string of previously parsed classes what will be joined with `tag` property.
+ * @param { { regExp?: RegExp, replacer?: string }[] } config.rules Optional. An array of objects used with a regular expression to check each case and a replacer for each one, giving oportunity to handle specific cases of component class names.
  * @returns A single string product of merge all classNames, separated by `separator` value
  */
 export const parseTestId = (config: ParseTestIdProps): string => {
@@ -21,8 +21,8 @@ export const parseTestId = (config: ParseTestIdProps): string => {
   if (config.rules) {
     for (const rule of config.rules) {
       fixedClassString = fixedClassString.replace(
-        rule.usedRegExp as RegExp,
-        rule.regExpReplacer as string
+        rule.regExp as RegExp,
+        rule.replacer as string
       )
     }
   } else {

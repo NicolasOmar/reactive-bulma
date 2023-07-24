@@ -37,12 +37,12 @@ const TextArea: React.FC<TextAreaProps> = ({
       parsedClasses: textAreaClasses,
       rules: [
         {
-          usedRegExp: /textarea/gm,
-          regExpReplacer: ''
+          regExp: /textarea/gm,
+          replacer: ''
         },
         {
-          usedRegExp: /is-|has-/gm,
-          regExpReplacer: '-'
+          regExp: /is-|has-/gm,
+          replacer: '-'
         }
       ]
     })

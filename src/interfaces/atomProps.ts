@@ -265,14 +265,25 @@ export interface CheckBoxProps extends BasicProps {
   onChange?: () => void
 }
 
-interface RadioButtonItemProps {
+export interface RadioButtonItemProps
+  extends Pick<BasicProps, 'testId' | 'style'> {
+  /** `Attribute` `Required` Sets checkbox's text*/
   label: string
-  name: string
+  /** `Attribute` Sets the name that will relate this checkbox with the others */
+  name?: string
+  /** `Attribute` Shows the checkbox as checked or unchecked */
   isChecked?: boolean
+  /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
+  /** `Function` Click function, alone does not nothing, but can be reused for other components */
+  onChange?: () => void
 }
 
 export interface RadioButtonProps extends BasicProps {
+  /** `Attribute` `Required` Indicates the options contained to be selected */
   options: RadioButtonItemProps[]
+  /** `Attribute` `Required` Sets the name that will relate this checkbox with the others */
+  name: string
+  /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onChange?: () => void
 }

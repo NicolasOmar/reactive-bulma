@@ -16,8 +16,8 @@ const generateIconContainer = (
     parsedClasses: color?.toString() ?? '',
     rules: [
       {
-        usedRegExp: /has-text/gm,
-        regExpReplacer: ''
+        regExp: /has-text/gm,
+        replacer: ''
       }
     ]
   })
@@ -67,12 +67,12 @@ const Icon: React.FC<IconProps> = ({
       parsedClasses: iconClasses,
       rules: [
         {
-          usedRegExp: /mdi-|mdi--/gm,
-          regExpReplacer: ''
+          regExp: /mdi-|mdi--/gm,
+          replacer: ''
         },
         {
-          usedRegExp: /mdi /gm,
-          regExpReplacer: '-'
+          regExp: /mdi /gm,
+          replacer: '-'
         }
       ],
       separator: '-'
