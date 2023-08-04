@@ -25,6 +25,7 @@ Component library based on React, Bulma, Typescript and Rollup
 - [Versioning](#versioning)
 - [Roadmap](#roadmap)
 - [Changelog](#changelog)
+- [Contributing](#contributing)
 - [Credit](#credit)
 - [License](#license)
 
@@ -62,7 +63,7 @@ After studying [an Udemy course about Typescript](https://github.com/NicolasOmar
 [badge-soundcloud-security]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=security_rating
 [badge-soundcloud-tech-debt]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=sqale_index
 [link-soundcloud-status]: https://sonarcloud.io/summary/new_code?id=NicolasOmar_reactive-bulma
-[badge-snyk-status]: https://img.shields.io/snyk/vulnerabilities/github/nicolasomar/reactive-bulma?logo=snyk
+[badge-snyk-status]: https://snyk.io/test/github/nicolasomar/reactive-bulma/badge.svg
 [link-snyk-status]: https://snyk.io/test/github/nicolasomar/reactive-bulma
 [badge-github-repo-stars]: https://img.shields.io/github/stars/nicolasomar/reactive-bulma?label=stars&logo=github&labelColor=535353&style=flat
 [badge-github-commits]: https://img.shields.io/github/commit-activity/m/nicolasomar/reactive-bulma?logo=github
@@ -192,6 +193,11 @@ In case you want the detailed list of current and future features, go to the [ro
 ## Changelog
 
 The [changelog](https://github.com/NicolasOmar/reactive-bulma/blob/main/CHANGELOG.md) (powered by `semantic-release`) is regularly updated to reflect what's changed in each new release.
+
+## Contributing
+
+If you're interested in contributing to Reactive Bulma, please read [our contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+
 
 ## Credit
 
