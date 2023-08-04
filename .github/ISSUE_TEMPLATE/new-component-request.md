@@ -8,15 +8,15 @@ assignees: NicolasOmar
 ---
 
 ### Objective 
-Create bulma's component `COMPONENT_NAME` from scratch
+Create new bulma's component `COMPONENT_NAME` from scratch
 
 ---
 
 ### Description 
 Based on project's roadmap, this component will need to have the following specifications
 - A code file based on React Hooks (functional component) with Typescript
-- A test file (`.test.tsx`) for its related unit tests
-- A storybook file (`.stories.tsx`) to be deployed on a public Storybook site (and be tested for anyone)
+- A test file (`index.test.tsx`) for its related unit tests
+- A storybook file (`index.stories.tsx`) to be deployed on a public Storybook site (and be tested for anyone)
 
 ---
 
@@ -27,8 +27,8 @@ Based on project's roadmap, this component will need to have the following speci
 - Development 
   - [ ] Create its folder and a `index.tsx` file where the component will be coded
   - [ ] Create and/or update the needed interfaces, types, tuples and enums for the component
-  - [ ] Create a `.test.ts` file for its units test and create the needed to reach at least 80% of code coverage
-  - [ ] Create a `.stories.tsx` file for storybook stories and add at least 2 stories for different scenarios
+  - [ ] Create a `index.test.ts` file for its units test and create the needed to reach at least 80% of code coverage
+  - [ ] Create a `index.stories.tsx` file for storybook stories and add at least 2 stories for different scenarios
 
 ---
 
