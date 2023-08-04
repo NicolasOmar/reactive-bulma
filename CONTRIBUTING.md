@@ -19,11 +19,13 @@ A bug is a demonstrable problem that is caused by the code in the repository. Go
 
 Guidelines for bug reports:
 
-- Use the GitHub issue search — check if the issue has already been reported under `bug` tag.
+- Use the [project's issue search][bug-issues-search] — check if the issue has already been reported under `bug` tag.
 - Check if the issue has been fixed — try to reproduce it using the latest master or next branch in the repository.
 - Isolate the problem — ideally create a reduced test case.
 
 A good bug report shouldn't leave others needing to chase you up for more information. Please try to be as detailed as possible in your report. What is your environment? What steps will reproduce the issue? What OS experiences the problem? What would you expect to be the outcome? All these details will help people to fix any potential bugs.
+
+[bug-issues-search]: https://github.com/NicolasOmar/reactive-bulma/issues?q=is%3Aopen+is%3Aissue+label%3Abug
 
 Example:
 
@@ -47,6 +49,8 @@ Have in mind that project's focus is noted on its [Roadmap](#roadmap), therefore
 Good pull requests - patches, improvements, new features - are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
 [Please ask first](https://github.com/NicolasOmar/reactive-bulma/discussions) before embarking on any significant pull request (e.g. implementing features, refactoring code), otherwise you risk spending a lot of time working on something that the project's developers might not want to merge into the project.
+
+After concluding your contribution is ok to be implemented, I urge you to create an issue related to that contribution in order to make a complete follow up from the issue and code perspectives.
 
 Adhering to the following process is the best way to get your work
 included in the project:
@@ -120,17 +124,17 @@ Please follow the present coding style of the project. In order to ensure style 
 
 - Before each commit:
   - `npm run lint-staged`: Checks each Typescript-related file follows linting rules and code styling.
-  - `npm run test:diff`: Checks each component and typescript file has a code coverage percentage up to 90%.
+  - `npm run test:diff`: Checks each component and typescript file has a code coverage percentage up to **90%**.
 - And before each push:
   - `npm run prettier:ci`: Runs prettier to ensure it maintain code styling.
-  - `npm run test:ci`: Checks all unit test runs without errors and with a code coverage percentage up to 90%.
+  - `npm run test:ci`: Checks all unit test runs without errors and with a code coverage percentage up to **90%**.
   - `npm run build`: Checks rollup can build library to be shipped to production in a new version.
-  - `npm run build:storybook`: Checks storybook can build in production build (to be shipped in a new version aswell).
+  - `npm run build:storybook`: Checks storybook can compile a build to be shipped to production (in that new version aswell).
 
-Finally, when you submit a Pull Request, the pre-push commands are run again by our continuous integration tools, but hopefully, your code is already clean!
+Finally, when you submit a pull Request, the pre-push commands are run again by our continuous integration tools, but hopefully, your code is already clean!
 
 ## Roadmap
 To get a sense of where Reactive Bulma is heading, or for ideas on where you could contribute, take a look at the [roadmap](https://github.com/users/NicolasOmar/projects/3).
 
 ## License
-By contributing your code to the [GitHub repository](https://github.com/NicolasOmar/reactive-bulma), you agree to license your contribution under the [MIT license](/LICENSE).
+By contributing your code to the [Reactive Bulma repository](https://github.com/NicolasOmar/reactive-bulma), you agree to license your contribution under the [MIT license](/LICENSE).
