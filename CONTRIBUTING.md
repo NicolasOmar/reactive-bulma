@@ -1,6 +1,8 @@
 # Contributing to Reactive Bulma
 First off, thank you for considering contributing to Reactive Bulma! Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
+Read our [Code of Conduct](/CODE_OF_CONDUCT) to keep our community approachable and respectable.
+
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
 ## Using the issue tracker
