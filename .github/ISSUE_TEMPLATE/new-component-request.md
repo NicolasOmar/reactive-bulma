@@ -1,14 +1,14 @@
 ---
 name: New component request
 about: Suggest a new component for this project
-title: Create component INSERT_COMPONENT_NAME
+title: Create component COMPONENT_NAME
 labels: feature
 assignees: NicolasOmar
 
 ---
 
 ### Objective 
-Create bulma's component `XXX` from scratch
+Create bulma's component `COMPONENT_NAME` from scratch
 
 ---
 
@@ -42,4 +42,4 @@ Based on project's roadmap, this component will need to have the following speci
 ---
 
 ### Technical notes 
-**Describe any useful information for this new component like documentation, examples from other sources or articles**
+`Describe any useful information for this new component like documentation, examples from other sources or articles`
