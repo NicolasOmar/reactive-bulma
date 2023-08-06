@@ -25,10 +25,12 @@ Component library based on React, Bulma, Typescript and Rollup
 - [Versioning](#versioning)
 - [Roadmap](#roadmap)
 - [Changelog](#changelog)
+- [Contributing](#contributing)
 - [Credit](#credit)
 - [License](#license)
 
 ## Purpose
+
 After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I started this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
 
 ## Status
@@ -47,6 +49,7 @@ After studying [an Udemy course about Typescript](https://github.com/NicolasOmar
 [![GitHub commit activity][badge-github-commits]][link-github-commit-activity]
 [![GitHub last commit][badge-github-last-commit]][link-github-commit-history]
 [![Semantic Commits][badge-semantic-commits]][link-semantic-commits]
+[![Contributor Covenant][badge-code-of-conduct]][link-code-of-conduct]
 
 [badge-npm-version]: https://img.shields.io/github/package-json/v/nicolasomar/reactive-bulma?label=npm%20version&logo=npm&labelColor=535353&color=success&style=flat
 [badge-npm-size]: https://img.shields.io/bundlephobia/min/reactive-bulma?label=bundle%20size&labelColor=535353&logo=npm&style=flat
@@ -62,7 +65,7 @@ After studying [an Udemy course about Typescript](https://github.com/NicolasOmar
 [badge-soundcloud-security]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=security_rating
 [badge-soundcloud-tech-debt]: https://sonarcloud.io/api/project_badges/measure?project=NicolasOmar_reactive-bulma&metric=sqale_index
 [link-soundcloud-status]: https://sonarcloud.io/summary/new_code?id=NicolasOmar_reactive-bulma
-[badge-snyk-status]: https://img.shields.io/snyk/vulnerabilities/github/nicolasomar/reactive-bulma?logo=snyk
+[badge-snyk-status]: https://snyk.io/test/github/nicolasomar/reactive-bulma/badge.svg
 [link-snyk-status]: https://snyk.io/test/github/nicolasomar/reactive-bulma
 [badge-github-repo-stars]: https://img.shields.io/github/stars/nicolasomar/reactive-bulma?label=stars&logo=github&labelColor=535353&style=flat
 [badge-github-commits]: https://img.shields.io/github/commit-activity/m/nicolasomar/reactive-bulma?logo=github
@@ -72,6 +75,8 @@ After studying [an Udemy course about Typescript](https://github.com/NicolasOmar
 [link-github-commit-history]: https://github.com/NicolasOmar/reactive-bulma/commits/main
 [badge-semantic-commits]: https://img.shields.io/badge/using-conventional%20commits-e10079?logo=conventional-commits
 [link-semantic-commits]: https://github.com/semantic-release/semantic-release
+[badge-code-of-conduct]: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
+[link-code-of-conduct]: code_of_conduct.md
 
 ## Dependencies
 
@@ -138,6 +143,7 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 Learn more about using `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
 ## Usage
+
 ```jsx
 import React from 'react'
 import { Button } from 'reactive-bulma'
@@ -192,6 +198,11 @@ In case you want the detailed list of current and future features, go to the [ro
 ## Changelog
 
 The [changelog](https://github.com/NicolasOmar/reactive-bulma/blob/main/CHANGELOG.md) (powered by `semantic-release`) is regularly updated to reflect what's changed in each new release.
+
+## Contributing
+
+If you're interested in contributing to Reactive Bulma, please read [our contributing docs](./CONTRIBUTING.md) before submitting a pull request.
+
 
 ## Credit
 
