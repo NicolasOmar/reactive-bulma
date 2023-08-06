@@ -7,10 +7,12 @@ Thanks for helping make Reactive Bulma safe for everyone.
 Use this section to tell people about which versions of your project are
 currently being supported with security updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| Version | Supported |
+| :---: | :---: |
+| 2.0.0 | :white_check_mark: |
+| 1.21.0 | :white_check_mark: |
+| 1.20.1 | :white_check_mark: |
+| < 1.20.1 | :x: |
 
 ## Reporting a Vulnerability
 
