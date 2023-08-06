@@ -1,3 +1,27 @@
+# [2.0.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.21.0...v2.0.0) (2023-08-06)
+
+
+### Bug Fixes
+
+* Add issue templates ([35def00](https://github.com/NicolasOmar/reactive-bulma/commit/35def00811101da2af2884b3268d32c58513690b))
+* Add issue templates ([#147](https://github.com/NicolasOmar/reactive-bulma/issues/147)) ([bf3e726](https://github.com/NicolasOmar/reactive-bulma/commit/bf3e72676b097cc57d97c273913bfe320a44129a))
+* Add SECURITY file ([#148](https://github.com/NicolasOmar/reactive-bulma/issues/148)) ([cac4975](https://github.com/NicolasOmar/reactive-bulma/commit/cac497512139aae019c8b618805800a46e86ef54))
+* CONTRIBUTING and CODE OF CONDUCT added into the project ([1b140ba](https://github.com/NicolasOmar/reactive-bulma/commit/1b140ba0d8f66f4fc0655c9c50ccfa959465b701))
+* Dependencies updated. CONTRIBUTING file small updates ([9557981](https://github.com/NicolasOmar/reactive-bulma/commit/955798198bfc6c9f4b97138f8746a5f4bb1afb06))
+* Prettier styling check added as pre-commit command. Build and quality CI workflows improved for more accurate workloads ([76878c7](https://github.com/NicolasOmar/reactive-bulma/commit/76878c70379b30081a6d5fde0cb6859ac46bb47b))
+* PULL REQUEST template added. Small changes on issue templates ([6f106da](https://github.com/NicolasOmar/reactive-bulma/commit/6f106dac8d9a6ff9391eaca4aee3167d11293417))
+* updating dependencies versions ([6c87581](https://github.com/NicolasOmar/reactive-bulma/commit/6c87581d5ffd69c8512b391f2ffa6bc82bf9ab79))
+
+
+### Features
+
+* Create project community standards ([#146](https://github.com/NicolasOmar/reactive-bulma/issues/146)) ([#79](https://github.com/NicolasOmar/reactive-bulma/issues/79)) ([5629c1e](https://github.com/NicolasOmar/reactive-bulma/commit/5629c1e233d7640d2fb531678a4bb0ffef2edd57))
+
+
+### BREAKING CHANGES
+
+* None, All atom components added but no more compexity added.
+
 # [1.21.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.20.1...v1.21.0) (2023-07-24)
 
 
