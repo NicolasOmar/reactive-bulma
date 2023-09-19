@@ -124,7 +124,6 @@ Please follow the present coding style of the project. In order to ensure style 
 
 - Before each commit:
   - `npm run lint-staged`: Checks each Typescript-related file follows linting rules and code styling.
-  - `npm run test:diff`: Checks each component and typescript file has a code coverage percentage up to **90%**.
 - And before each push:
   - `npm run prettier:ci`: Runs prettier to ensure it maintain code styling.
   - `npm run test:ci`: Checks all unit test runs without errors and with a code coverage percentage up to **90%**.

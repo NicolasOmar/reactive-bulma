@@ -45,7 +45,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
     >
       {buttonList.map((currentButtonItem, i, originalButtonList) => {
         const hasSelectedButton = originalButtonList.some(
-          originalItem => originalItem.isSelected
+          ({ isSelected }) => isSelected
         )
         const shouldApplyColor =
           (hasSelectedButton && currentButtonItem.isSelected) ||
