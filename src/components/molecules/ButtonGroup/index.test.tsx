@@ -1,32 +1,41 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import ButtonGroup from '.'
+// MOCKS
+import mocks from './index.mocks.json'
 
 describe('ButtonGroup', () => {
+  const { basicTestId, basicGroup, testClasses } = mocks.testing
+
   test('Should render with a list a buttons', () => {
-    const testList = [{ text: 'Hello' }, { text: 'There' }]
+    render(<ButtonGroup {...basicGroup} />)
 
-    render(
-      <ButtonGroup
-        buttonList={testList}
-        isAttached={true}
-      />
-    )
+    const testButtonGroup = screen.getByTestId(basicTestId)
+    expect(testButtonGroup).toBeInTheDocument()
 
-    testList.forEach(({ text }) => {
+    basicGroup.buttonList.forEach(({ text }) =>
       expect(screen.getByText(text)).toBeInTheDocument()
-    })
+    )
   })
 
-  test('Should render with a list a buttons', () => {
-    const testList = [{ text: 'Hello' }, { text: 'There' }]
+  test('Should render the button group with specfic classes', () => {
+    testClasses.forEach(({ name, value, result }) => {
+      const testIdWithClass = `${basicTestId}-${result.replace(
+        /has-|is-/gm,
+        ''
+      )}`
+      const classTestObject = {
+        ...basicGroup,
+        [name]: value
+      }
 
-    render(<ButtonGroup buttonList={testList} />)
+      render(<ButtonGroup {...classTestObject} />)
 
-    testList.forEach(({ text }) => {
-      expect(screen.getByText(text)).toBeInTheDocument()
+      const testClassButtonGroup = screen.getByTestId(testIdWithClass)
+      expect(testClassButtonGroup.className).toContain(result)
+      cleanup()
     })
   })
 })

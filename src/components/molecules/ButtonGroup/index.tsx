@@ -24,7 +24,17 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
     testId ??
     parseTestId({
       tag: 'buttons',
-      parsedClasses: buttonGroupClasses
+      parsedClasses: buttonGroupClasses,
+      rules: [
+        {
+          regExp: /has-|is-/gm,
+          replacer: '-'
+        },
+        {
+          regExp: /buttons/gm,
+          replacer: ''
+        }
+      ]
     })
 
   return (

@@ -1,5 +1,6 @@
 {
   "testing": {
+    "basicTestId": "test-buttons",
     "basicGroup": {
       "buttonList": [
         {
@@ -15,7 +16,19 @@
           "text": "Kenoby"
         }
       ]
-    }
+    },
+    "testClasses": [
+      {
+        "name": "isAttached",
+        "value": true,
+        "result": "has-addons"
+      },
+      {
+        "name": "position",
+        "value": "centered",
+        "result": "is-centered"
+      }
+    ]
   },
   "storybook": {
 
