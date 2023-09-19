@@ -1,0 +1,23 @@
+{
+  "testing": {
+    "basicGroup": {
+      "buttonList": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "There"
+        },
+        {
+          "text": "General"
+        },
+        {
+          "text": "Kenoby"
+        }
+      ]
+    }
+  },
+  "storybook": {
+
+  }
+}
