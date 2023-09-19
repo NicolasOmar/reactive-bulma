@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.0.0...v2.1.0) (2023-09-19)
+
+
+### Bug Fixes
+
+* Dependencies updated. CHANGELOG file small fixes ([912c1e6](https://github.com/NicolasOmar/reactive-bulma/commit/912c1e68dbb22b52b032a987cff61f918c68e5e3))
+* Updating dependencies versions ([02437d9](https://github.com/NicolasOmar/reactive-bulma/commit/02437d9697c2a34c04149c17d9cc8e2e889eef1a))
+
+
+### Features
+
+* Create component "ButtonGroup" ([#163](https://github.com/NicolasOmar/reactive-bulma/issues/163)) ([#60](https://github.com/NicolasOmar/reactive-bulma/issues/60)) ([60ebb57](https://github.com/NicolasOmar/reactive-bulma/commit/60ebb57ed7df1371dca6b6e49514a8e0d9335abf))
+
 # [2.0.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.21.0...v2.0.0) (2023-08-06)
 
 
