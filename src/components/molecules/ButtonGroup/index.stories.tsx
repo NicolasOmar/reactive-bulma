@@ -2,6 +2,8 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import ButtonGroup from '.'
+// TYPES & INTERFACES
+import { ButtonProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -26,4 +28,14 @@ export const RightPositioned = Template.bind({})
 RightPositioned.storyName = 'Positioned'
 RightPositioned.args = {
   position: 'right'
+}
+
+export const OneSelectedButton = Template.bind({})
+OneSelectedButton.storyName = 'One Selected Button'
+OneSelectedButton.args = {
+  ...AttachedButtons.args,
+  buttonList: testing.basicGroup.buttonList.map((buttonItem, i) => ({
+    ...buttonItem,
+    isSelected: i === 2
+  })) as ButtonProps[]
 }

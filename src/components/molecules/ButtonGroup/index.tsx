@@ -43,12 +43,25 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
       className={buttonGroupClasses}
       style={style ?? undefined}
     >
-      {buttonList.map((buttonItem, i) => (
-        <Button
-          key={i}
-          {...buttonItem}
-        />
-      ))}
+      {buttonList.map((currentButtonItem, i, originalButtonList) => {
+        const hasSelectedButton = originalButtonList.some(
+          originalItem => originalItem.isSelected
+        )
+        const shouldApplyColor =
+          (hasSelectedButton && currentButtonItem.isSelected) ||
+          !hasSelectedButton
+        const buttonConfig = {
+          ...currentButtonItem,
+          color: shouldApplyColor ? currentButtonItem.color : undefined
+        }
+
+        return (
+          <Button
+            key={`button-list-item-${i}`}
+            {...buttonConfig}
+          />
+        )
+      })}
     </section>
   )
 }

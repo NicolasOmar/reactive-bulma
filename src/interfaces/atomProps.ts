@@ -47,6 +47,8 @@ export interface ButtonProps
   isLoading?: boolean
   /** `Styling` Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
+  /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
+  isSelected?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
   size?: basicSizeType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
