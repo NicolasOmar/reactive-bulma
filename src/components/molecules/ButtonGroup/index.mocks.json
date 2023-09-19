@@ -4,16 +4,20 @@
     "basicGroup": {
       "buttonList": [
         {
-          "text": "Hello"
+          "text": "Hello",
+          "color": "is-info"
         },
         {
-          "text": "There"
+          "text": "There",
+          "color": "is-success"
         },
         {
-          "text": "General"
+          "text": "General",
+          "color": "is-warning"
         },
         {
-          "text": "Kenoby"
+          "text": "Kenoby",
+          "color": "is-danger"
         }
       ]
     },
@@ -29,8 +33,5 @@
         "result": "is-centered"
       }
     ]
-  },
-  "storybook": {
-
   }
 }
