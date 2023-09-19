@@ -11,13 +11,14 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   text = null,
   isDisabled = false,
-  color = 'is-primary',
+  color = null,
   isLightColor = false,
   isInvertedColor = false,
   isOutlined = false,
   isRounded = false,
   isLoading = false,
   isStatic = false,
+  isSelected = false,
   size = null,
   onClick = null
 }) => {
@@ -30,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     isRounded ? 'is-rounded' : null,
     isLoading ? 'is-loading' : null,
     isStatic ? 'is-static' : null,
+    isSelected ? 'is-selected' : null,
     size,
     cssClasses
   ])

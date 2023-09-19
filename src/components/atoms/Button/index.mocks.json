@@ -1,6 +1,6 @@
 {
   "testing": {
-    "basicTestId": "test-button-primary",
+    "basicTestId": "test-button",
     "dummyText": "Hello there",
     "testStyles": {
       "paddingTop": "10px",
@@ -14,7 +14,8 @@
       "isOutlined": "is-outlined",
       "isRounded": "is-rounded",
       "isLoading": "is-loading",
-      "isStatic": "is-static"
+      "isStatic": "is-static",
+      "isSelected": "is-selected"
     }
   },
   "storybook": {

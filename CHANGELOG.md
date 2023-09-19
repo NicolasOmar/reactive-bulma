@@ -3,7 +3,6 @@
 
 ### Bug Fixes
 
-* Add issue templates ([35def00](https://github.com/NicolasOmar/reactive-bulma/commit/35def00811101da2af2884b3268d32c58513690b))
 * Add issue templates ([#147](https://github.com/NicolasOmar/reactive-bulma/issues/147)) ([bf3e726](https://github.com/NicolasOmar/reactive-bulma/commit/bf3e72676b097cc57d97c273913bfe320a44129a))
 * Add SECURITY file ([#148](https://github.com/NicolasOmar/reactive-bulma/issues/148)) ([cac4975](https://github.com/NicolasOmar/reactive-bulma/commit/cac497512139aae019c8b618805800a46e86ef54))
 * CONTRIBUTING and CODE OF CONDUCT added into the project ([1b140ba](https://github.com/NicolasOmar/reactive-bulma/commit/1b140ba0d8f66f4fc0655c9c50ccfa959465b701))
@@ -20,7 +19,7 @@
 
 ### BREAKING CHANGES
 
-* None, All atom components added but no more compexity added.
+* None. All atom components added but no more compexity added.
 
 # [1.21.0](https://github.com/NicolasOmar/reactive-bulma/compare/v1.20.1...v1.21.0) (2023-07-24)
 

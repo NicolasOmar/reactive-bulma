@@ -1,5 +1,6 @@
 import React from 'react'
 // TYPES
+import { BasicProps } from './commonProps'
 import {
   basicColorType,
   columnOffsetType,
@@ -11,21 +12,6 @@ import {
   titleSizeType
 } from '../types/styleTypes'
 import { inputTypes } from '../types/domTypes'
-
-interface BasicProps {
-  /** `Attribute` ID used to locate the element in unit test suites (like Jest) */
-  testId?: string
-  /** `Attribute` *For container case*. ID used to locate the element in unit test suites (like Jest) */
-  containerTestId?: string
-  /** `Attribute` Custom CSS classes, applicable for specific scenarios */
-  cssClasses?: string
-  /** `Attribute` *For container case*. Custom CSS classes, applicable for specific scenarios */
-  containerCssClasses?: string
-  /** `Attribute` Custom styling applicable for specific scenarios */
-  style?: React.CSSProperties
-  /** `Attribute` *For container case*. Custom styling applicable for specific scenarios */
-  containerStyle?: React.CSSProperties
-}
 
 export interface ColumnProps
   extends BasicProps,
@@ -61,6 +47,8 @@ export interface ButtonProps
   isLoading?: boolean
   /** `Styling` Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
+  /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
+  isSelected?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
   size?: basicSizeType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
