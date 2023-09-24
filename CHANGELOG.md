@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/NicolasOmar/reactive-bulma/compare/v2.1.0...v2.1.1) (2023-09-24)
+
+
+### Bug Fixes
+
+* bump tough-cookie from 4.1.2 to 4.1.3 ([#136](https://github.com/NicolasOmar/reactive-bulma/issues/136)) ([4c9fd0a](https://github.com/NicolasOmar/reactive-bulma/commit/4c9fd0ac232c7c220381e7c21cef04013126795e)), closes [#282](https://github.com/NicolasOmar/reactive-bulma/issues/282) [#284](https://github.com/NicolasOmar/reactive-bulma/issues/284) [#283](https://github.com/NicolasOmar/reactive-bulma/issues/283)
+
 # [2.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.0.0...v2.1.0) (2023-09-19)
 
 
