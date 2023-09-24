@@ -9,26 +9,10 @@
     }
   },
   "storybook": {
-    "testId": {
-      "description": "ID used to locate the element in unit test suites"
-    },
-    "style": {
-      "description": "Custom styling applicable for specific cases"
-    },
-    "size": {
-      "description": "Set column's size"
-    },
-    "offset": {
-      "description": "Set column's offset (moving it as you set its size"
-    },
-    "isNarrow": {
-      "description": "Set if the column only will take the space it needs"
-    },
     "children": {
-      "description": "Reffers to the component or array of components that will be shown inside the block",
       "table": {
         "type": {
-          "summary": "string | React.ReactElement | React.ReactFragment"
+          "summary": "string | React.ReactElement | React.ReactElement[]"
         }
       }
     }

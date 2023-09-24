@@ -1,6 +1,6 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { CheckboxProps } from '../../../interfaces/atomProps'
+import { CheckBoxProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
@@ -12,28 +12,45 @@ const parseContentTestId = (
   return ''
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const CheckBox: React.FC<CheckBoxProps> = ({
   testId = null,
+  containerTestId = null,
+  cssClasses = null,
+  containerCssClasses = null,
   style = null,
+  containerStyle = null,
   content = null,
   isDisabled = null,
   onChange = null
 }) => {
-  const checkboxClasses = parseClasses(['checkbox'])
+  const checkboxContainerClasses = parseClasses([
+    'checkbox',
+    containerCssClasses
+  ])
+  const _containerTestId =
+    containerTestId ??
+    parseTestId({
+      tag: 'checkbox-container',
+      parsedClasses: parseContentTestId(content)
+    })
   const _testId =
     testId ??
     parseTestId({
       tag: 'checkbox',
       parsedClasses: parseContentTestId(content)
     })
+
   return (
     <label
-      className={checkboxClasses}
-      style={style ?? undefined}
+      data-testid={_containerTestId}
+      className={checkboxContainerClasses}
+      style={containerStyle ?? undefined}
     >
       <input
         data-testid={_testId}
         type='checkbox'
+        className={cssClasses ?? undefined}
+        style={style ?? undefined}
         disabled={isDisabled ?? false}
         onChange={onChange ?? undefined}
       />
@@ -42,4 +59,4 @@ const Checkbox: React.FC<CheckboxProps> = ({
   )
 }
 
-export default Checkbox
+export default CheckBox

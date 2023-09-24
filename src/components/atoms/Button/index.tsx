@@ -5,17 +5,18 @@ import { ButtonProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Button: React.FC<ButtonProps> = ({
-  text = null,
-  type = 'button',
   testId = null,
+  cssClasses = null,
   style = null,
+  type = 'button',
+  text = null,
+  isDisabled = false,
   color = 'is-primary',
   isLightColor = false,
   isInvertedColor = false,
   isOutlined = false,
   isRounded = false,
   isLoading = false,
-  isDisabled = false,
   isStatic = false,
   size = null,
   onClick = null
@@ -29,14 +30,15 @@ const Button: React.FC<ButtonProps> = ({
     isRounded ? 'is-rounded' : null,
     isLoading ? 'is-loading' : null,
     isStatic ? 'is-static' : null,
-    size
+    size,
+    cssClasses
   ])
-  const _testId =
+  const buttonTestId =
     testId ?? parseTestId({ tag: 'button', parsedClasses: buttonClasses })
 
   return (
     <button
-      data-testid={_testId}
+      data-testid={buttonTestId}
       type={type}
       className={buttonClasses}
       style={style ?? undefined}

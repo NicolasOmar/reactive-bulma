@@ -4,12 +4,12 @@ import { StoryFn, Meta } from '@storybook/react'
 import Column from '.'
 import Button from '../Button'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Column',
   component: Column,
-  argTypes: mocks.storybook
+  argTypes: storybook
 } as Meta<typeof Column>
 
 const Template: StoryFn<typeof Column> = args => <Column {...args} />
@@ -20,13 +20,13 @@ BasicExample.storyName = 'No children'
 export const WithParagraph = Template.bind({})
 WithParagraph.storyName = 'With a paragraph'
 WithParagraph.args = {
-  children: <p>{mocks.testing.testParagraph}</p>
+  children: <p>{testing.testParagraph}</p>
 }
 
 export const WithLargeParagraph = Template.bind({})
 WithLargeParagraph.storyName = 'With a large paragraph'
 WithLargeParagraph.args = {
-  children: <p>{mocks.testing.testLargeParagraph}</p>
+  children: <p>{testing.testLargeParagraph}</p>
 }
 
 export const WithButton = Template.bind({})

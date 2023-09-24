@@ -6,24 +6,26 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Column: React.FC<ColumnProps> = ({
   testId = null,
+  cssClasses = null,
   style = null,
+  children = null,
   size = null,
   offset = null,
-  isNarrow = false,
-  children = null
+  isNarrow = false
 }) => {
   const columnClasses = parseClasses([
     'column',
     size,
     offset,
-    isNarrow ? 'is-narrow' : null
+    isNarrow ? 'is-narrow' : null,
+    cssClasses
   ])
-  const _testId =
+  const columnTestId =
     testId ?? parseTestId({ tag: 'column', parsedClasses: columnClasses })
 
   return (
     <section
-      data-testid={_testId}
+      data-testid={columnTestId}
       className={columnClasses}
       style={style ?? undefined}
     >

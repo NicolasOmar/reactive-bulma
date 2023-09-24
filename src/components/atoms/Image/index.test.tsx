@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Image from '.'
 // MOCKS
-import mocks from './index.mocks.json'
+import { testing } from './index.mocks.json'
 
 describe('Image', () => {
-  const { basicTestId, testSrc } = mocks.testing
+  const { basicTestId, testSrc } = testing
 
   test('Should render with required props only', () => {
     render(<Image src={testSrc} />)
