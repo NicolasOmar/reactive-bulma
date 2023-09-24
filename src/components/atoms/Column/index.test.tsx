@@ -11,8 +11,8 @@ describe('Column', () => {
 
   test('Should render without children', () => {
     render(<Column />)
-    const columnTestId = screen.getByTestId(basicTestId)
-    expect(columnTestId).toBeInTheDocument()
+    const testColumn = screen.getByTestId(basicTestId)
+    expect(testColumn).toBeInTheDocument()
   })
 
   test('Should render the Button with specfic classes', () => {

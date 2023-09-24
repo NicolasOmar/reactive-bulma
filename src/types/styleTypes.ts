@@ -92,3 +92,14 @@ export type fixedImageSizeType =
 export type basicSizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
 
 export type iconColorModeType = 'light' | 'dark'
+
+export type columnGapType =
+  | 'is-0'
+  | 'is-1'
+  | 'is-2'
+  | 'is-3'
+  | 'is-4'
+  | 'is-5'
+  | 'is-6'
+  | 'is-7'
+  | 'is-8'

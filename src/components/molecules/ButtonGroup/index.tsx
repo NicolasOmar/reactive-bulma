@@ -57,7 +57,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
 
         return (
           <Button
-            key={`button-list-item-${i}`}
+            key={`button-group-item-${i}`}
             {...buttonConfig}
           />
         )

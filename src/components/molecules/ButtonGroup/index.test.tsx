@@ -5,12 +5,13 @@ import '@testing-library/jest-dom'
 import ButtonGroup from '.'
 // MOCKS
 import mocks from './index.mocks.json'
+import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
 
 describe('ButtonGroup', () => {
   const { basicTestId, basicGroup, testClasses } = mocks.testing
 
   test('Should render with a list a buttons', () => {
-    render(<ButtonGroup {...basicGroup} />)
+    render(<ButtonGroup {...(basicGroup as ButtonGroupProps)} />)
 
     const testButtonGroup = screen.getByTestId(basicTestId)
     expect(testButtonGroup).toBeInTheDocument()
@@ -31,7 +32,7 @@ describe('ButtonGroup', () => {
         [name]: value
       }
 
-      render(<ButtonGroup {...classTestObject} />)
+      render(<ButtonGroup {...(classTestObject as ButtonGroupProps)} />)
 
       const testClassButtonGroup = screen.getByTestId(testIdWithClass)
       expect(testClassButtonGroup.className).toContain(result)
