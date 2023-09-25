@@ -1,0 +1,38 @@
+{
+  "testing": {
+    "basicTestId": "test-columns-3",
+    "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
+    "testClasses": [
+      {
+        "name": "isMultiline",
+        "value": true,
+        "result": "is-multiline"
+      },
+      {
+        "name": "isMobileLayout",
+        "value": true,
+        "result": "is-mobile"
+      },
+      {
+        "name": "isVerticallyCentered",
+        "value": true,
+        "result": "is-vcentered"
+      },
+      {
+        "name": "isHorizontallyCentered",
+        "value": true,
+        "result": "is-centered"
+      },
+      {
+        "name": "gap",
+        "value": null,
+        "result": "is-gapless"
+      },
+      {
+        "name": "gap",
+        "value": "is-6",
+        "result": "is-6"
+      }
+    ]
+  }
+}

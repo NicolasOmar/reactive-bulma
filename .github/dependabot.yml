@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "09:00"
+      time: "09:30"
       timezone: "America/Argentina/Cordoba"
     assignees:
       - "nicolasomar"
@@ -22,7 +22,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "09:00"
+      time: "09:30"
       timezone: "America/Argentina/Cordoba"
     assignees:
       - "nicolasomar"

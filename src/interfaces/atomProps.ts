@@ -1,6 +1,7 @@
 import React from 'react'
-// TYPES
+// COMMON PROPS
 import { BasicProps } from './commonProps'
+// TYPES
 import {
   basicColorType,
   columnOffsetType,
