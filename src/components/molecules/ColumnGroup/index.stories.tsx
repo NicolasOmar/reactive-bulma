@@ -20,8 +20,11 @@ export default {
 
 const Template: StoryFn<typeof ColumnGroup> = args => <ColumnGroup {...args} />
 
-export const BasicGroup = Template.bind({})
-BasicGroup.storyName = 'No Columns'
+export const FewColumns = Template.bind({})
+FewColumns.storyName = 'Few Columns'
+FewColumns.args = {
+  listOfColumns: renderColumns(5)
+}
 
 export const SeveralColumns = Template.bind({})
 SeveralColumns.storyName = 'Several Columns'
@@ -39,7 +42,7 @@ Multiline.args = {
 export const Centered = Template.bind({})
 Centered.storyName = 'Centered in Horizontal Mode'
 Centered.args = {
-  listOfColumns: renderColumns(5),
+  ...FewColumns.args,
   isHorizontallyCentered: true
 }
 
