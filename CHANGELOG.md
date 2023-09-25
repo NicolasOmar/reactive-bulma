@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.1.1...v2.2.0) (2023-09-25)
+
+
+### Bug Fixes
+
+* Github Actions and npm dependencies version updated ([bfc443f](https://github.com/NicolasOmar/reactive-bulma/commit/bfc443f15db5b24d70a1a81c469805c562523b24))
+
+
+### Features
+
+* Create component "ColumnGroup" ([#167](https://github.com/NicolasOmar/reactive-bulma/issues/167)) ([#59](https://github.com/NicolasOmar/reactive-bulma/issues/59)) ([528497f](https://github.com/NicolasOmar/reactive-bulma/commit/528497f736f0580b1baebaacd4b8158820ad28aa))
+
 ## [2.1.1](https://github.com/NicolasOmar/reactive-bulma/compare/v2.1.0...v2.1.1) (2023-09-24)
 
 
