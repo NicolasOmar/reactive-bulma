@@ -50,14 +50,12 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
       className={columnGroupClasses}
       style={style ?? undefined}
     >
-      {Array.isArray(listOfColumns)
-        ? listOfColumns.map((_columnItem, i) => (
-            <Column
-              key={`column-group-item-${i}`}
-              {..._columnItem}
-            />
-          ))
-        : null}
+      {listOfColumns.map((_columnItem, i) => (
+        <Column
+          key={`column-group-item-${i}`}
+          {..._columnItem}
+        />
+      ))}
     </section>
   )
 }
