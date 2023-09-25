@@ -30,21 +30,21 @@ SeveralColumns.args = {
 }
 
 export const Multiline = Template.bind({})
-Multiline.storyName = 'Multiline mode'
+Multiline.storyName = 'Multiline Mode'
 Multiline.args = {
   ...SeveralColumns.args,
   isMultiline: true
 }
 
 export const Centered = Template.bind({})
-Centered.storyName = 'Centered in horizontal mode'
+Centered.storyName = 'Centered in Horizontal Mode'
 Centered.args = {
   listOfColumns: renderColumns(5),
   isHorizontallyCentered: true
 }
 
 export const NoGap = Template.bind({})
-NoGap.storyName = 'No gap between columns'
+NoGap.storyName = 'No Gap between columns'
 NoGap.args = {
   ...Centered.args,
   gap: null
