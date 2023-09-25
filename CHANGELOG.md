@@ -1,3 +1,11 @@
+## [2.2.1](https://github.com/NicolasOmar/reactive-bulma/compare/v2.2.0...v2.2.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* Change broken ColumnGroup stories ([#173](https://github.com/NicolasOmar/reactive-bulma/issues/173)) ([f73c34d](https://github.com/NicolasOmar/reactive-bulma/commit/f73c34df383a12b7b7e76bfe6e20920026abb55d))
+* Updating dependencies ([27e1de8](https://github.com/NicolasOmar/reactive-bulma/commit/27e1de8465ebc0faf8506c4c7037476eb2a70359))
+
 # [2.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.1.1...v2.2.0) (2023-09-25)
 
 
