@@ -25,5 +25,5 @@ export interface ColumnGroupProps extends ElementProps {
   /** `Styling` Will center the list of columns horizontally */
   isHorizontallyCentered?: boolean
   /** `Styling` Will adjust the space between the columns. In case to set null, it will remove those gaps */
-  gap?: columnGapType
+  gap?: columnGapType | null
 }

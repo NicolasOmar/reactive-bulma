@@ -3,9 +3,10 @@ import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import ButtonGroup from '.'
+// TYPES & INTERFACES
+import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
 // MOCKS
 import mocks from './index.mocks.json'
-import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
 
 describe('ButtonGroup', () => {
   const { basicTestId, basicGroup, testClasses } = mocks.testing

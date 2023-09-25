@@ -15,7 +15,7 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
   isMultiline = null,
   isVerticallyCentered = null,
   isHorizontallyCentered = null,
-  gap = 'is-3'
+  gap = undefined
 }) => {
   const columnGroupClasses = parseClasses([
     'columns',
@@ -23,7 +23,7 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
     isMobileLayout ? 'is-mobile' : null,
     isVerticallyCentered ? 'is-vcentered' : null,
     isHorizontallyCentered ? 'is-centered' : null,
-    gap ?? 'is-gapeless',
+    gap === undefined ? 'is-3' : gap === null ? 'is-gapless' : gap,
     cssClasses
   ])
   const columnGroupTestId =
@@ -35,7 +35,7 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
   return (
     <section
       data-testid={columnGroupTestId}
-      className={columnGroupTestId}
+      className={columnGroupClasses}
       style={style ?? undefined}
     >
       {Array.isArray(listOfColumns)
