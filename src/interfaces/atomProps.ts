@@ -1,6 +1,6 @@
 import React from 'react'
 // COMMON PROPS
-import { BasicProps } from './commonProps'
+import { ElementProps, ComposedElementProps } from './commonProps'
 // TYPES
 import {
   basicColorType,
@@ -15,7 +15,7 @@ import {
 import { inputTypes } from '../types/domTypes'
 
 export interface ColumnProps
-  extends BasicProps,
+  extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
   children?: string | React.ReactElement | React.ReactElement[]
@@ -28,7 +28,7 @@ export interface ColumnProps
 }
 
 export interface ButtonProps
-  extends BasicProps,
+  extends ElementProps,
     React.ComponentPropsWithoutRef<'button'> {
   /** `Attribute` The text will be shown in the `Button` */
   text?: string
@@ -57,7 +57,7 @@ export interface ButtonProps
 }
 
 export interface ProgressBarProps
-  extends BasicProps,
+  extends ElementProps,
     React.ComponentPropsWithoutRef<'progress'> {
   /** `Attribute` Sets colored bar at the level against `max` value (`100` by default) */
   value?: number
@@ -72,14 +72,14 @@ export interface ProgressBarProps
 }
 
 export interface BlockProps
-  extends BasicProps,
+  extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the block */
   children?: string | React.ReactElement | React.ReactElement[]
 }
 
 export interface TagProps
-  extends BasicProps,
+  extends ComposedElementProps,
     React.ComponentPropsWithoutRef<'span'> {
   /** `Attribute` `Required` The text will be shown in the `Tag` */
   text: string
@@ -104,7 +104,7 @@ export interface TagProps
 }
 
 export interface ImageProps
-  extends BasicProps,
+  extends ComposedElementProps,
     React.ComponentPropsWithoutRef<'figure'> {
   /** `Attribute` `Required` The image source that will be shown */
   src: string
@@ -115,14 +115,14 @@ export interface ImageProps
 }
 
 export interface BoxProps
-  extends BasicProps,
+  extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the box */
   children?: string | React.ReactElement | React.ReactElement[]
 }
 
 export interface TitleSectionProps
-  extends BasicProps,
+  extends ElementProps,
     React.ComponentPropsWithoutRef<'p'> {
   /** `Attribute` Sets the text you want to show */
   text: string
@@ -141,7 +141,7 @@ export interface TitleProps {
   secondary?: TitleSectionProps
 }
 
-export interface IconProps extends BasicProps {
+export interface IconProps extends ComposedElementProps {
   /** `Attribute` `Required` Sets the icon key work based on [Material Design icon list](https://pictogrammers.com/library/mdi/) */
   iconLabel: string
   /** `Attribute` Sets the text you want to show next to the icon */
@@ -156,7 +156,7 @@ export interface IconProps extends BasicProps {
   isSpinning?: boolean
 }
 
-export interface InputProps extends BasicProps {
+export interface InputProps extends ElementProps {
   /** `Attribute` `Required` What type of input will be used */
   type: inputTypes
   /** `Attribute` The value that will be shown on the input */
@@ -190,7 +190,7 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
   isFixedSize?: boolean
 }
 
-export interface DeleteProps extends BasicProps {
+export interface DeleteProps extends ElementProps {
   /** `Styling` Set icons's size */
   size?: Exclude<basicSizeType, 'is-normal'>
   /** `Function` Click function. Alone does not nothing, but can be reused for other components */
@@ -203,7 +203,7 @@ export interface SelectOption {
   selected?: boolean
 }
 
-export interface SelectProps extends BasicProps {
+export interface SelectProps extends ComposedElementProps {
   /** `Attribute` Indicates the options contained on the select */
   options?: SelectOption[]
   /** `Attribute` Indicates how many options will be shown at first glance (before looking for the whole list */
@@ -224,7 +224,7 @@ export interface SelectProps extends BasicProps {
   onClick?: () => void
 }
 
-export interface FileProps extends BasicProps {
+export interface FileProps extends ComposedElementProps {
   /** `Attribute` The name of the file to be uploaded */
   fileName?: string
   /** `Attribute` The icon displayed in file's button" */
@@ -245,7 +245,7 @@ export interface FileProps extends BasicProps {
   onClick?: () => void
 }
 
-export interface CheckBoxProps extends BasicProps {
+export interface CheckBoxProps extends ComposedElementProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
   content?: string | React.ReactElement
   /** `Attribute` Will disable the checkbox */
@@ -255,7 +255,7 @@ export interface CheckBoxProps extends BasicProps {
 }
 
 export interface RadioButtonItemProps
-  extends Pick<BasicProps, 'testId' | 'style'> {
+  extends Pick<ElementProps, 'testId' | 'style'> {
   /** `Attribute` `Required` Sets checkbox's text*/
   label: string
   /** `Attribute` Sets the name that will relate this checkbox with the others */
@@ -268,7 +268,7 @@ export interface RadioButtonItemProps
   onChange?: () => void
 }
 
-export interface RadioButtonProps extends BasicProps {
+export interface RadioButtonProps extends ComposedElementProps {
   /** `Attribute` `Required` Indicates the options contained to be selected */
   options: RadioButtonItemProps[]
   /** `Attribute` `Required` Sets the name that will relate this checkbox with the others */
