@@ -5,5 +5,15 @@
     "testClasses": {
       "isRounded": "is-rounded"
     }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A container for responsive images",
+      "docs": {
+        "description": {
+          "component": "Because images can take a few seconds to load (or not at all), use the `image` container to specify a **precisely sized** container so that your layout isn't broken because of image loading or image errors."
+        }
+      }
+    }
   }
 }

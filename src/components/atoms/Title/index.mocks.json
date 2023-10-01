@@ -48,21 +48,26 @@
     "sizes": ["is-1", "is-2", "is-3", "is-4"]
   },
   "storybook": {
-    "main": {
-      "table": {
-        "type": {
-          "summary": "TitleSectionProps",
-          "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+    "argTypes": {
+      "main": {
+        "table": {
+          "type": {
+            "summary": "TitleSectionProps",
+            "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+          }
+        }
+      },
+      "secondary": {
+        "table": {
+          "type": {
+            "summary": "TitleSectionProps",
+            "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+          }
         }
       }
     },
-    "secondary": {
-      "table": {
-        "type": {
-          "summary": "TitleSectionProps",
-          "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
-        }
-      }
+    "parameters": {
+      "componentSubtitle": "Simple headings to add depth to your page"
     }
   }
 }

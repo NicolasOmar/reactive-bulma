@@ -5,12 +5,13 @@ import Icon from '.'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Icon',
   component: Icon,
-  args: testing.baseConfig
+  args: testing.baseConfig,
+  ...storybook
 } as Meta<typeof Icon>
 
 const Template: StoryFn<typeof Icon> = args => <Icon {...args} />

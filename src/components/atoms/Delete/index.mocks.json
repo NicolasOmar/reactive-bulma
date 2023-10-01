@@ -5,5 +5,15 @@
       "size": "is-large"
     },
     "sizes": ["is-small","is-medium","is-large"]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A versatile delete cross",
+      "docs": {
+        "description": {
+          "component": "The `delete` element is a stand-alone element that can be used in different contexts."
+        }
+      }
+    }
   }
 }

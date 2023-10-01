@@ -1,13 +1,4 @@
 {
-  "storybook": {
-    "options": {
-      "table": {
-        "type": {
-          "summary": "Array<{ id: string | number, name: string }>"
-        }
-      }
-    }
-  },
   "testing": {
     "basicTestId": "test-select",
     "oneOption": {
@@ -68,6 +59,25 @@
       "isRounded": "is-rounded",
       "isHovered": "is-hovered",
       "isFocused": "is-focused"
+    }
+  },
+  "storybook": {
+    "argTypes": {
+      "options": {
+        "table": {
+          "type": {
+            "summary": "Array<{ id: string | number, name: string }>"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "The browser built-in select dropdown, styled accordingly",
+      "docs": {
+        "description": {
+          "component": "The `select` class is a simple wrapper around the `<select>` HTML element, which gives the styling more flexibility and support for icons."
+        }
+      }
     }
   }
 }
