@@ -1,8 +1,9 @@
 // COMMON PROPS
 import { ElementProps } from './commonProps'
 // COMPONENT PROPS
-import { ButtonProps, ColumnProps } from './atomProps'
-import { columnGapType } from '../types/styleTypes'
+import { ButtonProps, ColumnProps, DeleteProps } from './atomProps'
+// TYPES
+import { basicColorType, columnGapType } from '../types/styleTypes'
 
 export interface ButtonGroupProps extends ElementProps {
   /** `Atribute` `Required` Array of `Button` objects that will be shown */
@@ -26,4 +27,15 @@ export interface ColumnGroupProps extends ElementProps {
   isHorizontallyCentered?: boolean
   /** `Styling` Will adjust the space between the columns. In case to set null, it will remove those gaps */
   gap?: columnGapType | null
+}
+
+export interface NotificationProps extends ElementProps {
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
+  children?: string | React.ReactElement | React.ReactElement[]
+  /** `Atribute` Includes a `Delete` config object that will be shown */
+  deleteButton?: DeleteProps
+  /** `Styling` Color based on bulma's color tokens */
+  color?: basicColorType
+  /** `Styling` Will adjust the selected color with a ligther style */
+  isLightColor?: boolean
 }

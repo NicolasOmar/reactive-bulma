@@ -14,7 +14,7 @@
       }
     },
     "parameters": {
-      "componentSubtitle": "Bulma'’'s most basic spacer block",
+      "componentSubtitle": "Bulma's most basic spacer block",
       "docs": {
         "description": {
           "component": "The `block` element is a simple **spacer tool**. It allows **sibling** HTML elements to have a consistent margin between them."

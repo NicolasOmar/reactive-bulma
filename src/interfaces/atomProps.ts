@@ -247,7 +247,7 @@ export interface FileProps extends ComposedElementProps {
 
 export interface CheckBoxProps extends ComposedElementProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
-  content?: string | React.ReactElement
+  content?: string | React.ReactElement | React.ReactElement[]
   /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
