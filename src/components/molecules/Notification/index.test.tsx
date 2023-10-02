@@ -5,6 +5,7 @@ import '@testing-library/jest-dom'
 import Notification from '.'
 // TYPES & INTERFACES
 import { NotificationProps } from '../../../interfaces/moleculeProps'
+import { DeleteProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -36,5 +37,16 @@ describe('Notification', () => {
       expect(testClassNotification.className).toContain(result)
       cleanup()
     })
+  })
+
+  test('Should render the delete button', () => {
+    const deleteButtonTestId = 'test-delete-medium'
+    const deleteButtonConfig = {
+      deleteButton: { size: 'is-medium' }
+    } as DeleteProps
+
+    render(<Notification {...deleteButtonConfig} />)
+    const testDeleteButton = screen.getByTestId(deleteButtonTestId)
+    expect(testDeleteButton).toBeInTheDocument()
   })
 })
