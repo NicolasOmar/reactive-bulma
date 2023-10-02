@@ -9,7 +9,7 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/Column',
   component: Column,
-  argTypes: storybook
+  ...storybook
 } as Meta<typeof Column>
 
 const Template: StoryFn<typeof Column> = args => <Column {...args} />

@@ -33,5 +33,15 @@
         "result": "is-centered"
       }
     ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "You can create a list of buttons by using the buttons container",
+      "docs": {
+        "description": {
+          "component": "If the list is very long, it will automatically wrap on multiple lines, while keeping all buttons evenly spaced."
+        }
+      }
+    }
   }
 }

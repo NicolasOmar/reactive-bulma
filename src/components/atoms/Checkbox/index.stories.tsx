@@ -11,7 +11,7 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/CheckBox',
   component: CheckBox,
-  argTypes: storybook
+  ...storybook
 } as Meta<typeof CheckBox>
 
 const Template: StoryFn<typeof CheckBox> = args => <CheckBox {...args} />

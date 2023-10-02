@@ -5,12 +5,13 @@ import Input from '.'
 // TYPES & INTERFACES
 import { InputProps } from '../../../interfaces/atomProps'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Input',
   component: Input,
-  args: testing.basicExample
+  args: testing.basicExample,
+  ...storybook
 } as Meta<typeof Input>
 
 const Template: StoryFn<typeof Input> = args => <Input {...args} />

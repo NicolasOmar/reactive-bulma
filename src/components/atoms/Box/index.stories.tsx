@@ -8,7 +8,7 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/Box',
   component: Box,
-  argTypes: storybook
+  ...storybook
 } as Meta<typeof Box>
 
 const Template: StoryFn<typeof Box> = args => <Box {...args} />

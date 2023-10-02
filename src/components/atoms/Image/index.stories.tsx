@@ -3,14 +3,15 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Image from '.'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Image',
   component: Image,
   args: {
     src: testing.testSrc
-  }
+  },
+  ...storybook
 } as Meta<typeof Image>
 
 const Template: StoryFn<typeof Image> = args => (

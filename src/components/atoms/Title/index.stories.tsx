@@ -10,8 +10,8 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/Title',
   component: Title,
-  argTypes: storybook,
-  args: testing.baseConfig
+  args: testing.baseConfig,
+  ...storybook
 } as Meta<typeof Title>
 
 const Template: StoryFn<typeof Title> = args => <Title {...args} />

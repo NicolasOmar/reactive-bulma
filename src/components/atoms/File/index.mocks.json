@@ -30,14 +30,20 @@
       "buttonOnRight": "is-right",
       "isFullWidth": "is-fullwidth",
       "isBoxed": "is-boxed"
-    }},
+    }
+  },
   "storybook": {
-    "uploadIcon": {
-      "table": {
-        "type": {
-          "summary": "Icon"
+    "argTypes": {
+      "uploadIcon": {
+        "table": {
+          "type": {
+            "summary": "Icon"
+          }
         }
       }
+    },
+    "parameters": {
+      "componentSubtitle": "A custom file upload input, without JavaScript"
     }
   }
 }

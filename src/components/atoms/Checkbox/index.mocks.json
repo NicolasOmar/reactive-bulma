@@ -9,10 +9,21 @@
     }
   },
   "storybook": {
-    "content": {
-      "table": {
-        "type": {
-          "summary": "string | React.ReactElement | React.ReactElement[]"
+    "argTypes": {
+      "content": {
+        "table": {
+          "type": {
+            "summary": "string | React.ReactElement | React.ReactElement[]"
+          }
+        },
+        "control": "object"
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "The 2-state checkbox in its native format",
+      "docs": {
+        "description": {
+          "component": "The `checkbox` class is a simple wrapper around the `<input type='checkbox'>` HTML element. It is intentionally not styled, to preserve cross-browser compatibility and the user experience."
         }
       }
     }

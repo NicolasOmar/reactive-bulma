@@ -33,5 +33,15 @@
     "readOnly": {
       "isReadonly": true
     }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "The text input and its variations",
+      "docs": {
+        "description": {
+          "component": "The Bulma `input` CSS class is meant for `<input>` HTML elements. The [following type](http://htmlreference.io/element/input/) attributes are supported: `text`, `password`, `email` and `tel`"
+        }
+      }
+    }
   }
 }

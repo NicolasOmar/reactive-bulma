@@ -5,11 +5,12 @@ import TextArea from '.'
 // TYPES & INTERFACES
 import { TextAreaProps } from '../../../interfaces/atomProps'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/TextArea',
-  component: TextArea
+  component: TextArea,
+  ...storybook
 } as Meta<typeof TextArea>
 
 const Template: StoryFn<typeof TextArea> = args => <TextArea {...args} />

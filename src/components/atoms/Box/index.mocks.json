@@ -4,10 +4,20 @@
     "testId": "test-blocking-dom"
   },
   "storybook": {
-    "children": {
-      "table": {
-        "type": {
-          "summary": "string | React.ReactElement | React.ReactElement[]"
+    "argTypes": {
+      "children": {
+        "table": {
+          "type": {
+            "summary": "string | React.ReactElement | React.ReactElement[]"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "A white box to contain other elements",
+      "docs": {
+        "description": {
+          "component": "The `box` element is a simple container with a white background, some padding, and a box shadow."
         }
       }
     }

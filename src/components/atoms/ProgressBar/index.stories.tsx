@@ -2,10 +2,13 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import ProgressBar from '.'
+// MOCKS
+import { storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/ProgressBar',
-  component: ProgressBar
+  component: ProgressBar,
+  ...storybook
 } as Meta<typeof ProgressBar>
 
 const Template: StoryFn<typeof ProgressBar> = args => <ProgressBar {...args} />

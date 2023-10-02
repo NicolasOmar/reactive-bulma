@@ -30,5 +30,15 @@
     "fixedSize": {
       "isFixedSize": true
     }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "The multiline textarea and its variations",
+      "docs": {
+        "description": {
+          "component": "The Bulma `textarea` CSS class is the multiline version of the `input` [element](https://bulma.io/documentation/form/input/)."
+        }
+      }
+    }
   }
 }

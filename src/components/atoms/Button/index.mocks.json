@@ -19,18 +19,28 @@
     }
   },
   "storybook": {
-    "type": {
-      "description": "What type of button will be used",
-      "table": {
-        "type": {
-          "summary": "button | reset | submit"
+    "argTypes": {
+      "type": {
+        "description": "What type of button will be used",
+        "table": {
+          "type": {
+            "summary": "button | reset | submit"
+          },
+          "defaultValue": {
+            "summary": "button"
+          }
         },
-        "defaultValue": {
-          "summary": "button"
+        "control": "radio",
+        "options": ["button", "reset", "submit"]
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "The classic button, in different colors, sizes, and states",
+      "docs": {
+        "description": {
+          "component": "The **button** is an essential element of any design. It's meant to look and behave as an **interactive** element of your page."
         }
-      },
-      "control": "radio",
-      "options": ["button", "reset", "submit"]
+      }
     }
   }
 }

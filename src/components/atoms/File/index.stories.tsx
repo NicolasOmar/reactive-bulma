@@ -10,7 +10,7 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/File',
   component: File,
-  argTypes: storybook
+  ...storybook
 } as Meta<typeof File>
 
 const Template: StoryFn<typeof File> = args => <File {...args} />

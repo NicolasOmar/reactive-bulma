@@ -8,7 +8,7 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/Button',
   component: Button,
-  argTypes: storybook
+  ...storybook
 } as Meta<typeof Button>
 
 const Template: StoryFn<typeof Button> = args => <Button {...args} />

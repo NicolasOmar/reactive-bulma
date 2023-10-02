@@ -1,13 +1,5 @@
----
-name: New pull request
-about: Adds a new pull request to be reviewed
-title: SAME_NAME_AS_ASSIGNED_ISSUE
-assignees: NicolasOmar
-
----
-
 ### Changes made 
-`Explain what you made to present the following solution on this pull request.`
+Explain what you made to present the following solution on this pull request.
 
 ---
 

@@ -3,15 +3,14 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import RadioButton from '.'
 // TYPES & INTERFACES
-// import { CheckboxProps } from '../../../interfaces/atomProps'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/RadioButton',
   component: RadioButton,
-  // argTypes: storybook
-  args: testing.basicExample
+  args: testing.basicExample,
+  ...storybook
 } as Meta<typeof RadioButton>
 
 const Template: StoryFn<typeof RadioButton> = args => <RadioButton {...args} />

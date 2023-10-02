@@ -3,12 +3,13 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Tag from '.'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Tag',
   component: Tag,
-  args: testing.baseConfig
+  args: testing.baseConfig,
+  ...storybook
 } as Meta<typeof Tag>
 
 const Template: StoryFn<typeof Tag> = args => <Tag {...args} />

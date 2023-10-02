@@ -5,11 +5,12 @@ import Delete from '.'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Atoms/Delete',
-  component: Delete
+  component: Delete,
+  ...storybook
 } as Meta<typeof Delete>
 
 const Template: StoryFn<typeof Delete> = args => <Delete {...args} />

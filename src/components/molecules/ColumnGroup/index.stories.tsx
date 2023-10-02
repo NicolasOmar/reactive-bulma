@@ -4,7 +4,7 @@ import { StoryFn, Meta } from '@storybook/react'
 import ColumnGroup from '.'
 // TYPES & INTERFACES
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 const renderColumns = (requiredLength: number) =>
   Array(requiredLength)
@@ -15,7 +15,8 @@ const renderColumns = (requiredLength: number) =>
 
 export default {
   title: 'Molecules/ColumnGroup',
-  component: ColumnGroup
+  component: ColumnGroup,
+  ...storybook
 } as Meta<typeof ColumnGroup>
 
 const Template: StoryFn<typeof ColumnGroup> = args => <ColumnGroup {...args} />

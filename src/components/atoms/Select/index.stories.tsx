@@ -8,7 +8,7 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/Select',
   component: Select,
-  argTypes: storybook
+  ...storybook
 } as Meta<typeof Select>
 
 const Template: StoryFn<typeof Select> = args => <Select {...args} />

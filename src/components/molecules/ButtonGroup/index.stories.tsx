@@ -5,12 +5,13 @@ import ButtonGroup from '.'
 // TYPES & INTERFACES
 import { ButtonProps } from '../../../interfaces/atomProps'
 // MOCKS
-import { testing } from './index.mocks.json'
+import { testing, storybook } from './index.mocks.json'
 
 export default {
   title: 'Molecules/ButtonGroup',
   component: ButtonGroup,
-  args: testing.basicGroup
+  args: testing.basicGroup,
+  ...storybook
 } as Meta<typeof ButtonGroup>
 
 const Template: StoryFn<typeof ButtonGroup> = args => <ButtonGroup {...args} />

@@ -5,7 +5,7 @@ import { CheckBoxProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const parseContentTestId = (
-  content: string | React.ReactElement | null
+  content: string | React.ReactElement | React.ReactElement[] | null
 ): string => {
   if (typeof content === 'string') return `-${content?.toString()}`
   if (content !== null) return '-with-component'
