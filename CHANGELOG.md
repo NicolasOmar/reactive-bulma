@@ -1,3 +1,17 @@
+# [2.3.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.2.1...v2.3.0) (2023-10-02)
+
+
+### Bug Fixes
+
+* Adding descriptive text to each created component for better context ([9d0c6ac](https://github.com/NicolasOmar/reactive-bulma/commit/9d0c6ac1030ebf6f2c5597d25439cca60274c096))
+* Reviewing props usage for a more correct usage ([94e5b11](https://github.com/NicolasOmar/reactive-bulma/commit/94e5b11cf724157ac27a11576786aa945574cddc))
+* Updating dependencies to last versions ([c940027](https://github.com/NicolasOmar/reactive-bulma/commit/c940027e15115427c36e2f6b4b3adb3485129681))
+
+
+### Features
+
+* Create component "Notification" ([#179](https://github.com/NicolasOmar/reactive-bulma/issues/179)) ([#62](https://github.com/NicolasOmar/reactive-bulma/issues/62)) ([#174](https://github.com/NicolasOmar/reactive-bulma/issues/174)) ([0e2212e](https://github.com/NicolasOmar/reactive-bulma/commit/0e2212eece90c45010cb16139e4d6e3b2fcbaab9))
+
 ## [2.2.1](https://github.com/NicolasOmar/reactive-bulma/compare/v2.2.0...v2.2.1) (2023-09-25)
 
 
