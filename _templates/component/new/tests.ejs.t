@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= fullRoute %>/index.test.tsx
+to: <%= fileRoute %>.test.tsx
 ---
 import React from 'react'
 import { render, screen } from '@testing-library/react'

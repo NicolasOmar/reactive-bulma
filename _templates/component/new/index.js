@@ -1,7 +1,11 @@
-const separatorsRegExp = /\s|_/gm
+/** `RegExp` Checks each time apprears a space, a minus or an underscore */
+const separatorsRegExp = /\s|_|-/gm
+/** `RegExp` Checks word's first letter at text start */
 const firstLetterRegExp = /^\w/gm
-const afterSeparatorFirstLetterRegExp = /(?<=(\s|\_))[a-z]/gm
-const firstLetterAndAfterSeparatorRegExp = /^\w|(?<=(\s|\_))[a-z]/gm
+/** `RegExp` Checks word's first letter each time it is preceded by a space, a minus or an underscore */
+const afterSeparatorFirstLetterRegExp = /(?<=(\s|\_|-))[a-z]/gm
+/** `RegExp` Checks word's first letter at text start and each time it is preceded by a space, a minus or an underscore */
+const firstLetterAndAfterSeparatorRegExp = /^\w|(?<=(\s|\_|-))[a-z]/gm
 
 const capitalizeText = text => text.replace(firstLetterRegExp, (match) => match.toUpperCase())
 
@@ -22,13 +26,17 @@ module.exports = {
     const questions = [{
       type: 'input',
       name: 'name',
-      message: 'Name of component? (ex: AddContactForm)',
+      message: 'Which will be the name of that new component? (you can introduce several words like "new idea")',
     },
     {
       type: "select",
       name: "route",
-      message: "Which type you will need",
-      choices: ['atom', 'molecule', 'organism']
+      message: "Which type you will be?",
+      choices: [
+        'atom => Single composition, minor logic related to mentioned component',
+        'molecule => Composed by one or several atoms',
+        'organism => Composed by one or several molecules and/or atoms'
+      ]
     }]
 
     return inquirer
@@ -40,12 +48,13 @@ module.exports = {
 
         const underName = parseCamelCaseName(name, true)
         name = parseCamelCaseName(name)
+        route = `${route.split(' => ')[0]}`
 
         return {
           name,
           route,
-          fullRoute: `${route}s/${name}`,
-          storyRoute: `${capitalizeText(route)}s`,
+          fileRoute: `src/components/${route}s/${name}/index`,
+          storyRoute: `${capitalizeText(route)}s/${name}`,
           underName
         }
       })

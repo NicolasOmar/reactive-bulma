@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= fullRoute %>/index.mocks.json
+to: <%= fileRoute %>.mocks.json
 ---
 {
   "testing": {

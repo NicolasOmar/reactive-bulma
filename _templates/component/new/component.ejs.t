@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= fullRoute %>/index.tsx
+to: <%= fileRoute %>.tsx
 ---
 import React from 'react'
 // TYPES & INTERFACES
@@ -18,7 +18,7 @@ const <%= name %>: React.FC<<%= name %>Props> = ({
     cssClasses
   ])
   const <%= underName %>TestId =
-    testId ?? parseTestId({ tag: '<%= name %>', parsedClasses: <%= underName %>Classes })
+    testId ?? parseTestId({ tag: '<%= underName %>', parsedClasses: <%= underName %>Classes })
 
   return (
     <section
@@ -26,7 +26,7 @@ const <%= name %>: React.FC<<%= name %>Props> = ({
       className={<%= underName %>Classes}
       style={style ?? undefined}
     >
-      {'Hello There'}
+      {'Hello There, you are looking a [<%= name %>] component located at [<%= fileRoute %>.tsx]'}
     </section>
   )
 }
