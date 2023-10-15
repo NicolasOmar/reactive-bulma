@@ -1,33 +1,29 @@
 ---
-to: src/components/molecules/<%= name %>/index.tsx
+to: src/components/<%= fullRoute %>/index.tsx
 ---
-<%
-  CamelName = h.inflection.camelize(name, false)
-  UnderName = h.inflection.underscore(name, false)
-%>
 import React from 'react'
 // TYPES & INTERFACES
-import { <%= CamelName %>Props } from '../../../interfaces/moleculeProps'
+import { <%= name %>Props } from '../../../interfaces/<%= route %>Props'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const <%= CamelName %>: React.FC<<%= CamelName %>Props> = ({
-  testId = 'test-<%= UnderName %>',
+const <%= name %>: React.FC<<%= name %>Props> = ({
+  testId = 'test-<%= underName %>',
   cssClasses = null,
   style = null
 }) => {
-  const <%= UnderName %>Classes = parseClasses([
-    '<%= UnderName %>',
+  const <%= underName %>Classes = parseClasses([
+    '<%= underName %>',
     null,
     cssClasses
   ])
-  const <%= UnderName %>TestId =
-    testId ?? parseTestId({ tag: '<%= name %>', parsedClasses: <%= UnderName %>Classes })
+  const <%= underName %>TestId =
+    testId ?? parseTestId({ tag: '<%= name %>', parsedClasses: <%= underName %>Classes })
 
   return (
     <section
-      data-testid={<%= UnderName %>TestId}
-      className={<%= UnderName %>Classes}
+      data-testid={<%= underName %>TestId}
+      className={<%= underName %>Classes}
       style={style ?? undefined}
     >
       {'Hello There'}
@@ -35,4 +31,4 @@ const <%= CamelName %>: React.FC<<%= CamelName %>Props> = ({
   )
 }
 
-export default <%= CamelName %>
+export default <%= name %>

@@ -1,9 +1,9 @@
 ---
-to: src/components/molecules/<%= name %>/index.mocks.json
+to: src/components/<%= fullRoute %>/index.mocks.json
 ---
 {
   "testing": {
-    "basicTestId": "test-<%= h.inflection.underscore(name, false) %>"
+    "basicTestId": "test-<%= underName %>"
   },
   "storybook": {
     

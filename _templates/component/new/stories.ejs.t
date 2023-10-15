@@ -1,24 +1,20 @@
 ---
-to: src/components/molecules/<%= name %>/index.stories.tsx
+to: src/components/<%= fullRoute %>/index.stories.tsx
 ---
-<%
-  CamelName = h.inflection.camelize(name, false)
-  UnderName = h.inflection.underscore(name, false)
-%>
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
-import <%= CamelName %> from '.'
+import <%= name %> from '.'
 // MOCKS
 import { storybook } from './index.mocks.json'
 
 export default {
-  title: 'Molecules/<%= CamelName %>',
-  component: <%= CamelName %>,
+  title: '<%= storyRoute %>/<%= name %>',
+  component: <%= name %>,
   ...storybook
-} as Meta<typeof <%= CamelName %>>
+} as Meta<typeof <%= name %>>
 
-const Template: StoryFn<typeof <%= CamelName %>> = args => <<%= CamelName %> {...args} />
+const Template: StoryFn<typeof <%= name %>> = args => <<%= name %> {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'Basic Example'

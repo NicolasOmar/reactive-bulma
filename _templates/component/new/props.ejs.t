@@ -1,10 +1,8 @@
 ---
+to: src/interfaces/<%= route %>Props.ts
 inject: true
-to: src/interfaces/moleculeProps.ts
 append: true
+after: 
 ---
-<%
-  CamelName = h.inflection.camelize(name, false)
-%>
-export interface <%= CamelName %>Props extends ElementProps {
-}
+<%= %>
+export interface <%= name %>Props extends ElementProps {}
