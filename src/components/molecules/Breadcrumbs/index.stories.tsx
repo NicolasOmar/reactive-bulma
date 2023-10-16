@@ -2,14 +2,14 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Breadcrumbs from '.'
-// MOCKS
-import { storybook } from './index.mocks.json'
-import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
-// TYPES
+// TYPES & INTERFACES
 import {
   breadcrumbAlignType,
   breadcrumbSeparatorType
 } from '../../../types/styleTypes'
+// MOCKS
+import { storybook } from './index.mocks.json'
+import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
 
 const breadcrumbItems = Array(5)
   .fill(null)

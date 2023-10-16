@@ -55,7 +55,9 @@ module.exports = {
           route,
           fileRoute: `src/components/${route}s/${name}/index`,
           storyRoute: `${capitalizeText(route)}s/${name}`,
-          underName
+          underName,
+          testStylingPropName: 'isACssTestClass',
+          testStylingPropValue: 'is-test-only-class'
         }
       })
   },

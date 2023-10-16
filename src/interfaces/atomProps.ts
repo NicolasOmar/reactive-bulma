@@ -1,7 +1,7 @@
 import React from 'react'
 // COMMON PROPS
 import { ElementProps, ComposedElementProps } from './commonProps'
-// TYPES
+// TYPES & INTERFACES
 import {
   basicColorType,
   columnOffsetType,

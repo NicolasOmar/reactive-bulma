@@ -3,7 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Breadcrumbs from '.'
-// TYPES
+// TYPES & INTERFACES
 import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
 // MOCKS
 import { testing } from './index.mocks.json'

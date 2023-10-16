@@ -5,6 +5,7 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import <%= name %> from '.'
+// TYPES & INTERFACES
 // MOCKS
 import { storybook } from './index.mocks.json'
 

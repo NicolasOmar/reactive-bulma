@@ -7,7 +7,7 @@ import {
   ColumnProps,
   DeleteProps
 } from './atomProps'
-// TYPES
+// TYPES & INTERFACES
 import {
   basicColorType,
   basicSizeType,

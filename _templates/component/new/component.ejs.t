@@ -2,6 +2,7 @@
 to: <%= fileRoute %>.tsx
 ---
 import React from 'react'
+// COMPONENTS
 // TYPES & INTERFACES
 import { <%= name %>Props } from '../../../interfaces/<%= route %>Props'
 // PARSERS
@@ -10,11 +11,12 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 const <%= name %>: React.FC<<%= name %>Props> = ({
   testId = null,
   cssClasses = null,
+  <%= testStylingPropName %> = null,
   style = null
 }) => {
   const <%= underName %>Classes = parseClasses([
     '<%= underName %>',
-    null,
+    <%= testStylingPropName %> ? '<%= testStylingPropValue %>' : null,
     cssClasses
   ])
   const <%= underName %>TestId =

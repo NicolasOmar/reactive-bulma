@@ -3,7 +3,14 @@ to: <%= fileRoute %>.mocks.json
 ---
 {
   "testing": {
-    "basicTestId": "test-<%= underName %>"
+    "basicTestId": "test-<%= underName %>",
+    "testClasses": [
+      {
+        "name": "<%= testStylingPropName %>",
+        "value": true,
+        "result": "<%= testStylingPropValue %>"
+      }
+    ]
   },
   "storybook": {
     "parameters": {
@@ -14,6 +21,5 @@ to: <%= fileRoute %>.mocks.json
         }
       }
     }
-    
   }
 }
