@@ -128,6 +128,10 @@ In case you have cloned the repo, it will show you the following folders:
     - `atoms` (from `v1.0.0`).
     - `molecules` (from `v2.0.0`).
     - `organisms` (from `v3.0.0`).
+  - `design`: Location of common design tokens (coded on `.mdx` files) which are displayed above components sections in storybook's instance.
+  - `functions`: Dedicated to parsers and helper functions for repetitive logic.
+  - `interfaces`: Dedicated to interfaces used in components and functions typing.
+  - `types`: Dedicated to Bulma's style type setting (which are part of component's properties).
 
 ## Documentation
 
@@ -135,12 +139,23 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 
 ### Running documentation locally
 - Go to `reactive-bulma` folder (where you cloned the repo before).
-- Run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
+- Open a console and run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
 - Run `npm start`.
 - Wait until a new tab opens with url <http://localhost:6006/> in your browser. 
   - In case you want to initiate it on the background, you can run `npm run start:cli`.
 
-Learn more about using `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
+Learn more about `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
+
+### How to create a template component
+
+After some time, I understood that creating component files is a repetitive and time-consuming task, so I made issue [#180](https://github.com/NicolasOmar/reactive-bulma/issues/180) to implement a library called [Hygen](https://www.hygen.io), whose function is to provide a way to generate templates for generic files that can consume time at the long term. You can run the script by the following steps:
+
+- Open a console and run `npm run create` in your console.
+- An will assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
+- Then, the assistant will ask in which folder you want to create it (based on its type following [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/))
+- At last, the script should create all base files to reduce time and focus on custom implementation.
+
+Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/docs/quick-start).
 
 ## Usage
 
@@ -152,7 +167,9 @@ const App = () => (
   <Button text="This is a test" />
 );
 ```
-To see all component's variants and its code snippets, go to [Documentation](#documentation) section
+To see all component's variants and its code snippets, go to [Documentation](#documentation) section.
+
+In case you want to create a custom component for your forked Reactive Bulma version, the easiest way is by running the creation script I made, which [instructions are here](#how-to-create-a-template-component).
 
 ## Versioning
 

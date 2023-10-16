@@ -1,0 +1,17 @@
+{
+  "testing": {
+    "basicTestId": "test-breadcrumbItem",
+    "basicContainerTestId": "test-breadcrumb-item-container",
+    "testText": "Lorem Ipsum"
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Bulma's breadcrumb item which makes part of user's navigation experience",
+      "docs": {
+        "description": {
+          "component": "Splitted in its container (a `li` element) and its content on a `a` element with to handle user redirection."
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,20 @@
 // COMMON PROPS
-import { ElementProps } from './commonProps'
+import { ComposedElementProps, ElementProps } from './commonProps'
 // COMPONENT PROPS
-import { ButtonProps, ColumnProps, DeleteProps } from './atomProps'
-// TYPES
-import { basicColorType, columnGapType } from '../types/styleTypes'
+import {
+  BreadcrumbItemProps,
+  ButtonProps,
+  ColumnProps,
+  DeleteProps
+} from './atomProps'
+// TYPES & INTERFACES
+import {
+  basicColorType,
+  basicSizeType,
+  breadcrumbAlignType,
+  breadcrumbSeparatorType,
+  columnGapType
+} from '../types/styleTypes'
 
 export interface ButtonGroupProps extends ElementProps {
   /** `Atribute` `Required` Array of `Button` objects that will be shown */
@@ -38,4 +49,15 @@ export interface NotificationProps extends ElementProps {
   color?: basicColorType
   /** `Styling` Will adjust the selected color with a ligther style */
   isLightColor?: boolean
+}
+
+export interface BreadcrumbsProps extends ComposedElementProps {
+  /** `Atribute` `Required` Array of `BreadcrumbItems` objects that will be shown */
+  items: BreadcrumbItemProps[]
+  /** `Styling` Will adjust element position on screen */
+  alignment?: breadcrumbAlignType | null
+  /** `Styling` Will adjust element position on screen */
+  separator?: breadcrumbSeparatorType | null
+  /** `Styling` Set button's size on bulma's size tokens */
+  size?: Exclude<basicSizeType, 'is-normal'>
 }
