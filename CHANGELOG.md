@@ -1,3 +1,17 @@
+# [2.4.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.3.0...v2.4.0) (2023-10-16)
+
+
+### Bug Fixes
+
+* Adapting Hygen template generator to create component structure following a assistant ([0e524da](https://github.com/NicolasOmar/reactive-bulma/commit/0e524daef229c76ef9e4e699fc86092ecef92e52))
+* BrearcrumbItem added for Breacrumb structure ([534cbcb](https://github.com/NicolasOmar/reactive-bulma/commit/534cbcb119f153362ad7ae7f2eefd676cca67cdf))
+* Dependencies updated to last version ([2e42705](https://github.com/NicolasOmar/reactive-bulma/commit/2e427055bc82ca68286a90f4c13fd1ae165ded27))
+
+
+### Features
+
+* Create component "Breadcrumbs" ([#187](https://github.com/NicolasOmar/reactive-bulma/issues/187)) ([#63](https://github.com/NicolasOmar/reactive-bulma/issues/63)) ([#180](https://github.com/NicolasOmar/reactive-bulma/issues/180)) ([d8e4ae6](https://github.com/NicolasOmar/reactive-bulma/commit/d8e4ae67d62e6f1e710a9c26ef4c16c1d6f4ab3e))
+
 # [2.3.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.2.1...v2.3.0) (2023-10-02)
 
 
