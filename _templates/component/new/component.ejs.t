@@ -8,7 +8,7 @@ import { <%= name %>Props } from '../../../interfaces/<%= route %>Props'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const <%= name %>: React.FC<<%= name %>Props> = ({
-  testId = 'test-<%= underName %>',
+  testId = null,
   cssClasses = null,
   style = null
 }) => {
