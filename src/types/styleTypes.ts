@@ -103,3 +103,11 @@ export type columnGapType =
   | 'is-6'
   | 'is-7'
   | 'is-8'
+
+export type breadcrumbAlignType = 'is-centered' | 'is-right'
+
+export type breadcrumbSeparatorType =
+  | 'has-arrow-separator'
+  | 'has-bullet-separator'
+  | 'has-dot-separator'
+  | 'has-succeeds-separator'
