@@ -276,3 +276,12 @@ export interface RadioButtonProps extends ComposedElementProps {
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onChange?: () => void
 }
+
+export interface BreadcrumbItemProps extends ComposedElementProps {
+  /** `Attribute` `Required` Indicates item text that will be shown */
+  text: string
+  /** `Styling` Marks the item as the one where user is located (based on breadcrumb hierarchy) */
+  isActiveItem?: boolean
+  /** `Function` Click function, alone does not nothing, but can be reused for other components */
+  onClick?: () => void
+}
