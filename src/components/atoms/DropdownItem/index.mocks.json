@@ -1,0 +1,16 @@
+{
+  "testing": {
+    "basicTestId": "test-dropdown-item",
+    "testText": "Lorem Ipsum"
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Dropdown's item single unit, which can be a link, a divider or text",
+      "docs": {
+        "description": {
+          "component": "Can be used as an anchor link `<a>`, you can also use a `<div>` and insert almost any type of content."
+        }
+      }
+    }
+  }
+}

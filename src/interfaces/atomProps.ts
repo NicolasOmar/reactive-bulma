@@ -285,3 +285,21 @@ export interface BreadcrumbItemProps extends ComposedElementProps {
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
+
+export interface DropdownTriggerProps extends ComposedElementProps {
+  /** `Attribute` `Required` Sets the name will be shown on the dropdown input */
+  menuText: string
+}
+
+export interface DropdownItemProps extends ElementProps {
+  /** `Attribute` `Required` Sets the name will be shown on the item */
+  itemText: string
+  /** `Attribute` Changes item's composition into a `<a>` element to redirect user */
+  isLink?: boolean
+  /** `Attribute` Changes item's composition into a `<hr>` element to split between string or link elements */
+  isDivider?: boolean
+  /** `Styling` Marks the item as the one where user is located (based on dropdown hierarchy) */
+  isActiveItem?: boolean
+  /** `Function` Click function, alone does not nothing, but can be reused for other components */
+  onClick?: () => void
+}
