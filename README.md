@@ -85,28 +85,34 @@ After studying [an Udemy course about Typescript](https://github.com/NicolasOmar
 [![material design dependency][badge-dependency-material-design]][link-package-dependencies]
 [![typescript dependency][badge-dependency-typescript]][link-package-dependencies]
 [![rollup dependency][badge-dependency-rollup]][link-package-dependencies]
+[![postcss dependency][badge-dependency-postcss]][link-package-dependencies]
 [![storybook dependency][badge-dependency-storybook]][link-package-dependencies]
 [![semantic release dependency][badge-dependency-semantic-release]][link-package-dependencies]
 [![babel dependency][badge-dependency-babel]][link-package-dependencies]
 [![jest dependency][badge-dependency-jest]][link-package-dependencies]
 [![react testing library dependency][badge-dependency-react-testing]][link-package-dependencies]
+[![lint-staged dependency][badge-dependency-lint-staged]][link-package-dependencies]
 [![prettier dependency][badge-dependency-prettier]][link-package-dependencies]
 [![eslint dependency][badge-dependency-eslint]][link-package-dependencies]
 [![husky dependency][badge-dependency-husky]][link-package-dependencies]
+[![hygen dependency][badge-dependency-hygen]][link-package-dependencies]
 
 [badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
 [badge-dependency-material-design]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@mdi/font/main?logo=materialdesignicons
 [badge-dependency-typescript]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/typescript/main?logo=typescript
+[badge-dependency-postcss]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/postcss/main?logo=postcss
 [badge-dependency-rollup]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/rollup/main?logo=rollup.js
 [badge-dependency-storybook]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/storybook/main?logo=storybook
 [badge-dependency-semantic-release]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/semantic-release/main?logo=semantic-release
 [badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
 [badge-dependency-jest]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/jest/main?logo=jest
 [badge-dependency-react-testing]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@testing-library/react/main?logo=testing-library
+[badge-dependency-lint-staged]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/lint-staged/main?logo=lint-staged
 [badge-dependency-prettier]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/prettier/main?logo=prettier
 [badge-dependency-eslint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/eslint/main?logo=eslint
 [badge-dependency-husky]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/husky/main?logo=husky
+[badge-dependency-hygen]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/hygen/main?logo=hygen
 [link-package-dependencies]: https://github.com/NicolasOmar/reactive-bulma/blob/main/package.json
 
 ## Quick start
@@ -120,6 +126,7 @@ Several quick start options are available:
 ## Folder structure
 
 In case you have cloned the repo, it will show you the following folders:
+- `_templates:` Dedicated to [Hygen](https://www.hygen.io/) configuration and implementation files. Dedicated to create new components from customizable templates
 - `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge.commits like unit test coverage collection.
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
