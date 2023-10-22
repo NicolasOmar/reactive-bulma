@@ -1,15 +1,22 @@
 import React from 'react'
-import { cleanup, render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Dropdown from '.'
 // TYPES & INTERFACES
-import { DropdownProps } from '../../../interfaces/moleculeProps'
+import { DropdownItemProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 
+const testMenuItemsExists = (listOfItems: DropdownItemProps[]) =>
+  listOfItems.forEach(({ itemText }) => {
+    const displayedMenuItem = screen.getByText(itemText)
+    expect(displayedMenuItem).toBeInTheDocument()
+  })
+
 describe('Dropdown', () => {
-  const { basicTestId, testConfig, testClasses } = testing
+  const { basicTestId, testConfig } = testing
 
   test('Should render the component', () => {
     render(<Dropdown {...testConfig} />)
@@ -17,23 +24,22 @@ describe('Dropdown', () => {
     expect(testDropdown).toBeInTheDocument()
   })
 
-  test('Should render the component with specific classes', () => {
-    testClasses.forEach(({ name, value, result }) => {
-      const testIdWithClass = `${basicTestId}-${result.replace(
-        /is-|has-/gm,
-        ''
-      )}`
-      const classTestObject: DropdownProps = {
-        ...testConfig,
-        [name]: value
-      }
+  test('Should render the menu with its items when if dropdown is already active', async () => {
+    const activeConfig = { ...testConfig, isActive: true }
+    render(<Dropdown {...activeConfig} />)
 
-      render(<Dropdown {...classTestObject} />)
+    testMenuItemsExists(testConfig.listOfItems)
+  })
 
-      const testStylingPropValueDropdownGroup =
-        screen.getByTestId(testIdWithClass)
-      expect(testStylingPropValueDropdownGroup.className).toContain(result)
-      cleanup()
+  test('Should render the menu with its items when its input is clicked', async () => {
+    const triggerTestId = 'test-button'
+    render(<Dropdown {...testConfig} />)
+    const clickeableDropdown = screen.getByTestId(triggerTestId)
+
+    await userEvent.click(clickeableDropdown)
+
+    waitFor(() => {
+      testMenuItemsExists(testConfig.listOfItems)
     })
   })
 })

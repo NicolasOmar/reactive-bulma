@@ -9,14 +9,7 @@
         { "itemText": "Third" },
         { "itemText": "Fourth" }
       ]
-    },
-    "testClasses": [
-      {
-        "name": "isActive",
-        "value": true,
-        "result": "is-active"
-      }
-    ]
+    }
   },
   "storybook": {
     "parameters": {

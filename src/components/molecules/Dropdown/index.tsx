@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 // COMPONENTS
+import { DropdownItem, DropdownTrigger } from '../../atoms'
 // TYPES & INTERFACES
 import { DropdownProps } from '../../../interfaces/moleculeProps'
+import { DropdownItemProps } from '../../../interfaces/atomProps'
 // PARSERS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { DropdownItem, DropdownTrigger } from '../../atoms'
+
+const renderDropdownMenu = (items: DropdownItemProps[]) => (
+  <section className='dropdown-content'>
+    {items.map((dropdownItemConfig, i) => {
+      const isFirstItemInMenu = items.length > 1 && i === 0
+      return isFirstItemInMenu ? (
+        <DropdownItem
+          key={`dropdown-item-${i}`}
+          {...dropdownItemConfig}
+        />
+      ) : (
+        <>
+          <DropdownItem
+            key={`dropdown-item-${i}-divider`}
+            type='divider'
+            itemText='divider'
+          />
+          <DropdownItem
+            key={`dropdown-item-${i}`}
+            {...dropdownItemConfig}
+          />
+        </>
+      )
+    })}
+  </section>
+)
 
 const Dropdown: React.FC<DropdownProps> = ({
   testId = null,
@@ -15,17 +42,14 @@ const Dropdown: React.FC<DropdownProps> = ({
   listOfItems,
   isActive = false
 }) => {
+  const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
   const dropdownClasses = parseClasses([
     'dropdown',
-    isActive ? 'is-active' : null,
+    isActive || isMenuActive ? 'is-active' : null,
     cssClasses
   ])
   const dropdownTestId =
     testId ?? parseTestId({ tag: 'dropdown', parsedClasses: dropdownClasses })
-  const dropdownTriggerConfig = {
-    menuText: inputText,
-    dropdownPointer
-  }
 
   return (
     <section
@@ -33,20 +57,19 @@ const Dropdown: React.FC<DropdownProps> = ({
       className={dropdownClasses}
       style={style ?? undefined}
     >
-      <DropdownTrigger {...dropdownTriggerConfig} />
+      <DropdownTrigger
+        {...{
+          menuText: inputText,
+          dropdownPointer,
+          onClick: () => setIsMenuActive(!isMenuActive)
+        }}
+      />
       <section
         className='dropdown-menu'
         id={dropdownPointer}
         role='menu'
       >
-        <section className='dropdown-content'>
-          {listOfItems.map((dropdownItemConfig, i) => (
-            <DropdownItem
-              key={`dropdown-item-${i}`}
-              {...dropdownItemConfig}
-            />
-          ))}
-        </section>
+        {renderDropdownMenu(listOfItems)}
       </section>
     </section>
   )

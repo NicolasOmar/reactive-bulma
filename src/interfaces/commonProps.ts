@@ -17,3 +17,8 @@ export interface ElementProps {
 }
 
 export interface ComposedElementProps extends ElementProps, ContainerProps {}
+
+export interface ClickeableProps {
+  /** `Function` Click function, alone does not nothing, but can be reused for other components */
+  onClick?: () => void
+}
