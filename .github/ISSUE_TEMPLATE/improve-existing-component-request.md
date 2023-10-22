@@ -24,7 +24,7 @@ A clear and concise description of what you want to happen as well as a clear an
 - Development 
   - [ ] Update its `index.tsx` file where the component will be coded
   - [ ] Create and/or update the needed interfaces, types, tuples and enums for the mentioned component
-  - [ ] Update its unit tests to reach at least 80% of code coverage
+  - [ ] Update its unit tests to reach at least 95% of code coverage
   - [ ] In case of be needed update and/or add new storybook stories to show the new scenario/s
 
 ---

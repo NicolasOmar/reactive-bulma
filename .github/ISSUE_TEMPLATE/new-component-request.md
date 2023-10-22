@@ -27,7 +27,7 @@ Based on project's roadmap, this component will need to have the following speci
 - Development 
   - [ ] Create its folder and a `index.tsx` file where the component will be coded
   - [ ] Create and/or update the needed interfaces, types, tuples and enums for the component
-  - [ ] Create a `index.test.ts` file for its units test and create the needed to reach at least 80% of code coverage
+  - [ ] Create a `index.test.ts` file for its units test and create the needed to reach at least 95% of code coverage
   - [ ] Create a `index.stories.tsx` file for storybook stories and add at least 2 stories for different scenarios
 
 ---
