@@ -17,7 +17,7 @@ to: <%= fileRoute %>.mocks.json
       "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
       "docs": {
         "description": {
-          "component": "Here goes component's techinal description, mostly based on Bulma's documentation."
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
         }
       }
     }

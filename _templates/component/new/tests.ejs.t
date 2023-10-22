@@ -20,7 +20,7 @@ describe('<%= name %>', () => {
     expect(test<%= name %>).toBeInTheDocument()
   })
 
-  test('Should render the component with specfic classes', () => {
+  test('Should render the component with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
         /is-|has-/gm,
