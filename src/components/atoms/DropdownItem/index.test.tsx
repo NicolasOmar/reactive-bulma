@@ -45,4 +45,17 @@ describe('DropdownItem', () => {
     expect(clickeableConfig.onClick).toHaveBeenCalled()
     expect(clickeableConfig.onClick).toHaveBeenCalledTimes(1)
   })
+
+  test('Should check that the dropdown is active', () => {
+    const activeItemConfig = { itemText: testText, isActiveItem: true }
+    const activeItemTestConfig = basicTestId.replace(
+      '-item-item',
+      '-item-active-item'
+    )
+
+    render(<DropdownItem {...activeItemConfig} />)
+    const activeDropdownItem = screen.getByTestId(activeItemTestConfig)
+
+    expect(activeDropdownItem.classList).toContain('is-active')
+  })
 })

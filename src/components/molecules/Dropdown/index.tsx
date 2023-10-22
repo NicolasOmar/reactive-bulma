@@ -39,13 +39,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   style = null,
   inputText,
   dropdownPointer = 'dropdown-menu',
-  listOfItems,
-  isActive = false
+  listOfItems
 }) => {
   const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
   const dropdownClasses = parseClasses([
     'dropdown',
-    isActive || isMenuActive ? 'is-active' : null,
+    isMenuActive ? 'is-active' : null,
     cssClasses
   ])
   const dropdownTestId =

@@ -17,3 +17,12 @@ const Template: StoryFn<typeof Dropdown> = args => <Dropdown {...args} />
 
 export const BasicExample = Template.bind({})
 BasicExample.storyName = 'Basic Example'
+
+export const AllAreLinks = Template.bind({})
+AllAreLinks.storyName = 'Link Items'
+AllAreLinks.args = {
+  listOfItems: testing.testConfig.listOfItems.map(itemConfig => ({
+    ...itemConfig,
+    type: 'link'
+  }))
+}

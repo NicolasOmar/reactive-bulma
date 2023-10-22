@@ -70,6 +70,4 @@ export interface DropdownProps extends ElementProps {
   dropdownPointer?: string
   /** `Atribute` `Required` Array of `DropdownItem` objects that will be shown on its menu */
   listOfItems: DropdownItemProps[]
-  /** `Styling` Will toggle dropdown's display menu with its items */
-  isActive?: boolean
 }

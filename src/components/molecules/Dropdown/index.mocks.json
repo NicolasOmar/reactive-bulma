@@ -1,6 +1,7 @@
 {
   "testing": {
     "basicTestId": "test-dropdown",
+    "triggerTestId": "test-button",
     "testConfig": {
       "inputText": "Hello There",
       "listOfItems": [
