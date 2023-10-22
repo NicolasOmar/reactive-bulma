@@ -1,7 +1,21 @@
 {
   "testing": {
-    "basicTestId": "test-dropdown-item",
-    "testText": "Lorem Ipsum"
+    "basicTestId": "test-dropdown-item-item",
+    "testText": "Lorem Ipsum",
+    "testTypes": [
+      {
+        "type": "item",
+        "tag": "div"
+      },
+      {
+        "type": "link",
+        "tag": "a"
+      },
+      {
+        "type": "divider",
+        "tag": "hr"
+      }
+    ]
   },
   "storybook": {
     "parameters": {

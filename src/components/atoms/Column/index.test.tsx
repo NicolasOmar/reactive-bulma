@@ -15,7 +15,7 @@ describe('Column', () => {
     expect(testColumn).toBeInTheDocument()
   })
 
-  test('Should render the Button with specfic classes', () => {
+  test('Should render the Button with specific classes', () => {
     const classValue = 'is-narrow'
     const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
     render(<Column {...testNarrowColumn} />)

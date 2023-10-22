@@ -22,7 +22,7 @@ describe('ButtonGroup', () => {
     )
   })
 
-  test('Should render the button group with specfic classes', () => {
+  test('Should render the button group with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
         /has-|is-/gm,

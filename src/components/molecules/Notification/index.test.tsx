@@ -26,7 +26,7 @@ describe('Notification', () => {
     expect(testRenderedText).toBeInTheDocument()
   })
 
-  test('Should render the notification group with specfic classes', () => {
+  test('Should render the notification group with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace('is-', '')}`
       const classTestObject: NotificationProps = { [name]: value }

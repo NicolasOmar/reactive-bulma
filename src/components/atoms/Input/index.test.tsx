@@ -28,7 +28,7 @@ describe('Input', () => {
     expect(testInputWithText).toHaveAttribute('value', testValue)
   })
 
-  test('Should render with specfic classes', () => {
+  test('Should render with specific classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { ...basicExample, [prop]: classValue } as InputProps

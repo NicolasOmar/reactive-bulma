@@ -12,7 +12,7 @@ import {
   textColorType,
   titleSizeType
 } from '../types/styleTypes'
-import { inputTypes } from '../types/domTypes'
+import { DropdownItemType, inputTypes } from '../types/domTypes'
 
 export interface ColumnProps
   extends ElementProps,
@@ -294,10 +294,8 @@ export interface DropdownTriggerProps extends ComposedElementProps {
 export interface DropdownItemProps extends ElementProps {
   /** `Attribute` `Required` Sets the name will be shown on the item */
   itemText: string
-  /** `Attribute` Changes item's composition into a `<a>` element to redirect user */
-  isLink?: boolean
-  /** `Attribute` Changes item's composition into a `<hr>` element to split between string or link elements */
-  isDivider?: boolean
+  /** `Attribute` Changes item's composition into a `<hr>`, a `<a>` or a `<div>` depending its type */
+  type?: DropdownItemType
   /** `Styling` Marks the item as the one where user is located (based on dropdown hierarchy) */
   isActiveItem?: boolean
   /** `Function` Click function, alone does not nothing, but can be reused for other components */

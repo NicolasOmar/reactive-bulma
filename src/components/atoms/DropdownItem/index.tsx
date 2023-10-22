@@ -10,11 +10,11 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   cssClasses = null,
   style = null,
   itemText,
-  isLink = false,
-  isDivider = false,
+  type = 'item',
   isActiveItem = false,
   onClick = null
 }) => {
+  const isDivider = type === 'divider'
   const itemTypeClass = isDivider ? 'dropdown-divider' : 'dropdown-item'
   const dropdownItemClasses = parseClasses([
     itemTypeClass,
@@ -25,23 +25,28 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   const dropdownItemConfig = {
     'data-testid':
       testId ??
-      parseTestId({ tag: itemTypeClass, parsedClasses: dropdownItemClasses }),
+      parseTestId({
+        tag: itemTypeClass,
+        parsedClasses: `${dropdownItemClasses}-${type}`
+      }),
     'className': dropdownItemClasses,
     'style': style ?? undefined,
     'onClick': onClick ?? undefined
   }
 
-  if (isLink) {
-    return <a {...dropdownItemConfig}>{itemText}</a>
+  switch (type) {
+    case 'item':
+      return (
+        <div {...dropdownItemConfig}>
+          <p>{itemText}</p>
+        </div>
+      )
+    case 'divider':
+      return <hr {...dropdownItemConfig} />
+    case 'link':
+    default:
+      return <a {...dropdownItemConfig}>{itemText}</a>
   }
-
-  if (isDivider) return <hr {...dropdownItemConfig} />
-
-  return (
-    <div {...dropdownItemConfig}>
-      <p>{itemText}</p>
-    </div>
-  )
 }
 
 export default DropdownItem

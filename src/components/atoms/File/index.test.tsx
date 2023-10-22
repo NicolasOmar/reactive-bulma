@@ -30,7 +30,7 @@ describe('File', () => {
     expect(testDefaultIcon).toBeInTheDocument()
   })
 
-  test('Should render the component with specfic classes', () => {
+  test('Should render the component with specific classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue }
