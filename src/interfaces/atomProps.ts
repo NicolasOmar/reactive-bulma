@@ -289,6 +289,8 @@ export interface BreadcrumbItemProps extends ComposedElementProps {
 export interface DropdownTriggerProps extends ComposedElementProps {
   /** `Attribute` `Required` Sets the name will be shown on the dropdown input */
   menuText: string
+  /** `Attribute` Sets a relationship between trigger's button and dropdown's menu to toggle display */
+  dropdownPointer?: string
 }
 
 export interface DropdownItemProps extends ElementProps {

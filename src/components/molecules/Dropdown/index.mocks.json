@@ -1,0 +1,31 @@
+{
+  "testing": {
+    "basicTestId": "test-dropdown",
+    "testConfig": {
+      "inputText": "Hello There",
+      "listOfItems": [
+        { "itemText": "First" },
+        { "itemText": "Second" },
+        { "itemText": "Third" },
+        { "itemText": "Fourth" }
+      ]
+    },
+    "testClasses": [
+      {
+        "name": "isActive",
+        "value": true,
+        "result": "is-active"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

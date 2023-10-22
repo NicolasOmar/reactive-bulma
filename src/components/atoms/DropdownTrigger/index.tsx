@@ -12,7 +12,8 @@ const DropdownTrigger: React.FC<DropdownTriggerProps> = ({
   containerCssClasses = null,
   style = null,
   containerStyle = null,
-  menuText
+  menuText,
+  dropdownPointer = 'dropdown-menu'
 }) => {
   const dropdownTriggerContainerClasses = parseClasses([
     'dropdown-trigger',
@@ -40,12 +41,12 @@ const DropdownTrigger: React.FC<DropdownTriggerProps> = ({
         className={dropdownTriggerClasses}
         style={style ?? undefined}
         aria-haspopup='true'
-        aria-controls='dropdown-menu'
+        aria-controls={dropdownPointer}
       >
         <span>{menuText}</span>
         <span className='icon is-small'>
           <i
-            className='fas fa-angle-down'
+            className='mdi mdi-chevron-down'
             aria-hidden='true'
           ></i>
         </span>
