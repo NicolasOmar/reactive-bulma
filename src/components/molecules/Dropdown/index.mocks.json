@@ -1,16 +1,16 @@
----
-to: <%= fileRoute %>.mocks.json
----
 {
   "testing": {
-    "basicTestId": "test-<%= underName %>",
-    "testClasses": [
-      {
-        "name": "<%= testStylingPropName %>",
-        "value": true,
-        "result": "<%= testStylingPropValue %>"
-      }
-    ]
+    "basicTestId": "test-dropdown",
+    "triggerTestId": "test-button",
+    "testConfig": {
+      "inputText": "Hello There",
+      "listOfItems": [
+        { "itemText": "First" },
+        { "itemText": "Second" },
+        { "itemText": "Third" },
+        { "itemText": "Fourth" }
+      ]
+    }
   },
   "storybook": {
     "parameters": {

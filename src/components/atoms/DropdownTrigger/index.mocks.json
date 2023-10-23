@@ -1,0 +1,19 @@
+{
+  "testing": {
+    "basicTestId": "test-button",
+    "basicContainerTestId": "test-dropdown-trigger",
+    "testMenuText": "Hello there",
+    "testClasses": [
+      {
+        "name": "isACssTestClass",
+        "value": true,
+        "result": "is-test-only-class"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Dropdown's container with a button which will activate it"
+    }
+  }
+}

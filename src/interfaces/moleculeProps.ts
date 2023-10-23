@@ -5,7 +5,8 @@ import {
   BreadcrumbItemProps,
   ButtonProps,
   ColumnProps,
-  DeleteProps
+  DeleteProps,
+  DropdownItemProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -60,4 +61,13 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   separator?: breadcrumbSeparatorType | null
   /** `Styling` Set button's size on bulma's size tokens */
   size?: Exclude<basicSizeType, 'is-normal'>
+}
+
+export interface DropdownProps extends ElementProps {
+  /** `Atribute` `Required` Sets the name will be shown on the dropdown input */
+  inputText: string
+  /** `Attribute` Sets a relationship between dropdown trigger's button and dropdown's menu to toggle display */
+  dropdownPointer?: string
+  /** `Atribute` `Required` Array of `DropdownItem` objects that will be shown on its menu */
+  listOfItems: DropdownItemProps[]
 }

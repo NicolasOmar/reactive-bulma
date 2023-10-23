@@ -1,6 +1,10 @@
 import React from 'react'
 // COMMON PROPS
-import { ElementProps, ComposedElementProps } from './commonProps'
+import {
+  ElementProps,
+  ComposedElementProps,
+  ClickeableProps
+} from './commonProps'
 // TYPES & INTERFACES
 import {
   basicColorType,
@@ -12,7 +16,7 @@ import {
   textColorType,
   titleSizeType
 } from '../types/styleTypes'
-import { inputTypes } from '../types/domTypes'
+import { DropdownItemType, inputTypes } from '../types/domTypes'
 
 export interface ColumnProps
   extends ElementProps,
@@ -156,7 +160,7 @@ export interface IconProps extends ComposedElementProps {
   isSpinning?: boolean
 }
 
-export interface InputProps extends ElementProps {
+export interface InputProps extends ElementProps, ClickeableProps {
   /** `Attribute` `Required` What type of input will be used */
   type: inputTypes
   /** `Attribute` The value that will be shown on the input */
@@ -175,8 +179,6 @@ export interface InputProps extends ElementProps {
   isHovered?: boolean
   /** `Styling` Will add a specific border when the input is focused by the user */
   isFocused?: boolean
-  /** `Function` Click function. Alone does not nothing, but can be reused for other components */
-  onClick?: () => void
   /** `Function` Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components */
   onChange?: () => void
 }
@@ -190,11 +192,9 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
   isFixedSize?: boolean
 }
 
-export interface DeleteProps extends ElementProps {
+export interface DeleteProps extends ElementProps, ClickeableProps {
   /** `Styling` Set icons's size */
   size?: Exclude<basicSizeType, 'is-normal'>
-  /** `Function` Click function. Alone does not nothing, but can be reused for other components */
-  onClick?: () => void
 }
 
 export interface SelectOption {
@@ -203,7 +203,7 @@ export interface SelectOption {
   selected?: boolean
 }
 
-export interface SelectProps extends ComposedElementProps {
+export interface SelectProps extends ComposedElementProps, ClickeableProps {
   /** `Attribute` Indicates the options contained on the select */
   options?: SelectOption[]
   /** `Attribute` Indicates how many options will be shown at first glance (before looking for the whole list */
@@ -220,11 +220,9 @@ export interface SelectProps extends ComposedElementProps {
   isHovered?: boolean
   /** `Styling`Will add a specific border when the input is focused by the user */
   isFocused?: boolean
-  /** `Function` Click function. Alone does not nothing, but can be reused for other components */
-  onClick?: () => void
 }
 
-export interface FileProps extends ComposedElementProps {
+export interface FileProps extends ComposedElementProps, ClickeableProps {
   /** `Attribute` The name of the file to be uploaded */
   fileName?: string
   /** `Attribute` The icon displayed in file's button" */
@@ -241,8 +239,6 @@ export interface FileProps extends ComposedElementProps {
   color?: basicColorType
   /** `Styling` Set button's size */
   size?: basicSizeType
-  /** `Function` Click function, alone does not nothing, but can be reused for other components */
-  onClick?: () => void
 }
 
 export interface CheckBoxProps extends ComposedElementProps {
@@ -277,11 +273,29 @@ export interface RadioButtonProps extends ComposedElementProps {
   onChange?: () => void
 }
 
-export interface BreadcrumbItemProps extends ComposedElementProps {
+export interface BreadcrumbItemProps
+  extends ComposedElementProps,
+    ClickeableProps {
   /** `Attribute` `Required` Indicates item text that will be shown */
   text: string
   /** `Styling` Marks the item as the one where user is located (based on breadcrumb hierarchy) */
   isActiveItem?: boolean
-  /** `Function` Click function, alone does not nothing, but can be reused for other components */
-  onClick?: () => void
+}
+
+export interface DropdownTriggerProps
+  extends ComposedElementProps,
+    ClickeableProps {
+  /** `Attribute` `Required` Sets the name will be shown on the dropdown input */
+  menuText: string
+  /** `Attribute` Sets a relationship between trigger's button and dropdown's menu to toggle display */
+  dropdownPointer?: string
+}
+
+export interface DropdownItemProps extends ElementProps, ClickeableProps {
+  /** `Attribute` `Required` Sets the name will be shown on the item */
+  itemText: string
+  /** `Attribute` Changes item's composition into a `<hr>`, a `<a>` or a `<div>` depending its type */
+  type?: DropdownItemType
+  /** `Styling` Marks the item as the one where user is located (based on dropdown hierarchy) */
+  isActiveItem?: boolean
 }

@@ -21,7 +21,7 @@ describe('Button', () => {
     expect(textButton).toBeInTheDocument()
   })
 
-  test('Should render the button with specfic CSS styles', () => {
+  test('Should render the button with specific CSS styles', () => {
     Object.keys(testStyles).forEach(prop => {
       const styleValue = (testStyles as Record<string, string>)[prop]
       const styleObj = { [prop]: styleValue }
@@ -34,7 +34,7 @@ describe('Button', () => {
     })
   })
 
-  test('Should render the button with specfic classes', () => {
+  test('Should render the button with specific classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue }
@@ -49,8 +49,10 @@ describe('Button', () => {
   test('Should check that the button has been clicked', () => {
     const clickeableConfig = { onClick: jest.fn() }
     render(<Button {...clickeableConfig} />)
+
     const clickButton = screen.getByTestId(basicTestId)
     fireEvent.click(clickButton)
+
     expect(clickeableConfig.onClick).toHaveBeenCalled()
     expect(clickeableConfig.onClick).toHaveBeenCalledTimes(1)
   })

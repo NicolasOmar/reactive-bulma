@@ -37,11 +37,20 @@ module.exports = {
         'molecule => Composed by one or several atoms',
         'organism => Composed by one or several molecules and/or atoms'
       ]
+    },
+    {
+      type: "select",
+      name: "isSimple",
+      message: "It will be a simple or composed?",
+      choices: [
+        'simple => Will use only a single tag to wrap its content (like Button)',
+        'composed => Will need a container to wrap the initial tag and its content (like Select)'
+      ]
     }]
 
     return inquirer
       .prompt(questions)
-      .then(({ name, route }) => {
+      .then(({ name, route, isSimple }) => {
         if (name === '') {
           throw new Error('[name] should not be an empty string')
         }
@@ -49,6 +58,7 @@ module.exports = {
         const underName = parseCamelCaseName(name, true)
         name = parseCamelCaseName(name)
         route = `${route.split(' => ')[0]}`
+        isSimple = `${isSimple.split(' => ')[0]}` === 'simple'
 
         return {
           name,
@@ -56,6 +66,7 @@ module.exports = {
           fileRoute: `src/components/${route}s/${name}/index`,
           storyRoute: `${capitalizeText(route)}s/${name}`,
           underName,
+          isSimple,
           testStylingPropName: 'isACssTestClass',
           testStylingPropValue: 'is-test-only-class'
         }

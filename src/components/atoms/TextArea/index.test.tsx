@@ -26,7 +26,7 @@ describe('TextArea', () => {
     expect(testAreaWithText).toBeInTheDocument()
   })
 
-  test('Should render with specfic classes', () => {
+  test('Should render with specific classes', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue } as TextAreaProps

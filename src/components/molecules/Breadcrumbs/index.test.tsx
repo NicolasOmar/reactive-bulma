@@ -27,7 +27,7 @@ describe('Breadcrumbs', () => {
     expect(testItems.length).toBe(5)
   })
 
-  test('Should render the breadcrumbs with specfic classes', () => {
+  test('Should render the breadcrumbs with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
         /is-|has-/gm,

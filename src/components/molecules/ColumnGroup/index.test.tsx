@@ -29,7 +29,7 @@ describe('ColumnGroup', () => {
     expect(testRenderedColumn).toBeInTheDocument()
   })
 
-  test('Should render the column group with specfic classes', () => {
+  test('Should render the column group with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `test-columns-${result.replace('is-', '')}${
         name === 'gap' ? '' : '-3'
