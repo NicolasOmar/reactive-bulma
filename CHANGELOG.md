@@ -1,3 +1,18 @@
+# [2.5.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.4.0...v2.5.0) (2023-10-23)
+
+
+### Bug Fixes
+
+* Added create script capability to generate a composed or simple element ([72edeae](https://github.com/NicolasOmar/reactive-bulma/commit/72edeae23a176b998b9dff47a53e34dfac67be40))
+* Added several dependencies status. Updated 'Folder Structure' section with missing folders ([63a3716](https://github.com/NicolasOmar/reactive-bulma/commit/63a371690cad0fe50b04086b9f8a5f7ed2150223))
+* Dependencies version updated ([e26b20f](https://github.com/NicolasOmar/reactive-bulma/commit/e26b20f7644cc8b3c5b3a024f5996037fa944cdc))
+* Updated minimun UT converage percentage to 95% on current and new PRs ([daf1067](https://github.com/NicolasOmar/reactive-bulma/commit/daf1067ed68466f6e7951e2f8b7f9f08ab444daa))
+
+
+### Features
+
+* Create component "Dropdown" ([#188](https://github.com/NicolasOmar/reactive-bulma/issues/188)) ([#64](https://github.com/NicolasOmar/reactive-bulma/issues/64)) ([331b77a](https://github.com/NicolasOmar/reactive-bulma/commit/331b77a2222cd2ee4a6a2d63622b094c12d28a23))
+
 # [2.4.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.3.0...v2.4.0) (2023-10-16)
 
 
