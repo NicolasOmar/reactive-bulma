@@ -71,3 +71,16 @@ export interface DropdownProps extends ElementProps {
   /** `Atribute` `Required` Array of `DropdownItem` objects that will be shown on its menu */
   listOfItems: DropdownItemProps[]
 }
+
+export interface MessageProps extends ElementProps {
+  /** `Atribute` Sets the header's text that will be shown on message's darker zone */
+  headerText?: string
+  /** `Atribute` `Required` Sets the body's text that will be shown on message's lighter zone */
+  bodyText: string
+  /** `Atribute` Includes a `Delete` config object that will be shown */
+  deleteButton?: DeleteProps
+  /** `Styling` Color based on bulma's color tokens */
+  color?: basicColorType
+  /** `Styling` Set button's size on bulma's size tokens */
+  size?: Exclude<basicSizeType, 'is-normal'>
+}

@@ -153,15 +153,6 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 
 Learn more about `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
-### How to create a template component
-
-After some time, I understood that creating component files is a repetitive and time-consuming task, so I made issue [#180](https://github.com/NicolasOmar/reactive-bulma/issues/180) to implement a library called [Hygen](https://www.hygen.io), whose function is to provide a way to generate templates for generic files that can consume time at the long term. You can run the script by the following steps:
-
-- Open a console and run `npm run create` in your console.
-- An will assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
-- Then, the assistant will ask in which folder you want to create it (based on its type following [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/))
-- At last, the script should create all base files to reduce time and focus on custom implementation.
-
 Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/docs/quick-start).
 
 ## Usage
@@ -177,6 +168,22 @@ const App = () => (
 To see all component's variants and its code snippets, go to [Documentation](#documentation) section.
 
 In case you want to create a custom component for your forked Reactive Bulma version, the easiest way is by running the creation script I made, which [instructions are here](#how-to-create-a-template-component).
+
+### How to create a template component
+
+After some time, I understood that creating component files is a repetitive and time-consuming task, so I made issue [#180](https://github.com/NicolasOmar/reactive-bulma/issues/180) to implement a library called [Hygen](https://www.hygen.io), whose function is to provide a way to generate templates for generic files that can consume time at the long term. You can run the script by the following steps:
+
+- Open a console and run `npm run create` in your console.
+- An will assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
+- Then, the assistant will ask in which folder you want to create it (based on its type following [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/))
+- At last, the script should create all base files to reduce time and focus on custom implementation.
+
+### How to update all dependencies
+
+In case you wanted to make your own fork, I recommend you to updated at least weekly using a custom command `npm run update`, which will run the following commands in order:
+- `update:deps`: Using a [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) script, you will be able to choose which dependencies want to update to latest version
+- `update:doctor`: Will run a set of build and test checks in order to assure your update will not break any current build.
+- `update:storybook`: Will update storybook to lastest version (following its recommended command) followed for a build check (similar to update:doctor, but for storybook only)
 
 ## Versioning
 

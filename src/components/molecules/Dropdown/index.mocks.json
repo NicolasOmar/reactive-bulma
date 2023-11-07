@@ -14,10 +14,10 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "componentSubtitle": "An interactive dropdown menu for discoverable content",
       "docs": {
         "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+          "component": "The dropdown component is a container for a dropdown button and a dropdown menu."
         }
       }
     }

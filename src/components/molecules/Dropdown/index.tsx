@@ -17,7 +17,7 @@ const renderDropdownMenu = (items: DropdownItemProps[]) => (
           {...dropdownItemConfig}
         />
       ) : (
-        <>
+        <section key={`dropdown-item-${i}-section`}>
           <DropdownItem
             key={`dropdown-item-${i}-divider`}
             type='divider'
@@ -27,7 +27,7 @@ const renderDropdownMenu = (items: DropdownItemProps[]) => (
             key={`dropdown-item-${i}`}
             {...dropdownItemConfig}
           />
-        </>
+        </section>
       )
     })}
   </section>
