@@ -1,5 +1,6 @@
 import React from 'react'
 // COMPONENTS
+import { Delete } from '../../atoms'
 // TYPES & INTERFACES
 import { MessageProps } from '../../../interfaces/moleculeProps'
 // PARSERS
@@ -11,9 +12,9 @@ const Message: React.FC<MessageProps> = ({
   style = null,
   headerText = null,
   bodyText,
+  deleteButton = null,
   color = null,
-  size = null,
-  onDeleteClick = null
+  size = null
 }) => {
   const messageClasses = parseClasses(['message', color, size, cssClasses])
   const messageTestId =
@@ -31,14 +32,7 @@ const Message: React.FC<MessageProps> = ({
           className='message-header'
         >
           <p>{headerText}</p>
-          {onDeleteClick && (
-            <button
-              data-testid={`${messageTestId}-delete`}
-              className='delete'
-              aria-label='delete'
-              onClick={onDeleteClick}
-            />
-          )}
+          {deleteButton ? <Delete {...deleteButton} /> : null}
         </section>
       )}
       <section

@@ -35,3 +35,9 @@ LargeSize.args = {
   ...Colored.args,
   size: 'is-large'
 }
+
+export const WithDeleteButton = Template.bind({})
+WithDeleteButton.args = {
+  ...LargeSize.args,
+  deleteButton: { size: 'is-medium' }
+}

@@ -77,9 +77,10 @@ export interface MessageProps extends ElementProps {
   headerText?: string
   /** `Atribute` `Required` Sets the body's text that will be shown on message's lighter zone */
   bodyText: string
+  /** `Atribute` Includes a `Delete` config object that will be shown */
+  deleteButton?: DeleteProps
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set button's size on bulma's size tokens */
   size?: Exclude<basicSizeType, 'is-normal'>
-  onDeleteClick?: () => void
 }

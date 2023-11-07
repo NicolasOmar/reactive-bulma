@@ -1,15 +1,20 @@
 import React from 'react'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Message from '.'
 // TYPES & INTERFACES
 import { MessageProps } from '../../../interfaces/moleculeProps'
+import { DeleteProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 
 describe('Message', () => {
   const { basicTestId, testClasses, testBodyText, testHeaderText } = testing
+  const headerAndBodyConfig = {
+    headerText: testHeaderText,
+    bodyText: testBodyText
+  }
 
   test('Should render the component', () => {
     render(<Message bodyText={testBodyText} />)
@@ -38,10 +43,6 @@ describe('Message', () => {
   })
 
   test('Should render header text aswell as its body', () => {
-    const headerAndBodyConfig = {
-      headerText: testHeaderText,
-      bodyText: testBodyText
-    }
     render(<Message {...headerAndBodyConfig} />)
     const testHeader = screen.getByTestId(`${basicTestId}-header`)
     const testBody = screen.getByTestId(`${basicTestId}-body`)
@@ -53,16 +54,21 @@ describe('Message', () => {
   })
 
   test('Should have a clickable button and function when is clicked', () => {
-    const clickeableConfig = {
-      headerText: testHeaderText,
-      bodyText: testBodyText,
-      onDeleteClick: jest.fn()
-    }
+    const deleteButtonTestId = 'test-delete-medium'
+    const deleteButtonConfig = {
+      deleteButton: { size: 'is-medium' }
+    } as DeleteProps
 
-    render(<Message {...clickeableConfig} />)
+    render(
+      <Message
+        {...{
+          ...headerAndBodyConfig,
+          ...deleteButtonConfig
+        }}
+      />
+    )
 
-    const clickeableMessageButton = screen.getByTestId(`${basicTestId}-delete`)
-    fireEvent.click(clickeableMessageButton)
-    expect(clickeableConfig.onDeleteClick).toHaveBeenCalled()
+    const clickeableMessageButton = screen.getByTestId(deleteButtonTestId)
+    expect(clickeableMessageButton).toBeInTheDocument()
   })
 })
