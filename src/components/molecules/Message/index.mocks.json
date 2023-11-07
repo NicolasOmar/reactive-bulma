@@ -5,9 +5,14 @@
     "testBodyText": "General Kenoby",
     "testClasses": [
       {
-        "name": "isACssTestClass",
-        "value": true,
-        "result": "is-test-only-class"
+        "name": "color",
+        "value": "is-primary",
+        "result": "is-primary"
+      },
+      {
+        "name": "size",
+        "value": "is-large",
+        "result": "is-large"
       }
     ]
   },

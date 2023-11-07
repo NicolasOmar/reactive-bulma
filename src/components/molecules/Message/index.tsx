@@ -31,11 +31,14 @@ const Message: React.FC<MessageProps> = ({
           className='message-header'
         >
           <p>{headerText}</p>
-          <button
-            className='delete'
-            aria-label='delete'
-            onClick={onDeleteClick ?? undefined}
-          />
+          {onDeleteClick && (
+            <button
+              data-testid={`${messageTestId}-delete`}
+              className='delete'
+              aria-label='delete'
+              onClick={onDeleteClick}
+            />
+          )}
         </section>
       )}
       <section
