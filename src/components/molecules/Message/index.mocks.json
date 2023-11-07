@@ -1,0 +1,24 @@
+{
+  "testing": {
+    "basicTestId": "test-message",
+    "testHeaderText": "Hello there",
+    "testBodyText": "General Kenoby",
+    "testClasses": [
+      {
+        "name": "isACssTestClass",
+        "value": true,
+        "result": "is-test-only-class"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}
