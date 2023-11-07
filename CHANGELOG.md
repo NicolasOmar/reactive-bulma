@@ -1,3 +1,17 @@
+# [2.6.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.5.0...v2.6.0) (2023-11-07)
+
+
+### Bug Fixes
+
+* Dependencies versions updated ([5be5d3e](https://github.com/NicolasOmar/reactive-bulma/commit/5be5d3e8bf7bbb9129291eff4090e1630f56a260))
+* README updated with 'Update Dependencies' subsection under 'Usage' section ([5024185](https://github.com/NicolasOmar/reactive-bulma/commit/50241855535dd52d7a610a7150ce08bc3531056a))
+* Small Storybook subtitles improvements for some Message and Dropdown components ([e589dbb](https://github.com/NicolasOmar/reactive-bulma/commit/e589dbb275973c9952171f55f277ea4e9318353d))
+
+
+### Features
+
+* Create component "Message" ([#204](https://github.com/NicolasOmar/reactive-bulma/issues/204)) ([#66](https://github.com/NicolasOmar/reactive-bulma/issues/66)) ([877a8fa](https://github.com/NicolasOmar/reactive-bulma/commit/877a8fa9d57d39c3359d262e4f083fa7b489f492))
+
 # [2.5.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.4.0...v2.5.0) (2023-10-23)
 
 
