@@ -18,10 +18,10 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "componentSubtitle": "Colored message blocks, to emphasize part of your page",
       "docs": {
         "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+          "component": "The Bulma message is a multi-part component: the `message` container, the optional `message-header` that can hold a title and a delete element, the `message-body` for the longer body of the message."
         }
       }
     }
