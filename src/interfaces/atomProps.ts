@@ -299,3 +299,10 @@ export interface DropdownItemProps extends ElementProps, ClickeableProps {
   /** `Styling` Marks the item as the one where user is located (based on dropdown hierarchy) */
   isActiveItem?: boolean
 }
+
+export interface MenuItemProps extends ElementProps, ClickeableProps {
+  /** `Attribute` `Required` Sets the text will be shown on the menu item */
+  text: string
+  /** `Styling` Generates a blue background to mark the item as the active one in the `MenuList` */
+  isActive?: boolean
+}

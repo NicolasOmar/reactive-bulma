@@ -6,7 +6,8 @@ import {
   ButtonProps,
   ColumnProps,
   DeleteProps,
-  DropdownItemProps
+  DropdownItemProps,
+  MenuItemProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -83,4 +84,19 @@ export interface MessageProps extends ElementProps {
   color?: basicColorType
   /** `Styling` Set button's size on bulma's size tokens */
   size?: Exclude<basicSizeType, 'is-normal'>
+}
+
+interface MenuSubListProps {
+  subListTitle: MenuItemProps
+  subItems: MenuItemProps[]
+}
+
+export interface MenuListProps extends ElementProps {
+  /** `Attribute` `Required` List of menu items that can be used as single ones or in a list/sublist format */
+  itemList: Array<MenuItemProps | MenuSubListProps>
+}
+
+export interface MenuProps extends ElementProps {
+  /** `Mocked` Styling prop injected for component creation process purposes only. Can be deleted */
+  isACssTestClass?: boolean
 }
