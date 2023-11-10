@@ -20,7 +20,8 @@ const Tag: React.FC<TagProps> = ({
   isRounded = null,
   size = null,
   addonColor = null,
-  onDeleteClick = null
+  onDeleteClick = null,
+  onKeyDown = null
 }) => {
   const tagContainerClasses = parseClasses([
     'tags',
@@ -65,6 +66,7 @@ const Tag: React.FC<TagProps> = ({
           data-testid={tagDeleteTestId}
           className='tag is-delete'
           onClick={onDeleteClick ?? undefined}
+          onKeyDown={onKeyDown ?? onDeleteClick ?? undefined}
         ></a>
       ) : (
         <span className={tagAddonClasses}>{addonText}</span>

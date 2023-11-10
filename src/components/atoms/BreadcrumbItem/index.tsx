@@ -13,7 +13,8 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   containerStyle = null,
   text,
   isActiveItem = null,
-  onClick = null
+  onClick = null,
+  onKeyDown = null
 }) => {
   const breadcrumbItemContainerClasses = parseClasses([
     'breadcrumb-item-container',
@@ -42,6 +43,7 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
         className={breadcrumbItemClasses}
         style={style ?? undefined}
         onClick={onClick ?? undefined}
+        onKeyDown={onKeyDown ?? onClick ?? undefined}
       >
         {text}
       </a>

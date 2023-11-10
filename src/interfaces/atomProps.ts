@@ -105,6 +105,8 @@ export interface TagProps
   addonColor?: basicColorType
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
+  /** `Function` Key Down function, alone does not nothing, but can be reused for other components */
+  onKeyDown?: () => void
 }
 
 export interface ImageProps
@@ -280,6 +282,8 @@ export interface BreadcrumbItemProps
   text: string
   /** `Styling` Marks the item as the one where user is located (based on breadcrumb hierarchy) */
   isActiveItem?: boolean
+  /** `Function` Key Down function, alone does not nothing, but can be reused for other components */
+  onKeyDown?: () => void
 }
 
 export interface DropdownTriggerProps
@@ -305,4 +309,6 @@ export interface MenuItemProps extends ElementProps, ClickeableProps {
   text: string
   /** `Styling` Generates a blue background to mark the item as the active one in the `MenuList` */
   isActive?: boolean
+  /** `Function` Key Down function, alone does not nothing, but can be reused for other components */
+  onKeyDown?: () => void
 }
