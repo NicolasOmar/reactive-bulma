@@ -17,6 +17,7 @@ describe('<%= name %>', () => {
   test('Should render the component', () => {
     render(<<%= name %> />)
     const test<%= name %> = screen.getByTestId(basicTestId)
+    
     expect(test<%= name %>).toBeInTheDocument()
   })
 
