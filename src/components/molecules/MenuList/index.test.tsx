@@ -4,9 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import MenuList from '.'
 // TYPES & INTERFACES
+import { MenuItemProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
-import { MenuItemProps } from '../../../interfaces/atomProps'
 
 describe('MenuList', () => {
   const { basicTestId } = testing
@@ -30,7 +30,7 @@ describe('MenuList', () => {
       ]
     }
     render(<MenuList {...subListConfig} />)
-    screen.debug()
+
     const testMenuMainItem = screen.getByText(subTitleText)
     expect(testMenuMainItem).toBeInTheDocument()
     const testMenuListItems = screen.getAllByText(subTitleItemText)
