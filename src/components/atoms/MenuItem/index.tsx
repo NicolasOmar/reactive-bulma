@@ -11,8 +11,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   style = null,
   text,
   isActive = null,
-  onClick = null,
-  onKeyDown = null
+  onClick = null
 }) => {
   const menuItemClasses = parseClasses([
     'menuItem',
@@ -27,8 +26,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
       data-testid={menuItemTestId}
       className={menuItemClasses}
       style={style ?? undefined}
+      aria-hidden='true'
       onClick={onClick ?? undefined}
-      onKeyDown={onKeyDown ?? onClick ?? undefined}
     >
       {text}
     </a>
