@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
+import MenuList from '../MenuList'
 // TYPES & INTERFACES
 import { MenuProps } from '../../../interfaces/moleculeProps'
 // PARSERS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import MenuList from '../MenuList'
+import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 
 const Menu: React.FC<MenuProps> = ({
   testId = null,
@@ -22,16 +22,16 @@ const Menu: React.FC<MenuProps> = ({
       className={menuClasses}
       style={style ?? undefined}
     >
-      {menuSections.map((section, i) => (
-        <React.Fragment key={`section-${i}`}>
+      {menuSections.map(section => (
+        <React.Fragment key={`section-${parseKey()}`}>
           <p
-            key={`section-label-${i}`}
+            key={`section-label-${parseKey()}`}
             className='menu-label'
           >
             {section.label}
           </p>
           <MenuList
-            key={`section-menu-list-${i}`}
+            key={`section-menu-list-${parseKey()}`}
             itemList={section.itemList}
           />
         </React.Fragment>

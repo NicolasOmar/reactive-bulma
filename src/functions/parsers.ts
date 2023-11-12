@@ -36,3 +36,9 @@ export const parseTestId = (config: ParseTestIdProps): string => {
     config.separator ?? ''
   )}`
 }
+
+export const parseKey = (max: number = 5000, min: number = 1): string => {
+  max = Math.floor(max)
+  min = Math.ceil(min)
+  return Math.floor(Math.random() * (max - min) + min).toString()
+}

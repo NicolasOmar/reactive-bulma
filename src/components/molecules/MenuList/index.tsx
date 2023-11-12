@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
+import { MenuItem } from '../../atoms'
 // TYPES & INTERFACES
 import { MenuListProps } from '../../../interfaces/moleculeProps'
 // PARSERS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { MenuItem } from '../../atoms'
+import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 
 const MenuList: React.FC<MenuListProps> = ({
   testId = null,
@@ -22,15 +22,15 @@ const MenuList: React.FC<MenuListProps> = ({
       className={menuListClasses}
       style={style ?? undefined}
     >
-      {itemList.map((item, itemIndex) => {
+      {itemList.map(item => {
         if ('subListTitle' in item) {
           return (
-            <li key={`sub-list-menu-item-${itemIndex}`}>
+            <li key={`sub-list-menu-item-${parseKey()}`}>
               <MenuItem {...item.subListTitle} />
               <ul>
-                {item.subItems.map((subItem, subItemIndex) => (
+                {item.subItems.map(subItem => (
                   <MenuItem
-                    key={`sub-list-menu-sub-item-${subItemIndex}`}
+                    key={`sub-list-menu-sub-item-${parseKey()}`}
                     {...subItem}
                   />
                 ))}
@@ -40,7 +40,7 @@ const MenuList: React.FC<MenuListProps> = ({
         } else {
           return (
             <MenuItem
-              key={`sub-list-item-${itemIndex}`}
+              key={`sub-list-item-${parseKey()}`}
               {...item}
             />
           )

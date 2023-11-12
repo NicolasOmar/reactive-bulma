@@ -4,7 +4,7 @@ import { BreadcrumbItem } from '../../atoms'
 // TYPES & INTERFACES
 import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
 // PARSERS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   testId = 'breadcrumbs',
@@ -53,9 +53,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         className={cssClasses ?? undefined}
         style={style ?? undefined}
       >
-        {items.map((itemConfig, i) => (
+        {items.map(itemConfig => (
           <BreadcrumbItem
-            key={`breadcrumb-item-${i}`}
+            key={`breadcrumb-item-${parseKey()}`}
             {...itemConfig}
           />
         ))}

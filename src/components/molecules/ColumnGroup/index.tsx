@@ -5,7 +5,7 @@ import { columnGapType } from '../../../types/styleTypes'
 // COMPONENTS
 import { Column } from '../../atoms'
 // PARSERS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 
 const parseGapCssClass = (gapPropValue: columnGapType | null | undefined) => {
   switch (gapPropValue) {
@@ -50,10 +50,10 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
       className={columnGroupClasses}
       style={style ?? undefined}
     >
-      {listOfColumns.map((_columnItem, i) => (
+      {listOfColumns.map(columnItemConfig => (
         <Column
-          key={`column-group-item-${i}`}
-          {..._columnItem}
+          key={`column-group-item-${parseKey()}`}
+          {...columnItemConfig}
         />
       ))}
     </section>
