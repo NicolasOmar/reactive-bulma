@@ -31,8 +31,8 @@ const renderTitleSection = (
 
 const Title: React.FC<TitleProps> = ({ main, secondary }) => (
   <>
-    {renderTitleSection(main!)}
-    {renderTitleSection(secondary!)}
+    {main ? renderTitleSection(main) : null}
+    {secondary ? renderTitleSection(secondary) : null}
   </>
 )
 

@@ -64,6 +64,7 @@ const Tag: React.FC<TagProps> = ({
         <a
           data-testid={tagDeleteTestId}
           className='tag is-delete'
+          title='delete'
           aria-hidden='true'
           onClick={onDeleteClick ?? undefined}
         ></a>
