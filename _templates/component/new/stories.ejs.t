@@ -18,4 +18,3 @@ export default {
 const Template: StoryFn<typeof <%= name %>> = args => <<%= name %> {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'Basic Example'

@@ -6,7 +6,8 @@ import {
   ButtonProps,
   ColumnProps,
   DeleteProps,
-  DropdownItemProps
+  DropdownItemProps,
+  MenuItemProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -83,4 +84,28 @@ export interface MessageProps extends ElementProps {
   color?: basicColorType
   /** `Styling` Set button's size on bulma's size tokens */
   size?: Exclude<basicSizeType, 'is-normal'>
+}
+
+interface MenuSubListProps {
+  subListTitle: MenuItemProps
+  subItems: MenuItemProps[]
+}
+
+type MenuListItemType = MenuItemProps | MenuSubListProps
+
+export interface MenuListProps extends ElementProps {
+  /** `Attribute` `Required` List of menu items that can be used as single ones or in a list/sublist format */
+  itemList: Array<MenuListItemType>
+}
+
+interface MenuSectionProps {
+  /** `Attribute` `Required` Label that will be show at the beginning of each section */
+  label: string
+  /** `Attribute` `Required` List of menu items that can be used as single ones or in a list/sublist format */
+  itemList: Array<MenuListItemType>
+}
+
+export interface MenuProps extends ElementProps {
+  /** `Attribute` `Required` List of sections that can be single or second level MenuItems */
+  menuSections: MenuSectionProps[]
 }

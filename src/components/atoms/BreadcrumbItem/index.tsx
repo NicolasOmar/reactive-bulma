@@ -41,6 +41,7 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
         data-testid={breadcrumbItemTestId}
         className={breadcrumbItemClasses}
         style={style ?? undefined}
+        aria-hidden='true'
         onClick={onClick ?? undefined}
       >
         {text}

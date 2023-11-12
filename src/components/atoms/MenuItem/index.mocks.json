@@ -1,0 +1,23 @@
+{
+  "testing": {
+    "basicTestId": "test-menuItem",
+    "testMenuItemText": "Lorem ipsum",
+    "testClasses": [
+      {
+        "name": "isActive",
+        "value": true,
+        "result": "is-active"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

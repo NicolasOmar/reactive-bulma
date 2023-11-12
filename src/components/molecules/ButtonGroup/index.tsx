@@ -4,7 +4,7 @@ import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
 // COMPONENTS
 import { Button } from '../../atoms'
 // PARSERS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
   testId = null,
@@ -43,7 +43,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
       className={buttonGroupClasses}
       style={style ?? undefined}
     >
-      {buttonList.map((currentButtonItem, i, originalButtonList) => {
+      {buttonList.map((currentButtonItem, _, originalButtonList) => {
         const hasSelectedButton = originalButtonList.some(
           ({ isSelected }) => isSelected
         )
@@ -57,7 +57,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
 
         return (
           <Button
-            key={`button-group-item-${i}`}
+            key={`button-group-item-${parseKey()}`}
             {...buttonConfig}
           />
         )
