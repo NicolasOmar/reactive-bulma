@@ -1,4 +1,5 @@
 import { ParseTestIdProps } from '../interfaces/functionProps'
+import crypto from 'crypto'
 
 /**
  * @param { Array<string | null> } _classes `Required`. Array of classNames on `string` (or `null`) values
@@ -40,5 +41,8 @@ export const parseTestId = (config: ParseTestIdProps): string => {
 export const parseKey = (max: number = 5000, min: number = 1): string => {
   max = Math.floor(max)
   min = Math.ceil(min)
-  return Math.floor(Math.random() * (max - min) + min).toString()
+  const secureRandomNumbers = new Uint32Array(1)
+  crypto.getRandomValues(secureRandomNumbers)
+
+  return Math.floor(secureRandomNumbers[0] * (max - min) + min).toString()
 }
