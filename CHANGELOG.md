@@ -1,3 +1,19 @@
+# [2.7.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.6.0...v2.7.0) (2023-11-12)
+
+
+### Bug Fixes
+
+* Dependencies versions up to date ([4c65087](https://github.com/NicolasOmar/reactive-bulma/commit/4c6508724d68aa8b1c47a036de5a7cfc3a465775))
+* Solving some founded code bugs from SonarCloud analysis. Better implementation and UT on next commit ([06fc524](https://github.com/NicolasOmar/reactive-bulma/commit/06fc524c66eed43cb997e9e83763b7c0e5ddb2f1))
+* Solving some key generations using a custom parser ([fbb156a](https://github.com/NicolasOmar/reactive-bulma/commit/fbb156add7be89018ebd9cc761436a73231c86c9))
+* Tiny adjustments on component templates ([bacb670](https://github.com/NicolasOmar/reactive-bulma/commit/bacb670ffadb73286844aab6689d73f69d5ec8e8))
+* Updating actions/setup-node step to v4 ([7d15a3d](https://github.com/NicolasOmar/reactive-bulma/commit/7d15a3df3c75842c76ea23aea438610c327ccc3f))
+
+
+### Features
+
+* Create component "Menu" ([#205](https://github.com/NicolasOmar/reactive-bulma/issues/205)) ([#65](https://github.com/NicolasOmar/reactive-bulma/issues/65)) ([f6202aa](https://github.com/NicolasOmar/reactive-bulma/commit/f6202aac82e5e0f8450cffdddc51ab52d7ac6385))
+
 # [2.6.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.5.0...v2.6.0) (2023-11-07)
 
 
