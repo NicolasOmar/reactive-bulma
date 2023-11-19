@@ -17,21 +17,17 @@ export default {
 const Template: StoryFn<typeof CheckBox> = args => <CheckBox {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'Basic Example'
 
 export const WithTextContent = Template.bind({})
-WithTextContent.storyName = 'With text content'
 WithTextContent.args = testing.withTextContent as CheckBoxProps
 
 export const WithComponentContent = Template.bind({})
-WithComponentContent.storyName = 'With component content'
 WithComponentContent.args = {
   content: <Tag text='Test' />
 }
 
-export const DisabledMode = Template.bind({})
-DisabledMode.storyName = 'isDisabled'
-DisabledMode.args = {
+export const Disabled = Template.bind({})
+Disabled.args = {
   ...WithTextContent.args,
   ...(testing.disabledMode as CheckBoxProps)
 }

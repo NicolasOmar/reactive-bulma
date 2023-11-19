@@ -16,11 +16,9 @@ export default {
 const Template: StoryFn<typeof Dropdown> = args => <Dropdown {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'Basic Example'
 
-export const AllAreLinks = Template.bind({})
-AllAreLinks.storyName = 'Link Items'
-AllAreLinks.args = {
+export const AllItemsAreLinks = Template.bind({})
+AllItemsAreLinks.args = {
   listOfItems: testing.testConfig.listOfItems.map(itemConfig => ({
     ...itemConfig,
     type: 'link'

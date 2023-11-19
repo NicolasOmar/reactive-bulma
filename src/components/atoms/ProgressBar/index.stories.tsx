@@ -13,8 +13,7 @@ export default {
 
 const Template: StoryFn<typeof ProgressBar> = args => <ProgressBar {...args} />
 
-export const NoText = Template.bind({})
-NoText.storyName = 'Basic'
+export const Basic = Template.bind({})
 
 export const HalfValue = Template.bind({})
 HalfValue.storyName = 'At 50%'
@@ -23,7 +22,6 @@ HalfValue.args = {
 }
 
 export const Colored = Template.bind({})
-Colored.storyName = 'Colored'
 Colored.args = {
   ...HalfValue.args,
   color: 'is-primary'
@@ -37,14 +35,12 @@ MaxBeyond100.args = {
 }
 
 export const LargeSize = Template.bind({})
-LargeSize.storyName = 'Large Size'
 LargeSize.args = {
   ...MaxBeyond100.args,
   size: 'is-large'
 }
 
 export const Loading = Template.bind({})
-Loading.storyName = 'Loading State'
 Loading.args = {
   ...LargeSize.args,
   isLoading: true

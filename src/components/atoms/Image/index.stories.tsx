@@ -21,22 +21,18 @@ const Template: StoryFn<typeof Image> = args => (
 )
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'With src only'
 
-export const OtherFixedSize = Template.bind({})
-OtherFixedSize.storyName = 'Fixed Size'
-OtherFixedSize.args = {
+export const WithFixedStyle = Template.bind({})
+WithFixedStyle.args = {
   fixedSize: 'is-3by5'
 }
 
 export const IsRounded = Template.bind({})
-IsRounded.storyName = 'Rounded'
 IsRounded.args = {
   isRounded: true
 }
 
 export const CustomStyle = Template.bind({})
-CustomStyle.storyName = 'Styled'
 CustomStyle.args = {
   style: {
     padding: '50px'

@@ -17,20 +17,15 @@ export default {
 const Template: StoryFn<typeof Title> = args => <Title {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'With minimum config'
 
-export const SmallSize = Template.bind({})
-SmallSize.storyName = 'With Big Size'
-SmallSize.args = testing.smallSize as TitleProps
+export const WithBigSize = Template.bind({})
+WithBigSize.args = testing.smallSize as TitleProps
 
-export const WithSubtitle = Template.bind({})
-WithSubtitle.storyName = 'With a subtitle'
-WithSubtitle.args = testing.withSubtitle as TitleProps
+export const WithSubtitles = Template.bind({})
+WithSubtitles.args = testing.withSubtitle as TitleProps
 
-export const BiggerSubtitle = Template.bind({})
-BiggerSubtitle.storyName = 'With a bigger subtitle'
-BiggerSubtitle.args = testing.biggerSubtitle as TitleProps
+export const WithBiggerSubtitles = Template.bind({})
+WithBiggerSubtitles.args = testing.biggerSubtitle as TitleProps
 
-export const SpacedTitle = Template.bind({})
-SpacedTitle.storyName = 'Spiced title'
-SpacedTitle.args = testing.spacedTitle as TitleProps
+export const SpicedTitle = Template.bind({})
+SpicedTitle.args = testing.spacedTitle as TitleProps

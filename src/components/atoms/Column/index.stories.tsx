@@ -14,23 +14,19 @@ export default {
 
 const Template: StoryFn<typeof Column> = args => <Column {...args} />
 
-export const BasicExample = Template.bind({})
-BasicExample.storyName = 'No children'
+export const NoChildren = Template.bind({})
 
-export const WithParagraph = Template.bind({})
-WithParagraph.storyName = 'With a paragraph'
-WithParagraph.args = {
+export const WithParagraphExample = Template.bind({})
+WithParagraphExample.args = {
   children: <p>{testing.testParagraph}</p>
 }
 
-export const WithLargeParagraph = Template.bind({})
-WithLargeParagraph.storyName = 'With a large paragraph'
-WithLargeParagraph.args = {
+export const WithLargeParagraphExample = Template.bind({})
+WithLargeParagraphExample.args = {
   children: <p>{testing.testLargeParagraph}</p>
 }
 
-export const WithButton = Template.bind({})
-WithButton.storyName = 'With a button'
-WithButton.args = {
+export const WithButtonExample = Template.bind({})
+WithButtonExample.args = {
   children: <Button text='This is a button' />
 }
