@@ -11,7 +11,12 @@ import { testing } from './index.mocks.json'
 describe('Title', () => {
   const { baseConfig, smallSize, sizes, withSubtitle } = testing
 
-  test('Should render with required props only', () => {
+  test('Should not render by passing no props', () => {
+    render(<Title />)
+    expect(() => screen.getByText(baseConfig.main.text)).toThrow()
+  })
+
+  test('Should render with main config only', () => {
     render(<Title {...(baseConfig as TitleProps)} />)
     const baseTestText = screen.getByText(baseConfig.main.text)
     expect(baseTestText).toBeInTheDocument()

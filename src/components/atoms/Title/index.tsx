@@ -5,10 +5,8 @@ import { TitleProps, TitleSectionProps } from '../../../interfaces/atomProps'
 import { parseClasses } from '../../../functions/parsers'
 
 const renderTitleSection = (
-  section?: TitleSectionProps
+  section: TitleSectionProps
 ): React.ReactElement | null => {
-  if (!section) return null
-
   const { type, size, isSpaced, cssClasses } = section
   const sectionClasses = parseClasses([
     type,
