@@ -306,3 +306,14 @@ export interface MenuItemProps extends ElementProps, ClickeableProps {
   /** `Styling` Generates a blue background to mark the item as the active one in the `MenuList` */
   isActive?: boolean
 }
+
+export interface PaginationItemProps extends ElementProps, ClickeableProps {
+  /** `Attribute` `Required` Sets the number string that will be shown in the item and in its title when user hovers it */
+  text: string | number
+  /** `Attribute` Sets the custom text before the `text` when user hovers the item */
+  labelText?: string
+  /** `Attribute` Sets the custom text before the `text` when user hovers the item if is the current one */
+  currentLabelText?: string
+  /** `Styling` Makes the item the selected one, changing its background to blue */
+  isCurrent?: boolean
+}

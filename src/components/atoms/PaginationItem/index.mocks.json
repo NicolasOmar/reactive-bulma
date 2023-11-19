@@ -1,0 +1,25 @@
+{
+  "testing": {
+    "basicTestId": "test-pagination-link",
+    "testClasses": [
+      {
+        "name": "isCurrent",
+        "value": true,
+        "result": "is-current"
+      }
+    ],
+    "basicText": {
+      "text": "3"
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}
