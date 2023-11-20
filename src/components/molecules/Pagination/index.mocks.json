@@ -3,10 +3,14 @@
     "basicTestId": "test-pagination",
     "testClasses": [
       {
-        "name": "isACssTestClass",
+        "name": "isRounded",
         "value": true,
-        "result": "is-test-only-class"
+        "result": "is-rounded"
       }
+    ],
+    "navigationButtons": [
+      { "text": "Here goes first" },
+      { "text": "Here goes last" }
     ]
   },
   "storybook": {

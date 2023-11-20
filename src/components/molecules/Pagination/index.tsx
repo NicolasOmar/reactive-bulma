@@ -57,8 +57,6 @@ const Pagination: React.FC<PaginationProps> = ({
     /**
      * TODOS
      * - Add the position property to relocate the items
-     * - Work on stories
-     * - Work on UT cases
      */
 
     return pages.map((pageItem, pageIndex, { length }) => {

@@ -8,14 +8,28 @@ import { PaginationProps } from '../../../interfaces/moleculeProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 
+const createTestPages = (numberOfPages = 3) => {
+  const testPages = Array(numberOfPages)
+    .fill(null)
+    .map((_, i) => ({ text: `${++i}` }))
+  const testValues = testPages.map((_, i) => (++i).toString())
+
+  return { testPages, testValues }
+}
+
 describe('Pagination', () => {
-  const { basicTestId, testClasses } = testing
+  const { basicTestId, testClasses, navigationButtons } = testing
+  const { testPages, testValues } = createTestPages(5)
 
   test('Should render the component', () => {
-    render(<Pagination />)
+    const { testPages, testValues } = createTestPages()
+    render(<Pagination pages={testPages} />)
     const testPagination = screen.getByTestId(basicTestId)
 
     expect(testPagination).toBeInTheDocument()
+    testValues.forEach(stringValue =>
+      expect(screen.getByText(stringValue)).toBeInTheDocument()
+    )
   })
 
   test('Should render the component with specific classes', () => {
@@ -25,6 +39,7 @@ describe('Pagination', () => {
         ''
       )}`
       const classTestObject: PaginationProps = {
+        pages: testPages,
         [name]: value
       }
 
@@ -35,5 +50,52 @@ describe('Pagination', () => {
       expect(testStylingPropValuePaginationGroup.className).toContain(result)
       cleanup()
     })
+  })
+
+  test('Should render the component with ellipsis and less items', () => {
+    const ellipsisConfig = {
+      pages: testPages,
+      hasEllipsis: true,
+      ellipsisItems: 1
+    }
+    const modifiedTestValues = testValues.filter(
+      (_value, i) => i !== 1 && i !== --testValues.length
+    )
+
+    render(<Pagination {...ellipsisConfig} />)
+
+    modifiedTestValues.forEach(stringValue =>
+      expect(screen.getByText(stringValue)).toBeInTheDocument()
+    )
+  })
+
+  test('Should render the component with other navigation buttons', () => {
+    const navigationConfig = {
+      pages: testPages,
+      showPreviousPageButton: navigationButtons[0],
+      showNextPageButton: navigationButtons[1]
+    }
+
+    render(<Pagination {...navigationConfig} />)
+
+    navigationButtons.forEach(({ text }) =>
+      expect(screen.getByText(text)).toBeInTheDocument()
+    )
+  })
+
+  test('Should render the component with no navigation buttons', () => {
+    const { testPages } = createTestPages(5)
+    const navigationConfig = {
+      pages: testPages,
+      showPreviousPageButton: null,
+      showNextPageButton: null
+    }
+
+    render(<Pagination {...navigationConfig} />)
+    const testPagination = screen.getByTestId(basicTestId)
+    expect(testPagination).toBeInTheDocument()
+    navigationButtons.forEach(({ text }) =>
+      expect(() => screen.getByText(text)).toThrow()
+    )
   })
 })
