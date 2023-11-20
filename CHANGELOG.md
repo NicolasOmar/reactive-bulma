@@ -1,3 +1,18 @@
+# [2.8.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.7.0...v2.8.0) (2023-11-20)
+
+
+### Bug Fixes
+
+* Dependencies version updated ([f8bb7cd](https://github.com/NicolasOmar/reactive-bulma/commit/f8bb7cdab62048f7fd57589bee577e789a089f5c))
+* Improving Title component UT to 100% ([2d561a9](https://github.com/NicolasOmar/reactive-bulma/commit/2d561a9e1ac9d7919b53ac9741ec805bbadf1afd))
+* Reducing redundant storyNames on stories ([2381dd6](https://github.com/NicolasOmar/reactive-bulma/commit/2381dd638ca1453a2e93a08935caa06847b41938))
+* Solving missing tech debt according SonarCloud ([12c27f1](https://github.com/NicolasOmar/reactive-bulma/commit/12c27f14c951edab4544ff69af40007ba866952f))
+
+
+### Features
+
+* Create component "Pagination" ([#216](https://github.com/NicolasOmar/reactive-bulma/issues/216)) ([#68](https://github.com/NicolasOmar/reactive-bulma/issues/68)) ([e348c99](https://github.com/NicolasOmar/reactive-bulma/commit/e348c997a86374073287ba34b35d75cd737937e3))
+
 # [2.7.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.6.0...v2.7.0) (2023-11-12)
 
 
