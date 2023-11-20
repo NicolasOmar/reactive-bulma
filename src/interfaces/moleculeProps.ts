@@ -1,5 +1,9 @@
 // COMMON PROPS
-import { ComposedElementProps, ElementProps } from './commonProps'
+import {
+  ClickeableProps,
+  ComposedElementProps,
+  ElementProps
+} from './commonProps'
 // COMPONENT PROPS
 import {
   BreadcrumbItemProps,
@@ -7,7 +11,8 @@ import {
   ColumnProps,
   DeleteProps,
   DropdownItemProps,
-  MenuItemProps
+  MenuItemProps,
+  PaginationItemProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -108,4 +113,25 @@ interface MenuSectionProps {
 export interface MenuProps extends ElementProps {
   /** `Attribute` `Required` List of sections that can be single or second level MenuItems */
   menuSections: MenuSectionProps[]
+}
+
+interface PaginationNavigationButtonProps extends ClickeableProps {
+  text: string
+}
+
+export interface PaginationProps extends ComposedElementProps {
+  /** `Attribute` `Required` List of sections that can be single or second level MenuItems */
+  pages: PaginationItemProps[]
+  /** `Attribute` Adds a couple of ellipsis between the first and last item */
+  hasEllipsis?: boolean
+  /** `Attribute` Number of items that will be hidden if `hasEllipsis` is `true` */
+  ellipsisItems?: number
+  /** `Attribute` Toogle `Previous` and `Next page` buttons next to the selectable pages */
+  showPreviousPageButton?: PaginationNavigationButtonProps | null
+  /** `Attribute` Toogle `Previous` and `Next page` buttons next to the selectable pages */
+  showNextPageButton?: PaginationNavigationButtonProps | null
+  /** `Styling` Will add round borders to each page's shape */
+  isRounded?: boolean
+  /** `Styling` Set button's size on bulma's size tokens */
+  size?: Exclude<basicSizeType, 'is-normal'>
 }
