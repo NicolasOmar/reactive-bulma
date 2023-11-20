@@ -16,8 +16,6 @@ export default {
 const Template: StoryFn<typeof Delete> = args => <Delete {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'Basic Example'
 
-export const BigSize = Template.bind({})
-BigSize.storyName = 'With Big Size'
-BigSize.args = testing.bigSize as IconProps
+export const WithBigSize = Template.bind({})
+WithBigSize.args = testing.bigSize as IconProps

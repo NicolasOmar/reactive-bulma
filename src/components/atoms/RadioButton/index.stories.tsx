@@ -16,10 +16,8 @@ export default {
 const Template: StoryFn<typeof RadioButton> = args => <RadioButton {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'Basic Example'
 
 export const SeveralOptions = Template.bind({})
-SeveralOptions.storyName = 'Several Options'
 SeveralOptions.args = testing.severalOptions
 
 export const OneOptionSelected = Template.bind({})

@@ -1,0 +1,20 @@
+{
+  "testing": {
+    "basicTestId": "test-pagination-link",
+    "testClasses": [
+      {
+        "name": "isSelected",
+        "value": true,
+        "result": "is-current"
+      }
+    ],
+    "basicText": {
+      "text": "3"
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Pagination's item single unit"
+    }
+  }
+}

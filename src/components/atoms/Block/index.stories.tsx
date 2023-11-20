@@ -14,10 +14,8 @@ export default {
 const Template: StoryFn<typeof Block> = args => <Block {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'No children'
 
 export const WithParagraph = Template.bind({})
-WithParagraph.storyName = 'With a paragraph'
 WithParagraph.args = {
   children: <p>{testing.testParagraph}</p>
 }

@@ -1,0 +1,45 @@
+{
+  "testing": {
+    "basicTestId": "test-pagination",
+    "testClasses": [
+      {
+        "name": "isRounded",
+        "value": true,
+        "result": "is-rounded"
+      },
+      {
+        "name": "alignment",
+        "value": "is-centered",
+        "result": "is-centered"
+      }
+    ],
+    "noNavigationButtons": {
+      "showPreviousPageButton": null,
+      "showNextPageButton": null
+    },
+    "customNavigationButtons": [
+      {
+        "text": "Here goes first",
+        "cssClasses": "pagination-previous"
+      },
+      {
+        "text": "Here goes last",
+        "cssClasses": "pagination-next"
+      }
+    ],
+    "withEllipsis": {
+      "hasEllipsis": true,
+      "ellipsisItems": 3
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A responsive, usable, and flexible pagination",
+      "docs": {
+        "description": {
+          "component": "The pagination component consists of several elements: `pagination-previous` and `pagination-next` for incremental navigation, `pagination-list` which displays page items,`pagination-link` for the page numbers and `pagination-ellipsis` for range separators. All elements are optional so you can compose your pagination as you wish."
+        }
+      }
+    }
+  }
+}

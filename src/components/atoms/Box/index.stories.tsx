@@ -13,12 +13,10 @@ export default {
 
 const Template: StoryFn<typeof Box> = args => <Box {...args} />
 
-export const BasicExample = Template.bind({})
-BasicExample.storyName = 'No children'
+export const NoChildren = Template.bind({})
 
-export const WithParagraph = Template.bind({})
-WithParagraph.storyName = 'With a paragraph'
-WithParagraph.args = {
+export const WithParagraphExample = Template.bind({})
+WithParagraphExample.args = {
   children: <p>{testing.testParagraph}</p>
 }
 

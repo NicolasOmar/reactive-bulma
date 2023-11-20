@@ -14,25 +14,20 @@ export default {
 const Template: StoryFn<typeof Select> = args => <Select {...args} />
 
 export const OnlyRequiredProps = Template.bind({})
-OnlyRequiredProps.storyName = 'Only Required props'
 
 export const WithOneOption = Template.bind({})
-WithOneOption.storyName = 'With 1 option'
 WithOneOption.args = testing.oneOption
 
 export const WithSeveralOptions = Template.bind({})
-WithSeveralOptions.storyName = 'With several options'
 WithSeveralOptions.args = testing.severalOptions
 
-export const ShowsSeveralOptions = Template.bind({})
-ShowsSeveralOptions.storyName = 'With several options'
-ShowsSeveralOptions.args = {
+export const ShowsThreeOptions = Template.bind({})
+ShowsThreeOptions.args = {
   ...testing.severalOptions,
   ...testing.showsThreeOptions
 }
 
 export const FirstOptionsSelected = Template.bind({})
-FirstOptionsSelected.storyName = 'First option selected'
 FirstOptionsSelected.args = {
   ...testing.showsThreeOptions,
   ...testing.firstOptionSelected

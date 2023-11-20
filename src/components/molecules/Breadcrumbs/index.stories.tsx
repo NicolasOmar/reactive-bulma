@@ -4,7 +4,7 @@ import { StoryFn, Meta } from '@storybook/react'
 import Breadcrumbs from '.'
 // TYPES & INTERFACES
 import {
-  breadcrumbAlignType,
+  elementAlignType,
   breadcrumbSeparatorType
 } from '../../../types/styleTypes'
 // MOCKS
@@ -18,7 +18,7 @@ const breadcrumbItems = Array(5)
     isActiveItem: i === 4
   }))
 
-const alignmentOptions: Array<breadcrumbAlignType> = ['is-centered', 'is-right']
+const alignmentOptions: Array<elementAlignType> = ['is-centered', 'is-right']
 
 const separatorOptions: Array<breadcrumbSeparatorType> = [
   'has-arrow-separator',
@@ -49,22 +49,18 @@ export default {
 const Template: StoryFn<typeof Breadcrumbs> = args => <Breadcrumbs {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'Basic Example'
 
 export const SeparatedByDots = Template.bind({})
-SeparatedByDots.storyName = 'Dots Separators'
 SeparatedByDots.args = {
   separator: 'has-dot-separator'
 }
 
 export const BigSize = Template.bind({})
-BigSize.storyName = 'Big Size'
 BigSize.args = {
   size: 'is-large'
 }
 
 export const AlignedToRight = Template.bind({})
-AlignedToRight.storyName = 'Aligned to Right'
 AlignedToRight.args = {
   alignment: 'is-right'
 }

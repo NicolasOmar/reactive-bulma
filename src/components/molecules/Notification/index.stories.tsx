@@ -20,16 +20,13 @@ const Template: StoryFn<typeof Notification> = args => (
 )
 
 export const WithParagraph = Template.bind({})
-WithParagraph.storyName = 'With Paragraph'
 
 export const Colored = Template.bind({})
-Colored.storyName = 'Colored'
 Colored.args = {
   color: 'is-danger'
 }
 
 export const WithDeleteButton = Template.bind({})
-WithDeleteButton.storyName = 'With Delete Button'
 WithDeleteButton.args = {
   ...Colored.args,
   deleteButton: {
@@ -38,7 +35,6 @@ WithDeleteButton.args = {
 }
 
 export const LigthColored = Template.bind({})
-LigthColored.storyName = 'Light Colored'
 LigthColored.args = {
   ...Colored.args,
   isLightColor: true

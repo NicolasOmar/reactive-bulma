@@ -15,61 +15,52 @@ export default {
 const Template: StoryFn<typeof Tag> = args => <Tag {...args} />
 
 export const BasicExample = Template.bind({})
-BasicExample.storyName = 'With a text'
 
 export const Colored = Template.bind({})
-Colored.storyName = 'Colored'
 Colored.args = {
   ...BasicExample.args,
   color: 'is-danger'
 }
 
 export const Rounded = Template.bind({})
-Rounded.storyName = 'Rounded'
 Rounded.args = {
   ...Colored.args,
   isRounded: true
 }
 
-export const Light = Template.bind({})
-Light.storyName = 'Light color'
-Light.args = {
+export const LightColor = Template.bind({})
+LightColor.args = {
   ...Colored.args,
   isLight: true
 }
 
 export const LargeSize = Template.bind({})
-LargeSize.storyName = 'Large Size'
 LargeSize.args = {
   ...Colored.args,
   size: 'is-large'
 }
 
-export const WithDelete = Template.bind({})
-WithDelete.storyName = 'With a Delete'
-WithDelete.args = {
+export const WithDeleteButton = Template.bind({})
+WithDeleteButton.args = {
   ...Colored.args,
   withDelete: true
 }
 
-export const WithAddon = Template.bind({})
-WithAddon.storyName = 'With an Addon'
-WithAddon.args = {
+export const WithAnAddon = Template.bind({})
+WithAnAddon.args = {
   ...Colored.args,
   withAddon: true,
   addonText: 'Addon'
 }
 
 export const ColoredAddon = Template.bind({})
-ColoredAddon.storyName = 'Colored Addon'
 ColoredAddon.args = {
-  ...WithAddon.args,
+  ...WithAnAddon.args,
   addonColor: 'is-info'
 }
 
 export const WithDeleteAddon = Template.bind({})
-WithDeleteAddon.storyName = 'With a Delete Addon'
 WithDeleteAddon.args = {
-  ...WithAddon.args,
+  ...WithAnAddon.args,
   withDelete: true
 }
