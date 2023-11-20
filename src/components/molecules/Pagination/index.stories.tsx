@@ -4,7 +4,7 @@ import { StoryFn, Meta } from '@storybook/react'
 import Pagination from '.'
 // TYPES & INTERFACES
 // MOCKS
-import { storybook } from './index.mocks.json'
+import { storybook, testing } from './index.mocks.json'
 
 const createPages = (numberOfPages = 3) =>
   Array(numberOfPages)
@@ -22,20 +22,45 @@ const Template: StoryFn<typeof Pagination> = args => <Pagination {...args} />
 
 export const BasicExample = Template.bind({})
 
-export const NoNavigationPages = Template.bind({})
-NoNavigationPages.args = {
-  showPreviousPageButton: null,
-  showNextPageButton: null
+export const Centered = Template.bind({})
+Centered.args = {
+  alignment: 'is-centered'
 }
+
+export const CustomNavigationButtons = Template.bind({})
+CustomNavigationButtons.args = {
+  showPreviousPageButton: testing.customNavigationButtons[0],
+  showNextPageButton: testing.customNavigationButtons[1]
+}
+
+export const DisabledNavigationButtons = Template.bind({})
+DisabledNavigationButtons.args = {
+  showPreviousPageButton: {
+    ...testing.customNavigationButtons[0],
+    isDisabled: true
+  },
+  showNextPageButton: {
+    ...testing.customNavigationButtons[1],
+    isDisabled: true
+  }
+}
+
+export const NoNavigationButtons = Template.bind({})
+NoNavigationButtons.args = { ...testing.noNavigationButtons }
 
 export const FifteenItems = Template.bind({})
 FifteenItems.args = {
   pages: createPages(15)
 }
 
-export const EllipsisWithLessItems = Template.bind({})
-EllipsisWithLessItems.args = {
+export const Showing3ItemsLessWithEllipsis = Template.bind({})
+Showing3ItemsLessWithEllipsis.args = {
   ...FifteenItems.args,
-  hasEllipsis: true,
-  ellipsisItems: 3
+  ...testing.withEllipsis
+}
+
+export const Showing6ItemsLessWithEllipsis = Template.bind({})
+Showing6ItemsLessWithEllipsis.args = {
+  ...Showing3ItemsLessWithEllipsis.args,
+  ellipsisItems: 6
 }

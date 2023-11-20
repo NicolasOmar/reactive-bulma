@@ -19,9 +19,9 @@ const Template: StoryFn<typeof PaginationItem> = args => (
 
 export const BasicExample = Template.bind({})
 
-export const CurrentCase = Template.bind({})
-CurrentCase.args = {
-  isCurrent: true
+export const Selected = Template.bind({})
+Selected.args = {
+  isSelected: true
 }
 
 export const CustomLabelText = Template.bind({})
@@ -29,8 +29,8 @@ CustomLabelText.args = {
   labelText: 'Site N°'
 }
 
-export const CustomCurrentLabelText = Template.bind({})
-CustomCurrentLabelText.args = {
-  ...CurrentCase.args,
+export const SelectedWithCustomLabelText = Template.bind({})
+SelectedWithCustomLabelText.args = {
+  ...Selected.args,
   currentLabelText: 'Send to site N°'
 }

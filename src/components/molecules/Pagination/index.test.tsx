@@ -18,7 +18,7 @@ const createTestPages = (numberOfPages = 3) => {
 }
 
 describe('Pagination', () => {
-  const { basicTestId, testClasses, navigationButtons } = testing
+  const { basicTestId, testClasses, customNavigationButtons } = testing
   const { testPages, testValues } = createTestPages(5)
 
   test('Should render the component', () => {
@@ -72,13 +72,13 @@ describe('Pagination', () => {
   test('Should render the component with other navigation buttons', () => {
     const navigationConfig = {
       pages: testPages,
-      showPreviousPageButton: navigationButtons[0],
-      showNextPageButton: navigationButtons[1]
+      showPreviousPageButton: customNavigationButtons[0],
+      showNextPageButton: customNavigationButtons[1]
     }
 
     render(<Pagination {...navigationConfig} />)
 
-    navigationButtons.forEach(({ text }) =>
+    customNavigationButtons.forEach(({ text }) =>
       expect(screen.getByText(text)).toBeInTheDocument()
     )
   })
@@ -94,7 +94,7 @@ describe('Pagination', () => {
     render(<Pagination {...navigationConfig} />)
     const testPagination = screen.getByTestId(basicTestId)
     expect(testPagination).toBeInTheDocument()
-    navigationButtons.forEach(({ text }) =>
+    customNavigationButtons.forEach(({ text }) =>
       expect(() => screen.getByText(text)).toThrow()
     )
   })

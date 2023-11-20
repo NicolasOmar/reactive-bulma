@@ -91,6 +91,8 @@ export type fixedImageSizeType =
 
 export type basicSizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
 
+export type reducedSizeType = Exclude<basicSizeType, 'is-normal'>
+
 export type iconColorModeType = 'light' | 'dark'
 
 export type columnGapType =
@@ -104,7 +106,7 @@ export type columnGapType =
   | 'is-7'
   | 'is-8'
 
-export type breadcrumbAlignType = 'is-centered' | 'is-right'
+export type elementAlignType = 'is-centered' | 'is-right'
 
 export type breadcrumbSeparatorType =
   | 'has-arrow-separator'

@@ -4,7 +4,7 @@ import { StoryFn, Meta } from '@storybook/react'
 import Breadcrumbs from '.'
 // TYPES & INTERFACES
 import {
-  breadcrumbAlignType,
+  elementAlignType,
   breadcrumbSeparatorType
 } from '../../../types/styleTypes'
 // MOCKS
@@ -18,7 +18,7 @@ const breadcrumbItems = Array(5)
     isActiveItem: i === 4
   }))
 
-const alignmentOptions: Array<breadcrumbAlignType> = ['is-centered', 'is-right']
+const alignmentOptions: Array<elementAlignType> = ['is-centered', 'is-right']
 
 const separatorOptions: Array<breadcrumbSeparatorType> = [
   'has-arrow-separator',

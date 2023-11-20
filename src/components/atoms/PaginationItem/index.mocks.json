@@ -3,7 +3,7 @@
     "basicTestId": "test-pagination-link",
     "testClasses": [
       {
-        "name": "isCurrent",
+        "name": "isSelected",
         "value": true,
         "result": "is-current"
       }
@@ -14,12 +14,7 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
-      "docs": {
-        "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
-        }
-      }
+      "componentSubtitle": "Pagination's item single unit"
     }
   }
 }

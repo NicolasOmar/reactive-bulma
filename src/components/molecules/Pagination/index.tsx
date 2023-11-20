@@ -1,10 +1,14 @@
 import React from 'react'
 // COMPONENTS
+import { PaginationItem } from '../../atoms'
 // TYPES & INTERFACES
-import { PaginationProps } from '../../../interfaces/moleculeProps'
+import {
+  PaginationNavigationButtonProps,
+  PaginationProps
+} from '../../../interfaces/moleculeProps'
 // PARSERS
 import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
-import { PaginationItem } from '../../atoms'
+import { PaginationItemProps } from '../../../interfaces/atomProps'
 
 const renderEllipsis = (hasEllipsis: boolean) =>
   hasEllipsis ? (
@@ -18,6 +22,67 @@ const renderEllipsis = (hasEllipsis: boolean) =>
     </li>
   ) : null
 
+const renderNavigationButton = (
+  navigationButton: PaginationNavigationButtonProps | null
+) => {
+  if (!navigationButton) return null
+
+  const navigationButtonClasses = parseClasses([
+    navigationButton.cssClasses,
+    navigationButton.isDisabled ? 'is-disabled' : null
+  ])
+
+  return (
+    <a
+      className={navigationButtonClasses}
+      onClick={navigationButton.onClick ?? undefined}
+      aria-hidden='true'
+    >
+      {navigationButton.text}
+    </a>
+  )
+}
+
+const renderPages = (
+  pages: PaginationItemProps[],
+  hasEllipsis: boolean,
+  ellipsisItems: number
+) => {
+  return pages.map((pageItem, pageIndex, { length }) => {
+    const lastEllipsisItemIndex = length - ellipsisItems - 1
+
+    if (pageIndex === 0) {
+      return (
+        <React.Fragment key={`first-pagination-item`}>
+          <PaginationItem {...pageItem} />
+          {renderEllipsis(hasEllipsis)}
+        </React.Fragment>
+      )
+    }
+
+    if (
+      !hasEllipsis ||
+      (pageIndex > ellipsisItems && pageIndex < lastEllipsisItemIndex)
+    ) {
+      return (
+        <PaginationItem
+          key={`pagination-item-${parseKey()}`}
+          {...pageItem}
+        />
+      )
+    }
+
+    if (pageIndex === --length) {
+      return (
+        <React.Fragment key={`last-pagination-item`}>
+          {renderEllipsis(hasEllipsis)}
+          <PaginationItem {...pageItem} />
+        </React.Fragment>
+      )
+    }
+  })
+}
+
 const Pagination: React.FC<PaginationProps> = ({
   testId = null,
   containerTestId = null,
@@ -27,16 +92,24 @@ const Pagination: React.FC<PaginationProps> = ({
   containerStyle = null,
   pages,
   ellipsisItems = 0,
-  showPreviousPageButton = { text: 'Previous' },
-  showNextPageButton = { text: 'Next page' },
+  showPreviousPageButton = {
+    text: 'Previous',
+    cssClasses: 'pagination-previous'
+  },
+  showNextPageButton = {
+    text: 'Next page',
+    cssClasses: 'pagination-next'
+  },
   hasEllipsis = false,
   isRounded = false,
+  alignment = null,
   size = null
 }) => {
   const paginationContainerClasses = parseClasses([
     'pagination',
     isRounded ? 'is-rounded' : null,
     size,
+    alignment,
     cssClasses
   ])
   const paginationContainerTestId =
@@ -53,47 +126,6 @@ const Pagination: React.FC<PaginationProps> = ({
     containerTestId ??
     parseTestId({ tag: 'pagination-list', parsedClasses: paginationClasses })
 
-  const renderPages = () => {
-    /**
-     * TODOS
-     * - Add the position property to relocate the items
-     */
-
-    return pages.map((pageItem, pageIndex, { length }) => {
-      const lastEllipsisItemIndex = length - ellipsisItems - 1
-
-      if (pageIndex === 0) {
-        return (
-          <React.Fragment key={`first-pagination-item`}>
-            <PaginationItem {...pageItem} />
-            {renderEllipsis(hasEllipsis)}
-          </React.Fragment>
-        )
-      }
-
-      if (
-        !hasEllipsis ||
-        (pageIndex > ellipsisItems && pageIndex < lastEllipsisItemIndex)
-      ) {
-        return (
-          <PaginationItem
-            key={`pagination-item-${parseKey()}`}
-            {...pageItem}
-          />
-        )
-      }
-
-      if (pageIndex === --length) {
-        return (
-          <React.Fragment key={`first-pagination-item`}>
-            {renderEllipsis(hasEllipsis)}
-            <PaginationItem {...pageItem} />
-          </React.Fragment>
-        )
-      }
-    })
-  }
-
   return (
     <nav
       data-testid={paginationContainerTestId}
@@ -102,30 +134,14 @@ const Pagination: React.FC<PaginationProps> = ({
       role='navigation'
       aria-label='pagination'
     >
-      {showPreviousPageButton ? (
-        <a
-          className='pagination-previous'
-          onClick={showPreviousPageButton.onClick ?? undefined}
-          aria-hidden='true'
-        >
-          {showPreviousPageButton.text}
-        </a>
-      ) : null}
-      {showNextPageButton ? (
-        <a
-          className='pagination-next'
-          onClick={showNextPageButton.onClick ?? undefined}
-          aria-hidden='true'
-        >
-          {showNextPageButton.text}
-        </a>
-      ) : null}
+      {renderNavigationButton(showPreviousPageButton)}
+      {renderNavigationButton(showNextPageButton)}
       <ul
         data-testid={paginationTestId}
         className={paginationClasses}
         style={style ?? undefined}
       >
-        {renderPages()}
+        {renderPages(pages, hasEllipsis, ellipsisItems)}
       </ul>
     </nav>
   )

@@ -14,7 +14,8 @@ import {
   iconColorModeType,
   basicSizeType,
   textColorType,
-  titleSizeType
+  titleSizeType,
+  reducedSizeType
 } from '../types/styleTypes'
 import { DropdownItemType, inputTypes } from '../types/domTypes'
 
@@ -100,7 +101,7 @@ export interface TagProps
   /** `Styling` Will add round borders to tag's shape */
   isRounded?: boolean
   /** `Styling` Set tag's size */
-  size?: Exclude<basicSizeType, 'is-normal'>
+  size?: reducedSizeType
   /** `Styling` Color on tag's addon based on bulma's color tokens */
   addonColor?: basicColorType
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
@@ -153,7 +154,7 @@ export interface IconProps extends ComposedElementProps {
   /** `Styling` Color based on bulma's text color tokens */
   color?: textColorType
   /** `Styling` Set icons's size */
-  size?: Exclude<basicSizeType, 'is-normal'>
+  size?: reducedSizeType
   /** `Styling` Special usage in case you want to set as dark or light mode */
   colorMode?: iconColorModeType
   /** `Styling` Animates the icon spinning 360° */
@@ -194,7 +195,7 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
 
 export interface DeleteProps extends ElementProps, ClickeableProps {
   /** `Styling` Set icons's size */
-  size?: Exclude<basicSizeType, 'is-normal'>
+  size?: reducedSizeType
 }
 
 export interface SelectOption {
@@ -315,5 +316,5 @@ export interface PaginationItemProps extends ElementProps, ClickeableProps {
   /** `Attribute` Sets the custom text before the `text` when user hovers the item if is the current one */
   currentLabelText?: string
   /** `Styling` Makes the item the selected one, changing its background to blue */
-  isCurrent?: boolean
+  isSelected?: boolean
 }

@@ -17,10 +17,10 @@ import {
 // TYPES & INTERFACES
 import {
   basicColorType,
-  basicSizeType,
-  breadcrumbAlignType,
+  elementAlignType,
   breadcrumbSeparatorType,
-  columnGapType
+  columnGapType,
+  reducedSizeType
 } from '../types/styleTypes'
 
 export interface ButtonGroupProps extends ElementProps {
@@ -62,11 +62,11 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   /** `Atribute` `Required` Array of `BreadcrumbItems` objects that will be shown */
   items: BreadcrumbItemProps[]
   /** `Styling` Will adjust element position on screen */
-  alignment?: breadcrumbAlignType | null
+  alignment?: elementAlignType | null
   /** `Styling` Will adjust element position on screen */
   separator?: breadcrumbSeparatorType | null
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: Exclude<basicSizeType, 'is-normal'>
+  size?: reducedSizeType
 }
 
 export interface DropdownProps extends ElementProps {
@@ -88,7 +88,7 @@ export interface MessageProps extends ElementProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: Exclude<basicSizeType, 'is-normal'>
+  size?: reducedSizeType
 }
 
 interface MenuSubListProps {
@@ -115,8 +115,13 @@ export interface MenuProps extends ElementProps {
   menuSections: MenuSectionProps[]
 }
 
-interface PaginationNavigationButtonProps extends ClickeableProps {
+export interface PaginationNavigationButtonProps extends ClickeableProps {
+  /** `Attribute` `Required` Text that will be shown on the button */
   text: string
+  /** `Attribute` Will disable the button */
+  isDisabled?: boolean
+  /** `Attribute` Custom CSS classes, applicable for specific scenarios */
+  cssClasses?: string
 }
 
 export interface PaginationProps extends ComposedElementProps {
@@ -133,5 +138,7 @@ export interface PaginationProps extends ComposedElementProps {
   /** `Styling` Will add round borders to each page's shape */
   isRounded?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: Exclude<basicSizeType, 'is-normal'>
+  size?: reducedSizeType
+  /** `Styling` Will adjust the pages position on screen */
+  alignment?: elementAlignType | null
 }

@@ -12,12 +12,12 @@ const PaginationItem: React.FC<PaginationItemProps> = ({
   text,
   labelText = 'Page',
   currentLabelText = 'Go to page',
-  isCurrent = null,
+  isSelected = null,
   onClick = null
 }) => {
   const paginationItemClasses = parseClasses([
     'pagination-link',
-    isCurrent ? 'is-current' : null,
+    isSelected ? 'is-current' : null,
     cssClasses
   ])
   const paginationItemTestId =
@@ -26,7 +26,7 @@ const PaginationItem: React.FC<PaginationItemProps> = ({
       tag: 'pagination-link',
       parsedClasses: paginationItemClasses
     })
-  const parsedLabelText = isCurrent ? currentLabelText : labelText
+  const parsedLabelText = isSelected ? currentLabelText : labelText
 
   return (
     <a
@@ -34,7 +34,7 @@ const PaginationItem: React.FC<PaginationItemProps> = ({
       className={paginationItemClasses}
       style={style ?? undefined}
       aria-label={`${parsedLabelText} ${text}`}
-      aria-current={isCurrent ? 'page' : undefined}
+      aria-current={isSelected ? 'page' : undefined}
       aria-hidden='true'
       onClick={onClick ?? undefined}
     >
