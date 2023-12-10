@@ -12,7 +12,7 @@ const Modal: React.FC<ModalProps> = ({
   containerCssClasses = null,
   style = null,
   containerStyle = null,
-  children,
+  children = null,
   onCloseClick = null
 }) => {
   const modalContainerClasses = parseClasses([
@@ -42,6 +42,7 @@ const Modal: React.FC<ModalProps> = ({
         <section
           data-testid={'test-modal-background'}
           className='modal-background'
+          aria-hidden='true'
           onClick={handleCloseClick}
         ></section>
         <section

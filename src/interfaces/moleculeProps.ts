@@ -144,8 +144,8 @@ export interface PaginationProps extends ComposedElementProps {
 }
 
 export interface ModalProps extends ComposedElementProps {
-  /** `Attribute` `Required` Reffers to the component or array of components that will be shown inside the column */
-  children: string | React.ReactElement | React.ReactElement[] | null
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
+  children?: string | React.ReactElement | React.ReactElement[] | null
   /** `Function` Custom function related to the modal's close button to inject custom code if needed */
   onCloseClick?: () => void
 }

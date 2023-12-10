@@ -18,7 +18,12 @@ describe('Modal', () => {
     expect(testModal).toBeInTheDocument()
   })
 
-  test('Should render the modal and close it when I select its close button', async () => {
+  test('Should not render the component if has no children', () => {
+    render(<Modal />)
+    expect(() => screen.getByTestId(basicTestId)).toThrow()
+  })
+
+  test('Should render the modal and close it when I click its close button', async () => {
     const clickeableCloseConfig = {
       children: testChildren,
       onCloseClick: jest.fn()
@@ -33,7 +38,7 @@ describe('Modal', () => {
     expect(clickeableCloseConfig.onCloseClick).toHaveBeenCalled()
   })
 
-  test('Should render the modal and close it when I select its close button', async () => {
+  test('Should render the modal and close it when I select its background', async () => {
     const clickeableCloseConfig = {
       children: testChildren,
       onCloseClick: jest.fn()
