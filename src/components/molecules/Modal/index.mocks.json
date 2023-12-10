@@ -1,0 +1,37 @@
+{
+  "testing": {
+    "basicTestId": "test-modal-active",
+    "backgroundTestId": "test-modal-background",
+    "closeTestId": "test-modal-close",
+    "testChildren": "Hello There"
+  },
+  "storybook": {
+    "testButtonList": [
+      {
+        "text": "Hello",
+        "color": "is-info"
+      },
+      {
+        "text": "There",
+        "color": "is-success"
+      },
+      {
+        "text": "General",
+        "color": "is-warning"
+      },
+      {
+        "text": "Kenoby",
+        "color": "is-danger"
+      }
+    ],
+    "testImageSrc": "https://bulma.io/images/placeholders/256x256.png",
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}
