@@ -1,3 +1,15 @@
+# [2.9.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.8.0...v2.9.0) (2023-12-10)
+
+
+### Bug Fixes
+
+* Dependencies versions updated ([5a69a1e](https://github.com/NicolasOmar/reactive-bulma/commit/5a69a1e344960ae1685e25ec18227ab34754284a))
+
+
+### Features
+
+* Create component "Modal" ([#230](https://github.com/NicolasOmar/reactive-bulma/issues/230)) ([#67](https://github.com/NicolasOmar/reactive-bulma/issues/67)) ([15d5eac](https://github.com/NicolasOmar/reactive-bulma/commit/15d5eac2ffbbef2d6b40e7e7651bd7fc90363d2d))
+
 # [2.8.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.7.0...v2.8.0) (2023-11-20)
 
 
