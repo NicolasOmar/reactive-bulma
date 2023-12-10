@@ -36,6 +36,7 @@ describe('Modal', () => {
     await userEvent.click(closeModalButton)
 
     expect(clickeableCloseConfig.onCloseClick).toHaveBeenCalled()
+    expect(() => screen.getByTestId(basicTestId)).toThrow()
   })
 
   test('Should render the modal and close it when I select its background', async () => {
@@ -51,5 +52,6 @@ describe('Modal', () => {
     await userEvent.click(backgroundModal)
 
     expect(clickeableCloseConfig.onCloseClick).toHaveBeenCalled()
+    expect(() => screen.getByTestId(basicTestId)).toThrow()
   })
 })

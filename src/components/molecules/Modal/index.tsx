@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { ModalProps } from '../../../interfaces/moleculeProps'
@@ -15,6 +15,7 @@ const Modal: React.FC<ModalProps> = ({
   children = null,
   onCloseClick = null
 }) => {
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(true)
   const modalContainerClasses = parseClasses([
     'modal',
     'is-active',
@@ -29,11 +30,12 @@ const Modal: React.FC<ModalProps> = ({
 
   const handleCloseClick = () => {
     if (onCloseClick) onCloseClick()
-    children = null
+    setModalIsOpen(false)
   }
 
   return (
-    children && (
+    children &&
+    modalIsOpen && (
       <section
         data-testid={modalContainerTestId}
         className={modalContainerClasses}
