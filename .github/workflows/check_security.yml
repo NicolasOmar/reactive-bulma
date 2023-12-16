@@ -24,6 +24,6 @@ jobs:
         command: test
         args: --sarif-file-output=snyk.sarif --all-projects --dev --detection-depth=4 --show-vulnerable-paths=all
     - name: 3/3 | Upload Snyk result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: snyk.sarif
