@@ -37,6 +37,7 @@ const TabItem: React.FC<TabItemProps> = ({
       data-testid={tabItemContainerTestId}
       className={tabItemContainerClasses}
       style={containerStyle ?? undefined}
+      aria-hidden='true'
       onClick={onClick ?? undefined}
     >
       {icon ? <Icon {...icon} /> : null}
