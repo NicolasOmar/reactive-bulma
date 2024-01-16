@@ -324,4 +324,6 @@ export interface TabItemProps extends ComposedElementProps, ClickeableProps {
   text: string
   /** `Attribute` Adds an `Icon` component before the text */
   icon?: IconProps
+  /** `Styling` Used for Tabs styling purpose only. Will mark the tab as the one selected among its group */
+  isActive?: boolean
 }

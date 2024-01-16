@@ -22,3 +22,7 @@ export interface ClickeableProps {
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
+
+export interface GenericObjectProps {
+  [key: string]: string | number | boolean
+}

@@ -1,0 +1,55 @@
+{
+  "testing": {
+    "basicTestId": "test-tabs",
+    "testClasses": [
+      {
+        "name": "alignment",
+        "value": "is-right",
+        "result": "is-right"
+      },
+      {
+        "name": "format",
+        "value": "is-toggle",
+        "result": "is-toggle"
+      },
+      {
+        "name": "size",
+        "value": "is-large",
+        "result": "is-large"
+      },
+      {
+        "name": "isFullWidth",
+        "value": true,
+        "result": "is-fullwidth"
+      }
+    ],
+    "rightAligned": {
+      "alignment": "is-right"
+    },
+    "boxedFormat": {
+      "format": "is-boxed"
+    },
+    "toggleFormat": {
+      "format": "is-toggle"
+    },
+    "roundedToggleFormat": {
+      "isRounded": true
+    },
+    "bigSize": {
+      "size": "is-large"
+    },
+    "fullWidthMode": {
+      "isFullWidth": true
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

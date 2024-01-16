@@ -1,3 +1,4 @@
+import { GenericObjectProps } from '../interfaces/commonProps'
 import { ParseTestIdProps } from '../interfaces/functionProps'
 
 /**
@@ -45,3 +46,16 @@ export const parseKey = (max: number = 5000, min: number = 1): string => {
 
   return Math.floor(secureRandomNumbers[0] * (max - min) + min).toString()
 }
+
+interface CreateObjArrayProps {
+  numberOfItems?: number
+  externalParser?: (i: number) => GenericObjectProps
+}
+
+export const createObjArray = <ImportedProps>({
+  numberOfItems = 3,
+  externalParser
+}: CreateObjArrayProps = {}): ImportedProps[] | GenericObjectProps[] =>
+  Array(numberOfItems)
+    .fill(null)
+    .map((_, i) => (externalParser ? externalParser(i) : { text: `${++i}` }))

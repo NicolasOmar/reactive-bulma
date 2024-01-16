@@ -113,3 +113,5 @@ export type breadcrumbSeparatorType =
   | 'has-bullet-separator'
   | 'has-dot-separator'
   | 'has-succeeds-separator'
+
+export type tabsFormatType = 'is-boxed' | 'is-toggle'
