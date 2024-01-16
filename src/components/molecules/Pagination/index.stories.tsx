@@ -3,19 +3,17 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Pagination from '.'
 // TYPES & INTERFACES
+import { PaginationItemProps } from '../../../interfaces/atomProps'
+// PARSERS
+import { createObjArray } from '../../../functions/parsers'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-
-const createPages = (numberOfPages = 3) =>
-  Array(numberOfPages)
-    .fill(null)
-    .map((_, i) => ({ text: `${++i}` }))
 
 export default {
   title: 'Molecules/Pagination',
   component: Pagination,
   ...storybook,
-  args: { pages: createPages() }
+  args: { pages: createObjArray() }
 } as Meta<typeof Pagination>
 
 const Template: StoryFn<typeof Pagination> = args => <Pagination {...args} />
@@ -50,7 +48,7 @@ NoNavigationButtons.args = { ...testing.noNavigationButtons }
 
 export const FifteenItems = Template.bind({})
 FifteenItems.args = {
-  pages: createPages(15)
+  pages: createObjArray({ numberOfItems: 15 }) as PaginationItemProps[]
 }
 
 export const Showing3ItemsLessWithEllipsis = Template.bind({})

@@ -12,7 +12,8 @@ import {
   DeleteProps,
   DropdownItemProps,
   MenuItemProps,
-  PaginationItemProps
+  PaginationItemProps,
+  TabItemProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -20,7 +21,8 @@ import {
   elementAlignType,
   breadcrumbSeparatorType,
   columnGapType,
-  reducedSizeType
+  reducedSizeType,
+  tabsFormatType
 } from '../types/styleTypes'
 
 export interface ButtonGroupProps extends ElementProps {
@@ -148,4 +150,19 @@ export interface ModalProps extends ComposedElementProps {
   children?: string | React.ReactElement | React.ReactElement[] | null
   /** `Function` Custom function related to the modal's close button to inject custom code if needed */
   onCloseClick?: () => void
+}
+
+export interface TabsProps extends ElementProps {
+  /** `Attribute` `Required` List of tabs that will be shown in order */
+  tabs: TabItemProps[]
+  /** `Styling` Will adjust the tabs position on screen */
+  alignment?: elementAlignType
+  /** `Styling` Set tab's size on bulma's size tokens */
+  size?: reducedSizeType
+  /** `Styling` Set tab's size on bulma's size tokens */
+  format?: tabsFormatType
+  /** `Styling` Will add round tabs borders. Only visible if `format` is set to `is-toggle` */
+  isRounded?: boolean
+  /** `Styling` The whole container will occupy its parent container width */
+  isFullWidth?: boolean
 }

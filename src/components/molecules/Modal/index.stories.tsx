@@ -11,7 +11,8 @@ import { storybook } from './index.mocks.json'
 
 export default {
   title: 'Molecules/Modal',
-  component: Modal
+  component: Modal,
+  ...storybook
 } as Meta<typeof Modal>
 
 const Template: StoryFn<typeof Modal> = args => {

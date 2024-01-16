@@ -1,0 +1,60 @@
+{
+  "testing": {
+    "basicTestId": "test-tabs",
+    "testClasses": [
+      {
+        "name": "alignment",
+        "value": "is-right",
+        "result": "is-right"
+      },
+      {
+        "name": "format",
+        "value": "is-toggle",
+        "result": "is-toggle"
+      },
+      {
+        "name": "isRounded",
+        "value": true,
+        "result": "is-toggle-rounded"
+      },
+      {
+        "name": "size",
+        "value": "is-large",
+        "result": "is-large"
+      },
+      {
+        "name": "isFullWidth",
+        "value": true,
+        "result": "is-fullwidth"
+      }
+    ],
+    "rightAligned": {
+      "alignment": "is-right"
+    },
+    "boxedFormat": {
+      "format": "is-boxed"
+    },
+    "toggleFormat": {
+      "format": "is-toggle"
+    },
+    "roundedToggleFormat": {
+      "isRounded": true
+    },
+    "bigSize": {
+      "size": "is-large"
+    },
+    "fullWidthMode": {
+      "isFullWidth": true
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Simple responsive horizontal navigation tabs, with different styles",
+      "docs": {
+        "description": {
+          "component": "The Bulma `tabs` are a straightforward navigation component that come in a variety of versions. They only require the following structure: A tabs container, a `<ul>` HTML element, a list of `<li>` HTML element, and a `<a>` HTML anchor elements for each link. The default tabs style has a single border at the bottom."
+        }
+      }
+    }
+  }
+}

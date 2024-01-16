@@ -318,3 +318,12 @@ export interface PaginationItemProps extends ElementProps, ClickeableProps {
   /** `Styling` Makes the item the selected one, changing its background to blue */
   isSelected?: boolean
 }
+
+export interface TabItemProps extends ComposedElementProps, ClickeableProps {
+  /** `Attribute` `Required` The text will be shown in the `TabItem` */
+  text: string
+  /** `Attribute` Adds an `Icon` component before the text */
+  icon?: IconProps
+  /** `Styling` Used for Tabs styling purpose only. Will mark the tab as the one selected among its group */
+  isActive?: boolean
+}
