@@ -18,7 +18,7 @@ jobs:
     - name: 2/7 | Setup Node environment
       uses: actions/setup-node@v4
       with:
-        node-version: 18.x
+        node-version: latest
     - name: 3/7 | Install depedencies
       run: npm ci
     - name: 4/7 | Run prettier check

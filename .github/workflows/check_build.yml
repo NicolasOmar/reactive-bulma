@@ -14,7 +14,7 @@ jobs:
     - name: 2/5 | Setup Node environment
       uses: actions/setup-node@v4
       with:
-        node-version: 18.x
+        node-version: latest
     - name: 3/5 | Install depedencies
       run: npm ci
     - name: 3/5 | Run build package script
