@@ -1,3 +1,17 @@
+# [2.10.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.9.0...v2.10.0) (2024-1-16)
+
+
+### Bug Fixes
+
+* Snyk command updated to fix pipeline errors ([0851063](https://github.com/NicolasOmar/reactive-bulma/commit/085106348b6987f0ae0b96a918b44d795b441638))
+* Solving node-version issue for semantic-release run. Updated for other jobs aswell ([3ff6f14](https://github.com/NicolasOmar/reactive-bulma/commit/3ff6f1498670f4bb2d56498ee3a286b9fc10803d))
+* Updating dependencies versions ([3048b14](https://github.com/NicolasOmar/reactive-bulma/commit/3048b14068d64de914a28329ffb048482d7cf80f))
+
+
+### Features
+
+* Create component "Tabs" ([#245](https://github.com/NicolasOmar/reactive-bulma/issues/245)) ([#70](https://github.com/NicolasOmar/reactive-bulma/issues/70)) ([951d11a](https://github.com/NicolasOmar/reactive-bulma/commit/951d11a0850cc4db44ddfb598e19aa7ee44cfa21))
+
 # [2.9.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.8.0...v2.9.0) (2023-12-10)
 
 
