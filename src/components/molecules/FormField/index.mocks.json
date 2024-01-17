@@ -1,6 +1,8 @@
 {
   "testing": {
     "basicTestId": "test-field",
+    "basicLabelTestId": "test-form-field-label",
+    "basicHelperTestId": "test-form-field-help",
     "testClasses": [
       {
         "name": "isHorizontal",
@@ -8,6 +10,9 @@
         "result": "is-horizontal"
       }
     ],
+    "withLabel": {
+      "labelText": "This is a label text"
+    },
     "withHelper": {
       "helperConfig": {
         "text": "Hello there"

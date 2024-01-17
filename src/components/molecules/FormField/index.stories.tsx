@@ -20,9 +20,7 @@ const Template: StoryFn<typeof FormField> = args => <FormField {...args} />
 export const BasicExample = Template.bind({})
 
 export const WithLabel = Template.bind({})
-WithLabel.args = {
-  labelText: 'This is a label text'
-}
+WithLabel.args = testing.withLabel
 
 export const WithLabelAndHelper = Template.bind({})
 WithLabelAndHelper.args = {

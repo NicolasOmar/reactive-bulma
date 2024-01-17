@@ -12,7 +12,7 @@ import { parseClasses, parseTestId } from '../../../functions/parsers'
 const renderFieldLabel = (labelText: string | null) =>
   labelText ? (
     <label
-      data-testid={'label-test'}
+      data-testid={'test-form-field-label'}
       className='label'
     >
       {labelText}
@@ -20,12 +20,13 @@ const renderFieldLabel = (labelText: string | null) =>
   ) : null
 
 const renderFieldHelper = (helperConfig: FormFieldHelperProps | null) => {
-  if (helperConfig === null || helperConfig === undefined) return null
+  if (!helperConfig) return null
 
   const fieldHelperClasses = parseClasses(['help', helperConfig.color])
   const fieldHelperTestId = parseTestId({
-    tag: 'help',
-    parsedClasses: fieldHelperClasses
+    tag: 'form-field-help',
+    parsedClasses: fieldHelperClasses,
+    rules: [{ regExp: /help|is/gm, replacer: '' }]
   })
 
   return (
