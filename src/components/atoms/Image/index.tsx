@@ -12,6 +12,7 @@ const Image: React.FC<ImageProps> = ({
   style = null,
   containerStyle = null,
   src,
+  alt = null,
   fixedSize = 'is-1by1',
   isRounded = false
 }) => {
@@ -40,6 +41,7 @@ const Image: React.FC<ImageProps> = ({
         className={imageClasses}
         style={style ?? undefined}
         src={src}
+        alt={alt ?? undefined}
       />
     </figure>
   )
