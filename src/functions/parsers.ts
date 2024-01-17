@@ -1,5 +1,8 @@
 import { GenericObjectProps } from '../interfaces/commonProps'
-import { ParseTestIdProps } from '../interfaces/functionProps'
+import {
+  CreateObjArrayProps,
+  ParseTestIdProps
+} from '../interfaces/functionProps'
 
 /**
  * @param { Array<string | null> } _classes `Required`. Array of classNames on `string` (or `null`) values
@@ -45,11 +48,6 @@ export const parseKey = (max: number = 5000, min: number = 1): string => {
   window.crypto.getRandomValues(secureRandomNumbers)
 
   return Math.floor(secureRandomNumbers[0] * (max - min) + min).toString()
-}
-
-interface CreateObjArrayProps {
-  numberOfItems?: number
-  externalParser?: (i: number) => GenericObjectProps
 }
 
 export const createObjArray = <ImportedProps>({

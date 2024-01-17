@@ -114,6 +114,8 @@ export interface ImageProps
     React.ComponentPropsWithoutRef<'figure'> {
   /** `Attribute` `Required` The image source that will be shown */
   src: string
+  /** `Attribute` A description text for the image, useful for accessibility purposes */
+  alt?: string
   /** `Styling` Will add round borders to image's shape */
   fixedSize?: fixedImageSizeType
   /** `Styling` Sets image size based on one of fixed ratios/fixed sizes */

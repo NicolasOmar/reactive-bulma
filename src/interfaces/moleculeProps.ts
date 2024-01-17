@@ -181,3 +181,15 @@ export interface InputControlProps extends ElementProps {
   /** `Styling` Will add an animated spinner on input's right side */
   isLoading?: boolean
 }
+
+export interface FormFieldHelperProps {
+  text?: string
+  color?: basicColorType
+}
+
+export interface FormFieldProps extends ElementProps {
+  labelText?: string
+  inputControlConfig: InputControlProps
+  helperConfig?: FormFieldHelperProps
+  isHorizontal?: boolean
+}
