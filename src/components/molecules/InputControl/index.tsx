@@ -18,14 +18,16 @@ const InputControl: React.FC<InputControlProps> = ({
   leftIcon = null,
   rightIcon = null,
   size = null,
-  isLoading = null
+  isLoading = null,
+  isExpanded = null
 }) => {
   const inputControlClasses = parseClasses([
     'control',
     size,
-    isLoading ? 'is-loading' : null,
     leftIcon ? 'has-icons-left' : null,
     rightIcon ? 'has-icons-right' : null,
+    isLoading ? 'is-loading' : null,
+    isExpanded ? 'is-expanded' : null,
     cssClasses
   ])
   const inputControlTestId =

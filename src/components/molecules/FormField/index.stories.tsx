@@ -59,14 +59,22 @@ ErrorCase.args = {
   ...inputControlWithColor
 }
 
-export const Horizontal = Template.bind({})
-Horizontal.args = {
-  ...ErrorCase.args,
-  ...testing.horizontalCase
-}
-
 export const GroupedInputs = Template.bind({})
 GroupedInputs.args = {
   isGrouped: true,
   inputControlConfig: listOfGroupedInputControls as InputControlProps[]
+}
+
+export const ExpandedAndGroupedInputs = Template.bind({})
+ExpandedAndGroupedInputs.args = {
+  isGrouped: true,
+  inputControlConfig: (listOfGroupedInputControls as InputControlProps[]).map(
+    (_input, i) => ({ ..._input, isExpanded: i === 0 })
+  )
+}
+
+export const Horizontal = Template.bind({})
+Horizontal.args = {
+  ...ErrorCase.args,
+  ...testing.horizontalCase
 }

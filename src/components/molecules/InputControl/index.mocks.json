@@ -8,11 +8,6 @@
         "result": "is-right"
       },
       {
-        "name": "isLoading",
-        "value": true,
-        "result": "is-loading"
-      },
-      {
         "name": "leftIcon",
         "value": { "iconLabel": "home" },
         "result": "has-icons-left"
@@ -21,6 +16,16 @@
         "name": "rightIcon",
         "value": { "iconLabel": "home" },
         "result": "has-icons-right"
+      },
+      {
+        "name": "isLoading",
+        "value": true,
+        "result": "is-loading"
+      },
+      {
+        "name": "isExpanded",
+        "value": true,
+        "result": "is-expanded"
       }
     ],
     "baseConfig": {

@@ -318,9 +318,9 @@ export interface MenuItemProps extends ElementProps, ClickeableProps {
 export interface PaginationItemProps extends ElementProps, ClickeableProps {
   /** `Attribute` `Required` Sets the number string that will be shown in the item and in its title when user hovers it */
   text: string | number
-  /** `Attribute` Sets the custom text before the `text` when user hovers the item */
+  /** `Attribute` Sets a custom text before the `text` when user hovers the item */
   labelText?: string
-  /** `Attribute` Sets the custom text before the `text` when user hovers the item if is the current one */
+  /** `Attribute` Sets a custom text before the `text` when user hovers the item if is the current one */
   currentLabelText?: string
   /** `Styling` Makes the item the selected one, changing its background to blue */
   isSelected?: boolean
