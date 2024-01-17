@@ -4,21 +4,24 @@ import { StoryFn, Meta } from '@storybook/react'
 import Breadcrumbs from '.'
 // TYPES & INTERFACES
 import {
-  elementAlignType,
+  rightCenteredAlignType,
   breadcrumbSeparatorType
 } from '../../../types/styleTypes'
+// PARSERS
+import { createObjArray } from '../../../functions/parsers'
 // MOCKS
 import { storybook } from './index.mocks.json'
 import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
 
-const breadcrumbItems = Array(5)
-  .fill(null)
-  .map((_, i) => ({
-    text: breacrumbItemMocks.testing.testText,
-    isActiveItem: i === 4
-  }))
+const externalParser = (i: number) => ({
+  text: breacrumbItemMocks.testing.testText,
+  isActiveItem: i === 4
+})
 
-const alignmentOptions: Array<elementAlignType> = ['is-centered', 'is-right']
+const alignmentOptions: Array<rightCenteredAlignType> = [
+  'is-centered',
+  'is-right'
+]
 
 const separatorOptions: Array<breadcrumbSeparatorType> = [
   'has-arrow-separator',
@@ -42,7 +45,7 @@ export default {
     }
   },
   args: {
-    items: breadcrumbItems
+    items: createObjArray({ numberOfItems: 5, externalParser })
   }
 } as Meta<typeof Breadcrumbs>
 

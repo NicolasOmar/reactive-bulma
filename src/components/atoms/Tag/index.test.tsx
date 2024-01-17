@@ -4,7 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tag from '.'
 // TYPES & INTERFACES
-import { basicColorType, basicSizeType } from '../../../types/styleTypes'
+import {
+  basicColorType,
+  sizeWithoutNormalType
+} from '../../../types/styleTypes'
 import { TagProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
@@ -38,7 +41,7 @@ describe('Tag', () => {
       const resizedTestId = `test-tag-${_size.replace('is-', '')}`
       const testResizedConfig = {
         ...baseConfig,
-        size: _size as Exclude<basicSizeType, 'is-normal'>
+        size: _size as sizeWithoutNormalType
       }
 
       render(<Tag {...testResizedConfig} />)
