@@ -28,6 +28,10 @@ describe('FormField', () => {
   const baseTestConfig = {
     inputControlConfig: baseConfig as InputControlProps
   }
+  const listOfGroupedInputControls = createObjArray({
+    numberOfItems: 2,
+    externalParser: () => baseConfig
+  })
 
   test('Should render the component', () => {
     render(<FormField {...baseTestConfig} />)
@@ -89,16 +93,12 @@ describe('FormField', () => {
   })
 
   test('Should render a grouped list of inputs', () => {
-    const listOfGroupedInputControls = createObjArray({
-      numberOfItems: 2,
-      externalParser: () => baseConfig
-    })
-    const testFieldWithLabelAndHelper = {
+    const testFieldWithGroupedInputList = {
       inputControlConfig: listOfGroupedInputControls as InputControlProps[],
       isGrouped: true
     }
 
-    render(<FormField {...testFieldWithLabelAndHelper} />)
+    render(<FormField {...testFieldWithGroupedInputList} />)
 
     listOfGroupedInputControls.forEach((_, i) => {
       const testFieldHelp = screen.getByTestId(
@@ -106,5 +106,21 @@ describe('FormField', () => {
       )
       expect(testFieldHelp).toBeInTheDocument()
     })
+  })
+
+  test('Should render first input from a list when is FormField is not grouped', () => {
+    const testFieldWithInputList = {
+      inputControlConfig: listOfGroupedInputControls as InputControlProps[]
+    }
+
+    render(<FormField {...testFieldWithInputList} />)
+
+    listOfGroupedInputControls.forEach((_, i) => {
+      const testInputListItem = `${basicGroupedInputTestId}-${i}`
+      expect(() => screen.getByTestId(testInputListItem)).toThrow()
+    })
+
+    const testFormField = screen.getByTestId(basicTestId)
+    expect(testFormField).toBeInTheDocument()
   })
 })
