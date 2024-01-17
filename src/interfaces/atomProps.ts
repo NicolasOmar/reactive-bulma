@@ -13,9 +13,10 @@ import {
   fixedImageSizeType,
   iconColorModeType,
   elementSizeType,
+  sizeWithoutNormalType,
   textColorType,
   titleSizeType,
-  sizeWithoutNormalType
+  rightLeftAlignType
 } from '../types/styleTypes'
 import { DropdownItemType, inputTypes } from '../types/domTypes'
 
@@ -49,7 +50,7 @@ export interface ButtonProps
   isOutlined?: boolean
   /** `Styling` Will add round borders to button's shape */
   isRounded?: boolean
-  /** `Styling` Will change `text` for a animated spinner, but will remain clickeable */
+  /** `Styling` Will change `text` for an animated spinner, but will remain clickeable */
   isLoading?: boolean
   /** `Styling` Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
@@ -72,7 +73,7 @@ export interface ProgressBarProps
   color?: basicColorType
   /** `Styling` Set progress bar's size */
   size?: elementSizeType
-  /** `Styling` Will change `value` for a animated loading */
+  /** `Styling` Will change `value` for an animated loading */
   isLoading?: boolean
 }
 
@@ -159,6 +160,8 @@ export interface IconProps extends ComposedElementProps {
   colorMode?: iconColorModeType
   /** `Styling` Animates the icon spinning 360° */
   isSpinning?: boolean
+  /** `Styling` Used for `InputControl` styling purpose only. Will move the Icon itself to control's Input side */
+  position?: rightLeftAlignType
 }
 
 export interface InputProps extends ElementProps, ClickeableProps {
@@ -324,6 +327,6 @@ export interface TabItemProps extends ComposedElementProps, ClickeableProps {
   text: string
   /** `Attribute` Adds an `Icon` component before the text */
   icon?: IconProps
-  /** `Styling` Used for Tabs styling purpose only. Will mark the tab as the one selected among its group */
+  /** `Styling` Used for `Tabs` styling purpose only. Will mark the tab as the one selected among its group */
   isActive?: boolean
 }

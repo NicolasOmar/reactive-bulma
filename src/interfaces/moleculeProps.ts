@@ -170,9 +170,14 @@ export interface TabsProps extends ElementProps {
 }
 
 export interface InputControlProps extends ElementProps {
+  /** `Attribute` `Required` Control's input configuration which will be wrapped */
   inputConfig: InputProps
+  /** `Attribute` `Icon` configuration that will be shown in Input's left side */
   leftIcon?: IconProps
+  /** `Attribute` `Icon` configuration that will be shown in Input's right side */
   rightIcon?: IconProps
+  /** `Styling` Set control and its input size on bulma's size tokens */
   size?: sizeWithoutNormalType
+  /** `Styling` Will add an animated spinner on input's right side */
   isLoading?: boolean
 }
