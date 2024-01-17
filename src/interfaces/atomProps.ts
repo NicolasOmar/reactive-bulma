@@ -171,6 +171,8 @@ export interface InputProps extends ElementProps, ClickeableProps {
   type: inputTypes
   /** `Attribute` The value that will be shown on the input */
   text?: string
+  /** `Attribute` The text that will be shown if the user does not type any value */
+  placeholder?: string
   /** `Attribute` Will disable the input */
   isDisabled?: boolean
   /** `Attribute` Will show the input as a normal one, but is not editable and has no shadow */

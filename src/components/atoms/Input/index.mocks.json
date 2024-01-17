@@ -9,6 +9,9 @@
     "basicExample": {
       "type": "text"
     },
+    "withPlaceholder": {
+      "placeholder": "Here the user will see this until you type something"
+    },
     "withText": {
       "text": "Welcome to reactive-bulma"
     },
