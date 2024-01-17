@@ -1,3 +1,16 @@
+# [2.11.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.10.0...v2.11.0) (2024-1-17)
+
+
+### Bug Fixes
+
+* Adding missing alt property to Image for accessibility purposes ([f6465a3](https://github.com/NicolasOmar/reactive-bulma/commit/f6465a371746f3ead91e80ad6758243f2423c915))
+* Adding missing prop placeholder in Input component ([eab77b0](https://github.com/NicolasOmar/reactive-bulma/commit/eab77b01b1b62b8a05b4d94abaea203ee6f7e9db))
+
+
+### Features
+
+* Create component "FormField" ([#246](https://github.com/NicolasOmar/reactive-bulma/issues/246)) ([#71](https://github.com/NicolasOmar/reactive-bulma/issues/71)) ([78f35be](https://github.com/NicolasOmar/reactive-bulma/commit/78f35be713a6a562abcb821d3a92287189336a99))
+
 # [2.10.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.9.0...v2.10.0) (2024-1-16)
 
 
