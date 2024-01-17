@@ -12,10 +12,10 @@ import {
   columnSizeType,
   fixedImageSizeType,
   iconColorModeType,
-  basicSizeType,
+  elementSizeType,
   textColorType,
   titleSizeType,
-  reducedSizeType
+  sizeWithoutNormalType
 } from '../types/styleTypes'
 import { DropdownItemType, inputTypes } from '../types/domTypes'
 
@@ -56,7 +56,7 @@ export interface ButtonProps
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
   isSelected?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: basicSizeType
+  size?: elementSizeType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
@@ -71,7 +71,7 @@ export interface ProgressBarProps
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set progress bar's size */
-  size?: basicSizeType
+  size?: elementSizeType
   /** `Styling` Will change `value` for a animated loading */
   isLoading?: boolean
 }
@@ -101,7 +101,7 @@ export interface TagProps
   /** `Styling` Will add round borders to tag's shape */
   isRounded?: boolean
   /** `Styling` Set tag's size */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Color on tag's addon based on bulma's color tokens */
   addonColor?: basicColorType
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
@@ -154,7 +154,7 @@ export interface IconProps extends ComposedElementProps {
   /** `Styling` Color based on bulma's text color tokens */
   color?: textColorType
   /** `Styling` Set icons's size */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Special usage in case you want to set as dark or light mode */
   colorMode?: iconColorModeType
   /** `Styling` Animates the icon spinning 360° */
@@ -173,7 +173,7 @@ export interface InputProps extends ElementProps, ClickeableProps {
   /** `Styling` Color based on bulma's text color tokens */
   color?: basicColorType
   /** `Styling` Set input's size */
-  size?: basicSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Will add round borders to input's shape */
   isRounded?: boolean
   /** `Styling` Will add a specific border when the input is hovered by the user */
@@ -195,7 +195,7 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
 
 export interface DeleteProps extends ElementProps, ClickeableProps {
   /** `Styling` Set icons's size */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
 }
 
 export interface SelectOption {
@@ -214,7 +214,7 @@ export interface SelectProps extends ComposedElementProps, ClickeableProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set select's size */
-  size?: basicSizeType
+  size?: elementSizeType
   /** `Styling`Will add round borders to input's shape */
   isRounded?: boolean
   /** `Styling`Will add a specific border when the input is hovered by the user */
@@ -239,7 +239,7 @@ export interface FileProps extends ComposedElementProps, ClickeableProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set button's size */
-  size?: basicSizeType
+  size?: elementSizeType
 }
 
 export interface CheckBoxProps extends ComposedElementProps {

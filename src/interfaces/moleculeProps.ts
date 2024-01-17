@@ -11,6 +11,8 @@ import {
   ColumnProps,
   DeleteProps,
   DropdownItemProps,
+  IconProps,
+  InputProps,
   MenuItemProps,
   PaginationItemProps,
   TabItemProps
@@ -18,10 +20,10 @@ import {
 // TYPES & INTERFACES
 import {
   basicColorType,
-  elementAlignType,
+  rightCenteredAlignType,
   breadcrumbSeparatorType,
   columnGapType,
-  reducedSizeType,
+  sizeWithoutNormalType,
   tabsFormatType
 } from '../types/styleTypes'
 
@@ -64,11 +66,11 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   /** `Atribute` `Required` Array of `BreadcrumbItems` objects that will be shown */
   items: BreadcrumbItemProps[]
   /** `Styling` Will adjust element position on screen */
-  alignment?: elementAlignType | null
+  alignment?: rightCenteredAlignType | null
   /** `Styling` Will adjust element position on screen */
   separator?: breadcrumbSeparatorType | null
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
 }
 
 export interface DropdownProps extends ElementProps {
@@ -90,7 +92,7 @@ export interface MessageProps extends ElementProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
 }
 
 interface MenuSubListProps {
@@ -140,9 +142,9 @@ export interface PaginationProps extends ComposedElementProps {
   /** `Styling` Will add round borders to each page's shape */
   isRounded?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Will adjust the pages position on screen */
-  alignment?: elementAlignType | null
+  alignment?: rightCenteredAlignType | null
 }
 
 export interface ModalProps extends ComposedElementProps {
@@ -156,13 +158,21 @@ export interface TabsProps extends ElementProps {
   /** `Attribute` `Required` List of tabs that will be shown in order */
   tabs: TabItemProps[]
   /** `Styling` Will adjust the tabs position on screen */
-  alignment?: elementAlignType
+  alignment?: rightCenteredAlignType
   /** `Styling` Set tab's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Set tab's size on bulma's size tokens */
   format?: tabsFormatType
   /** `Styling` Will add round tabs borders. Only visible if `format` is set to `is-toggle` */
   isRounded?: boolean
   /** `Styling` The whole container will occupy its parent container width */
   isFullWidth?: boolean
+}
+
+export interface InputControlProps extends ElementProps {
+  inputConfig: InputProps
+  leftIcon?: IconProps
+  rightIcon?: IconProps
+  size?: sizeWithoutNormalType
+  isLoading?: boolean
 }
