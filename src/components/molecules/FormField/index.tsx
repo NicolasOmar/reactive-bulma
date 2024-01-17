@@ -21,19 +21,28 @@ const renderFieldLabel = (labelText: string | null) =>
   ) : null
 
 const renderFieldBody = (
-  inputControlConfig: InputControlProps | InputControlProps[]
+  inputControlConfig: InputControlProps | InputControlProps[],
+  isGrouped: boolean
 ) => {
-  return Array.isArray(inputControlConfig) ? (
-    inputControlConfig.map((_singleConfig, i) => (
-      <InputControl
-        key={`grouped-input-control-${parseKey()}`}
-        testId={`test-grouped-input-control-${i}`}
-        {..._singleConfig}
-      />
-    ))
-  ) : (
-    <InputControl {...inputControlConfig} />
-  )
+  if (isGrouped) {
+    return Array.isArray(inputControlConfig) ? (
+      inputControlConfig.map((_singleConfig, i) => (
+        <InputControl
+          key={`grouped-input-control-${parseKey()}`}
+          testId={`test-grouped-input-control-${i}`}
+          {..._singleConfig}
+        />
+      ))
+    ) : (
+      <InputControl {...inputControlConfig} />
+    )
+  } else {
+    return Array.isArray(inputControlConfig) ? (
+      <InputControl {...inputControlConfig[0]} />
+    ) : (
+      <InputControl {...inputControlConfig} />
+    )
+  }
 }
 
 const renderFieldHelper = (helperConfig: FormFieldHelperProps | null) => {
@@ -77,7 +86,8 @@ const FormField: React.FC<FormFieldProps> = ({
 
   if (
     !isGrouped &&
-    (inputControlConfig as InputControlProps)?.inputConfig?.color
+    (inputControlConfig as InputControlProps)?.inputConfig?.color &&
+    helperConfig
   ) {
     helperConfig = {
       ...helperConfig,
@@ -91,9 +101,22 @@ const FormField: React.FC<FormFieldProps> = ({
       className={formFieldClasses}
       style={style ?? undefined}
     >
-      {renderFieldLabel(labelText)}
-      {renderFieldBody(inputControlConfig)}
-      {renderFieldHelper(helperConfig)}
+      {isHorizontal ? (
+        <section className='field-label'>{renderFieldLabel(labelText)}</section>
+      ) : (
+        renderFieldLabel(labelText)
+      )}
+      {isHorizontal ? (
+        <section className='field-body'>
+          {renderFieldBody(inputControlConfig, isGrouped)}
+          {renderFieldHelper(helperConfig)}
+        </section>
+      ) : (
+        <React.Fragment>
+          {renderFieldBody(inputControlConfig, isGrouped)}
+          {renderFieldHelper(helperConfig)}
+        </React.Fragment>
+      )}
     </section>
   )
 }
