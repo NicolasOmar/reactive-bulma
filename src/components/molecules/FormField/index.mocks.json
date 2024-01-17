@@ -3,11 +3,17 @@
     "basicTestId": "test-field",
     "basicLabelTestId": "test-form-field-label",
     "basicHelperTestId": "test-form-field-help",
+    "basicGroupedInputTestId": "test-grouped-input-control",
     "testClasses": [
       {
         "name": "isHorizontal",
         "value": true,
         "result": "is-horizontal"
+      },
+      {
+        "name": "isGrouped",
+        "value": true,
+        "result": "is-grouped"
       }
     ],
     "withLabel": {

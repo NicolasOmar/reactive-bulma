@@ -8,22 +8,25 @@ import {
   FormFieldProps,
   InputControlProps
 } from '../../../interfaces/moleculeProps'
+// PARSERS
+import { createObjArray } from '../../../functions/parsers'
 // MOCKS
 import { testing } from './index.mocks.json'
 import inputControlMocks from '../InputControl/index.mocks.json'
 
 describe('FormField', () => {
+  const { baseConfig } = inputControlMocks.testing
   const {
     basicTestId,
     testClasses,
     withLabel,
     withHelper,
     basicLabelTestId,
-    basicHelperTestId
+    basicHelperTestId,
+    basicGroupedInputTestId
   } = testing
   const baseTestConfig = {
-    inputControlConfig: inputControlMocks.testing
-      .baseConfig as InputControlProps
+    inputControlConfig: baseConfig as InputControlProps
   }
 
   test('Should render the component', () => {
@@ -83,5 +86,25 @@ describe('FormField', () => {
     const testFieldHelp = screen.getByTestId(`${basicHelperTestId}-danger`)
 
     expect(testFieldHelp).toBeInTheDocument()
+  })
+
+  test('Should render a grouped list of inputs', () => {
+    const listOfGroupedInputControls = createObjArray({
+      numberOfItems: 2,
+      externalParser: () => baseConfig
+    })
+    const testFieldWithLabelAndHelper = {
+      inputControlConfig: listOfGroupedInputControls as InputControlProps[],
+      isGrouped: true
+    }
+
+    render(<FormField {...testFieldWithLabelAndHelper} />)
+
+    listOfGroupedInputControls.forEach((_, i) => {
+      const testFieldHelp = screen.getByTestId(
+        `${basicGroupedInputTestId}-${i}`
+      )
+      expect(testFieldHelp).toBeInTheDocument()
+    })
   })
 })

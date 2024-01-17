@@ -189,7 +189,8 @@ export interface FormFieldHelperProps {
 
 export interface FormFieldProps extends ElementProps {
   labelText?: string
-  inputControlConfig: InputControlProps
+  inputControlConfig: InputControlProps | InputControlProps[]
   helperConfig?: FormFieldHelperProps
   isHorizontal?: boolean
+  isGrouped?: boolean
 }

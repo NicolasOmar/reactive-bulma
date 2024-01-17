@@ -24,5 +24,5 @@ export interface ClickeableProps {
 }
 
 export interface GenericObjectProps {
-  [key: string]: string | number | boolean
+  [key: string]: string | number | boolean | object
 }

@@ -4,16 +4,41 @@ import { StoryFn, Meta } from '@storybook/react'
 import FormField from '.'
 // TYPES & INTERFACES
 import { InputProps } from '../../../interfaces/atomProps'
+import { InputControlProps } from '../../../interfaces/moleculeProps'
+// PARSERS
+import { createObjArray } from '../../../functions/parsers'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 import inputControlMocks from '../InputControl/index.mocks.json'
+
+const { baseConfig } = inputControlMocks.testing
 
 export default {
   title: 'Molecules/FormField',
   component: FormField,
   ...storybook,
-  args: { inputControlConfig: inputControlMocks.testing.baseConfig }
+  args: { inputControlConfig: baseConfig }
 } as Meta<typeof FormField>
+
+const inputControlWithColor = {
+  inputControlConfig: {
+    ...baseConfig,
+    inputConfig: {
+      ...baseConfig.inputConfig,
+      color: 'is-danger'
+    } as InputProps
+  }
+}
+const listOfGroupedInputControls = createObjArray({
+  numberOfItems: 2,
+  externalParser: i => ({
+    ...baseConfig,
+    inputConfig: {
+      ...baseConfig.inputConfig,
+      placeholder: `Here is input #${++i}`
+    } as InputProps
+  })
+})
 
 const Template: StoryFn<typeof FormField> = args => <FormField {...args} />
 
@@ -31,17 +56,17 @@ WithLabelAndHelper.args = {
 export const ErrorCase = Template.bind({})
 ErrorCase.args = {
   ...WithLabelAndHelper.args,
-  inputControlConfig: {
-    ...inputControlMocks.testing.baseConfig,
-    inputConfig: {
-      ...inputControlMocks.testing.baseConfig.inputConfig,
-      color: 'is-danger'
-    } as InputProps
-  }
+  ...inputControlWithColor
 }
 
 export const Horizontal = Template.bind({})
 Horizontal.args = {
   ...ErrorCase.args,
   ...testing.horizontalCase
+}
+
+export const GroupedInputs = Template.bind({})
+GroupedInputs.args = {
+  isGrouped: true,
+  inputControlConfig: listOfGroupedInputControls as InputControlProps[]
 }
