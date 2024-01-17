@@ -12,10 +12,11 @@ import {
   columnSizeType,
   fixedImageSizeType,
   iconColorModeType,
-  basicSizeType,
+  elementSizeType,
+  sizeWithoutNormalType,
   textColorType,
   titleSizeType,
-  reducedSizeType
+  rightLeftAlignType
 } from '../types/styleTypes'
 import { DropdownItemType, inputTypes } from '../types/domTypes'
 
@@ -49,14 +50,14 @@ export interface ButtonProps
   isOutlined?: boolean
   /** `Styling` Will add round borders to button's shape */
   isRounded?: boolean
-  /** `Styling` Will change `text` for a animated spinner, but will remain clickeable */
+  /** `Styling` Will change `text` for an animated spinner, but will remain clickeable */
   isLoading?: boolean
   /** `Styling` Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
   isSelected?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: basicSizeType
+  size?: elementSizeType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
@@ -71,8 +72,8 @@ export interface ProgressBarProps
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set progress bar's size */
-  size?: basicSizeType
-  /** `Styling` Will change `value` for a animated loading */
+  size?: elementSizeType
+  /** `Styling` Will change `value` for an animated loading */
   isLoading?: boolean
 }
 
@@ -101,7 +102,7 @@ export interface TagProps
   /** `Styling` Will add round borders to tag's shape */
   isRounded?: boolean
   /** `Styling` Set tag's size */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Color on tag's addon based on bulma's color tokens */
   addonColor?: basicColorType
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
@@ -113,6 +114,8 @@ export interface ImageProps
     React.ComponentPropsWithoutRef<'figure'> {
   /** `Attribute` `Required` The image source that will be shown */
   src: string
+  /** `Attribute` A description text for the image, useful for accessibility purposes */
+  alt?: string
   /** `Styling` Will add round borders to image's shape */
   fixedSize?: fixedImageSizeType
   /** `Styling` Sets image size based on one of fixed ratios/fixed sizes */
@@ -154,11 +157,13 @@ export interface IconProps extends ComposedElementProps {
   /** `Styling` Color based on bulma's text color tokens */
   color?: textColorType
   /** `Styling` Set icons's size */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Special usage in case you want to set as dark or light mode */
   colorMode?: iconColorModeType
   /** `Styling` Animates the icon spinning 360° */
   isSpinning?: boolean
+  /** `Styling` Used for `InputControl` styling purpose only. Will move the Icon itself to control's Input side */
+  position?: rightLeftAlignType
 }
 
 export interface InputProps extends ElementProps, ClickeableProps {
@@ -166,6 +171,8 @@ export interface InputProps extends ElementProps, ClickeableProps {
   type: inputTypes
   /** `Attribute` The value that will be shown on the input */
   text?: string
+  /** `Attribute` The text that will be shown if the user does not type any value */
+  placeholder?: string
   /** `Attribute` Will disable the input */
   isDisabled?: boolean
   /** `Attribute` Will show the input as a normal one, but is not editable and has no shadow */
@@ -173,7 +180,7 @@ export interface InputProps extends ElementProps, ClickeableProps {
   /** `Styling` Color based on bulma's text color tokens */
   color?: basicColorType
   /** `Styling` Set input's size */
-  size?: basicSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Will add round borders to input's shape */
   isRounded?: boolean
   /** `Styling` Will add a specific border when the input is hovered by the user */
@@ -195,7 +202,7 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
 
 export interface DeleteProps extends ElementProps, ClickeableProps {
   /** `Styling` Set icons's size */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
 }
 
 export interface SelectOption {
@@ -214,7 +221,7 @@ export interface SelectProps extends ComposedElementProps, ClickeableProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set select's size */
-  size?: basicSizeType
+  size?: elementSizeType
   /** `Styling`Will add round borders to input's shape */
   isRounded?: boolean
   /** `Styling`Will add a specific border when the input is hovered by the user */
@@ -239,7 +246,7 @@ export interface FileProps extends ComposedElementProps, ClickeableProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set button's size */
-  size?: basicSizeType
+  size?: elementSizeType
 }
 
 export interface CheckBoxProps extends ComposedElementProps {
@@ -311,9 +318,9 @@ export interface MenuItemProps extends ElementProps, ClickeableProps {
 export interface PaginationItemProps extends ElementProps, ClickeableProps {
   /** `Attribute` `Required` Sets the number string that will be shown in the item and in its title when user hovers it */
   text: string | number
-  /** `Attribute` Sets the custom text before the `text` when user hovers the item */
+  /** `Attribute` Sets a custom text before the `text` when user hovers the item */
   labelText?: string
-  /** `Attribute` Sets the custom text before the `text` when user hovers the item if is the current one */
+  /** `Attribute` Sets a custom text before the `text` when user hovers the item if is the current one */
   currentLabelText?: string
   /** `Styling` Makes the item the selected one, changing its background to blue */
   isSelected?: boolean
@@ -324,6 +331,6 @@ export interface TabItemProps extends ComposedElementProps, ClickeableProps {
   text: string
   /** `Attribute` Adds an `Icon` component before the text */
   icon?: IconProps
-  /** `Styling` Used for Tabs styling purpose only. Will mark the tab as the one selected among its group */
+  /** `Styling` Used for `Tabs` styling purpose only. Will mark the tab as the one selected among its group */
   isActive?: boolean
 }

@@ -10,6 +10,7 @@ const Input: React.FC<InputProps> = ({
   style = null,
   type,
   text = null,
+  placeholder = null,
   isDisabled = false,
   isReadonly = false,
   color = null,
@@ -40,6 +41,7 @@ const Input: React.FC<InputProps> = ({
     <input
       data-testid={inputTestId}
       type={type}
+      placeholder={placeholder ?? undefined}
       defaultValue={text ?? undefined}
       disabled={isDisabled}
       readOnly={isReadonly}

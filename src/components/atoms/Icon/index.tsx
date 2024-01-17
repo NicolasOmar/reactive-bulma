@@ -44,12 +44,14 @@ const Icon: React.FC<IconProps> = ({
   color = null,
   size = null,
   colorMode = null,
-  isSpinning = false
+  isSpinning = false,
+  position = null
 }) => {
   const iconContainerClasses = parseClasses([
     'icon',
     color,
     size,
+    position,
     containerCssClasses
   ])
   const iconClasses = parseClasses([

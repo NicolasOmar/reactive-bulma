@@ -89,9 +89,13 @@ export type fixedImageSizeType =
   | 'is-1by2'
   | 'is-1by3'
 
-export type basicSizeType = 'is-small' | 'is-normal' | 'is-medium' | 'is-large'
+export type elementSizeType =
+  | 'is-small'
+  | 'is-normal'
+  | 'is-medium'
+  | 'is-large'
 
-export type reducedSizeType = Exclude<basicSizeType, 'is-normal'>
+export type sizeWithoutNormalType = Exclude<elementSizeType, 'is-normal'>
 
 export type iconColorModeType = 'light' | 'dark'
 
@@ -106,7 +110,11 @@ export type columnGapType =
   | 'is-7'
   | 'is-8'
 
-export type elementAlignType = 'is-centered' | 'is-right'
+export type elementAlignType = 'is-centered' | 'is-right' | 'is-left'
+
+export type rightCenteredAlignType = Exclude<elementAlignType, 'is-left'>
+
+export type rightLeftAlignType = Exclude<elementAlignType, 'is-centered'>
 
 export type breadcrumbSeparatorType =
   | 'has-arrow-separator'

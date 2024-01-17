@@ -18,6 +18,9 @@ const Template: StoryFn<typeof Input> = args => <Input {...args} />
 
 export const BasicExample = Template.bind({})
 
+export const WithPlaceholder = Template.bind({})
+WithPlaceholder.args = testing.withPlaceholder as InputProps
+
 export const WithText = Template.bind({})
 WithText.args = testing.withText as InputProps
 

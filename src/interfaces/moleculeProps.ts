@@ -11,6 +11,8 @@ import {
   ColumnProps,
   DeleteProps,
   DropdownItemProps,
+  IconProps,
+  InputProps,
   MenuItemProps,
   PaginationItemProps,
   TabItemProps
@@ -18,10 +20,10 @@ import {
 // TYPES & INTERFACES
 import {
   basicColorType,
-  elementAlignType,
+  rightCenteredAlignType,
   breadcrumbSeparatorType,
   columnGapType,
-  reducedSizeType,
+  sizeWithoutNormalType,
   tabsFormatType
 } from '../types/styleTypes'
 
@@ -64,11 +66,11 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   /** `Atribute` `Required` Array of `BreadcrumbItems` objects that will be shown */
   items: BreadcrumbItemProps[]
   /** `Styling` Will adjust element position on screen */
-  alignment?: elementAlignType | null
+  alignment?: rightCenteredAlignType | null
   /** `Styling` Will adjust element position on screen */
   separator?: breadcrumbSeparatorType | null
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
 }
 
 export interface DropdownProps extends ElementProps {
@@ -90,7 +92,7 @@ export interface MessageProps extends ElementProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: basicColorType
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
 }
 
 interface MenuSubListProps {
@@ -140,9 +142,9 @@ export interface PaginationProps extends ComposedElementProps {
   /** `Styling` Will add round borders to each page's shape */
   isRounded?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Will adjust the pages position on screen */
-  alignment?: elementAlignType | null
+  alignment?: rightCenteredAlignType | null
 }
 
 export interface ModalProps extends ComposedElementProps {
@@ -156,13 +158,46 @@ export interface TabsProps extends ElementProps {
   /** `Attribute` `Required` List of tabs that will be shown in order */
   tabs: TabItemProps[]
   /** `Styling` Will adjust the tabs position on screen */
-  alignment?: elementAlignType
+  alignment?: rightCenteredAlignType
   /** `Styling` Set tab's size on bulma's size tokens */
-  size?: reducedSizeType
+  size?: sizeWithoutNormalType
   /** `Styling` Set tab's size on bulma's size tokens */
   format?: tabsFormatType
   /** `Styling` Will add round tabs borders. Only visible if `format` is set to `is-toggle` */
   isRounded?: boolean
   /** `Styling` The whole container will occupy its parent container width */
   isFullWidth?: boolean
+}
+
+export interface InputControlProps extends ElementProps {
+  /** `Attribute` `Required` control's input configuration which will be wrapped */
+  inputConfig: InputProps
+  /** `Attribute` `Icon` configuration that will be shown in Input's left side */
+  leftIcon?: IconProps
+  /** `Attribute` `Icon` configuration that will be shown in Input's right side */
+  rightIcon?: IconProps
+  /** `Styling` Set control and its input size on bulma's size tokens */
+  size?: sizeWithoutNormalType
+  /** `Styling` Will add an animated spinner on input's right side */
+  isLoading?: boolean
+  /** `Styling` Used for `FormField` styling purpose only. Will strech the input and its container in full-width */
+  isExpanded?: boolean
+}
+
+export interface FormFieldHelperProps {
+  text?: string
+  color?: basicColorType
+}
+
+export interface FormFieldProps extends ElementProps {
+  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
+  labelText?: string
+  /** `Attribute` `Required` Single or multiple `InputControlProps` config objects which will be wrapped around the `FormField` */
+  inputControlConfig: InputControlProps | InputControlProps[]
+  /** `Attribute` Adds a helper text below the wrapped paragraph to provide context information */
+  helperConfig?: FormFieldHelperProps
+  /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
+  isHorizontal?: boolean
+  /** `Styling` Will group the list of inputs in a same wrapper (useful for several inputs with same usage, as a complex address) */
+  isGrouped?: boolean
 }
