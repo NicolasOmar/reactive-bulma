@@ -1,7 +1,11 @@
 // COMMON PROPS
 import { ElementProps } from './commonProps'
 // COMPONENT PROPS
-import { InputControlProps, PanelBlockProps } from './moleculeProps'
+import {
+  InputControlProps,
+  PanelBlockProps,
+  PanelTabsProps
+} from './moleculeProps'
 // TYPES & INTERFACES
 import { basicColorType } from '../types/styleTypes'
 
@@ -26,5 +30,7 @@ export interface FormFieldProps extends ElementProps {
 export interface PanelProps extends ElementProps {
   /** `Mocked` Styling prop injected for component creation process purposes only. Can be deleted */
   isACssTestClass?: boolean
+  headerText: string
+  panelTabs?: PanelTabsProps
   blockList: PanelBlockProps[]
 }

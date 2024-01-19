@@ -1,0 +1,39 @@
+{
+  "testing": {
+    "basicTestId": "test-panel",
+    "testClasses": [
+      {
+        "name": "isACssTestClass",
+        "value": true,
+        "result": "is-test-only-class"
+      }
+    ],
+    "basicConfig": {
+      "headerText": "This is a conceptual Panel",
+      "panelTabs": {
+        "tabList": [
+          { "text": "Hello" },
+          { "text": "There" },
+          { "text": "General" },
+          { "text": "Kenoby" }
+        ]
+      },
+      "blockList": [
+        {
+          "blockText": "Here we go again",
+          "iconConfig": { "iconLabel": "home" }
+        }
+      ]
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}
