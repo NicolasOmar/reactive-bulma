@@ -6,7 +6,7 @@ import { InputControlProps } from '../../../interfaces/moleculeProps'
 import {
   FormFieldHelperProps,
   FormFieldProps
-} from '../../../interfaces/organismsProps'
+} from '../../../interfaces/organismProps'
 // PARSERS
 import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 

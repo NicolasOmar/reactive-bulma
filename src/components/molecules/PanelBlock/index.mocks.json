@@ -1,0 +1,29 @@
+{
+  "testing": {
+    "basicTestBlockId": "test-panel-block",
+    "basicTestIconId": "test-panel-icon",
+    "testClasses": [
+      {
+        "name": "isActive",
+        "value": true,
+        "result": "is-active"
+      }
+    ],
+    "basicConfig": {
+      "blockText": "Hello there",
+      "iconConfig": {
+        "iconLabel": "home"
+      }
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

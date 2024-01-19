@@ -183,3 +183,9 @@ export interface InputControlProps extends ElementProps {
   /** `Styling` Used for `FormField` styling purpose only. Will strech the input and its container in full-width */
   isExpanded?: boolean
 }
+
+export interface PanelBlockProps extends ComposedElementProps, ClickeableProps {
+  blockText: string
+  iconConfig: IconProps
+  isActive?: boolean
+}
