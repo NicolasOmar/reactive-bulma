@@ -4,8 +4,9 @@ import { ColumnGroupProps } from '../../../interfaces/moleculeProps'
 import { columnGapType } from '../../../types/styleTypes'
 // COMPONENTS
 import { Column } from '../../atoms'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const parseGapCssClass = (gapPropValue: columnGapType | null | undefined) => {
   switch (gapPropValue) {
@@ -52,7 +53,7 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
     >
       {listOfColumns.map(columnItemConfig => (
         <Column
-          key={`column-group-item-${parseKey()}`}
+          key={`column-group-item-${generateKey()}`}
           {...columnItemConfig}
         />
       ))}

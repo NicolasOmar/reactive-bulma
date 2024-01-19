@@ -5,8 +5,8 @@ import FormField from '.'
 // TYPES & INTERFACES
 import { InputProps } from '../../../interfaces/atomProps'
 import { InputControlProps } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { createObjArray } from '../../../functions/parsers'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 import inputControlMocks from '../../molecules/InputControl/index.mocks.json'

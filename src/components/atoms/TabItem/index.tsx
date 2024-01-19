@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from '../Icon'
 // TYPES & INTERFACES
 import { TabItemProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const TabItem: React.FC<TabItemProps> = ({

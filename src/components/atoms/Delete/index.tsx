@@ -1,7 +1,7 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { DeleteProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Delete: React.FC<DeleteProps> = ({

@@ -4,7 +4,7 @@ import { Icon, Input } from '../../atoms'
 // TYPES & INTERFACES
 import { InputControlProps } from '../../../interfaces/moleculeProps'
 import { IconProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const renderIcon = (iconConfig?: IconProps): React.ReactElement | null =>

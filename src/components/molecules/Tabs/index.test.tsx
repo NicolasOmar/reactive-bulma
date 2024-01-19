@@ -5,10 +5,11 @@ import '@testing-library/jest-dom'
 import Tabs from '.'
 // TYPES & INTERFACES
 import { TabsProps } from '../../../interfaces/moleculeProps'
+import { TabItemProps } from '../../../interfaces/atomProps'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
-import { createObjArray } from '../../../functions/parsers'
-import { TabItemProps } from '../../../interfaces/atomProps'
 
 describe('Tabs', () => {
   const { basicTestId, testClasses } = testing

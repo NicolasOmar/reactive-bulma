@@ -4,18 +4,13 @@ import { StoryFn, Meta } from '@storybook/react'
 import PanelBlock from '.'
 // TYPES & INTERFACES
 // MOCKS
-import { storybook } from './index.mocks.json'
+import { storybook, testing } from './index.mocks.json'
 
 export default {
   title: 'Molecules/PanelBlock',
   component: PanelBlock,
   ...storybook,
-  args: {
-    blockText: 'Hello there',
-    iconConfig: {
-      iconLabel: 'home'
-    }
-  }
+  args: testing.basicConfig
 } as Meta<typeof PanelBlock>
 
 const Template: StoryFn<typeof PanelBlock> = args => <PanelBlock {...args} />

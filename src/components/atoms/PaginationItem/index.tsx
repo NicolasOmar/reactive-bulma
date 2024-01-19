@@ -2,7 +2,7 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { PaginationItemProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const PaginationItem: React.FC<PaginationItemProps> = ({

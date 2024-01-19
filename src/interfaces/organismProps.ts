@@ -1,7 +1,7 @@
 // COMMON PROPS
 import { ElementProps } from './commonProps'
 // COMPONENT PROPS
-import { InputControlProps } from './moleculeProps'
+import { InputControlProps, PanelBlockProps } from './moleculeProps'
 // TYPES & INTERFACES
 import { basicColorType } from '../types/styleTypes'
 
@@ -21,4 +21,10 @@ export interface FormFieldProps extends ElementProps {
   isHorizontal?: boolean
   /** `Styling` Will group the list of inputs in a same wrapper (useful for several inputs with same usage, as a complex address) */
   isGrouped?: boolean
+}
+
+export interface PanelProps extends ElementProps {
+  /** `Mocked` Styling prop injected for component creation process purposes only. Can be deleted */
+  isACssTestClass?: boolean
+  blockList: PanelBlockProps[]
 }

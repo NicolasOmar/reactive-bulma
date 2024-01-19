@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from '../Icon'
 // TYPES & INTERFACES
 import { FileProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const File: React.FC<FileProps> = ({

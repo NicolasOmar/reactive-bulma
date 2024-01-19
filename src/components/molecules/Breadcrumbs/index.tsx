@@ -3,8 +3,9 @@ import React from 'react'
 import { BreadcrumbItem } from '../../atoms'
 // TYPES & INTERFACES
 import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   testId = 'breadcrumbs',
@@ -55,7 +56,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       >
         {items.map(itemConfig => (
           <BreadcrumbItem
-            key={`breadcrumb-item-${parseKey()}`}
+            key={`breadcrumb-item-${generateKey()}`}
             {...itemConfig}
           />
         ))}

@@ -3,8 +3,9 @@ import React from 'react'
 import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
 // COMPONENTS
 import { Button } from '../../atoms'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
   testId = null,
@@ -57,7 +58,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
 
         return (
           <Button
-            key={`button-group-item-${parseKey()}`}
+            key={`button-group-item-${generateKey()}`}
             {...buttonConfig}
           />
         )

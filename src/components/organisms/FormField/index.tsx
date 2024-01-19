@@ -7,8 +7,9 @@ import {
   FormFieldHelperProps,
   FormFieldProps
 } from '../../../interfaces/organismProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const renderFieldLabel = (labelText: string | null) =>
   labelText ? (
@@ -28,7 +29,7 @@ const renderFieldBody = (
     return Array.isArray(inputControlConfig) ? (
       inputControlConfig.map((_singleConfig, i) => (
         <InputControl
-          key={`grouped-input-control-${parseKey()}`}
+          key={`grouped-input-control-${generateKey()}`}
           testId={`test-grouped-input-control-${i}`}
           {..._singleConfig}
         />

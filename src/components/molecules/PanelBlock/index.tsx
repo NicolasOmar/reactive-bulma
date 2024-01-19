@@ -2,7 +2,7 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { PanelBlockProps } from '../../../interfaces/moleculeProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { Icon } from '../../atoms'
 

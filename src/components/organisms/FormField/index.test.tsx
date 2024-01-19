@@ -4,12 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormField from '.'
 // TYPES & INTERFACES
-import {
-  FormFieldProps,
-  InputControlProps
-} from '../../../interfaces/moleculeProps'
-// PARSERS
-import { createObjArray } from '../../../functions/parsers'
+import { InputControlProps } from '../../../interfaces/moleculeProps'
+import { FormFieldProps } from '../../../interfaces/organismProps'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
 import inputControlMocks from '../../molecules/InputControl/index.mocks.json'

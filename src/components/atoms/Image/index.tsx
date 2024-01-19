@@ -1,7 +1,7 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { ImageProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Image: React.FC<ImageProps> = ({

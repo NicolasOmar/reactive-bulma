@@ -7,8 +7,8 @@ import {
   rightCenteredAlignType,
   breadcrumbSeparatorType
 } from '../../../types/styleTypes'
-// PARSERS
-import { createObjArray } from '../../../functions/parsers'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { storybook } from './index.mocks.json'
 import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'

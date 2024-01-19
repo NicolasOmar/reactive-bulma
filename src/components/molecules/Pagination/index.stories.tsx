@@ -4,8 +4,8 @@ import { StoryFn, Meta } from '@storybook/react'
 import Pagination from '.'
 // TYPES & INTERFACES
 import { PaginationItemProps } from '../../../interfaces/atomProps'
-// PARSERS
-import { createObjArray } from '../../../functions/parsers'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 
