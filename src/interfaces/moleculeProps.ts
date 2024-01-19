@@ -189,3 +189,12 @@ export interface PanelBlockProps extends ComposedElementProps, ClickeableProps {
   iconConfig: IconProps
   isActive?: boolean
 }
+
+export interface PanelTabItem extends ClickeableProps {
+  text: string
+  isActive?: boolean
+}
+
+export interface PanelTabsProps extends ElementProps {
+  tabList: PanelTabItem[]
+}
