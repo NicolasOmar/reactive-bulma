@@ -9,12 +9,12 @@ import { InputControlProps } from '../../../interfaces/moleculeProps'
 import { createObjArray } from '../../../functions/parsers'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import inputControlMocks from '../InputControl/index.mocks.json'
+import inputControlMocks from '../../molecules/InputControl/index.mocks.json'
 
 const { baseConfig } = inputControlMocks.testing
 
 export default {
-  title: 'Molecules/FormField',
+  title: 'Organisms/FormField',
   component: FormField,
   ...storybook,
   args: { inputControlConfig: baseConfig }

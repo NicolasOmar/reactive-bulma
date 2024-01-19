@@ -1,12 +1,12 @@
 import React from 'react'
 // COMPONENTS
-import InputControl from '../InputControl'
+import InputControl from '../../molecules/InputControl'
 // TYPES & INTERFACES
+import { InputControlProps } from '../../../interfaces/moleculeProps'
 import {
   FormFieldHelperProps,
-  FormFieldProps,
-  InputControlProps
-} from '../../../interfaces/moleculeProps'
+  FormFieldProps
+} from '../../../interfaces/organismsProps'
 // PARSERS
 import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 

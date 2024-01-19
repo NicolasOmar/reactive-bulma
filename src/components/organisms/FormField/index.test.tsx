@@ -12,7 +12,7 @@ import {
 import { createObjArray } from '../../../functions/parsers'
 // MOCKS
 import { testing } from './index.mocks.json'
-import inputControlMocks from '../InputControl/index.mocks.json'
+import inputControlMocks from '../../molecules/InputControl/index.mocks.json'
 
 describe('FormField', () => {
   const { baseConfig } = inputControlMocks.testing
