@@ -26,6 +26,7 @@ import {
   sizeWithoutNormalType,
   tabsFormatType
 } from '../types/styleTypes'
+import { PanelBlockItemType } from '../types/domTypes'
 
 export interface ButtonGroupProps extends ElementProps {
   /** `Atribute` `Required` Array of `Button` objects that will be shown */
@@ -184,17 +185,30 @@ export interface InputControlProps extends ElementProps {
   isExpanded?: boolean
 }
 
+export interface PanelBlockItemProps {
+  /** `Attribute` `Required` Indicates to component's parser which type of component will be rendered based on its option */
+  type: PanelBlockItemType
+  /** `Attribute` `Required` The component properties that will configure that specific instance */
+  props: InputControlProps | IconProps | ButtonProps
+}
+
 export interface PanelBlockProps extends ComposedElementProps, ClickeableProps {
-  blockText: string
-  iconConfig: IconProps
+  /** `Attribute` `Required` Configuration object with a type and a set of props based on the available components that could be rendered in each `PanelBlock` */
+  config: PanelBlockItemProps
+  /** `Attribute` Usable when config's U is `icon` only. It will display a text next to mentioned icon (for user purposes) */
+  blockText?: string
+  /** `Styling` Used for `PanelBlock` styling purpose only. Will mark its rendered component as the one selected among its group */
   isActive?: boolean
 }
 
 export interface PanelTabItem extends ClickeableProps {
+  /** `Attribute` `Required` Will show the text to the user in shape of tab */
   text: string
+  /** `Styling` Used for `PanelTab` styling purpose only. Will mark its rendered component as the one selected among its group */
   isActive?: boolean
 }
 
 export interface PanelTabsProps extends ElementProps {
+  /** `Attribute` `Required` A list of configuration objects that will render a set of tabs */
   tabList: PanelTabItem[]
 }

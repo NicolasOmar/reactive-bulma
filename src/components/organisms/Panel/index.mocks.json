@@ -3,9 +3,9 @@
     "basicTestId": "test-panel",
     "testClasses": [
       {
-        "name": "isACssTestClass",
-        "value": true,
-        "result": "is-test-only-class"
+        "name": "color",
+        "value": "is-primary",
+        "result": "is-primary"
       }
     ],
     "basicConfig": {
@@ -21,9 +21,16 @@
       "blockList": [
         {
           "blockText": "Here we go again",
-          "iconConfig": { "iconLabel": "home" }
+          "config": {
+            "type": "icon",
+            "props": { "iconLabel": "home" }
+          }
         }
       ]
+    },
+    "severalLinkBlocks": ["bookmark", "bookmark-check", "bookmark", "bookmark-check", "bookmark", "bookmark-box"],
+    "colored": {
+      "color": "is-primary"
     }
   },
   "storybook": {

@@ -1,5 +1,7 @@
-export type buttonType = 'submit' | 'reset' | 'button'
+export type ButtonType = 'submit' | 'reset' | 'button'
 
-export type inputTypes = 'text' | 'password' | 'email' | 'tel'
+export type InputType = 'text' | 'password' | 'email' | 'tel'
 
 export type DropdownItemType = 'item' | 'link' | 'divider'
+
+export type PanelBlockItemType = 'icon' | 'control' | 'button'

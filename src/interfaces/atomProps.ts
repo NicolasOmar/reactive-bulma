@@ -18,7 +18,7 @@ import {
   titleSizeType,
   rightLeftAlignType
 } from '../types/styleTypes'
-import { DropdownItemType, inputTypes } from '../types/domTypes'
+import { DropdownItemType, InputType } from '../types/domTypes'
 
 export interface ColumnProps
   extends ElementProps,
@@ -168,7 +168,7 @@ export interface IconProps extends ComposedElementProps {
 
 export interface InputProps extends ElementProps, ClickeableProps {
   /** `Attribute` `Required` What type of input will be used */
-  type: inputTypes
+  type: InputType
   /** `Attribute` The value that will be shown on the input */
   text?: string
   /** `Attribute` The text that will be shown if the user does not type any value */

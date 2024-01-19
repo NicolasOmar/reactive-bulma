@@ -1,10 +1,52 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 // COMPONENTS
+import InputControl from '../InputControl'
+import { Button, Icon } from '../../atoms'
 // TYPES & INTERFACES
-import { PanelBlockProps } from '../../../interfaces/moleculeProps'
+import { ButtonProps, IconProps } from '../../../interfaces/atomProps'
+import {
+  InputControlProps,
+  PanelBlockItemProps,
+  PanelBlockProps
+} from '../../../interfaces/moleculeProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { Icon } from '../../atoms'
+
+const convertConfigToComponent = (
+  { type, props }: PanelBlockItemProps,
+  testId: string | null,
+  cssClasses: string | null,
+  style: CSSProperties | null,
+  blockText: string | null
+) => {
+  switch (type) {
+    case 'icon': {
+      const panelBlockIconClasses = parseClasses(['panel-icon', cssClasses])
+      const panelBlockIconTestId =
+        testId ??
+        parseTestId({ tag: 'panel-icon', parsedClasses: panelBlockIconClasses })
+
+      return (
+        <React.Fragment>
+          <span
+            data-testid={panelBlockIconTestId}
+            className={panelBlockIconClasses}
+            style={style ?? undefined}
+          >
+            <Icon {...(props as IconProps)} />
+          </span>
+          {blockText}
+        </React.Fragment>
+      )
+    }
+    case 'control':
+      return <InputControl {...(props as InputControlProps)} />
+    case 'button':
+      return <Button {...(props as ButtonProps)} />
+    default:
+      return null
+  }
+}
 
 const PanelBlock: React.FC<PanelBlockProps> = ({
   testId = null,
@@ -13,8 +55,8 @@ const PanelBlock: React.FC<PanelBlockProps> = ({
   containerCssClasses = null,
   style = null,
   containerStyle = null,
-  blockText,
-  iconConfig,
+  config,
+  blockText = null,
   isActive = false,
   onClick
 }) => {
@@ -23,13 +65,9 @@ const PanelBlock: React.FC<PanelBlockProps> = ({
     isActive ? 'is-active' : null,
     containerCssClasses
   ])
-  const panelBlockIconClasses = parseClasses(['panel-icon', cssClasses])
   const panelBlockLinkTestId =
     containerTestId ??
     parseTestId({ tag: 'panel-block', parsedClasses: panelBlockLinkClasses })
-  const panelBlockIconTestId =
-    testId ??
-    parseTestId({ tag: 'panel-icon', parsedClasses: panelBlockIconClasses })
 
   return (
     <a
@@ -39,14 +77,7 @@ const PanelBlock: React.FC<PanelBlockProps> = ({
       aria-hidden='true'
       onClick={onClick ?? undefined}
     >
-      <span
-        data-testid={panelBlockIconTestId}
-        className={panelBlockIconClasses}
-        style={style ?? undefined}
-      >
-        <Icon {...iconConfig} />
-      </span>
-      {blockText}
+      {convertConfigToComponent(config, testId, cssClasses, style, blockText)}
     </a>
   )
 }

@@ -15,10 +15,10 @@ export interface FormFieldHelperProps {
 }
 
 export interface FormFieldProps extends ElementProps {
-  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
-  labelText?: string
   /** `Attribute` `Required` Single or multiple `InputControlProps` config objects which will be wrapped around the `FormField` */
   inputControlConfig: InputControlProps | InputControlProps[]
+  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
+  labelText?: string
   /** `Attribute` Adds a helper text below the wrapped paragraph to provide context information */
   helperConfig?: FormFieldHelperProps
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
@@ -28,9 +28,12 @@ export interface FormFieldProps extends ElementProps {
 }
 
 export interface PanelProps extends ElementProps {
-  /** `Mocked` Styling prop injected for component creation process purposes only. Can be deleted */
-  isACssTestClass?: boolean
+  /** `Attribute` `Required` Will display Panel's header text */
   headerText: string
+  /** `Attribute` A configuration object that will render a set of tabs based on `PanelTab` component */
   panelTabs?: PanelTabsProps
+  /** `Attribute` `Required` A list of configuration objects that will render a list of block with different components, based on `PanelBlockList` component */
   blockList: PanelBlockProps[]
+  /** `Styling` Color based on bulma's text color tokens */
+  color?: basicColorType
 }

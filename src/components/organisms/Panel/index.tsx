@@ -15,21 +15,17 @@ const Panel: React.FC<PanelProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
-  isACssTestClass = null,
   headerText,
   panelTabs = null,
-  blockList
+  blockList,
+  color = null
 }) => {
-  const panelClasses = parseClasses([
-    'panel',
-    isACssTestClass ? 'is-test-only-class' : null,
-    cssClasses
-  ])
+  const panelClasses = parseClasses(['panel', color, cssClasses])
   const panelTestId =
     testId ?? parseTestId({ tag: 'panel', parsedClasses: panelClasses })
 
   return (
-    <section
+    <article
       data-testid={panelTestId}
       className={panelClasses}
       style={style ?? undefined}
@@ -42,7 +38,7 @@ const Panel: React.FC<PanelProps> = ({
           {...blockConfig}
         />
       ))}
-    </section>
+    </article>
   )
 }
 
