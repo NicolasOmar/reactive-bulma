@@ -2,6 +2,7 @@
   "testing": {
     "basicTestBlockId": "test-panel-block",
     "basicTestIconId": "test-panel-icon",
+    "customTestId": "test-custom-id",
     "testClasses": [
       {
         "name": "isActive",

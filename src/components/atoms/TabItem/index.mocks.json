@@ -1,6 +1,6 @@
 {
   "testing": {
-    "basicTestId": "test-tabItem",
+    "basicTestId": "test-tab-item",
     "dummyText": "Hello there"
   },
   "storybook": {

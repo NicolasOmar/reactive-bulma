@@ -42,4 +42,22 @@ describe('Tabs', () => {
       cleanup()
     })
   })
+
+  test('Should render the tab list with last active item', () => {
+    const lastTabIsActiveConfig = {
+      tabs: basicTestTabsConfig.tabs.map((_tabItem, i, originalist) => ({
+        ..._tabItem,
+        isActive: ++i === originalist.length
+      }))
+    }
+    render(<Tabs {...lastTabIsActiveConfig} />)
+    const testPanelTabs = screen.getByTestId(basicTestId)
+    expect(testPanelTabs).toBeInTheDocument()
+
+    lastTabIsActiveConfig.tabs.forEach(({ text, isActive }) => {
+      const testTabItem = screen.getByText(text).closest('li')!
+      expect(testTabItem).toBeInTheDocument()
+      isActive && expect(testTabItem.className).toContain('is-active')
+    })
+  })
 })

@@ -43,8 +43,6 @@ const convertConfigToComponent = (
       return <InputControl {...(props as InputControlProps)} />
     case 'button':
       return <Button {...(props as ButtonProps)} />
-    default:
-      return null
   }
 }
 

@@ -7,15 +7,19 @@ import Panel from '.'
 import { PanelProps } from '../../../interfaces/organismProps'
 // MOCKS
 import { testing } from './index.mocks.json'
+import panelTabsMock from '../../molecules/PanelTabs/index.mocks.json'
 
 describe('Panel', () => {
   const { basicTestId, basicConfig, testClasses } = testing
+  const typedBasicConfig = basicConfig as PanelProps
 
   test('Should render the component', () => {
-    render(<Panel {...basicConfig} />)
+    render(<Panel {...typedBasicConfig} />)
     const testPanel = screen.getByTestId(basicTestId)
+    const testPanelTabs = screen.getByTestId(panelTabsMock.testing.basicTestId)
 
     expect(testPanel).toBeInTheDocument()
+    expect(testPanelTabs).toBeInTheDocument()
   })
 
   test('Should render the component with specific classes', () => {
@@ -25,7 +29,7 @@ describe('Panel', () => {
         ''
       )}`
       const classTestObject: PanelProps = {
-        ...basicConfig,
+        ...typedBasicConfig,
         [name]: value
       }
 
@@ -35,5 +39,16 @@ describe('Panel', () => {
       expect(testStylingPropValuePanelGroup.className).toContain(result)
       cleanup()
     })
+  })
+
+  test('Should render the component', () => {
+    const noTabsConfig: PanelProps = {
+      ...typedBasicConfig,
+      panelTabs: undefined
+    }
+    render(<Panel {...noTabsConfig} />)
+    expect(() =>
+      screen.getByTestId(panelTabsMock.testing.basicTestId)
+    ).toThrow()
   })
 })
