@@ -1,3 +1,19 @@
+# [2.12.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.11.0...v2.12.0) (2024-1-20)
+
+
+### Bug Fixes
+
+* Dependencies version update ([6885e91](https://github.com/NicolasOmar/reactive-bulma/commit/6885e918cee69b17afc1049d8b877241ec2ca4b7))
+* LICENSE year updated ([d063996](https://github.com/NicolasOmar/reactive-bulma/commit/d0639961fa5a92054ebcadc6ec04764bedf40dd8))
+* Moving FormField as a organism-level component ([cc70d6f](https://github.com/NicolasOmar/reactive-bulma/commit/cc70d6f454e4e27ec68a4f62de07edb3ad64473a))
+* Rename parseKey function to generateKey. Generator functions moved to a separated file with its mocks and UTs ([05fd93a](https://github.com/NicolasOmar/reactive-bulma/commit/05fd93a282786b98e32b1d50daacbf1805483862))
+* Updating codeql-action action from v2 to v3 ([9e8a03d](https://github.com/NicolasOmar/reactive-bulma/commit/9e8a03d8d5064aa45e5f4805bfb7e6d49e6cf920))
+
+
+### Features
+
+* Create component "Panel ([#247](https://github.com/NicolasOmar/reactive-bulma/issues/247)) ([#69](https://github.com/NicolasOmar/reactive-bulma/issues/69)) ([f187101](https://github.com/NicolasOmar/reactive-bulma/commit/f18710164b6aa0a7dee8b09d0b6dcc2e4d733614))
+
 # [2.11.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.10.0...v2.11.0) (2024-1-17)
 
 
