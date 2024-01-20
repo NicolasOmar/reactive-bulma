@@ -1,14 +1,15 @@
 import React from 'react'
 // COMPONENTS
-import InputControl from '../InputControl'
+import InputControl from '../../molecules/InputControl'
 // TYPES & INTERFACES
+import { InputControlProps } from '../../../interfaces/moleculeProps'
 import {
   FormFieldHelperProps,
-  FormFieldProps,
-  InputControlProps
-} from '../../../interfaces/moleculeProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+  FormFieldProps
+} from '../../../interfaces/organismProps'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const renderFieldLabel = (labelText: string | null) =>
   labelText ? (
@@ -28,7 +29,7 @@ const renderFieldBody = (
     return Array.isArray(inputControlConfig) ? (
       inputControlConfig.map((_singleConfig, i) => (
         <InputControl
-          key={`grouped-input-control-${parseKey()}`}
+          key={`grouped-input-control-${generateKey()}`}
           testId={`test-grouped-input-control-${i}`}
           {..._singleConfig}
         />

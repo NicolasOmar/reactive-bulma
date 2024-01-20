@@ -5,7 +5,7 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { <%= name %>Props } from '../../../interfaces/<%= route %>Props'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 <% if(isSimple){ %>

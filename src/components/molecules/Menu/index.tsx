@@ -3,8 +3,9 @@ import React from 'react'
 import MenuList from '../MenuList'
 // TYPES & INTERFACES
 import { MenuProps } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const Menu: React.FC<MenuProps> = ({
   testId = null,
@@ -23,15 +24,15 @@ const Menu: React.FC<MenuProps> = ({
       style={style ?? undefined}
     >
       {menuSections.map(section => (
-        <React.Fragment key={`section-${parseKey()}`}>
+        <React.Fragment key={`section-${generateKey()}`}>
           <p
-            key={`section-label-${parseKey()}`}
+            key={`section-label-${generateKey()}`}
             className='menu-label'
           >
             {section.label}
           </p>
           <MenuList
-            key={`section-menu-list-${parseKey()}`}
+            key={`section-menu-list-${generateKey()}`}
             itemList={section.itemList}
           />
         </React.Fragment>

@@ -3,7 +3,7 @@ import React from 'react'
 import { NotificationProps } from '../../../interfaces/moleculeProps'
 // COMPONENTS
 import { Delete } from '../../atoms'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Notification: React.FC<NotificationProps> = ({

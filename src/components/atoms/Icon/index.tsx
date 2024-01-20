@@ -3,7 +3,7 @@ import React from 'react'
 import { IconProps } from '../../../interfaces/atomProps'
 import { textColorType } from '../../../types/styleTypes'
 import { IconSizeEnum } from '../../../types/componentEnums'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const generateIconContainer = (

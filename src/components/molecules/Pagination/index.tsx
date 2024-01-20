@@ -6,9 +6,10 @@ import {
   PaginationNavigationButtonProps,
   PaginationProps
 } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
 import { PaginationItemProps } from '../../../interfaces/atomProps'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const renderEllipsis = (hasEllipsis: boolean) =>
   hasEllipsis ? (
@@ -66,7 +67,7 @@ const renderPages = (
     ) {
       return (
         <PaginationItem
-          key={`pagination-item-${parseKey()}`}
+          key={`pagination-item-${generateKey()}`}
           {...pageItem}
         />
       )

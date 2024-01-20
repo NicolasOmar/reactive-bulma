@@ -4,8 +4,9 @@ import { DropdownItem, DropdownTrigger } from '../../atoms'
 // TYPES & INTERFACES
 import { DropdownProps } from '../../../interfaces/moleculeProps'
 import { DropdownItemProps } from '../../../interfaces/atomProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const renderDropdownMenu = (items: DropdownItemProps[]) => (
   <section className='dropdown-content'>
@@ -13,18 +14,18 @@ const renderDropdownMenu = (items: DropdownItemProps[]) => (
       const isFirstItemInMenu = items.length > 1 && i === 0
       return isFirstItemInMenu ? (
         <DropdownItem
-          key={`dropdown-item-${parseKey()}`}
+          key={`dropdown-item-${generateKey()}`}
           {...dropdownItemConfig}
         />
       ) : (
-        <section key={`dropdown-item-${parseKey()}-section`}>
+        <section key={`dropdown-item-${generateKey()}-section`}>
           <DropdownItem
-            key={`dropdown-item-${parseKey()}-divider`}
+            key={`dropdown-item-${generateKey()}-divider`}
             type='divider'
             itemText='divider'
           />
           <DropdownItem
-            key={`dropdown-item-${parseKey()}`}
+            key={`dropdown-item-${generateKey()}`}
             {...dropdownItemConfig}
           />
         </section>

@@ -5,8 +5,8 @@ import Tabs from '.'
 // TYPES & INTERFACES
 import { TabsProps } from '../../../interfaces/moleculeProps'
 import { TabItemProps } from '../../../interfaces/atomProps'
-// PARSERS
-import { createObjArray } from '../../../functions/parsers'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

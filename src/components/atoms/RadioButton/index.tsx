@@ -5,7 +5,7 @@ import {
   RadioButtonProps
 } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
-// PARSERS
+// FUNCTIONS
 
 const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
   const {

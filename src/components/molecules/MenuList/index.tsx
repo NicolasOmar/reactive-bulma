@@ -3,8 +3,9 @@ import React from 'react'
 import { MenuItem } from '../../atoms'
 // TYPES & INTERFACES
 import { MenuListProps } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const MenuList: React.FC<MenuListProps> = ({
   testId = null,
@@ -25,12 +26,12 @@ const MenuList: React.FC<MenuListProps> = ({
       {itemList.map(item => {
         if ('subListTitle' in item) {
           return (
-            <li key={`sub-list-menu-item-${parseKey()}`}>
+            <li key={`sub-list-menu-item-${generateKey()}`}>
               <MenuItem {...item.subListTitle} />
               <ul>
                 {item.subItems.map(subItem => (
                   <MenuItem
-                    key={`sub-list-menu-sub-item-${parseKey()}`}
+                    key={`sub-list-menu-sub-item-${generateKey()}`}
                     {...subItem}
                   />
                 ))}
@@ -40,7 +41,7 @@ const MenuList: React.FC<MenuListProps> = ({
         } else {
           return (
             <MenuItem
-              key={`sub-list-item-${parseKey()}`}
+              key={`sub-list-item-${generateKey()}`}
               {...item}
             />
           )

@@ -20,17 +20,5 @@
       "test-button-loading-primary-huge",
       "test-button-loading-huge-static-new"
     ]
-  },
-  "createObjArray": {
-    "basicExamples": [
-      { "text": "1" },
-      { "text": "2" },
-      { "text": "3" }
-    ],
-    "externalParserExamples": [
-      {"external" : "2"},
-      {"external" : "4"},
-      {"external" : "6"}
-    ]
   }
 }

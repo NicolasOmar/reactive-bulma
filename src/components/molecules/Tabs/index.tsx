@@ -3,8 +3,9 @@ import React from 'react'
 import { TabItem } from '../../atoms'
 // TYPES & INTERFACES
 import { TabsProps } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { parseClasses, parseKey, parseTestId } from '../../../functions/parsers'
+// FUNCTIONS
+import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { generateKey } from '../../../functions/generators'
 
 const Tabs: React.FC<TabsProps> = ({
   testId = null,
@@ -38,7 +39,7 @@ const Tabs: React.FC<TabsProps> = ({
       <ul>
         {tabs.map(tabConfig => (
           <li
-            key={`tab-item-${parseKey()}`}
+            key={`tab-item-${generateKey()}`}
             className={tabConfig.isActive ? 'is-active' : undefined}
           >
             {<TabItem {...tabConfig} />}

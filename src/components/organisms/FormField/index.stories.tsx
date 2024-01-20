@@ -5,16 +5,16 @@ import FormField from '.'
 // TYPES & INTERFACES
 import { InputProps } from '../../../interfaces/atomProps'
 import { InputControlProps } from '../../../interfaces/moleculeProps'
-// PARSERS
-import { createObjArray } from '../../../functions/parsers'
+// FUNCTIONS
+import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import inputControlMocks from '../InputControl/index.mocks.json'
+import inputControlMocks from '../../molecules/InputControl/index.mocks.json'
 
 const { baseConfig } = inputControlMocks.testing
 
 export default {
-  title: 'Molecules/FormField',
+  title: 'Organisms/FormField',
   component: FormField,
   ...storybook,
   args: { inputControlConfig: baseConfig }

@@ -3,7 +3,7 @@ import React from 'react'
 import { Delete } from '../../atoms'
 // TYPES & INTERFACES
 import { MessageProps } from '../../../interfaces/moleculeProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Message: React.FC<MessageProps> = ({

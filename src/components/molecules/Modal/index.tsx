@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { ModalProps } from '../../../interfaces/moleculeProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const Modal: React.FC<ModalProps> = ({

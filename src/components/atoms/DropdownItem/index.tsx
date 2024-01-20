@@ -2,7 +2,7 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { DropdownItemProps } from '../../../interfaces/atomProps'
-// PARSERS
+// FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const DropdownItem: React.FC<DropdownItemProps> = ({
