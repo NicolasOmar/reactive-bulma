@@ -1,0 +1,18 @@
+{
+  "testing": {
+    "basicTestId": "test-level-header",
+    "basicConfig": {
+      "header": "General",
+      "value": "Kenobi"
+    },
+    "numericConfig": {
+      "header": "Tests",
+      "value": 193
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A small title/value item to be shown in Level navigators"
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { ElementProps } from './commonProps'
 // COMPONENT PROPS
 import {
   InputControlProps,
+  LevelItemProps,
   PanelBlockProps,
   PanelTabsProps
 } from './moleculeProps'
@@ -36,4 +37,15 @@ export interface PanelProps extends ElementProps {
   blockList: PanelBlockProps[]
   /** `Styling` Color based on bulma's text color tokens */
   color?: basicColorType
+}
+
+export interface LevelProps extends ElementProps {
+  /** `Attribute` A list of `LevelItem` configurations that will displayed in Level's left side */
+  leftSide?: LevelItemProps[]
+  /** `Attribute` A list of `LevelItem` configurations that will displayed in Level's center */
+  centerSide?: LevelItemProps[]
+  /** `Attribute` A list of `LevelItem` configurations that will displayed in Level's right side */
+  rightSide?: LevelItemProps[]
+  /** `Styling` Will adjust the navigator on horizontal on mobile as well */
+  isMobile?: boolean
 }

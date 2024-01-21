@@ -1,0 +1,38 @@
+{
+  "testing": {
+    "basicTestId": "test-level",
+    "testClasses": [
+      {
+        "name": "isMobile",
+        "value": true,
+        "result": "is-mobile"
+      }
+    ],
+    "simpleContent": "The Negotiator",
+    "otherContent": "General Kenobi",
+    "levelSidesToTest": [
+      {
+        "prop": "leftSide",
+        "case": "Should render all level items on left side"
+      },
+      {
+        "prop": "centerSide",
+        "case": "Should render all level items on center side"
+      },
+      {
+        "prop": "rightSide",
+        "case": "Should render all level items on right side"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A multi-purpose horizontal level, which can contain almost any other element",
+      "docs": {
+        "description": {
+          "component": "The structure of a level is the following: `level` for the main container, `level-left` for the left side, `level-right` for the right side and `level-item` for each individual element."
+        }
+      }
+    }
+  }
+}
