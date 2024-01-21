@@ -334,3 +334,10 @@ export interface TabItemProps extends ComposedElementProps, ClickeableProps {
   /** `Styling` Used for `Tabs` styling purpose only. Will mark the tab as the one selected among its group */
   isActive?: boolean
 }
+
+export interface LevelHeaderProps extends ElementProps {
+  /** `Attribute` `Required` A title in smaller size */
+  header: string
+  /** `Attribute` `Required` Main value (numeric or text) to be shown in a bigger scale below `header` */
+  value: string | number
+}

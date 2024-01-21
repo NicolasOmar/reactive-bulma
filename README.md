@@ -153,8 +153,6 @@ Reactive bulma's documentation, included in this repo in the root directory, is 
 
 Learn more about `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
-Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/docs/quick-start).
-
 ## Usage
 
 ```jsx
@@ -177,6 +175,8 @@ After some time, I understood that creating component files is a repetitive and 
 - An will assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
 - Then, the assistant will ask in which folder you want to create it (based on its type following [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/))
 - At last, the script should create all base files to reduce time and focus on custom implementation.
+
+Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/docs/quick-start).
 
 ### How to update all dependencies
 

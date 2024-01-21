@@ -212,3 +212,10 @@ export interface PanelTabsProps extends ElementProps {
   /** `Attribute` `Required` A list of configuration objects that will render a set of tabs */
   tabList: PanelTabItem[]
 }
+
+export interface LevelItemProps extends ElementProps {
+  /** `Attribute` `Required` Reffers to the component or string content that will be shown inside the level */
+  content: string | React.ReactElement
+  /** `Styling` Centers item's content horizontally */
+  isCentered?: boolean
+}
