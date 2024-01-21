@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.12.0...v2.13.0) (2024-1-21)
+
+
+### Features
+
+* Create component "Level" ([#248](https://github.com/NicolasOmar/reactive-bulma/issues/248)) ([#75](https://github.com/NicolasOmar/reactive-bulma/issues/75)) ([ef7acf2](https://github.com/NicolasOmar/reactive-bulma/commit/ef7acf2c1843f1004f3005dc365039efe93ef2ba))
+
 # [2.12.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.11.0...v2.12.0) (2024-1-20)
 
 
