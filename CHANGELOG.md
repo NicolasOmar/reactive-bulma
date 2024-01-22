@@ -1,3 +1,16 @@
+# [2.14.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.13.0...v2.14.0) (2024-1-22)
+
+
+### Bug Fixes
+
+* Creating ChildrenType and SingleChildType less redudant types ([864ae47](https://github.com/NicolasOmar/reactive-bulma/commit/864ae47b6bde4d4312736e71e291e9a80b80ea93))
+* Small renames on used Types for better naming consistency ([70638f8](https://github.com/NicolasOmar/reactive-bulma/commit/70638f80b9fbef0f7877cf6930173458c696214d))
+
+
+### Features
+
+* Create component "Hero" ([#249](https://github.com/NicolasOmar/reactive-bulma/issues/249)) ([#72](https://github.com/NicolasOmar/reactive-bulma/issues/72)) ([a07e60d](https://github.com/NicolasOmar/reactive-bulma/commit/a07e60d2f5d8e4b0c216bb3a47e826ceedefa368))
+
 # [2.13.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.12.0...v2.13.0) (2024-1-21)
 
 
