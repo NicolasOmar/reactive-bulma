@@ -19,12 +19,13 @@ import {
   RightLeftAlignType
 } from '../types/styleTypes'
 import { DropdownItemType, InputType } from '../types/domTypes'
+import { ChildrenType } from '../types/componentEnums'
 
 export interface ColumnProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
-  children?: string | React.ReactElement | React.ReactElement[]
+  children?: ChildrenType
   /** `Styling` Set column's size */
   size?: ColumnSizeType
   /** `Styling` Set column's offset (moving it as you set its size */
@@ -81,7 +82,7 @@ export interface BlockProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the block */
-  children?: string | React.ReactElement | React.ReactElement[]
+  children?: ChildrenType
 }
 
 export interface TagProps
@@ -126,7 +127,7 @@ export interface BoxProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the box */
-  children?: string | React.ReactElement | React.ReactElement[]
+  children?: ChildrenType
 }
 
 export interface TitleSectionProps
@@ -251,7 +252,7 @@ export interface FileProps extends ComposedElementProps, ClickeableProps {
 
 export interface CheckBoxProps extends ComposedElementProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
-  content?: string | React.ReactElement | React.ReactElement[]
+  content?: ChildrenType
   /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
   /** `Function` Click function, alone does not nothing, but can be reused for other components */

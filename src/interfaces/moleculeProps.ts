@@ -27,6 +27,7 @@ import {
   TabsFormatType
 } from '../types/styleTypes'
 import { PanelBlockItemType } from '../types/domTypes'
+import { ChildrenType, SingleChildType } from '../types/componentEnums'
 
 export interface ButtonGroupProps extends ElementProps {
   /** `Atribute` `Required` Array of `Button` objects that will be shown */
@@ -54,7 +55,7 @@ export interface ColumnGroupProps extends ElementProps {
 
 export interface NotificationProps extends ElementProps {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
-  children?: string | React.ReactElement | React.ReactElement[]
+  children?: ChildrenType
   /** `Atribute` Includes a `Delete` config object that will be shown */
   deleteButton?: DeleteProps
   /** `Styling` Color based on bulma's color tokens */
@@ -150,7 +151,7 @@ export interface PaginationProps extends ComposedElementProps {
 
 export interface ModalProps extends ComposedElementProps {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
-  children?: string | React.ReactElement | React.ReactElement[] | null
+  children?: ChildrenType | null
   /** `Function` Custom function related to the modal's close button to inject custom code if needed */
   onCloseClick?: () => void
 }
@@ -215,7 +216,7 @@ export interface PanelTabsProps extends ElementProps {
 
 export interface LevelItemProps extends ElementProps {
   /** `Attribute` `Required` Reffers to the component or string content that will be shown inside the level */
-  content: string | React.ReactElement
+  content: SingleChildType
   /** `Styling` Centers item's content horizontally */
   isCentered?: boolean
 }
