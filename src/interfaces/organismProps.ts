@@ -9,6 +9,7 @@ import {
 } from './moleculeProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithoutNormalType } from '../types/styleTypes'
+import { ChildrenType } from '../types/componentEnums'
 
 export interface FormFieldHelperProps {
   text?: string
@@ -51,7 +52,14 @@ export interface LevelProps extends ElementProps {
 }
 
 export interface HeroProps extends ElementProps {
-  /** `Mocked` Styling prop injected for component creation process purposes only. Can be deleted */
-  isACssTestClass?: boolean
+  /** `Attribute` Designated section for hero's header, it will be visible only if container's `size` is setted to `is-fullheight` */
+  header?: ChildrenType
+  /** `Attribute` `Required` Designated section for hero's body */
+  body: ChildrenType
+  /** `Attribute` Designated section for hero's footer, it will be visible only if container's `size` is setted to `is-fullheight` */
+  footer?: ChildrenType
+  /** `Styling` Set hero's size */
   size?: SizeWithoutNormalType | 'is-halfheight' | 'is-fullheight'
+  /** `Styling` Color based on bulma's text color tokens */
+  color?: BasicColorType
 }
