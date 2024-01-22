@@ -4,8 +4,8 @@ import { StoryFn, Meta } from '@storybook/react'
 import Breadcrumbs from '.'
 // TYPES & INTERFACES
 import {
-  rightCenteredAlignType,
-  breadcrumbSeparatorType
+  RightCenteredAlignType,
+  BreadcrumbSeparatorType
 } from '../../../types/styleTypes'
 // FUNCTIONS
 import { createObjArray } from '../../../functions/generators'
@@ -18,12 +18,12 @@ const externalParser = (i: number) => ({
   isActiveItem: i === 4
 })
 
-const alignmentOptions: Array<rightCenteredAlignType> = [
+const alignmentOptions: Array<RightCenteredAlignType> = [
   'is-centered',
   'is-right'
 ]
 
-const separatorOptions: Array<breadcrumbSeparatorType> = [
+const separatorOptions: Array<BreadcrumbSeparatorType> = [
   'has-arrow-separator',
   'has-bullet-separator',
   'has-dot-separator',

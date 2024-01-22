@@ -1,14 +1,14 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { ColumnGroupProps } from '../../../interfaces/moleculeProps'
-import { columnGapType } from '../../../types/styleTypes'
+import { ColumnGapType } from '../../../types/styleTypes'
 // COMPONENTS
 import { Column } from '../../atoms'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { generateKey } from '../../../functions/generators'
 
-const parseGapCssClass = (gapPropValue: columnGapType | null | undefined) => {
+const parseGapCssClass = (gapPropValue: ColumnGapType | null | undefined) => {
   switch (gapPropValue) {
     case null:
       return 'is-gapless'

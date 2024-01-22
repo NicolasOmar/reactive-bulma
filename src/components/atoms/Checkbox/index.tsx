@@ -1,12 +1,11 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { CheckBoxProps } from '../../../interfaces/atomProps'
+import { ChildrenType } from '../../../types/componentEnums'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const parseContentTestId = (
-  content: string | React.ReactElement | React.ReactElement[] | null
-): string => {
+const parseContentTestId = (content: ChildrenType | null): string => {
   if (typeof content === 'string') return `-${content?.toString()}`
   if (content !== null) return '-with-component'
   return ''
