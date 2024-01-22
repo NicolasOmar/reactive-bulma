@@ -26,8 +26,11 @@ import {
   SizeWithoutNormalType,
   TabsFormatType
 } from '../types/styleTypes'
-import { PanelBlockItemType } from '../types/domTypes'
-import { ChildrenType, SingleChildType } from '../types/componentEnums'
+import {
+  ChildrenType,
+  SingleChildType,
+  PanelBlockItemType
+} from '../types/domTypes'
 
 export interface ButtonGroupProps extends ElementProps {
   /** `Atribute` `Required` Array of `Button` objects that will be shown */

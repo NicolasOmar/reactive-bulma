@@ -18,8 +18,7 @@ import {
   TitleSizeType,
   RightLeftAlignType
 } from '../types/styleTypes'
-import { DropdownItemType, InputType } from '../types/domTypes'
-import { ChildrenType } from '../types/componentEnums'
+import { DropdownItemType, InputType, ChildrenType } from '../types/domTypes'
 
 export interface ColumnProps
   extends ElementProps,

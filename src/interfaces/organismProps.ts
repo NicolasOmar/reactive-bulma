@@ -9,7 +9,7 @@ import {
 } from './moleculeProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithoutNormalType } from '../types/styleTypes'
-import { ChildrenType } from '../types/componentEnums'
+import { ChildrenType } from '../types/domTypes'
 
 export interface FormFieldHelperProps {
   text?: string
