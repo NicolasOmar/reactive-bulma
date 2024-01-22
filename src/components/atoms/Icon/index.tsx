@@ -1,14 +1,14 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
-import { textColorType } from '../../../types/styleTypes'
+import { TextColorType } from '../../../types/styleTypes'
 import { IconSizeEnum } from '../../../types/componentEnums'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
 const generateIconContainer = (
   icon: React.ReactElement,
-  color: textColorType | null
+  color: TextColorType | null
 ) => {
   const containerClasses = color ? `icon-text-${color}` : 'icon-text'
   const containerTestId = parseTestId({

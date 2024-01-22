@@ -53,7 +53,7 @@
         "table": {
           "type": {
             "summary": "TitleSectionProps",
-            "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+            "detail": "{ text: string, size?: TitleSizeType, type: 'title' | 'subtitle' }"
           }
         }
       },
@@ -61,7 +61,7 @@
         "table": {
           "type": {
             "summary": "TitleSectionProps",
-            "detail": "{ text: string, size?: titleSizeType, type: 'title' | 'subtitle' }"
+            "detail": "{ text: string, size?: TitleSizeType, type: 'title' | 'subtitle' }"
           }
         }
       }

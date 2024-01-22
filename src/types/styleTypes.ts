@@ -1,4 +1,4 @@
-export type columnSizeType =
+export type ColumnSizeType =
   | 'is-three-quarters'
   | 'is-two-thirds'
   | 'is-half'
@@ -22,9 +22,9 @@ export type columnSizeType =
   | 'is-11'
   | 'is-12'
 
-export type titleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
+export type TitleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
 
-export type columnOffsetType =
+export type ColumnOffsetType =
   | 'is-offset-1'
   | 'is-offset-2'
   | 'is-offset-3'
@@ -38,7 +38,7 @@ export type columnOffsetType =
   | 'is-offset-11'
   | 'is-offset-12'
 
-export type basicColorType =
+export type BasicColorType =
   | 'is-white'
   | 'is-light'
   | 'is-dark'
@@ -52,7 +52,7 @@ export type basicColorType =
   | 'is-warning'
   | 'is-danger'
 
-export type textColorType =
+export type TextColorType =
   | 'has-text-white'
   | 'has-text-black'
   | 'has-text-light'
@@ -64,7 +64,7 @@ export type textColorType =
   | 'has-text-warning'
   | 'has-text-danger'
 
-export type fixedImageSizeType =
+export type FixedImageSizeType =
   | 'is-16x16'
   | 'is-24x24'
   | 'is-32x32'
@@ -89,17 +89,17 @@ export type fixedImageSizeType =
   | 'is-1by2'
   | 'is-1by3'
 
-export type elementSizeType =
+export type ElementSizeType =
   | 'is-small'
   | 'is-normal'
   | 'is-medium'
   | 'is-large'
 
-export type sizeWithoutNormalType = Exclude<elementSizeType, 'is-normal'>
+export type SizeWithoutNormalType = Exclude<ElementSizeType, 'is-normal'>
 
-export type iconColorModeType = 'light' | 'dark'
+export type IconColorModeType = 'light' | 'dark'
 
-export type columnGapType =
+export type ColumnGapType =
   | 'is-0'
   | 'is-1'
   | 'is-2'
@@ -110,16 +110,16 @@ export type columnGapType =
   | 'is-7'
   | 'is-8'
 
-export type elementAlignType = 'is-centered' | 'is-right' | 'is-left'
+export type ElementAlignType = 'is-centered' | 'is-right' | 'is-left'
 
-export type rightCenteredAlignType = Exclude<elementAlignType, 'is-left'>
+export type RightCenteredAlignType = Exclude<ElementAlignType, 'is-left'>
 
-export type rightLeftAlignType = Exclude<elementAlignType, 'is-centered'>
+export type RightLeftAlignType = Exclude<ElementAlignType, 'is-centered'>
 
-export type breadcrumbSeparatorType =
+export type BreadcrumbSeparatorType =
   | 'has-arrow-separator'
   | 'has-bullet-separator'
   | 'has-dot-separator'
   | 'has-succeeds-separator'
 
-export type tabsFormatType = 'is-boxed' | 'is-toggle'
+export type TabsFormatType = 'is-boxed' | 'is-toggle'

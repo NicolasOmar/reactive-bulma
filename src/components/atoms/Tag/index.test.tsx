@@ -5,8 +5,8 @@ import '@testing-library/jest-dom'
 import Tag from '.'
 // TYPES & INTERFACES
 import {
-  basicColorType,
-  sizeWithoutNormalType
+  BasicColorType,
+  SizeWithoutNormalType
 } from '../../../types/styleTypes'
 import { TagProps } from '../../../interfaces/atomProps'
 // MOCKS
@@ -27,7 +27,7 @@ describe('Tag', () => {
       const coloredTestId = `test-tag-${_color.replace('is-', '')}`
       const testColoredConfig = {
         ...baseConfig,
-        color: _color as basicColorType
+        color: _color as BasicColorType
       }
 
       render(<Tag {...testColoredConfig} />)
@@ -41,7 +41,7 @@ describe('Tag', () => {
       const resizedTestId = `test-tag-${_size.replace('is-', '')}`
       const testResizedConfig = {
         ...baseConfig,
-        size: _size as sizeWithoutNormalType
+        size: _size as SizeWithoutNormalType
       }
 
       render(<Tag {...testResizedConfig} />)

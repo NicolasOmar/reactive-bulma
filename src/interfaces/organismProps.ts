@@ -8,11 +8,11 @@ import {
   PanelTabsProps
 } from './moleculeProps'
 // TYPES & INTERFACES
-import { basicColorType } from '../types/styleTypes'
+import { BasicColorType, SizeWithoutNormalType } from '../types/styleTypes'
 
 export interface FormFieldHelperProps {
   text?: string
-  color?: basicColorType
+  color?: BasicColorType
 }
 
 export interface FormFieldProps extends ElementProps {
@@ -36,7 +36,7 @@ export interface PanelProps extends ElementProps {
   /** `Attribute` `Required` A list of configuration objects that will render a list of block with different components, based on `PanelBlockList` component */
   blockList: PanelBlockProps[]
   /** `Styling` Color based on bulma's text color tokens */
-  color?: basicColorType
+  color?: BasicColorType
 }
 
 export interface LevelProps extends ElementProps {
@@ -48,4 +48,10 @@ export interface LevelProps extends ElementProps {
   rightSide?: LevelItemProps[]
   /** `Styling` Will adjust the navigator on horizontal on mobile as well */
   isMobile?: boolean
+}
+
+export interface HeroProps extends ElementProps {
+  /** `Mocked` Styling prop injected for component creation process purposes only. Can be deleted */
+  isACssTestClass?: boolean
+  size?: SizeWithoutNormalType | 'is-halfheight' | 'is-fullheight'
 }
