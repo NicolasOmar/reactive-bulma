@@ -1,0 +1,29 @@
+{
+  "testing": {
+    "basicTestId": "test-tileGroup",
+    "extensionTestId": "ancestor",
+    "testClasses": [
+      {
+        "name": "size",
+        "value": "is-6",
+        "result": "is-6"
+      },
+      {
+        "name": "isVertical",
+        "value": true,
+        "result": "is-vertical"
+      }
+    ],
+    "testChildrenColors": ["is-info", "is-primary", "is-danger"]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import {
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithoutNormalType } from '../types/styleTypes'
 import { ChildrenType } from '../types/domTypes'
+import { TileProps } from './atomProps'
 
 export interface FormFieldHelperProps {
   text?: string
@@ -62,4 +63,10 @@ export interface HeroProps extends ElementProps {
   size?: SizeWithoutNormalType | 'is-halfheight' | 'is-fullheight'
   /** `Styling` Color based on bulma's text color tokens */
   color?: BasicColorType
+}
+
+export interface TileGroupProps
+  extends ElementProps,
+    Pick<TileProps, 'context' | 'isVertical' | 'size'> {
+  groupConfig: TileProps[]
 }
