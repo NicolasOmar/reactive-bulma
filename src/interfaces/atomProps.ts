@@ -16,9 +16,15 @@ import {
   SizeWithoutNormalType,
   TextColorType,
   TitleSizeType,
-  RightLeftAlignType
+  RightLeftAlignType,
+  CommonSizeType
 } from '../types/styleTypes'
-import { DropdownItemType, InputType, ChildrenType } from '../types/domTypes'
+import {
+  DropdownItemType,
+  InputType,
+  ChildrenType,
+  TileContextType
+} from '../types/domTypes'
 
 export interface ColumnProps
   extends ElementProps,
@@ -340,4 +346,17 @@ export interface LevelHeaderProps extends ElementProps {
   header: string
   /** `Attribute` `Required` Main value (numeric or text) to be shown in a bigger scale below `header` */
   value: string | number
+}
+
+export interface TileProps extends ElementProps {
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the tile */
+  children?: ChildrenType
+  /** `Attribute` Indicates its hierarchy level based on [Bulma documantation](https://bulma.io/documentation/layout/tiles/#nesting-requirements). Selection any level besides `is-child` will invalidate any `color` you select */
+  context?: TileContextType
+  /** `Styling` Set tile's size */
+  size?: CommonSizeType
+  /** `Styling` Color based on bulma's color tokens */
+  color?: BasicColorType
+  /** `Styling` Used for hierarchy level as ancestor or parent. It selects its children in a vertical format (like a column) */
+  isVertical?: boolean
 }

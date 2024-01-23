@@ -17,3 +17,5 @@ export enum IconSizeEnum {
   'is-medium' = 36,
   'is-large' = 48
 }
+
+export type TileContextType = 'is-child' | 'is-parent' | 'is-ancestor'
