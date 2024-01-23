@@ -1,0 +1,28 @@
+{
+  "testing": {
+    "basicTestId": "test-tileBox-child",
+    "extensionTestId": "box",
+    "testClasses": [
+      {
+        "name": "color",
+        "value": "is-danger",
+        "result": "notification is-danger"
+      },
+      {
+        "name": "isVertical",
+        "value": true,
+        "result": "is-vertical"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

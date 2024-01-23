@@ -15,7 +15,8 @@ import {
   InputProps,
   MenuItemProps,
   PaginationItemProps,
-  TabItemProps
+  TabItemProps,
+  TileProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -223,3 +224,5 @@ export interface LevelItemProps extends ElementProps {
   /** `Styling` Centers item's content horizontally */
   isCentered?: boolean
 }
+
+export interface TileBoxProps extends TileProps {}
