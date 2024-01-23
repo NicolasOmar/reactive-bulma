@@ -1,3 +1,15 @@
+# [2.15.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.14.0...v2.15.0) (2024-1-23)
+
+
+### Bug Fixes
+
+* Moving componentEnums content to domTypes for better type management ([80ef7eb](https://github.com/NicolasOmar/reactive-bulma/commit/80ef7ebdbfed5ca6b63a4b73b740e44698a9561f))
+
+
+### Features
+
+* Create component "Tile" ([#250](https://github.com/NicolasOmar/reactive-bulma/issues/250)) ([#74](https://github.com/NicolasOmar/reactive-bulma/issues/74)) ([f5877ac](https://github.com/NicolasOmar/reactive-bulma/commit/f5877ac1d43086633a43affd851350f06a4606bf))
+
 # [2.14.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.13.0...v2.14.0) (2024-1-22)
 
 
