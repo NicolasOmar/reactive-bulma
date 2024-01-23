@@ -18,12 +18,7 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
-      "docs": {
-        "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
-        }
-      }
+      "componentSubtitle": "Nesting implementation to set up the Pinterest-like grid styling"
     }
   }
 }

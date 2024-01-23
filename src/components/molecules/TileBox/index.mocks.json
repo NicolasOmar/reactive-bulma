@@ -17,10 +17,10 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "componentSubtitle": "A small abstraction of original Tile component",
       "docs": {
         "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+          "component": "Focused for `TileGroup` implementation where is needed a boxed child Tile to set up the grid styling."
         }
       }
     }

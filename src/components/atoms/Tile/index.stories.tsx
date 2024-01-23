@@ -2,13 +2,13 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Tile from '.'
+import { Image } from '../index'
 // TYPES & INTERFACES
 import { TileProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 import imageMocks from '../Image/index.mocks.json'
-import { Image } from '../index'
 
 export default {
   title: 'Atoms/Tile',

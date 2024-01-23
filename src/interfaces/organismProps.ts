@@ -42,11 +42,11 @@ export interface PanelProps extends ElementProps {
 }
 
 export interface LevelProps extends ElementProps {
-  /** `Attribute` A list of `LevelItem` configurations that will displayed in Level's left side */
+  /** `Attribute` A list of `LevelItem` configurations that will br displayed in Level's left side */
   leftSide?: LevelItemProps[]
-  /** `Attribute` A list of `LevelItem` configurations that will displayed in Level's center */
+  /** `Attribute` A list of `LevelItem` configurations that will br displayed in Level's center */
   centerSide?: LevelItemProps[]
-  /** `Attribute` A list of `LevelItem` configurations that will displayed in Level's right side */
+  /** `Attribute` A list of `LevelItem` configurations that will br displayed in Level's right side */
   rightSide?: LevelItemProps[]
   /** `Styling` Will adjust the navigator on horizontal on mobile as well */
   isMobile?: boolean
@@ -68,5 +68,6 @@ export interface HeroProps extends ElementProps {
 export interface TileGroupProps
   extends ElementProps,
     Pick<TileProps, 'context' | 'isVertical' | 'size'> {
+  /** `Attribute` `Required` A list of `Title` configurations that will be displayed in a grid mode on the screen */
   groupConfig: TileProps[]
 }
