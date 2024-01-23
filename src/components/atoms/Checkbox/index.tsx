@@ -1,7 +1,7 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { CheckBoxProps } from '../../../interfaces/atomProps'
-import { ChildrenType } from '../../../types/componentEnums'
+import { ChildrenType } from '../../../types/domTypes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 

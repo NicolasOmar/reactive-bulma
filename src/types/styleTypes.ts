@@ -1,14 +1,4 @@
-export type ColumnSizeType =
-  | 'is-three-quarters'
-  | 'is-two-thirds'
-  | 'is-half'
-  | 'is-one-third'
-  | 'is-one-quarter'
-  | 'is-full'
-  | 'is-four-fifths'
-  | 'is-three-fifths'
-  | 'is-two-fifths'
-  | 'is-one-fifth'
+export type CommonSizeType =
   | 'is-1'
   | 'is-2'
   | 'is-3'
@@ -22,7 +12,19 @@ export type ColumnSizeType =
   | 'is-11'
   | 'is-12'
 
-export type TitleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
+export type AbstractSizeType =
+  | 'is-three-quarters'
+  | 'is-two-thirds'
+  | 'is-half'
+  | 'is-one-third'
+  | 'is-one-quarter'
+  | 'is-full'
+  | 'is-four-fifths'
+  | 'is-three-fifths'
+  | 'is-two-fifths'
+  | 'is-one-fifth'
+
+export type ColumnSizeType = CommonSizeType | AbstractSizeType
 
 export type ColumnOffsetType =
   | 'is-offset-1'
@@ -37,6 +39,8 @@ export type ColumnOffsetType =
   | 'is-offset-10'
   | 'is-offset-11'
   | 'is-offset-12'
+
+export type TitleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
 
 export type BasicColorType =
   | 'is-white'

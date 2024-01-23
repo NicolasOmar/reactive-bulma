@@ -15,7 +15,8 @@ import {
   InputProps,
   MenuItemProps,
   PaginationItemProps,
-  TabItemProps
+  TabItemProps,
+  TileProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -26,8 +27,11 @@ import {
   SizeWithoutNormalType,
   TabsFormatType
 } from '../types/styleTypes'
-import { PanelBlockItemType } from '../types/domTypes'
-import { ChildrenType, SingleChildType } from '../types/componentEnums'
+import {
+  ChildrenType,
+  SingleChildType,
+  PanelBlockItemType
+} from '../types/domTypes'
 
 export interface ButtonGroupProps extends ElementProps {
   /** `Atribute` `Required` Array of `Button` objects that will be shown */
@@ -220,3 +224,5 @@ export interface LevelItemProps extends ElementProps {
   /** `Styling` Centers item's content horizontally */
   isCentered?: boolean
 }
+
+export interface TileBoxProps extends TileProps {}

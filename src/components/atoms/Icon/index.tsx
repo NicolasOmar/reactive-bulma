@@ -2,7 +2,7 @@ import React from 'react'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
 import { TextColorType } from '../../../types/styleTypes'
-import { IconSizeEnum } from '../../../types/componentEnums'
+import { IconSizeEnum } from '../../../types/domTypes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 

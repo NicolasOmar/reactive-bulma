@@ -6,7 +6,7 @@ import Icon from '.'
 // TYPES & INTERFACES
 import { IconProps } from '../../../interfaces/atomProps'
 import { SizeWithoutNormalType } from '../../../types/styleTypes'
-import { IconSizeEnum } from '../../../types/componentEnums'
+import { IconSizeEnum } from '../../../types/domTypes'
 // MOCKS
 import { testing } from './index.mocks.json'
 

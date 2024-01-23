@@ -13,7 +13,7 @@ const Image: React.FC<ImageProps> = ({
   containerStyle = null,
   src,
   alt = null,
-  fixedSize = 'is-1by1',
+  fixedSize = null,
   isRounded = false
 }) => {
   const imageContainerClasses = parseClasses([
