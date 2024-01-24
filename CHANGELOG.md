@@ -1,3 +1,15 @@
+# [2.16.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.15.0...v2.16.0) (2024-1-24)
+
+
+### Bug Fixes
+
+* Updating dependencies version ([aa8cd02](https://github.com/NicolasOmar/reactive-bulma/commit/aa8cd02934e052334472017bca6f80390f498ffd))
+
+
+### Features
+
+* Create component "Footer" ([#251](https://github.com/NicolasOmar/reactive-bulma/issues/251)) ([#73](https://github.com/NicolasOmar/reactive-bulma/issues/73)) ([f7102ed](https://github.com/NicolasOmar/reactive-bulma/commit/f7102eda7d281b421c9d5cdfc428697763774bd9))
+
 # [2.15.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.14.0...v2.15.0) (2024-1-23)
 
 
