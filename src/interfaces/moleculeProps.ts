@@ -226,3 +226,10 @@ export interface LevelItemProps extends ElementProps {
 }
 
 export interface TileBoxProps extends TileProps {}
+
+export interface FooterProps extends ComposedElementProps {
+  /** `Attribute` `Required` Reffers to the component, list of components or string content that will be shown inside the footer */
+  content: ChildrenType
+  /** `Styling` Centers footer¿s content horizontally */
+  isContentCentered?: boolean
+}
