@@ -1,9 +1,15 @@
 {
   "testing": {
     "basicTestId": "test-media",
-    "basicTestImageId": "test-media-left",
+    "basicTestLeftId": "test-media-left",
     "basicTestContentId": "test-media-content",
-    "basicDumbContent": "Here we go again"
+    "basicTestRightId": "test-media-right",
+    "longDumbContent": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.",
+    "elementTestIds": [
+      "test-image-128x128",
+      "test-textarea",
+      "test-delete"
+    ]
   },
   "storybook": {
     "parameters": {

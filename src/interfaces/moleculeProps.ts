@@ -12,7 +12,6 @@ import {
   DeleteProps,
   DropdownItemProps,
   IconProps,
-  ImageProps,
   InputProps,
   MenuItemProps,
   PaginationItemProps,
@@ -236,8 +235,10 @@ export interface FooterProps extends ComposedElementProps {
 }
 
 export interface MediaProps extends ElementProps {
-  /** `Attribute` `Required` Reffers to a designated space for a image located at media's left */
-  mediaImage: ImageProps
-  /** `Attribute` Reffers to the component, list of components or string content that will be shown inside the footer */
-  content?: ChildrenType
+  /** `Attribute` Reffers to the component or string content that will be shown inside the component's left side */
+  leftContent?: SingleChildType
+  /** `Attribute` Reffers to the component or string content that will be shown inside the component's center */
+  centerContent?: SingleChildType
+  /** `Attribute` Reffers to the component or string content that will be shown inside the component's right side */
+  rightContent?: SingleChildType
 }

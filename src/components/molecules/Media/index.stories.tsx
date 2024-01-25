@@ -2,25 +2,45 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import Media from '.'
-import { TextArea } from '../../atoms'
+import { Delete, Image, TextArea } from '../../atoms'
 import { ButtonGroup } from '../index'
 // TYPES & INTERFACES
-import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
+import { ButtonGroupProps, MediaProps } from '../../../interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 import imageMocks from '../../atoms/Image/index.mocks.json'
 import buttonGroupMocks from '../ButtonGroup/index.mocks.json'
 
+const buttonGroupConfig = {
+  ...buttonGroupMocks.testing.basicGroup,
+  style: {
+    paddingTop: '10px'
+  }
+} as ButtonGroupProps
+const mediaCompleteConfig = {
+  leftContent: (
+    <Image
+      src={imageMocks.testing.testSrc}
+      fixedSize={'is-128x128'}
+    />
+  ),
+  centerContent: (
+    <React.Fragment>
+      <TextArea />
+      <ButtonGroup {...buttonGroupConfig} />
+    </React.Fragment>
+  ),
+  rightContent: <Delete />
+} as MediaProps
+
 export default {
   title: 'Molecules/Media',
   component: Media,
   ...storybook,
   args: {
-    mediaImage: {
-      src: imageMocks.testing.testSrc
-    },
-    content: testing.basicDumbContent
+    leftContent: mediaCompleteConfig.leftContent,
+    centerContent: testing.longDumbContent
   }
 } as Meta<typeof Media>
 
@@ -30,22 +50,29 @@ export const BasicExample = Template.bind({})
 
 export const WithInputAsContent = Template.bind({})
 WithInputAsContent.args = {
-  content: <TextArea />
+  centerContent: <TextArea />
 }
 
 export const WithAButtonGroup = Template.bind({})
-const buttonGroupConfig = {
-  ...buttonGroupMocks.testing.basicGroup,
-  style: {
-    paddingTop: '10px'
-  }
-} as ButtonGroupProps
 
 WithAButtonGroup.args = {
-  content: (
+  centerContent: mediaCompleteConfig.centerContent
+}
+
+export const WithADeleteButton = Template.bind({})
+WithADeleteButton.args = {
+  ...WithAButtonGroup.args,
+  rightContent: mediaCompleteConfig.rightContent
+}
+
+export const WithMediaComponentInSecondLevel = Template.bind({})
+WithMediaComponentInSecondLevel.args = {
+  centerContent: (
     <React.Fragment>
-      <TextArea />
-      <ButtonGroup {...buttonGroupConfig} />
+      {testing.longDumbContent}
+      <Media {...mediaCompleteConfig} />
+      <Media {...mediaCompleteConfig} />
+      <Media {...mediaCompleteConfig} />
     </React.Fragment>
   )
 }

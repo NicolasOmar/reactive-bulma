@@ -2,16 +2,31 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { MediaProps } from '../../../interfaces/moleculeProps'
+import { MediaSectionType, SingleChildType } from '../../../types/domTypes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { Image } from '../../atoms/index'
+
+const renderMediaSection = (
+  content: SingleChildType | null,
+  position: MediaSectionType,
+  testId: string
+) =>
+  content ? (
+    <section
+      data-testid={`${testId}-${position}`}
+      className={`media-${position}`}
+    >
+      {content}
+    </section>
+  ) : null
 
 const Media: React.FC<MediaProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
-  mediaImage,
-  content = null
+  leftContent = null,
+  centerContent = null,
+  rightContent = null
 }) => {
   const mediaClasses = parseClasses(['media', cssClasses])
   const mediaTestId =
@@ -23,18 +38,9 @@ const Media: React.FC<MediaProps> = ({
       className={mediaClasses}
       style={style ?? undefined}
     >
-      <section
-        data-testid={`${mediaTestId}-left`}
-        className='media-left'
-      >
-        <Image {...mediaImage} />
-      </section>
-      <section
-        data-testid={`${mediaTestId}-content`}
-        className='media-content'
-      >
-        {content ?? null}
-      </section>
+      {renderMediaSection(leftContent, 'left', mediaTestId)}
+      {renderMediaSection(centerContent, 'content', mediaTestId)}
+      {renderMediaSection(rightContent, 'right', mediaTestId)}
     </article>
   )
 }
