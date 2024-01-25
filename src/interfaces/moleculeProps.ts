@@ -12,6 +12,7 @@ import {
   DeleteProps,
   DropdownItemProps,
   IconProps,
+  ImageProps,
   InputProps,
   MenuItemProps,
   PaginationItemProps,
@@ -232,4 +233,11 @@ export interface FooterProps extends ComposedElementProps {
   content: ChildrenType
   /** `Styling` Centers footer¿s content horizontally */
   isContentCentered?: boolean
+}
+
+export interface MediaProps extends ElementProps {
+  /** `Attribute` `Required` Reffers to a designated space for a image located at media's left */
+  mediaImage: ImageProps
+  /** `Attribute` Reffers to the component, list of components or string content that will be shown inside the footer */
+  content?: ChildrenType
 }

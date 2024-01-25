@@ -1,0 +1,13 @@
+{
+  "testing": {
+    "basicTestId": "test-media",
+    "basicTestImageId": "test-media-left",
+    "basicTestContentId": "test-media-content",
+    "basicDumbContent": "Here we go again"
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "The famous media object prevalent in social media interfaces, but useful in any context"
+    }
+  }
+}
