@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.16.0...v2.17.0) (2024-1-25)
+
+
+### Features
+
+* Create component "Media" ([#252](https://github.com/NicolasOmar/reactive-bulma/issues/252)) ([#76](https://github.com/NicolasOmar/reactive-bulma/issues/76)) ([936fa34](https://github.com/NicolasOmar/reactive-bulma/commit/936fa34c9ebaf679c7585ef764a4604988e3a5f3))
+
 # [2.16.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.15.0...v2.16.0) (2024-1-24)
 
 
