@@ -19,3 +19,5 @@ export enum IconSizeEnum {
 }
 
 export type TileContextType = 'is-child' | 'is-parent' | 'is-ancestor'
+
+export type MediaSectionType = 'left' | 'content' | 'right'

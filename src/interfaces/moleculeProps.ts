@@ -233,3 +233,12 @@ export interface FooterProps extends ComposedElementProps {
   /** `Styling` Centers footer¿s content horizontally */
   isContentCentered?: boolean
 }
+
+export interface MediaProps extends ElementProps {
+  /** `Attribute` Reffers to the component or string content that will be shown inside the component's left side */
+  leftContent?: SingleChildType
+  /** `Attribute` Reffers to the component or string content that will be shown inside the component's center */
+  centerContent?: SingleChildType
+  /** `Attribute` Reffers to the component or string content that will be shown inside the component's right side */
+  rightContent?: SingleChildType
+}
