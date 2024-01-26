@@ -1,3 +1,28 @@
+# [3.0.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.17.0...v3.0.0) (2024-1-26)
+
+
+### Bug Fixes
+
+* Refactoring render function for Hero component. Adding better typing ([8989670](https://github.com/NicolasOmar/reactive-bulma/commit/8989670102c47b0628c64ee2e1098746984be2ea))
+* Updating dependencies version ([435cb7f](https://github.com/NicolasOmar/reactive-bulma/commit/435cb7f8ef434052a95283a5b6119fd3b81b5925))
+
+
+### Features
+
+* Create component "Section" ([#253](https://github.com/NicolasOmar/reactive-bulma/issues/253)) ([#77](https://github.com/NicolasOmar/reactive-bulma/issues/77)) ([f872726](https://github.com/NicolasOmar/reactive-bulma/commit/f872726cf39e0bffa3a14fd09c3f75cdda01daa9))
+
+
+### BREAKING CHANGES
+
+* None, All v3-related components added, but no more compexity added.
+
+### Changes made 
+- Create new component `Section`.
+- Small type additions for `Section` and `Hero` components.
+- Refactor of `Hero` section rendering, based on `Section`
+implmentation.
+- Dependencies version update.
+
 # [2.17.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.16.0...v2.17.0) (2024-1-25)
 
 
