@@ -8,7 +8,7 @@ import {
   PanelTabsProps
 } from './moleculeProps'
 // TYPES & INTERFACES
-import { BasicColorType, SizeWithoutNormalType } from '../types/styleTypes'
+import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType } from '../types/domTypes'
 import { TileProps } from './atomProps'
 
@@ -60,7 +60,7 @@ export interface HeroProps extends ElementProps {
   /** `Attribute` Designated section for hero's footer, it will be visible only if container's `size` is setted to `is-fullheight` */
   footer?: ChildrenType
   /** `Styling` Set hero's size */
-  size?: SizeWithoutNormalType | 'is-halfheight' | 'is-fullheight'
+  size?: SizeWithHeightType
   /** `Styling` Color based on bulma's text color tokens */
   color?: BasicColorType
 }
