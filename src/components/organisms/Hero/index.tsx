@@ -2,8 +2,25 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { HeroProps } from '../../../interfaces/organismProps'
+import { ChildrenType, HeroContentType } from '../../../types/domTypes'
+import { SizeWithHeightType } from '../../../types/styleTypes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
+
+const renderHeroSection = (
+  content: ChildrenType | null,
+  type: HeroContentType,
+  testId: string,
+  size: SizeWithHeightType | null
+) =>
+  type === 'body' || size === 'is-fullheight' ? (
+    <section
+      data-testid={`${testId}-${type}`}
+      className={`hero-${type}`}
+    >
+      {content}
+    </section>
+  ) : null
 
 const Hero: React.FC<HeroProps> = ({
   testId = null,
@@ -25,28 +42,9 @@ const Hero: React.FC<HeroProps> = ({
       className={heroClasses}
       style={style ?? undefined}
     >
-      {size === 'is-fullheight' ? (
-        <section
-          data-testid={`${heroTestId}-head`}
-          className='hero-head'
-        >
-          {header}
-        </section>
-      ) : null}
-      <section
-        data-testid={`${heroTestId}-body`}
-        className='hero-body'
-      >
-        {body}
-      </section>
-      {size === 'is-fullheight' ? (
-        <section
-          data-testid={`${heroTestId}-foot`}
-          className='hero-foot'
-        >
-          {footer}
-        </section>
-      ) : null}
+      {renderHeroSection(header, 'head', heroTestId, size)}
+      {renderHeroSection(body, 'body', heroTestId, size)}
+      {renderHeroSection(footer, 'foot', heroTestId, size)}
     </section>
   )
 }

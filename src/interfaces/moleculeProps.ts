@@ -25,7 +25,8 @@ import {
   BreadcrumbSeparatorType,
   ColumnGapType,
   SizeWithoutNormalType,
-  TabsFormatType
+  TabsFormatType,
+  MediumAndLargeSizeType
 } from '../types/styleTypes'
 import {
   ChildrenType,
@@ -75,7 +76,7 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   alignment?: RightCenteredAlignType | null
   /** `Styling` Will adjust element position on screen */
   separator?: BreadcrumbSeparatorType | null
-  /** `Styling` Set button's size on bulma's size tokens */
+  /** `Styling` Set breadcrumb's size on bulma's size tokens */
   size?: SizeWithoutNormalType
 }
 
@@ -241,4 +242,11 @@ export interface MediaProps extends ElementProps {
   centerContent?: SingleChildType
   /** `Attribute` Reffers to the component or string content that will be shown inside the component's right side */
   rightContent?: SingleChildType
+}
+
+export interface SectionProps extends ElementProps {
+  /** `Attribute` `Required` Reffers to the component or string content that will be shown inside the section */
+  content: SingleChildType
+  /** `Styling` Set button's size on bulma's size tokens */
+  size?: MediumAndLargeSizeType
 }

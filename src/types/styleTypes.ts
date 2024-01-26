@@ -101,6 +101,13 @@ export type ElementSizeType =
 
 export type SizeWithoutNormalType = Exclude<ElementSizeType, 'is-normal'>
 
+export type SizeWithHeightType =
+  | SizeWithoutNormalType
+  | 'is-halfheight'
+  | 'is-fullheight'
+
+export type MediumAndLargeSizeType = Exclude<SizeWithoutNormalType, 'is-small'>
+
 export type IconColorModeType = 'light' | 'dark'
 
 export type ColumnGapType =
