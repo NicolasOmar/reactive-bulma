@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v3.0.0...v3.1.0) (2024-1-29)
+
+
+### Features
+
+* Create component "NavBar" ([#255](https://github.com/NicolasOmar/reactive-bulma/issues/255)) ([#81](https://github.com/NicolasOmar/reactive-bulma/issues/81)) ([859048d](https://github.com/NicolasOmar/reactive-bulma/commit/859048d066b69a40a9d0d27e58e8b3d509f5100d))
+
 # [3.0.0](https://github.com/NicolasOmar/reactive-bulma/compare/v2.17.0...v3.0.0) (2024-1-26)
 
 
