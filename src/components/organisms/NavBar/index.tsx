@@ -76,7 +76,10 @@ const NavBar: React.FC<NavBarProps> = ({
       style={style ?? undefined}
     >
       {brandConfig ? (
-        <section className='navbar-brand'>
+        <section
+          data-testid='navbar-brand'
+          className='navbar-brand'
+        >
           {<NavBarBrand {...brandConfig} />}
         </section>
       ) : null}

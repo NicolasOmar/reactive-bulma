@@ -1,6 +1,9 @@
 {
   "testing": {
     "basicTestId": "test-navbar",
+    "basicBrandTestId": "test-navbar",
+    "basicStartTestId": "test-navbar",
+    "basicEndTestId": "test-navbar",
     "testClasses": [
       {
         "name": "fixedPosition",
@@ -31,12 +34,7 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
-      "docs": {
-        "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
-        }
-      }
+      "componentSubtitle": "A responsive horizontal navbar that can support images, links, buttons, and dropdowns"
     }
   }
 }
