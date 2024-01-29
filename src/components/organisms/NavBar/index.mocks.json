@@ -1,0 +1,40 @@
+{
+  "testing": {
+    "basicTestId": "test-navbar",
+    "basicBrandTestId": "test-navbar",
+    "basicStartTestId": "test-navbar",
+    "basicEndTestId": "test-navbar",
+    "testClasses": [
+      {
+        "name": "fixedPosition",
+        "value": "is-right",
+        "result": "is-right"
+      },
+      {
+        "name": "color",
+        "value": "is-danger",
+        "result": "is-danger"
+      },
+      {
+        "name": "isTransparent",
+        "value": true,
+        "result": "is-transparent"
+      },
+      {
+        "name": "isSpaced",
+        "value": true,
+        "result": "is-spaced"
+      },
+      {
+        "name": "hasShadow",
+        "value": true,
+        "result": "has-shadow"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A responsive horizontal navbar that can support images, links, buttons, and dropdowns"
+    }
+  }
+}

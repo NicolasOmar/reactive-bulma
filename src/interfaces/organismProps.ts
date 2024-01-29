@@ -4,13 +4,15 @@ import { ElementProps } from './commonProps'
 import {
   InputControlProps,
   LevelItemProps,
+  NavBarBrandProps,
+  NavBarDropdownProps,
   PanelBlockProps,
   PanelTabsProps
 } from './moleculeProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
-import { ChildrenType } from '../types/domTypes'
-import { TileProps } from './atomProps'
+import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
+import { NavBarItemProps, TileProps } from './atomProps'
 
 export interface FormFieldHelperProps {
   text?: string
@@ -70,4 +72,28 @@ export interface TileGroupProps
     Pick<TileProps, 'context' | 'isVertical' | 'size'> {
   /** `Attribute` `Required` A list of `Title` configurations that will be displayed in a grid mode on the screen */
   groupConfig: TileProps[]
+}
+
+export interface NavBarMenuProps {
+  itemList: Array<NavBarItemProps | NavBarDropdownProps>
+  showInMobile?: boolean
+}
+
+export interface NavBarProps extends ElementProps {
+  /** `Attribute` Configuration object for navbar's left section, it needs of a `NavBarBrand` object to be displayed at NavBar's start */
+  brandConfig?: NavBarBrandProps
+  /** `Attribute` Configuration object for navbar's left section, it needs of a list of `NavBarItem` or `NavBarDropdown` objects to be displayed */
+  itemsAtStart?: NavBarMenuProps
+  /** `Attribute` Configuration object for navbar's right section, it needs of a list of `NavBarItem` or `NavBarDropdown` objects to be displayed */
+  itemsAtEnd?: NavBarMenuProps
+  /** `Styling` Sets navbar's position at screen's top or bottom */
+  fixedPosition?: NavBarFixedPositionType
+  /** `Styling` Color based on bulma's text color tokens */
+  color?: BasicColorType
+  /** `Styling` Sets navbar's color as transparent */
+  isTransparent?: boolean
+  /** `Styling` Adds a small padding around the navbar */
+  isSpaced?: boolean
+  /** `Styling` Adds a small shadow on navbar's bottom */
+  hasShadow?: boolean
 }

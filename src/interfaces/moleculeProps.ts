@@ -12,8 +12,10 @@ import {
   DeleteProps,
   DropdownItemProps,
   IconProps,
+  ImageProps,
   InputProps,
   MenuItemProps,
+  NavBarItemProps,
   PaginationItemProps,
   TabItemProps,
   TileProps
@@ -26,7 +28,8 @@ import {
   ColumnGapType,
   SizeWithoutNormalType,
   TabsFormatType,
-  MediumAndLargeSizeType
+  MediumAndLargeSizeType,
+  RightLeftAlignType
 } from '../types/styleTypes'
 import {
   ChildrenType,
@@ -249,4 +252,32 @@ export interface SectionProps extends ElementProps {
   content: SingleChildType
   /** `Styling` Set button's size on bulma's size tokens */
   size?: MediumAndLargeSizeType
+}
+
+export interface NavBarDropdownProps extends ComposedElementProps {
+  /** `Attribute` `Required` It will show the presentation text to be clicked or hovered in order to display its menu */
+  text: string
+  /** `Attribute` `Required` A list of configuration objects that will render in dropdown's menu. Those can be items or dividers */
+  items: Array<NavBarItemProps | 'divider'>
+  /** `Styling` Used for `NavBar` styling purpose only. Will set the dropdown on a specific position based on the proveded value */
+  position?: RightLeftAlignType
+  /** `Styling` Used to display dropdown's menu when user clicks on its text */
+  isActive?: boolean
+  /** `Styling` Similar to `isActive`, but will display when user hovers its pointer on its text */
+  isHoverable?: boolean
+  /** `Styling` Sets dropdown's menu on top of the text instead default styling */
+  hasDropdownUp?: boolean
+  /** `Styling` Sets dropdown's menu design like a box, also adds some animation when its diplayed */
+  hasBoxedMenu?: boolean
+}
+
+interface BrandConfigProps extends Omit<NavBarItemProps, 'children'> {
+  children: ImageProps
+}
+
+export interface NavBarBrandProps extends ElementProps {
+  /** `Attribute` `Required` Configuration object to inject a NavBarItem with a Image configuration as its children */
+  brandConfig: BrandConfigProps
+  /** `Styling` It sets brand's burger button as active (changing looks from a burger to a cross) */
+  isBurgerActive?: boolean
 }

@@ -23,3 +23,5 @@ export type TileContextType = 'is-child' | 'is-parent' | 'is-ancestor'
 export type HeroContentType = 'head' | 'body' | 'foot'
 
 export type MediaSectionType = 'left' | 'content' | 'right'
+
+export type NavBarFixedPositionType = 'top' | 'bottom'

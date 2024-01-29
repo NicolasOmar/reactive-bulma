@@ -1,0 +1,25 @@
+{
+  "testing": {
+    "basicTestId": "test-navbar-item",
+    "testClasses": [
+      {
+        "name": "isActive",
+        "value": true,
+        "result": "is-active"
+      }
+    ],
+    "testBaseConfig": {
+      "children": "Hello There"
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Is a repeatable element that can be: a navigation link, a container for the brand logo, the parent of a dropdown menu, a child of a navbar dropdown or a container for almost anything you want, like a field",
+      "docs": {
+        "description": {
+          "component": "It can either be a direct child of either: `navbar`, `navbar-brand`, `navbar-start`, `navbar-end` or `navbar-dropdown`."
+        }
+      }
+    }
+  }
+}
