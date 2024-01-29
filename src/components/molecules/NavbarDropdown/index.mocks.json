@@ -26,8 +26,12 @@
     "testBaseConfig": {
       "text": "Hello There",
       "items": [
-        { "children": "General" },
-        { "children": "Kenobi" }
+        {
+          "children": "General"
+        },
+        {
+          "children": "Kenobi"
+        }
       ]
     }
   },
