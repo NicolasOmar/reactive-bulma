@@ -12,6 +12,7 @@ import {
   DeleteProps,
   DropdownItemProps,
   IconProps,
+  ImageProps,
   InputProps,
   MenuItemProps,
   NavbarItemProps,
@@ -268,4 +269,15 @@ export interface NavbarDropdownProps extends ComposedElementProps {
   hasDropdownUp?: boolean
   /** `Styling` Sets dropdown's menu design like a box, also adds some animation when its diplayed */
   hasBoxedMenu?: boolean
+}
+
+interface BrandConfigProps extends Omit<NavbarItemProps, 'children'> {
+  children: ImageProps
+}
+
+export interface NavBarBrandProps extends ElementProps {
+  /** `Attribute` `Required` Configuration object to inject a NavbarItem with a Image configuration as its children */
+  brandConfig: BrandConfigProps
+  /** `Styling` It sets brand's burger button as active (changing looks from a burger to a cross) */
+  isBurgerActive?: boolean
 }
