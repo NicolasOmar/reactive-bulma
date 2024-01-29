@@ -27,6 +27,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
       data-testid={navbarItemTestId}
       className={navbarItemClasses}
       style={style ?? undefined}
+      aria-hidden='true'
       onClick={onClick ?? undefined}
     >
       {children}

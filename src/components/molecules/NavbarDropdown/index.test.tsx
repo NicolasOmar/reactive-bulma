@@ -25,17 +25,18 @@ describe('NavbarDropdown', () => {
         .replace(/navbar-item|has-dropdown|is-|has-/gm, '')
         .replace(/-up/gm, 'up')}`
       const classTestObject: NavbarDropdownProps = {
-        ...testBaseConfig,
+        ...testBaseConfig.items.map((item, i) => (i % 2 ? 'divider' : item)),
+        items: testBaseConfig.items.map((item, i) =>
+          i % 2 ? 'divider' : item
+        ),
         [name]: value
       }
 
       render(<NavbarDropdown {...classTestObject} />)
 
-      const testStylingPropValueNavbarDropdownGroup =
+      const testStylingPropValueNavbarDropdown =
         screen.getByTestId(testIdWithClass)
-      expect(testStylingPropValueNavbarDropdownGroup.className).toContain(
-        result
-      )
+      expect(testStylingPropValueNavbarDropdown.className).toContain(result)
       cleanup()
     })
   })
