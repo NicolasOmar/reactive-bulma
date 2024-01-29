@@ -4,13 +4,15 @@ import { ElementProps } from './commonProps'
 import {
   InputControlProps,
   LevelItemProps,
+  NavBarBrandProps,
+  NavbarDropdownProps,
   PanelBlockProps,
   PanelTabsProps
 } from './moleculeProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
-import { ChildrenType } from '../types/domTypes'
-import { TileProps } from './atomProps'
+import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
+import { NavbarItemProps, TileProps } from './atomProps'
 
 export interface FormFieldHelperProps {
   text?: string
@@ -70,4 +72,20 @@ export interface TileGroupProps
     Pick<TileProps, 'context' | 'isVertical' | 'size'> {
   /** `Attribute` `Required` A list of `Title` configurations that will be displayed in a grid mode on the screen */
   groupConfig: TileProps[]
+}
+
+export interface NavBarMenuProps {
+  itemList: Array<NavbarItemProps | NavbarDropdownProps>
+  showInMobile?: boolean
+}
+
+export interface NavBarProps extends ElementProps {
+  brandConfig?: NavBarBrandProps
+  itemsAtStart?: NavBarMenuProps
+  itemsAtEnd?: NavBarMenuProps
+  fixedPosition?: NavBarFixedPositionType
+  color?: BasicColorType
+  isTransparent?: boolean
+  isSpaced?: boolean
+  hasShadow?: boolean
 }

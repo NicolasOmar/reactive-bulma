@@ -1,0 +1,42 @@
+{
+  "testing": {
+    "basicTestId": "test-navbar",
+    "testClasses": [
+      {
+        "name": "fixedPosition",
+        "value": "is-right",
+        "result": "is-right"
+      },
+      {
+        "name": "color",
+        "value": "is-danger",
+        "result": "is-danger"
+      },
+      {
+        "name": "isTransparent",
+        "value": true,
+        "result": "is-transparent"
+      },
+      {
+        "name": "isSpaced",
+        "value": true,
+        "result": "is-spaced"
+      },
+      {
+        "name": "hasShadow",
+        "value": true,
+        "result": "has-shadow"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}
