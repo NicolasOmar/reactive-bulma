@@ -5,14 +5,14 @@ import {
   InputControlProps,
   LevelItemProps,
   NavBarBrandProps,
-  NavbarDropdownProps,
+  NavBarDropdownProps,
   PanelBlockProps,
   PanelTabsProps
 } from './moleculeProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
-import { NavbarItemProps, TileProps } from './atomProps'
+import { NavBarItemProps, TileProps } from './atomProps'
 
 export interface FormFieldHelperProps {
   text?: string
@@ -75,7 +75,7 @@ export interface TileGroupProps
 }
 
 export interface NavBarMenuProps {
-  itemList: Array<NavbarItemProps | NavbarDropdownProps>
+  itemList: Array<NavBarItemProps | NavBarDropdownProps>
   showInMobile?: boolean
 }
 

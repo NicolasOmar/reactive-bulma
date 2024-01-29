@@ -1,14 +1,27 @@
 import React from 'react'
 // COMPONENTS
+import { NavBarItem } from '../../atoms'
 // TYPES & INTERFACES
-import { NavbarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarItemProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { NavbarItem } from '../../atoms'
-import { NavbarItemProps } from '../../../interfaces/atomProps'
 import { generateKey } from '../../../functions/generators'
 
-const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
+const renderDropdownItem = (dropdownItemConfig: NavBarItemProps | 'divider') =>
+  dropdownItemConfig === 'divider' ? (
+    <hr
+      key={`navbar-dropdown-divider-${generateKey()}`}
+      className='navbar-divider'
+    />
+  ) : (
+    <NavBarItem
+      key={`navbar-dropdown-item-${generateKey()}`}
+      {...dropdownItemConfig}
+    />
+  )
+
+const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
   testId = null,
   containerTestId = null,
   cssClasses = null,
@@ -23,7 +36,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
   hasDropdownUp = false,
   hasBoxedMenu = false
 }) => {
-  const navbarDropdownContainerClasses = parseClasses([
+  const navBarDropdownContainerClasses = parseClasses([
     'navbar-item',
     'has-dropdown',
     position,
@@ -32,54 +45,44 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
     hasDropdownUp ? 'has-dropdown-up' : null,
     containerCssClasses
   ])
-  const navbarDropdownContainerTestId =
+  const navBarDropdownContainerTestId =
     containerTestId ??
     parseTestId({
       tag: 'navbar-dropdown-container',
-      parsedClasses: navbarDropdownContainerClasses,
+      parsedClasses: navBarDropdownContainerClasses,
       rules: [
         { regExp: /navbar-item|has-dropdown/gm, replacer: '' },
         { regExp: /is-|has-/gm, replacer: '-' }
       ]
     })
-  const navbarDropdownClasses = parseClasses([
+  const navBarDropdownClasses = parseClasses([
     'navbar-dropdown',
     hasBoxedMenu ? 'is-boxed' : null,
     cssClasses
   ])
-  const navbarDropdownTestId =
+  const navBarDropdownTestId =
     testId ??
     parseTestId({
       tag: 'navbar-dropdown',
-      parsedClasses: navbarDropdownClasses
+      parsedClasses: navBarDropdownClasses
     })
-
-  const renderDropdownItem = (
-    dropdownItemConfig: NavbarItemProps | 'divider'
-  ) =>
-    dropdownItemConfig === 'divider' ? (
-      <hr
-        key={`navbar-dropdown-divider-${generateKey()}`}
-        className='navbar-divider'
-      />
-    ) : (
-      <NavbarItem
-        key={`navbar-dropdown-item-${generateKey()}`}
-        {...dropdownItemConfig}
-      />
-    )
 
   return (
     <section
-      data-testid={navbarDropdownContainerTestId}
-      className={navbarDropdownContainerClasses}
+      data-testid={navBarDropdownContainerTestId}
+      className={navBarDropdownContainerClasses}
       style={containerStyle ?? undefined}
     >
-      <a className='navbar-link'>{text}</a>
+      <a
+        className='navbar-link'
+        aria-hidden='true'
+      >
+        {text}
+      </a>
 
       <section
-        data-testid={navbarDropdownTestId}
-        className={navbarDropdownClasses}
+        data-testid={navBarDropdownTestId}
+        className={navBarDropdownClasses}
         style={style ?? undefined}
       >
         {items.map(renderDropdownItem)}
@@ -88,4 +91,4 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
   )
 }
 
-export default NavbarDropdown
+export default NavBarDropdown

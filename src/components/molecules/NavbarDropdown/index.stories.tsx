@@ -1,9 +1,9 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
-import NavbarDropdown from '.'
+import NavBarDropdown from '.'
 // TYPES & INTERFACES
-import { NavbarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 import { createObjArray } from '../../../functions/generators'
 // MOCKS
@@ -12,17 +12,17 @@ import { storybook, testing } from './index.mocks.json'
 const itemListWithDividers = createObjArray({
   numberOfItems: 5,
   externalParser: i => ({ children: `Dropdown item #${++i}` })
-}) as NavbarItemProps[]
+}) as NavBarItemProps[]
 
 export default {
-  title: 'Molecules/NavbarDropdown',
-  component: NavbarDropdown,
+  title: 'Molecules/NavBarDropdown',
+  component: NavBarDropdown,
   ...storybook,
   args: testing.testBaseConfig
-} as Meta<typeof NavbarDropdown>
+} as Meta<typeof NavBarDropdown>
 
-const Template: StoryFn<typeof NavbarDropdown> = args => (
-  <NavbarDropdown {...args} />
+const Template: StoryFn<typeof NavBarDropdown> = args => (
+  <NavBarDropdown {...args} />
 )
 
 export const BasicExample = Template.bind({})

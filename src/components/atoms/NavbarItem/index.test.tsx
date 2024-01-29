@@ -2,18 +2,18 @@ import React from 'react'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
-import NavbarItem from '.'
+import NavBarItem from '.'
 // TYPES & INTERFACES
-import { NavbarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
 
-describe('NavbarItem', () => {
+describe('NavBarItem', () => {
   const { basicTestId, testBaseConfig, testClasses } = testing
 
   test('Should render the component', () => {
-    render(<NavbarItem {...testBaseConfig} />)
+    render(<NavBarItem {...testBaseConfig} />)
     const testNavbarItem = screen.getByTestId(basicTestId)
 
     expect(testNavbarItem).toBeInTheDocument()
@@ -25,12 +25,12 @@ describe('NavbarItem', () => {
         /is-|has-/gm,
         ''
       )}`
-      const classTestObject: NavbarItemProps = {
+      const classTestObject: NavBarItemProps = {
         ...testBaseConfig,
         [name]: value
       }
 
-      render(<NavbarItem {...classTestObject} />)
+      render(<NavBarItem {...classTestObject} />)
 
       const testStylingPropValueNavbarItemGroup =
         screen.getByTestId(testIdWithClass)
@@ -45,7 +45,7 @@ describe('NavbarItem', () => {
       onClick: jest.fn()
     }
 
-    render(<NavbarItem {...clickeableConfig} />)
+    render(<NavBarItem {...clickeableConfig} />)
     const clickInput = screen.getByTestId(basicTestId)
 
     fireEvent.click(clickInput)

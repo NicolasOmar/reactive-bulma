@@ -1,19 +1,19 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
-import NavbarItem from '.'
+import NavBarItem from '.'
 // TYPES & INTERFACES
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 
 export default {
-  title: 'Atoms/NavbarItem',
-  component: NavbarItem,
+  title: 'Atoms/NavBarItem',
+  component: NavBarItem,
   ...storybook,
   args: testing.testBaseConfig
-} as Meta<typeof NavbarItem>
+} as Meta<typeof NavBarItem>
 
-const Template: StoryFn<typeof NavbarItem> = args => <NavbarItem {...args} />
+const Template: StoryFn<typeof NavBarItem> = args => <NavBarItem {...args} />
 
 export const BasicExample = Template.bind({})

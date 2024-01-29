@@ -362,9 +362,9 @@ export interface TileProps extends ElementProps {
   isVertical?: boolean
 }
 
-export interface NavbarItemProps extends ElementProps, ClickeableProps {
+export interface NavBarItemProps extends ElementProps, ClickeableProps {
   /** `Attribute` `Required` Reffers to the component or string that will be shown inside the item */
   children: SingleChildType
-  /** `Styling` Used for `NavbarDropdown` styling purpose only. Will mark the item as the one selected among its group */
+  /** `Styling` Used for `NavBarDropdown` styling purpose only. Will mark the item as the one selected among its group */
   isActive?: boolean
 }

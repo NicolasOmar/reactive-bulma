@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { NavbarItem } from '../../atoms'
-import { NavBarBrand, NavbarDropdown } from '../../molecules'
+import { NavBarItem } from '../../atoms'
+import { NavBarBrand, NavBarDropdown } from '../../molecules'
 // TYPES & INTERFACES
 import { NavBarMenuProps, NavBarProps } from '../../../interfaces/organismProps'
-import { NavbarItemProps } from '../../../interfaces/atomProps'
-import { NavbarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarItemProps } from '../../../interfaces/atomProps'
+import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { generateKey } from '../../../functions/generators'
@@ -21,15 +21,15 @@ const renderNavBarMenuSection = (
       className={`navbar-${menuSection}`}
     >
       {menuSectionConfig.itemList.map(itemConfig =>
-        (itemConfig as NavbarItemProps).children !== undefined ? (
-          <NavbarItem
+        (itemConfig as NavBarItemProps).children !== undefined ? (
+          <NavBarItem
             key={`navbar-section${menuSection}-${generateKey()}`}
-            {...(itemConfig as NavbarItemProps)}
+            {...(itemConfig as NavBarItemProps)}
           />
         ) : (
-          <NavbarDropdown
+          <NavBarDropdown
             key={`navbar-section${menuSection}-${generateKey()}`}
-            {...(itemConfig as NavbarDropdownProps)}
+            {...(itemConfig as NavBarDropdownProps)}
           />
         )
       )}

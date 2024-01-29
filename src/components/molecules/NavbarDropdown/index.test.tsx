@@ -2,18 +2,18 @@ import React from 'react'
 import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
-import NavbarDropdown from '.'
+import NavBarDropdown from '.'
 // TYPES & INTERFACES
-import { NavbarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
 
-describe('NavbarDropdown', () => {
+describe('NavBarDropdown', () => {
   const { basicTestId, testClasses, testBaseConfig } = testing
 
   test('Should render the component', () => {
-    render(<NavbarDropdown {...testBaseConfig} />)
+    render(<NavBarDropdown {...testBaseConfig} />)
     const testNavbarDropdown = screen.getByTestId(basicTestId)
 
     expect(testNavbarDropdown).toBeInTheDocument()
@@ -24,15 +24,15 @@ describe('NavbarDropdown', () => {
       const testIdWithClass = `${basicTestId}-${result
         .replace(/navbar-item|has-dropdown|is-|has-/gm, '')
         .replace(/-up/gm, 'up')}`
-      const classTestObject: NavbarDropdownProps = {
-        ...testBaseConfig.items.map((item, i) => (i % 2 ? 'divider' : item)),
+      const classTestObject: NavBarDropdownProps = {
+        ...testBaseConfig,
         items: testBaseConfig.items.map((item, i) =>
           i % 2 ? 'divider' : item
         ),
         [name]: value
       }
 
-      render(<NavbarDropdown {...classTestObject} />)
+      render(<NavBarDropdown {...classTestObject} />)
 
       const testStylingPropValueNavbarDropdown =
         screen.getByTestId(testIdWithClass)

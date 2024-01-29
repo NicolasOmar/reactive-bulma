@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { NavbarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const NavbarItem: React.FC<NavbarItemProps> = ({
+const NavBarItem: React.FC<NavBarItemProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
@@ -13,19 +13,19 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
   isActive = false,
   onClick = null
 }) => {
-  const navbarItemClasses = parseClasses([
+  const navBarItemClasses = parseClasses([
     'navbar-item',
     isActive ? 'is-active' : null,
     cssClasses
   ])
-  const navbarItemTestId =
+  const navBarItemTestId =
     testId ??
-    parseTestId({ tag: 'navbar-item', parsedClasses: navbarItemClasses })
+    parseTestId({ tag: 'navbar-item', parsedClasses: navBarItemClasses })
 
   return (
     <a
-      data-testid={navbarItemTestId}
-      className={navbarItemClasses}
+      data-testid={navBarItemTestId}
+      className={navBarItemClasses}
       style={style ?? undefined}
       aria-hidden='true'
       onClick={onClick ?? undefined}
@@ -35,4 +35,4 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
   )
 }
 
-export default NavbarItem
+export default NavBarItem

@@ -15,7 +15,7 @@ import {
   ImageProps,
   InputProps,
   MenuItemProps,
-  NavbarItemProps,
+  NavBarItemProps,
   PaginationItemProps,
   TabItemProps,
   TileProps
@@ -254,11 +254,11 @@ export interface SectionProps extends ElementProps {
   size?: MediumAndLargeSizeType
 }
 
-export interface NavbarDropdownProps extends ComposedElementProps {
+export interface NavBarDropdownProps extends ComposedElementProps {
   /** `Attribute` `Required` It will show the presentation text to be clicked or hovered in order to display its menu */
   text: string
   /** `Attribute` `Required` A list of configuration objects that will render in dropdown's menu. Those can be items or dividers */
-  items: Array<NavbarItemProps | 'divider'>
+  items: Array<NavBarItemProps | 'divider'>
   /** `Styling` Used for `NavBar` styling purpose only. Will set the dropdown on a specific position based on the proveded value */
   position?: RightLeftAlignType
   /** `Styling` Used to display dropdown's menu when user clicks on its text */
@@ -271,12 +271,12 @@ export interface NavbarDropdownProps extends ComposedElementProps {
   hasBoxedMenu?: boolean
 }
 
-interface BrandConfigProps extends Omit<NavbarItemProps, 'children'> {
+interface BrandConfigProps extends Omit<NavBarItemProps, 'children'> {
   children: ImageProps
 }
 
 export interface NavBarBrandProps extends ElementProps {
-  /** `Attribute` `Required` Configuration object to inject a NavbarItem with a Image configuration as its children */
+  /** `Attribute` `Required` Configuration object to inject a NavBarItem with a Image configuration as its children */
   brandConfig: BrandConfigProps
   /** `Styling` It sets brand's burger button as active (changing looks from a burger to a cross) */
   isBurgerActive?: boolean
