@@ -23,7 +23,8 @@ import {
   DropdownItemType,
   InputType,
   ChildrenType,
-  TileContextType
+  TileContextType,
+  SingleChildType
 } from '../types/domTypes'
 
 export interface ColumnProps
@@ -359,4 +360,11 @@ export interface TileProps extends ElementProps {
   color?: BasicColorType
   /** `Styling` Used for hierarchy level as ancestor or parent. It selects its children in a vertical format (like a column) */
   isVertical?: boolean
+}
+
+export interface NavbarItemProps extends ElementProps, ClickeableProps {
+  /** `Attribute` Reffers to the component or string that will be shown inside the item */
+  children: SingleChildType
+  /** `Styling` Used for `NavbarDropdown` styling purpose only. Will mark the item as the one selected among its group */
+  isActive?: boolean
 }
