@@ -1,3 +1,15 @@
+# [3.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v3.1.0...v3.2.0) (2024-1-30)
+
+
+### Bug Fixes
+
+* Updating dependencies versions ([f4eb36e](https://github.com/NicolasOmar/reactive-bulma/commit/f4eb36e272556dc32e78b447ae7f268a33cf9c6b))
+
+
+### Features
+
+* Create component "Card" ([#256](https://github.com/NicolasOmar/reactive-bulma/issues/256)) ([#83](https://github.com/NicolasOmar/reactive-bulma/issues/83)) ([89d0730](https://github.com/NicolasOmar/reactive-bulma/commit/89d0730fc66d20db956e1a2c845bcac7888b4a40))
+
 # [3.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v3.0.0...v3.1.0) (2024-1-29)
 
 
