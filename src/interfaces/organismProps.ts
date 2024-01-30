@@ -1,5 +1,5 @@
 // COMMON PROPS
-import { ElementProps } from './commonProps'
+import { ClickeableProps, ElementProps } from './commonProps'
 // COMPONENT PROPS
 import {
   InputControlProps,
@@ -9,10 +9,10 @@ import {
   PanelBlockProps,
   PanelTabsProps
 } from './moleculeProps'
+import { ImageProps, NavBarItemProps, TileProps } from './atomProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
-import { NavBarItemProps, TileProps } from './atomProps'
 
 export interface FormFieldHelperProps {
   text?: string
@@ -96,4 +96,19 @@ export interface NavBarProps extends ElementProps {
   isSpaced?: boolean
   /** `Styling` Adds a small shadow on navbar's bottom */
   hasShadow?: boolean
+}
+
+export interface CardFooterProps extends ClickeableProps {
+  text: string
+}
+
+export interface CardProps extends ElementProps {
+  /** `Attribute` It will shot a text on card's top, just a paragraph */
+  headerText?: string
+  /** `Attribute` A single configuration object that will render an `Image` component */
+  image?: ImageProps
+  /** `Attribute` `Required` Deisgnated section where you can include a string, a single or list of components (each one separated in its own `content` section) */
+  content: ChildrenType
+  /** `Attribute` A list of footer links that will be rendered on card's bottom, below its content */
+  footerLinks?: CardFooterProps[]
 }
