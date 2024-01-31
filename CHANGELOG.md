@@ -1,3 +1,24 @@
+# [4.0.0](https://github.com/NicolasOmar/reactive-bulma/compare/v3.2.0...v4.0.0) (2024-1-31)
+
+
+### Bug Fixes
+
+* Updating depdencies version. Updating README and related files for post-v4.0.0 commits ([71032b1](https://github.com/NicolasOmar/reactive-bulma/commit/71032b10709761bb8869caf42c297ac6ce7d4813))
+
+
+### Features
+
+* Create component "Table" ([#257](https://github.com/NicolasOmar/reactive-bulma/issues/257)) ([#80](https://github.com/NicolasOmar/reactive-bulma/issues/80)) ([6517dac](https://github.com/NicolasOmar/reactive-bulma/commit/6517dac93a27fd20b57df22eb6724bde6c3dd309))
+
+
+### BREAKING CHANGES
+
+* None, All v4 related components added, but no more compexity added.
+
+### Changes made 
+Explain what you made to present the following solution on this pull
+request.
+
 # [3.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v3.1.0...v3.2.0) (2024-1-30)
 
 
