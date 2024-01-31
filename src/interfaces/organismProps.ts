@@ -7,9 +7,15 @@ import {
   NavBarBrandProps,
   NavBarDropdownProps,
   PanelBlockProps,
-  PanelTabsProps
+  PanelTabsProps,
+  TableRowProps
 } from './moleculeProps'
-import { ImageProps, NavBarItemProps, TileProps } from './atomProps'
+import {
+  ImageProps,
+  NavBarItemProps,
+  TableHeadCellProps,
+  TileProps
+} from './atomProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
@@ -111,4 +117,25 @@ export interface CardProps extends ElementProps {
   content: ChildrenType
   /** `Attribute` A list of footer links that will be rendered on card's bottom, below its content */
   footerLinks?: CardFooterProps[]
+}
+
+export interface TableProps extends ElementProps {
+  /** `Attribute` `Required` Configuration object that will display table's head */
+  head: TableHeadCellProps[]
+  /** `Attribute` `Required` Configuration object that will display table's body */
+  body: TableRowProps[]
+  /** `Attribute` Configuration object that will display table's foot */
+  foot?: TableHeadCellProps[]
+  /** `Styling` It will add a Bordered styling to the table. It can be combined with other mentioned styling properties. */
+  isBordered?: boolean
+  /** `Styling` It will add a Striped styling to the table. It can be combined with other mentioned styling properties. */
+  isStriped?: boolean
+  /** `Styling` It will add a Narrow styling to the table. It can be combined with other mentioned styling properties. */
+  isNarrow?: boolean
+  /** `Styling` It will add a Hoverable styling to the table. It can be combined with other mentioned styling properties. */
+  isHoverable?: boolean
+  /** `Styling` It will add a Fullwidth styling to the table. It can be combined with other mentioned styling properties. */
+  isFullwidth?: boolean
+  /** `Styling` Will create a container around the table in order to make it scrollable */
+  isContained?: boolean
 }

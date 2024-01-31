@@ -1,0 +1,46 @@
+{
+  "testing": {
+    "basicTestId": "test-table",
+    "basicHeadTestId": "test-table-head",
+    "basicBodyTestId": "test-table-body",
+    "basicFootTestId": "test-table-foot",
+    "basicContainerTestId": "test-table-container",
+    "testClasses": [
+      {
+        "name": "isBordered",
+        "value": true,
+        "result": "is-bordered"
+      },
+      {
+        "name": "isStriped",
+        "value": true,
+        "result": "is-striped"
+      },
+      {
+        "name": "isNarrow",
+        "value": true,
+        "result": "is-narrow"
+      },
+      {
+        "name": "isHoverable",
+        "value": true,
+        "result": "is-hoverable"
+      },
+      {
+        "name": "isFullwidth",
+        "value": true,
+        "result": "is-fullwidth"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "The inevitable HTML table, with special case cells",
+      "docs": {
+        "description": {
+          "component": "You can create a Bulma table simply by attaching a single table CSS class on a `<table>` HTML element with the following structure: `<table class='table'>` as the main container, `thead` the optional top part of the table, `tfoot` the optional bottom part of the table, `tbody` the main content of the table, `tr` each table row, `th` a table cell heading and `td` a table cell."
+        }
+      }
+    }
+  }
+}

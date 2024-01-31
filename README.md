@@ -31,7 +31,12 @@ Component library based on React, Bulma, Typescript and Rollup
 
 ## Purpose
 
-After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I started this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
+After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I began this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
+
+Now I have finished (Jan 31th) [the last story](https://github.com/NicolasOmar/reactive-bulma/issues/80) related to my proposed roadmap; I will change the repo's objectives to the following:
+- Check every new issues raised by users who found new bugs (of any kind) or related to new components or feature improvements of the existing ones.
+- Update dependencies every week, creating alongside its related PR, branch, and PR to maintain track of those updates. 
+- Include ReactiveBulma's components as part of my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I now have code that I can get rid of and, in that process, find new opportunities to enhance components' usability.
 
 ## Status
 
@@ -119,15 +124,15 @@ After studying [an Udemy course about Typescript](https://github.com/NicolasOmar
 
 Several quick start options are available:
 
-- Clone the repo: `git clone https://github.com/NicolasOmar/reactive-bulma.git`
+- Clone the repo: `git clone https://github.com/NicolasOmar/reactive-bulma.git`.
 - Install with [npm](https://www.npmjs.com/package/reactive-bulma): `npm install reactive-bulma@latest`
-  - Before cloning this repo, I recommend installing [Node](https://nodejs.org/en/download/) `>=18` to install packages.
+  - Before cloning this repo, I recommend installing [Node](https://nodejs.org/en/download/) `>=20.10.0` to install packages.
 
 ## Folder structure
 
 In case you have cloned the repo, it will show you the following folders:
-- `_templates:` Dedicated to [Hygen](https://www.hygen.io/) configuration and implementation files. Dedicated to create new components from customizable templates
-- `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge.commits like unit test coverage collection.
+- `_templates:` Dedicated to [Hygen](https://www.hygen.io/) configuration and implementation files. Dedicated to creating new components from customizable templates.
+- `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge. commits like unit test coverage collection.
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
 - `src:`
@@ -135,21 +140,21 @@ In case you have cloned the repo, it will show you the following folders:
     - `atoms` (from `v1.0.0`).
     - `molecules` (from `v2.0.0`).
     - `organisms` (from `v3.0.0`).
-  - `design`: Location of common design tokens (coded on `.mdx` files) which are displayed above components sections in storybook's instance.
+  - `design`: Location of common design tokens (coded on `.mdx` files) displayed above components sections in the storybook's instance.
   - `functions`: Dedicated to parsers and helper functions for repetitive logic.
-  - `interfaces`: Dedicated to interfaces used in components and functions typing.
-  - `types`: Dedicated to Bulma's style type setting (which are part of component's properties).
+  - `interfaces`: Dedicated to components and functions typing interfaces.
+  - `types`: Dedicated to Bulma's style typesetting (part of the component's properties).
 
 ## Documentation
 
 Reactive bulma's documentation, included in this repo in the root directory, is built with [Storybook](https://storybook.js.org/) and publicly hosted on `Netlify` at <https://reactivebulma.netlify.app/>. The docs may also be run locally.
 
 ### Running documentation locally
-- Go to `reactive-bulma` folder (where you cloned the repo before).
+- Go to the `reactive-bulma` folder (where you cloned the repo before).
 - Open a console and run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
 - Run `npm start`.
 - Wait until a new tab opens with url <http://localhost:6006/> in your browser. 
-  - In case you want to initiate it on the background, you can run `npm run start:cli`.
+  - If you want to initiate it in the background, you can run `npm run start:cli.`
 
 Learn more about `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
@@ -163,9 +168,9 @@ const App = () => (
   <Button text="This is a test" />
 );
 ```
-To see all component's variants and its code snippets, go to [Documentation](#documentation) section.
+To see all component variants and code snippets go to the [Documentation](#documentation) section.
 
-In case you want to create a custom component for your forked Reactive Bulma version, the easiest way is by running the creation script I made, which [instructions are here](#how-to-create-a-template-component).
+If you want to create a custom component for your forked Reactive Bulma version, the easiest way is by running the creation script I made, which [instructions are here](#how-to-create-a-template-component).
 
 ### How to create a template component
 
@@ -174,33 +179,40 @@ After some time, I understood that creating component files is a repetitive and 
 - Open a console and run `npm run create` in your console.
 - An will assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
 - Then, the assistant will ask in which folder you want to create it (based on its type following [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/))
-- At last, the script should create all base files to reduce time and focus on custom implementation.
+- Finally, the script should create all base files to reduce time and focus on custom implementation.
 
 Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/docs/quick-start).
 
 ### How to update all dependencies
 
-In case you wanted to make your own fork, I recommend you to updated at least weekly using a custom command `npm run update`, which will run the following commands in order:
-- `update:deps`: Using a [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) script, you will be able to choose which dependencies want to update to latest version
-- `update:doctor`: Will run a set of build and test checks in order to assure your update will not break any current build.
-- `update:storybook`: Will update storybook to lastest version (following its recommended command) followed for a build check (similar to update:doctor, but for storybook only)
+In case you want to make your fork, I recommend you to update at least weekly using a custom command `npm run update`, which will run the following commands in order:
+- `update:deps`: Using a [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) script, you will be able to choose which dependencies want to update to the latest version
+- `update:doctor`: Runs build and test checks to ensure your update will not break any current build.
+- `update:storybook`: Updates storybook to the latest version (following its recommended command) followed for a build check (similar to update:doctor, but for Storybook only)
 
 ## Versioning
 
-After investigating [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/) (reffer to [#3](https://github.com/NicolasOmar/reactive-bulma/issues/3)) and having a problematic implementation, I decided to change version meaning for this project with the following:
-- Major versions (`1.0.0`, `2.0.0` and beyond) will reffer to milestones/version achievement.
-- Minor versions (`1.1.0`, `1.2.0` and so on) will reffer to branch/story completition.
-- Patch versions (`1.0.1`, `1.0.2` and so on) will reffer to bugfixes only.
+After investigating [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/) (refer to [#3](https://github.com/NicolasOmar/reactive-bulma/issues/3)) and having a problematic implementation, I decided to change version meaning for this project with the following:
+- Major versions (`1.0.0`, `2.0.0` and beyond) will refer to milestones/version achievement.
+- Minor versions (`1.1.0`, `1.2.0`, and so on) will refer to branch/story competition.
+- Patch versions (`1.0.1`, `1.0.2`, and so on) will refer to bug fixes only.
+
+To check the current project's status, go to the [Roadmap](#roadmap) section.
 
 In case you are interested in check current project's status, you can go to [Roadmap](#roadmap) section.
 
 ### Branching
 
-Giving the mentioned release logic, `main` is the only static branch, and each developed feature or fix will have an unique branch with its PR and a merge commit following [semantic versioning](https://semver.org/) and [semantic commits](https://github.com/semantic-release/semantic-release#commit-message-format) specifications.
+Given the mentioned release logic, `main` is the only static branch, and each developed feature or fix will have a unique branch with its PR and a merge commit following [semantic versioning](https://semver.org/) and [semantic commits](https://github.com/semantic-release/semantic-release#commit-message-format) specifications.
 
 ## Roadmap
 
-Having in mind the [versioning section](#versioning), repo's status in a glance can be observed in this table.
+After finishing the last story related to `v4.0.0`, ReactiveBulma's current work is now focused on updating its dependencies in a weekly manner, as well as checking every issue or discussion raised by visitors who are interested in improving the project by proposing new ideas in shape of tickets or issues with its related PR.
+
+In case you want actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
+
+<details>
+<summary>Here is the status table I used to keep track of the worked milestones/versions.</summary>
 
 | Version | Progress | Open issues | Closed issues
 | :---: | :---: | :---: | :---: |
@@ -208,6 +220,9 @@ Having in mind the [versioning section](#versioning), repo's status in a glance 
 | `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
 | `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
 | `v4.0.0` | ![v4.0.0, progress][badge-progress-400] | ![v4.0.0, open][badge-issues-open-400] | ![v4.0.0, closed][badge-issues-closed-400] |
+
+In case you want the detailed list of current and future features, go to the [roadmap document](https://docs.google.com/document/d/1kWX-dDTD-cQUeB_Vbu0K6xRvtHaSA38h76yQnhiCe9U).
+</details>
 
 [badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=informational
 [badge-issues-open-100]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=orange
@@ -221,10 +236,6 @@ Having in mind the [versioning section](#versioning), repo's status in a glance 
 [badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=informational
 [badge-issues-open-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=orange
 [badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=success
-
-In case you want the short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
-
-In case you want the detailed list of current and future features, go to the [roadmap document](https://docs.google.com/document/d/1kWX-dDTD-cQUeB_Vbu0K6xRvtHaSA38h76yQnhiCe9U).
 
 ## Changelog
 

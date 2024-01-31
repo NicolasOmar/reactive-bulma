@@ -18,6 +18,8 @@ import {
   NavBarItemProps,
   PaginationItemProps,
   TabItemProps,
+  TableCellProps,
+  TableHeadCellProps,
   TileProps
 } from './atomProps'
 // TYPES & INTERFACES
@@ -276,8 +278,17 @@ interface BrandConfigProps extends Omit<NavBarItemProps, 'children'> {
 }
 
 export interface NavBarBrandProps extends ElementProps {
-  /** `Attribute` `Required` Configuration object to inject a NavBarItem with a Image configuration as its children */
+  /** `Attribute` `Required` Configuration object to inject a `NavBarItem` with a Image configuration as its children */
   brandConfig: BrandConfigProps
   /** `Styling` It sets brand's burger button as active (changing looks from a burger to a cross) */
   isBurgerActive?: boolean
+}
+
+export interface TableRowProps extends ElementProps, ClickeableProps {
+  /** `Attribute` Configuration object to inject a `TableHeaderCell` as row's head */
+  headCell?: TableHeadCellProps
+  /** `Attribute` `Required` List of `TableCell` that will be rendered on the table */
+  listOfCells: TableCellProps[]
+  /** `Styling` Used for `Table` styling purpose only. Will set row's background color to indicate it has been selected by the user */
+  isSelected?: boolean
 }
