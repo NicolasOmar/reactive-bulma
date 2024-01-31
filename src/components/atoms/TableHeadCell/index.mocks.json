@@ -1,0 +1,13 @@
+{
+  "testing": {
+    "basicTestId": "test-table-head-cell",
+    "testBaseConfig": {
+      "content": "This is a conceptual table head cell"
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A table's cell heading unit"
+    }
+  }
+}

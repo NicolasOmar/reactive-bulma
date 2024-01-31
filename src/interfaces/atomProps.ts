@@ -368,3 +368,13 @@ export interface NavBarItemProps extends ElementProps, ClickeableProps {
   /** `Styling` Used for `NavBarDropdown` styling purpose only. Will mark the item as the one selected among its group */
   isActive?: boolean
 }
+
+export interface TableHeadCellProps extends ElementProps, ClickeableProps {
+  /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
+  content: SingleChildType
+}
+
+export interface TableCellProps extends ElementProps, ClickeableProps {
+  /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
+  content: SingleChildType
+}
