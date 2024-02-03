@@ -192,14 +192,12 @@ In case you want to make your fork, I recommend you to update at least weekly us
 
 ## Versioning
 
-After investigating [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/) (refer to [#3](https://github.com/NicolasOmar/reactive-bulma/issues/3)) and having a problematic implementation, I decided to change version meaning for this project with the following:
-- Major versions (`1.0.0`, `2.0.0` and beyond) will refer to milestones/version achievement.
-- Minor versions (`1.1.0`, `1.2.0`, and so on) will refer to branch/story competition.
-- Patch versions (`1.0.1`, `1.0.2`, and so on) will refer to bug fixes only.
+After investigating [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/) (refer to [#3](https://github.com/NicolasOmar/reactive-bulma/issues/3)) and finishing the last version according to the original roadmap, I decided to give the following meaning to project's versions after `v4.0.0`:
+- Major versions (`5.0.0`, `6.0.0` and beyond) will refer to milestones achievement and significant changes on existing components that will need extra attention before the update.
+- Minor versions (`4.1.0`, `4.2.0`, and so on) will refer to new components or modifications of existing ones.
+- Patch versions (`4.0.1`, `4.0.2`, and so on) will refer to bug fixes or weekly dependencies updates.
 
 To check the current project's status, go to the [Roadmap](#roadmap) section.
-
-In case you are interested in check current project's status, you can go to [Roadmap](#roadmap) section.
 
 ### Branching
 
