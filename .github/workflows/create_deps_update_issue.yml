@@ -10,6 +10,9 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Get current date
+        id: date
+        run: echo "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
       - name: Create weekly updates reminder
         run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
@@ -26,6 +29,8 @@ jobs:
             --title "$TITLE" \
             --assignee "$ASSIGNEES" \
             --label "$LABELS" \
+            --project "$PROJECT" \
+            --milestone "$MILESTONE" \
             --body "$BODY")
           if [[ $PINNED == true ]]; then
             gh issue pin "$new_issue_url"
@@ -33,9 +38,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: Check weekly dependency updates
+          TITLE: Check weekly dependency updates ${{ env.date }}
           ASSIGNEES: nicolasomar
+          MILESTONE: maintenance
           LABELS: dependencies
+          PROJECT: Reactive-bulma | Project board
           BODY: |
             ### Objective
 
