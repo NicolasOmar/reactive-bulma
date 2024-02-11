@@ -1,3 +1,12 @@
+## [4.0.3](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.2...v4.0.3) (2024-2-11)
+
+
+### Bug Fixes
+
+* Added issue uploader to project workflow ([b9a96a0](https://github.com/NicolasOmar/reactive-bulma/commit/b9a96a007f7e6ec93e5ce415555dd71fe4328ab8))
+* Change weekly dependencies updater issue to its project ([#274](https://github.com/NicolasOmar/reactive-bulma/issues/274)) ([#273](https://github.com/NicolasOmar/reactive-bulma/issues/273)) ([5128cf3](https://github.com/NicolasOmar/reactive-bulma/commit/5128cf36425ac557cdb21e65e5bee39fd8ef576d))
+* Dependencies version updated ([f53d26d](https://github.com/NicolasOmar/reactive-bulma/commit/f53d26d7106f7663535271f74fe4b5c4c842f889))
+
 ## [4.0.2](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.1...v4.0.2) (2024-2-4)
 
 
