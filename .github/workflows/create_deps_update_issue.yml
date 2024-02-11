@@ -1,7 +1,7 @@
 name: Create weekly updates reminder
 on:
   schedule:
-    - cron: 00 10 * * 6
+    - cron: '00 10 * * 0'
 
 jobs:
   create_issue:
@@ -29,7 +29,6 @@ jobs:
             --title "$TITLE" \
             --assignee "$ASSIGNEES" \
             --label "$LABELS" \
-            --project "$PROJECT" \
             --milestone "$MILESTONE" \
             --body "$BODY")
           if [[ $PINNED == true ]]; then
@@ -41,8 +40,7 @@ jobs:
           TITLE: Check weekly dependency updates ${{ env.date }}
           ASSIGNEES: nicolasomar
           MILESTONE: maintenance
-          LABELS: dependencies
-          PROJECT: Reactive-bulma | Project board
+          LABELS: dependencies, enhancement
           BODY: |
             ### Objective
 
