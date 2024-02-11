@@ -40,7 +40,7 @@ jobs:
           TITLE: Check weekly dependency updates ${{ env.date }}
           ASSIGNEES: nicolasomar
           MILESTONE: maintenance
-          LABELS: dependencies, enhancement
+          LABELS: dependencies,enhancement
           BODY: |
             ### Objective
 
