@@ -10,9 +10,6 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Get current date
-        id: date
-        run: echo "{date}={$(date +'%Y-%m-%d')}" >> $GITHUB_STATE
       - name: Create weekly updates reminder
         run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
@@ -37,7 +34,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          TITLE: Check weekly dependency updates ${{ env.date }}
+          TITLE: Check weekly dependency updates
           ASSIGNEES: nicolasomar
           MILESTONE: maintenance
           LABELS: dependencies,enhancement
