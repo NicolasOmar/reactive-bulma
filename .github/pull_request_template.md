@@ -7,6 +7,7 @@ Explain what you made to present the following solution on this pull request.
 - [ ] A bugfix
 - [ ] A new component
 - [ ] An existing component update
+- [ ] Dependencies version update
 
 ### Also, it complies with the following
 - In case of a `new component`
