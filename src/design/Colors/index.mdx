@@ -1,4 +1,4 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
 
 export const solidColors ={
   white: '#ffffff',
@@ -45,22 +45,14 @@ export const lightColors = {
 # Colors
 
 Used for two main cases:
-- **text:** use prefix `has-text-` (for example `has-text-white`)
-- **background:** use prefix `has-background-` (for example `has-background-white`)
+
+* **text:** use prefix `has-text-` (for example `has-text-white`)
+* **background:** use prefix `has-background-` (for example `has-background-white`)
 
 <ColorPalette>
-  <ColorItem
-    title="Monochromatic"
-    colors={monoColors}
-  />
-  
-  <ColorItem
-    title="Solid"
-    colors={solidColors}
-  />
+  <ColorItem title="Monochromatic" colors={monoColors} />
 
-  <ColorItem
-    title="Light"
-    colors={lightColors}
-  />
+  <ColorItem title="Solid" colors={solidColors} />
+
+  <ColorItem title="Light" colors={lightColors} />
 </ColorPalette>
