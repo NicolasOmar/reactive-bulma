@@ -1,3 +1,10 @@
+## [4.0.15](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.14...v4.0.15) (2024-06-17)
+
+
+### Bug Fixes
+
+* Dependencies version updated. 06/17/24 ([#385](https://github.com/NicolasOmar/reactive-bulma/issues/385)) ([#384](https://github.com/NicolasOmar/reactive-bulma/issues/384)) ([512c6a1](https://github.com/NicolasOmar/reactive-bulma/commit/512c6a1e775de1956cd9e070ce3d92f0ca564909))
+
 ## [4.0.14](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.13...v4.0.14) (2024-06-09)
 
 
