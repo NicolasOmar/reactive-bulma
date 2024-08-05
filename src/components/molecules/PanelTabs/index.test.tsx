@@ -36,7 +36,9 @@ describe('PanelTabs', () => {
     lastTabIsActiveConfig.tabList.forEach(({ text, isActive }) => {
       const testTabItem = screen.getByText(text)
       expect(testTabItem).toBeInTheDocument()
-      isActive && expect(testTabItem.className).toContain('is-active')
+      if (isActive) {
+        expect(testTabItem.className).toContain('is-active')
+      }
     })
   })
 })
