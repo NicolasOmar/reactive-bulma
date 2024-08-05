@@ -57,7 +57,9 @@ describe('Tabs', () => {
     lastTabIsActiveConfig.tabs.forEach(({ text, isActive }) => {
       const testTabItem = screen.getByText(text).closest('li')!
       expect(testTabItem).toBeInTheDocument()
-      isActive && expect(testTabItem.className).toContain('is-active')
+      if (isActive) {
+        expect(testTabItem.className).toContain('is-active')
+      }
     })
   })
 })
