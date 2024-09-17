@@ -55,7 +55,7 @@ jobs:
 
             - [ ] Run the script for the update and wait until new installed versions. `npm run update`.
             - [ ] Check if the linter suit runs without stoppers. `npm run lint`.
-            - [ ] Check prettier suit runs without stoppers. `npm run prettier && npm run prettier:ci`.
+            - [ ] Check prettier suit runs without stoppers. `npm run prettier`.
             - [ ] Check that the test suit runs without stoppers and that its coverage is correct. `npm run test:ci`.
             - [ ] Check build process runs without stoppers. `npm run build`.
             - [ ] Check that the storybook instance runs locally without stoppers and maintains the previous features. `npm run start`.
