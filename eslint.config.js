@@ -1,13 +1,13 @@
 // eslint.config.js
-const { fixupConfigRules } = require("@eslint/compat");
-const { FlatCompat } = require("@eslint/eslintrc");
-const js = require("@eslint/js");
+import { fixupConfigRules } from "@eslint/compat"
+import { FlatCompat } from "@eslint/eslintrc"
+import js from "@eslint/js"
 
 const flatCompat = new FlatCompat({
   recommendedConfig: js.configs.recommended
 });
 
-module.exports = [
+export default [
   ...fixupConfigRules(
     flatCompat.extends(".eslintrc")
   )
