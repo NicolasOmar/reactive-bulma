@@ -1,0 +1,49 @@
+{
+  "testing": {
+    "basicTestId": "test-file",
+    "basicTestInputId": "test-file-input",
+    "differentIcon": {
+      "uploadIcon": {
+        "iconLabel": "cloud-arrow-up-outline"
+      }
+    },
+    "differentText": {
+      "uploadText": "Select any item"
+    },
+    "withFileName": {
+      "fileName": "Whatsapp-image.jpg"
+    },
+    "coloredButton": {
+      "color": "is-success"
+    },
+    "fullWidthMode": {
+      "isFullWidth": true
+    },
+    "boxedMode": {
+      "isBoxed": true
+    },
+    "largeSize": {
+      "size": "is-large"
+    },
+    "testClasses": {
+      "fileName": "has-name",
+      "buttonOnRight": "is-right",
+      "isFullWidth": "is-fullwidth",
+      "isBoxed": "is-boxed"
+    }
+  },
+  "storybook": {
+    "argTypes": {
+      "uploadIcon": {
+        "table": {
+          "type": {
+            "summary": "Icon"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "A custom file upload input, without JavaScript"
+    }
+  }
+}

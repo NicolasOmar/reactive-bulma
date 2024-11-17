@@ -1,0 +1,54 @@
+{
+  "testing": {
+    "basicTestBlockId": "test-panel-block",
+    "basicTestIconId": "test-panel-icon",
+    "customTestId": "test-custom-id",
+    "testClasses": [
+      {
+        "name": "isActive",
+        "value": true,
+        "result": "is-active"
+      }
+    ],
+    "basicConfig": {
+      "blockText": "Hello there",
+      "config": {
+        "type": "icon",
+        "props": {
+          "iconLabel": "home"
+        }
+      }
+    },
+    "controlConfig": {
+      "config": {
+        "type": "control",
+        "props": {
+          "inputConfig": {
+            "type": "text",
+            "placeholder": "General"
+          }
+        }
+      }
+    },
+    "buttonConfig": {
+      "config": {
+        "type": "button",
+        "props": {
+          "text": "Kenobi",
+          "color": "is-danger",
+          "isOutlined": true
+        }
+      }
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

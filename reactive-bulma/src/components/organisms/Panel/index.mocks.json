@@ -1,0 +1,46 @@
+{
+  "testing": {
+    "basicTestId": "test-panel",
+    "testClasses": [
+      {
+        "name": "color",
+        "value": "is-primary",
+        "result": "is-primary"
+      }
+    ],
+    "basicConfig": {
+      "headerText": "This is a conceptual Panel",
+      "panelTabs": {
+        "tabList": [
+          { "text": "Hello" },
+          { "text": "There" },
+          { "text": "General" },
+          { "text": "Kenoby" }
+        ]
+      },
+      "blockList": [
+        {
+          "blockText": "Here we go again",
+          "config": {
+            "type": "icon",
+            "props": { "iconLabel": "home" }
+          }
+        }
+      ]
+    },
+    "severalLinkBlocks": ["bookmark", "bookmark-check", "bookmark", "bookmark-check", "bookmark", "bookmark-box"],
+    "colored": {
+      "color": "is-primary"
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

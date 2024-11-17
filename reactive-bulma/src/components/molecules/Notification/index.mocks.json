@@ -1,0 +1,32 @@
+{
+  "testing": {
+    "basicTestId": "test-notification",
+    "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
+    "testClasses": [
+      {
+        "name": "isLightColor",
+        "value": true,
+        "result": "is-light"
+      }
+    ]
+  },
+  "storybook": {
+    "argTypes": {
+      "children": {
+        "table": {
+          "type": {
+            "summary": "string | React.ReactElement | React.ReactElement[]"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "Bold notification blocks, to alert your users of something",
+      "docs": {
+        "description": {
+          "component": "The notification is a simple colored block meant to draw the attention to the user about something. As such, it can be used as a pinned notification in the corner of the viewport. That's why it supports the use of the `delete` element."
+        }
+      }
+    }
+  }
+}

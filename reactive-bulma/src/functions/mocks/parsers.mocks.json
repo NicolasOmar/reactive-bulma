@@ -1,0 +1,24 @@
+{
+  "parseClasses": {
+    "inputs": [
+      ["this", null, "is", "1", "test"],
+      ["this", null, "the", null, null, "second", "test"],
+      ["this", null, "is", "number", "3", "test"]
+    ],
+    "outputs": [
+      "this is 1 test",
+      "this the second test",
+      "this is number 3 test"
+    ]
+  },
+  "parseTestId": {
+    "inputs": [
+      "is-loading is-primary is-huge",
+      "is-loading  is-huge is-static is-new"
+    ],
+    "outputs": [
+      "test-button-loading-primary-huge",
+      "test-button-loading-huge-static-new"
+    ]
+  }
+}

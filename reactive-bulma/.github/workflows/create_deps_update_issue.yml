@@ -1,0 +1,67 @@
+name: Create weekly updates reminder
+on:
+  schedule:
+    - cron: '00 10 * * 0'
+
+jobs:
+  create_issue:
+    name: Create weekly updates reminder
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create weekly updates reminder
+        run: |
+          if [[ $CLOSE_PREVIOUS == true ]]; then
+            previous_issue_number=$(gh issue list \
+              --label "$LABELS" \
+              --json number \
+              --jq '.[0].number')
+            if [[ -n $previous_issue_number ]]; then
+              gh issue close "$previous_issue_number"
+              gh issue unpin "$previous_issue_number"
+            fi
+          fi
+          new_issue_url=$(gh issue create \
+            --title "$TITLE" \
+            --assignee "$ASSIGNEES" \
+            --label "$LABELS" \
+            --milestone "$MILESTONE" \
+            --body "$BODY")
+          if [[ $PINNED == true ]]; then
+            gh issue pin "$new_issue_url"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TITLE: Check weekly dependency updates
+          ASSIGNEES: nicolasomar
+          MILESTONE: maintenance
+          LABELS: dependencies,enhancement
+          BODY: |
+            ### Objective
+
+            Update ReactiveBulma's dependencies from last week's new versions.
+
+            ---
+            ### Description
+
+            After reaching the last version according to the original roadmap, the following long-term objective is to maintain a healthy project that the community can use; it is necessary to check all dependencies for possible updates, apply them, and ensure functionality has not been affected.
+
+            In case of issues after the mentioned updates, it will be necessary to fix those problems before pushing the changes and avoiding affecting the community.
+
+            ---
+            ### Tasks
+
+            - [ ] Run the script for the update and wait until new installed versions. `npm run update`.
+            - [ ] Check if the linter suit runs without stoppers. `npm run lint`.
+            - [ ] Check prettier suit runs without stoppers. `npm run prettier`.
+            - [ ] Check that the test suit runs without stoppers and that its coverage is correct. `npm run test:ci`.
+            - [ ] Check build process runs without stoppers. `npm run build`.
+            - [ ] Check that the storybook instance runs locally without stoppers and maintains the previous features. `npm run start`.
+            - [ ] Check storybook build process runs without stoppers. `npm run build:storybook`
+            - [ ] Create the branch and PR associated with the abovementioned changes.
+            - [ ] Wait until PR-related workflows run OK.
+            - [ ] Push the code with the `fix: ` prefix to update the package's version on npm and GitHub registries.
+          PINNED: false
+          CLOSE_PREVIOUS: false

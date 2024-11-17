@@ -1,0 +1,27 @@
+{
+  "testing": {
+    "baseConfig": {
+      "text": "Test text"
+    },
+    "colors": ["is-black", "is-danger", "is-warning"],
+    "sizes": ["is-small", "is-medium", "is-large"],
+    "testClasses": {
+      "isLight": "is-light",
+      "isRounded": "is-rounded"
+    },
+    "addonConfig": {
+      "withAddon": true,
+      "addonText": "Addon Text"
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Small tag labels to insert anywhere",
+      "docs": {
+        "description": {
+          "component": "The Bulma **tag** is a small but versatile element. It's very useful as a way to attach information to a block or other component. Its size makes it also easy to display in numbers, making it appropriate for long lists of items. By default, a tag is a *1.5rem* high label."
+        }
+      }
+    }
+  }
+}

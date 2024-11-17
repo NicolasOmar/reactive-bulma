@@ -1,0 +1,33 @@
+{
+  "testing": {
+    "basicTestId": "test-table-row",
+    "headTestId": "test-table-head-cell",
+    "testClasses": [
+      {
+        "name": "isSelected",
+        "value": true,
+        "result": "is-selected"
+      }
+    ],
+    "testBaseConfig": {
+      "listOfCells": [
+        { "content": "This"},
+        { "content": "is"},
+        { "content": "a"},
+        { "content": "conceptual"},
+        { "content": "table"},
+        { "content": "row"}
+      ]
+    },
+    "testHeadCellConfig": {
+      "headCell": {
+        "content": "Header cell"
+      }
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A table's row unit"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "testing": {
+    "basicTestId": "test-tileGroup",
+    "extensionTestId": "ancestor",
+    "testClasses": [
+      {
+        "name": "size",
+        "value": "is-6",
+        "result": "is-6"
+      },
+      {
+        "name": "isVertical",
+        "value": true,
+        "result": "is-vertical"
+      }
+    ],
+    "testChildrenColors": ["is-info", "is-primary", "is-danger"]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Nesting implementation to set up the Pinterest-like grid styling"
+    }
+  }
+}

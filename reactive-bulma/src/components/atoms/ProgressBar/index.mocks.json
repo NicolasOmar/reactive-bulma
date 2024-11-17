@@ -1,0 +1,17 @@
+{
+  "testing": {
+    "basicTestId": "test-progress-primary",
+    "inputValues": [0, 20, 100, 130, 200, -1, -20],
+    "outputValues": [0, 20, 100, 0, 0, 0, 0]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Native HTML progress bars",
+      "docs": {
+        "description": {
+          "component": "The Bulma progress bar is a simple CSS class that styles the native `<progress>` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)."
+        }
+      }
+    }
+  }
+}

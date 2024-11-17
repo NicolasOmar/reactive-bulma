@@ -1,0 +1,73 @@
+{
+  "testing": {
+    "baseConfig": {
+      "main": {
+        "text": "Welcome to ReactiveBulma",
+        "type": "title"
+      }
+    },
+    "smallSize": {
+      "main": {
+        "text": "Big size title",
+        "type": "title",
+        "size": "is-1"
+      }
+    },
+    "withSubtitle": {
+      "main": {
+        "text": "This is the title",
+        "type": "title"
+          },
+      "secondary": {
+        "text": "And this, the subtitle",
+        "type": "subtitle"
+      }
+    },
+    "biggerSubtitle": {
+      "main": {
+        "text": "This is the title",
+        "type": "title"
+      },
+      "secondary": {
+        "text": "And this, the subtitle",
+        "type": "subtitle",
+        "size": "is-1"
+      }
+    },
+    "spacedTitle": {
+      "main": {
+        "text": "This is the title",
+        "type": "title",
+        "isSpaced": true
+      },
+      "secondary": {
+        "text": "And this, the subtitle",
+        "type": "subtitle"
+      }
+    },
+    "sizes": ["is-1", "is-2", "is-3", "is-4"]
+  },
+  "storybook": {
+    "argTypes": {
+      "main": {
+        "table": {
+          "type": {
+            "summary": "TitleSectionProps",
+            "detail": "{ text: string, size?: TitleSizeType, type: 'title' | 'subtitle' }"
+          }
+        }
+      },
+      "secondary": {
+        "table": {
+          "type": {
+            "summary": "TitleSectionProps",
+            "detail": "{ text: string, size?: TitleSizeType, type: 'title' | 'subtitle' }"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "componentSubtitle": "Simple headings to add depth to your page"
+    }
+  }
+}

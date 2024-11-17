@@ -1,0 +1,50 @@
+{
+  "testing": {
+    "basicTestId": "test-input",
+    "testClasses": {
+      "isRounded": "is-rounded",
+      "isHovered": "is-hovered",
+      "isFocused": "is-focused"
+    },
+    "basicExample": {
+      "type": "text"
+    },
+    "withPlaceholder": {
+      "placeholder": "Here the user will see this until you type something"
+    },
+    "withText": {
+      "text": "Welcome to reactive-bulma"
+    },
+    "redColored": {
+      "color": "is-danger"
+    },
+    "bigSize": {
+      "size": "is-large"
+    },
+    "rounded": {
+      "isRounded": true
+    },
+    "hovered": {
+      "isHovered": true
+    },
+    "focused": {
+      "isFocused": true
+    },
+    "disabled": {
+      "isDisabled": true
+    },
+    "readOnly": {
+      "isReadonly": true
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "The text input and its variations",
+      "docs": {
+        "description": {
+          "component": "The Bulma `input` CSS class is meant for `<input>` HTML elements. The [following type](http://htmlreference.io/element/input/) attributes are supported: `text`, `password`, `email` and `tel`"
+        }
+      }
+    }
+  }
+}

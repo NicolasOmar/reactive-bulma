@@ -1,0 +1,23 @@
+name: Check builds
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1/5 | Checkout repo
+      uses: actions/checkout@v4
+    - name: 2/5 | Setup Node environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: latest
+    - name: 3/5 | Install depedencies
+      run: npm ci
+    - name: 3/5 | Run build package script
+      run: npm run build
+    - name: 5/5 | Run build storybook script
+      run: npm run build:storybook

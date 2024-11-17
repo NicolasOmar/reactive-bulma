@@ -1,0 +1,30 @@
+{
+  "testing": {
+    "basicTestId": "test-hero",
+    "testClasses": [
+      {
+        "name": "size",
+        "value": "is-fullheight",
+        "result": "is-fullheight"
+      },
+      {
+        "name": "color",
+        "value": "is-danger",
+        "result": "is-danger"
+      }
+    ],
+    "basicConfig": "Hello there body",
+    "headerConfig": "Hello there header",
+    "footerConfig": "Hello there footer"
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "An imposing hero banner to showcase something",
+      "docs": {
+        "description": {
+          "component": "The hero component allows you to add a **full width banner** to your webpage, which can optionally cover the full height of the page as well."
+        }
+      }
+    }
+  }
+}

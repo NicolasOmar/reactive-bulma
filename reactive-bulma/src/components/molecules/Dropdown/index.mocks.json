@@ -1,0 +1,25 @@
+{
+  "testing": {
+    "basicTestId": "test-dropdown",
+    "triggerTestId": "test-button",
+    "testConfig": {
+      "inputText": "Hello There",
+      "listOfItems": [
+        { "itemText": "First" },
+        { "itemText": "Second" },
+        { "itemText": "Third" },
+        { "itemText": "Fourth" }
+      ]
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "An interactive dropdown menu for discoverable content",
+      "docs": {
+        "description": {
+          "component": "The dropdown component is a container for a dropdown button and a dropdown menu."
+        }
+      }
+    }
+  }
+}

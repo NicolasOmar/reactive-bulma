@@ -1,0 +1,28 @@
+{
+  "testing": {
+    "basicTestId": "test-tileBox-child",
+    "extensionTestId": "box",
+    "testClasses": [
+      {
+        "name": "color",
+        "value": "is-danger",
+        "result": "notification is-danger"
+      },
+      {
+        "name": "isVertical",
+        "value": true,
+        "result": "is-vertical"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A small abstraction of original Tile component",
+      "docs": {
+        "description": {
+          "component": "Focused for `TileGroup` implementation where is needed a boxed child Tile to set up the grid styling."
+        }
+      }
+    }
+  }
+}

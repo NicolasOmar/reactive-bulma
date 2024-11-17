@@ -1,0 +1,44 @@
+{
+  "testing": {
+    "basicTestId": "test-menu",
+    "testMenuStructure": {
+      "menuSections": [
+        {
+          "label": "Hello there",
+          "itemList": [
+            { "text": "hello" },
+            { "text": "hello" },
+            { "text": "hello" },
+            { "text": "hello" },
+            { "text": "hello" }
+          ]
+        }
+      ]
+    },
+    "extendedMenuStructure": {
+      "label": "General Kenobi",
+      "itemList": [
+        {
+          "subListTitle": { "text": "The Negotiator"},
+          "subItems": [
+            { "text": "Kenobi" },
+            { "text": "Kenobi" },
+            { "text": "Kenobi" },
+            { "text": "Kenobi" },
+            { "text": "Kenobi" }
+          ]
+        }
+      ]
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A simple menu, for any type of vertical navigation",
+      "docs": {
+        "description": {
+          "component": "The Bulma menu is a vertical navigation component that comprises: The `menu` container, informative `menu-label` labels, interactive `menu-list` lists that can be nested up to 2 levels."
+        }
+      }
+    }
+  }
+}

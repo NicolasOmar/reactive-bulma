@@ -1,0 +1,41 @@
+{
+  "testing": {
+    "basicTestId": "test-control",
+    "testClasses": [
+      {
+        "name": "size",
+        "value": "is-right",
+        "result": "is-right"
+      },
+      {
+        "name": "leftIcon",
+        "value": { "iconLabel": "home" },
+        "result": "has-icons-left"
+      },
+      {
+        "name": "rightIcon",
+        "value": { "iconLabel": "home" },
+        "result": "has-icons-right"
+      },
+      {
+        "name": "isLoading",
+        "value": true,
+        "result": "is-loading"
+      },
+      {
+        "name": "isExpanded",
+        "value": true,
+        "result": "is-expanded"
+      }
+    ],
+    "baseConfig": {
+      "inputConfig": { "type": "text" }
+    },
+    "bigSizeConfig": { "size": "is-large" }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Input's variation with additional addons as Icons, and loading styling"
+    }
+  }
+}
