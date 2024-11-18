@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.30...v4.1.0) (2024-11-18)
+
+
+### Features
+
+* Migrate bundler from rollup to vite ([#491](https://github.com/NicolasOmar/reactive-bulma/issues/491)) ([#449](https://github.com/NicolasOmar/reactive-bulma/issues/449)) ([#492](https://github.com/NicolasOmar/reactive-bulma/issues/492)) ([97457be](https://github.com/NicolasOmar/reactive-bulma/commit/97457be9ab9135bef966339b96e68ad94e1146d0))
+
 ## [4.0.30](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.29...v4.0.30) (2024-11-11)
 
 
