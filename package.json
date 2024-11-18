@@ -20,7 +20,7 @@
   "homepage": "https://reactivebulma.netlify.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NicolasOmar/reactive-bulma.git"
+    "url": "git+https://github.com/NicolasOmar/reactive-bulma.git"
   },
   "bugs": {
     "url": "https://github.com/NicolasOmar/reactive-bulma/issues"
@@ -44,6 +44,7 @@
     "compile": "tsc -b",
     "build": "npm run compile && vite build",
     "build:storybook": "storybook build",
+    "prepare": "npm run build",
     "semantic-release": "semantic-release",
     "create": "hygen component new",
     "update": "npm run update:deps && npm run update:doctor && npm run update:storybook",
@@ -101,6 +102,7 @@
     "eslint-plugin-storybook": "^0.11.0",
     "glob": "^11.0.0",
     "globals": "^15.12.0",
+    "husky": "^9.1.7",
     "hygen": "^6.2.11",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
