@@ -2,11 +2,11 @@ import React from 'react'
 // COMPONENTS
 import { Tile } from '../../atoms'
 // TYPES & INTERFACES
-import { TileBoxProps } from '../../../interfaces/moleculeProps'
+import { TileProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const TileBox: React.FC<TileBoxProps> = ({
+const TileBox: React.FC<TileProps> = ({
   testId = null,
   cssClasses = 'box',
   style = null,

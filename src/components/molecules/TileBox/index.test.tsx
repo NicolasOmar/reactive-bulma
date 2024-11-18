@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import TileBox from '.'
 // TYPES & INTERFACES
-import { TileBoxProps } from '../../../interfaces/moleculeProps'
+import { TileProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
@@ -25,7 +25,7 @@ describe('TileBox', () => {
         /is-|has-|notification /gm,
         ''
       )}${extensionTestId}`
-      const classTestObject: TileBoxProps = {
+      const classTestObject: TileProps = {
         [name]: value
       }
 

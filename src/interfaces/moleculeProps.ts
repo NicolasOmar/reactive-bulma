@@ -19,8 +19,7 @@ import {
   PaginationItemProps,
   TabItemProps,
   TableCellProps,
-  TableHeadCellProps,
-  TileProps
+  TableHeadCellProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -230,8 +229,6 @@ export interface LevelItemProps extends ElementProps {
   /** `Styling` Centers item's content horizontally */
   isCentered?: boolean
 }
-
-export interface TileBoxProps extends TileProps {}
 
 export interface FooterProps extends ComposedElementProps {
   /** `Attribute` `Required` Reffers to the component, list of components or string content that will be shown inside the footer */
