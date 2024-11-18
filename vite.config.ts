@@ -3,13 +3,13 @@ import react from '@vitejs/plugin-react'
 import { resolve, relative, extname } from 'path'
 import { fileURLToPath } from 'url'
 import { glob } from 'glob'
-// import dts from 'vite-plugin-dts'
+import dts from 'vite-plugin-dts'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    // dts({ include: ['src'] })
+    dts({ include: ['src'] })
   ],
   build: {
     emptyOutDir: false,
