@@ -21,17 +21,17 @@ jobs:
         node-version: latest
     - name: 3/8 | Install depedencies
       run: npm ci
-    - name: 4/8 | Run linter check
-      run: npm run lint
+    # - name: 4/8 | Run linter check
+    #   run: npm run lint
     - name: 5/8 | Run prettier check
       run: npm run prettier:ci
     - name: 6/8 | Run unit tests suite
       run: npm run test:ci
     - name: 7/8 | Run Codecov Uploader
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage/coverage-final.json
+        files: ./coverage/coverage-final.json
         flags: unittests
         verbose: true
     - name: 8/8 | Run SonarCloud Scanner

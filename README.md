@@ -89,8 +89,7 @@ Now I have finished (Jan 31th) [the last story](https://github.com/NicolasOmar/r
 [![bulma dependency][badge-dependency-bulma]][link-package-dependencies]
 [![material design dependency][badge-dependency-material-design]][link-package-dependencies]
 [![typescript dependency][badge-dependency-typescript]][link-package-dependencies]
-[![rollup dependency][badge-dependency-rollup]][link-package-dependencies]
-[![postcss dependency][badge-dependency-postcss]][link-package-dependencies]
+[![vite dependency][badge-dependency-vite]][link-package-dependencies]
 [![storybook dependency][badge-dependency-storybook]][link-package-dependencies]
 [![semantic release dependency][badge-dependency-semantic-release]][link-package-dependencies]
 [![babel dependency][badge-dependency-babel]][link-package-dependencies]
@@ -106,8 +105,7 @@ Now I have finished (Jan 31th) [the last story](https://github.com/NicolasOmar/r
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
 [badge-dependency-material-design]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@mdi/font/main?logo=materialdesignicons
 [badge-dependency-typescript]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/typescript/main?logo=typescript
-[badge-dependency-postcss]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/postcss/main?logo=postcss
-[badge-dependency-rollup]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/rollup/main?logo=rollup.js
+[badge-dependency-vite]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/vite/main?logo=vite
 [badge-dependency-storybook]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/storybook/main?logo=storybook
 [badge-dependency-semantic-release]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/semantic-release/main?logo=semantic-release
 [badge-dependency-babel]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@babel/core/main?logo=babel
