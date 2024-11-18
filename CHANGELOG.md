@@ -1,3 +1,10 @@
+## [4.1.2](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.1...v4.1.2) (2024-11-18)
+
+
+### Bug Fixes
+
+* Fixing linting issues with new version ([2f531dc](https://github.com/NicolasOmar/reactive-bulma/commit/2f531dce94ebf22a34e763a3d36697ffad525d56))
+
 ## [4.1.1](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.0...v4.1.1) (2024-11-18)
 
 
