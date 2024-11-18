@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.0...v4.1.1) (2024-11-18)
+
+
+### Bug Fixes
+
+* Fixing build process and package sintaxis error. Adding missing husky package ([413c586](https://github.com/NicolasOmar/reactive-bulma/commit/413c5868bc8e5267d2414cf9953a07ee728456a0))
+
 # [4.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.0.30...v4.1.0) (2024-11-18)
 
 
