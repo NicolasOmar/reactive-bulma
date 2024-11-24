@@ -1,3 +1,10 @@
+## [4.1.3](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.2...v4.1.3) (2024-11-24)
+
+
+### Bug Fixes
+
+* Dependencies version updated. 11/24/24 ([#498](https://github.com/NicolasOmar/reactive-bulma/issues/498)) ([#497](https://github.com/NicolasOmar/reactive-bulma/issues/497)) ([9dd6d00](https://github.com/NicolasOmar/reactive-bulma/commit/9dd6d00086aec5155d4f15ad836406479b07b180))
+
 ## [4.1.2](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.1...v4.1.2) (2024-11-18)
 
 
