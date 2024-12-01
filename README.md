@@ -9,7 +9,7 @@
 
 <div align="center">
 
-Component library based on React, Bulma, Typescript and Rollup
+Component library based on React, Bulma, Typescript and Vite
 
 <div align="left">
 
