@@ -21,7 +21,9 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   content = null,
   name,
   isDisabled = null,
-  onChange = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const checkboxContainerClasses = parseClasses([
     'checkbox',
@@ -53,7 +55,9 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         className={cssClasses ?? undefined}
         style={style ?? undefined}
         disabled={isDisabled ?? false}
-        onChange={onChange ?? undefined}
+        onClick={onClick}
+        onChange={onChange}
+        onBlur={onBlur}
       />
       {content}
     </label>

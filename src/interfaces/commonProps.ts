@@ -19,8 +19,34 @@ export interface ElementProps {
 export interface ComposedElementProps extends ElementProps, ContainerProps {}
 
 export interface ClickeableProps {
-  /** `Function` Click function, alone does not nothing, but can be reused for other components */
+  /** `Function` Reffers to each time the user click the element. Alone does not nothing, but can be reused for other components */
   onClick?: () => void
+}
+
+export interface ChangeableProps {
+  /** `Function` Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components */
+  onChange?: () => void
+}
+
+export interface BlureableProps {
+  /** `Function` Reffers to each time the user focus out the element. Alone does not nothing, but can be reused for other components */
+  onBlur?: () => void
+}
+
+export interface InteractiveProps
+  extends ClickeableProps,
+    ChangeableProps,
+    BlureableProps {}
+
+export interface InteractiveByClickProps
+  extends Omit<InteractiveProps, 'onChange'> {
+  /** `Function` Reffers to each time the user click the element. Alone does not nothing, but can be reused for other components */
+  onChange?: () => void
+}
+
+export interface NamedElement {
+  /** `Attribute` Used to reference the input in a form */
+  name?: string
 }
 
 export interface GenericObjectProps {

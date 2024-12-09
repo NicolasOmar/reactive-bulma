@@ -20,7 +20,9 @@ const Select: React.FC<SelectProps> = ({
   isRounded = null,
   isHovered = null,
   isFocused = null,
-  onClick = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const containerSelectClasses = parseClasses([
     'select',
@@ -59,7 +61,9 @@ const Select: React.FC<SelectProps> = ({
             data-testid={`${selectTestId}-option-${i}`}
             key={id.toString()}
             defaultChecked={selected ?? false}
-            onClick={onClick ?? undefined}
+            onClick={onClick}
+            onChange={onChange}
+            onBlur={onBlur}
           >
             {name}
           </option>

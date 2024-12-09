@@ -19,8 +19,9 @@ const Input: React.FC<InputProps> = ({
   isRounded = null,
   isHovered = null,
   isFocused = null,
-  onClick = null,
-  onChange = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const inputClasses = parseClasses([
     'input',
@@ -49,8 +50,9 @@ const Input: React.FC<InputProps> = ({
       readOnly={isReadonly}
       className={inputClasses}
       style={style ?? undefined}
-      onClick={onClick ?? undefined}
-      onChange={onChange ?? undefined}
+      onClick={onClick}
+      onChange={onChange}
+      onBlur={onBlur}
     />
   )
 }
