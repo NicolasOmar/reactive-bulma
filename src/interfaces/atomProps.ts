@@ -177,7 +177,9 @@ export interface InputProps extends ElementProps, ClickeableProps {
   /** `Attribute` `Required` What type of input will be used */
   type: InputType
   /** `Attribute` The value that will be shown on the input */
-  text?: string
+  value?: string
+  /** `Attribute` Used to reference the input in a form */
+  name?: string
   /** `Attribute` The text that will be shown if the user does not type any value */
   placeholder?: string
   /** `Attribute` Will disable the input */
@@ -221,6 +223,8 @@ export interface SelectOption {
 export interface SelectProps extends ComposedElementProps, ClickeableProps {
   /** `Attribute` Indicates the options contained on the select */
   options?: SelectOption[]
+  /** `Attribute` Used to reference the input in a form */
+  name?: string
   /** `Attribute` Indicates how many options will be shown at first glance (before looking for the whole list */
   showOptions?: number
   /** `Attribute` Will allow multiple selection */
@@ -259,6 +263,8 @@ export interface FileProps extends ComposedElementProps, ClickeableProps {
 export interface CheckBoxProps extends ComposedElementProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
   content?: ChildrenType
+  /** `Attribute` Used to reference the input in a form */
+  name?: string
   /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
   /** `Function` Click function, alone does not nothing, but can be reused for other components */

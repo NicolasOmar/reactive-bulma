@@ -12,6 +12,7 @@ const Select: React.FC<SelectProps> = ({
   style = null,
   containerStyle = null,
   options = [],
+  name,
   showOptions = 1,
   isMultiple = false,
   color = null,
@@ -49,6 +50,7 @@ const Select: React.FC<SelectProps> = ({
         data-testid={selectTestId}
         className={cssClasses ?? undefined}
         style={style ?? undefined}
+        name={name}
         multiple={isMultiple}
         size={showOptions}
       >
