@@ -9,7 +9,8 @@ const Input: React.FC<InputProps> = ({
   cssClasses = null,
   style = null,
   type,
-  text = null,
+  value = null,
+  name,
   placeholder = null,
   isDisabled = false,
   isReadonly = false,
@@ -18,8 +19,9 @@ const Input: React.FC<InputProps> = ({
   isRounded = null,
   isHovered = null,
   isFocused = null,
-  onClick = null,
-  onChange = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const inputClasses = parseClasses([
     'input',
@@ -42,13 +44,15 @@ const Input: React.FC<InputProps> = ({
       data-testid={inputTestId}
       type={type}
       placeholder={placeholder ?? undefined}
-      defaultValue={text ?? undefined}
+      defaultValue={value ?? undefined}
+      name={name}
       disabled={isDisabled}
       readOnly={isReadonly}
       className={inputClasses}
       style={style ?? undefined}
-      onClick={onClick ?? undefined}
-      onChange={onChange ?? undefined}
+      onClick={onClick}
+      onChange={onChange}
+      onBlur={onBlur}
     />
   )
 }

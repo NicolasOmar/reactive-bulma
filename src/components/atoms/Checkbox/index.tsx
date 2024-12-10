@@ -19,8 +19,11 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   style = null,
   containerStyle = null,
   content = null,
+  name,
   isDisabled = null,
-  onChange = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const checkboxContainerClasses = parseClasses([
     'checkbox',
@@ -48,10 +51,13 @@ const CheckBox: React.FC<CheckBoxProps> = ({
       <input
         data-testid={checkboxTestId}
         type='checkbox'
+        name={name}
         className={cssClasses ?? undefined}
         style={style ?? undefined}
         disabled={isDisabled ?? false}
-        onChange={onChange ?? undefined}
+        onClick={onClick}
+        onChange={onChange}
+        onBlur={onBlur}
       />
       {content}
     </label>

@@ -13,7 +13,7 @@
       "placeholder": "Here the user will see this until you type something"
     },
     "withText": {
-      "text": "Welcome to reactive-bulma"
+      "value": "Welcome to reactive-bulma"
     },
     "redColored": {
       "color": "is-danger"

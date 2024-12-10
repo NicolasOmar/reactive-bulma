@@ -19,7 +19,7 @@ describe('TextArea', () => {
 
   test('Should render with a value', () => {
     const testValue = '150'
-    const basicProps = { text: testValue } as TextAreaProps
+    const basicProps = { value: testValue } as TextAreaProps
 
     render(<TextArea {...basicProps} />)
     const testAreaWithText = screen.getByText(testValue)

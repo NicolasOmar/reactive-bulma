@@ -14,6 +14,7 @@ const File: React.FC<FileProps> = ({
   style = null,
   containerStyle = null,
   fileName = null,
+  name,
   uploadIcon = { iconLabel: 'upload' },
   uploadText = 'Choose a file…',
   buttonOnRight = false,
@@ -21,7 +22,9 @@ const File: React.FC<FileProps> = ({
   isBoxed = false,
   color = null,
   size = null,
-  onClick = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const fileContainerClasses = parseClasses([
     'file',
@@ -62,10 +65,12 @@ const File: React.FC<FileProps> = ({
         <input
           data-testid={fileInputTestId}
           type='file'
-          name='resume'
+          name={name}
           className={fileInputClasses}
           style={style ?? undefined}
-          onClick={onClick ?? undefined}
+          onClick={onClick}
+          onChange={onChange}
+          onBlur={onBlur}
         />
         <span className='file-cta'>
           {uploadIcon ? <Icon {...uploadIcon} /> : null}

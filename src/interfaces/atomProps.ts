@@ -3,7 +3,10 @@ import React from 'react'
 import {
   ElementProps,
   ComposedElementProps,
-  ClickeableProps
+  ClickeableProps,
+  NamedInputProps,
+  InteractiveProps,
+  InteractiveOnChangeProps
 } from './commonProps'
 // TYPES & INTERFACES
 import {
@@ -173,11 +176,14 @@ export interface IconProps extends ComposedElementProps {
   position?: RightLeftAlignType
 }
 
-export interface InputProps extends ElementProps, ClickeableProps {
+export interface InputProps
+  extends ElementProps,
+    InteractiveProps,
+    NamedInputProps {
   /** `Attribute` `Required` What type of input will be used */
   type: InputType
   /** `Attribute` The value that will be shown on the input */
-  text?: string
+  value?: string
   /** `Attribute` The text that will be shown if the user does not type any value */
   placeholder?: string
   /** `Attribute` Will disable the input */
@@ -194,8 +200,6 @@ export interface InputProps extends ElementProps, ClickeableProps {
   isHovered?: boolean
   /** `Styling` Will add a specific border when the input is focused by the user */
   isFocused?: boolean
-  /** `Function` Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components */
-  onChange?: () => void
 }
 
 export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
@@ -218,7 +222,10 @@ export interface SelectOption {
   selected?: boolean
 }
 
-export interface SelectProps extends ComposedElementProps, ClickeableProps {
+export interface SelectProps
+  extends ComposedElementProps,
+    InteractiveProps,
+    NamedInputProps {
   /** `Attribute` Indicates the options contained on the select */
   options?: SelectOption[]
   /** `Attribute` Indicates how many options will be shown at first glance (before looking for the whole list */
@@ -237,7 +244,10 @@ export interface SelectProps extends ComposedElementProps, ClickeableProps {
   isFocused?: boolean
 }
 
-export interface FileProps extends ComposedElementProps, ClickeableProps {
+export interface FileProps
+  extends ComposedElementProps,
+    InteractiveProps,
+    NamedInputProps {
   /** `Attribute` The name of the file to be uploaded */
   fileName?: string
   /** `Attribute` The icon displayed in file's button" */
@@ -256,36 +266,35 @@ export interface FileProps extends ComposedElementProps, ClickeableProps {
   size?: ElementSizeType
 }
 
-export interface CheckBoxProps extends ComposedElementProps {
+export interface CheckBoxProps
+  extends ComposedElementProps,
+    InteractiveOnChangeProps,
+    NamedInputProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
   content?: ChildrenType
   /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
-  /** `Function` Click function, alone does not nothing, but can be reused for other components */
-  onChange?: () => void
 }
 
 export interface RadioButtonItemProps
-  extends Pick<ElementProps, 'testId' | 'style'> {
+  extends Pick<ElementProps, 'testId' | 'style'>,
+    InteractiveOnChangeProps,
+    NamedInputProps {
   /** `Attribute` `Required` Sets checkbox's text*/
   label: string
-  /** `Attribute` Sets the name that will relate this checkbox with the others */
-  name?: string
   /** `Attribute` Shows the checkbox as checked or unchecked */
   isChecked?: boolean
   /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
-  /** `Function` Click function, alone does not nothing, but can be reused for other components */
-  onChange?: () => void
 }
 
-export interface RadioButtonProps extends ComposedElementProps {
+export interface RadioButtonProps
+  extends ComposedElementProps,
+    InteractiveOnChangeProps {
   /** `Attribute` `Required` Indicates the options contained to be selected */
   options: RadioButtonItemProps[]
   /** `Attribute` `Required` Sets the name that will relate this checkbox with the others */
   name: string
-  /** `Function` Click function, alone does not nothing, but can be reused for other components */
-  onChange?: () => void
 }
 
 export interface BreadcrumbItemProps

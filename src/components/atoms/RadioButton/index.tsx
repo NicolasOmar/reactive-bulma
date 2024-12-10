@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import {
   RadioButtonItemProps,
@@ -15,7 +15,9 @@ const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
     isChecked = false,
     isDisabled = false,
     style = null,
-    onChange
+    onClick,
+    onChange,
+    onBlur
   } = config
   const radioButtonTestId = testId ?? `test-radio-button-item-${index}`
 
@@ -31,7 +33,9 @@ const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
         name={name}
         defaultChecked={isChecked}
         disabled={isDisabled}
+        onClick={onClick}
         onChange={onChange}
+        onBlur={onBlur}
       />
       {label}
     </label>
@@ -44,7 +48,9 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   containerStyle = null,
   options,
   name,
-  onChange = null
+  onClick,
+  onChange,
+  onBlur
 }) => {
   const radioButtonContainerClasses = parseClasses([
     'control',
@@ -57,22 +63,30 @@ const RadioButton: React.FC<RadioButtonProps> = ({
       parsedClasses: radioButtonContainerClasses
     })
 
+  const renderRadioButtons = useMemo(
+    () =>
+      options.map((_option, i) =>
+        renderRadioButton(
+          {
+            ..._option,
+            name,
+            onClick,
+            onChange,
+            onBlur
+          },
+          i
+        )
+      ),
+    [options, name, onClick, onChange, onBlur]
+  )
+
   return (
     <section
       data-testid={radioButtonContainerTestId}
       className={radioButtonContainerClasses}
       style={containerStyle ?? undefined}
     >
-      {options.map((_option, i) =>
-        renderRadioButton(
-          {
-            ..._option,
-            name,
-            onChange: onChange ?? undefined
-          },
-          i
-        )
-      )}
+      {renderRadioButtons}
     </section>
   )
 }
