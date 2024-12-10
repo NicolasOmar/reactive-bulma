@@ -4,9 +4,9 @@ import {
   ElementProps,
   ComposedElementProps,
   ClickeableProps,
-  NamedElement,
+  NamedInputProps,
   InteractiveProps,
-  InteractiveByClickProps
+  InteractiveOnChangeProps
 } from './commonProps'
 // TYPES & INTERFACES
 import {
@@ -179,7 +179,7 @@ export interface IconProps extends ComposedElementProps {
 export interface InputProps
   extends ElementProps,
     InteractiveProps,
-    NamedElement {
+    NamedInputProps {
   /** `Attribute` `Required` What type of input will be used */
   type: InputType
   /** `Attribute` The value that will be shown on the input */
@@ -225,7 +225,7 @@ export interface SelectOption {
 export interface SelectProps
   extends ComposedElementProps,
     InteractiveProps,
-    NamedElement {
+    NamedInputProps {
   /** `Attribute` Indicates the options contained on the select */
   options?: SelectOption[]
   /** `Attribute` Indicates how many options will be shown at first glance (before looking for the whole list */
@@ -247,7 +247,7 @@ export interface SelectProps
 export interface FileProps
   extends ComposedElementProps,
     InteractiveProps,
-    NamedElement {
+    NamedInputProps {
   /** `Attribute` The name of the file to be uploaded */
   fileName?: string
   /** `Attribute` The icon displayed in file's button" */
@@ -268,8 +268,8 @@ export interface FileProps
 
 export interface CheckBoxProps
   extends ComposedElementProps,
-    InteractiveByClickProps,
-    NamedElement {
+    InteractiveOnChangeProps,
+    NamedInputProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
   content?: ChildrenType
   /** `Attribute` Will disable the checkbox */
@@ -278,8 +278,8 @@ export interface CheckBoxProps
 
 export interface RadioButtonItemProps
   extends Pick<ElementProps, 'testId' | 'style'>,
-    InteractiveByClickProps,
-    NamedElement {
+    InteractiveOnChangeProps,
+    NamedInputProps {
   /** `Attribute` `Required` Sets checkbox's text*/
   label: string
   /** `Attribute` Shows the checkbox as checked or unchecked */
@@ -290,7 +290,7 @@ export interface RadioButtonItemProps
 
 export interface RadioButtonProps
   extends ComposedElementProps,
-    InteractiveByClickProps {
+    InteractiveOnChangeProps {
   /** `Attribute` `Required` Indicates the options contained to be selected */
   options: RadioButtonItemProps[]
   /** `Attribute` `Required` Sets the name that will relate this checkbox with the others */

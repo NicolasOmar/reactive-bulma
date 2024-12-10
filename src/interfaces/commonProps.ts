@@ -38,13 +38,13 @@ export interface InteractiveProps
     ChangeableProps,
     BlureableProps {}
 
-export interface InteractiveByClickProps
+export interface InteractiveOnChangeProps
   extends Omit<InteractiveProps, 'onChange'> {
-  /** `Function` Reffers to each time the user click the element. Alone does not nothing, but can be reused for other components */
+  /** `Function` Reffers to each time the user click the element (I recommend using this one rather than the `onClick` method). Alone does not nothing, but can be reused for other components */
   onChange?: () => void
 }
 
-export interface NamedElement {
+export interface NamedInputProps {
   /** `Attribute` Used to reference the input in a form */
   name?: string
 }
