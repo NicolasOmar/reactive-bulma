@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.5...v4.2.0) (2024-12-10)
+
+
+### Features
+
+* Add name property to form-related fields ([#512](https://github.com/NicolasOmar/reactive-bulma/issues/512)) ([#511](https://github.com/NicolasOmar/reactive-bulma/issues/511)) ([83a700a](https://github.com/NicolasOmar/reactive-bulma/commit/83a700ad88ef8fb3d117a47227a8665500a709d9))
+
 ## [4.1.5](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.4...v4.1.5) (2024-12-08)
 
 
