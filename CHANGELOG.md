@@ -1,3 +1,10 @@
+## [4.2.1](https://github.com/NicolasOmar/reactive-bulma/compare/v4.2.0...v4.2.1) (2024-12-10)
+
+
+### Bug Fixes
+
+* Fixing missing event argument on handlers ([ef99cb5](https://github.com/NicolasOmar/reactive-bulma/commit/ef99cb5fcabf0006f41d6282aba7c743e6b1f20b))
+
 # [4.2.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.1.5...v4.2.0) (2024-12-10)
 
 
