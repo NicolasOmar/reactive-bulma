@@ -20,17 +20,17 @@ export interface ComposedElementProps extends ElementProps, ContainerProps {}
 
 export interface ClickeableProps {
   /** `Function` Reffers to each time the user click the element. Alone does not nothing, but can be reused for other components */
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent) => void
 }
 
 export interface ChangeableProps {
   /** `Function` Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components */
-  onChange?: () => void
+  onChange?: (event: React.ChangeEvent) => void
 }
 
 export interface BlureableProps {
   /** `Function` Reffers to each time the user focus out the element. Alone does not nothing, but can be reused for other components */
-  onBlur?: () => void
+  onBlur?: (event: React.FocusEvent) => void
 }
 
 export interface InteractiveProps
@@ -41,7 +41,7 @@ export interface InteractiveProps
 export interface InteractiveOnChangeProps
   extends Omit<InteractiveProps, 'onChange'> {
   /** `Function` Reffers to each time the user click the element (I recommend using this one rather than the `onClick` method). Alone does not nothing, but can be reused for other components */
-  onChange?: () => void
+  onChange?: (event: React.ChangeEvent | React.FormEvent) => void
 }
 
 export interface NamedInputProps {

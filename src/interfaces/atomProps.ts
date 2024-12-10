@@ -224,7 +224,7 @@ export interface SelectOption {
 
 export interface SelectProps
   extends ComposedElementProps,
-    InteractiveProps,
+    InteractiveOnChangeProps,
     NamedInputProps {
   /** `Attribute` Indicates the options contained on the select */
   options?: SelectOption[]
