@@ -1,17 +1,13 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { CheckBoxProps } from '../../../interfaces/atomProps'
-import { ChildrenType } from '../../../types/domTypes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const parseContentTestId = (content: ChildrenType | null): string => {
-  if (typeof content === 'string') return `-${content?.toString()}`
-  if (content !== null) return '-with-component'
-  return ''
-}
+const parseContentTestId = (content: string | null): string =>
+  content ? '-with-component' : ''
 
-const CheckBox: React.FC<CheckBoxProps> = ({
+const Checkbox: React.FC<CheckBoxProps> = ({
   testId = null,
   containerTestId = null,
   cssClasses = null,
@@ -64,4 +60,4 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   )
 }
 
-export default CheckBox
+export default Checkbox

@@ -271,7 +271,7 @@ export interface CheckBoxProps
     InteractiveOnChangeProps,
     NamedInputProps {
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
-  content?: ChildrenType
+  content?: string
   /** `Attribute` Will disable the checkbox */
   isDisabled?: boolean
 }

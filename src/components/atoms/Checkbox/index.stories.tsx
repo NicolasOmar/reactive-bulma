@@ -1,33 +1,24 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
-import CheckBox from '.'
-import Tag from '../Tag'
+import Checkbox from '.'
 // TYPES & INTERFACES
-import { CheckBoxProps } from '../../../interfaces/atomProps'
 // MOCKS
 import { testing, storybook } from './index.mocks.json'
 
 export default {
-  title: 'Atoms/CheckBox',
-  component: CheckBox,
+  title: 'Atoms/Checkbox',
+  component: Checkbox,
+  args: testing.basicExample,
   ...storybook
-} as Meta<typeof CheckBox>
+} as Meta<typeof Checkbox>
 
-const Template: StoryFn<typeof CheckBox> = args => <CheckBox {...args} />
+const Template: StoryFn<typeof Checkbox> = args => <Checkbox {...args} />
 
 export const BasicExample = Template.bind({})
 
-export const WithTextContent = Template.bind({})
-WithTextContent.args = testing.withTextContent as CheckBoxProps
-
-export const WithComponentContent = Template.bind({})
-WithComponentContent.args = {
-  content: <Tag text='Test' />
-}
-
 export const Disabled = Template.bind({})
 Disabled.args = {
-  ...WithTextContent.args,
-  ...(testing.disabledMode as CheckBoxProps)
+  ...BasicExample.args,
+  ...testing.disabledMode
 }
