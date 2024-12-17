@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.2.1...v4.3.0) (2024-12-17)
+
+
+### Features
+
+* Expand FormField for more inputs ([#520](https://github.com/NicolasOmar/reactive-bulma/issues/520)) ([#517](https://github.com/NicolasOmar/reactive-bulma/issues/517)) ([#518](https://github.com/NicolasOmar/reactive-bulma/issues/518)) ([#519](https://github.com/NicolasOmar/reactive-bulma/issues/519)) ([1cc35ff](https://github.com/NicolasOmar/reactive-bulma/commit/1cc35ff4172c2c2777c43fbf6a7e2699d83ead6c))
+
 ## [4.2.1](https://github.com/NicolasOmar/reactive-bulma/compare/v4.2.0...v4.2.1) (2024-12-10)
 
 
