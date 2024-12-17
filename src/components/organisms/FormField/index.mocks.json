@@ -16,16 +16,64 @@
         "result": "is-grouped"
       }
     ],
+    "baseConfig": {
+      "inputControlConfig": {
+        "type": "input",
+        "config": {
+          "type": "text"
+        }
+      }
+    },
     "withLabel": {
       "labelText": "This is a label text"
     },
     "withHelper": {
-      "helperConfig": {
-        "text": "Hello there"
-      }
+      "text": "Hello there"
     },
     "horizontalCase": {
       "isHorizontal": true
+    },
+    "selectConfigCase": {
+      "inputControlConfig": {
+        "type": "select",
+        "config": {
+          "options": [
+            { "id": "1", "name": "1" }
+          ]
+        }
+      }
+    },
+    "checkboxConfigCase": {
+      "inputControlConfig": {
+        "type": "checkbox",
+        "config": {
+          "content": "Is a form field checkbox"
+        }
+      }
+    },
+    "radiobuttonConfigcase": {
+      "inputControlConfig": {
+        "type": "radiobutton",
+        "config": {
+          "options": [
+            { "label": "Is", "isChecked": false },
+            { "label": "A", "isChecked": false },
+            { "label": "Form", "isChecked": true },
+            { "label": "Field", "isChecked": false }
+          ],
+          "name": "isRadioFormField"
+        }
+      }
+    },
+    "textAreaConfigCase": {
+      "inputControlConfig": {
+        "type": "textarea",
+        "config": {
+          "cols": 3,
+          "rows": 3, 
+          "name": "isRadioFormField"
+        }
+      }
     }
   },
   "storybook": {

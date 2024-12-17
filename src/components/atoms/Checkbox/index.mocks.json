@@ -1,7 +1,7 @@
 {
   "testing": {
     "basicTestId": "test-checkbox",
-    "withTextContent": {
+    "basicExample": {
       "content": "TestContent"
     },
     "disabledMode": {
@@ -9,16 +9,6 @@
     }
   },
   "storybook": {
-    "argTypes": {
-      "content": {
-        "table": {
-          "type": {
-            "summary": "string | React.ReactElement | React.ReactElement[]"
-          }
-        },
-        "control": "object"
-      }
-    },
     "parameters": {
       "componentSubtitle": "The 2-state checkbox in its native format",
       "docs": {

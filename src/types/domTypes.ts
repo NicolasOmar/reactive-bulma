@@ -2,7 +2,7 @@ import React from 'react'
 
 export type ButtonType = 'submit' | 'reset' | 'button'
 
-export type InputType = 'text' | 'password' | 'email' | 'tel'
+export type InputType = 'text' | 'password' | 'email' | 'tel' | 'number'
 
 export type DropdownItemType = 'item' | 'link' | 'divider'
 
