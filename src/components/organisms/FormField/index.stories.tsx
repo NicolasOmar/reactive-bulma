@@ -21,12 +21,10 @@ export default {
 const listOfGroupedInputControls = createObjArray({
   numberOfItems: 2,
   externalParser: i => ({
-    inputControlConfig: {
-      ...testing.baseConfig.inputControlConfig,
-      config: {
-        ...testing.baseConfig.inputControlConfig.config,
-        placeholder: `Here is input #${++i}`
-      }
+    ...testing.baseConfig.inputControlConfig,
+    config: {
+      ...testing.baseConfig.inputControlConfig.config,
+      placeholder: `Here is input #${++i}`
     }
   })
 })
