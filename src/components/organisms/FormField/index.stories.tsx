@@ -78,3 +78,24 @@ SelectCase.args = {
   inputControlConfig: testing.selectConfigCase
     .inputControlConfig as FormFieldInputProps
 }
+
+export const CheckboxCase = Template.bind({})
+CheckboxCase.args = {
+  ...WithLabel.args,
+  inputControlConfig: testing.checkboxConfigCase
+    .inputControlConfig as FormFieldInputProps
+}
+
+export const RadiobuttonCase = Template.bind({})
+RadiobuttonCase.args = {
+  ...WithLabel.args,
+  inputControlConfig: testing.radiobuttonConfigcase
+    .inputControlConfig as FormFieldInputProps
+}
+
+export const TextareaCase = Template.bind({})
+TextareaCase.args = {
+  ...WithLabel.args,
+  inputControlConfig: testing.textAreaConfigCase
+    .inputControlConfig as FormFieldInputProps
+}

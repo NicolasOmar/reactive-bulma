@@ -42,6 +42,38 @@
           ]
         }
       }
+    },
+    "checkboxConfigCase": {
+      "inputControlConfig": {
+        "type": "checkbox",
+        "config": {
+          "content": "Is a form field checkbox"
+        }
+      }
+    },
+    "radiobuttonConfigcase": {
+      "inputControlConfig": {
+        "type": "radiobutton",
+        "config": {
+          "options": [
+            { "label": "Is", "isChecked": false },
+            { "label": "A", "isChecked": false },
+            { "label": "Form", "isChecked": true },
+            { "label": "Field", "isChecked": false }
+          ],
+          "name": "isRadioFormField"
+        }
+      }
+    },
+    "textAreaConfigCase": {
+      "inputControlConfig": {
+        "type": "textarea",
+        "config": {
+          "cols": 3,
+          "rows": 3, 
+          "name": "isRadioFormField"
+        }
+      }
     }
   },
   "storybook": {

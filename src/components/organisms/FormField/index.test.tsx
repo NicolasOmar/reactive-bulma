@@ -125,4 +125,44 @@ describe('FormField', () => {
     const testFormField = screen.getByTestId(basicTestId)
     expect(testFormField).toBeInTheDocument()
   })
+
+  test('Should render different input cases', () => {
+    const cases = [
+      {
+        config: testing.selectConfigCase,
+        lookByContainer: true
+      },
+      {
+        config: testing.checkboxConfigCase,
+        lookByContainer: true
+      },
+      {
+        config: testing.radiobuttonConfigcase,
+        lookByContainer: true
+      },
+      {
+        config: testing.textAreaConfigCase,
+        lookByContainer: false
+      }
+    ]
+
+    for (const inputCase of cases) {
+      const typeString = inputCase.config.inputControlConfig.type
+      const caseTestId = inputCase.lookByContainer
+        ? `test-form-field-container-${typeString}`
+        : `test-form-field-${typeString}`
+
+      render(
+        <FormField
+          inputControlConfig={
+            inputCase.config.inputControlConfig as FormFieldInputProps
+          }
+        />
+      )
+
+      const caseFormField = screen.getByTestId(caseTestId)
+      expect(caseFormField).toBeInTheDocument()
+      cleanup()
+    }
+  })
 })

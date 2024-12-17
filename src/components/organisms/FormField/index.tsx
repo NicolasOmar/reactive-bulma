@@ -45,7 +45,11 @@ const renderInputConfig = (
   key?: string,
   testId?: string
 ) => {
-  const otherProps = { key, testId }
+  const otherProps = {
+    key,
+    testId: testId ?? `test-form-field-${inputConfig.type}`,
+    containerTestId: testId ?? `test-form-field-container-${inputConfig.type}`
+  }
 
   switch (inputConfig.type) {
     case FormFieldType.INPUT:
@@ -107,20 +111,23 @@ const renderFieldBody = (
   inputConfig: FormFieldInputProps | FormFieldInputProps[],
   isGrouped: boolean
 ) => {
+  const fieldBodyKey = isGrouped
+    ? `grouped-input-control-body-${generateKey()}`
+    : `input-control-body-${generateKey()}`
   if (isGrouped) {
     return Array.isArray(inputConfig)
       ? inputConfig.map((_singleConfig, i) =>
           renderInputConfig(
             _singleConfig,
-            `grouped-input-control-${generateKey()}`,
+            fieldBodyKey,
             `test-grouped-input-control-${i}`
           )
         )
       : renderInputConfig(inputConfig)
   } else {
     return Array.isArray(inputConfig)
-      ? renderInputConfig(inputConfig[0])
-      : renderInputConfig(inputConfig)
+      ? renderInputConfig(inputConfig[0], fieldBodyKey)
+      : renderInputConfig(inputConfig, fieldBodyKey)
   }
 }
 
@@ -162,11 +169,17 @@ const FormField: React.FC<FormFieldProps> = ({
 
   const fieldBodySection = useMemo(() => {
     const fieldInput = renderFieldBody(inputControlConfig, isGrouped)
+    const sectionKey = `input-control-container-${generateKey()}`
 
     return isHorizontal ? (
-      <section className='field-body'>{fieldInput}</section>
+      <section
+        key={sectionKey}
+        className='field-body'
+      >
+        {fieldInput}
+      </section>
     ) : (
-      <>{fieldInput}</>
+      <React.Fragment key={sectionKey}>{fieldInput}</React.Fragment>
     )
   }, [isHorizontal, inputControlConfig, isGrouped])
 
