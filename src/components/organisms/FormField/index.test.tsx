@@ -4,8 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormField from '.'
 // TYPES & INTERFACES
-import { InputControlProps } from '../../../interfaces/moleculeProps'
-import { FormFieldProps } from '../../../interfaces/organismProps'
+import {
+  FormFieldInputProps,
+  FormFieldProps
+} from '../../../interfaces/organismProps'
 // FUNCTIONS
 import { createObjArray } from '../../../functions/generators'
 // MOCKS
@@ -24,11 +26,11 @@ describe('FormField', () => {
     basicGroupedInputTestId
   } = testing
   const baseTestConfig = {
-    inputControlConfig: baseConfig as InputControlProps
+    inputControlConfig: baseConfig.inputControlConfig as FormFieldInputProps
   }
   const listOfGroupedInputControls = createObjArray({
     numberOfItems: 2,
-    externalParser: () => baseConfig
+    externalParser: () => baseConfig.inputControlConfig
   })
 
   test('Should render the component', () => {
@@ -60,9 +62,11 @@ describe('FormField', () => {
 
   test('Should render a helper and a label next to the required input', () => {
     const testFieldWithLabelAndHelper = {
-      ...baseTestConfig,
       ...withLabel,
-      ...withHelper
+      inputControlConfig: {
+        ...baseTestConfig.inputControlConfig,
+        helper: withHelper
+      }
     }
 
     render(<FormField {...testFieldWithLabelAndHelper} />)
@@ -76,12 +80,12 @@ describe('FormField', () => {
   test('Should render a helper with same color than FormField input', () => {
     const testFieldWithLabelAndHelper = {
       inputControlConfig: {
-        ...inputControlMocks.testing.baseConfig,
-        inputConfig: {
+        ...inputControlMocks.testing.baseConfig.inputControlConfig,
+        helper: {
+          ...withHelper,
           color: 'is-danger'
         }
-      } as InputControlProps,
-      ...withHelper
+      } as FormFieldInputProps
     }
 
     render(<FormField {...testFieldWithLabelAndHelper} />)
@@ -92,7 +96,7 @@ describe('FormField', () => {
 
   test('Should render a grouped list of inputs', () => {
     const testFieldWithGroupedInputList = {
-      inputControlConfig: listOfGroupedInputControls as InputControlProps[],
+      inputControlConfig: listOfGroupedInputControls as FormFieldInputProps[],
       isGrouped: true
     }
 
@@ -108,7 +112,7 @@ describe('FormField', () => {
 
   test('Should render first input from a list when is FormField is not grouped', () => {
     const testFieldWithInputList = {
-      inputControlConfig: listOfGroupedInputControls as InputControlProps[]
+      inputControlConfig: listOfGroupedInputControls as FormFieldInputProps[]
     }
 
     render(<FormField {...testFieldWithInputList} />)

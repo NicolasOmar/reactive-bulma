@@ -16,16 +16,32 @@
         "result": "is-grouped"
       }
     ],
+    "baseConfig": {
+      "inputControlConfig": {
+        "type": "input",
+        "config": {
+          "type": "text"
+        }
+      }
+    },
     "withLabel": {
       "labelText": "This is a label text"
     },
     "withHelper": {
-      "helperConfig": {
-        "text": "Hello there"
-      }
+      "text": "Hello there"
     },
     "horizontalCase": {
       "isHorizontal": true
+    },
+    "selectConfigCase": {
+      "inputControlConfig": {
+        "type": "select",
+        "config": {
+          "options": [
+            { "id": "1", "name": "1" }
+          ]
+        }
+      }
     }
   },
   "storybook": {

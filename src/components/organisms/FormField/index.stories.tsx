@@ -3,40 +3,31 @@ import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import FormField from '.'
 // TYPES & INTERFACES
-import { InputProps } from '../../../interfaces/atomProps'
-import { InputControlProps } from '../../../interfaces/moleculeProps'
+import { FormFieldInputProps } from '../../../interfaces/organismProps'
 // FUNCTIONS
 import { createObjArray } from '../../../functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import inputControlMocks from '../../molecules/InputControl/index.mocks.json'
-
-const { baseConfig } = inputControlMocks.testing
 
 export default {
   title: 'Organisms/FormField',
   component: FormField,
   ...storybook,
-  args: { inputControlConfig: baseConfig }
+  args: {
+    inputControlConfig: testing.baseConfig.inputControlConfig
+  }
 } as Meta<typeof FormField>
 
-const inputControlWithColor = {
-  inputControlConfig: {
-    ...baseConfig,
-    inputConfig: {
-      ...baseConfig.inputConfig,
-      color: 'is-danger'
-    } as InputProps
-  }
-}
 const listOfGroupedInputControls = createObjArray({
   numberOfItems: 2,
   externalParser: i => ({
-    ...baseConfig,
-    inputConfig: {
-      ...baseConfig.inputConfig,
-      placeholder: `Here is input #${++i}`
-    } as InputProps
+    inputControlConfig: {
+      ...testing.baseConfig.inputControlConfig,
+      config: {
+        ...testing.baseConfig.inputControlConfig.config,
+        placeholder: `Here is input #${++i}`
+      }
+    }
   })
 })
 
@@ -50,31 +41,40 @@ WithLabel.args = testing.withLabel
 export const WithLabelAndHelper = Template.bind({})
 WithLabelAndHelper.args = {
   ...WithLabel.args,
-  ...testing.withHelper
+  inputControlConfig: {
+    ...testing.baseConfig.inputControlConfig,
+    helper: testing.withHelper
+  } as FormFieldInputProps
 }
 
 export const ErrorCase = Template.bind({})
 ErrorCase.args = {
-  ...WithLabelAndHelper.args,
-  ...inputControlWithColor
+  inputControlConfig: {
+    ...WithLabel.args,
+    ...testing.baseConfig.inputControlConfig,
+    helper: {
+      ...testing.withHelper,
+      color: 'is-danger'
+    }
+  } as FormFieldInputProps
 }
 
 export const GroupedInputs = Template.bind({})
 GroupedInputs.args = {
   isGrouped: true,
-  inputControlConfig: listOfGroupedInputControls as InputControlProps[]
-}
-
-export const ExpandedAndGroupedInputs = Template.bind({})
-ExpandedAndGroupedInputs.args = {
-  isGrouped: true,
-  inputControlConfig: (listOfGroupedInputControls as InputControlProps[]).map(
-    (_input, i) => ({ ..._input, isExpanded: i === 0 })
-  )
+  inputControlConfig: listOfGroupedInputControls as FormFieldInputProps[]
 }
 
 export const Horizontal = Template.bind({})
 Horizontal.args = {
+  ...WithLabel.args,
   ...ErrorCase.args,
   ...testing.horizontalCase
+}
+
+export const SelectCase = Template.bind({})
+SelectCase.args = {
+  ...WithLabel.args,
+  inputControlConfig: testing.selectConfigCase
+    .inputControlConfig as FormFieldInputProps
 }

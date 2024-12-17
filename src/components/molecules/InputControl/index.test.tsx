@@ -10,7 +10,9 @@ import { testing } from './index.mocks.json'
 
 describe('InputControl', () => {
   const { basicTestId, testClasses, baseConfig } = testing
-  const typedBaseConfig = baseConfig as InputControlProps
+  const typedBaseConfig = {
+    inputConfig: baseConfig.inputControlConfig.config
+  } as InputControlProps
 
   test('Should render the component', () => {
     render(<InputControl {...typedBaseConfig} />)
