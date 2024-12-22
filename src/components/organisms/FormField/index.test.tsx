@@ -4,33 +4,22 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormField from '.'
 // TYPES & INTERFACES
-import {
-  FormFieldInputProps,
-  FormFieldProps
-} from '../../../interfaces/organismProps'
+import { FormFieldProps } from '../../../interfaces/organismProps'
+import { FormFieldInputProps } from '../../../interfaces/moleculeProps'
 // FUNCTIONS
 import { createObjArray } from '../../../functions/generators'
 // MOCKS
-import { testing } from './index.mocks.json'
-import inputControlMocks from '../../molecules/InputControl/index.mocks.json'
+import mocks from './index.mocks.json'
 
 describe('FormField', () => {
-  const { baseConfig } = inputControlMocks.testing
-  const {
-    basicTestId,
-    testClasses,
-    withLabel,
-    withHelper,
-    basicLabelTestId,
-    basicHelperTestId,
-    basicGroupedInputTestId
-  } = testing
+  const { basicTestId, testClasses, basicGroupedInputTestId, baseConfig } =
+    mocks.testing
   const baseTestConfig = {
-    inputControlConfig: baseConfig.inputControlConfig as FormFieldInputProps
+    config: baseConfig.config as FormFieldInputProps
   }
   const listOfGroupedInputControls = createObjArray({
     numberOfItems: 2,
-    externalParser: () => baseConfig.inputControlConfig
+    externalParser: () => baseConfig.config
   })
 
   test('Should render the component', () => {
@@ -60,43 +49,9 @@ describe('FormField', () => {
     })
   })
 
-  test('Should render a helper and a label next to the required input', () => {
-    const testFieldWithLabelAndHelper = {
-      ...withLabel,
-      inputControlConfig: {
-        ...baseTestConfig.inputControlConfig,
-        helper: withHelper
-      }
-    }
-
-    render(<FormField {...testFieldWithLabelAndHelper} />)
-    const testFieldLabel = screen.getByTestId(basicLabelTestId)
-    const testFieldHelp = screen.getByTestId(basicHelperTestId)
-
-    expect(testFieldLabel).toBeInTheDocument()
-    expect(testFieldHelp).toBeInTheDocument()
-  })
-
-  test('Should render a helper with same color than FormField input', () => {
-    const testFieldWithLabelAndHelper = {
-      inputControlConfig: {
-        ...inputControlMocks.testing.baseConfig.inputControlConfig,
-        helper: {
-          ...withHelper,
-          color: 'is-danger'
-        }
-      } as FormFieldInputProps
-    }
-
-    render(<FormField {...testFieldWithLabelAndHelper} />)
-    const testFieldHelp = screen.getByTestId(`${basicHelperTestId}-danger`)
-
-    expect(testFieldHelp).toBeInTheDocument()
-  })
-
   test('Should render a grouped list of inputs', () => {
     const testFieldWithGroupedInputList = {
-      inputControlConfig: listOfGroupedInputControls as FormFieldInputProps[],
+      config: listOfGroupedInputControls as FormFieldInputProps[],
       isGrouped: true
     }
 
@@ -112,7 +67,7 @@ describe('FormField', () => {
 
   test('Should render first input from a list when is FormField is not grouped', () => {
     const testFieldWithInputList = {
-      inputControlConfig: listOfGroupedInputControls as FormFieldInputProps[]
+      config: listOfGroupedInputControls as FormFieldInputProps[]
     }
 
     render(<FormField {...testFieldWithInputList} />)
@@ -124,45 +79,5 @@ describe('FormField', () => {
 
     const testFormField = screen.getByTestId(basicTestId)
     expect(testFormField).toBeInTheDocument()
-  })
-
-  test('Should render different input cases', () => {
-    const cases = [
-      {
-        config: testing.selectConfigCase,
-        lookByContainer: true
-      },
-      {
-        config: testing.checkboxConfigCase,
-        lookByContainer: true
-      },
-      {
-        config: testing.radiobuttonConfigcase,
-        lookByContainer: true
-      },
-      {
-        config: testing.textAreaConfigCase,
-        lookByContainer: false
-      }
-    ]
-
-    for (const inputCase of cases) {
-      const typeString = inputCase.config.inputControlConfig.type
-      const caseTestId = inputCase.lookByContainer
-        ? `test-form-field-container-${typeString}`
-        : `test-form-field-${typeString}`
-
-      render(
-        <FormField
-          inputControlConfig={
-            inputCase.config.inputControlConfig as FormFieldInputProps
-          }
-        />
-      )
-
-      const caseFormField = screen.getByTestId(caseTestId)
-      expect(caseFormField).toBeInTheDocument()
-      cleanup()
-    }
   })
 })

@@ -21,7 +21,7 @@ const parseCamelCaseName = (name, startLowerCase = false) => (
     .replaceAll(separatorsRegExp, '')
 )
 
-module.exports = {
+export default {
   prompt: ({ inquirer }) => {
     const questions = [{
       type: 'input',

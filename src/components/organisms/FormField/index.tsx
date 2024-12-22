@@ -1,133 +1,56 @@
 import React, { useMemo } from 'react'
 // COMPONENTS
-import InputControl from '../../molecules/InputControl'
-import { Checkbox, RadioButton, Select, TextArea } from '../../atoms'
+import FormFieldInput from '../../molecules/FormFieldInput'
 // TYPES & INTERFACES
-import { InputControlProps } from '../../../interfaces/moleculeProps'
-import {
-  FormFieldHelper,
-  FormFieldType,
-  FormFieldProps,
-  FormFieldInputProps
-} from '../../../interfaces/organismProps'
-import {
-  CheckBoxProps,
-  RadioButtonProps,
-  SelectProps,
-  TextAreaProps
-} from '../../../interfaces/atomProps'
+import { FormFieldInputProps } from '../../../interfaces/moleculeProps'
+import { FormFieldProps } from '../../../interfaces/organismProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { generateKey } from '../../../functions/generators'
 
-const renderFieldHelper = (helperConfig?: FormFieldHelper) => {
-  if (!helperConfig) return null
-
-  const fieldHelperClasses = parseClasses(['help', helperConfig.color])
-  const fieldHelperTestId = parseTestId({
-    tag: 'form-field-help',
-    parsedClasses: fieldHelperClasses,
-    rules: [{ regExp: /help|is/gm, replacer: '' }]
-  })
-
-  return (
-    <p
-      data-testid={fieldHelperTestId}
-      className={fieldHelperClasses}
-    >
-      {helperConfig.text}
-    </p>
-  )
-}
-
-const renderInputConfig = (
-  inputConfig: FormFieldInputProps,
-  key?: string,
-  testId?: string
-) => {
-  const otherProps = {
-    key,
-    testId: testId ?? `test-form-field-${inputConfig.type}`,
-    containerTestId: testId ?? `test-form-field-container-${inputConfig.type}`
-  }
-
-  switch (inputConfig.type) {
-    case FormFieldType.INPUT:
-      return (
-        <>
-          <InputControl
-            {...(inputConfig.config as InputControlProps)}
-            {...otherProps}
-          />
-          {renderFieldHelper(inputConfig.helper)}
-        </>
-      )
-    case FormFieldType.SELECT:
-      return (
-        <>
-          <Select
-            {...(inputConfig.config as SelectProps)}
-            {...otherProps}
-          />
-          {renderFieldHelper(inputConfig.helper)}
-        </>
-      )
-    case FormFieldType.CHECKBOX:
-      return (
-        <>
-          <Checkbox
-            {...(inputConfig.config as CheckBoxProps)}
-            {...otherProps}
-          />
-          {renderFieldHelper(inputConfig.helper)}
-        </>
-      )
-    case FormFieldType.RADIOBUTTON:
-      return (
-        <>
-          <RadioButton
-            {...(inputConfig.config as RadioButtonProps)}
-            {...otherProps}
-          />
-          {renderFieldHelper(inputConfig.helper)}
-        </>
-      )
-    case FormFieldType.TEXTAREA:
-      return (
-        <>
-          <TextArea
-            {...(inputConfig.config as TextAreaProps)}
-            {...otherProps}
-          />
-          {renderFieldHelper(inputConfig.helper)}
-        </>
-      )
-    default:
-      return null
-  }
-}
-
-const renderFieldBody = (
+const memoizeFormFieldInput = (
   inputConfig: FormFieldInputProps | FormFieldInputProps[],
-  isGrouped: boolean
+  isGrouped: boolean,
+  isHorizontal: boolean
 ) => {
   const fieldBodyKey = isGrouped
     ? `grouped-input-control-body-${generateKey()}`
     : `input-control-body-${generateKey()}`
+
   if (isGrouped) {
-    return Array.isArray(inputConfig)
-      ? inputConfig.map((_singleConfig, i) =>
-          renderInputConfig(
-            _singleConfig,
-            fieldBodyKey,
-            `test-grouped-input-control-${i}`
-          )
+    return Array.isArray(inputConfig) ? (
+      inputConfig.map((_singleConfig, i) => {
+        const parsedSingleConfig = {
+          ..._singleConfig,
+          isHorizontal: _singleConfig.isHorizontal ?? isHorizontal,
+          testId: `test-grouped-input-control-${i}`
+        }
+        return (
+          <FormFieldInput
+            key={fieldBodyKey}
+            {...parsedSingleConfig}
+          />
         )
-      : renderInputConfig(inputConfig)
+      })
+    ) : (
+      <FormFieldInput
+        labelText={inputConfig.labelText}
+        input={inputConfig.input}
+        type={inputConfig.type}
+        helper={inputConfig.helper}
+        isHorizontal={inputConfig.isHorizontal ?? isHorizontal}
+      />
+    )
   } else {
-    return Array.isArray(inputConfig)
-      ? renderInputConfig(inputConfig[0], fieldBodyKey)
-      : renderInputConfig(inputConfig, fieldBodyKey)
+    const parsedFieldInputConfig = Array.isArray(inputConfig)
+      ? null
+      : {
+          ...inputConfig,
+          isHorizontal: inputConfig.isHorizontal ?? isHorizontal
+        }
+    return parsedFieldInputConfig !== null ? (
+      <FormFieldInput {...parsedFieldInputConfig} />
+    ) : null
   }
 }
 
@@ -135,8 +58,7 @@ const FormField: React.FC<FormFieldProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
-  labelText = null,
-  inputControlConfig,
+  config,
   isHorizontal = false,
   isGrouped = false
 }) => {
@@ -149,39 +71,10 @@ const FormField: React.FC<FormFieldProps> = ({
   const formFieldTestId =
     testId ?? parseTestId({ tag: 'field', parsedClasses: formFieldClasses })
 
-  const fieldLabelSection = useMemo(() => {
-    const labelSection =
-      labelText !== null ? (
-        <label
-          data-testid={`test-form-field-label`}
-          className='label'
-        >
-          {labelText}
-        </label>
-      ) : null
-
-    return isHorizontal ? (
-      <section className='field-label'>{labelSection}</section>
-    ) : (
-      labelSection
-    )
-  }, [isHorizontal, labelText])
-
-  const fieldBodySection = useMemo(() => {
-    const fieldInput = renderFieldBody(inputControlConfig, isGrouped)
-    const sectionKey = `input-control-container-${generateKey()}`
-
-    return isHorizontal ? (
-      <section
-        key={sectionKey}
-        className='field-body'
-      >
-        {fieldInput}
-      </section>
-    ) : (
-      <React.Fragment key={sectionKey}>{fieldInput}</React.Fragment>
-    )
-  }, [isHorizontal, inputControlConfig, isGrouped])
+  const memorizedFormInput = useMemo(
+    () => memoizeFormFieldInput(config, isGrouped, isHorizontal),
+    [config, isGrouped, isHorizontal]
+  )
 
   return (
     <section
@@ -189,8 +82,11 @@ const FormField: React.FC<FormFieldProps> = ({
       className={formFieldClasses}
       style={style ?? undefined}
     >
-      {fieldLabelSection}
-      {fieldBodySection}
+      {isHorizontal ? (
+        <section className='field-body'>{memorizedFormInput}</section>
+      ) : (
+        memorizedFormInput
+      )}
     </section>
   )
 }

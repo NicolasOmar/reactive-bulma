@@ -35,7 +35,7 @@ export const ErrorState = Template.bind({})
 ErrorState.args = {
   ...WithBothIcons.args,
   inputConfig: {
-    ...(testing.baseConfig.inputControlConfig as InputProps),
+    ...(testing.baseConfig.inputConfig as InputProps),
     color: 'is-danger'
   }
 }
