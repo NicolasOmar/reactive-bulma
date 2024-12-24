@@ -6,6 +6,7 @@ export default {
     '!src/components/**/*.stories.tsx',
     'src/functions/**.ts'
   ],
+  testMatch: ['**/**/*.test.tsx'],
   coverageThreshold: {
     global: {
       branches: 95,

@@ -37,6 +37,10 @@ const Checkbox: React.FC<CheckBoxProps> = ({
       tag: 'checkbox',
       parsedClasses: parseContentTestId(content)
     })
+  const checkboxBaseStyle = {
+    display: 'inline-block',
+    marginLeft: '5px'
+  }
 
   return (
     <label
@@ -55,7 +59,7 @@ const Checkbox: React.FC<CheckBoxProps> = ({
         onChange={onChange}
         onBlur={onBlur}
       />
-      {content}
+      <p style={checkboxBaseStyle}>{content}</p>
     </label>
   )
 }

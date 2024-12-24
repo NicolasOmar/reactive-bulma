@@ -8,6 +8,7 @@ import {
 import {
   BreadcrumbItemProps,
   ButtonProps,
+  CheckBoxProps,
   ColumnProps,
   DeleteProps,
   DropdownItemProps,
@@ -17,9 +18,12 @@ import {
   MenuItemProps,
   NavBarItemProps,
   PaginationItemProps,
+  RadioButtonProps,
+  SelectProps,
   TabItemProps,
   TableCellProps,
-  TableHeadCellProps
+  TableHeadCellProps,
+  TextAreaProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
@@ -288,4 +292,35 @@ export interface TableRowProps extends ElementProps, ClickeableProps {
   listOfCells: TableCellProps[]
   /** `Styling` Used for `Table` styling purpose only. Will set row's background color to indicate it has been selected by the user */
   isSelected?: boolean
+}
+
+export enum FormFieldType {
+  INPUT = 'input',
+  SELECT = 'select',
+  CHECKBOX = 'checkbox',
+  RADIOBUTTON = 'radiobutton',
+  TEXTAREA = 'textarea'
+}
+
+export type FormFieldConfig =
+  | InputControlProps
+  | SelectProps
+  | CheckBoxProps
+  | RadioButtonProps
+  | TextAreaProps
+
+export interface FormFieldHelper {
+  text?: string
+  color?: BasicColorType
+}
+
+export interface FormFieldInputProps extends ElementProps {
+  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
+  labelText?: string
+  type: FormFieldType
+  input: FormFieldConfig
+  /** `Attribute` Sets a custom text below the input to show a message */
+  helper?: FormFieldHelper
+  /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
+  isHorizontal?: boolean
 }

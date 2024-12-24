@@ -29,11 +29,8 @@
       }
     ],
     "baseConfig": {
-      "inputControlConfig": {
-        "type": "input",
-        "config": {
-          "type": "text"
-        }
+      "inputConfig": {
+        "type": "input"
       }
     },
     "bigSizeConfig": { "size": "is-large" }

@@ -1,8 +1,6 @@
 {
   "testing": {
     "basicTestId": "test-field",
-    "basicLabelTestId": "test-form-field-label",
-    "basicHelperTestId": "test-form-field-help",
     "basicGroupedInputTestId": "test-grouped-input-control",
     "testClasses": [
       {
@@ -17,71 +15,26 @@
       }
     ],
     "baseConfig": {
-      "inputControlConfig": {
+      "config": {
+        "labelText": "Is a form field example",
         "type": "input",
-        "config": {
-          "type": "text"
+        "input": {
+          "inputConfig": {
+            "type": "text"
+          }
         }
       }
-    },
-    "withLabel": {
-      "labelText": "This is a label text"
-    },
-    "withHelper": {
-      "text": "Hello there"
     },
     "horizontalCase": {
       "isHorizontal": true
-    },
-    "selectConfigCase": {
-      "inputControlConfig": {
-        "type": "select",
-        "config": {
-          "options": [
-            { "id": "1", "name": "1" }
-          ]
-        }
-      }
-    },
-    "checkboxConfigCase": {
-      "inputControlConfig": {
-        "type": "checkbox",
-        "config": {
-          "content": "Is a form field checkbox"
-        }
-      }
-    },
-    "radiobuttonConfigcase": {
-      "inputControlConfig": {
-        "type": "radiobutton",
-        "config": {
-          "options": [
-            { "label": "Is", "isChecked": false },
-            { "label": "A", "isChecked": false },
-            { "label": "Form", "isChecked": true },
-            { "label": "Field", "isChecked": false }
-          ],
-          "name": "isRadioFormField"
-        }
-      }
-    },
-    "textAreaConfigCase": {
-      "inputControlConfig": {
-        "type": "textarea",
-        "config": {
-          "cols": 3,
-          "rows": 3, 
-          "name": "isRadioFormField"
-        }
-      }
     }
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "componentSubtitle": "Component wrapper for Bulma's form inputs",
       "docs": {
         "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+          "component": "`FormInput` wrapper for multiple components handling."
         }
       }
     }

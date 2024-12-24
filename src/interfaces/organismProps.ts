@@ -2,7 +2,7 @@
 import { ClickeableProps, ElementProps } from './commonProps'
 // COMPONENT PROPS
 import {
-  InputControlProps,
+  FormFieldInputProps,
   LevelItemProps,
   NavBarBrandProps,
   NavBarDropdownProps,
@@ -11,50 +11,18 @@ import {
   TableRowProps
 } from './moleculeProps'
 import {
-  CheckBoxProps,
   ImageProps,
   NavBarItemProps,
-  RadioButtonProps,
-  SelectProps,
   TableHeadCellProps,
-  TextAreaProps,
   TileProps
 } from './atomProps'
 // TYPES & INTERFACES
 import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
 
-export enum FormFieldType {
-  INPUT = 'input',
-  SELECT = 'select',
-  CHECKBOX = 'checkbox',
-  RADIOBUTTON = 'radiobutton',
-  TEXTAREA = 'textarea'
-}
-
-export type FormFieldConfig =
-  | InputControlProps
-  | SelectProps
-  | CheckBoxProps
-  | RadioButtonProps
-  | TextAreaProps
-
-export interface FormFieldHelper {
-  text?: string
-  color?: BasicColorType
-}
-
-export interface FormFieldInputProps {
-  type: FormFieldType
-  config: FormFieldConfig
-  helper?: FormFieldHelper
-}
-
 export interface FormFieldProps extends ElementProps {
   /** `Attribute` `Required` Single or multiple `FormFieldConfig` config objects which will be wrapped around the `FormField` */
-  inputControlConfig: FormFieldInputProps | FormFieldInputProps[]
-  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
-  labelText?: string
+  config: FormFieldInputProps | FormFieldInputProps[]
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
   isHorizontal?: boolean
   /** `Styling` Will group the list of inputs in a same wrapper (useful for several inputs with same usage, as a complex address) */
