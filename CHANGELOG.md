@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.0...v4.3.1) (2024-12-24)
+
+
+### Bug Fixes
+
+* Formfield cannot be used with formik data handling ([#525](https://github.com/NicolasOmar/reactive-bulma/issues/525)) ([#526](https://github.com/NicolasOmar/reactive-bulma/issues/526)) ([#521](https://github.com/NicolasOmar/reactive-bulma/issues/521)) ([9f017a1](https://github.com/NicolasOmar/reactive-bulma/commit/9f017a1aeb3d2f7dece796e37a34d1685b24d33f))
+
 # [4.3.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.2.1...v4.3.0) (2024-12-17)
 
 
