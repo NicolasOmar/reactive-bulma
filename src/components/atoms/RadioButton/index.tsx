@@ -20,6 +20,10 @@ const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
     onBlur
   } = config
   const radioButtonTestId = testId ?? `test-radio-button-item-${index}`
+  const radioButtonBaseStyle = {
+    display: 'inline-block',
+    marginLeft: '5px'
+  }
 
   return (
     <label
@@ -37,7 +41,7 @@ const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
         onChange={onChange}
         onBlur={onBlur}
       />
-      {label}
+      <p style={radioButtonBaseStyle}>{label}</p>
     </label>
   )
 }
