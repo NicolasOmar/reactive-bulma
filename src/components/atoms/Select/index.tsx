@@ -11,7 +11,9 @@ const Select: React.FC<SelectProps> = ({
   containerCssClasses = null,
   style = null,
   containerStyle = null,
+  isDisabled,
   options = [],
+  selectedValues,
   name,
   showOptions = 1,
   isMultiple = false,
@@ -52,18 +54,20 @@ const Select: React.FC<SelectProps> = ({
         data-testid={selectTestId}
         className={cssClasses ?? undefined}
         style={style ?? undefined}
+        defaultValue={selectedValues}
         name={name}
+        disabled={isDisabled ?? false}
         multiple={isMultiple}
         size={showOptions}
+        onClick={onClick}
+        onChange={onChange}
+        onBlur={onBlur}
       >
-        {options.map(({ id, name, selected }, i) => (
+        {options.map(({ id, name }, i) => (
           <option
             data-testid={`${selectTestId}-option-${i}`}
-            key={id.toString()}
-            defaultChecked={selected ?? false}
-            onClick={onClick}
-            onChange={onChange}
-            onBlur={onBlur}
+            key={`key-option-${id.toString()}`}
+            value={id.toString()}
           >
             {name}
           </option>
