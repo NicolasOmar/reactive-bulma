@@ -17,8 +17,13 @@ const Template: StoryFn<typeof Checkbox> = args => <Checkbox {...args} />
 
 export const BasicExample = Template.bind({})
 
+export const Checked = Template.bind({})
+Checked.args = {
+  isChecked: true
+}
+
 export const Disabled = Template.bind({})
 Disabled.args = {
-  ...BasicExample.args,
+  ...Checked.args,
   ...testing.disabledMode
 }

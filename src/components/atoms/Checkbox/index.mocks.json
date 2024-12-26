@@ -2,7 +2,7 @@
   "testing": {
     "basicTestId": "test-checkbox",
     "basicExample": {
-      "content": "TestContent"
+      "label": "TestContent"
     },
     "disabledMode": {
       "isDisabled": true

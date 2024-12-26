@@ -4,8 +4,8 @@ import { CheckBoxProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 
-const parseContentTestId = (content: string | null): string =>
-  content ? '-with-component' : ''
+const parseContentTestId = (label: string | null): string =>
+  label ? '-with-component' : ''
 
 const Checkbox: React.FC<CheckBoxProps> = ({
   testId = null,
@@ -14,9 +14,10 @@ const Checkbox: React.FC<CheckBoxProps> = ({
   containerCssClasses = null,
   style = null,
   containerStyle = null,
-  content = null,
+  label = null,
+  isChecked,
   name,
-  isDisabled = null,
+  isDisabled = false,
   onClick,
   onChange,
   onBlur
@@ -29,13 +30,13 @@ const Checkbox: React.FC<CheckBoxProps> = ({
     containerTestId ??
     parseTestId({
       tag: 'checkbox-container',
-      parsedClasses: parseContentTestId(content)
+      parsedClasses: parseContentTestId(label)
     })
   const checkboxTestId =
     testId ??
     parseTestId({
       tag: 'checkbox',
-      parsedClasses: parseContentTestId(content)
+      parsedClasses: parseContentTestId(label)
     })
   const checkboxBaseStyle = {
     display: 'inline-block',
@@ -54,12 +55,13 @@ const Checkbox: React.FC<CheckBoxProps> = ({
         name={name}
         className={cssClasses ?? undefined}
         style={style ?? undefined}
-        disabled={isDisabled ?? false}
+        defaultChecked={isChecked}
+        disabled={isDisabled}
         onClick={onClick}
         onChange={onChange}
         onBlur={onBlur}
       />
-      <p style={checkboxBaseStyle}>{content}</p>
+      <p style={checkboxBaseStyle}>{label}</p>
     </label>
   )
 }
