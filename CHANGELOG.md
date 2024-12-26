@@ -1,3 +1,10 @@
+## [4.3.2](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.1...v4.3.2) (2024-12-26)
+
+
+### Bug Fixes
+
+* Checkbox had no value setter property ([#528](https://github.com/NicolasOmar/reactive-bulma/issues/528)) ([#527](https://github.com/NicolasOmar/reactive-bulma/issues/527)) ([1ca949e](https://github.com/NicolasOmar/reactive-bulma/commit/1ca949e3efcc30b4ded1464e2cf5a4c5ef0b93ba))
+
 ## [4.3.1](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.0...v4.3.1) (2024-12-24)
 
 
