@@ -34,11 +34,11 @@
       "showOptions": 3
     },
     "firstOptionSelected": {
+      "selectedValues": ["0"],
       "options": [
         {
           "id": 0,
-          "name": "Option 0",
-          "selected": true
+          "name": "Option 0"
         },
         {
           "id": 1,
