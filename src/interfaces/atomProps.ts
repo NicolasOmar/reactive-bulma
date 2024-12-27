@@ -219,15 +219,18 @@ export interface DeleteProps extends ElementProps, ClickeableProps {
 export interface SelectOption {
   id: string | number
   name: string
-  selected?: boolean
 }
 
 export interface SelectProps
   extends ComposedElementProps,
     InteractiveOnChangeProps,
     NamedInputProps {
-  /** `Attribute` Indicates the options contained on the select */
+  /** `Attribute` Will disable the input */
+  isDisabled?: boolean
+  /** `Attribute` Indicates the select contained on the select */
   options?: SelectOption[]
+  /** `Attribute` Will select a different default option if the user provides it. It can be an multiple selection if `isMultiple` is true */
+  selectedValues?: string | string[]
   /** `Attribute` Indicates how many options will be shown at first glance (before looking for the whole list */
   showOptions?: number
   /** `Attribute` Will allow multiple selection */

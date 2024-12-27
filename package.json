@@ -41,7 +41,7 @@
     "prettier": "prettier src/**/*.{tsx,ts} --write",
     "prettier:ci": "prettier src/**/*.{tsx,ts} --check",
     "lint-staged": "lint-staged -v",
-    "setup": "npm ci",
+    "setup": "npm ci && husky",
     "compile": "tsc -b",
     "build": "npm run compile && vite build",
     "build:storybook": "storybook build",

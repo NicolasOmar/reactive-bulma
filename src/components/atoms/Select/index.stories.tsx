@@ -21,6 +21,12 @@ WithOneOption.args = testing.oneOption
 export const WithSeveralOptions = Template.bind({})
 WithSeveralOptions.args = testing.severalOptions
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+  ...WithSeveralOptions.args,
+  isDisabled: true
+}
+
 export const ShowsThreeOptions = Template.bind({})
 ShowsThreeOptions.args = {
   ...testing.severalOptions,
