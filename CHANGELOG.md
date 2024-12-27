@@ -1,3 +1,10 @@
+## [4.3.3](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.2...v4.3.3) (2024-12-27)
+
+
+### Bug Fixes
+
+* Fixing non-functional user interactions in Select component ([#530](https://github.com/NicolasOmar/reactive-bulma/issues/530)) ([#529](https://github.com/NicolasOmar/reactive-bulma/issues/529)) ([40e2010](https://github.com/NicolasOmar/reactive-bulma/commit/40e201094aa4755db4cd4e3b626a7914be8067b1))
+
 ## [4.3.2](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.1...v4.3.2) (2024-12-26)
 
 
