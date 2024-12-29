@@ -1,3 +1,12 @@
+## [4.3.4](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.3...v4.3.4) (2024-12-29)
+
+
+### Bug Fixes
+
+* Adding date input type for Input. Types adjusted for a extended brandConfig implementation ([864a9e6](https://github.com/NicolasOmar/reactive-bulma/commit/864a9e6c9899513c5924b1285b94089a460edd34))
+* Dependencies version updated. 12/29/24 ([#536](https://github.com/NicolasOmar/reactive-bulma/issues/536)) ([#535](https://github.com/NicolasOmar/reactive-bulma/issues/535)) ([94fb512](https://github.com/NicolasOmar/reactive-bulma/commit/94fb5122ed3061e759f686aa73ada9039de5f443))
+* Updating dependencies ([0c86bab](https://github.com/NicolasOmar/reactive-bulma/commit/0c86bab2e4d31666508b370f33f72870ac9c478c))
+
 ## [4.3.3](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.2...v4.3.3) (2024-12-27)
 
 
