@@ -3,6 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import NavBarBrand from '.'
+import { Image } from '../../atoms'
 // TYPES & INTERFACES
 import { NavBarBrandProps } from '../../../interfaces/moleculeProps'
 // FUNCTIONS
@@ -12,9 +13,15 @@ import { testing } from './index.mocks.json'
 describe('NavBarBrand', () => {
   const { basicTestId, basicBurgerTestId, testBasicConfig, testClasses } =
     testing
+  const fullConfig = {
+    ...testBasicConfig,
+    brandConfig: {
+      children: <Image {...testBasicConfig.brandConfig.children} />
+    }
+  }
 
   test('Should render the component', () => {
-    render(<NavBarBrand {...testBasicConfig} />)
+    render(<NavBarBrand {...fullConfig} />)
     const testNavBarBrand = screen.getByTestId(basicTestId)
     const testNavBarBrandBurger = screen.getByTestId(basicBurgerTestId)
 
@@ -29,7 +36,7 @@ describe('NavBarBrand', () => {
         ''
       )}`
       const classTestObject: NavBarBrandProps = {
-        ...testBasicConfig,
+        ...fullConfig,
         [name]: value
       }
 

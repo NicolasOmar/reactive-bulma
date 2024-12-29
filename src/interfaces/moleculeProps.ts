@@ -13,7 +13,6 @@ import {
   DeleteProps,
   DropdownItemProps,
   IconProps,
-  ImageProps,
   InputProps,
   MenuItemProps,
   NavBarItemProps,
@@ -275,7 +274,7 @@ export interface NavBarDropdownProps extends ComposedElementProps {
 }
 
 interface BrandConfigProps extends Omit<NavBarItemProps, 'children'> {
-  children: ImageProps
+  children: SingleChildType
 }
 
 export interface NavBarBrandProps extends ElementProps {

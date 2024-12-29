@@ -18,19 +18,25 @@ export interface ElementProps {
 
 export interface ComposedElementProps extends ElementProps, ContainerProps {}
 
-export interface ClickeableProps {
+export interface ClickeableProps<
+  ElementType = Element,
+  EventType = MouseEvent
+> {
   /** `Function` Reffers to each time the user click the element. Alone does not nothing, but can be reused for other components */
-  onClick?: (event: React.MouseEvent) => void
+  onClick?: (event: React.MouseEvent<ElementType, EventType>) => void
 }
 
-export interface ChangeableProps {
+export interface ChangeableProps<ElementType = Element> {
   /** `Function` Reffers to each time the user press a key. Alone does not nothing, but can be reused for other components */
-  onChange?: (event: React.ChangeEvent) => void
+  onChange?: (event: React.ChangeEvent<ElementType>) => void
 }
 
-export interface BlureableProps {
+export interface BlureableProps<
+  ElementType = Element,
+  RelatedTargetType = Element
+> {
   /** `Function` Reffers to each time the user focus out the element. Alone does not nothing, but can be reused for other components */
-  onBlur?: (event: React.FocusEvent) => void
+  onBlur?: (event: React.FocusEvent<ElementType, RelatedTargetType>) => void
 }
 
 export interface InteractiveProps

@@ -2,6 +2,7 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import NavBarBrand from '.'
+import { Image } from '../../atoms'
 // TYPES & INTERFACES
 // FUNCTIONS
 // MOCKS
@@ -17,7 +18,11 @@ export default {
   title: 'Molecules/NavBarBrand',
   component: NavBarBrand,
   ...storybook,
-  args: testing.testBasicConfig
+  args: {
+    brandConfig: {
+      children: <Image {...testing.testBasicConfig.brandConfig.children} />
+    }
+  }
 } as Meta<typeof NavBarBrand>
 
 const Template: StoryFn<typeof NavBarBrand> = args => <NavBarBrand {...args} />
