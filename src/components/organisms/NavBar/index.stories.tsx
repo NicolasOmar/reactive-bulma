@@ -2,6 +2,7 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
 import NavBar from '.'
+import { Image } from '../../atoms'
 // TYPES & INTERFACES
 import { NavBarItemProps } from '../../../interfaces/atomProps'
 // FUNCTIONS
@@ -25,7 +26,15 @@ export default {
   component: NavBar,
   ...storybook,
   args: {
-    brandConfig: navBarBrandMocks.testing.testBasicConfig
+    brandConfig: {
+      brandConfig: {
+        children: (
+          <Image
+            {...navBarBrandMocks.testing.testBasicConfig.brandConfig.children}
+          />
+        )
+      }
+    }
   }
 } as Meta<typeof NavBar>
 

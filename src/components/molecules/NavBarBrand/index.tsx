@@ -1,6 +1,6 @@
 import React from 'react'
 // COMPONENTS
-import { Image, NavBarItem } from '../../atoms'
+import { NavBarItem } from '../../atoms'
 // TYPES & INTERFACES
 import { NavBarBrandProps } from '../../../interfaces/moleculeProps'
 // FUNCTIONS
@@ -33,11 +33,7 @@ const NavBarBrand: React.FC<NavBarBrandProps> = ({
       className={navBarBrandClasses}
       style={style ?? undefined}
     >
-      {
-        <NavBarItem {...brandItemConfig}>
-          <Image {...children} />
-        </NavBarItem>
-      }
+      {<NavBarItem {...brandItemConfig}>{children}</NavBarItem>}
 
       <a
         role='button'

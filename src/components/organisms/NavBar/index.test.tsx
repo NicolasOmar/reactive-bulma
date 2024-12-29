@@ -3,6 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import NavBar from '.'
+import { Image } from '../../atoms'
 // TYPES & INTERFACES
 import { NavBarProps } from '../../../interfaces/organismProps'
 import { NavBarItemProps } from '../../../interfaces/atomProps'
@@ -54,7 +55,15 @@ describe('NavBar', () => {
 
   test('Should render the component with all configuration objects', () => {
     const allConfigsAddedObject = {
-      brandConfig: navBarBrandMocks.testing.testBasicConfig,
+      brandConfig: {
+        brandConfig: {
+          children: (
+            <Image
+              {...navBarBrandMocks.testing.testBasicConfig.brandConfig.children}
+            />
+          )
+        }
+      },
       itemsAtStart: {
         itemList: [{ text: 'Hello in the start', items: itemListWithDividers }]
       },

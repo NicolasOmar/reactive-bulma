@@ -51,7 +51,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   return (
     <textarea
       data-testid={textAreaTestId}
-      defaultValue={value ?? undefined}
+      value={value ?? undefined}
       name={name}
       cols={cols ?? undefined}
       rows={rows ?? undefined}
