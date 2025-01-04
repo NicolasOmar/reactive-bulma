@@ -42,7 +42,7 @@ const renderMemorizedInput = ({
   input
 }: Partial<FormFieldInputProps>) => {
   const otherProps = {
-    testId: testId ?? `test-form-field-${type}`,
+    testId: input?.testId ?? testId ?? `test-form-field-${type}`,
     containerTestId: testId ?? `test-form-field-container-${type}`
   }
 
