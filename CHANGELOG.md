@@ -1,3 +1,10 @@
+## [4.3.5](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.4...v4.3.5) (2025-01-04)
+
+
+### Bug Fixes
+
+* Fixing input's testId implementation on FormFieldInput ([#538](https://github.com/NicolasOmar/reactive-bulma/issues/538)) ([#537](https://github.com/NicolasOmar/reactive-bulma/issues/537)) ([336295d](https://github.com/NicolasOmar/reactive-bulma/commit/336295d65f090808ded7ed4720d090ac7093a00e))
+
 ## [4.3.4](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.3...v4.3.4) (2024-12-29)
 
 
