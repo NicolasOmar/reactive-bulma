@@ -34,7 +34,7 @@ Component library based on React, Bulma, Typescript and Vite
 After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I began this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
 
 Now I have finished (Jan 31th) [the last story](https://github.com/NicolasOmar/reactive-bulma/issues/80) related to my proposed roadmap; I will change the repo's objectives to the following:
-- Check every new issues raised by users who found new bugs (of any kind) or related to new components or feature improvements of the existing ones.
+- Check every new issue raised by users who found new bugs (of any kind) or related to new components or feature improvements of the existing ones.
 - Update dependencies every week, creating alongside its related PR, branch, and PR to maintain track of those updates. 
 - Include ReactiveBulma's components as part of my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I now have code that I can get rid of and, in that process, find new opportunities to enhance components' usability.
 
