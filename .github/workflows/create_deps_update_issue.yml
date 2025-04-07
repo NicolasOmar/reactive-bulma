@@ -62,6 +62,5 @@ jobs:
             - [ ] Check storybook build process runs without stoppers. `npm run build:storybook`
             - [ ] Create the branch and PR associated with the abovementioned changes.
             - [ ] Wait until PR-related workflows run OK.
-            - [ ] Push the code with the `fix: ` prefix to update the package's version on npm and GitHub registries.
           PINNED: false
           CLOSE_PREVIOUS: false
