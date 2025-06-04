@@ -1,5 +1,5 @@
 import React from 'react'
-import { StoryFn, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react-vite'
 // INTERFACES
 import { TitleProps } from '../../../interfaces/atomProps'
 // COMPONENTS

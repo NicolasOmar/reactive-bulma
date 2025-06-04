@@ -1,5 +1,5 @@
 import React from 'react'
-import { StoryFn, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import InputControl from '.'
 // TYPES & INTERFACES
