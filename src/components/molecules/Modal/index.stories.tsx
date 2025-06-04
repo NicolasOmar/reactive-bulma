@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StoryFn, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Modal from '.'
 import ButtonGroup from '../ButtonGroup'
