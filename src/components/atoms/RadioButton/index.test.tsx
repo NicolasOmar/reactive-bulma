@@ -47,7 +47,7 @@ describe('RadioButton', () => {
 
       if (i === 0) {
         fireEvent.click(radioButtonItem)
-        expect(nonClickeableRadioButton.onChange).not.toBeCalled()
+        expect(nonClickeableRadioButton.onChange).not.toHaveBeenCalled()
         expect(nonClickeableRadioButton.onChange).toHaveBeenCalledTimes(0)
       }
     })
