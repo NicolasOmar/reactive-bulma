@@ -1,3 +1,14 @@
+## [4.3.16](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.15...v4.3.16) (2025-07-13)
+
+
+### Bug Fixes
+
+* Dependencies version updated. 13/07/25 ([#613](https://github.com/NicolasOmar/reactive-bulma/issues/613))([#605](https://github.com/NicolasOmar/reactive-bulma/issues/605))([#606](https://github.com/NicolasOmar/reactive-bulma/issues/606))([#608](https://github.com/NicolasOmar/reactive-bulma/issues/608))([#609](https://github.com/NicolasOmar/reactive-bulma/issues/609))([#611](https://github.com/NicolasOmar/reactive-bulma/issues/611))([#612](https://github.com/NicolasOmar/reactive-bulma/issues/612)) ([d9f9a22](https://github.com/NicolasOmar/reactive-bulma/commit/d9f9a22c1638b019913daf61a5d06ae8ac6d36fa))
+* reverting bulma update ([cb5303f](https://github.com/NicolasOmar/reactive-bulma/commit/cb5303f7e4670a181dc725a8267cdaa74a9cf8d6))
+* unit test fixed ([5c67311](https://github.com/NicolasOmar/reactive-bulma/commit/5c6731112359cf8000b6987e6e6f09701b69dd35))
+* updating libraries with major version and storybook ([db59d8e](https://github.com/NicolasOmar/reactive-bulma/commit/db59d8e05f6ce4c5d68ed1e3679ff23d5cb2ba81))
+* updating minor updates ([7bccdae](https://github.com/NicolasOmar/reactive-bulma/commit/7bccdae2a9bc2555bfab29a008c024694b73fedd))
+
 ## [4.3.15](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.14...v4.3.15) (2025-06-04)
 
 
