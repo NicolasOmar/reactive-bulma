@@ -1,3 +1,14 @@
+## [4.3.18](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.17...v4.3.18) (2025-08-10)
+
+
+### Bug Fixes
+
+* Dependencies version updated. 10/08/25 ([#619](https://github.com/NicolasOmar/reactive-bulma/issues/619))([#618](https://github.com/NicolasOmar/reactive-bulma/issues/618))([#617](https://github.com/NicolasOmar/reactive-bulma/issues/617))([#616](https://github.com/NicolasOmar/reactive-bulma/issues/616)) ([4701d10](https://github.com/NicolasOmar/reactive-bulma/commit/4701d105bdf4204a0ee53ef9367c8a5e2df7402c))
+* updating last packages ([4bbc538](https://github.com/NicolasOmar/reactive-bulma/commit/4bbc5387777bf6623d5ab0b568fefefbef47dacc))
+* updating minor-level packages ([7fa74b2](https://github.com/NicolasOmar/reactive-bulma/commit/7fa74b2a4e3868a97a9a7d748ac12c4c7d63a075))
+* updating patch-level packages ([a42f95f](https://github.com/NicolasOmar/reactive-bulma/commit/a42f95fa9d5450b81179b5a621b4b87e3be4ada8))
+* updating storybook related packages ([57c5292](https://github.com/NicolasOmar/reactive-bulma/commit/57c529294ae83a97aeb3bdc65f53447fa8ef0f2c))
+
 ## [4.3.17](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.16...v4.3.17) (2025-07-21)
 
 
