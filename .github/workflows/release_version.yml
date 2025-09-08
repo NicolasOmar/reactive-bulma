@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 1/4 | Checkout repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: 2/4 | Setup Node environment
       uses: actions/setup-node@v4
       with:

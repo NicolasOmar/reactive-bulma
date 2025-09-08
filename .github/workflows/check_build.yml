@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: 1/5 | Checkout repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: 2/5 | Setup Node environment
       uses: actions/setup-node@v4
       with:
