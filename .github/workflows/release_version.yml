@@ -11,7 +11,7 @@ jobs:
     - name: 1/4 | Checkout repo
       uses: actions/checkout@v5
     - name: 2/4 | Setup Node environment
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: latest
     - name: 3/4 | Install dependencies
