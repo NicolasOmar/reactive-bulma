@@ -12,7 +12,7 @@ jobs:
     - name: 1/5 | Checkout repo
       uses: actions/checkout@v5
     - name: 2/5 | Setup Node environment
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: latest
     - name: 3/5 | Install depedencies
