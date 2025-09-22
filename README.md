@@ -31,12 +31,7 @@ Component library based on React, Bulma, Typescript and Vite
 
 ## Purpose
 
-After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I began this project to understand how to create a component library and investigate the best ways to maintain and nourish it as any professional-level alternatives.
-
-Now I have finished (Jan 31th) [the last story](https://github.com/NicolasOmar/reactive-bulma/issues/80) related to my proposed roadmap; I will change the repo's objectives to the following:
-- Check every new issue raised by users who found new bugs (of any kind) or related to new components or feature improvements of the existing ones.
-- Update dependencies every week, creating alongside its related PR, branch, and PR to maintain track of those updates. 
-- Include ReactiveBulma's components as part of my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I now have code that I can get rid of and, in that process, find new opportunities to enhance components' usability.
+After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I began this project to understand how to create a component library and investigate the best ways to maintain and nourish it, as well as any professional-level alternatives.
 
 ## Status
 
@@ -203,21 +198,33 @@ Given the mentioned release logic, `main` is the only static branch, and each de
 
 ## Roadmap
 
-After finishing the last story related to `v4.0.0`, ReactiveBulma's current work is now focused on updating its dependencies in a weekly manner, as well as checking every issue or discussion raised by visitors who are interested in improving the project by proposing new ideas in shape of tickets or issues with its related PR.
+Since mid-September 2025, I have begun updating ReactiveBulma's main tools to their latest major versions ([Bulma v1](https://bulma.io/documentation/start/migrating-to-v1/) and [React v19](https://react.dev/blog/2024/12/05/react-19)), which includes issues and pull requests I wrapped in version `v5`.
+
+At the same time, I am updating the rest of the dependencies every week, creating alongside its related PR, branch, and PR to maintain track of those updates. 
+
+After launching the next major version (with the needed major updates), I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I migrated all custom components to where I now have code that I can get rid of and, in that process, find new opportunities to enhance components' usability.
 
 In case you want actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
 
+| Version | Progress | Open issues | Closed issues
+| :---: | :---: | :---: | :---: |
+| `v5.0.0` | ![v5.0.0, progress][badge-progress-500] | ![v5.0.0, open][badge-issues-open-500] | ![v5.0.0, closed][badge-issues-closed-500] |
+| `v4.0.0` | ![v4.0.0, progress][badge-progress-400] | ![v4.0.0, open][badge-issues-open-400] | ![v4.0.0, closed][badge-issues-closed-400] |
+| `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
+| `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
+| `v1.0.0` | ![v1.0.0, progress][badge-progress-100] | ![v1.0.0, open][badge-issues-open-100] | ![v1.0.0, closed][badge-issues-closed-100] |
+
 <details>
-<summary>Here is the status table I used to keep track of the worked milestones/versions.</summary>
+<summary>Here is the status table I used to keep track of the worked milestones/versions. (before v5)</summary>
 
 | Version | Progress | Open issues | Closed issues
 | :---: | :---: | :---: | :---: |
-| `v1.0.0` | ![v1.0.0, progress][badge-progress-100] | ![v1.0.0, open][badge-issues-open-100] | ![v1.0.0, closed][badge-issues-closed-100] |
-| `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
-| `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
 | `v4.0.0` | ![v4.0.0, progress][badge-progress-400] | ![v4.0.0, open][badge-issues-open-400] | ![v4.0.0, closed][badge-issues-closed-400] |
+| `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
+| `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
+| `v1.0.0` | ![v1.0.0, progress][badge-progress-100] | ![v1.0.0, open][badge-issues-open-100] | ![v1.0.0, closed][badge-issues-closed-100] |
 
-In case you want the detailed list of current and future features, go to the [roadmap document](https://docs.google.com/document/d/1kWX-dDTD-cQUeB_Vbu0K6xRvtHaSA38h76yQnhiCe9U).
+`[DEPRECATED]` In case you want the detailed list of current and future features, go to the [roadmap document](https://docs.google.com/document/d/1kWX-dDTD-cQUeB_Vbu0K6xRvtHaSA38h76yQnhiCe9U).
 </details>
 
 [badge-progress-100]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/1?label=%20&style=flat&color=informational
@@ -232,6 +239,9 @@ In case you want the detailed list of current and future features, go to the [ro
 [badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=informational
 [badge-issues-open-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=orange
 [badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=success
+[badge-progress-500]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/5?label=%20&style=flat&color=informational
+[badge-issues-open-500]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/5?label=%20&style=flat&color=orange
+[badge-issues-closed-500]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/5?label=%20&style=flat&color=success
 
 ## Changelog
 
