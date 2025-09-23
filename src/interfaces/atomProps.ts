@@ -46,6 +46,10 @@ export interface ColumnProps
 export interface ButtonProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'button'> {
+  /** `Attribute` The component will be rendered as an anchor instead a button */
+  isAnAnchor?: boolean
+  /** `Attribute` In case the component has `isAnAnchor` as `true`, it will include an url to be reffered */
+  anchorHref?: string
   /** `Attribute` The text will be shown in the `Button` */
   text?: string
   /** `Attribute` Will disable the button */
@@ -66,6 +70,10 @@ export interface ButtonProps
   isStatic?: boolean
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
   isSelected?: boolean
+  /** `Styling` Will adjust button's width to its container fullest */
+  isFullWidth?: boolean
+  /** `Styling` Will adjust button's size for a responsive design, adjustable to its size */
+  isResponsive?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
   size?: ElementSizeType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
