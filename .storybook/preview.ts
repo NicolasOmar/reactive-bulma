@@ -1,7 +1,9 @@
 import '../node_modules/bulma/css/bulma.min.css'
 import '../node_modules/@mdi/font/css/materialdesignicons.min.css'
 import type { Preview } from '@storybook/react-vite'
+// For setting dark/light mode in storybook instance
 import { withThemeByClassName } from '@storybook/addon-themes';
+import { themes } from 'storybook/internal/theming';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +13,14 @@ const preview: Preview = {
         date: /Date$/i
       },
       expanded: true
+    },
+    docs: {
+      theme: themes.dark,
+      source: {
+        dark: true,
+        excludeDecorators: true,
+        language: 'tsx'
+      }
     }
   },
   tags: ['autodocs'],
@@ -20,7 +30,7 @@ const preview: Preview = {
         light: 'theme-light',
         dark: 'theme-dark',
       },
-      defaultTheme: 'light',
+      defaultTheme: 'dark',
     }),
   ]
 }
