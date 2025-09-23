@@ -21,6 +21,17 @@ describe('Button', () => {
     expect(textButton).toBeInTheDocument()
   })
 
+  test('Should render the button with a dummy text as an anchor', () => {
+    render(
+      <Button
+        text={dummyText}
+        isAnAnchor={true}
+      />
+    )
+    const textButton = screen.getByText(dummyText)
+    expect(textButton).toBeInTheDocument()
+  })
+
   test('Should render the button with specific CSS styles', () => {
     Object.keys(testStyles).forEach(prop => {
       const styleValue = (testStyles as Record<string, string>)[prop]
