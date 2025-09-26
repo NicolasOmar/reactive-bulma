@@ -4,9 +4,9 @@ to: <%= fileRoute %>.tsx
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { <%= name %>Props } from '../../../interfaces/<%= route %>Props'
+import { <%= name %>Props } from '@interfaces/<%= route %>Props'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 <% if(isSimple){ %>
 const <%= name %>: React.FC<<%= name %>Props> = ({

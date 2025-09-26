@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { HeroProps } from '../../../interfaces/organismProps'
-import { ChildrenType, HeroContentType } from '../../../types/domTypes'
-import { SizeWithHeightType } from '../../../types/styleTypes'
+import { HeroProps } from '@interfaces/organismProps'
+import { ChildrenType, HeroContentType } from '@customTypes/domTypes'
+import { SizeWithHeightType } from '@customTypes/styleTypes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const renderHeroSection = (
   content: ChildrenType | null,

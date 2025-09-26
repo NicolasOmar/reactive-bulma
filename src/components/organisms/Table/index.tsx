@@ -1,13 +1,13 @@
 import React from 'react'
 // COMPONENTS
-import { TableHeadCell } from '../../atoms'
-import { TableRow } from '../../molecules'
+import { TableHeadCell } from '@components/atoms'
+import { TableRow } from '@components/molecules'
 // TYPES & INTERFACES
-import { TableProps } from '../../../interfaces/organismProps'
-import { TableHeadCellProps } from '../../../interfaces/atomProps'
+import { TableProps } from '@interfaces/organismProps'
+import { TableHeadCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 interface TableElementProps {
   tableTestId: string

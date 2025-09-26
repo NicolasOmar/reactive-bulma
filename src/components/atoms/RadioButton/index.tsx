@@ -1,11 +1,8 @@
 import React, { useMemo } from 'react'
 // TYPES & INTERFACES
-import {
-  RadioButtonItemProps,
-  RadioButtonProps
-} from '../../../interfaces/atomProps'
+import { RadioButtonItemProps, RadioButtonProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
   const {

@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import ProgressBar from '.'
 // TYPES & INTERFACES
-import { ProgressBarProps } from '../../../interfaces/atomProps'
+import { ProgressBarProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

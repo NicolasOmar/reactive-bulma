@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { BreadcrumbItem } from '../../atoms'
+import { BreadcrumbItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
+import { BreadcrumbsProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   testId = 'breadcrumbs',

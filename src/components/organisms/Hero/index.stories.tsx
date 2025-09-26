@@ -2,16 +2,16 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Hero from '.'
-import { Title } from '../../atoms'
-import { Breadcrumbs } from '../../molecules'
+import { Title } from '@components/atoms'
+import { Breadcrumbs } from '@components/molecules'
 // TYPES & INTERFACES
-import { BreadcrumbItemProps, TitleProps } from '../../../interfaces/atomProps'
+import { BreadcrumbItemProps, TitleProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import titleMocks from '../../atoms/Title/index.mocks.json'
-import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
+import titleMocks from '@components/atoms/Title/index.mocks.json'
+import breacrumbItemMocks from '@components/atoms/BreadcrumbItem/index.mocks.json'
 
 const externalBreadcrumbParser = (i: number) => ({
   text: breacrumbItemMocks.testing.testText,

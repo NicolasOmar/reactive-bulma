@@ -2,14 +2,14 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import NavBar from '.'
-import { Image } from '../../atoms'
+import { Image } from '@components/atoms'
 // TYPES & INTERFACES
-import { NavBarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook } from './index.mocks.json'
-import navBarBrandMocks from '../../molecules/NavBarBrand/index.mocks.json'
+import navBarBrandMocks from '@components/molecules/NavBarBrand/index.mocks.json'
 
 const itemListWithDividers = createObjArray({
   numberOfItems: 7,

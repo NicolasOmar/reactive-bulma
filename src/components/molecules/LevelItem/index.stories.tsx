@@ -2,14 +2,14 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import LevelItem from '.'
-import { LevelHeader, Title } from '../../atoms'
+import { LevelHeader, Title } from '@components/atoms'
 // TYPES & INTERFACES
-import { TitleProps } from '../../../interfaces/atomProps'
+import { TitleProps } from '@interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import titleMocks from '../../atoms/Title/index.mocks.json'
-import levelHeaderMocks from '../../atoms/LevelHeader/index.mocks.json'
+import titleMocks from '@components/atoms/Title/index.mocks.json'
+import levelHeaderMocks from '@components/atoms/LevelHeader/index.mocks.json'
 
 export default {
   title: 'Molecules/LevelItem',

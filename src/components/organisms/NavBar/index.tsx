@@ -1,14 +1,14 @@
 import React from 'react'
 // COMPONENTS
-import { NavBarItem } from '../../atoms'
-import { NavBarBrand, NavBarDropdown } from '../../molecules'
+import { NavBarItem } from '@components/atoms'
+import { NavBarBrand, NavBarDropdown } from '@components/molecules'
 // TYPES & INTERFACES
-import { NavBarMenuProps, NavBarProps } from '../../../interfaces/organismProps'
-import { NavBarItemProps } from '../../../interfaces/atomProps'
-import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarMenuProps, NavBarProps } from '@interfaces/organismProps'
+import { NavBarItemProps } from '@interfaces/atomProps'
+import { NavBarDropdownProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const renderNavBarMenuSection = (
   menuSectionConfig: NavBarMenuProps | null,

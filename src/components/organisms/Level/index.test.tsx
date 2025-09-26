@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Level from '.'
 // TYPES & INTERFACES
-import { LevelProps } from '../../../interfaces/organismProps'
-import { LevelItemProps } from '../../../interfaces/moleculeProps'
+import { LevelProps } from '@interfaces/organismProps'
+import { LevelItemProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
 

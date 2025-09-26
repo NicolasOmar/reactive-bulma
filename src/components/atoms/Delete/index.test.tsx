@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Delete from '.'
 // TYPES & INTERFACES
-import { DeleteProps } from '../../../interfaces/atomProps'
+import { DeleteProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

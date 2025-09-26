@@ -6,7 +6,7 @@ import FormFieldInput from '.'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import { FormFieldInputProps } from '../../../interfaces/moleculeProps'
+import { FormFieldInputProps } from '@interfaces/moleculeProps'
 
 export default {
   title: 'Molecules/FormFieldInput',

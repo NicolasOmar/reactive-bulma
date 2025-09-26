@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Title from '.'
 // TYPES & INTERFACES
-import { TitleProps } from '../../../interfaces/atomProps'
+import { TitleProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

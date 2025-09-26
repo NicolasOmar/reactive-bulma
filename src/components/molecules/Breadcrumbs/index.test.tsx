@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Breadcrumbs from '.'
 // TYPES & INTERFACES
-import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
+import { BreadcrumbsProps } from '@interfaces/moleculeProps'
 // MOCKS
 import { testing } from './index.mocks.json'
-import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
+import breacrumbItemMocks from '@components/atoms/BreadcrumbItem/index.mocks.json'
 
 const breadcrumbItems = Array(5)
   .fill(null)

@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { MenuItem } from '../../atoms'
+import { MenuItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { MenuListProps } from '../../../interfaces/moleculeProps'
+import { MenuListProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const MenuList: React.FC<MenuListProps> = ({
   testId = null,

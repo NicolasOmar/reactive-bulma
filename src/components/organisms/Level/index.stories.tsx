@@ -3,9 +3,9 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Level from '.'
 // TYPES & INTERFACES
-import { LevelItemProps } from '../../../interfaces/moleculeProps'
+import { LevelItemProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

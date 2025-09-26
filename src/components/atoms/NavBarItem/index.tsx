@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { NavBarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const NavBarItem: React.FC<NavBarItemProps> = ({
   testId = null,
