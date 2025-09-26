@@ -20,7 +20,8 @@ import {
   TextColorType,
   TitleSizeType,
   RightLeftAlignType,
-  CommonSizeType
+  CommonSizeType,
+  ColorVersionType
 } from '../types/styleTypes'
 import {
   DropdownItemType,
@@ -46,14 +47,18 @@ export interface ColumnProps
 export interface ButtonProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'button'> {
+  /** `Attribute` The component will be rendered as an anchor instead a button */
+  isAnAnchor?: boolean
+  /** `Attribute` In case the component has `isAnAnchor` as `true`, it will include an url to be reffered */
+  anchorHref?: string
   /** `Attribute` The text will be shown in the `Button` */
   text?: string
   /** `Attribute` Will disable the button */
   isDisabled?: boolean
   /** `Styling` Color based on bulma's color tokens */
   color?: BasicColorType
-  /** `Styling` Will adjust the selected color with a ligther style */
-  isLightColor?: boolean
+  /** `Styling` Will adjust the selected color with a ligther or darker style */
+  colorVersion?: ColorVersionType
   /** `Styling` Will invert button's colors (typography in color and background in white or black) */
   isInvertedColor?: boolean
   /** `Styling` Similar to `isInvertedColor`, but button's border will be colored */
@@ -66,6 +71,10 @@ export interface ButtonProps
   isStatic?: boolean
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
   isSelected?: boolean
+  /** `Styling` Will adjust button's width to its container fullest */
+  isFullWidth?: boolean
+  /** `Styling` Will adjust button's size for a responsive design, adjustable to its size */
+  isResponsive?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
   size?: ElementSizeType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */

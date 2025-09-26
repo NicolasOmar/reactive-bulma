@@ -68,6 +68,8 @@ export type TextColorType =
   | 'has-text-warning'
   | 'has-text-danger'
 
+export type ColorVersionType = 'is-light' | 'is-dark'
+
 export type FixedImageSizeType =
   | 'is-16x16'
   | 'is-24x24'

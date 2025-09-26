@@ -9,13 +9,15 @@
       "backgroundColor": "blue"
     },
     "testClasses": {
-      "isLightColor": "is-light",
+      "colorVersion": "is-light",
       "isInvertedColor": "is-inverted",
       "isOutlined": "is-outlined",
       "isRounded": "is-rounded",
       "isLoading": "is-loading",
       "isStatic": "is-static",
-      "isSelected": "is-selected"
+      "isSelected": "is-selected",
+      "isFullWidth": "is-fullwidth",
+      "isResponsive": "is-responsive"
     }
   },
   "storybook": {
