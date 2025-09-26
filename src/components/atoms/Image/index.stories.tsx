@@ -27,6 +27,11 @@ WithFixedStyle.args = {
   fixedSize: 'is-3by5'
 }
 
+export const FullSized = Template.bind({})
+FullSized.args = {
+  fixedSize: 'is-fullwidth'
+}
+
 export const IsRounded = Template.bind({})
 IsRounded.args = {
   isRounded: true
