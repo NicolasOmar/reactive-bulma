@@ -30,6 +30,8 @@ import {
   SingleChildType
 } from '../types/domTypes'
 
+type ColorVersionType = 'light' | 'dark'
+
 export interface ColumnProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'section'> {
@@ -56,8 +58,8 @@ export interface ButtonProps
   isDisabled?: boolean
   /** `Styling` Color based on bulma's color tokens */
   color?: BasicColorType
-  /** `Styling` Will adjust the selected color with a ligther style */
-  isLightColor?: boolean
+  /** `Styling` Will adjust the selected color with a ligther or darker style */
+  colorVersion?: ColorVersionType
   /** `Styling` Will invert button's colors (typography in color and background in white or black) */
   isInvertedColor?: boolean
   /** `Styling` Similar to `isInvertedColor`, but button's border will be colored */
