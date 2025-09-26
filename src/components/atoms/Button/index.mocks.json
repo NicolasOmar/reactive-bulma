@@ -9,7 +9,7 @@
       "backgroundColor": "blue"
     },
     "testClasses": {
-      "colorVersion": "light",
+      "colorVersion": "is-light",
       "isInvertedColor": "is-inverted",
       "isOutlined": "is-outlined",
       "isRounded": "is-rounded",

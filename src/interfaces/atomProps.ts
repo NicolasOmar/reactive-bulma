@@ -20,7 +20,8 @@ import {
   TextColorType,
   TitleSizeType,
   RightLeftAlignType,
-  CommonSizeType
+  CommonSizeType,
+  ColorVersionType
 } from '../types/styleTypes'
 import {
   DropdownItemType,
@@ -29,8 +30,6 @@ import {
   TileContextType,
   SingleChildType
 } from '../types/domTypes'
-
-type ColorVersionType = 'light' | 'dark'
 
 export interface ColumnProps
   extends ElementProps,

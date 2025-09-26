@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
   const buttonClasses = parseClasses([
     'button',
     color,
-    colorVersion ? `is-${colorVersion}` : null,
+    colorVersion,
     isInvertedColor ? 'is-inverted' : null,
     isOutlined ? 'is-outlined' : null,
     isRounded ? 'is-rounded' : null,
