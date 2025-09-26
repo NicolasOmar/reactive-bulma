@@ -1,12 +1,12 @@
 import React from 'react'
 // COMPONENTS
-import { LevelItem } from '../../molecules'
+import { LevelItem } from '@components/molecules'
 // TYPES & INTERFACES
-import { LevelProps } from '../../../interfaces/organismProps'
-import { LevelItemProps } from '../../../interfaces/moleculeProps'
+import { LevelProps } from '@interfaces/organismProps'
+import { LevelItemProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const renderLevelSection = (levelItemList: LevelItemProps[]) =>
   levelItemList.map(_levelItemConfig => (

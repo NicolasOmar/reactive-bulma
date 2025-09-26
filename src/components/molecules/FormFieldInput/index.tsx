@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 // COMPONENTS
-import { Select, Checkbox, RadioButton, TextArea } from '../../atoms'
+import { Select, Checkbox, RadioButton, TextArea } from '@components/atoms'
 import InputControl from '../InputControl'
 // TYPES & INTERFACES
 import {
@@ -8,15 +8,15 @@ import {
   FormFieldInputProps,
   FormFieldType,
   InputControlProps
-} from '../../../interfaces/moleculeProps'
+} from '@interfaces/moleculeProps'
 import {
   SelectProps,
   CheckBoxProps,
   RadioButtonProps,
   TextAreaProps
-} from '../../../interfaces/atomProps'
+} from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const renderInputLabel = (labelText?: string, isHorizontal?: boolean) => {
   const labelSection =

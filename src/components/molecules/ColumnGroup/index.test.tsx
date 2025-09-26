@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import ColumnGroup from '.'
 // TYPES & INTERFACES
-import { ColumnGroupProps } from '../../../interfaces/moleculeProps'
+import { ColumnGroupProps } from '@interfaces/moleculeProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

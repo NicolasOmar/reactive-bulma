@@ -3,9 +3,9 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import FormField from '.'
 // TYPES & INTERFACES
-import { FormFieldInputProps } from '../../../interfaces/moleculeProps'
+import { FormFieldInputProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

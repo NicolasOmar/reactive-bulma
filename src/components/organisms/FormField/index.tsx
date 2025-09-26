@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
 // COMPONENTS
-import FormFieldInput from '../../molecules/FormFieldInput'
+import FormFieldInput from '@components/molecules/FormFieldInput'
 // TYPES & INTERFACES
-import { FormFieldInputProps } from '../../../interfaces/moleculeProps'
-import { FormFieldProps } from '../../../interfaces/organismProps'
+import { FormFieldInputProps } from '@interfaces/moleculeProps'
+import { FormFieldProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const memoizeFormFieldInput = (
   inputConfig: FormFieldInputProps | FormFieldInputProps[],

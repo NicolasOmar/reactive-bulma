@@ -3,9 +3,9 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Pagination from '.'
 // TYPES & INTERFACES
-import { PaginationItemProps } from '../../../interfaces/atomProps'
+import { PaginationItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

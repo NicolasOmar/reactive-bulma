@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Hero from '.'
 // TYPES & INTERFACES
-import { HeroProps } from '../../../interfaces/organismProps'
+import { HeroProps } from '@interfaces/organismProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { Image } from '../../atoms'
+import { Image } from '@components/atoms'
 // TYPES & INTERFACES
-import { CardProps } from '../../../interfaces/organismProps'
+import { CardProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const Card: React.FC<CardProps> = ({
   testId = null,

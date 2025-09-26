@@ -4,9 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import TableCell from '.'
 // TYPES & INTERFACES
-import { TableCellProps } from '../../../interfaces/atomProps'
+import { TableCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { renderTestingTableContainer } from '../../../functions/jest'
+import { renderTestingTableContainer } from '@functions/jest'
 // MOCKS
 import { testing } from './index.mocks.json'
 

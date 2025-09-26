@@ -6,12 +6,12 @@ import Breadcrumbs from '.'
 import {
   RightCenteredAlignType,
   BreadcrumbSeparatorType
-} from '../../../types/styleTypes'
+} from '@customTypes/styleTypes'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook } from './index.mocks.json'
-import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
+import breacrumbItemMocks from '@components/atoms/BreadcrumbItem/index.mocks.json'
 
 const externalParser = (i: number) => ({
   text: breacrumbItemMocks.testing.testText,

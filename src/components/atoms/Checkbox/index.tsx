@@ -1,8 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { CheckBoxProps } from '../../../interfaces/atomProps'
+import { CheckBoxProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const parseContentTestId = (label: string | null): string =>
   label ? '-with-component' : ''

@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
-import { NavBarItem } from '../../atoms'
+import { NavBarItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { NavBarBrandProps } from '../../../interfaces/moleculeProps'
+import { NavBarBrandProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const NavBarBrand: React.FC<NavBarBrandProps> = ({
   testId = null,

@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { Icon, Input } from '../../atoms'
+import { Icon, Input } from '@components/atoms'
 // TYPES & INTERFACES
-import { InputControlProps } from '../../../interfaces/moleculeProps'
-import { IconProps } from '../../../interfaces/atomProps'
+import { InputControlProps } from '@interfaces/moleculeProps'
+import { IconProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const renderIcon = (iconConfig?: IconProps): React.ReactElement | null =>
   iconConfig ? <Icon {...iconConfig} /> : null

@@ -4,8 +4,8 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Message from '.'
 // TYPES & INTERFACES
-import { MessageProps } from '../../../interfaces/moleculeProps'
-import { DeleteProps } from '../../../interfaces/atomProps'
+import { MessageProps } from '@interfaces/moleculeProps'
+import { DeleteProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

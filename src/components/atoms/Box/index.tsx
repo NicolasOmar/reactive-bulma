@@ -1,6 +1,6 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { BoxProps } from '../../../interfaces/atomProps'
+import { BoxProps } from '@interfaces/atomProps'
 
 const Box: React.FC<BoxProps> = ({
   testId = 'test-box',

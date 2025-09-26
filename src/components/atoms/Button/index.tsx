@@ -1,8 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { ButtonProps } from '../../../interfaces/atomProps'
+import { ButtonProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Button: React.FC<ButtonProps> = ({
   testId = null,

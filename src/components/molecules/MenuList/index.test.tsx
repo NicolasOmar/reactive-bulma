@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import MenuList from '.'
 // TYPES & INTERFACES
-import { MenuItemProps } from '../../../interfaces/atomProps'
+import { MenuItemProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

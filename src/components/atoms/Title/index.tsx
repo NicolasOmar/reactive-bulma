@@ -1,8 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { TitleProps, TitleSectionProps } from '../../../interfaces/atomProps'
+import { TitleProps, TitleSectionProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses } from '../../../functions/parsers'
+import { parseClasses } from '@functions/parsers'
 
 const renderTitleSection = (
   section: TitleSectionProps

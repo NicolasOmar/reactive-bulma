@@ -1,16 +1,16 @@
 import React, { CSSProperties } from 'react'
 // COMPONENTS
 import InputControl from '../InputControl'
-import { Button, Icon } from '../../atoms'
+import { Button, Icon } from '@components/atoms'
 // TYPES & INTERFACES
-import { ButtonProps, IconProps } from '../../../interfaces/atomProps'
+import { ButtonProps, IconProps } from '@interfaces/atomProps'
 import {
   InputControlProps,
   PanelBlockItemProps,
   PanelBlockProps
-} from '../../../interfaces/moleculeProps'
+} from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const convertConfigToComponent = (
   { type, props }: PanelBlockItemProps,

@@ -3,9 +3,9 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import NavBarDropdown from '.'
 // TYPES & INTERFACES
-import { NavBarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

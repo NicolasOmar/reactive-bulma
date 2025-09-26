@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { PanelBlock, PanelTabs } from '../../molecules'
+import { PanelBlock, PanelTabs } from '@components/molecules'
 // TYPES & INTERFACES
-import { PanelProps } from '../../../interfaces/organismProps'
+import { PanelProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const generateHeader = (headerText: string) => (
   <p className='panel-heading'>{headerText}</p>

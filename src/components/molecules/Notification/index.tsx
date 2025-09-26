@@ -1,10 +1,10 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { NotificationProps } from '../../../interfaces/moleculeProps'
+import { NotificationProps } from '@interfaces/moleculeProps'
 // COMPONENTS
-import { Delete } from '../../atoms'
+import { Delete } from '@components/atoms'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Notification: React.FC<NotificationProps> = ({
   testId = null,

@@ -1,8 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { ColumnProps } from '../../../interfaces/atomProps'
+import { ColumnProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Column: React.FC<ColumnProps> = ({
   testId = null,

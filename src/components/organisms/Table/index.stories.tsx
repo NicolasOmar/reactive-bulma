@@ -3,10 +3,10 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Table from '.'
 // TYPES & INTERFACES
-import { TableProps } from '../../../interfaces/organismProps'
-import { TableRowProps } from '../../../interfaces/moleculeProps'
+import { TableProps } from '@interfaces/organismProps'
+import { TableRowProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook } from './index.mocks.json'
 
