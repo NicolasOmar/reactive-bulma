@@ -1,7 +1,7 @@
 {
   "testing": {
     "basicTestId": "test-image",
-    "testSrc": "https://bulma.io/images/placeholders/256x256.png",
+    "testSrc": "https://bulma.io/assets/images/placeholders/256x256.png",
     "testClasses": {
       "isRounded": "is-rounded"
     }
