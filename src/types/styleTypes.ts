@@ -94,6 +94,7 @@ export type FixedImageSizeType =
   | 'is-9by16'
   | 'is-1by2'
   | 'is-1by3'
+  | 'is-fullwidth'
 
 export type ElementSizeType =
   | 'is-small'

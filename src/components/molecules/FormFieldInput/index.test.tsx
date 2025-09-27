@@ -4,10 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormFieldInput from '.'
 // TYPES & INTERFACES
-import {
-  FormFieldHelper,
-  FormFieldInputProps
-} from '../../../interfaces/moleculeProps'
+import { FormFieldHelper, FormFieldInputProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

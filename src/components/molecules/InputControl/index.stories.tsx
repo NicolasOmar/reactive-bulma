@@ -3,11 +3,11 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import InputControl from '.'
 // TYPES & INTERFACES
-import { InputProps } from '../../../interfaces/atomProps'
-import { InputControlProps } from '../../../interfaces/moleculeProps'
+import { InputProps } from '@interfaces/atomProps'
+import { InputControlProps } from '@interfaces/moleculeProps'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import iconMocks from '../../atoms/Icon/index.mocks.json'
+import iconMocks from '@components/atoms/Icon/index.mocks.json'
 
 export default {
   title: 'Molecules/InputControl',

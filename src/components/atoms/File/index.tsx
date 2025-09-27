@@ -2,9 +2,9 @@ import React from 'react'
 // COMPONENTS
 import Icon from '../Icon'
 // TYPES & INTERFACES
-import { FileProps } from '../../../interfaces/atomProps'
+import { FileProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const File: React.FC<FileProps> = ({
   testId = null,

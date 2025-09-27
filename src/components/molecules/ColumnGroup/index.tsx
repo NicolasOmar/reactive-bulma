@@ -1,12 +1,12 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { ColumnGroupProps } from '../../../interfaces/moleculeProps'
-import { ColumnGapType } from '../../../types/styleTypes'
+import { ColumnGroupProps } from '@interfaces/moleculeProps'
+import { ColumnGapType } from '@customTypes/styleTypes'
 // COMPONENTS
-import { Column } from '../../atoms'
+import { Column } from '@components/atoms'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const parseGapCssClass = (gapPropValue: ColumnGapType | null | undefined) => {
   switch (gapPropValue) {

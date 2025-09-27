@@ -3,12 +3,12 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Card from '.'
 // TYPES & INTERFACES
-import { CardFooterProps } from '../../../interfaces/organismProps'
+import { CardFooterProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import imageMocks from '../../atoms/Image/index.mocks.json'
+import imageMocks from '@components/atoms/Image/index.mocks.json'
 
 export default {
   title: 'Organisms/Card',

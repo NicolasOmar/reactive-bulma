@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { TableCellProps } from '../../../interfaces/atomProps'
+import { TableCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseTestId } from '../../../functions/parsers'
+import { parseTestId } from '@functions/parsers'
 
 const TableCell: React.FC<TableCellProps> = ({
   testId = null,

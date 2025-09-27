@@ -4,8 +4,8 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Notification from '.'
 // TYPES & INTERFACES
-import { NotificationProps } from '../../../interfaces/moleculeProps'
-import { DeleteProps } from '../../../interfaces/atomProps'
+import { NotificationProps } from '@interfaces/moleculeProps'
+import { DeleteProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

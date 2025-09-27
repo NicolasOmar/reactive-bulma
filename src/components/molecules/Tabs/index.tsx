@@ -1,11 +1,11 @@
 import React from 'react'
 // COMPONENTS
-import { TabItem } from '../../atoms'
+import { TabItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { TabsProps } from '../../../interfaces/moleculeProps'
+import { TabsProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const Tabs: React.FC<TabsProps> = ({
   testId = null,

@@ -3,9 +3,9 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Modal from '.'
 import ButtonGroup from '../ButtonGroup'
-import { Button, Image } from '../../atoms'
+import { Button, Image } from '@components/atoms'
 // TYPES & INTERFACES
-import { ButtonProps } from '../../../interfaces/atomProps'
+import { ButtonProps } from '@interfaces/atomProps'
 // MOCKS
 import { storybook } from './index.mocks.json'
 

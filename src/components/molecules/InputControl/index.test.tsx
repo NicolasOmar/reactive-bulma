@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import InputControl from '.'
 // TYPES & INTERFACES
-import { InputControlProps } from '../../../interfaces/moleculeProps'
+import { InputControlProps } from '@interfaces/moleculeProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

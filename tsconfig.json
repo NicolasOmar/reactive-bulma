@@ -19,7 +19,15 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@design/*": ["src/design/*"],
+      "@functions/*": ["src/functions/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@customTypes/*": ["src/types/*"]
+    },
   },
   "include": ["src"]
 }

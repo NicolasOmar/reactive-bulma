@@ -4,11 +4,8 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tag from '.'
 // TYPES & INTERFACES
-import {
-  BasicColorType,
-  SizeWithoutNormalType
-} from '../../../types/styleTypes'
-import { TagProps } from '../../../interfaces/atomProps'
+import { BasicColorType, SizeWithoutNormalType } from '@customTypes/styleTypes'
+import { TagProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

@@ -1,10 +1,10 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { IconProps } from '../../../interfaces/atomProps'
-import { TextColorType } from '../../../types/styleTypes'
-import { IconSizeEnum } from '../../../types/domTypes'
+import { IconProps } from '@interfaces/atomProps'
+import { TextColorType } from '@customTypes/styleTypes'
+import { IconSizeEnum } from '@customTypes/domTypes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const generateIconContainer = (
   icon: React.ReactElement,

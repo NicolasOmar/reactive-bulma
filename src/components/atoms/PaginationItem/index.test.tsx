@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import PaginationItem from '.'
 // TYPES & INTERFACES
-import { PaginationItemProps } from '../../../interfaces/atomProps'
+import { PaginationItemProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

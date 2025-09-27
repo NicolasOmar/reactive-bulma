@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 // COMPONENTS
-import { DropdownItem, DropdownTrigger } from '../../atoms'
+import { DropdownItem, DropdownTrigger } from '@components/atoms'
 // TYPES & INTERFACES
-import { DropdownProps } from '../../../interfaces/moleculeProps'
-import { DropdownItemProps } from '../../../interfaces/atomProps'
+import { DropdownProps } from '@interfaces/moleculeProps'
+import { DropdownItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const renderDropdownMenu = (items: DropdownItemProps[]) => (
   <section className='dropdown-content'>

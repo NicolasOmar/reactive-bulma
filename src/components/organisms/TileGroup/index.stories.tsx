@@ -2,15 +2,15 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import TileGroup from '.'
-import { TileBox } from '../../molecules'
+import { TileBox } from '@components/molecules'
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
-import { BasicColorType } from '../../../types/styleTypes'
+import { TileProps } from '@interfaces/atomProps'
+import { BasicColorType } from '@customTypes/styleTypes'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import tileMocks from '../../atoms/Tile/index.mocks.json'
+import tileMocks from '@components/atoms/Tile/index.mocks.json'
 
 const threeParentTiles = createObjArray({
   externalParser: i => ({

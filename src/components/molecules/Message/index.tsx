@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
-import { Delete } from '../../atoms'
+import { Delete } from '@components/atoms'
 // TYPES & INTERFACES
-import { MessageProps } from '../../../interfaces/moleculeProps'
+import { MessageProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Message: React.FC<MessageProps> = ({
   testId = null,

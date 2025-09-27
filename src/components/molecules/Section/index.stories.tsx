@@ -2,15 +2,15 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Section from '.'
-import { Title } from '../../atoms'
-import { Tabs } from '../../molecules'
+import { Title } from '@components/atoms'
+import { Tabs } from '@components/molecules'
 // TYPES & INTERFACES
-import { TabItemProps, TitleProps } from '../../../interfaces/atomProps'
+import { TabItemProps, TitleProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import titleMocks from '../../atoms/Title/index.mocks.json'
+import titleMocks from '@components/atoms/Title/index.mocks.json'
 
 const tabs = createObjArray({
   numberOfItems: 7,

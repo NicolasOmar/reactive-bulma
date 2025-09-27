@@ -4,9 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Icon from '.'
 // TYPES & INTERFACES
-import { IconProps } from '../../../interfaces/atomProps'
-import { SizeWithoutNormalType } from '../../../types/styleTypes'
-import { IconSizeEnum } from '../../../types/domTypes'
+import { IconProps } from '@interfaces/atomProps'
+import { SizeWithoutNormalType } from '@customTypes/styleTypes'
+import { IconSizeEnum } from '@customTypes/domTypes'
 // MOCKS
 import { testing } from './index.mocks.json'
 

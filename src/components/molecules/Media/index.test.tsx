@@ -3,13 +3,13 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Media from '.'
-import { Delete, Image, TextArea } from '../../atoms'
+import { Delete, Image, TextArea } from '@components/atoms'
 // TYPES & INTERFACES
-import { MediaProps } from '../../../interfaces/moleculeProps'
+import { MediaProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
-import imageMocks from '../../atoms/Image/index.mocks.json'
+import imageMocks from '@components/atoms/Image/index.mocks.json'
 
 describe('Media', () => {
   const {

@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Section from '.'
 // TYPES & INTERFACES
-import { SectionProps } from '../../../interfaces/moleculeProps'
+import { SectionProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

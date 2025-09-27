@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { MenuItemProps } from '../../../interfaces/atomProps'
+import { MenuItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const MenuItem: React.FC<MenuItemProps> = ({
   testId = null,

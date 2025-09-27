@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { MediaProps } from '../../../interfaces/moleculeProps'
-import { MediaSectionType, SingleChildType } from '../../../types/domTypes'
+import { MediaProps } from '@interfaces/moleculeProps'
+import { MediaSectionType, SingleChildType } from '@customTypes/domTypes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const renderMediaSection = (
   content: SingleChildType | null,

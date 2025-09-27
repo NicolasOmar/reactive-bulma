@@ -2,9 +2,9 @@ import React from 'react'
 // COMPONENTS
 import Icon from '../Icon'
 // TYPES & INTERFACES
-import { TabItemProps } from '../../../interfaces/atomProps'
+import { TabItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseTestId } from '../../../functions/parsers'
+import { parseTestId } from '@functions/parsers'
 
 const TabItem: React.FC<TabItemProps> = ({
   testId = null,
