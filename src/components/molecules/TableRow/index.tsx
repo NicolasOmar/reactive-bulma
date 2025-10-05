@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { TableCell, TableHeadCell } from '@components/atoms'
 // TYPES & INTERFACES
@@ -23,6 +23,22 @@ const TableRow: React.FC<TableRowProps> = ({
   const tableRowTestId =
     testId ?? parseTestId({ tag: 'table-row', parsedClasses: tableRowClasses })
 
+  const memoizedCell = useMemo(
+    () => (headCell ? <TableHeadCell {...headCell} /> : null),
+    [headCell]
+  )
+
+  const memoizedTableCells = useMemo(
+    () =>
+      listOfCells.map(_cellConfig => (
+        <TableCell
+          key={`table-row-${generateKey()}`}
+          {..._cellConfig}
+        />
+      )),
+    [listOfCells]
+  )
+
   return (
     <tr
       data-testid={tableRowTestId}
@@ -30,13 +46,8 @@ const TableRow: React.FC<TableRowProps> = ({
       style={style ?? undefined}
       onClick={onClick ?? undefined}
     >
-      {headCell ? <TableHeadCell {...headCell} /> : null}
-      {listOfCells.map(_cellConfig => (
-        <TableCell
-          key={`table-row-${generateKey()}`}
-          {..._cellConfig}
-        />
-      ))}
+      {memoizedCell}
+      {memoizedTableCells}
     </tr>
   )
 }
