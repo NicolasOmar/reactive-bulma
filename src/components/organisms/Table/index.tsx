@@ -66,7 +66,12 @@ const Table: React.FC<TableProps> = ({
   )
 
   const memoizedTableFooter = useMemo(
-    () => (foot ? renderTableSection('foot', foot) : null),
+    () =>
+      foot ? (
+        <tfoot data-testid={`${tableTestId}-foot`}>
+          {renderTableSection('foot', foot)}
+        </tfoot>
+      ) : null,
     [foot]
   )
 
