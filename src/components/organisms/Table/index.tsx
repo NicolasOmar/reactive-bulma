@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { TableHeadCell } from '@components/atoms'
 import { TableRow } from '@components/molecules'
