@@ -11,6 +11,7 @@ const TableRow: React.FC<TableRowProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
+  color = null,
   headCell = null,
   listOfCells,
   isSelected = false,
@@ -18,6 +19,7 @@ const TableRow: React.FC<TableRowProps> = ({
 }) => {
   const tableRowClasses = parseClasses([
     isSelected ? 'is-selected' : null,
+    color,
     cssClasses
   ])
   const tableRowTestId =

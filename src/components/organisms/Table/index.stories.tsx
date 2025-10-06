@@ -55,6 +55,12 @@ LotsOfRows.args = {
     .map(() => bodyConfig) as TableRowProps[]
 }
 
+export const Hoverable = Template.bind({})
+Hoverable.args = {
+  ...LotsOfRows.args,
+  isHoverable: true
+}
+
 export const SelectedRows = Template.bind({})
 SelectedRows.args = {
   body: LotsOfRows.args.body?.map((_bodyRowConfig, i) => ({
