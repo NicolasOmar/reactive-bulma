@@ -3,23 +3,24 @@ import React from 'react'
 // TYPES & INTERFACES
 import { TableCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseTestId } from '@functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const TableCell: React.FC<TableCellProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
+  color = null,
   content,
   onClick = null
 }) => {
+  const tableCellClass = parseClasses([color, cssClasses])
   const tableCellTestId =
-    testId ??
-    parseTestId({ tag: 'table-cell', parsedClasses: cssClasses ?? '' })
+    testId ?? parseTestId({ tag: 'table-cell', parsedClasses: tableCellClass })
 
   return (
     <td
       data-testid={tableCellTestId}
-      className={cssClasses ?? undefined}
+      className={tableCellClass}
       style={style ?? undefined}
       onClick={onClick ?? undefined}
     >

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { TableHeadCell } from '@components/atoms'
 import { TableRow } from '@components/molecules'
@@ -49,28 +49,41 @@ const Table: React.FC<TableProps> = ({
   const tableTestId =
     testId ?? parseTestId({ tag: 'table', parsedClasses: tableClasses })
 
+  const memoizedTableSection = useMemo(
+    () => renderTableSection('head', head),
+    [head]
+  )
+
+  const memoizedTableBody = useMemo(
+    () =>
+      body.map(_bodyRowConfig => (
+        <TableRow
+          key={`table-body-item-${generateKey()}`}
+          {..._bodyRowConfig}
+        />
+      )),
+    [body]
+  )
+
+  const memoizedTableFooter = useMemo(
+    () =>
+      foot ? (
+        <tfoot data-testid={`${tableTestId}-foot`}>
+          {renderTableSection('foot', foot)}
+        </tfoot>
+      ) : null,
+    [foot]
+  )
+
   const TableElement = () => (
     <table
       data-testid={tableTestId}
       className={tableClasses}
       style={style ?? undefined}
     >
-      <thead data-testid={`${tableTestId}-head`}>
-        {renderTableSection('head', head)}
-      </thead>
-      <tbody data-testid={`${tableTestId}-body`}>
-        {body.map(_bodyRowConfig => (
-          <TableRow
-            key={`table-body-item-${generateKey()}`}
-            {..._bodyRowConfig}
-          />
-        ))}
-      </tbody>
-      {foot ? (
-        <tfoot data-testid={`${tableTestId}-foot`}>
-          {renderTableSection('foot', foot)}
-        </tfoot>
-      ) : null}
+      <thead data-testid={`${tableTestId}-head`}>{memoizedTableSection}</thead>
+      <tbody data-testid={`${tableTestId}-body`}>{memoizedTableBody}</tbody>
+      {memoizedTableFooter}
     </table>
   )
 
