@@ -18,13 +18,13 @@ const TableHeadCell: React.FC<TableHeadCellProps> = ({
     testId ??
     parseTestId({
       tag: 'table-head-cell',
-      parsedClasses: tableHeadCellClass ?? ''
+      parsedClasses: tableHeadCellClass
     })
 
   return (
     <th
       data-testid={tableHeadCellTestId}
-      className={tableHeadCellClass ?? undefined}
+      className={tableHeadCellClass}
       style={style ?? undefined}
       onClick={onClick ?? undefined}
     >

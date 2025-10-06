@@ -15,13 +15,12 @@ const TableCell: React.FC<TableCellProps> = ({
 }) => {
   const tableCellClass = parseClasses([color, cssClasses])
   const tableCellTestId =
-    testId ??
-    parseTestId({ tag: 'table-cell', parsedClasses: tableCellClass ?? '' })
+    testId ?? parseTestId({ tag: 'table-cell', parsedClasses: tableCellClass })
 
   return (
     <td
       data-testid={tableCellTestId}
-      className={tableCellClass ?? undefined}
+      className={tableCellClass}
       style={style ?? undefined}
       onClick={onClick ?? undefined}
     >
