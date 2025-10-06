@@ -6,7 +6,8 @@ import {
   ClickeableProps,
   NamedInputProps,
   InteractiveProps,
-  InteractiveOnChangeProps
+  InteractiveOnChangeProps,
+  ColoredProps
 } from './commonProps'
 // TYPES & INTERFACES
 import {
@@ -392,12 +393,18 @@ export interface NavBarItemProps extends ElementProps, ClickeableProps {
   isActive?: boolean
 }
 
-export interface TableHeadCellProps extends ElementProps, ClickeableProps {
+export interface TableHeadCellProps
+  extends ElementProps,
+    ColoredProps,
+    ClickeableProps {
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
 }
 
-export interface TableCellProps extends ElementProps, ClickeableProps {
+export interface TableCellProps
+  extends ElementProps,
+    ColoredProps,
+    ClickeableProps {
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
 }

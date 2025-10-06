@@ -1,3 +1,5 @@
+import { BasicColorType } from '@customTypes/styleTypes'
+
 export interface ContainerProps {
   /** `Attribute` *For container case*. ID used to locate the element in unit test suites (like Jest) */
   containerTestId?: string
@@ -48,6 +50,11 @@ export interface InteractiveOnChangeProps
   extends Omit<InteractiveProps, 'onChange'> {
   /** `Function` Reffers to each time the user click the element (I recommend using this one rather than the `onClick` method). Alone does not nothing, but can be reused for other components */
   onChange?: (event: React.ChangeEvent | React.FormEvent) => void
+}
+
+export interface ColoredProps {
+  /** `Styling` Color based on bulma's color tokens */
+  color?: BasicColorType
 }
 
 export interface NamedInputProps {
