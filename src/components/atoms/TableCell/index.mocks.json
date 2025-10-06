@@ -3,6 +3,9 @@
     "basicTestId": "test-table-cell",
     "testBaseConfig": {
       "content": "This is a conceptual table cell"
+    },
+    "testClasses": {
+      "color": "is-primary"
     }
   },
   "storybook": {
