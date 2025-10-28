@@ -9,6 +9,15 @@ import { TableHeadCellProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { generateKey } from '../../../functions/generators'
 
+interface TableElementProps {
+  tableTestId: string
+  tableClasses: string
+  style: React.CSSProperties | null
+  head: TableHeadCellProps[]
+  body: TableProps['body']
+  foot: TableHeadCellProps[] | null
+}
+
 const renderTableSection = (
   sectionName: 'head' | 'foot',
   configData: TableHeadCellProps[]
@@ -22,15 +31,6 @@ const renderTableSection = (
     ))}
   </tr>
 )
-
-interface TableElementProps {
-  tableTestId: string
-  tableClasses: string
-  style: React.CSSProperties | null
-  head: TableHeadCellProps[]
-  body: TableProps['body']
-  foot: TableHeadCellProps[] | null
-}
 
 const TableElement: React.FC<TableElementProps> = ({
   tableTestId,
