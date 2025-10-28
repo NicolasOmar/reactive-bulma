@@ -9,6 +9,15 @@ import { TableHeadCellProps } from '../../../interfaces/atomProps'
 import { parseClasses, parseTestId } from '../../../functions/parsers'
 import { generateKey } from '../../../functions/generators'
 
+interface TableElementProps {
+  tableTestId: string
+  tableClasses: string
+  style: React.CSSProperties | null
+  head: TableHeadCellProps[]
+  body: TableProps['body']
+  foot: TableHeadCellProps[] | null
+}
+
 const renderTableSection = (
   sectionName: 'head' | 'foot',
   configData: TableHeadCellProps[]
@@ -21,6 +30,38 @@ const renderTableSection = (
       />
     ))}
   </tr>
+)
+
+const TableElement: React.FC<TableElementProps> = ({
+  tableTestId,
+  tableClasses,
+  style,
+  head,
+  body,
+  foot
+}) => (
+  <table
+    data-testid={tableTestId}
+    className={tableClasses}
+    style={style ?? undefined}
+  >
+    <thead data-testid={`${tableTestId}-head`}>
+      {renderTableSection('head', head)}
+    </thead>
+    <tbody data-testid={`${tableTestId}-body`}>
+      {body.map(_bodyRowConfig => (
+        <TableRow
+          key={`table-body-item-${generateKey()}`}
+          {..._bodyRowConfig}
+        />
+      ))}
+    </tbody>
+    {foot ? (
+      <tfoot data-testid={`${tableTestId}-foot`}>
+        {renderTableSection('foot', foot)}
+      </tfoot>
+    ) : null}
+  </table>
 )
 
 const Table: React.FC<TableProps> = ({
@@ -49,40 +90,31 @@ const Table: React.FC<TableProps> = ({
   const tableTestId =
     testId ?? parseTestId({ tag: 'table', parsedClasses: tableClasses })
 
-  const TableElement = () => (
-    <table
-      data-testid={tableTestId}
-      className={tableClasses}
-      style={style ?? undefined}
-    >
-      <thead data-testid={`${tableTestId}-head`}>
-        {renderTableSection('head', head)}
-      </thead>
-      <tbody data-testid={`${tableTestId}-body`}>
-        {body.map(_bodyRowConfig => (
-          <TableRow
-            key={`table-body-item-${generateKey()}`}
-            {..._bodyRowConfig}
-          />
-        ))}
-      </tbody>
-      {foot ? (
-        <tfoot data-testid={`${tableTestId}-foot`}>
-          {renderTableSection('foot', foot)}
-        </tfoot>
-      ) : null}
-    </table>
-  )
-
   return isContained ? (
     <section
       data-testid={`${tableTestId}-container`}
       className='table-container'
     >
-      {<TableElement />}
+      {
+        <TableElement
+          tableTestId={tableTestId}
+          tableClasses={tableClasses}
+          style={style}
+          head={head}
+          body={body}
+          foot={foot}
+        />
+      }
     </section>
   ) : (
-    <TableElement />
+    <TableElement
+      tableTestId={tableTestId}
+      tableClasses={tableClasses}
+      style={style}
+      head={head}
+      body={body}
+      foot={foot}
+    />
   )
 }
 
