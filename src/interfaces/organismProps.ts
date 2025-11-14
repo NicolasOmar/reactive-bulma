@@ -130,3 +130,33 @@ export interface TableProps extends ElementProps {
   /** `Styling` Will create a container around the table in order to make it scrollable */
   isContained?: boolean
 }
+
+export interface TableElementProps {
+  tableTestId: string
+  tableClasses: string
+  style: React.CSSProperties | null
+  head: TableHeadCellProps[]
+  body: TableProps['body']
+  foot: TableHeadCellProps[] | null
+}
+
+export interface TableProps extends ElementProps {
+  /** `Attribute` `Required` Configuration object that will display table's head */
+  head: TableHeadCellProps[]
+  /** `Attribute` `Required` Configuration object that will display table's body */
+  body: TableRowProps[]
+  /** `Attribute` Configuration object that will display table's foot */
+  foot?: TableHeadCellProps[]
+  /** `Styling` It will add a Bordered styling to the table. It can be combined with other mentioned styling properties. */
+  isBordered?: boolean
+  /** `Styling` It will add a Striped styling to the table. It can be combined with other mentioned styling properties. */
+  isStriped?: boolean
+  /** `Styling` It will add a Narrow styling to the table. It can be combined with other mentioned styling properties. */
+  isNarrow?: boolean
+  /** `Styling` It will add a Hoverable styling to the table. It can be combined with other mentioned styling properties. */
+  isHoverable?: boolean
+  /** `Styling` It will add a Fullwidth styling to the table. It can be combined with other mentioned styling properties. */
+  isFullwidth?: boolean
+  /** `Styling` Will create a container around the table in order to make it scrollable */
+  isContained?: boolean
+}

@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 // COMPONENTS
 import { TableHeadCell } from '@components/atoms'
 import { TableRow } from '@components/molecules'
 // TYPES & INTERFACES
-import { TableProps } from '@interfaces/organismProps'
+import { TableElementProps, TableProps } from '@interfaces/organismProps'
 import { TableHeadCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
