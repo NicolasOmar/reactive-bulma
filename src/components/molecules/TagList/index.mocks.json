@@ -1,0 +1,20 @@
+{
+  "testing": {
+    "basicTestId": "test-tags",
+    "testTagListStructure": {
+      "listOfTags": [
+        { "text": "First" },
+        { "text": "Second" },
+        { "text": "Third" },
+        { "text": "Fourth" },
+        { "text": "Fifth" },
+        { "text": "Sixth" }
+      ]
+    }
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A list of tags with all its features, fixed in a way their space in between will be always even"
+    }
+  }
+}
