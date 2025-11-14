@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 import { BreadcrumbItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
+import Icon from '../Icon'
 
 const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   testId = null,
@@ -12,6 +13,7 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   style = null,
   containerStyle = null,
   text,
+  icon = null,
   isActiveItem = null,
   onClick = null
 }) => {
@@ -47,12 +49,8 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
     [testId, breadcrumbItemClasses]
   )
 
-  return (
-    <li
-      data-testid={breadcrumbItemContainerTestId}
-      className={breadcrumbItemContainerClasses}
-      style={containerStyle ?? undefined}
-    >
+  const memoizedBreadcrumb = useMemo(
+    () => (
       <a
         data-testid={breadcrumbItemTestId}
         className={breadcrumbItemClasses}
@@ -60,8 +58,20 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
         aria-hidden='true'
         onClick={onClick ?? undefined}
       >
+        {icon ? <Icon {...icon} /> : null}
         {text}
       </a>
+    ),
+    [breadcrumbItemTestId, breadcrumbItemClasses, style, onClick, icon, text]
+  )
+
+  return (
+    <li
+      data-testid={breadcrumbItemContainerTestId}
+      className={breadcrumbItemContainerClasses}
+      style={containerStyle ?? undefined}
+    >
+      {memoizedBreadcrumb}
     </li>
   )
 }

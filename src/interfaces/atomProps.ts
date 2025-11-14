@@ -317,6 +317,8 @@ export interface BreadcrumbItemProps
     ClickeableProps {
   /** `Attribute` `Required` Indicates item text that will be shown */
   text: string
+  /** `Attribute` Adds an `Icon` component before the text */
+  icon?: IconProps
   /** `Styling` Marks the item as the one where user is located (based on breadcrumb hierarchy) */
   isActiveItem?: boolean
 }
