@@ -3,7 +3,7 @@ import '../node_modules/@mdi/font/css/materialdesignicons.min.css'
 import type { Preview } from '@storybook/react-vite'
 // For setting dark/light mode in storybook instance
 import { withThemeByClassName } from '@storybook/addon-themes';
-import { themes } from 'storybook/internal/theming';
+import { themes } from 'storybook/theming';
 
 const preview: Preview = {
   parameters: {

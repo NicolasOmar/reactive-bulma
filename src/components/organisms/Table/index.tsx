@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 // COMPONENTS
 import { TableHeadCell } from '@components/atoms'
 import { TableRow } from '@components/molecules'
 // TYPES & INTERFACES
-import { TableProps } from '@interfaces/organismProps'
+import { TableElementProps, TableProps } from '@interfaces/organismProps'
 import { TableHeadCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
@@ -21,6 +21,38 @@ const renderTableSection = (
       />
     ))}
   </tr>
+)
+
+const TableElement: React.FC<TableElementProps> = ({
+  tableTestId,
+  tableClasses,
+  style,
+  head,
+  body,
+  foot
+}) => (
+  <table
+    data-testid={tableTestId}
+    className={tableClasses}
+    style={style ?? undefined}
+  >
+    <thead data-testid={`${tableTestId}-head`}>
+      {renderTableSection('head', head)}
+    </thead>
+    <tbody data-testid={`${tableTestId}-body`}>
+      {body.map(_bodyRowConfig => (
+        <TableRow
+          key={`table-body-item-${generateKey()}`}
+          {..._bodyRowConfig}
+        />
+      ))}
+    </tbody>
+    {foot ? (
+      <tfoot data-testid={`${tableTestId}-foot`}>
+        {renderTableSection('foot', foot)}
+      </tfoot>
+    ) : null}
+  </table>
 )
 
 const Table: React.FC<TableProps> = ({
@@ -49,53 +81,31 @@ const Table: React.FC<TableProps> = ({
   const tableTestId =
     testId ?? parseTestId({ tag: 'table', parsedClasses: tableClasses })
 
-  const memoizedTableSection = useMemo(
-    () => renderTableSection('head', head),
-    [head]
-  )
-
-  const memoizedTableBody = useMemo(
-    () =>
-      body.map(_bodyRowConfig => (
-        <TableRow
-          key={`table-body-item-${generateKey()}`}
-          {..._bodyRowConfig}
-        />
-      )),
-    [body]
-  )
-
-  const memoizedTableFooter = useMemo(
-    () =>
-      foot ? (
-        <tfoot data-testid={`${tableTestId}-foot`}>
-          {renderTableSection('foot', foot)}
-        </tfoot>
-      ) : null,
-    [foot]
-  )
-
-  const TableElement = () => (
-    <table
-      data-testid={tableTestId}
-      className={tableClasses}
-      style={style ?? undefined}
-    >
-      <thead data-testid={`${tableTestId}-head`}>{memoizedTableSection}</thead>
-      <tbody data-testid={`${tableTestId}-body`}>{memoizedTableBody}</tbody>
-      {memoizedTableFooter}
-    </table>
-  )
-
   return isContained ? (
     <section
       data-testid={`${tableTestId}-container`}
       className='table-container'
     >
-      {<TableElement />}
+      {
+        <TableElement
+          tableTestId={tableTestId}
+          tableClasses={tableClasses}
+          style={style}
+          head={head}
+          body={body}
+          foot={foot}
+        />
+      }
     </section>
   ) : (
-    <TableElement />
+    <TableElement
+      tableTestId={tableTestId}
+      tableClasses={tableClasses}
+      style={style}
+      head={head}
+      body={body}
+      foot={foot}
+    />
   )
 }
 
