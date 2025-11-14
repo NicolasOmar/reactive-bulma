@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { TagProps } from '@interfaces/atomProps'
 // FUNCTIONS
@@ -22,21 +22,32 @@ const Tag: React.FC<TagProps> = ({
   addonColor = null,
   onDeleteClick = null
 }) => {
-  const tagContainerClasses = parseClasses([
-    'tags',
-    'has-addons',
-    size ? size.replace('is-', 'are-') : null,
-    containerCssClasses
-  ])
-  const tagClasses = parseClasses([
-    'tag',
-    color,
-    isLight && !withAddon ? 'is-light' : null,
-    isRounded && !withAddon ? 'is-rounded' : null,
-    size,
-    cssClasses
-  ])
-  const tagAddonClasses = parseClasses(['tag', addonColor])
+  const tagContainerClasses = useMemo(
+    () =>
+      parseClasses([
+        'tags',
+        'has-addons',
+        size ? size.replace('is-', 'are-') : null,
+        containerCssClasses
+      ]),
+    [size, containerCssClasses]
+  )
+  const tagClasses = useMemo(
+    () =>
+      parseClasses([
+        'tag',
+        color,
+        isLight && !withAddon ? 'is-light' : null,
+        isRounded && !withAddon ? 'is-rounded' : null,
+        size,
+        cssClasses
+      ]),
+    [color, isLight, withAddon, isRounded, size, cssClasses]
+  )
+  const tagAddonClasses = useMemo(
+    () => parseClasses(['tag', addonColor]),
+    [addonColor]
+  )
   const tagLabel = withAddon ? 'tags' : 'tag'
   const tagTestId =
     testId ??

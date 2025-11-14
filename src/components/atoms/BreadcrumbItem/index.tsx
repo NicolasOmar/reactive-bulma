@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { BreadcrumbItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
@@ -15,21 +15,37 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   isActiveItem = null,
   onClick = null
 }) => {
-  const breadcrumbItemContainerClasses = parseClasses([
-    'breadcrumb-item-container',
-    isActiveItem ? 'is-active' : null,
-    containerCssClasses
-  ])
-  const breadcrumbItemClasses = parseClasses(['breadcrumbItem', cssClasses])
-  const breadcrumbItemContainerTestId =
-    containerTestId ??
-    parseTestId({
-      tag: 'breadcrumb-item-container',
-      parsedClasses: containerCssClasses ?? ''
-    })
-  const breadcrumbItemTestId =
-    testId ??
-    parseTestId({ tag: 'breadcrumbItem', parsedClasses: breadcrumbItemClasses })
+  const breadcrumbItemContainerClasses = useMemo(
+    () =>
+      parseClasses([
+        'breadcrumb-item-container',
+        isActiveItem ? 'is-active' : null,
+        containerCssClasses
+      ]),
+    [isActiveItem, containerCssClasses]
+  )
+  const breadcrumbItemClasses = useMemo(
+    () => parseClasses(['breadcrumbItem', cssClasses]),
+    [cssClasses]
+  )
+  const breadcrumbItemContainerTestId = useMemo(
+    () =>
+      containerTestId ??
+      parseTestId({
+        tag: 'breadcrumb-item-container',
+        parsedClasses: containerCssClasses ?? ''
+      }),
+    [containerTestId, containerCssClasses]
+  )
+  const breadcrumbItemTestId = useMemo(
+    () =>
+      testId ??
+      parseTestId({
+        tag: 'breadcrumbItem',
+        parsedClasses: breadcrumbItemClasses
+      }),
+    [testId, breadcrumbItemClasses]
+  )
 
   return (
     <li
