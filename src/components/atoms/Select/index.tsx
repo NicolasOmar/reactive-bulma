@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { SelectProps } from '@interfaces/atomProps'
 // FUNCTIONS
@@ -26,23 +26,41 @@ const Select: React.FC<SelectProps> = ({
   onChange,
   onBlur
 }) => {
-  const containerSelectClasses = parseClasses([
-    'select',
-    color,
-    size,
-    isMultiple ? 'is-multiple' : null,
-    isRounded ? 'is-rounded' : null,
-    isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null,
-    containerCssClasses
-  ])
-  const selectTestId =
-    testId ??
-    parseTestId({
-      tag: 'select',
-      parsedClasses: containerSelectClasses
-    })
-  const containerSelectTestId = containerTestId ?? `${selectTestId}-container`
+  const containerSelectClasses = useMemo(
+    () =>
+      parseClasses([
+        'select',
+        color,
+        size,
+        isMultiple ? 'is-multiple' : null,
+        isRounded ? 'is-rounded' : null,
+        isHovered ? 'is-hovered' : null,
+        isFocused ? 'is-focused' : null,
+        containerCssClasses
+      ]),
+    [
+      color,
+      size,
+      isMultiple,
+      isRounded,
+      isHovered,
+      isFocused,
+      containerCssClasses
+    ]
+  )
+  const selectTestId = useMemo(
+    () =>
+      testId ??
+      parseTestId({
+        tag: 'select',
+        parsedClasses: containerSelectClasses
+      }),
+    [testId, containerSelectClasses]
+  )
+  const containerSelectTestId = useMemo(
+    () => containerTestId ?? `${selectTestId}-container`,
+    [containerTestId, selectTestId]
+  )
 
   return (
     <section
