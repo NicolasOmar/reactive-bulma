@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { CheckBoxProps } from '@interfaces/atomProps'
 // FUNCTIONS
@@ -22,22 +22,28 @@ const Checkbox: React.FC<CheckBoxProps> = ({
   onChange,
   onBlur
 }) => {
-  const checkboxContainerClasses = parseClasses([
-    'checkbox',
-    containerCssClasses
-  ])
-  const checkboxContainerTestId =
-    containerTestId ??
-    parseTestId({
-      tag: 'checkbox-container',
-      parsedClasses: parseContentTestId(label)
-    })
-  const checkboxTestId =
-    testId ??
-    parseTestId({
-      tag: 'checkbox',
-      parsedClasses: parseContentTestId(label)
-    })
+  const checkboxContainerClasses = useMemo(
+    () => parseClasses(['checkbox', containerCssClasses]),
+    [containerCssClasses]
+  )
+  const checkboxContainerTestId = useMemo(
+    () =>
+      containerTestId ??
+      parseTestId({
+        tag: 'checkbox-container',
+        parsedClasses: parseContentTestId(label)
+      }),
+    [containerTestId, label]
+  )
+  const checkboxTestId = useMemo(
+    () =>
+      testId ??
+      parseTestId({
+        tag: 'checkbox',
+        parsedClasses: parseContentTestId(label)
+      }),
+    [testId, label]
+  )
   const checkboxBaseStyle = {
     display: 'inline-block',
     marginLeft: '5px'
