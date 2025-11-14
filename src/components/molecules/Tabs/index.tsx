@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { TabItem } from '@components/atoms'
 // TYPES & INTERFACES
@@ -30,22 +30,26 @@ const Tabs: React.FC<TabsProps> = ({
   const tabsTestId =
     testId ?? parseTestId({ tag: 'tabs', parsedClasses: tabsClasses })
 
+  const memoizedTabs = useMemo(
+    () =>
+      tabs.map(tabConfig => (
+        <li
+          key={`tab-item-${generateKey()}`}
+          className={tabConfig.isActive ? 'is-active' : undefined}
+        >
+          {<TabItem {...tabConfig} />}
+        </li>
+      )),
+    [tabs]
+  )
+
   return (
     <section
       data-testid={tabsTestId}
       className={tabsClasses}
       style={style ?? undefined}
     >
-      <ul>
-        {tabs.map(tabConfig => (
-          <li
-            key={`tab-item-${generateKey()}`}
-            className={tabConfig.isActive ? 'is-active' : undefined}
-          >
-            {<TabItem {...tabConfig} />}
-          </li>
-        ))}
-      </ul>
+      <ul>{memoizedTabs}</ul>
     </section>
   )
 }
