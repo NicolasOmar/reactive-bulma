@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { BreadcrumbItem } from '@components/atoms'
 // TYPES & INTERFACES
@@ -43,6 +43,17 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       ]
     })
 
+  const memoizedBreadcrumbs = useMemo(
+    () =>
+      items.map(itemConfig => (
+        <BreadcrumbItem
+          key={`breadcrumb-item-${generateKey()}`}
+          {...itemConfig}
+        />
+      )),
+    [items]
+  )
+
   return (
     <nav
       data-testid={breadcrumbsContainerTestId}
@@ -54,12 +65,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         className={cssClasses ?? undefined}
         style={style ?? undefined}
       >
-        {items.map(itemConfig => (
-          <BreadcrumbItem
-            key={`breadcrumb-item-${generateKey()}`}
-            {...itemConfig}
-          />
-        ))}
+        {memoizedBreadcrumbs}
       </ul>
     </nav>
   )
