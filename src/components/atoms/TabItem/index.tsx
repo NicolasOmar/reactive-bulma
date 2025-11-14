@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import Icon from '../Icon'
 // TYPES & INTERFACES
@@ -26,6 +26,22 @@ const TabItem: React.FC<TabItemProps> = ({
   const tabItemTestId =
     testId ?? parseTestId({ tag: 'tab-item', parsedClasses: cssClasses ?? '' })
 
+  const memoizedTab = useMemo(
+    () => (
+      <>
+        {icon ? <Icon {...icon} /> : null}
+        <span
+          data-testid={tabItemTestId}
+          className={cssClasses ?? undefined}
+          style={style ?? undefined}
+        >
+          {text}
+        </span>
+      </>
+    ),
+    [icon, tabItemTestId, cssClasses, style, text]
+  )
+
   return (
     <a
       data-testid={tabItemContainerTestId}
@@ -34,14 +50,7 @@ const TabItem: React.FC<TabItemProps> = ({
       aria-hidden='true'
       onClick={onClick ?? undefined}
     >
-      {icon ? <Icon {...icon} /> : null}
-      <span
-        data-testid={tabItemTestId}
-        className={cssClasses ?? undefined}
-        style={style ?? undefined}
-      >
-        {text}
-      </span>
+      {memoizedTab}
     </a>
   )
 }
