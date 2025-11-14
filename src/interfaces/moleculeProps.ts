@@ -23,6 +23,7 @@ import {
   TabItemProps,
   TableCellProps,
   TableHeadCellProps,
+  TagProps,
   TextAreaProps
 } from './atomProps'
 // TYPES & INTERFACES
@@ -326,4 +327,9 @@ export interface FormFieldInputProps extends ElementProps {
   helper?: FormFieldHelper
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
   isHorizontal?: boolean
+}
+
+export interface TagListProps extends ElementProps {
+  /** `Attribute` List of tags to fix their space evenly */
+  listOfTags: TagProps[]
 }
