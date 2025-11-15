@@ -22,7 +22,9 @@ export default {
 } as Meta<typeof NavBarDropdown>
 
 const Template: StoryFn<typeof NavBarDropdown> = args => (
-  <NavBarDropdown {...args} />
+  <nav className='navbar'>
+    <NavBarDropdown {...args} />
+  </nav>
 )
 
 export const BasicExample = Template.bind({})
@@ -37,6 +39,14 @@ Hoverable.args = {
   isHoverable: true
 }
 
+export const HasAnActiveItem = Template.bind({})
+HasAnActiveItem.args = {
+  ...OpenState.args,
+  items: itemListWithDividers.map((item, i) =>
+    i === 0 ? { ...(item as NavBarItemProps), isActive: true } : item
+  )
+}
+
 export const HasDividerItems = Template.bind({})
 HasDividerItems.args = {
   ...Hoverable.args,
@@ -45,8 +55,14 @@ HasDividerItems.args = {
 
 export const HasBoxedMenu = Template.bind({})
 HasBoxedMenu.args = {
-  ...Hoverable.args,
+  ...OpenState.args,
   hasBoxedMenu: true
+}
+
+export const WithoutArrow = Template.bind({})
+WithoutArrow.args = {
+  ...Hoverable.args,
+  isArrowLess: true
 }
 
 export const InverseDropdown = Template.bind({})
