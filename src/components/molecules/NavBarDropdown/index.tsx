@@ -66,17 +66,11 @@ const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
           ? 'navbar-dropdown-divider'
           : 'navbar-dropdown-item'
         return (
-          <Fragment>
+          <Fragment key={`${itemKey}-${generateKey()}`}>
             {isDividerItem ? (
-              <hr
-                key={`${itemKey}-${generateKey()}`}
-                className='navbar-divider'
-              />
+              <hr className='navbar-divider' />
             ) : (
-              <NavBarItem
-                key={`${itemKey}-${generateKey()}`}
-                {..._itemConfig}
-              />
+              <NavBarItem {..._itemConfig} />
             )}
           </Fragment>
         )
