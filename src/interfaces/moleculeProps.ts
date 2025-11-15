@@ -90,6 +90,12 @@ export interface BreadcrumbsProps extends ComposedElementProps {
 }
 
 export interface DropdownProps extends ElementProps {
+  /** `Styling` Will display dropdown content when the user hovers the mouse on the input */
+  isHoverable?: boolean
+  /** `Styling` Will align dropdown's content to the right */
+  isRightAligned?: boolean
+  /** `Styling` Will set dropdown's menu above its input */
+  isContentUp?: boolean
   /** `Atribute` `Required` Sets the name will be shown on the dropdown input */
   inputText: string
   /** `Attribute` Sets a relationship between dropdown trigger's button and dropdown's menu to toggle display */
