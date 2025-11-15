@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { MenuItem } from '@components/atoms'
 // TYPES & INTERFACES
@@ -17,13 +17,9 @@ const MenuList: React.FC<MenuListProps> = ({
   const menuListTestId =
     testId ?? parseTestId({ tag: 'menu-list', parsedClasses: menuListClasses })
 
-  return (
-    <ul
-      data-testid={menuListTestId}
-      className={menuListClasses}
-      style={style ?? undefined}
-    >
-      {itemList.map(item => {
+  const memoizedMenuItems = useMemo(
+    () =>
+      itemList.map(item => {
         if ('subListTitle' in item) {
           return (
             <li key={`sub-list-menu-item-${generateKey()}`}>
@@ -46,7 +42,17 @@ const MenuList: React.FC<MenuListProps> = ({
             />
           )
         }
-      })}
+      }),
+    [itemList]
+  )
+
+  return (
+    <ul
+      data-testid={menuListTestId}
+      className={menuListClasses}
+      style={style ?? undefined}
+    >
+      {memoizedMenuItems}
     </ul>
   )
 }
