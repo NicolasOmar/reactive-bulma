@@ -25,6 +25,18 @@ Centered.args = {
   alignment: 'is-centered'
 }
 
+export const BigSize = Template.bind({})
+BigSize.args = {
+  ...Centered.args,
+  size: 'is-large'
+}
+
+export const Rounded = Template.bind({})
+Rounded.args = {
+  ...Centered.args,
+  isRounded: true
+}
+
 export const CustomNavigationButtons = Template.bind({})
 CustomNavigationButtons.args = {
   showPreviousPageButton: testing.customNavigationButtons[0],
