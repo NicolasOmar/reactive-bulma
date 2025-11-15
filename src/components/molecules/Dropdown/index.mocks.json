@@ -2,6 +2,11 @@
   "testing": {
     "basicTestId": "test-dropdown",
     "triggerTestId": "test-button",
+    "testClasses": {
+      "isHoverable": "is-hoverable",
+      "isRightAligned": "is-right",
+      "isContentUp": "is-up"
+    },
     "testConfig": {
       "inputText": "Hello There",
       "listOfItems": [
