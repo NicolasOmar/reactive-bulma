@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 // COMPONENTS
 import { PaginationItem } from '@components/atoms'
 // TYPES & INTERFACES
@@ -6,22 +6,9 @@ import {
   PaginationNavigationButtonProps,
   PaginationProps
 } from '@interfaces/moleculeProps'
-import { PaginationItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
-
-const renderEllipsis = (hasEllipsis: boolean) =>
-  hasEllipsis ? (
-    <li>
-      <span
-        aria-hidden='true'
-        className='pagination-ellipsis'
-      >
-        &hellip;
-      </span>
-    </li>
-  ) : null
 
 const renderNavigationButton = (
   navigationButton: PaginationNavigationButtonProps | null
@@ -42,46 +29,6 @@ const renderNavigationButton = (
       {navigationButton.text}
     </a>
   )
-}
-
-const renderPages = (
-  pages: PaginationItemProps[],
-  hasEllipsis: boolean,
-  ellipsisItems: number
-) => {
-  return pages.map((pageItem, pageIndex, { length }) => {
-    const lastEllipsisItemIndex = length - ellipsisItems - 1
-
-    if (pageIndex === 0) {
-      return (
-        <React.Fragment key={`first-pagination-item`}>
-          <PaginationItem {...pageItem} />
-          {renderEllipsis(hasEllipsis)}
-        </React.Fragment>
-      )
-    }
-
-    if (
-      !hasEllipsis ||
-      (pageIndex > ellipsisItems && pageIndex < lastEllipsisItemIndex)
-    ) {
-      return (
-        <PaginationItem
-          key={`pagination-item-${generateKey()}`}
-          {...pageItem}
-        />
-      )
-    }
-
-    if (pageIndex === --length) {
-      return (
-        <React.Fragment key={`last-pagination-item`}>
-          {renderEllipsis(hasEllipsis)}
-          <PaginationItem {...pageItem} />
-        </React.Fragment>
-      )
-    }
-  })
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -127,6 +74,63 @@ const Pagination: React.FC<PaginationProps> = ({
     containerTestId ??
     parseTestId({ tag: 'pagination-list', parsedClasses: paginationClasses })
 
+  const memoizedRenderNavigationButton = useCallback(
+    (navigationButton: PaginationNavigationButtonProps | null) =>
+      renderNavigationButton(navigationButton),
+    []
+  )
+
+  const memoizedPages = useMemo(() => {
+    const renderedEllipsis = hasEllipsis ? (
+      <li>
+        <span
+          aria-hidden='true'
+          className='pagination-ellipsis'
+        >
+          &hellip;
+        </span>
+      </li>
+    ) : null
+
+    return pages.map((pageItem, pageIndex, { length }) => {
+      const lastEllipsisItemIndex = length - ellipsisItems - 1
+      const renderedPaginationItem = (
+        <li>
+          <PaginationItem {...pageItem} />
+        </li>
+      )
+
+      if (pageIndex === 0) {
+        return (
+          <React.Fragment key={`first-pagination-item-${generateKey()}`}>
+            {renderedPaginationItem}
+            {renderedEllipsis}
+          </React.Fragment>
+        )
+      }
+
+      if (
+        !hasEllipsis ||
+        (pageIndex > ellipsisItems && pageIndex < lastEllipsisItemIndex)
+      ) {
+        return (
+          <li key={`pagination-item-${generateKey()}`}>
+            <PaginationItem {...pageItem} />
+          </li>
+        )
+      }
+
+      if (pageIndex === --length) {
+        return (
+          <React.Fragment key={`last-pagination-item-${generateKey()}`}>
+            {renderedEllipsis}
+            {renderedPaginationItem}
+          </React.Fragment>
+        )
+      }
+    })
+  }, [pages, hasEllipsis, ellipsisItems])
+
   return (
     <nav
       data-testid={paginationContainerTestId}
@@ -135,14 +139,14 @@ const Pagination: React.FC<PaginationProps> = ({
       role='navigation'
       aria-label='pagination'
     >
-      {renderNavigationButton(showPreviousPageButton)}
-      {renderNavigationButton(showNextPageButton)}
+      {memoizedRenderNavigationButton(showPreviousPageButton)}
+      {memoizedRenderNavigationButton(showNextPageButton)}
       <ul
         data-testid={paginationTestId}
         className={paginationClasses}
         style={style ?? undefined}
       >
-        {renderPages(pages, hasEllipsis, ellipsisItems)}
+        {memoizedPages}
       </ul>
     </nav>
   )
