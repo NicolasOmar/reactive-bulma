@@ -94,8 +94,9 @@ const Pagination: React.FC<PaginationProps> = ({
 
     return pages.map((pageItem, pageIndex, { length }) => {
       const lastEllipsisItemIndex = length - ellipsisItems - 1
+      const paginationItemKey = `pagination-item-${generateKey()}`
       const renderedPaginationItem = (
-        <li>
+        <li key={paginationItemKey}>
           <PaginationItem {...pageItem} />
         </li>
       )
@@ -114,11 +115,8 @@ const Pagination: React.FC<PaginationProps> = ({
         (pageIndex > ellipsisItems && pageIndex < lastEllipsisItemIndex)
       ) {
         return (
-          <li>
-            <PaginationItem
-              key={`pagination-item-${generateKey()}`}
-              {...pageItem}
-            />
+          <li key={paginationItemKey}>
+            <PaginationItem {...pageItem} />
           </li>
         )
       }
