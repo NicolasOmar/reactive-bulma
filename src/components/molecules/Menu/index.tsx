@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import MenuList from '../MenuList'
 // TYPES & INTERFACES
@@ -17,26 +17,32 @@ const Menu: React.FC<MenuProps> = ({
   const menuTestId =
     testId ?? parseTestId({ tag: 'menu', parsedClasses: menuClasses })
 
+  const memoizedMenuSections = useMemo(
+    () =>
+      menuSections.map(_sectionConfig => (
+        <React.Fragment key={`section-${generateKey()}`}>
+          <p
+            key={`section-label-${generateKey()}`}
+            className='menu-label'
+          >
+            {_sectionConfig.label}
+          </p>
+          <MenuList
+            key={`section-menu-list-${generateKey()}`}
+            itemList={_sectionConfig.itemList}
+          />
+        </React.Fragment>
+      )),
+    [menuSections]
+  )
+
   return (
     <aside
       data-testid={menuTestId}
       className={menuClasses}
       style={style ?? undefined}
     >
-      {menuSections.map(section => (
-        <React.Fragment key={`section-${generateKey()}`}>
-          <p
-            key={`section-label-${generateKey()}`}
-            className='menu-label'
-          >
-            {section.label}
-          </p>
-          <MenuList
-            key={`section-menu-list-${generateKey()}`}
-            itemList={section.itemList}
-          />
-        </React.Fragment>
-      ))}
+      {memoizedMenuSections}
     </aside>
   )
 }
