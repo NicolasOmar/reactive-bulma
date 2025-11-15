@@ -15,7 +15,7 @@ const NavBarItem: React.FC<NavBarItemProps> = ({
 }) => {
   const navBarItemClasses = parseClasses([
     'navbar-item',
-    isActive ? 'is-active' : null,
+    isActive ? 'is-selected' : null,
     cssClasses
   ])
   const navBarItemTestId =

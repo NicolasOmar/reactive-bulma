@@ -16,6 +16,7 @@ export type PanelBlockItemType = 'icon' | 'control' | 'button'
 
 export type ChildrenType = string | React.ReactElement | React.ReactElement[]
 
+/** Reffers to the component or string that will be shown inside the item */
 export type SingleChildType = Exclude<ChildrenType, React.ReactElement[]>
 
 export enum IconSizeEnum {

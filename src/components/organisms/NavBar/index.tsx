@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 // COMPONENTS
 import { NavBarItem } from '@components/atoms'
 import { NavBarBrand, NavBarDropdown } from '@components/molecules'
@@ -69,24 +69,38 @@ const NavBar: React.FC<NavBarProps> = ({
       ]
     })
 
-  return (
-    <nav
-      data-testid={navBarTestId}
-      className={navBarClasses}
-      style={style ?? undefined}
-    >
-      {brandConfig ? (
+  const memoizedBrand = useMemo(
+    () =>
+      brandConfig ? (
         <section
           data-testid='navbar-brand'
           className='navbar-brand'
         >
           {<NavBarBrand {...brandConfig} />}
         </section>
-      ) : null}
+      ) : null,
+    [brandConfig]
+  )
 
+  const memoizedMenuSection = useCallback(
+    (
+      menuSectionConfig: NavBarMenuProps | null,
+      menuSection: 'start' | 'end',
+      testId: string
+    ) => renderNavBarMenuSection(menuSectionConfig, menuSection, testId),
+    []
+  )
+
+  return (
+    <nav
+      data-testid={navBarTestId}
+      className={navBarClasses}
+      style={style ?? undefined}
+    >
+      {memoizedBrand}
       <section className='navbar-menu'>
-        {renderNavBarMenuSection(itemsAtStart, 'start', navBarTestId)}
-        {renderNavBarMenuSection(itemsAtEnd, 'end', navBarTestId)}
+        {memoizedMenuSection(itemsAtStart, 'start', navBarTestId)}
+        {memoizedMenuSection(itemsAtEnd, 'end', navBarTestId)}
       </section>
     </nav>
   )

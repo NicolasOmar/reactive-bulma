@@ -5,7 +5,7 @@
       {
         "name": "isActive",
         "value": true,
-        "result": "is-active"
+        "result": "is-selected"
       }
     ],
     "testBaseConfig": {

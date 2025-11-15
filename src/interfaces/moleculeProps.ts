@@ -279,6 +279,8 @@ export interface NavBarDropdownProps extends ComposedElementProps {
   hasDropdownUp?: boolean
   /** `Styling` Sets dropdown's menu design like a box, also adds some animation when its diplayed */
   hasBoxedMenu?: boolean
+  /** `Styling` Removes dropdown's indicating arrow */
+  isArrowLess?: boolean
 }
 
 interface BrandConfigProps extends Omit<NavBarItemProps, 'children'> {
