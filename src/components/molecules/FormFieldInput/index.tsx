@@ -4,7 +4,6 @@ import { Select, Checkbox, RadioButton, TextArea } from '@components/atoms'
 import InputControl from '../InputControl'
 // TYPES & INTERFACES
 import {
-  FormFieldHelper,
   FormFieldInputProps,
   FormFieldType,
   InputControlProps
@@ -17,24 +16,6 @@ import {
 } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
-
-const renderInputLabel = (labelText?: string, isHorizontal?: boolean) => {
-  const labelSection =
-    labelText !== null ? (
-      <label
-        data-testid={`test-form-field-label`}
-        className='label'
-      >
-        {labelText}
-      </label>
-    ) : null
-
-  return isHorizontal ? (
-    <section className='field-label'>{labelSection}</section>
-  ) : (
-    labelSection
-  )
-}
 
 const renderMemorizedInput = ({
   testId,
@@ -85,26 +66,6 @@ const renderMemorizedInput = ({
   }
 }
 
-const renderInputHelper = (helperConfig?: FormFieldHelper) => {
-  if (!helperConfig) return null
-
-  const fieldHelperClasses = parseClasses(['help', helperConfig.color])
-  const fieldHelperTestId = parseTestId({
-    tag: 'form-field-help',
-    parsedClasses: fieldHelperClasses,
-    rules: [{ regExp: /help|is/gm, replacer: '' }]
-  })
-
-  return (
-    <p
-      data-testid={fieldHelperTestId}
-      className={fieldHelperClasses}
-    >
-      {helperConfig.text}
-    </p>
-  )
-}
-
 const FormFieldInput: React.FC<FormFieldInputProps> = ({
   testId = null,
   labelText,
@@ -113,15 +74,46 @@ const FormFieldInput: React.FC<FormFieldInputProps> = ({
   helper,
   isHorizontal
 }) => {
-  const memorizedLabel = useMemo(
-    () => renderInputLabel(labelText, isHorizontal),
-    [labelText, isHorizontal]
-  )
+  const memorizedLabel = useMemo(() => {
+    const labelSection =
+      labelText !== null ? (
+        <label
+          data-testid={`test-form-field-label`}
+          className='label'
+        >
+          {labelText}
+        </label>
+      ) : null
+
+    return isHorizontal ? (
+      <section className='field-label'>{labelSection}</section>
+    ) : (
+      labelSection
+    )
+  }, [labelText, isHorizontal])
   const memorizedInput = useMemo(
     () => renderMemorizedInput({ testId: testId ?? undefined, type, input }),
     [testId, type, input]
   )
-  const memorizedHelper = useMemo(() => renderInputHelper(helper), [helper])
+  const memorizedHelper = useMemo(() => {
+    if (helper === undefined) return null
+
+    const fieldHelperClasses = parseClasses(['help', helper.color])
+    const fieldHelperTestId = parseTestId({
+      tag: 'form-field-help',
+      parsedClasses: fieldHelperClasses,
+      rules: [{ regExp: /help|is/gm, replacer: '' }]
+    })
+
+    return (
+      <p
+        data-testid={fieldHelperTestId}
+        className={fieldHelperClasses}
+      >
+        {helper.text}
+      </p>
+    )
+  }, [helper])
 
   return (
     <>

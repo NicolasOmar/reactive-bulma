@@ -3,10 +3,11 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import FormFieldInput from '.'
 // TYPES & INTERFACES
+import { FormFieldConfig, FormFieldInputProps } from '@interfaces/moleculeProps'
+import { InputProps } from '@interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import { FormFieldInputProps } from '@interfaces/moleculeProps'
 
 export default {
   title: 'Molecules/FormFieldInput',
@@ -26,6 +27,27 @@ export const BasicExample = Template.bind({})
 export const WithLabel = Template.bind({})
 WithLabel.args = testing.withLabel
 
+export const WithOneIcon = Template.bind({})
+WithOneIcon.args = {
+  input: {
+    ...(testing.inputConfigCase.input as FormFieldConfig),
+    leftIcon: {
+      iconLabel: 'account'
+    }
+  }
+}
+
+export const WithTwoIcons = Template.bind({})
+WithTwoIcons.args = {
+  ...WithOneIcon.args,
+  input: {
+    ...(WithOneIcon.args.input as FormFieldConfig),
+    rightIcon: {
+      iconLabel: 'check'
+    }
+  }
+}
+
 export const WithLabelAndHelper = Template.bind({})
 WithLabelAndHelper.args = {
   ...WithLabel.args,
@@ -35,6 +57,12 @@ WithLabelAndHelper.args = {
 export const ErrorCase = Template.bind({})
 ErrorCase.args = {
   ...WithLabel.args,
+  input: {
+    inputConfig: {
+      ...(testing.inputConfigCase.input.inputConfig as InputProps),
+      color: 'is-danger'
+    }
+  },
   helper: {
     ...testing.withHelper,
     color: 'is-danger'

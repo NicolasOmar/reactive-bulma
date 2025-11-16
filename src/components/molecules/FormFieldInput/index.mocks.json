@@ -12,7 +12,9 @@
     "inputConfigCase": {
       "type": "input",
       "input": {
-        "type": "text"
+        "inputConfig": {
+          "type": "text"
+        }
       }
     },
     "selectConfigCase": {
