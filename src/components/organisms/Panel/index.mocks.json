@@ -30,7 +30,7 @@
     },
     "severalLinkBlocks": ["bookmark", "bookmark-check", "bookmark", "bookmark-check", "bookmark", "bookmark-box"],
     "colored": {
-      "color": "is-primary"
+      "color": "is-info"
     }
   },
   "storybook": {
