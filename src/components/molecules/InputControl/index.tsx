@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { Icon, Input } from '@components/atoms'
 // TYPES & INTERFACES
@@ -46,10 +46,30 @@ const InputControl: React.FC<InputControlProps> = ({
         }
       ]
     })
-  const reflectedInputConfig = {
-    ...inputConfig,
-    size: size ?? inputConfig?.size
-  }
+
+  const memoizedInputConfig = useMemo(
+    () => (
+      <Input
+        {...{
+          ...inputConfig,
+          size: size ?? inputConfig?.size
+        }}
+      />
+    ),
+    [inputConfig, size]
+  )
+  const memoizedLeftIcon = useMemo(
+    () =>
+      renderIcon(leftIcon ? { ...leftIcon, position: 'is-left' } : undefined),
+    [leftIcon]
+  )
+  const memoizedRightIcon = useMemo(
+    () =>
+      renderIcon(
+        rightIcon ? { ...rightIcon, position: 'is-right' } : undefined
+      ),
+    [rightIcon]
+  )
 
   return (
     <section
@@ -57,11 +77,9 @@ const InputControl: React.FC<InputControlProps> = ({
       className={inputControlClasses}
       style={style ?? undefined}
     >
-      <Input {...reflectedInputConfig} />
-      {renderIcon(leftIcon ? { ...leftIcon, position: 'is-left' } : undefined)}
-      {renderIcon(
-        rightIcon ? { ...rightIcon, position: 'is-right' } : undefined
-      )}
+      {memoizedInputConfig}
+      {memoizedLeftIcon}
+      {memoizedRightIcon}
     </section>
   )
 }
