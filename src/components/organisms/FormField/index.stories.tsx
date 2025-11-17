@@ -14,13 +14,13 @@ export default {
   component: FormField,
   ...storybook,
   args: {
-    config: testing.baseConfig.config
+    config: testing.baseConfig.inputsConfig
   }
 } as Meta<typeof FormField>
 
 const listOfGroupedInputControls = createObjArray({
   numberOfItems: 2,
-  externalParser: () => testing.baseConfig.config
+  externalParser: () => testing.baseConfig.inputsConfig
 })
 
 const Template: StoryFn<typeof FormField> = args => <FormField {...args} />
@@ -35,5 +35,5 @@ InHorizontalMode.args = {
 export const GroupedInputs = Template.bind({})
 GroupedInputs.args = {
   isGrouped: true,
-  config: listOfGroupedInputControls as FormFieldInputProps[]
+  inputsConfig: listOfGroupedInputControls as FormFieldInputProps[]
 }

@@ -7,7 +7,11 @@ import { ParseTestIdProps } from '../interfaces/functionProps'
  */
 export const parseClasses = (
   _classes: Array<string | null | undefined>
-): string => _classes.filter(_class => _class).join(' ')
+): string =>
+  _classes
+    .filter(_class => _class)
+    .join(' ')
+    .trim()
 
 /**
  * @param { ParseTestIdProps } config Configuration object
