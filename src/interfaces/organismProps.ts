@@ -22,11 +22,13 @@ import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
 
 export interface FormFieldProps extends ElementProps {
   /** `Attribute` `Required` Single or multiple `FormFieldConfig` config objects which will be wrapped around the `FormField` */
-  config: FormFieldInputProps | FormFieldInputProps[]
+  inputsConfig: FormFieldInputProps | FormFieldInputProps[]
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
   isHorizontal?: boolean
   /** `Styling` Will group the list of inputs in a same wrapper (useful for several inputs with same usage, as a complex address) */
   isGrouped?: boolean
+  /** `Attribute` Will add one or tow new controls to be working next to the main one */
+  withAddons?: boolean
 }
 
 export interface PanelProps extends ElementProps {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { Icon, Input } from '@components/atoms'
 // TYPES & INTERFACES
@@ -14,12 +14,15 @@ const InputControl: React.FC<InputControlProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
+  labelText = null,
   inputConfig,
+  helper = null,
   leftIcon = null,
   rightIcon = null,
   size = null,
   isLoading = null,
-  isExpanded = null
+  isExpanded = null,
+  isHorizontal = null
 }) => {
   const inputControlClasses = parseClasses([
     'control',
@@ -46,23 +49,85 @@ const InputControl: React.FC<InputControlProps> = ({
         }
       ]
     })
-  const reflectedInputConfig = {
-    ...inputConfig,
-    size: size ?? inputConfig?.size
-  }
+
+  const memorizedLabel = useMemo(() => {
+    if (labelText === null) return null
+
+    const labelSection = (
+      <label
+        data-testid={`${inputControlTestId}-label`}
+        className='label'
+      >
+        {labelText}
+      </label>
+    )
+
+    return isHorizontal ? (
+      <section className='field-label'>{labelSection}</section>
+    ) : (
+      labelSection
+    )
+  }, [labelText, inputControlTestId, isHorizontal])
+  const memoizedInput = useMemo(
+    () => (
+      <Input
+        {...{
+          ...inputConfig,
+          size: size ?? inputConfig?.size
+        }}
+      />
+    ),
+    [inputConfig, size]
+  )
+  const memoizedLeftIcon = useMemo(
+    () =>
+      renderIcon(leftIcon ? { ...leftIcon, position: 'is-left' } : undefined),
+    [leftIcon]
+  )
+  const memoizedRightIcon = useMemo(
+    () =>
+      renderIcon(
+        rightIcon ? { ...rightIcon, position: 'is-right' } : undefined
+      ),
+    [rightIcon]
+  )
+  const memorizedHelper = useMemo(() => {
+    if (helper === null) return null
+
+    const fieldHelperClasses = parseClasses([
+      'help',
+      inputConfig.color ?? helper.color ?? null
+    ])
+    const fieldHelperTestId = parseTestId({
+      tag: 'help',
+      parsedClasses: fieldHelperClasses,
+      rules: [{ regExp: /help|is/gm, replacer: '' }]
+    })
+
+    return (
+      <p
+        data-testid={fieldHelperTestId}
+        className={fieldHelperClasses}
+      >
+        {helper.text}
+      </p>
+    )
+  }, [helper, inputConfig.color])
 
   return (
-    <section
-      data-testid={inputControlTestId}
-      className={inputControlClasses}
-      style={style ?? undefined}
-    >
-      <Input {...reflectedInputConfig} />
-      {renderIcon(leftIcon ? { ...leftIcon, position: 'is-left' } : undefined)}
-      {renderIcon(
-        rightIcon ? { ...rightIcon, position: 'is-right' } : undefined
-      )}
-    </section>
+    <>
+      {memorizedLabel}
+      <section
+        data-testid={inputControlTestId}
+        className={inputControlClasses}
+        style={style ?? undefined}
+      >
+        {memoizedInput}
+        {memoizedLeftIcon}
+        {memoizedRightIcon}
+      </section>
+      {memorizedHelper}
+    </>
   )
 }
 

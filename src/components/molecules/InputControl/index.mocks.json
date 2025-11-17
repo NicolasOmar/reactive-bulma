@@ -1,6 +1,8 @@
 {
   "testing": {
     "basicTestId": "test-control",
+    "basicLabelTestId": "test-control-label",
+    "basicHelperTestId": "test-help",
     "testClasses": [
       {
         "name": "size",
@@ -32,6 +34,12 @@
       "inputConfig": {
         "type": "input"
       }
+    },
+    "withLabel": {
+      "labelText": "This is a label text"
+    },
+    "withHelper": {
+      "text": "Hello there"
     },
     "bigSizeConfig": { "size": "is-large" }
   },

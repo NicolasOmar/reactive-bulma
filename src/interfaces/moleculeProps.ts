@@ -191,9 +191,18 @@ export interface TabsProps extends ElementProps {
   isFullWidth?: boolean
 }
 
+export interface HelperProps {
+  text?: string
+  color?: BasicColorType
+}
+
 export interface InputControlProps extends ElementProps {
+  /** `Attribute` Sets a custom label above the Input to indicate its usage */
+  labelText?: string
   /** `Attribute` `Required` control's input configuration which will be wrapped */
   inputConfig: InputProps
+  /** `Attribute` Sets a custom text below the input to show a message */
+  helper?: HelperProps
   /** `Attribute` `Icon` configuration that will be shown in Input's left side */
   leftIcon?: IconProps
   /** `Attribute` `Icon` configuration that will be shown in Input's right side */
@@ -204,6 +213,8 @@ export interface InputControlProps extends ElementProps {
   isLoading?: boolean
   /** `Styling` Used for `FormField` styling purpose only. Will strech the input and its container in full-width */
   isExpanded?: boolean
+  /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
+  isHorizontal?: boolean
 }
 
 export interface PanelBlockItemProps {
@@ -311,7 +322,8 @@ export enum FormFieldType {
   SELECT = 'select',
   CHECKBOX = 'checkbox',
   RADIOBUTTON = 'radiobutton',
-  TEXTAREA = 'textarea'
+  TEXTAREA = 'textarea',
+  BUTTON = 'button'
 }
 
 export type FormFieldConfig =
@@ -320,19 +332,20 @@ export type FormFieldConfig =
   | CheckBoxProps
   | RadioButtonProps
   | TextAreaProps
+  | ButtonProps
 
-export interface FormFieldHelper {
-  text?: string
-  color?: BasicColorType
+export interface FormFieldElement {
+  type: FormFieldType
+  config: FormFieldConfig
 }
 
 export interface FormFieldInputProps extends ElementProps {
-  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
-  labelText?: string
-  type: FormFieldType
-  input: FormFieldConfig
-  /** `Attribute` Sets a custom text below the input to show a message */
-  helper?: FormFieldHelper
+  /** `Attribute` `Required` Main input that will use the provided label and helper */
+  mainInput: FormFieldElement
+  /** `Attribute` Input that will be included at main's left (will work only if `withAddons` is in `true`) */
+  leftInput?: FormFieldElement
+  /** `Attribute` Input that will be included at main's right (will work only if `withAddons` is in `true`) */
+  rightInput?: FormFieldElement
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
   isHorizontal?: boolean
 }

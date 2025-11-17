@@ -1,52 +1,76 @@
 {
   "testing": {
     "basicTestId": "test-form-field-input",
-    "basicLabelTestId": "test-form-field-label",
-    "basicHelperTestId": "test-form-field-help",
-    "withLabel": {
-      "labelText": "This is a label text"
-    },
-    "withHelper": {
-      "text": "Hello there"
-    },
     "inputConfigCase": {
-      "type": "input",
-      "input": {
-        "type": "text"
+      "mainInput": {
+        "type": "input",
+        "config": {
+          "inputConfig": {
+            "type": "text"
+          }
+        }
       }
     },
     "selectConfigCase": {
-      "type": "select",
-      "input": {
-        "options": [
-          { "id": "1", "name": "1" }
-        ]
+      "mainInput": {
+        "type": "select",
+        "config": {
+          "options": [
+            { "id": "1", "name": "1" }
+          ]
+        }
       }
     },
     "checkboxConfigCase": {
-      "type": "checkbox",
-      "input": {
-        "content": "Is a form field checkbox"
+      "mainInput": {
+        "type": "checkbox",
+        "config": {
+          "content": "Is a form field checkbox"
+        }
+      }
+    },
+    "buttonConfigCase": {
+      "mainInput": {
+        "type": "button",
+        "config": {
+          "text": "This is a test button for control"
+        }
       }
     },
     "radioButtonConfigCase": {
-      "type": "radiobutton",
-      "input": {
-        "options": [
-          { "label": "Is", "isChecked": false },
-          { "label": "A", "isChecked": false },
-          { "label": "Form", "isChecked": true },
-          { "label": "Field", "isChecked": false }
-        ],
-        "name": "isRadioFormField"
+      "mainInput": {
+        "type": "radiobutton",
+        "config": {
+          "options": [
+            {
+              "label": "Is",
+              "isChecked": false
+            },
+            {
+              "label": "A",
+              "isChecked": false
+            },
+            {
+              "label": "Form",
+              "isChecked": true
+            },
+            {
+              "label": "Field",
+              "isChecked": false
+            }
+          ],
+          "name": "isRadioFormField"
+        }
       }
     },
     "textAreaConfigCase": {
-      "type": "textarea",
-      "input": {
-        "cols": 3,
-        "rows": 3,
-        "name": "isRadioFormField"
+      "mainInput": {
+        "type": "textarea",
+        "config": {
+          "cols": 3,
+          "rows": 3,
+          "name": "isRadioFormField"
+        }
       }
     }
   },
