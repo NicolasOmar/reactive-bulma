@@ -354,3 +354,8 @@ export interface TagListProps extends ElementProps {
   /** `Attribute` List of tags to fix their space evenly */
   listOfTags: TagProps[]
 }
+
+export interface CheckboxGroupProps extends ElementProps {
+  /** `Attribute` `Required` A list of Checkbox config objetcs to be rendered in the same space */
+  listOfCheckboxes: CheckBoxProps[]
+}
