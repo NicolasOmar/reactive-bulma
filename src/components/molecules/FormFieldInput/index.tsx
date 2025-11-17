@@ -4,6 +4,7 @@ import { Select, Checkbox, RadioButton, TextArea } from '@components/atoms'
 import InputControl from '../InputControl'
 // TYPES & INTERFACES
 import {
+  FormFieldElement,
   FormFieldInputProps,
   FormFieldType,
   InputControlProps
@@ -17,110 +18,111 @@ import {
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
-const renderMemorizedInput = ({
-  testId,
-  type,
-  input
-}: Partial<FormFieldInputProps>) => {
+interface RenderInputProps {
+  testId?: string
+  element: FormFieldElement | null
+  isHorizontal: boolean
+}
+
+const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
+  if (element === null) return null
+
   const otherProps = {
-    testId: input?.testId ?? testId ?? `test-form-field-${type}`,
-    containerTestId: testId ?? `test-form-field-container-${type}`
+    testId:
+      element.config?.testId ?? testId ?? `test-form-field-${element.type}`,
+    containerTestId: testId ?? `test-form-field-container-${element.type}`
   }
 
-  switch (type) {
+  switch (element.type) {
     case FormFieldType.INPUT:
       return (
         <InputControl
-          {...(input as InputControlProps)}
+          {...(element.config as InputControlProps)}
           {...otherProps}
+          isHorizontal={isHorizontal}
         />
       )
     case FormFieldType.SELECT:
       return (
-        <Select
-          {...(input as SelectProps)}
-          {...otherProps}
-        />
+        <section className='control'>
+          <Select
+            {...(element.config as SelectProps)}
+            {...otherProps}
+          />
+        </section>
       )
     case FormFieldType.CHECKBOX:
       return (
-        <Checkbox
-          {...(input as CheckBoxProps)}
-          {...otherProps}
-        />
+        <section className='control'>
+          <Checkbox
+            {...(element.config as CheckBoxProps)}
+            {...otherProps}
+          />
+        </section>
       )
     case FormFieldType.RADIOBUTTON:
       return (
-        <RadioButton
-          {...(input as RadioButtonProps)}
-          {...otherProps}
-        />
+        <section className='control'>
+          <RadioButton
+            {...(element.config as RadioButtonProps)}
+            {...otherProps}
+          />
+        </section>
       )
     case FormFieldType.TEXTAREA:
       return (
-        <TextArea
-          {...(input as TextAreaProps)}
-          {...otherProps}
-        />
+        <section className='control'>
+          <TextArea
+            {...(element.config as TextAreaProps)}
+            {...otherProps}
+          />
+        </section>
       )
   }
 }
 
 const FormFieldInput: React.FC<FormFieldInputProps> = ({
-  testId = null,
-  labelText,
-  type,
-  input,
-  helper,
-  isHorizontal
+  testId,
+  cssClasses = null,
+  style = null,
+  leftInput = null,
+  rightInput = null,
+  mainInput,
+  withAddons = null,
+  isHorizontal = false
 }) => {
-  const memorizedLabel = useMemo(() => {
-    const labelSection =
-      labelText !== null ? (
-        <label
-          data-testid={`test-form-field-label`}
-          className='label'
-        >
-          {labelText}
-        </label>
-      ) : null
-
-    return isHorizontal ? (
-      <section className='field-label'>{labelSection}</section>
-    ) : (
-      labelSection
-    )
-  }, [labelText, isHorizontal])
-  const memorizedInput = useMemo(
-    () => renderMemorizedInput({ testId: testId ?? undefined, type, input }),
-    [testId, type, input]
+  const fieldClasses = parseClasses(['field', cssClasses])
+  const fieldTestId =
+    testId ?? parseTestId({ tag: 'field', parsedClasses: fieldClasses })
+  const memorizedMainInput = useMemo(
+    () => renderInput({ testId, element: mainInput, isHorizontal }),
+    [testId, mainInput, isHorizontal]
   )
-  const memorizedHelper = useMemo(() => {
-    if (helper === undefined) return null
-
-    const fieldHelperClasses = parseClasses(['help', helper.color])
-    const fieldHelperTestId = parseTestId({
-      tag: 'form-field-help',
-      parsedClasses: fieldHelperClasses,
-      rules: [{ regExp: /help|is/gm, replacer: '' }]
-    })
-
-    return (
-      <p
-        data-testid={fieldHelperTestId}
-        className={fieldHelperClasses}
-      >
-        {helper.text}
-      </p>
-    )
-  }, [helper])
+  const memoizedLeftInput = useMemo(
+    () =>
+      withAddons
+        ? renderInput({ testId, element: leftInput, isHorizontal })
+        : null,
+    [testId, leftInput, isHorizontal, withAddons]
+  )
+  const memoizedRightInput = useMemo(
+    () =>
+      withAddons
+        ? renderInput({ testId, element: rightInput, isHorizontal })
+        : null,
+    [testId, rightInput, isHorizontal, withAddons]
+  )
 
   return (
-    <>
-      {memorizedLabel}
-      {memorizedInput}
-      {memorizedHelper}
-    </>
+    <section
+      data-testid={fieldTestId}
+      className={fieldClasses}
+      style={style ?? undefined}
+    >
+      {memoizedLeftInput}
+      {memorizedMainInput}
+      {memoizedRightInput}
+    </section>
   )
 }
 

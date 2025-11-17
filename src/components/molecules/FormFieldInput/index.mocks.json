@@ -10,45 +10,67 @@
       "text": "Hello there"
     },
     "inputConfigCase": {
-      "type": "input",
-      "input": {
-        "inputConfig": {
-          "type": "text"
+      "mainInput": {
+        "type": "input",
+        "config": {
+          "inputConfig": {
+            "type": "text"
+          }
         }
       }
     },
     "selectConfigCase": {
-      "type": "select",
-      "input": {
-        "options": [
-          { "id": "1", "name": "1" }
-        ]
+      "mainInput": {
+        "type": "select",
+        "config": {
+          "options": [
+            { "id": "1", "name": "1" }
+          ]
+        }
       }
     },
     "checkboxConfigCase": {
-      "type": "checkbox",
-      "input": {
-        "content": "Is a form field checkbox"
+      "mainInput": {
+        "type": "checkbox",
+        "config": {
+          "content": "Is a form field checkbox"
+        }
       }
     },
     "radioButtonConfigCase": {
-      "type": "radiobutton",
-      "input": {
-        "options": [
-          { "label": "Is", "isChecked": false },
-          { "label": "A", "isChecked": false },
-          { "label": "Form", "isChecked": true },
-          { "label": "Field", "isChecked": false }
-        ],
-        "name": "isRadioFormField"
+      "mainInput": {
+        "type": "radiobutton",
+        "config": {
+          "options": [
+            {
+              "label": "Is",
+              "isChecked": false
+            },
+            {
+              "label": "A",
+              "isChecked": false
+            },
+            {
+              "label": "Form",
+              "isChecked": true
+            },
+            {
+              "label": "Field",
+              "isChecked": false
+            }
+          ],
+          "name": "isRadioFormField"
+        }
       }
     },
     "textAreaConfigCase": {
-      "type": "textarea",
-      "input": {
-        "cols": 3,
-        "rows": 3,
-        "name": "isRadioFormField"
+      "mainInput": {
+        "type": "textarea",
+        "config": {
+          "cols": 3,
+          "rows": 3,
+          "name": "isRadioFormField"
+        }
       }
     }
   },
