@@ -4,7 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormFieldInput from '.'
 // TYPES & INTERFACES
-import { FormFieldInputProps } from '@interfaces/moleculeProps'
+import {
+  FormFieldElement,
+  FormFieldInputProps
+} from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
@@ -58,5 +61,34 @@ describe('FormFieldInput', () => {
       expect(caseFormField).toBeInTheDocument()
       cleanup()
     }
+  })
+
+  test('Should render the three inputs', () => {
+    const testIds = ['hello', 'how-are-you', 'goodbye']
+
+    const renderedInputs = testIds.map(_testId => ({
+      type: inputConfigCase.mainInput.type,
+      config: {
+        ...inputConfigCase.mainInput.config,
+        inputConfig: {
+          ...inputConfigCase.mainInput.config.inputConfig,
+          testId: _testId
+        }
+      }
+    })) as FormFieldElement[]
+
+    render(
+      <FormFieldInput
+        leftInput={renderedInputs[0]}
+        mainInput={renderedInputs[1]}
+        rightInput={renderedInputs[2]}
+        withAddons={true}
+      />
+    )
+
+    testIds.forEach(_testId => {
+      const testIdCase = screen.getByTestId(_testId)
+      expect(testIdCase).toBeInTheDocument()
+    })
   })
 })
