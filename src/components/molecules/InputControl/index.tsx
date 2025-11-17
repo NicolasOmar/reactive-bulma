@@ -51,15 +51,16 @@ const InputControl: React.FC<InputControlProps> = ({
     })
 
   const memorizedLabel = useMemo(() => {
-    const labelSection =
-      labelText !== null ? (
-        <label
-          data-testid={`${inputControlTestId}-label`}
-          className='label'
-        >
-          {labelText}
-        </label>
-      ) : null
+    if (labelText === null) return null
+
+    const labelSection = (
+      <label
+        data-testid={`${inputControlTestId}-label`}
+        className='label'
+      >
+        {labelText}
+      </label>
+    )
 
     return isHorizontal ? (
       <section className='field-label'>{labelSection}</section>

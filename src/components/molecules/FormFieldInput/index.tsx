@@ -85,7 +85,6 @@ const FormFieldInput: React.FC<FormFieldInputProps> = ({
   mainInput,
   leftInput = null,
   rightInput = null,
-  withAddons = null,
   isHorizontal = false
 }) => {
   const memorizedMainInput = useMemo(
@@ -93,18 +92,12 @@ const FormFieldInput: React.FC<FormFieldInputProps> = ({
     [testId, mainInput, isHorizontal]
   )
   const memoizedLeftInput = useMemo(
-    () =>
-      withAddons
-        ? renderInput({ testId, element: leftInput, isHorizontal })
-        : null,
-    [testId, leftInput, isHorizontal, withAddons]
+    () => renderInput({ testId, element: leftInput, isHorizontal }),
+    [testId, leftInput, isHorizontal]
   )
   const memoizedRightInput = useMemo(
-    () =>
-      withAddons
-        ? renderInput({ testId, element: rightInput, isHorizontal })
-        : null,
-    [testId, rightInput, isHorizontal, withAddons]
+    () => renderInput({ testId, element: rightInput, isHorizontal }),
+    [testId, rightInput, isHorizontal]
   )
 
   return (
