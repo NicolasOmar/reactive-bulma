@@ -29,6 +29,14 @@
         }
       }
     },
+    "buttonConfigCase": {
+      "mainInput": {
+        "type": "button",
+        "config": {
+          "text": "This is a test button for control"
+        }
+      }
+    },
     "radioButtonConfigCase": {
       "mainInput": {
         "type": "radiobutton",

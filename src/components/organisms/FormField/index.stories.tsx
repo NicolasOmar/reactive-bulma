@@ -50,3 +50,17 @@ InputWithAddon.args = {
   },
   withAddons: true
 }
+
+export const InputWithBothAddons = Template.bind({})
+InputWithBothAddons.args = {
+  ...InputWithAddon.args,
+  inputsConfig: {
+    leftInput: formFieldInputMocks.testing.selectConfigCase
+      .mainInput as FormFieldElement,
+    mainInput: formFieldInputMocks.testing.inputConfigCase
+      .mainInput as FormFieldElement,
+    rightInput: formFieldInputMocks.testing.buttonConfigCase
+      .mainInput as FormFieldElement
+  },
+  withAddons: true
+}

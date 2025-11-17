@@ -322,7 +322,8 @@ export enum FormFieldType {
   SELECT = 'select',
   CHECKBOX = 'checkbox',
   RADIOBUTTON = 'radiobutton',
-  TEXTAREA = 'textarea'
+  TEXTAREA = 'textarea',
+  BUTTON = 'button'
 }
 
 export type FormFieldConfig =
@@ -331,6 +332,7 @@ export type FormFieldConfig =
   | CheckBoxProps
   | RadioButtonProps
   | TextAreaProps
+  | ButtonProps
 
 export interface FormFieldElement {
   type: FormFieldType

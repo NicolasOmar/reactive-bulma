@@ -1,6 +1,12 @@
 import React, { useMemo } from 'react'
 // COMPONENTS
-import { Select, Checkbox, RadioButton, TextArea } from '@components/atoms'
+import {
+  Select,
+  Checkbox,
+  RadioButton,
+  TextArea,
+  Button
+} from '@components/atoms'
 import InputControl from '../InputControl'
 // TYPES & INTERFACES
 import {
@@ -13,7 +19,8 @@ import {
   SelectProps,
   CheckBoxProps,
   RadioButtonProps,
-  TextAreaProps
+  TextAreaProps,
+  ButtonProps
 } from '@interfaces/atomProps'
 // FUNCTIONS
 
@@ -77,6 +84,17 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
           />
         </section>
       )
+    case FormFieldType.BUTTON:
+      return (
+        <section className='control'>
+          <Button
+            {...(element.config as ButtonProps)}
+            {...otherProps}
+          />
+        </section>
+      )
+    default:
+      return null
   }
 }
 
