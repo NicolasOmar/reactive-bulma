@@ -82,9 +82,9 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
 
 const FormFieldInput: React.FC<FormFieldInputProps> = ({
   testId,
+  mainInput,
   leftInput = null,
   rightInput = null,
-  mainInput,
   withAddons = null,
   isHorizontal = false
 }) => {

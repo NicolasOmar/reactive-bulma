@@ -1,6 +1,8 @@
 {
   "testing": {
     "basicTestId": "test-control",
+    "basicLabelTestId": "test-control-label",
+    "basicHelperTestId": "test-help",
     "testClasses": [
       {
         "name": "size",
