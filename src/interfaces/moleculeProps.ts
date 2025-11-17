@@ -191,18 +191,18 @@ export interface TabsProps extends ElementProps {
   isFullWidth?: boolean
 }
 
-export interface FormFieldHelper {
+export interface HelperProps {
   text?: string
   color?: BasicColorType
 }
 
 export interface InputControlProps extends ElementProps {
-  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
+  /** `Attribute` Sets a custom label above the Input to indicate its usage */
   labelText?: string
   /** `Attribute` `Required` control's input configuration which will be wrapped */
   inputConfig: InputProps
   /** `Attribute` Sets a custom text below the input to show a message */
-  helper?: FormFieldHelper
+  helper?: HelperProps
   /** `Attribute` `Icon` configuration that will be shown in Input's left side */
   leftIcon?: IconProps
   /** `Attribute` `Icon` configuration that will be shown in Input's right side */

@@ -98,7 +98,7 @@ const InputControl: React.FC<InputControlProps> = ({
       inputConfig.color ?? helper.color ?? null
     ])
     const fieldHelperTestId = parseTestId({
-      tag: 'form-field-help',
+      tag: 'help',
       parsedClasses: fieldHelperClasses,
       rules: [{ regExp: /help|is/gm, replacer: '' }]
     })

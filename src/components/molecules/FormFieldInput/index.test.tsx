@@ -4,18 +4,15 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormFieldInput from '.'
 // TYPES & INTERFACES
-import { FormFieldHelper, FormFieldInputProps } from '@interfaces/moleculeProps'
+import { FormFieldInputProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
-import fieldInputTesting from '@components/molecules/InputControl/index.mocks.json'
 
 describe('FormFieldInput', () => {
   const {
     basicTestId,
     inputConfigCase,
-    basicLabelTestId,
-    basicHelperTestId,
     selectConfigCase,
     checkboxConfigCase,
     radioButtonConfigCase,
@@ -27,35 +24,6 @@ describe('FormFieldInput', () => {
     const testFormFieldSection = screen.getByTestId(basicTestId)
 
     expect(testFormFieldSection).toBeInTheDocument()
-  })
-
-  test.skip('Should render a helper and a label next to the required input', () => {
-    const testFieldWithLabelAndHelper = {
-      ...(inputConfigCase as FormFieldInputProps),
-      helper: fieldInputTesting.testing.withHelper
-    }
-
-    render(<FormFieldInput {...testFieldWithLabelAndHelper} />)
-    const testFieldLabel = screen.getByTestId(basicLabelTestId)
-    const testFieldHelp = screen.getByTestId(basicHelperTestId)
-
-    expect(testFieldLabel).toBeInTheDocument()
-    expect(testFieldHelp).toBeInTheDocument()
-  })
-
-  test.skip('Should render a helper with same color than FormFieldInput input', () => {
-    const testFieldWithLabelAndHelper = {
-      ...(inputConfigCase as FormFieldInputProps),
-      helper: {
-        ...fieldInputTesting.testing.withHelper,
-        color: 'is-danger'
-      } as FormFieldHelper
-    }
-
-    render(<FormFieldInput {...testFieldWithLabelAndHelper} />)
-    const testFieldHelp = screen.getByTestId(`${basicHelperTestId}-danger`)
-
-    expect(testFieldHelp).toBeInTheDocument()
   })
 
   test('Should render different input cases', () => {

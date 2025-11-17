@@ -1,8 +1,6 @@
 {
   "testing": {
     "basicTestId": "test-form-field-input",
-    "basicLabelTestId": "test-form-field-label",
-    "basicHelperTestId": "test-form-field-help",
     "inputConfigCase": {
       "mainInput": {
         "type": "input",
