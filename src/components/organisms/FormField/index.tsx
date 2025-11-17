@@ -13,12 +13,14 @@ const FormField: React.FC<FormFieldProps> = ({
   style = null,
   inputsConfig,
   isHorizontal = false,
-  isGrouped = false
+  isGrouped = false,
+  withAddons = false
 }) => {
   const formFieldClasses = parseClasses([
     'field',
     isHorizontal ? 'is-horizontal' : null,
     isGrouped ? 'is-grouped' : null,
+    withAddons ? 'has-addons' : null,
     cssClasses
   ])
   const formFieldTestId =

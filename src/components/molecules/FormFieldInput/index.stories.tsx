@@ -26,42 +26,6 @@ const Template: StoryFn<typeof FormFieldInput> = args => (
 
 export const BasicExample = Template.bind({})
 
-// export const WithOneIcon = Template.bind({})
-// WithOneIcon.args = {
-//   input: {
-//     ...(testing.inputConfigCase.input as FormFieldConfig),
-//     leftIcon: {
-//       iconLabel: 'account'
-//     }
-//   }
-// }
-
-// export const WithTwoIcons = Template.bind({})
-// WithTwoIcons.args = {
-//   ...WithOneIcon.args,
-//   input: {
-//     ...(WithOneIcon.args.input as FormFieldConfig),
-//     rightIcon: {
-//       iconLabel: 'check'
-//     }
-//   }
-// }
-
-// export const ErrorCase = Template.bind({})
-// ErrorCase.args = {
-//   ...WithLabel.args,
-//   input: {
-//     inputConfig: {
-//       ...(testing.inputConfigCase.input.inputConfig as InputProps),
-//       color: 'is-danger'
-//     }
-//   },
-//   helper: {
-//     ...testing.withHelper,
-//     color: 'is-danger'
-//   }
-// }
-
 export const SelectCase = Template.bind({})
 SelectCase.args = {
   ...(testing.selectConfigCase as FormFieldInputProps)
@@ -85,6 +49,5 @@ TextareaCase.args = {
 export const LeftAddonSelect = Template.bind({})
 LeftAddonSelect.args = {
   mainInput: testing.inputConfigCase.mainInput as FormFieldElement,
-  leftInput: testing.selectConfigCase.mainInput as FormFieldElement,
-  withAddons: true
+  leftInput: testing.selectConfigCase.mainInput as FormFieldElement
 }

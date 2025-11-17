@@ -340,8 +340,6 @@ export interface FormFieldElement {
 export interface FormFieldInputProps extends ElementProps {
   /** `Attribute` `Required` Main input that will use the provided label and helper */
   mainInput: FormFieldElement
-  /** `Attribute` Will add one or tow new controls to be working next to the main one */
-  withAddons?: boolean
   /** `Attribute` Input that will be included at main's left (will work only if `withAddons` is in `true`) */
   leftInput?: FormFieldElement
   /** `Attribute` Input that will be included at main's right (will work only if `withAddons` is in `true`) */

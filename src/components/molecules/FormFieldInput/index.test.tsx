@@ -82,7 +82,6 @@ describe('FormFieldInput', () => {
         leftInput={renderedInputs[0]}
         mainInput={renderedInputs[1]}
         rightInput={renderedInputs[2]}
-        withAddons={true}
       />
     )
 

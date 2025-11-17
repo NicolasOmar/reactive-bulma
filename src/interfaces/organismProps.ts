@@ -27,6 +27,8 @@ export interface FormFieldProps extends ElementProps {
   isHorizontal?: boolean
   /** `Styling` Will group the list of inputs in a same wrapper (useful for several inputs with same usage, as a complex address) */
   isGrouped?: boolean
+  /** `Attribute` Will add one or tow new controls to be working next to the main one */
+  withAddons?: boolean
 }
 
 export interface PanelProps extends ElementProps {
