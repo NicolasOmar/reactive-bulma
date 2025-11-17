@@ -19,7 +19,8 @@ describe('FormFieldInput', () => {
     selectConfigCase,
     checkboxConfigCase,
     radioButtonConfigCase,
-    textAreaConfigCase
+    textAreaConfigCase,
+    buttonConfigCase
   } = testing
 
   test('Should render the component', () => {
@@ -45,6 +46,10 @@ describe('FormFieldInput', () => {
       },
       {
         config: textAreaConfigCase,
+        lookByContainer: false
+      },
+      {
+        config: buttonConfigCase,
         lookByContainer: false
       }
     ]
