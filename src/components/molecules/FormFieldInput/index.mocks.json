@@ -3,12 +3,6 @@
     "basicTestId": "test-form-field-input",
     "basicLabelTestId": "test-form-field-label",
     "basicHelperTestId": "test-form-field-help",
-    "withLabel": {
-      "labelText": "This is a label text"
-    },
-    "withHelper": {
-      "text": "Hello there"
-    },
     "inputConfigCase": {
       "mainInput": {
         "type": "input",

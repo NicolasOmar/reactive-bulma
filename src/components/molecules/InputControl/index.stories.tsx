@@ -31,9 +31,18 @@ WithBothIcons.args = {
   rightIcon: iconMocks.testing.otherIcon
 }
 
+export const WithLabel = Template.bind({})
+WithLabel.args = testing.withLabel
+
+export const WithLabelAndHelper = Template.bind({})
+WithLabelAndHelper.args = {
+  ...WithLabel.args,
+  helper: testing.withHelper
+}
+
 export const ErrorState = Template.bind({})
 ErrorState.args = {
-  ...WithBothIcons.args,
+  ...WithLabelAndHelper.args,
   inputConfig: {
     ...(testing.baseConfig.inputConfig as InputProps),
     color: 'is-danger'

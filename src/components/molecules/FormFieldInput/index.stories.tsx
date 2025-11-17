@@ -26,9 +26,6 @@ const Template: StoryFn<typeof FormFieldInput> = args => (
 
 export const BasicExample = Template.bind({})
 
-// export const WithLabel = Template.bind({})
-// WithLabel.args = testing.withLabel
-
 // export const WithOneIcon = Template.bind({})
 // WithOneIcon.args = {
 //   input: {
@@ -48,12 +45,6 @@ export const BasicExample = Template.bind({})
 //       iconLabel: 'check'
 //     }
 //   }
-// }
-
-// export const WithLabelAndHelper = Template.bind({})
-// WithLabelAndHelper.args = {
-//   ...WithLabel.args,
-//   helper: testing.withHelper
 // }
 
 // export const ErrorCase = Template.bind({})
