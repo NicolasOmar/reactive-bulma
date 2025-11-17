@@ -8,6 +8,7 @@ import { FormFieldHelper, FormFieldInputProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
+import fieldInputTesting from '@components/molecules/InputControl/index.mocks.json'
 
 describe('FormFieldInput', () => {
   const {
@@ -15,8 +16,6 @@ describe('FormFieldInput', () => {
     inputConfigCase,
     basicLabelTestId,
     basicHelperTestId,
-    // withLabel,
-    withHelper,
     selectConfigCase,
     checkboxConfigCase,
     radioButtonConfigCase,
@@ -33,7 +32,7 @@ describe('FormFieldInput', () => {
   test.skip('Should render a helper and a label next to the required input', () => {
     const testFieldWithLabelAndHelper = {
       ...(inputConfigCase as FormFieldInputProps),
-      helper: withHelper
+      helper: fieldInputTesting.testing.withHelper
     }
 
     render(<FormFieldInput {...testFieldWithLabelAndHelper} />)
@@ -48,7 +47,7 @@ describe('FormFieldInput', () => {
     const testFieldWithLabelAndHelper = {
       ...(inputConfigCase as FormFieldInputProps),
       helper: {
-        ...withHelper,
+        ...fieldInputTesting.testing.withHelper,
         color: 'is-danger'
       } as FormFieldHelper
     }
