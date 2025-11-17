@@ -16,7 +16,6 @@ import {
   TextAreaProps
 } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '@functions/parsers'
 
 interface RenderInputProps {
   testId?: string
@@ -83,17 +82,12 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
 
 const FormFieldInput: React.FC<FormFieldInputProps> = ({
   testId,
-  cssClasses = null,
-  style = null,
   leftInput = null,
   rightInput = null,
   mainInput,
   withAddons = null,
   isHorizontal = false
 }) => {
-  const fieldClasses = parseClasses(['field', cssClasses])
-  const fieldTestId =
-    testId ?? parseTestId({ tag: 'field', parsedClasses: fieldClasses })
   const memorizedMainInput = useMemo(
     () => renderInput({ testId, element: mainInput, isHorizontal }),
     [testId, mainInput, isHorizontal]
@@ -114,15 +108,11 @@ const FormFieldInput: React.FC<FormFieldInputProps> = ({
   )
 
   return (
-    <section
-      data-testid={fieldTestId}
-      className={fieldClasses}
-      style={style ?? undefined}
-    >
+    <>
       {memoizedLeftInput}
       {memorizedMainInput}
       {memoizedRightInput}
-    </section>
+    </>
   )
 }
 

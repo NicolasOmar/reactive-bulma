@@ -14,12 +14,15 @@ const InputControl: React.FC<InputControlProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
+  labelText = null,
   inputConfig,
+  helper = null,
   leftIcon = null,
   rightIcon = null,
   size = null,
   isLoading = null,
-  isExpanded = null
+  isExpanded = null,
+  isHorizontal = null
 }) => {
   const inputControlClasses = parseClasses([
     'control',
@@ -47,7 +50,24 @@ const InputControl: React.FC<InputControlProps> = ({
       ]
     })
 
-  const memoizedInputConfig = useMemo(
+  const memorizedLabel = useMemo(() => {
+    const labelSection =
+      labelText !== null ? (
+        <label
+          data-testid={`${inputControlTestId}-label`}
+          className='label'
+        >
+          {labelText}
+        </label>
+      ) : null
+
+    return isHorizontal ? (
+      <section className='field-label'>{labelSection}</section>
+    ) : (
+      labelSection
+    )
+  }, [labelText, inputControlTestId, isHorizontal])
+  const memoizedInput = useMemo(
     () => (
       <Input
         {...{
@@ -70,17 +90,43 @@ const InputControl: React.FC<InputControlProps> = ({
       ),
     [rightIcon]
   )
+  const memorizedHelper = useMemo(() => {
+    if (helper === null) return null
+
+    const fieldHelperClasses = parseClasses([
+      'help',
+      inputConfig.color ?? helper.color ?? null
+    ])
+    const fieldHelperTestId = parseTestId({
+      tag: 'form-field-help',
+      parsedClasses: fieldHelperClasses,
+      rules: [{ regExp: /help|is/gm, replacer: '' }]
+    })
+
+    return (
+      <p
+        data-testid={fieldHelperTestId}
+        className={fieldHelperClasses}
+      >
+        {helper.text}
+      </p>
+    )
+  }, [helper, inputConfig.color])
 
   return (
-    <section
-      data-testid={inputControlTestId}
-      className={inputControlClasses}
-      style={style ?? undefined}
-    >
-      {memoizedInputConfig}
-      {memoizedLeftIcon}
-      {memoizedRightIcon}
-    </section>
+    <>
+      {memorizedLabel}
+      <section
+        data-testid={inputControlTestId}
+        className={inputControlClasses}
+        style={style ?? undefined}
+      >
+        {memoizedInput}
+        {memoizedLeftIcon}
+        {memoizedRightIcon}
+      </section>
+      {memorizedHelper}
+    </>
   )
 }
 

@@ -33,6 +33,12 @@
         "type": "input"
       }
     },
+    "withLabel": {
+      "labelText": "This is a label text"
+    },
+    "withHelper": {
+      "text": "Hello there"
+    },
     "bigSizeConfig": { "size": "is-large" }
   },
   "storybook": {
