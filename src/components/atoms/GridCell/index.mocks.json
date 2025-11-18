@@ -1,0 +1,23 @@
+{
+  "testing": {
+    "basicTestId": "test-cell",
+    "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
+    "testClasses": [
+      {
+        "name": "isACssTestClass",
+        "value": true,
+        "result": "is-test-only-class"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "testing": {
+    "basicTestId": "test-grid",
+    "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
+    "testClasses": [
+      {
+        "name": "gap",
+        "value": "is-gap-0",
+        "result": "is-gap-0"
+      },
+      {
+        "name": "columnGap",
+        "value": "is-column-gap-0",
+        "result": "is-column-gap-0"
+      },
+      {
+        "name": "rowGap",
+        "value": "is-row-gap-0",
+        "result": "is-row-gap-0"
+      },
+      {
+        "name": "cellMinWidth",
+        "value": "is-col-min-32",
+        "result": "is-col-min-32"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "docs": {
+        "description": {
+          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+        }
+      }
+    }
+  }
+}
