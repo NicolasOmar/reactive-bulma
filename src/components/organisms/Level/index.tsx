@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
 import { LevelItem } from '@components/molecules'
 // TYPES & INTERFACES
@@ -8,13 +8,25 @@ import { LevelItemProps } from '@interfaces/moleculeProps'
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
 
-const renderLevelSection = (levelItemList: LevelItemProps[]) =>
-  levelItemList.map(_levelItemConfig => (
+const renderLevelSection = (
+  levelItemList: LevelItemProps[] | null,
+  side: 'center' | 'right' | 'left'
+) => {
+  if (levelItemList === null) return null
+
+  const renderedLevelItems = levelItemList.map(_levelItemConfig => (
     <LevelItem
       key={`level-item-${generateKey()}`}
       {..._levelItemConfig}
     />
   ))
+
+  if (side === 'center') {
+    return renderedLevelItems
+  } else {
+    return <section className={`level-${side}`}>{renderedLevelItems}</section>
+  }
+}
 
 const Level: React.FC<LevelProps> = ({
   testId = null,
@@ -32,6 +44,18 @@ const Level: React.FC<LevelProps> = ({
   ])
   const levelTestId =
     testId ?? parseTestId({ tag: 'level', parsedClasses: levelClasses })
+  const memoizedLeftSide = useMemo(
+    () => renderLevelSection(leftSide, 'left'),
+    [leftSide]
+  )
+  const memoizedCenterSide = useMemo(
+    () => renderLevelSection(centerSide, 'center'),
+    [centerSide]
+  )
+  const memoizedRightSide = useMemo(
+    () => renderLevelSection(rightSide, 'right'),
+    [rightSide]
+  )
 
   return (
     <nav
@@ -39,15 +63,9 @@ const Level: React.FC<LevelProps> = ({
       className={levelClasses}
       style={style ?? undefined}
     >
-      {leftSide ? (
-        <section className='level-left'>{renderLevelSection(leftSide)}</section>
-      ) : null}
-      {centerSide ? renderLevelSection(centerSide) : null}
-      {rightSide ? (
-        <section className='level-right'>
-          {renderLevelSection(rightSide)}
-        </section>
-      ) : null}
+      {memoizedLeftSide}
+      {memoizedCenterSide}
+      {memoizedRightSide}
     </nav>
   )
 }
