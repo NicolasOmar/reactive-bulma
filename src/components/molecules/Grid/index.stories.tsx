@@ -47,3 +47,21 @@ HugeGridGap.args = {
   ...LotsOfCells.args,
   gap: 'is-gap-8'
 }
+
+export const FixedGrid = Template.bind({})
+FixedGrid.args = {
+  ...LotsOfCells.args,
+  isFixed: true
+}
+
+export const FixedGridWithThreeColumns = Template.bind({})
+FixedGridWithThreeColumns.args = {
+  ...FixedGrid.args,
+  fixedColumnsCount: 'has-3-cols'
+}
+
+export const FixedGridWithAutoColumns = Template.bind({})
+FixedGridWithAutoColumns.args = {
+  ...FixedGrid.args,
+  isAutoColumns: true
+}

@@ -1,6 +1,7 @@
 {
   "testing": {
     "basicTestId": "test-grid",
+    "basicContainerTestId": "test-fixed-grid",
     "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
     "testClasses": [
       {
@@ -22,6 +23,18 @@
         "name": "cellMinWidth",
         "value": "is-col-min-32",
         "result": "is-col-min-32"
+      }
+    ],
+    "testContainerClasses": [
+      {
+        "name": "fixedColumnsCount",
+        "value": "has-12-cols",
+        "result": "has-12-cols"
+      },
+      {
+        "name": "isAutoColumns",
+        "value": true,
+        "result": "has-auto-count"
       }
     ]
   },
