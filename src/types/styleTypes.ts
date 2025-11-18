@@ -204,3 +204,18 @@ export type GridCellMinWidthType =
   | 'is-col-min-30'
   | 'is-col-min-31'
   | 'is-col-min-32'
+
+export type FixedGridColumnsType =
+  | 'has-0-cols'
+  | 'has-1-cols'
+  | 'has-2-cols'
+  | 'has-3-cols'
+  | 'has-4-cols'
+  | 'has-5-cols'
+  | 'has-6-cols'
+  | 'has-7-cols'
+  | 'has-8-cols'
+  | 'has-9-cols'
+  | 'has-10-cols'
+  | 'has-11-cols'
+  | 'has-12-cols'

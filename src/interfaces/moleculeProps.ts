@@ -40,7 +40,8 @@ import {
   GridGapType,
   GridColumnGapType,
   GridRowGapType,
-  GridCellMinWidthType
+  GridCellMinWidthType,
+  FixedGridColumnsType
 } from '../types/styleTypes'
 import {
   ChildrenType,
@@ -365,11 +366,14 @@ export interface CheckboxGroupProps extends ElementProps {
   listOfCheckboxes: CheckBoxProps[]
 }
 
-export interface GridProps extends ElementProps {
+export interface GridProps extends ComposedElementProps {
   /** `Attribute` `Required` `GridCell` A list of Cell config objetcs to be rendered as part of the grid */
   listOfCells: GridCellProps[]
   gap?: GridGapType
   columnGap?: GridColumnGapType
   rowGap?: GridRowGapType
   cellMinWidth?: GridCellMinWidthType
+  isFixed?: boolean
+  fixedColumnsCount?: FixedGridColumnsType
+  isAutoColumns?: boolean
 }
