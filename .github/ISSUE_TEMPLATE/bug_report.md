@@ -48,4 +48,4 @@ Add any other context about the problem here.
 ---
 
 ### Technical notes 
-`Describe any useful information for this new component like documentation, examples from other sources or articles`
+Describe any helpful information for this new component, like documentation, examples from other sources, or articles.
