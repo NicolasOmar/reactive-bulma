@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { ColumnGroupProps } from '@interfaces/moleculeProps'
 import { ColumnGapType } from '@customTypes/styleTypes'
@@ -30,13 +30,14 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
   isHorizontallyCentered = null,
   gap = undefined
 }) => {
+  const columnGapValue = parseGapCssClass(gap)
   const columnGroupClasses = parseClasses([
     'columns',
     isMultiline ? 'is-multiline' : null,
     isMobileLayout ? 'is-mobile' : null,
     isVerticallyCentered ? 'is-vcentered' : null,
     isHorizontallyCentered ? 'is-centered' : null,
-    parseGapCssClass(gap),
+    columnGapValue,
     cssClasses
   ])
   const columnGroupTestId =
@@ -45,18 +46,25 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
       tag: 'columns',
       parsedClasses: columnGroupClasses
     })
+
+  const memoizedColumnsInGroup = useMemo(
+    () =>
+      listOfColumns.map(columnItemConfig => (
+        <Column
+          key={`column-group-item-${generateKey()}`}
+          {...columnItemConfig}
+        />
+      )),
+    [listOfColumns]
+  )
+
   return (
     <section
       data-testid={columnGroupTestId}
       className={columnGroupClasses}
       style={style ?? undefined}
     >
-      {listOfColumns.map(columnItemConfig => (
-        <Column
-          key={`column-group-item-${generateKey()}`}
-          {...columnItemConfig}
-        />
-      ))}
+      {memoizedColumnsInGroup}
     </section>
   )
 }
