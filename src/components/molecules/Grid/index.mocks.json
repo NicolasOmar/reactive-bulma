@@ -40,10 +40,10 @@
   },
   "storybook": {
     "parameters": {
-      "componentSubtitle": "Here goes component's subtitle, a base idea about what it does",
+      "componentSubtitle": "A smart 2D grid with flexible columns",
       "docs": {
         "description": {
-          "component": "Here goes component's technical description, mostly based on Bulma's documentation."
+          "component": "Bulma v1 comes with a new Grid. This grid is a 2 dimensional layout component that features flexible columns: Bulma will fit as many columns as possible, given a minimum column width and a column and row gap."
         }
       }
     }

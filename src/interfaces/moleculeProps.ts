@@ -369,11 +369,18 @@ export interface CheckboxGroupProps extends ElementProps {
 export interface GridProps extends ComposedElementProps {
   /** `Attribute` `Required` `GridCell` A list of Cell config objetcs to be rendered as part of the grid */
   listOfCells: GridCellProps[]
+  /** `Styling` Will change the space between columns and rows at the same level. This value will be nullify if `isFixed` is true */
   gap?: GridGapType
+  /** `Styling` Will change the space between columns. This value will be nullify if `gap` has a value or if `isFixed` is true */
   columnGap?: GridColumnGapType
+  /** `Styling` Will change the space between rows. This value will be nullify if `gap` has a value or if `isFixed` is true */
   rowGap?: GridRowGapType
+  /** `Styling` Will change the minimum column width by increments of `1.5rem` */
   cellMinWidth?: GridCellMinWidthType
+  /** `Styling` Will set a fixed amount of columns per row. If is not set at `fixedColumnsCount`, it will be set at 2 columns */
   isFixed?: boolean
+  /** `Styling` Will change the amount of columns shown per row */
   fixedColumnsCount?: FixedGridColumnsType
+  /** `Styling` Will set grid's columns automatically, changing its count for each breakpoint */
   isAutoColumns?: boolean
 }
