@@ -37,35 +37,8 @@ const Grid: React.FC<GridProps> = ({
       tag: 'grid',
       parsedClasses: gridClasses
     })
-  const autoColumnsValue =
-    fixedColumnsCount === null && isAutoColumns ? 'has-auto-count' : null
-  const gridContainerClasses = isFixed
-    ? parseClasses([
-        'fixed-grid',
-        fixedColumnsCount,
-        autoColumnsValue,
-        containerCssClasses
-      ])
-    : undefined
-  const fixedGridTestId = isFixed
-    ? (containerTestId ??
-      parseTestId({
-        tag: 'fixed-grid',
-        parsedClasses: gridContainerClasses ?? '',
-        rules: [
-          {
-            regExp: /fixed-grid/gm,
-            replacer: ''
-          },
-          {
-            regExp: /is-|has-/gm,
-            replacer: '-'
-          }
-        ]
-      }))
-    : undefined
 
-  const memoizedCellsInGrid = useMemo(
+  const memoizedGrid = useMemo(
     () => (
       <section
         data-testid={gridTestId}
@@ -83,17 +56,44 @@ const Grid: React.FC<GridProps> = ({
     [gridTestId, gridClasses, style, listOfCells]
   )
 
-  return isFixed ? (
-    <section
-      data-testid={fixedGridTestId}
-      className={gridContainerClasses}
-      style={containerStyle ?? undefined}
-    >
-      {memoizedCellsInGrid}
-    </section>
-  ) : (
-    memoizedCellsInGrid
-  )
+  if (isFixed) {
+    const autoColumnsValue =
+      fixedColumnsCount === null && isAutoColumns ? 'has-auto-count' : null
+    const gridContainerClasses = parseClasses([
+      'fixed-grid',
+      fixedColumnsCount,
+      autoColumnsValue,
+      containerCssClasses
+    ])
+    const fixedGridTestId =
+      containerTestId ??
+      parseTestId({
+        tag: 'fixed-grid',
+        parsedClasses: gridContainerClasses,
+        rules: [
+          {
+            regExp: /fixed-grid/gm,
+            replacer: ''
+          },
+          {
+            regExp: /is-|has-/gm,
+            replacer: '-'
+          }
+        ]
+      })
+
+    return (
+      <section
+        data-testid={fixedGridTestId}
+        className={gridContainerClasses}
+        style={containerStyle ?? undefined}
+      >
+        {memoizedGrid}
+      </section>
+    )
+  }
+
+  return memoizedGrid
 }
 
 export default Grid

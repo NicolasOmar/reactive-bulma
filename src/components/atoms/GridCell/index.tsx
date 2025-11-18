@@ -9,9 +9,26 @@ const GridCell: React.FC<GridCellProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
-  children = null
+  children = null,
+  position = null,
+  colStart = null,
+  rowStart = null,
+  colStartFromEnd = null,
+  rowStartFromEnd = null,
+  colSpan = null,
+  rowSpan = null
 }) => {
-  const gridCellClasses = parseClasses(['cell', cssClasses])
+  const gridCellClasses = parseClasses([
+    'cell',
+    position,
+    colStart ? `is-col-start-${colStart}` : null,
+    rowStart ? `is-row-start-${rowStart}` : null,
+    colStartFromEnd ? `is-col-from-end-${colStartFromEnd}` : null,
+    rowStartFromEnd ? `is-row-from-end-${rowStartFromEnd}` : null,
+    colSpan ? `is-col-span-${colSpan}` : null,
+    rowSpan ? `is-row-span-${rowSpan}` : null,
+    cssClasses
+  ])
   const gridCellTestId =
     testId ?? parseTestId({ tag: 'cell', parsedClasses: gridCellClasses })
 

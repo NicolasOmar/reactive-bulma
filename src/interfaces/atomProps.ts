@@ -22,7 +22,8 @@ import {
   TitleSizeType,
   RightLeftAlignType,
   CommonSizeType,
-  ColorVersionType
+  ColorVersionType,
+  GridCellPositionType
 } from '../types/styleTypes'
 import {
   DropdownItemType,
@@ -416,4 +417,18 @@ export interface GridCellProps
     React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the cell */
   children?: ChildrenType
+  /** `Styling` Will adjust cell's position in the grid in specific points. If you want to set a specific position, work with wny of the other col/row `Start` or `StartFromEnd` properties */
+  position?: GridCellPositionType
+  /** `Styling` Change which column a cell starts at */
+  colStart?: number
+  /** `Styling` Change which row a cell starts at */
+  rowStart?: number
+  /** `Styling` Change which column a cell ends at, counting from the end */
+  colStartFromEnd?: number
+  /** `Styling` Change which row a cell ends at, counting from the end */
+  rowStartFromEnd?: number
+  /** `Styling` Change how many columns a cell spans */
+  colSpan?: number
+  /** `Styling` Change how many rows a cell spans */
+  rowSpan?: number
 }

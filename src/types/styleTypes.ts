@@ -219,3 +219,11 @@ export type FixedGridColumnsType =
   | 'has-10-cols'
   | 'has-11-cols'
   | 'has-12-cols'
+
+export type GridCellPositionType =
+  | 'is-col-start'
+  | 'is-col-from-end'
+  | 'is-col-span'
+  | 'is-row-start'
+  | 'is-row-from-end'
+  | 'is-row-span'
