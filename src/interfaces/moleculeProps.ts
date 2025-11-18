@@ -13,6 +13,7 @@ import {
   ColumnProps,
   DeleteProps,
   DropdownItemProps,
+  GridCellProps,
   IconProps,
   InputProps,
   MenuItemProps,
@@ -35,7 +36,11 @@ import {
   SizeWithoutNormalType,
   TabsFormatType,
   MediumAndLargeSizeType,
-  RightLeftAlignType
+  RightLeftAlignType,
+  GridGapType,
+  GridColumnGapType,
+  GridRowGapType,
+  GridCellMinWidthType
 } from '../types/styleTypes'
 import {
   ChildrenType,
@@ -358,4 +363,13 @@ export interface TagListProps extends ElementProps {
 export interface CheckboxGroupProps extends ElementProps {
   /** `Attribute` `Required` A list of Checkbox config objetcs to be rendered in the same space */
   listOfCheckboxes: CheckBoxProps[]
+}
+
+export interface GridProps extends ElementProps {
+  /** `Attribute` `Required` `GridCell` A list of Cell config objetcs to be rendered as part of the grid */
+  listOfCells: GridCellProps[]
+  gap?: GridGapType
+  columnGap?: GridColumnGapType
+  rowGap?: GridRowGapType
+  cellMinWidth?: GridCellMinWidthType
 }

@@ -410,3 +410,10 @@ export interface TableCellProps
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
 }
+
+export interface GridCellProps
+  extends ElementProps,
+    React.ComponentPropsWithoutRef<'section'> {
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the cell */
+  children?: ChildrenType
+}
