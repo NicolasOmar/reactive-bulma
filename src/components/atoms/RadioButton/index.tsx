@@ -1,47 +1,9 @@
 import React, { useMemo } from 'react'
 // TYPES & INTERFACES
-import { RadioButtonItemProps, RadioButtonProps } from '@interfaces/atomProps'
+import { RadioButtonProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
-
-const renderRadioButton = (config: RadioButtonItemProps, index: number) => {
-  const {
-    testId = null,
-    label,
-    name,
-    isChecked = false,
-    isDisabled = false,
-    style = null,
-    onClick,
-    onChange,
-    onBlur
-  } = config
-  const radioButtonTestId = testId ?? `test-radio-button-item-${index}`
-  const radioButtonBaseStyle = {
-    display: 'inline-block',
-    marginLeft: '5px'
-  }
-
-  return (
-    <label
-      key={index}
-      className='radio'
-    >
-      <input
-        data-testid={radioButtonTestId}
-        type='radio'
-        style={style ?? undefined}
-        name={name}
-        defaultChecked={isChecked}
-        disabled={isDisabled}
-        onClick={onClick}
-        onChange={onChange}
-        onBlur={onBlur}
-      />
-      <p style={radioButtonBaseStyle}>{label}</p>
-    </label>
-  )
-}
+import { generateKey } from '@functions/generators'
 
 const RadioButton: React.FC<RadioButtonProps> = ({
   containerTestId = null,
@@ -66,18 +28,34 @@ const RadioButton: React.FC<RadioButtonProps> = ({
 
   const renderRadioButtons = useMemo(
     () =>
-      options.map((_option, i) =>
-        renderRadioButton(
-          {
-            ..._option,
-            name,
-            onClick,
-            onChange,
-            onBlur
-          },
-          i
+      options.map((_optionConfig, optionIndex) => {
+        const radioButtonTestId =
+          _optionConfig.testId ?? `test-radio-button-item-${optionIndex}`
+        const radioButtonBaseStyle = {
+          display: 'inline-block',
+          marginLeft: '5px'
+        }
+
+        return (
+          <label
+            key={`radio-button-item-${generateKey()}`}
+            className='radio'
+          >
+            <input
+              data-testid={radioButtonTestId}
+              type='radio'
+              style={_optionConfig.style ?? undefined}
+              name={name}
+              defaultChecked={_optionConfig.isChecked}
+              disabled={_optionConfig.isDisabled}
+              onClick={onClick}
+              onChange={onChange}
+              onBlur={onBlur}
+            />
+            <p style={radioButtonBaseStyle}>{_optionConfig.label}</p>
+          </label>
         )
-      ),
+      }),
     [options, name, onClick, onChange, onBlur]
   )
 
