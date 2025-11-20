@@ -36,18 +36,6 @@ export type ColorTypes =
   | 'warning'
   | 'danger'
 
-export type TextColorType =
-  | 'has-text-white'
-  | 'has-text-black'
-  | 'has-text-light'
-  | 'has-text-dark'
-  | 'has-text-primary'
-  | 'has-text-link'
-  | 'has-text-info'
-  | 'has-text-success'
-  | 'has-text-warning'
-  | 'has-text-danger'
-
 export type ColorVersionType = 'is-light' | 'is-dark'
 
 export type FixedImageSizeType =

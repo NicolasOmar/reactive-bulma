@@ -18,7 +18,6 @@ import {
   IconColorModeType,
   ElementSizeType,
   SizeWithoutNormalType,
-  TextColorType,
   TitleSizeType,
   RightLeftAlignType,
   CommonSizeType,
@@ -176,7 +175,7 @@ export interface IconProps extends ComposedElementProps {
   /** `Attribute` Sets the text you want to show next to the icon */
   text?: string
   /** `Styling` Color based on bulma's text color tokens */
-  color?: TextColorType
+  color?: ColorTypes
   /** `Styling` Set icons's size */
   size?: SizeWithoutNormalType
   /** `Styling` Special usage in case you want to set as dark or light mode */
