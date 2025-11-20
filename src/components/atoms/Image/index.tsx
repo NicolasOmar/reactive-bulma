@@ -3,6 +3,7 @@ import React from 'react'
 import { ImageProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
+import { COMMON_CLASSES } from '@constants/classes'
 
 const Image: React.FC<ImageProps> = ({
   testId = null,
@@ -16,18 +17,19 @@ const Image: React.FC<ImageProps> = ({
   fixedSize = null,
   isRounded = false
 }) => {
+  const imageBaseClass = 'image'
   const imageContainerClasses = parseClasses([
-    'image',
-    fixedSize,
+    imageBaseClass,
+    fixedSize ? `${COMMON_CLASSES.IS}${fixedSize}` : null,
     containerCssClasses
   ])
   const imageClasses = parseClasses([
-    isRounded ? 'is-rounded' : null,
+    isRounded ? COMMON_CLASSES.ROUNDED : null,
     cssClasses
   ])
   const imageContainerTestId =
     containerTestId ??
-    parseTestId({ tag: 'image', parsedClasses: imageContainerClasses })
+    parseTestId({ tag: imageBaseClass, parsedClasses: imageContainerClasses })
   const imageTestId = testId ?? `${imageContainerTestId}-img`
 
   return (
