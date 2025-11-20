@@ -67,7 +67,7 @@ WithShadow.args = {
 export const Colored = Template.bind({})
 Colored.args = {
   ...WithDropdownsAtStartAndEnd.args,
-  color: 'is-info'
+  color: 'info'
 }
 
 export const Transparent = Template.bind({})

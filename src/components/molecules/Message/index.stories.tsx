@@ -27,7 +27,7 @@ WithHeader.args = {
 export const Colored = Template.bind({})
 Colored.args = {
   ...WithHeader.args,
-  color: 'is-primary'
+  color: 'primary'
 }
 
 export const LargeSize = Template.bind({})

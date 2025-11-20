@@ -4,6 +4,9 @@ import { Icon, Input } from '@components/atoms'
 // TYPES & INTERFACES
 import { InputControlProps } from '@interfaces/moleculeProps'
 import { IconProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -24,27 +27,28 @@ const InputControl: React.FC<InputControlProps> = ({
   isExpanded = null,
   isHorizontal = null
 }) => {
+  const controlBaseClass = 'control'
   const inputControlClasses = parseClasses([
-    'control',
+    controlBaseClass,
     size,
-    leftIcon ? 'has-icons-left' : null,
-    rightIcon ? 'has-icons-right' : null,
-    isLoading ? 'is-loading' : null,
-    isExpanded ? 'is-expanded' : null,
+    leftIcon ? COMMON_CLASSES.ICON_LEFT : null,
+    rightIcon ? COMMON_CLASSES.ICON_RIGHT : null,
+    isLoading ? COMMON_CLASSES.LOADING : null,
+    isExpanded ? COMMON_CLASSES.EXPANDED : null,
     cssClasses
   ])
   const inputControlTestId =
     testId ??
     parseTestId({
-      tag: 'control',
+      tag: controlBaseClass,
       parsedClasses: inputControlClasses,
       rules: [
         {
-          regExp: /has-|is-/gm,
+          regExp: TEST_ID_REGEXP.IS_HAS,
           replacer: '-'
         },
         {
-          regExp: /control/gm,
+          regExp: TEST_ID_REGEXP.CONTROL,
           replacer: ''
         }
       ]
@@ -94,14 +98,17 @@ const InputControl: React.FC<InputControlProps> = ({
   const memorizedHelper = useMemo(() => {
     if (helper === null) return null
 
-    const fieldHelperClasses = parseClasses([
-      'help',
-      inputConfig.color ?? helper.color ?? null
-    ])
+    const helperBaseClass = 'help'
+    const helperColor = inputConfig.color
+      ? `${COMMON_CLASSES.IS}${inputConfig.color}`
+      : helper.color
+        ? `${COMMON_CLASSES.IS}${helper.color}`
+        : null
+    const fieldHelperClasses = parseClasses([helperBaseClass, helperColor])
     const fieldHelperTestId = parseTestId({
-      tag: 'help',
+      tag: helperBaseClass,
       parsedClasses: fieldHelperClasses,
-      rules: [{ regExp: /help|is/gm, replacer: '' }]
+      rules: [{ regExp: TEST_ID_REGEXP.HELP, replacer: '' }]
     })
 
     return (

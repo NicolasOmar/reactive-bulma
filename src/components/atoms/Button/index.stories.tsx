@@ -29,7 +29,7 @@ AsAnAnchor.args = {
 export const Colored = Template.bind({})
 Colored.args = {
   ...WithText.args,
-  color: 'is-danger'
+  color: 'danger'
 }
 
 export const LightColor = Template.bind({})

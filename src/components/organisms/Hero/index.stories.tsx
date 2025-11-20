@@ -41,7 +41,7 @@ ExampleWithTitle.args = {
 export const Colored = Template.bind({})
 Colored.args = {
   ...ExampleWithTitle.args,
-  color: 'is-primary'
+  color: 'primary'
 }
 
 export const BigSize = Template.bind({})

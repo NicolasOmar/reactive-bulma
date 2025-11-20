@@ -5,6 +5,8 @@ import '@testing-library/jest-dom'
 import Hero from '.'
 // TYPES & INTERFACES
 import { HeroProps } from '@interfaces/organismProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
@@ -28,7 +30,7 @@ describe('Hero', () => {
   test('Should render the component with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
-        /is-|has-/gm,
+        TEST_ID_REGEXP.IS_HAS,
         ''
       )}`
       const classTestObject: HeroProps = {

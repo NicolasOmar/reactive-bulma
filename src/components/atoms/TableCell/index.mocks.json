@@ -5,7 +5,7 @@
       "content": "This is a conceptual table cell"
     },
     "testClasses": {
-      "color": "is-primary"
+      "color": "primary"
     }
   },
   "storybook": {

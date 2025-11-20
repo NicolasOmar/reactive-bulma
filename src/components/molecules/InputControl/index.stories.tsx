@@ -45,7 +45,7 @@ ErrorState.args = {
   ...WithLabelAndHelper.args,
   inputConfig: {
     ...(testing.baseConfig.inputConfig as InputProps),
-    color: 'is-danger'
+    color: 'danger'
   }
 }
 

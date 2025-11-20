@@ -3,6 +3,8 @@ import React from 'react'
 import { NotificationProps } from '@interfaces/moleculeProps'
 // COMPONENTS
 import { Delete } from '@components/atoms'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -15,16 +17,17 @@ const Notification: React.FC<NotificationProps> = ({
   color = null,
   isLightColor = null
 }) => {
+  const notificationBaseClass = 'notification'
   const notificationClasses = parseClasses([
-    'notification',
-    color,
+    notificationBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
     isLightColor ? 'is-light' : null,
     cssClasses
   ])
   const notificationTestId =
     testId ??
     parseTestId({
-      tag: 'notification',
+      tag: notificationBaseClass,
       parsedClasses: notificationClasses
     })
 

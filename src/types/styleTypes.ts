@@ -22,19 +22,19 @@ export type ColumnOffsetType = TwelveSizesTypes
 
 export type TitleSizeType = SixSizesTypes
 
-export type BasicColorType =
-  | 'is-white'
-  | 'is-light'
-  | 'is-dark'
-  | 'is-black'
-  | 'is-text'
-  | 'is-ghost'
-  | 'is-primary'
-  | 'is-link'
-  | 'is-info'
-  | 'is-success'
-  | 'is-warning'
-  | 'is-danger'
+export type ColorTypes =
+  | 'white'
+  | 'light'
+  | 'dark'
+  | 'black'
+  | 'text'
+  | 'ghost'
+  | 'primary'
+  | 'link'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'danger'
 
 export type TextColorType =
   | 'has-text-white'

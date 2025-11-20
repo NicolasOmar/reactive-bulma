@@ -5,6 +5,8 @@ import '@testing-library/jest-dom'
 import TableCell from '.'
 // TYPES & INTERFACES
 import { TableCellProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 import { renderTestingTableContainer } from '@functions/jest'
 // MOCKS
@@ -24,7 +26,7 @@ describe('TableCell', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { ...testBaseConfig, [prop]: classValue }
-      const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
+      const testIdWithClass = `${basicTestId}-${classValue.replace(TEST_ID_REGEXP.IS, '')}`
       render(<TableCell {...classObj} />)
       const testClassButton = screen.getByTestId(testIdWithClass)
       expect(testClassButton.className).toContain(classValue)

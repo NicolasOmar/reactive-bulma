@@ -1,6 +1,9 @@
 import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { TagProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -22,33 +25,31 @@ const Tag: React.FC<TagProps> = ({
   addonColor = null,
   onDeleteClick = null
 }) => {
+  const tagBaseClass = 'tag'
+  const tagsBaseClass = 'tags'
   const tagContainerClasses = useMemo(
     () =>
       parseClasses([
-        'tags',
+        tagsBaseClass,
         'has-addons',
-        size ? size.replace('is-', 'are-') : null,
+        size ? size.replace(TEST_ID_REGEXP.IS, 'are-') : null,
         containerCssClasses
       ]),
     [size, containerCssClasses]
   )
-  const tagClasses = useMemo(
-    () =>
-      parseClasses([
-        'tag',
-        color,
-        isLight && !withAddon ? 'is-light' : null,
-        isRounded && !withAddon ? 'is-rounded' : null,
-        size,
-        cssClasses
-      ]),
-    [color, isLight, withAddon, isRounded, size, cssClasses]
-  )
-  const tagAddonClasses = useMemo(
-    () => parseClasses(['tag', addonColor]),
-    [addonColor]
-  )
-  const tagLabel = withAddon ? 'tags' : 'tag'
+  const tagClasses = parseClasses([
+    tagBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    isLight && !withAddon ? COMMON_CLASSES.LIGHT : null,
+    isRounded && !withAddon ? COMMON_CLASSES.ROUNDED : null,
+    size,
+    cssClasses
+  ])
+  const tagAddonClasses = parseClasses([
+    tagBaseClass,
+    addonColor ? `${COMMON_CLASSES.IS}${addonColor}` : null
+  ])
+  const tagLabel = withAddon ? tagsBaseClass : tagBaseClass
   const tagTestId =
     testId ??
     parseTestId({
@@ -74,7 +75,7 @@ const Tag: React.FC<TagProps> = ({
       {withDelete ? (
         <a
           data-testid={tagDeleteTestId}
-          className='tag is-delete'
+          className={`${tagBaseClass} is-delete`}
           title='delete'
           aria-hidden='true'
           onClick={onDeleteClick ?? undefined}

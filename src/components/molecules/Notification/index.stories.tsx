@@ -23,7 +23,7 @@ export const WithParagraph = Template.bind({})
 
 export const Colored = Template.bind({})
 Colored.args = {
-  color: 'is-danger'
+  color: 'danger'
 }
 
 export const WithDeleteButton = Template.bind({})

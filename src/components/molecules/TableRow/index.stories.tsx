@@ -38,7 +38,7 @@ export const BasicExample = Template.bind({})
 export const Colored = Template.bind({})
 Colored.args = {
   ...BasicExample.args,
-  color: 'is-primary'
+  color: 'primary'
 }
 
 export const WithHeaderCell = Template.bind({})

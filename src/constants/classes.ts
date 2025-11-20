@@ -3,5 +3,20 @@ export const COMMON_CLASSES = {
   NOTIFICATION: 'notification',
   VERTICAL: 'is-vertical',
   NARROW: 'is-narrow',
-  OFFSET: 'is-offset-'
+  OFFSET: 'is-offset-',
+  TRANSPARENT: 'is-transparent',
+  SPACED: 'is-spaced',
+  SHADOW: 'has-shadow',
+  LIGHT: 'is-light',
+  ROUNDED: 'is-rounded',
+  LOADING: 'is-loading',
+  EXPANDED: 'is-expanded',
+  ICON_LEFT: 'has-icons-left',
+  ICON_RIGHT: 'has-icons-right',
+  INVERTED: 'is-inverted',
+  OUTLINED: 'is-outlined',
+  STATIC: 'is-static',
+  SELECTED: 'is-selected',
+  FULL_WIDTH: 'is-fullwidth',
+  RESPONSIVE: 'is-responsive'
 }
