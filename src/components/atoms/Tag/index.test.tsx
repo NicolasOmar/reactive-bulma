@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tag from '.'
 // TYPES & INTERFACES
-import { ColorTypes, SizeWithoutNormalType } from '@customTypes/styleTypes'
+import { ColorType, SizeWithoutNormalType } from '@customTypes/styleTypes'
 import { TagProps } from '@interfaces/atomProps'
 // CONSTANTS
 import { COMMON_CLASSES } from '@constants/classes'
@@ -27,7 +27,7 @@ describe('Tag', () => {
       const colorClass = `${COMMON_CLASSES.IS}${_color}`
       const testColoredConfig = {
         ...baseConfig,
-        color: _color as ColorTypes
+        color: _color as ColorType
       }
 
       render(<Tag {...testColoredConfig} />)

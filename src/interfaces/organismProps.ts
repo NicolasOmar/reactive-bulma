@@ -17,7 +17,7 @@ import {
   TileProps
 } from './atomProps'
 // TYPES & INTERFACES
-import { ColorTypes, SizeWithHeightType } from '../types/styleTypes'
+import { ColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
 
 export interface FormFieldProps extends ElementProps {
@@ -39,7 +39,7 @@ export interface PanelProps extends ElementProps {
   /** `Attribute` `Required` A list of configuration objects that will render a list of block with different components, based on `PanelBlockList` component */
   blockList: PanelBlockProps[]
   /** `Styling` Color based on bulma's text color tokens */
-  color?: ColorTypes
+  color?: ColorType
 }
 
 export interface LevelProps extends ElementProps {
@@ -63,7 +63,7 @@ export interface HeroProps extends ElementProps {
   /** `Styling` Set hero's size */
   size?: SizeWithHeightType
   /** `Styling` Color based on bulma's text color tokens */
-  color?: ColorTypes
+  color?: ColorType
 }
 
 export interface TileGroupProps
@@ -88,7 +88,7 @@ export interface NavBarProps extends ElementProps {
   /** `Styling` Sets navbar's position at screen's top or bottom */
   fixedPosition?: NavBarFixedPositionType
   /** `Styling` Color based on bulma's text color tokens */
-  color?: ColorTypes
+  color?: ColorType
   /** `Styling` Sets navbar's color as transparent */
   isTransparent?: boolean
   /** `Styling` Adds a small padding around the navbar */
