@@ -46,6 +46,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@constants': resolve(__dirname, 'src/constants'),
       '@components': resolve(__dirname, 'src/components'),
       '@design': resolve(__dirname, 'src/design'),
       '@functions': resolve(__dirname, 'src/functions'),

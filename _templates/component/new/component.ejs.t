@@ -5,6 +5,7 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { <%= name %>Props } from '@interfaces/<%= route %>Props'
+// CONSTANTS
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -15,13 +16,17 @@ const <%= name %>: React.FC<<%= name %>Props> = ({
   style = null,
   <%= testStylingPropName %> = null
 }) => {
+  const <%= underName %>BaseClass = <%= underName %>
   const <%= underName %>Classes = parseClasses([
-    '<%= underName %>',
+    <%= underName %>BaseClass,
     <%= testStylingPropName %> ? '<%= testStylingPropValue %>' : null,
     cssClasses
   ])
   const <%= underName %>TestId =
-    testId ?? parseTestId({ tag: '<%= underName %>', parsedClasses: <%= underName %>Classes })
+    testId ?? parseTestId({
+      tag: <%= underName %>BaseClass,
+      parsedClasses: <%= underName %>Classes
+    })
 
   return (
     <section

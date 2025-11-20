@@ -1,6 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { ColumnProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -13,15 +15,17 @@ const Column: React.FC<ColumnProps> = ({
   offset = null,
   isNarrow = false
 }) => {
+  const columnBaseClass = 'column'
   const columnClasses = parseClasses([
-    'column',
-    size,
-    offset,
-    isNarrow ? 'is-narrow' : null,
+    columnBaseClass,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    offset ? `${COMMON_CLASSES.OFFSET}${offset}` : null,
+    isNarrow ? `${COMMON_CLASSES.NARROW}` : null,
     cssClasses
   ])
   const columnTestId =
-    testId ?? parseTestId({ tag: 'column', parsedClasses: columnClasses })
+    testId ??
+    parseTestId({ tag: columnBaseClass, parsedClasses: columnClasses })
 
   return (
     <section

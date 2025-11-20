@@ -1,44 +1,24 @@
-export type CommonSizeType =
-  | 'is-1'
-  | 'is-2'
-  | 'is-3'
-  | 'is-4'
-  | 'is-5'
-  | 'is-6'
-  | 'is-7'
-  | 'is-8'
-  | 'is-9'
-  | 'is-10'
-  | 'is-11'
-  | 'is-12'
+type SixSizesTypes = '1' | '2' | '3' | '4' | '5' | '6'
+
+type TwelveSizesTypes = SixSizesTypes | '7' | '8' | '9' | '10' | '11' | '12'
+
+export type CommonSizeType = TwelveSizesTypes
 
 export type AbstractSizeType =
-  | 'is-three-quarters'
-  | 'is-two-thirds'
-  | 'is-half'
-  | 'is-one-third'
-  | 'is-one-quarter'
-  | 'is-full'
-  | 'is-four-fifths'
-  | 'is-three-fifths'
-  | 'is-two-fifths'
-  | 'is-one-fifth'
+  | 'three-quarters'
+  | 'two-thirds'
+  | 'half'
+  | 'one-third'
+  | 'one-quarter'
+  | 'full'
+  | 'four-fifths'
+  | 'three-fifths'
+  | 'two-fifths'
+  | 'one-fifth'
 
 export type ColumnSizeType = CommonSizeType | AbstractSizeType
 
-export type ColumnOffsetType =
-  | 'is-offset-1'
-  | 'is-offset-2'
-  | 'is-offset-3'
-  | 'is-offset-4'
-  | 'is-offset-5'
-  | 'is-offset-6'
-  | 'is-offset-7'
-  | 'is-offset-8'
-  | 'is-offset-9'
-  | 'is-offset-10'
-  | 'is-offset-11'
-  | 'is-offset-12'
+export type ColumnOffsetType = TwelveSizesTypes
 
 export type TitleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
 
