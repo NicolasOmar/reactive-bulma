@@ -22,6 +22,7 @@
     "declaration": true,
     "baseUrl": "./",
     "paths": {
+      "@constants/*": ["src/constants/*"],
       "@components/*": ["src/components/*"],
       "@design/*": ["src/design/*"],
       "@functions/*": ["src/functions/*"],

@@ -43,7 +43,7 @@ export default {
         children: [
           <TileBox
             key={'test-title-box-item'}
-            size='is-3'
+            size='3'
             color='is-primary'
           >
             {tileMocks.testing.basicChild.children}
@@ -76,7 +76,7 @@ ThreeUnequalColumns.args = {
   groupConfig: [
     {
       context: 'is-parent',
-      size: 'is-7',
+      size: '7',
       children: (
         <TileBox color='is-info'>
           {tileMocks.testing.basicChild.children}
@@ -93,7 +93,7 @@ ThreeUnequalColumns.args = {
     },
     {
       context: 'is-parent',
-      size: 'is-2',
+      size: '2',
       children: (
         <TileBox color='is-danger'>
           {tileMocks.testing.basicChild.children}
@@ -106,7 +106,7 @@ ThreeUnequalColumns.args = {
 export const ThreeColumnsInHalfScreen = Template.bind({})
 ThreeColumnsInHalfScreen.args = {
   context: 'is-ancestor',
-  size: 'is-6',
+  size: '6',
   groupConfig: [
     {
       context: 'is-parent',

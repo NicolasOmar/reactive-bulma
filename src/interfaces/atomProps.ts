@@ -40,7 +40,7 @@ export interface ColumnProps
   children?: ChildrenType
   /** `Styling` Set column's size */
   size?: ColumnSizeType
-  /** `Styling` Set column's offset (moving it as you set its size */
+  /** `Styling` Set column's offset (moving it as you set its `size`) */
   offset?: ColumnOffsetType
   /** `Styling` Set if the column only will take the space it needs */
   isNarrow?: boolean

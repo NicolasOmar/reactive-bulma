@@ -16,6 +16,7 @@ export default {
     },
   },
   moduleNameMapper: {
+    '^@constants/(.*)$': '<rootDir>/src/constants/$1',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@design/(.*)$': '<rootDir>/src/design/$1',
     '^@functions/(.*)$': '<rootDir>/src/functions/$1',

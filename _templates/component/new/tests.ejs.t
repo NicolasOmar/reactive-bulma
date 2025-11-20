@@ -8,6 +8,7 @@ import '@testing-library/jest-dom'
 import <%= name %> from '.'
 // TYPES & INTERFACES
 import { <%= name %>Props } from '@interfaces/<%= route %>Props'
+// CONSTANTS
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
