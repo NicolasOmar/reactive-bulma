@@ -4,6 +4,8 @@ import React from 'react'
 import { HeroProps } from '@interfaces/organismProps'
 import { ChildrenType, HeroContentType } from '@customTypes/domTypes'
 import { SizeWithHeightType } from '@customTypes/styleTypes'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -32,9 +34,15 @@ const Hero: React.FC<HeroProps> = ({
   color = null,
   size = null
 }) => {
-  const heroClasses = parseClasses(['hero', color, size, cssClasses])
+  const heroBaseClass = 'hero'
+  const heroClasses = parseClasses([
+    heroBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    size,
+    cssClasses
+  ])
   const heroTestId =
-    testId ?? parseTestId({ tag: 'hero', parsedClasses: heroClasses })
+    testId ?? parseTestId({ tag: heroBaseClass, parsedClasses: heroClasses })
 
   return (
     <section

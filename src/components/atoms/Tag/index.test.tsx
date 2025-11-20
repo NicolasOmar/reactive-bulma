@@ -4,8 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tag from '.'
 // TYPES & INTERFACES
-import { BasicColorType, SizeWithoutNormalType } from '@customTypes/styleTypes'
+import { ColorTypes, SizeWithoutNormalType } from '@customTypes/styleTypes'
 import { TagProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -21,15 +23,16 @@ describe('Tag', () => {
 
   test('Should render with different colors', () => {
     colors.forEach(_color => {
-      const coloredTestId = `test-tag-${_color.replace('is-', '')}`
+      const coloredTestId = `test-tag-${_color}`
+      const colorClass = `${COMMON_CLASSES.IS}${_color}`
       const testColoredConfig = {
         ...baseConfig,
-        color: _color as BasicColorType
+        color: _color as ColorTypes
       }
 
       render(<Tag {...testColoredConfig} />)
       const testColorTag = screen.getByTestId(coloredTestId)
-      expect(testColorTag.classList).toContain(_color)
+      expect(testColorTag.classList).toContain(colorClass)
     })
   })
 

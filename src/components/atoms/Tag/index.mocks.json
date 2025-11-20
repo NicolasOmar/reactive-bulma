@@ -3,7 +3,7 @@
     "baseConfig": {
       "text": "Test text"
     },
-    "colors": ["is-black", "is-danger", "is-warning"],
+    "colors": ["black", "danger", "warning"],
     "sizes": ["is-small", "is-medium", "is-large"],
     "testClasses": {
       "isLight": "is-light",

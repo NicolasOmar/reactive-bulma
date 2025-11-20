@@ -11,7 +11,7 @@ import {
 } from './commonProps'
 // TYPES & INTERFACES
 import {
-  BasicColorType,
+  ColorTypes,
   ColumnOffsetType,
   ColumnSizeType,
   FixedImageSizeType,
@@ -58,7 +58,7 @@ export interface ButtonProps
   /** `Attribute` Will disable the button */
   isDisabled?: boolean
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Will adjust the selected color with a ligther or darker style */
   colorVersion?: ColorVersionType
   /** `Styling` Will invert button's colors (typography in color and background in white or black) */
@@ -91,7 +91,7 @@ export interface ProgressBarProps
   /** `Attribute` Sets the entire bar length comparing with current `value` */
   max?: number
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Set progress bar's size */
   size?: ElementSizeType
   /** `Styling` Will change `value` for an animated loading */
@@ -117,7 +117,7 @@ export interface TagProps
   /** `Attribute` The text will be shown in the tag's addon */
   addonText?: string
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Will adjust the selected color with a ligther style */
   isLight?: boolean
   /** `Styling` Will add round borders to tag's shape */
@@ -125,7 +125,7 @@ export interface TagProps
   /** `Styling` Set tag's size */
   size?: SizeWithoutNormalType
   /** `Styling` Color on tag's addon based on bulma's color tokens */
-  addonColor?: BasicColorType
+  addonColor?: ColorTypes
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
 }
@@ -202,7 +202,7 @@ export interface InputProps
   /** `Attribute` Will show the input as a normal one, but is not editable and has no shadow */
   isReadonly?: boolean
   /** `Styling` Color based on bulma's text color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Set input's size */
   size?: SizeWithoutNormalType
   /** `Styling` Will add round borders to input's shape */
@@ -247,7 +247,7 @@ export interface SelectProps
   /** `Attribute` Will allow multiple selection */
   isMultiple?: boolean
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Set select's size */
   size?: ElementSizeType
   /** `Styling`Will add round borders to input's shape */
@@ -275,7 +275,7 @@ export interface FileProps
   /** `Styling` Changes styling to a box style, making the button bigger and file name's position below the button */
   isBoxed?: boolean
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Set button's size */
   size?: ElementSizeType
 }
@@ -384,7 +384,7 @@ export interface TileProps extends ElementProps {
   /** `Styling` Set tile's size */
   size?: CommonSizeType
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorTypes
   /** `Styling` Used for hierarchy level as ancestor or parent. It selects its children in a vertical format (like a column) */
   isVertical?: boolean
 }

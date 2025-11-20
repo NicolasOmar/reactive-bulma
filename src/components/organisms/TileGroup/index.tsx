@@ -3,6 +3,8 @@ import React from 'react'
 import { Tile } from '@components/atoms'
 // TYPES & INTERFACES
 import { TileGroupProps } from '@interfaces/organismProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
@@ -16,8 +18,9 @@ const TileGroup: React.FC<TileGroupProps> = ({
   isVertical = false,
   groupConfig
 }) => {
+  const titleGroupBaseClass = 'tile-group'
   const tileGroupClasses = parseClasses([
-    'tileGroup',
+    titleGroupBaseClass,
     context,
     size,
     isVertical ? 'is-vertical' : null,
@@ -26,17 +29,11 @@ const TileGroup: React.FC<TileGroupProps> = ({
   const tileBoxTestId =
     testId ??
     parseTestId({
-      tag: 'tileGroup',
+      tag: titleGroupBaseClass,
       parsedClasses: tileGroupClasses,
       rules: [
-        {
-          regExp: /tileGroup/gm,
-          replacer: ''
-        },
-        {
-          regExp: /is-/gm,
-          replacer: '-'
-        }
+        { regExp: TEST_ID_REGEXP.TILE_GROUP, replacer: '' },
+        { regExp: TEST_ID_REGEXP.IS, replacer: '-' }
       ]
     })
 

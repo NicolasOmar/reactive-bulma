@@ -12,7 +12,7 @@
       },
       {
         "name": "color",
-        "value": "is-danger",
+        "value": "danger",
         "result": "is-danger"
       },
       {

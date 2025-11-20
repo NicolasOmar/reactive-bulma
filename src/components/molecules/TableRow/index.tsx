@@ -3,6 +3,8 @@ import React, { useMemo } from 'react'
 import { TableCell, TableHeadCell } from '@components/atoms'
 // TYPES & INTERFACES
 import { TableRowProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
@@ -19,7 +21,7 @@ const TableRow: React.FC<TableRowProps> = ({
 }) => {
   const tableRowClasses = parseClasses([
     isSelected ? 'is-selected' : null,
-    color,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
     cssClasses
   ])
   const tableRowTestId =

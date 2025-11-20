@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react'
 // TYPES & INTERFACES
 import { ButtonProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -26,20 +28,21 @@ const Button: React.FC<ButtonProps> = ({
   size = null,
   onClick = null
 }) => {
+  const buttonBaseClass = 'button'
   const buttonClasses = useMemo(
     () =>
       parseClasses([
-        'button',
-        color,
+        buttonBaseClass,
+        color ? `${COMMON_CLASSES.IS}${color}` : null,
         colorVersion,
-        isInvertedColor ? 'is-inverted' : null,
-        isOutlined ? 'is-outlined' : null,
-        isRounded ? 'is-rounded' : null,
-        isLoading ? 'is-loading' : null,
-        isStatic ? 'is-static' : null,
-        isSelected ? 'is-selected' : null,
-        isFullWidth ? 'is-fullwidth' : null,
-        isResponsive ? 'is-responsive' : null,
+        isInvertedColor ? COMMON_CLASSES.INVERTED : null,
+        isOutlined ? COMMON_CLASSES.OUTLINED : null,
+        isRounded ? COMMON_CLASSES.ROUNDED : null,
+        isLoading ? COMMON_CLASSES.LOADING : null,
+        isStatic ? COMMON_CLASSES.STATIC : null,
+        isSelected ? COMMON_CLASSES.SELECTED : null,
+        isFullWidth ? COMMON_CLASSES.FULL_WIDTH : null,
+        isResponsive ? COMMON_CLASSES.RESPONSIVE : null,
         size,
         cssClasses
       ]),
@@ -60,7 +63,8 @@ const Button: React.FC<ButtonProps> = ({
   )
   const buttonTestId = useMemo(
     () =>
-      testId ?? parseTestId({ tag: 'button', parsedClasses: buttonClasses }),
+      testId ??
+      parseTestId({ tag: buttonBaseClass, parsedClasses: buttonClasses }),
     [testId, buttonClasses]
   )
 
