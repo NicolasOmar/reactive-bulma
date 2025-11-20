@@ -1,7 +1,7 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { IconProps } from '@interfaces/atomProps'
-import { ColorTypes } from '@customTypes/styleTypes'
+import { ColorType } from '@customTypes/styleTypes'
 import { IconSizeEnum } from '@customTypes/domTypes'
 // CONSTANTS
 import { COMMON_CLASSES } from '@constants/classes'
@@ -9,13 +9,18 @@ import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
+const iconBaseClass = 'icon'
+const mdiBaseClass = 'mdi'
+
 const generateIconContainer = (
   icon: React.ReactElement,
-  color: ColorTypes | null
+  color: ColorType | null
 ) => {
-  const containerClasses = color ? `icon-text-${color}` : 'icon-text'
+  const containerClasses = color
+    ? `${iconBaseClass}-text-${color}`
+    : `${iconBaseClass}-text`
   const containerTestId = parseTestId({
-    tag: 'icon-container',
+    tag: `${iconBaseClass}-container`,
     parsedClasses: color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : '',
     rules: [{ regExp: TEST_ID_REGEXP.HAS_TEXT, replacer: '' }]
   })
@@ -46,24 +51,24 @@ const Icon: React.FC<IconProps> = ({
   position = null
 }) => {
   const iconContainerClasses = parseClasses([
-    'icon',
+    iconBaseClass,
     color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : null,
     size,
     position,
     containerCssClasses
   ])
   const iconClasses = parseClasses([
-    'mdi',
-    `mdi-${iconLabel}`,
-    colorMode ? `mdi-${colorMode}` : null,
-    isSpinning ? 'mdi-spin' : null,
-    size ? `mdi-${IconSizeEnum[size]}px` : 'mdi-24px',
+    mdiBaseClass,
+    `${mdiBaseClass}-${iconLabel}`,
+    colorMode ? `${mdiBaseClass}-${COMMON_CLASSES.IS}${colorMode}` : null,
+    isSpinning ? `${mdiBaseClass}-spin` : null,
+    size ? `${mdiBaseClass}-${IconSizeEnum[size]}px` : `${mdiBaseClass}-24px`,
     cssClasses
   ])
   const iconContainertestId =
     containerTestId ??
     parseTestId({
-      tag: 'icon',
+      tag: iconBaseClass,
       parsedClasses: iconClasses,
       rules: [
         {

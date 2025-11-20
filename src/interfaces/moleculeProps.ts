@@ -29,7 +29,7 @@ import {
 } from './atomProps'
 // TYPES & INTERFACES
 import {
-  ColorTypes,
+  ColorType,
   RightCenteredAlignType,
   BreadcrumbSeparatorType,
   ColumnGapType,
@@ -79,7 +79,7 @@ export interface NotificationProps extends ElementProps {
   /** `Atribute` Includes a `Delete` config object that will be shown */
   deleteButton?: DeleteProps
   /** `Styling` Color based on bulma's color tokens */
-  color?: ColorTypes
+  color?: ColorType
   /** `Styling` Will adjust the selected color with a ligther style */
   isLightColor?: boolean
 }
@@ -118,7 +118,7 @@ export interface MessageProps extends ElementProps {
   /** `Atribute` Includes a `Delete` config object that will be shown */
   deleteButton?: DeleteProps
   /** `Styling` Color based on bulma's color tokens */
-  color?: ColorTypes
+  color?: ColorType
   /** `Styling` Set button's size on bulma's size tokens */
   size?: SizeWithoutNormalType
 }
@@ -199,7 +199,7 @@ export interface TabsProps extends ElementProps {
 
 export interface HelperProps {
   text?: string
-  color?: ColorTypes
+  color?: ColorType
 }
 
 export interface InputControlProps extends ElementProps {

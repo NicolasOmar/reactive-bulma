@@ -1,4 +1,4 @@
-import { ColorTypes } from '@customTypes/styleTypes'
+import { ColorType } from '@customTypes/styleTypes'
 
 export interface ContainerProps {
   /** `Attribute` *For container case*. ID used to locate the element in unit test suites (like Jest) */
@@ -54,7 +54,7 @@ export interface InteractiveOnChangeProps
 
 export interface ColoredProps {
   /** `Styling` Color based on bulma's color tokens */
-  color?: ColorTypes
+  color?: ColorType
 }
 
 export interface NamedInputProps {

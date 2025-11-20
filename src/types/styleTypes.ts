@@ -22,7 +22,7 @@ export type ColumnOffsetType = TwelveSizesTypes
 
 export type TitleSizeType = SixSizesTypes
 
-export type ColorTypes =
+export type ColorType =
   | 'white'
   | 'light'
   | 'dark'
@@ -36,7 +36,7 @@ export type ColorTypes =
   | 'warning'
   | 'danger'
 
-export type ColorVersionType = 'is-light' | 'is-dark'
+export type ColorModeType = 'light' | 'dark'
 
 export type FixedImageSizeType =
   | 'is-16x16'
@@ -78,8 +78,6 @@ export type SizeWithHeightType =
   | 'is-fullheight'
 
 export type MediumAndLargeSizeType = Exclude<SizeWithoutNormalType, 'is-small'>
-
-export type IconColorModeType = 'light' | 'dark'
 
 export type ColumnGapType =
   | 'is-0'

@@ -7,7 +7,7 @@ import { TileBox } from '@components/molecules'
 // TYPES & INTERFACES
 import { TileGroupProps } from '@interfaces/organismProps'
 import { TileProps } from '@interfaces/atomProps'
-import { ColorTypes } from '@customTypes/styleTypes'
+import { ColorType } from '@customTypes/styleTypes'
 // FUNCTIONS
 import { createObjArray } from '@functions/generators'
 // MOCKS
@@ -21,7 +21,7 @@ describe('TileGroup', () => {
     externalParser: i => ({
       context: 'is-parent',
       children: (
-        <TileBox color={testChildrenColors[i] as ColorTypes}>
+        <TileBox color={testChildrenColors[i] as ColorType}>
           {tileMocks.testing.basicChild.children}
         </TileBox>
       )

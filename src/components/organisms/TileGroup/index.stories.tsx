@@ -5,7 +5,7 @@ import TileGroup from '.'
 import { TileBox } from '@components/molecules'
 // TYPES & INTERFACES
 import { TileProps } from '@interfaces/atomProps'
-import { ColorTypes } from '@customTypes/styleTypes'
+import { ColorType } from '@customTypes/styleTypes'
 // FUNCTIONS
 import { createObjArray } from '@functions/generators'
 // MOCKS
@@ -16,7 +16,7 @@ const threeParentTiles = createObjArray({
   externalParser: i => ({
     context: 'is-parent',
     children: (
-      <TileBox color={testing.testChildrenColors[i] as ColorTypes}>
+      <TileBox color={testing.testChildrenColors[i] as ColorType}>
         {tileMocks.testing.basicChild.children}
       </TileBox>
     )

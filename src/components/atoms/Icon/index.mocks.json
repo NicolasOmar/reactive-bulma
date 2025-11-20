@@ -25,7 +25,6 @@
     "colors": ["black", "danger", "warning"],
     "sizes": ["is-small", "is-medium", "is-large"],
     "testClasses": {
-      "colorMode": "light",
       "isSpinning": "spin"
     }
   },

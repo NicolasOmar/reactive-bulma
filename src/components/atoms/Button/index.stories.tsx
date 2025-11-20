@@ -35,13 +35,13 @@ Colored.args = {
 export const LightColor = Template.bind({})
 LightColor.args = {
   ...Colored.args,
-  colorVersion: 'is-light'
+  colorMode: 'light'
 }
 
 export const DarkColor = Template.bind({})
 DarkColor.args = {
   ...Colored.args,
-  colorVersion: 'is-dark'
+  colorMode: 'dark'
 }
 
 export const InvertedColor = Template.bind({})
