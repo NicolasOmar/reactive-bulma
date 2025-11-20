@@ -35,7 +35,7 @@ describe('Media', () => {
       leftContent: (
         <Image
           src={imageMocks.testing.testSrc}
-          fixedSize={'is-128x128'}
+          fixedSize={'128x128'}
         />
       ),
       centerContent: <TextArea />,
