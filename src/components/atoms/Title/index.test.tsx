@@ -5,11 +5,13 @@ import '@testing-library/jest-dom'
 import Title from '.'
 // TYPES & INTERFACES
 import { TitleProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // MOCKS
 import { testing } from './index.mocks.json'
 
 describe('Title', () => {
-  const { baseConfig, smallSize, sizes, withSubtitle } = testing
+  const { baseTestId, baseConfig, smallSize, sizes, withSubtitle } = testing
 
   test('Should not render by passing no props', () => {
     render(<Title />)
@@ -24,32 +26,33 @@ describe('Title', () => {
 
   test('Should be checked by its test id', () => {
     render(<Title {...(smallSize as TitleProps)} />)
-    const smallTestId = screen.getByTestId('title-test')
+    const smallTestId = screen.getByTestId(baseTestId)
     expect(smallTestId).toBeInTheDocument()
     expect(smallTestId.innerHTML).toEqual(smallSize.main.text)
   })
 
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
+      const sizeClass = `${COMMON_CLASSES.IS}${_size}`
       const alteredSizeConfig = {
         main: {
           ...baseConfig.main,
-          testId: _size,
+          testId: sizeClass,
           size: _size
         }
       } as TitleProps
 
       render(<Title {...alteredSizeConfig} />)
-      const sizedTestId = screen.getByTestId(_size)
+      const sizedTestId = screen.getByTestId(sizeClass)
       expect(sizedTestId).toBeInTheDocument()
-      expect(sizedTestId.classList).toContain(_size)
+      expect(sizedTestId.classList).toContain(sizeClass)
     })
   })
 
   test('Should be check by title and subtitle ids', () => {
     render(<Title {...(withSubtitle as TitleProps)} />)
-    const titleTestId = screen.getByTestId('title-test')
-    const subtitleTestId = screen.getByTestId('subtitle-test')
+    const titleTestId = screen.getByTestId(baseTestId)
+    const subtitleTestId = screen.getByTestId('test-subtitle')
 
     expect(titleTestId.innerHTML).toEqual(withSubtitle.main.text)
     expect(subtitleTestId.innerHTML).toEqual(withSubtitle.secondary.text)
@@ -65,7 +68,7 @@ describe('Title', () => {
     } as TitleProps
 
     render(<Title {...spacedConfig} />)
-    const titleTestId = screen.getByTestId('title-test')
+    const titleTestId = screen.getByTestId(baseTestId)
     expect(titleTestId.classList).toContain('is-spaced')
   })
 })

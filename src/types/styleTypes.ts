@@ -20,7 +20,7 @@ export type ColumnSizeType = CommonSizeType | AbstractSizeType
 
 export type ColumnOffsetType = TwelveSizesTypes
 
-export type TitleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
+export type TitleSizeType = SixSizesTypes
 
 export type BasicColorType =
   | 'is-white'
