@@ -2,6 +2,7 @@ export const TEST_ID_REGEXP = {
   // COMMON BASED
   IS: /is-/gm,
   IS_HAS: /is-|has-/gm,
+  HAS_TEXT: /has-text/gm,
   // COMPONENT BASED
   TILE: /notification |tile/gm,
   NAVBAR: /navbar/gm,

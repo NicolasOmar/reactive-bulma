@@ -1,5 +1,6 @@
 export const COMMON_CLASSES = {
   IS: 'is-',
+  HAS_TEXT: 'has-text-',
   NOTIFICATION: 'notification',
   VERTICAL: 'is-vertical',
   NARROW: 'is-narrow',

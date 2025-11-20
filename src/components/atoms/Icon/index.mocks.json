@@ -10,7 +10,7 @@
       "iconLabel": "snowflake"
     },
     "colored": {
-      "color": "has-text-info"
+      "color": "info"
     },
     "bigSize": {
       "size": "is-large"
@@ -22,7 +22,7 @@
       "isSpinning": true
     },
     "baseIconTestId": "test-icon-home-24px",
-    "colors": ["has-text-black", "has-text-danger", "has-text-warning"],
+    "colors": ["black", "danger", "warning"],
     "sizes": ["is-small", "is-medium", "is-large"],
     "testClasses": {
       "colorMode": "light",

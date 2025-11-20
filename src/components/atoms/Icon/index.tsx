@@ -1,25 +1,23 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { IconProps } from '@interfaces/atomProps'
-import { TextColorType } from '@customTypes/styleTypes'
+import { ColorTypes } from '@customTypes/styleTypes'
 import { IconSizeEnum } from '@customTypes/domTypes'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
 const generateIconContainer = (
   icon: React.ReactElement,
-  color: TextColorType | null
+  color: ColorTypes | null
 ) => {
   const containerClasses = color ? `icon-text-${color}` : 'icon-text'
   const containerTestId = parseTestId({
     tag: 'icon-container',
-    parsedClasses: color?.toString() ?? '',
-    rules: [
-      {
-        regExp: /has-text/gm,
-        replacer: ''
-      }
-    ]
+    parsedClasses: color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : '',
+    rules: [{ regExp: TEST_ID_REGEXP.HAS_TEXT, replacer: '' }]
   })
 
   return (
@@ -49,7 +47,7 @@ const Icon: React.FC<IconProps> = ({
 }) => {
   const iconContainerClasses = parseClasses([
     'icon',
-    color,
+    color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : null,
     size,
     position,
     containerCssClasses
@@ -69,11 +67,11 @@ const Icon: React.FC<IconProps> = ({
       parsedClasses: iconClasses,
       rules: [
         {
-          regExp: /mdi-|mdi--/gm,
+          regExp: TEST_ID_REGEXP.MDI,
           replacer: ''
         },
         {
-          regExp: /mdi /gm,
+          regExp: TEST_ID_REGEXP.MDI_EMPTY,
           replacer: '-'
         }
       ],
