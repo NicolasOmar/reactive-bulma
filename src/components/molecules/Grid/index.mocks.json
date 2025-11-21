@@ -6,29 +6,29 @@
     "testClasses": [
       {
         "name": "gap",
-        "value": "is-gap-0",
+        "value": "0",
         "result": "is-gap-0"
       },
       {
         "name": "columnGap",
-        "value": "is-column-gap-0",
+        "value": "0",
         "result": "is-column-gap-0"
       },
       {
         "name": "rowGap",
-        "value": "is-row-gap-0",
+        "value": "0",
         "result": "is-row-gap-0"
       },
       {
         "name": "cellMinWidth",
-        "value": "is-col-min-32",
+        "value": "32",
         "result": "is-col-min-32"
       }
     ],
     "testContainerClasses": [
       {
         "name": "fixedColumnsCount",
-        "value": "has-12-cols",
+        "value": "12",
         "result": "has-12-cols"
       },
       {

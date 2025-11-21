@@ -5,7 +5,7 @@
     "testClasses": [
       {
         "name": "position",
-        "value": "is-col-start",
+        "value": "col-start",
         "result": "is-col-start"
       },
       {

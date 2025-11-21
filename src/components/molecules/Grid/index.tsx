@@ -3,6 +3,9 @@ import React, { useMemo } from 'react'
 import { GridCell } from '@components/atoms'
 // TYPES & INTERFACES
 import { GridProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
@@ -23,18 +26,27 @@ const Grid: React.FC<GridProps> = ({
   fixedColumnsCount = null,
   isAutoColumns = false
 }) => {
+  const gridBaseClass = 'grid'
+  const fixedGridBaseClass = 'fixed-grid'
+  const itHasFixedGap = gap !== null || isFixed
   const gridClasses = parseClasses([
-    'grid',
-    isFixed ? null : gap,
-    gap || isFixed ? null : columnGap,
-    gap || isFixed ? null : rowGap,
-    isFixed ? null : cellMinWidth,
+    gridBaseClass,
+    gap === null || isFixed ? null : `${COMMON_CLASSES.GAP}${gap}`,
+    itHasFixedGap || columnGap === null
+      ? null
+      : `${COMMON_CLASSES.COLUMN_GAP}${columnGap}`,
+    itHasFixedGap || rowGap === null
+      ? null
+      : `${COMMON_CLASSES.ROW_GAP}${rowGap}`,
+    isFixed || cellMinWidth === null
+      ? null
+      : `${COMMON_CLASSES.COL_MIN_WIDTH}${cellMinWidth}`,
     cssClasses
   ])
   const gridTestId =
     testId ??
     parseTestId({
-      tag: 'grid',
+      tag: gridBaseClass,
       parsedClasses: gridClasses
     })
 
@@ -58,25 +70,29 @@ const Grid: React.FC<GridProps> = ({
 
   if (isFixed) {
     const autoColumnsValue =
-      fixedColumnsCount === null && isAutoColumns ? 'has-auto-count' : null
+      fixedColumnsCount === null && isAutoColumns
+        ? COMMON_CLASSES.AUTO_COLUMNS_GRID
+        : null
     const gridContainerClasses = parseClasses([
-      'fixed-grid',
-      fixedColumnsCount,
+      fixedGridBaseClass,
+      fixedColumnsCount
+        ? `${COMMON_CLASSES.HAS}${fixedColumnsCount}-cols`
+        : null,
       autoColumnsValue,
       containerCssClasses
     ])
     const fixedGridTestId =
       containerTestId ??
       parseTestId({
-        tag: 'fixed-grid',
+        tag: fixedGridBaseClass,
         parsedClasses: gridContainerClasses,
         rules: [
           {
-            regExp: /fixed-grid/gm,
+            regExp: TEST_ID_REGEXP.FIXED_GRID,
             replacer: ''
           },
           {
-            regExp: /is-|has-/gm,
+            regExp: TEST_ID_REGEXP.IS_HAS,
             replacer: '-'
           }
         ]
