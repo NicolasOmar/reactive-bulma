@@ -28,7 +28,7 @@ Centered.args = {
 export const BigSize = Template.bind({})
 BigSize.args = {
   ...Centered.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const Rounded = Template.bind({})

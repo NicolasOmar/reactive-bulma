@@ -6,6 +6,8 @@ import Message from '.'
 // TYPES & INTERFACES
 import { MessageProps } from '@interfaces/moleculeProps'
 import { DeleteProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -25,7 +27,7 @@ describe('Message', () => {
   test('Should render the component with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
-        /is-|has-/gm,
+        TEST_ID_REGEXP.IS_HAS,
         ''
       )}`
       const classTestObject: MessageProps = {
@@ -56,7 +58,7 @@ describe('Message', () => {
   test('Should have a clickable button and function when is clicked', () => {
     const deleteButtonTestId = 'test-delete-medium'
     const deleteButtonConfig = {
-      deleteButton: { size: 'is-medium' }
+      deleteButton: { size: 'medium' }
     } as DeleteProps
 
     render(

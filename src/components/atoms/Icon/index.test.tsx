@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import Icon from '.'
 // TYPES & INTERFACES
 import { IconProps } from '@interfaces/atomProps'
-import { SizeWithoutNormalType } from '@customTypes/styleTypes'
+import { BaseSizeType } from '@customTypes/styleTypes'
 import { IconSizeEnum } from '@customTypes/domTypes'
 // CONSTANTS
 import { COMMON_CLASSES } from '@constants/classes'
@@ -59,13 +59,13 @@ describe('Icon', () => {
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
       const sizedTestId = `test-icon-home-${
-        IconSizeEnum[_size as SizeWithoutNormalType]
+        IconSizeEnum[_size as BaseSizeType]
       }px`
       const sizedConfig = { ...baseConfig, size: _size } as IconProps
 
       render(<Icon {...sizedConfig} />)
       const testColorTag = screen.getByTestId(sizedTestId)
-      expect(testColorTag.classList).toContain(_size)
+      expect(testColorTag.classList).toContain(`${COMMON_CLASSES.IS}${_size}`)
     })
   })
 

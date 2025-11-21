@@ -33,11 +33,11 @@ Colored.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const WithDeleteButton = Template.bind({})
 WithDeleteButton.args = {
   ...LargeSize.args,
-  deleteButton: { size: 'is-medium' }
+  deleteButton: { size: 'medium' }
 }

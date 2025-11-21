@@ -33,7 +33,7 @@ import {
   RightCenteredAlignType,
   BreadcrumbSeparatorType,
   ColumnGapType,
-  SizeWithoutNormalType,
+  BaseSizeType,
   TabsFormatType,
   MediumAndLargeSizeType,
   RightLeftAlignType,
@@ -92,7 +92,7 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   /** `Styling` Will adjust element position on screen */
   separator?: BreadcrumbSeparatorType | null
   /** `Styling` Set breadcrumb's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
 }
 
 export interface DropdownProps extends ElementProps {
@@ -120,7 +120,7 @@ export interface MessageProps extends ElementProps {
   /** `Styling` Color based on bulma's color tokens */
   color?: ColorType
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
 }
 
 interface MenuSubListProps {
@@ -170,7 +170,7 @@ export interface PaginationProps extends ComposedElementProps {
   /** `Styling` Will add round borders to each page's shape */
   isRounded?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Will adjust the pages position on screen */
   alignment?: RightCenteredAlignType | null
 }
@@ -188,7 +188,7 @@ export interface TabsProps extends ElementProps {
   /** `Styling` Will adjust the tabs position on screen */
   alignment?: RightCenteredAlignType
   /** `Styling` Set tab's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Set tab's size on bulma's size tokens */
   format?: TabsFormatType
   /** `Styling` Will add round tabs borders. Only visible if `format` is set to `is-toggle` */
@@ -214,7 +214,7 @@ export interface InputControlProps extends ElementProps {
   /** `Attribute` `Icon` configuration that will be shown in Input's right side */
   rightIcon?: IconProps
   /** `Styling` Set control and its input size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Will add an animated spinner on input's right side */
   isLoading?: boolean
   /** `Styling` Used for `FormField` styling purpose only. Will strech the input and its container in full-width */

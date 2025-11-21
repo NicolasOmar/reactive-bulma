@@ -9,16 +9,18 @@ import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
+const heroBaseClass = 'hero'
+
 const renderHeroSection = (
   content: ChildrenType | null,
   type: HeroContentType,
   testId: string,
   size: SizeWithHeightType | null
 ) =>
-  type === 'body' || size === 'is-fullheight' ? (
+  type === 'body' || size === 'fullheight' ? (
     <section
       data-testid={`${testId}-${type}`}
-      className={`hero-${type}`}
+      className={`${heroBaseClass}-${type}`}
     >
       {content}
     </section>
@@ -34,11 +36,10 @@ const Hero: React.FC<HeroProps> = ({
   color = null,
   size = null
 }) => {
-  const heroBaseClass = 'hero'
   const heroClasses = parseClasses([
     heroBaseClass,
     color ? `${COMMON_CLASSES.IS}${color}` : null,
-    size,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     cssClasses
   ])
   const heroTestId =

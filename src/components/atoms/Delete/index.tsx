@@ -1,6 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
 import { DeleteProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -11,11 +13,16 @@ const Delete: React.FC<DeleteProps> = ({
   size = null,
   onClick = null
 }) => {
-  const deleteClasses = parseClasses(['delete', size, cssClasses])
+  const deleteBaseClass = 'delete'
+  const deleteClasses = parseClasses([
+    deleteBaseClass,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    cssClasses
+  ])
   const deleteTestId =
     testId ??
     parseTestId({
-      tag: 'delete',
+      tag: deleteBaseClass,
       parsedClasses: deleteClasses
     })
 

@@ -49,5 +49,5 @@ UsingTabsAndTitleAsContent.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...UsingTabsAndTitleAsContent.args,
-  size: 'is-large'
+  size: 'large'
 }

@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
         isSelected ? COMMON_CLASSES.SELECTED : null,
         isFullWidth ? COMMON_CLASSES.FULL_WIDTH : null,
         isResponsive ? COMMON_CLASSES.RESPONSIVE : null,
-        size,
+        size ? `${COMMON_CLASSES.IS}${size}` : null,
         cssClasses
       ]),
     [

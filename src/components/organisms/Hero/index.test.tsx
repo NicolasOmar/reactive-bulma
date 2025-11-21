@@ -50,7 +50,7 @@ describe('Hero', () => {
     const largeTestId = `${basicTestId}-large`
     const bigSizeConfig = {
       ...bigSizeProps,
-      size: 'is-large'
+      size: 'large'
     } as HeroProps
 
     render(<Hero {...bigSizeConfig} />)
@@ -66,7 +66,7 @@ describe('Hero', () => {
     const fullSizeTestId = `${basicTestId}-fullheight`
     const fullSizeConfig = {
       ...bigSizeProps,
-      size: 'is-fullheight'
+      size: 'fullheight'
     } as HeroProps
 
     render(<Hero {...fullSizeConfig} />)

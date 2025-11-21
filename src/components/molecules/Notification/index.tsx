@@ -21,7 +21,7 @@ const Notification: React.FC<NotificationProps> = ({
   const notificationClasses = parseClasses([
     notificationBaseClass,
     color ? `${COMMON_CLASSES.IS}${color}` : null,
-    isLightColor ? 'is-light' : null,
+    isLightColor ? COMMON_CLASSES.LIGHT : null,
     cssClasses
   ])
   const notificationTestId =

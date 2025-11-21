@@ -21,7 +21,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   const progressClasses: string = parseClasses([
     progressBaseClass,
     color ? `${COMMON_CLASSES.IS}${color}` : null,
-    size,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     cssClasses
   ])
   const progressTestId =

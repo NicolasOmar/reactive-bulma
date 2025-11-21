@@ -22,7 +22,7 @@ const Message: React.FC<MessageProps> = ({
   const messageClasses = parseClasses([
     messageBaseClass,
     color ? `${COMMON_CLASSES.IS}${color}` : null,
-    size,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     cssClasses
   ])
   const messageTestId =

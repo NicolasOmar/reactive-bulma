@@ -5,6 +5,8 @@ import '@testing-library/jest-dom'
 import Section from '.'
 // TYPES & INTERFACES
 import { SectionProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
@@ -22,7 +24,7 @@ describe('Section', () => {
   test('Should render the component with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
-        /is-|has-/gm,
+        TEST_ID_REGEXP.IS_HAS,
         ''
       )}`
       const classTestObject: SectionProps = {

@@ -60,7 +60,7 @@ SeparatedByDots.args = {
 
 export const BigSize = Template.bind({})
 BigSize.args = {
-  size: 'is-large'
+  size: 'large'
 }
 
 export const AlignedToRight = Template.bind({})

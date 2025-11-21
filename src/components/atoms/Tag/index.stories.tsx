@@ -37,7 +37,7 @@ LightColor.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const WithDeleteButton = Template.bind({})

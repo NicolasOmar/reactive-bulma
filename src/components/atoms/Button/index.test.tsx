@@ -3,6 +3,8 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Button from '.'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -49,7 +51,7 @@ describe('Button', () => {
     Object.keys(testClasses).forEach(prop => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { [prop]: classValue }
-      const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
+      const testIdWithClass = `${basicTestId}-${classValue.replace(TEST_ID_REGEXP.IS, '')}`
       render(<Button {...classObj} />)
       const testClassButton = screen.getByTestId(testIdWithClass)
       expect(testClassButton.className).toContain(classValue)

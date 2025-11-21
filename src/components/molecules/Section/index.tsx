@@ -2,6 +2,8 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { SectionProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -12,9 +14,15 @@ const Section: React.FC<SectionProps> = ({
   content,
   size = null
 }) => {
-  const sectionClasses = parseClasses(['section', size, cssClasses])
+  const sectionBaseClass = 'section'
+  const sectionClasses = parseClasses([
+    sectionBaseClass,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    cssClasses
+  ])
   const sectionTestId =
-    testId ?? parseTestId({ tag: 'section', parsedClasses: sectionClasses })
+    testId ??
+    parseTestId({ tag: sectionBaseClass, parsedClasses: sectionClasses })
 
   return (
     <section

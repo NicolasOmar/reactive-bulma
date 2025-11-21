@@ -47,13 +47,13 @@ Colored.args = {
 export const BigSize = Template.bind({})
 BigSize.args = {
   ...Colored.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const FullSize = Template.bind({})
 FullSize.args = {
   ...Colored.args,
-  size: 'is-fullheight'
+  size: 'fullheight'
 }
 
 export const FixedFullSizeBody = Template.bind({})
