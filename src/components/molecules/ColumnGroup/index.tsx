@@ -4,6 +4,8 @@ import { ColumnGroupProps } from '@interfaces/moleculeProps'
 import { ColumnGapType } from '@customTypes/styleTypes'
 // COMPONENTS
 import { Column } from '@components/atoms'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
@@ -15,7 +17,7 @@ const parseGapCssClass = (gapPropValue: ColumnGapType | null | undefined) => {
     case undefined:
       return 'is-3'
     default:
-      return gapPropValue
+      return `${COMMON_CLASSES.IS}${gapPropValue}`
   }
 }
 
