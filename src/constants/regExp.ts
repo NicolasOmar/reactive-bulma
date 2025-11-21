@@ -14,6 +14,7 @@ export const TEST_ID_REGEXP = {
   HELP: /help|is/gm,
   BREADCRUMB: /breadcrumb/gm,
   TAG: /tag/gm,
-  TAGS: /tags /gm,
+  TAGS: /tags/gm,
+  HAS_ADDONS: /has-addons/gm,
   FIXED_GRID: /fixed-grid/gm
 }

@@ -1,18 +1,23 @@
 import React from 'react'
-import { StoryFn, Meta } from '@storybook/react-vite'
+import { StoryFn, Meta } from '@storybook/react'
 // COMPONENTS
-import Tag from '.'
+import TagWithAddon from '.'
+// TYPES & INTERFACES
+// CONSTANTS
+// FUNCTIONS
 // MOCKS
 import { testing, storybook } from './index.mocks.json'
 
 export default {
-  title: 'Atoms/Tag',
-  component: Tag,
+  title: 'Atoms/TagWithAddon',
+  component: TagWithAddon,
   args: testing.baseConfig,
   ...storybook
-} as Meta<typeof Tag>
+} as Meta<typeof TagWithAddon>
 
-const Template: StoryFn<typeof Tag> = args => <Tag {...args} />
+const Template: StoryFn<typeof TagWithAddon> = args => (
+  <TagWithAddon {...args} />
+)
 
 export const BasicExample = Template.bind({})
 
@@ -38,6 +43,12 @@ export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,
   size: 'large'
+}
+
+export const ColoredAddon = Template.bind({})
+ColoredAddon.args = {
+  ...Colored.args,
+  addonColor: 'info'
 }
 
 export const WithDeleteButton = Template.bind({})
