@@ -93,8 +93,6 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
           />
         </section>
       )
-    default:
-      return null
   }
 }
 

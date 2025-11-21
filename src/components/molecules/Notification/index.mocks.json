@@ -4,6 +4,11 @@
     "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
     "testClasses": [
       {
+        "name": "color",
+        "value": "primary",
+        "result": "is-primary"
+      },
+      {
         "name": "isLightColor",
         "value": true,
         "result": "is-light"

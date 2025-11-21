@@ -57,8 +57,15 @@ const TagWithAddon: React.FC<TagWithAddonProps> = ({
     })
   const baseTagTestId =
     testId ?? parseTestId({ tag: baseTagClass, parsedClasses: baseTagClasses })
-  const addonTagTestId = `test-${tagWithAddonBaseClass}-addon`
-  const tagDeleteTestId = `test-${tagWithAddonBaseClass}-delete`
+  const addonTagTestId = parseTestId({
+    tag: `${baseTagClass}-addon`,
+    parsedClasses: tagAddonClasses,
+    rules: [
+      { regExp: TEST_ID_REGEXP.TAG, replacer: '' },
+      { regExp: TEST_ID_REGEXP.IS, replacer: '-' }
+    ]
+  })
+  const tagDeleteTestId = `${addonTagTestId}-delete`
 
   return (
     <section

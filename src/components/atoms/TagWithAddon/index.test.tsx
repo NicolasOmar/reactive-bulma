@@ -13,7 +13,16 @@ import { COMMON_CLASSES } from '@constants/classes'
 import { testing } from './index.mocks.json'
 
 describe('TagWithAddon', () => {
-  const { baseConfig, colors, testClasses, sizes } = testing
+  const {
+    basicTestId,
+    addonTestId,
+    deleteTestId,
+    baseConfig,
+    colors,
+    testClasses,
+    testAddonClasses,
+    sizes
+  } = testing
   let tagConfig: TagWithAddonProps = baseConfig
 
   test('Should render with required props only', () => {
@@ -24,7 +33,7 @@ describe('TagWithAddon', () => {
 
   test('Should render with different colors', () => {
     colors.forEach(_color => {
-      const coloredTestId = `test-tag-${_color}`
+      const coloredTestId = `${basicTestId}-${_color}`
       const testColoredConfig = {
         ...baseConfig,
         color: _color as ColorType
@@ -50,15 +59,34 @@ describe('TagWithAddon', () => {
     })
   })
 
-  test('Should render with different classes', () => {
-    Object.keys(testClasses).forEach(prop => {
-      const classValue = (testClasses as Record<string, string>)[prop]
-      const testIdWithClass = `test-tag-${classValue.replace('is-', '')}`
-      const testClassConfig = { ...baseConfig, [prop]: classValue }
+  test('Should render the tag section with specific classes', () => {
+    testClasses.forEach(({ name, value, result }) => {
+      const testIdWithClass = `${basicTestId}-${result.replace('is-', '')}`
+      const classTestObject: TagWithAddonProps = {
+        ...baseConfig,
+        [name]: value
+      }
 
-      render(<TagWithAddon {...testClassConfig} />)
-      const classButton = screen.getByTestId(testIdWithClass)
-      expect(classButton.className).toContain(classValue)
+      render(<TagWithAddon {...classTestObject} />)
+
+      const testClassNotification = screen.getByTestId(testIdWithClass)
+      expect(testClassNotification.className).toContain(result)
+      cleanup()
+    })
+  })
+
+  test('Should render the addon section with specific classes', () => {
+    testAddonClasses.forEach(({ name, value, result }) => {
+      const testIdWithClass = `${addonTestId}-${result.replace('is-', '')}`
+      const classTestObject: TagWithAddonProps = {
+        ...baseConfig,
+        [name]: value
+      }
+
+      render(<TagWithAddon {...classTestObject} />)
+
+      const testClassNotification = screen.getByTestId(testIdWithClass)
+      expect(testClassNotification.className).toContain(result)
       cleanup()
     })
   })
@@ -67,7 +95,7 @@ describe('TagWithAddon', () => {
     tagConfig = { ...baseConfig, withDelete: true, onDeleteClick: jest.fn() }
     render(<TagWithAddon {...tagConfig} />)
 
-    const clickButton = screen.getByTestId('test-tags-delete')
+    const clickButton = screen.getByTestId(deleteTestId)
     fireEvent.click(clickButton)
     expect(tagConfig.onDeleteClick).toHaveBeenCalled()
     expect(tagConfig.onDeleteClick).toHaveBeenCalledTimes(1)
@@ -89,7 +117,7 @@ describe('TagWithAddon', () => {
     }
     render(<TagWithAddon {...tagConfig} />)
 
-    const clickButton = screen.getByTestId('test-tags-delete')
+    const clickButton = screen.getByTestId(deleteTestId)
     fireEvent.click(clickButton)
     expect(tagConfig.onDeleteClick).toHaveBeenCalled()
     expect(tagConfig.onDeleteClick).toHaveBeenCalledTimes(1)
