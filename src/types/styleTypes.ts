@@ -1,6 +1,8 @@
 type SixSizesTypes = '1' | '2' | '3' | '4' | '5' | '6'
 
-type TwelveSizesTypes = SixSizesTypes | '7' | '8' | '9' | '10' | '11' | '12'
+type EightSizesTypes = SixSizesTypes | '7' | '8'
+
+type TwelveSizesTypes = EightSizesTypes | '9' | '10' | '11' | '12'
 
 export type CommonSizeType = TwelveSizesTypes
 
@@ -72,16 +74,7 @@ export type SizeWithHeightType = BaseSizeType | 'halfheight' | 'fullheight'
 
 export type MediumAndLargeSizeType = Exclude<BaseSizeType, 'small'>
 
-export type ColumnGapType =
-  | 'is-0'
-  | 'is-1'
-  | 'is-2'
-  | 'is-3'
-  | 'is-4'
-  | 'is-5'
-  | 'is-6'
-  | 'is-7'
-  | 'is-8'
+export type ColumnGapType = EightSizesTypes
 
 export type ElementAlignType = 'is-centered' | 'is-right' | 'is-left'
 
