@@ -9,9 +9,13 @@ import { TEST_ID_REGEXP } from '@constants/regExp'
 import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
+import { ColorType } from '@customTypes/styleTypes'
 
 const renderIcon = (iconConfig?: IconProps): React.ReactElement | null =>
   iconConfig ? <Icon {...iconConfig} /> : null
+
+const parseHelperColor = (color?: ColorType): string | null =>
+  color ? `${COMMON_CLASSES.IS}${color}` : null
 
 const InputControl: React.FC<InputControlProps> = ({
   testId = null,
@@ -96,11 +100,7 @@ const InputControl: React.FC<InputControlProps> = ({
     if (helper === null) return null
 
     const helperBaseClass = 'help'
-    const helperColor = inputConfig.color
-      ? `${COMMON_CLASSES.IS}${inputConfig.color}`
-      : helper.color
-        ? `${COMMON_CLASSES.IS}${helper.color}`
-        : null
+    const helperColor = parseHelperColor(inputConfig?.color ?? helper?.color)
     const fieldHelperClasses = parseClasses([helperBaseClass, helperColor])
     const fieldHelperTestId = parseTestId({
       tag: helperBaseClass,
