@@ -84,7 +84,7 @@ export type RightLeftAlignType = Exclude<ElementAlignType, 'centered'>
 
 export type BreadcrumbSeparatorType = 'arrow' | 'bullet' | 'dot' | 'succeeds'
 
-export type TabsFormatType = 'is-boxed' | 'is-toggle'
+export type TabsFormatType = 'boxed' | 'toggle'
 
 export type GridGapType =
   | 'is-gap-0'
