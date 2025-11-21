@@ -37,7 +37,7 @@ MaxBeyond100.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...MaxBeyond100.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const Loading = Template.bind({})

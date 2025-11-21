@@ -30,7 +30,7 @@ export const WithDeleteButton = Template.bind({})
 WithDeleteButton.args = {
   ...Colored.args,
   deleteButton: {
-    size: 'is-medium'
+    size: 'medium'
   }
 }
 

@@ -42,7 +42,7 @@ describe('Notification', () => {
   test('Should render the delete button', () => {
     const deleteButtonTestId = 'test-delete-medium'
     const deleteButtonConfig = {
-      deleteButton: { size: 'is-medium' }
+      deleteButton: { size: 'medium' }
     } as DeleteProps
 
     render(<Notification {...deleteButtonConfig} />)

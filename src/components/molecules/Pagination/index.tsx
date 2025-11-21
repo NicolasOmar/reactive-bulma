@@ -6,6 +6,8 @@ import {
   PaginationNavigationButtonProps,
   PaginationProps
 } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
@@ -53,26 +55,31 @@ const Pagination: React.FC<PaginationProps> = ({
   alignment = null,
   size = null
 }) => {
+  const paginationBaseClass = 'pagination'
+  const paginationListBaseClass = 'pagination-list'
   const paginationContainerClasses = parseClasses([
-    'pagination',
-    isRounded ? 'is-rounded' : null,
-    size,
+    paginationBaseClass,
+    isRounded ? COMMON_CLASSES.ROUNDED : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     alignment,
     cssClasses
   ])
   const paginationContainerTestId =
     testId ??
     parseTestId({
-      tag: 'pagination',
+      tag: paginationBaseClass,
       parsedClasses: paginationContainerClasses
     })
   const paginationClasses = parseClasses([
-    'pagination-list',
+    paginationListBaseClass,
     containerCssClasses
   ])
   const paginationTestId =
     containerTestId ??
-    parseTestId({ tag: 'pagination-list', parsedClasses: paginationClasses })
+    parseTestId({
+      tag: paginationListBaseClass,
+      parsedClasses: paginationClasses
+    })
 
   const memoizedRenderNavigationButton = useCallback(
     (navigationButton: PaginationNavigationButtonProps | null) =>

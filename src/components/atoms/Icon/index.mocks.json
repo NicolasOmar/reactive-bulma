@@ -13,7 +13,7 @@
       "color": "info"
     },
     "bigSize": {
-      "size": "is-large"
+      "size": "large"
     },
     "withDarkMode": {
       "colorMode": "dark"
@@ -23,7 +23,7 @@
     },
     "baseIconTestId": "test-icon-home-24px",
     "colors": ["black", "danger", "warning"],
-    "sizes": ["is-small", "is-medium", "is-large"],
+    "sizes": ["small", "medium", "large"],
     "testClasses": {
       "isSpinning": "spin"
     }

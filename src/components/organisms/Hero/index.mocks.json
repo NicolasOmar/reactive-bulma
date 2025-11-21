@@ -4,7 +4,7 @@
     "testClasses": [
       {
         "name": "size",
-        "value": "is-fullheight",
+        "value": "fullheight",
         "result": "is-fullheight"
       },
       {

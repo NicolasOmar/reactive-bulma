@@ -64,20 +64,13 @@ export type FixedImageSizeType =
   | '1by3'
   | 'fullwidth'
 
-export type ElementSizeType =
-  | 'is-small'
-  | 'is-normal'
-  | 'is-medium'
-  | 'is-large'
+export type BaseSizeType = 'small' | 'medium' | 'large'
 
-export type SizeWithoutNormalType = Exclude<ElementSizeType, 'is-normal'>
+export type SizeWithNormalType = BaseSizeType | 'normal'
 
-export type SizeWithHeightType =
-  | SizeWithoutNormalType
-  | 'is-halfheight'
-  | 'is-fullheight'
+export type SizeWithHeightType = BaseSizeType | 'halfheight' | 'fullheight'
 
-export type MediumAndLargeSizeType = Exclude<SizeWithoutNormalType, 'is-small'>
+export type MediumAndLargeSizeType = Exclude<BaseSizeType, 'small'>
 
 export type ColumnGapType =
   | 'is-0'

@@ -14,7 +14,7 @@
       },
       {
         "name": "size",
-        "value": "is-small",
+        "value": "small",
         "result": "is-small"
       }
     ]
