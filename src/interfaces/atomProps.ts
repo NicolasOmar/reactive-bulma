@@ -103,17 +103,11 @@ export interface BlockProps
   children?: ChildrenType
 }
 
-export interface TagProps
-  extends ComposedElementProps,
-    React.ComponentPropsWithoutRef<'span'> {
+interface BaseTagProps extends React.ComponentPropsWithoutRef<'span'> {
   /** `Attribute` `Required` The text will be shown in the `Tag` */
   text: string
   /** `Attribute` Will add a delete button (for both single or addon cases) */
   withDelete?: boolean
-  /** `Attribute` Will add a second tag element (that could have its own text, color and delete) */
-  withAddon?: boolean
-  /** `Attribute` The text will be shown in the tag's addon */
-  addonText?: string
   /** `Styling` Color based on bulma's color tokens */
   color?: ColorType
   /** `Styling` Will adjust the selected color with a ligther style */
@@ -122,10 +116,17 @@ export interface TagProps
   isRounded?: boolean
   /** `Styling` Set tag's size */
   size?: BaseSizeType
-  /** `Styling` Color on tag's addon based on bulma's color tokens */
-  addonColor?: ColorType
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
+}
+
+export interface TagProps extends ElementProps, BaseTagProps {}
+
+export interface TagWithAddonProps extends ComposedElementProps, BaseTagProps {
+  /** `Attribute` `Required` The text will be shown in the tag's addon */
+  addonText: string
+  /** `Styling` Color on tag's addon based on bulma's color tokens */
+  addonColor?: ColorType
 }
 
 export interface ImageProps

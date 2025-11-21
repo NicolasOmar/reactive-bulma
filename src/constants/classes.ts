@@ -25,6 +25,7 @@ export const COMMON_CLASSES = {
   FULL_WIDTH: 'is-fullwidth',
   RESPONSIVE: 'is-responsive',
   DISABLED: 'is-disabled',
+  HAS_ADDONS: 'has-addons',
   GAP: 'is-gap-',
   COLUMN_GAP: 'is-column-gap-',
   ROW_GAP: 'is-row-gap-',
