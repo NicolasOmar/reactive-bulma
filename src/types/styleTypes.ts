@@ -76,17 +76,13 @@ export type MediumAndLargeSizeType = Exclude<BaseSizeType, 'small'>
 
 export type ColumnGapType = EightSizesTypes
 
-export type ElementAlignType = 'is-centered' | 'is-right' | 'is-left'
+export type ElementAlignType = 'centered' | 'right' | 'left'
 
-export type RightCenteredAlignType = Exclude<ElementAlignType, 'is-left'>
+export type RightCenteredAlignType = Exclude<ElementAlignType, 'left'>
 
-export type RightLeftAlignType = Exclude<ElementAlignType, 'is-centered'>
+export type RightLeftAlignType = Exclude<ElementAlignType, 'centered'>
 
-export type BreadcrumbSeparatorType =
-  | 'has-arrow-separator'
-  | 'has-bullet-separator'
-  | 'has-dot-separator'
-  | 'has-succeeds-separator'
+export type BreadcrumbSeparatorType = 'arrow' | 'bullet' | 'dot' | 'succeeds'
 
 export type TabsFormatType = 'is-boxed' | 'is-toggle'
 

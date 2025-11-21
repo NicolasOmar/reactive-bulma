@@ -9,7 +9,7 @@
       },
       {
         "name": "alignment",
-        "value": "is-centered",
+        "value": "centered",
         "result": "is-centered"
       }
     ],

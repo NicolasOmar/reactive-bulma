@@ -18,16 +18,13 @@ const externalParser = (i: number) => ({
   isActiveItem: i === 4
 })
 
-const alignmentOptions: Array<RightCenteredAlignType> = [
-  'is-centered',
-  'is-right'
-]
+const alignmentOptions: Array<RightCenteredAlignType> = ['centered', 'right']
 
 const separatorOptions: Array<BreadcrumbSeparatorType> = [
-  'has-arrow-separator',
-  'has-bullet-separator',
-  'has-dot-separator',
-  'has-succeeds-separator'
+  'arrow',
+  'bullet',
+  'dot',
+  'succeeds'
 ]
 
 export default {
@@ -55,7 +52,7 @@ export const BasicExample = Template.bind({})
 
 export const SeparatedByDots = Template.bind({})
 SeparatedByDots.args = {
-  separator: 'has-dot-separator'
+  separator: 'dot'
 }
 
 export const BigSize = Template.bind({})
@@ -65,5 +62,5 @@ BigSize.args = {
 
 export const AlignedToRight = Template.bind({})
 AlignedToRight.args = {
-  alignment: 'is-right'
+  alignment: 'right'
 }

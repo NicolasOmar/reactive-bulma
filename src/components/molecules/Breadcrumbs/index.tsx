@@ -24,8 +24,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   const breadcrumbsBaseClass = 'breadcrumb'
   const breadcrumbsContainerClasses = parseClasses([
     breadcrumbsBaseClass,
-    alignment,
-    separator,
+    alignment ? `${COMMON_CLASSES.IS}${alignment}` : null,
+    separator ? `has-${separator}-separator` : null,
     size ? `${COMMON_CLASSES.IS}${size}` : null,
     containerCssClasses
   ])

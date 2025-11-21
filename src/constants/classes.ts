@@ -20,5 +20,6 @@ export const COMMON_CLASSES = {
   STATIC: 'is-static',
   SELECTED: 'is-selected',
   FULL_WIDTH: 'is-fullwidth',
-  RESPONSIVE: 'is-responsive'
+  RESPONSIVE: 'is-responsive',
+  DISABLED: 'is-disabled'
 }

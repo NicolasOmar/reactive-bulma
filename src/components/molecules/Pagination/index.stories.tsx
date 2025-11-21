@@ -22,7 +22,7 @@ export const BasicExample = Template.bind({})
 
 export const Centered = Template.bind({})
 Centered.args = {
-  alignment: 'is-centered'
+  alignment: 'centered'
 }
 
 export const BigSize = Template.bind({})

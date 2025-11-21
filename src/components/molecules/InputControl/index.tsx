@@ -84,15 +84,12 @@ const InputControl: React.FC<InputControlProps> = ({
     [inputConfig, size]
   )
   const memoizedLeftIcon = useMemo(
-    () =>
-      renderIcon(leftIcon ? { ...leftIcon, position: 'is-left' } : undefined),
+    () => renderIcon(leftIcon ? { ...leftIcon, position: 'left' } : undefined),
     [leftIcon]
   )
   const memoizedRightIcon = useMemo(
     () =>
-      renderIcon(
-        rightIcon ? { ...rightIcon, position: 'is-right' } : undefined
-      ),
+      renderIcon(rightIcon ? { ...rightIcon, position: 'right' } : undefined),
     [rightIcon]
   )
   const memorizedHelper = useMemo(() => {

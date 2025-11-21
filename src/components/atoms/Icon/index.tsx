@@ -54,7 +54,7 @@ const Icon: React.FC<IconProps> = ({
     iconBaseClass,
     color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : null,
     size ? `${COMMON_CLASSES.IS}${size}` : null,
-    position,
+    position ? `${COMMON_CLASSES.IS}${position}` : null,
     containerCssClasses
   ])
   const iconClasses = parseClasses([

@@ -12,6 +12,9 @@ import { COMMON_CLASSES } from '@constants/classes'
 import { parseClasses, parseTestId } from '@functions/parsers'
 import { generateKey } from '@functions/generators'
 
+const paginationBaseClass = 'pagination'
+const paginationListBaseClass = 'pagination-list'
+
 const renderNavigationButton = (
   navigationButton: PaginationNavigationButtonProps | null
 ) => {
@@ -19,7 +22,7 @@ const renderNavigationButton = (
 
   const navigationButtonClasses = parseClasses([
     navigationButton.cssClasses,
-    navigationButton.isDisabled ? 'is-disabled' : null
+    navigationButton.isDisabled ? COMMON_CLASSES.DISABLED : null
   ])
 
   return (
@@ -44,24 +47,22 @@ const Pagination: React.FC<PaginationProps> = ({
   ellipsisItems = 0,
   showPreviousPageButton = {
     text: 'Previous',
-    cssClasses: 'pagination-previous'
+    cssClasses: `${paginationBaseClass}-previous`
   },
   showNextPageButton = {
     text: 'Next page',
-    cssClasses: 'pagination-next'
+    cssClasses: `${paginationBaseClass}-next`
   },
   hasEllipsis = false,
   isRounded = false,
   alignment = null,
   size = null
 }) => {
-  const paginationBaseClass = 'pagination'
-  const paginationListBaseClass = 'pagination-list'
   const paginationContainerClasses = parseClasses([
     paginationBaseClass,
     isRounded ? COMMON_CLASSES.ROUNDED : null,
     size ? `${COMMON_CLASSES.IS}${size}` : null,
-    alignment,
+    alignment ? `${COMMON_CLASSES.IS}${alignment}` : null,
     cssClasses
   ])
   const paginationContainerTestId =
@@ -92,7 +93,7 @@ const Pagination: React.FC<PaginationProps> = ({
       <li>
         <span
           aria-hidden='true'
-          className='pagination-ellipsis'
+          className={`${paginationBaseClass}-ellipsis`}
         >
           &hellip;
         </span>
@@ -121,7 +122,7 @@ const Pagination: React.FC<PaginationProps> = ({
         (pageIndex > ellipsisItems && pageIndex < lastEllipsisItemIndex)
       ) {
         return (
-          <li key={`pagination-item-${generateKey()}`}>
+          <li key={`${paginationBaseClass}-item-${generateKey()}`}>
             <PaginationItem {...pageItem} />
           </li>
         )
@@ -129,7 +130,9 @@ const Pagination: React.FC<PaginationProps> = ({
 
       if (pageIndex === --length) {
         return (
-          <React.Fragment key={`last-pagination-item-${generateKey()}`}>
+          <React.Fragment
+            key={`last-${paginationBaseClass}-item-${generateKey()}`}
+          >
             {renderedEllipsis}
             {renderedPaginationItem}
           </React.Fragment>
