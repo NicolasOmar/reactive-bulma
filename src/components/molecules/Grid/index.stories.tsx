@@ -33,19 +33,19 @@ LotsOfCells.args = {
 export const HugeColumnGap = Template.bind({})
 HugeColumnGap.args = {
   ...LotsOfCells.args,
-  columnGap: 'is-column-gap-8'
+  columnGap: '8'
 }
 
 export const HugeRowGap = Template.bind({})
 HugeRowGap.args = {
   ...LotsOfCells.args,
-  rowGap: 'is-row-gap-8'
+  rowGap: '8'
 }
 
 export const HugeGridGap = Template.bind({})
 HugeGridGap.args = {
   ...LotsOfCells.args,
-  gap: 'is-gap-8'
+  gap: '8'
 }
 
 export const FixedGrid = Template.bind({})
@@ -57,7 +57,7 @@ FixedGrid.args = {
 export const FixedGridWithThreeColumns = Template.bind({})
 FixedGridWithThreeColumns.args = {
   ...FixedGrid.args,
-  fixedColumnsCount: 'has-3-cols'
+  fixedColumnsCount: '3'
 }
 
 export const FixedGridWithAutoColumns = Template.bind({})

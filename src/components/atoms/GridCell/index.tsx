@@ -2,6 +2,8 @@ import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
 import { GridCellProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
 
@@ -20,7 +22,7 @@ const GridCell: React.FC<GridCellProps> = ({
 }) => {
   const gridCellClasses = parseClasses([
     'cell',
-    position,
+    position ? `${COMMON_CLASSES.IS}${position}` : null,
     colStart ? `is-col-start-${colStart}` : null,
     rowStart ? `is-row-start-${rowStart}` : null,
     colStartFromEnd ? `is-col-from-end-${colStartFromEnd}` : null,

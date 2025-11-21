@@ -1,6 +1,7 @@
 export const COMMON_CLASSES = {
   IS: 'is-',
   ARE: 'are-',
+  HAS: 'has-',
   HAS_TEXT: 'has-text-',
   NOTIFICATION: 'notification',
   VERTICAL: 'is-vertical',
@@ -23,5 +24,10 @@ export const COMMON_CLASSES = {
   SELECTED: 'is-selected',
   FULL_WIDTH: 'is-fullwidth',
   RESPONSIVE: 'is-responsive',
-  DISABLED: 'is-disabled'
+  DISABLED: 'is-disabled',
+  GAP: 'is-gap-',
+  COLUMN_GAP: 'is-column-gap-',
+  ROW_GAP: 'is-row-gap-',
+  AUTO_COLUMNS_GRID: 'has-auto-count',
+  COL_MIN_WIDTH: 'is-col-min-'
 }
