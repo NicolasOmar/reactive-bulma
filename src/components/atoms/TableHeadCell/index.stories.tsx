@@ -15,7 +15,7 @@ export default {
 } as Meta<typeof TableHeadCell>
 
 const Template: StoryFn<typeof TableHeadCell> = args => (
-  <table>
+  <table className='table'>
     <tbody>
       <tr>
         <TableHeadCell {...args} />
@@ -25,3 +25,9 @@ const Template: StoryFn<typeof TableHeadCell> = args => (
 )
 
 export const BasicExample = Template.bind({})
+
+export const Colored = Template.bind({})
+Colored.args = {
+  ...BasicExample.args,
+  color: 'primary'
+}

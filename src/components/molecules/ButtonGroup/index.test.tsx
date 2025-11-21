@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import ButtonGroup from '.'
 // TYPES & INTERFACES
-import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
+import { ButtonGroupProps } from '@interfaces/moleculeProps'
 // MOCKS
 import mocks from './index.mocks.json'
 

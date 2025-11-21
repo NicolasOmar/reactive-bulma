@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { FooterProps } from '../../../interfaces/moleculeProps'
+import { FooterProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Footer: React.FC<FooterProps> = ({
   testId = null,

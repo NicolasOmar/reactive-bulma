@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import TableRow from '.'
 // TYPES & INTERFACES
-import { TableRowProps } from '../../../interfaces/moleculeProps'
+import { TableRowProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

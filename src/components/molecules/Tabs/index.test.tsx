@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tabs from '.'
 // TYPES & INTERFACES
-import { TabsProps } from '../../../interfaces/moleculeProps'
-import { TabItemProps } from '../../../interfaces/atomProps'
+import { TabsProps } from '@interfaces/moleculeProps'
+import { TabItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
 

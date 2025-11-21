@@ -3,15 +3,11 @@
     "baseConfig": {
       "text": "Test text"
     },
-    "colors": ["is-black", "is-danger", "is-warning"],
-    "sizes": ["is-small", "is-medium", "is-large"],
+    "colors": ["black", "danger", "warning"],
+    "sizes": ["small", "medium", "large"],
     "testClasses": {
       "isLight": "is-light",
       "isRounded": "is-rounded"
-    },
-    "addonConfig": {
-      "withAddon": true,
-      "addonText": "Addon Text"
     }
   },
   "storybook": {

@@ -2,14 +2,14 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import TileBox from '.'
-import { Image } from '../../atoms'
+import { Image } from '@components/atoms'
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
+import { TileProps } from '@interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { storybook } from './index.mocks.json'
-import tileMocks from '../../atoms/Tile/index.mocks.json'
-import imageMocks from '../../atoms/Image/index.mocks.json'
+import tileMocks from '@components/atoms/Tile/index.mocks.json'
+import imageMocks from '@components/atoms/Image/index.mocks.json'
 
 export default {
   title: 'Molecules/TileBox',

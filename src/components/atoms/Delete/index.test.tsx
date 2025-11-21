@@ -4,7 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Delete from '.'
 // TYPES & INTERFACES
-import { DeleteProps } from '../../../interfaces/atomProps'
+import { DeleteProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -19,12 +21,12 @@ describe('Delete', () => {
 
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
-      const sizedTestId = `test-delete-${_size.replace(/is-/gm, '')}`
+      const sizedTestId = `test-delete-${_size}`
       const sizedConfig = { size: _size } as DeleteProps
 
       render(<Delete {...sizedConfig} />)
       const testColorTag = screen.getByTestId(sizedTestId)
-      expect(testColorTag.classList).toContain(_size)
+      expect(testColorTag.classList).toContain(`${COMMON_CLASSES.IS}${_size}`)
     })
   })
 })

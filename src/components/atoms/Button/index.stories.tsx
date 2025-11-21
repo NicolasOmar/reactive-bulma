@@ -20,10 +20,28 @@ WithText.args = {
   text: testing.dummyText
 }
 
+export const AsAnAnchor = Template.bind({})
+AsAnAnchor.args = {
+  ...WithText.args,
+  isAnAnchor: true
+}
+
 export const Colored = Template.bind({})
 Colored.args = {
   ...WithText.args,
-  color: 'is-danger'
+  color: 'danger'
+}
+
+export const LightColor = Template.bind({})
+LightColor.args = {
+  ...Colored.args,
+  colorMode: 'light'
+}
+
+export const DarkColor = Template.bind({})
+DarkColor.args = {
+  ...Colored.args,
+  colorMode: 'dark'
 }
 
 export const InvertedColor = Template.bind({})
@@ -53,7 +71,19 @@ LoadingState.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,
-  size: 'is-large'
+  size: 'large'
+}
+
+export const FullWidth = Template.bind({})
+FullWidth.args = {
+  ...LargeSize.args,
+  isFullWidth: true
+}
+
+export const Responsive = Template.bind({})
+Responsive.args = {
+  ...LargeSize.args,
+  isResponsive: true
 }
 
 export const Disabled = Template.bind({})

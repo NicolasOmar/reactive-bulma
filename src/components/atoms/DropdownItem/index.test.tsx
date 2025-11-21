@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import DropdownItem from '.'
 // TYPES & INTERFACES
-import { DropdownItemProps } from '../../../interfaces/atomProps'
+import { DropdownItemProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

@@ -1,0 +1,19 @@
+{
+  "testing": {
+    "basicTestId": "test-checkboxes",
+    "baseListOfCases": [
+      { "label": "Monday" },
+      { "label": "Thuesday" },
+      { "label": "Wednsday" },
+      { "label": "Thursday" },
+      { "label": "Friday" },
+      { "label": "Saturday" },
+      { "label": "Sunday" }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "You can create a list of checkboxes by using the checkboxes container"
+    }
+  }
+}

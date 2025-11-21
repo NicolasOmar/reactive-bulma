@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Select from '.'
 // TYPES & INTERFACES
-import { SelectProps } from '../../../interfaces/atomProps'
+import { SelectProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

@@ -3,10 +3,10 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Tabs from '.'
 // TYPES & INTERFACES
-import { TabsProps } from '../../../interfaces/moleculeProps'
-import { TabItemProps } from '../../../interfaces/atomProps'
+import { TabsProps } from '@interfaces/moleculeProps'
+import { TabItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

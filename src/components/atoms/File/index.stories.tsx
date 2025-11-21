@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import File from '.'
 // TYPES & INTERFACES
-import { FileProps } from '../../../interfaces/atomProps'
+import { FileProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing, storybook } from './index.mocks.json'
 

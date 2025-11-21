@@ -1,25 +1,28 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { IconProps } from '../../../interfaces/atomProps'
-import { TextColorType } from '../../../types/styleTypes'
-import { IconSizeEnum } from '../../../types/domTypes'
+import { IconProps } from '@interfaces/atomProps'
+import { ColorType } from '@customTypes/styleTypes'
+import { IconSizeEnum } from '@customTypes/domTypes'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
+
+const iconBaseClass = 'icon'
+const mdiBaseClass = 'mdi'
 
 const generateIconContainer = (
   icon: React.ReactElement,
-  color: TextColorType | null
+  color: ColorType | null
 ) => {
-  const containerClasses = color ? `icon-text-${color}` : 'icon-text'
+  const containerClasses = color
+    ? `${iconBaseClass}-text-${color}`
+    : `${iconBaseClass}-text`
   const containerTestId = parseTestId({
-    tag: 'icon-container',
-    parsedClasses: color?.toString() ?? '',
-    rules: [
-      {
-        regExp: /has-text/gm,
-        replacer: ''
-      }
-    ]
+    tag: `${iconBaseClass}-container`,
+    parsedClasses: color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : '',
+    rules: [{ regExp: TEST_ID_REGEXP.HAS_TEXT, replacer: '' }]
   })
 
   return (
@@ -48,32 +51,32 @@ const Icon: React.FC<IconProps> = ({
   position = null
 }) => {
   const iconContainerClasses = parseClasses([
-    'icon',
-    color,
-    size,
-    position,
+    iconBaseClass,
+    color ? `${COMMON_CLASSES.HAS_TEXT}${color}` : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    position ? `${COMMON_CLASSES.IS}${position}` : null,
     containerCssClasses
   ])
   const iconClasses = parseClasses([
-    'mdi',
-    `mdi-${iconLabel}`,
-    colorMode ? `mdi-${colorMode}` : null,
-    isSpinning ? 'mdi-spin' : null,
-    size ? `mdi-${IconSizeEnum[size]}px` : 'mdi-24px',
+    mdiBaseClass,
+    `${mdiBaseClass}-${iconLabel}`,
+    colorMode ? `${mdiBaseClass}-${COMMON_CLASSES.IS}${colorMode}` : null,
+    isSpinning ? `${mdiBaseClass}-spin` : null,
+    size ? `${mdiBaseClass}-${IconSizeEnum[size]}px` : `${mdiBaseClass}-24px`,
     cssClasses
   ])
   const iconContainertestId =
     containerTestId ??
     parseTestId({
-      tag: 'icon',
+      tag: iconBaseClass,
       parsedClasses: iconClasses,
       rules: [
         {
-          regExp: /mdi-|mdi--/gm,
+          regExp: TEST_ID_REGEXP.MDI,
           replacer: ''
         },
         {
-          regExp: /mdi /gm,
+          regExp: TEST_ID_REGEXP.MDI_EMPTY,
           replacer: '-'
         }
       ],

@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Footer from '.'
 // TYPES & INTERFACES
-import { FooterProps } from '../../../interfaces/moleculeProps'
+import { FooterProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

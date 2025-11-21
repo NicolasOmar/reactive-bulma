@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { PanelTabsProps } from '../../../interfaces/moleculeProps'
+import { PanelTabsProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const PanelTabs: React.FC<PanelTabsProps> = ({
   testId = null,

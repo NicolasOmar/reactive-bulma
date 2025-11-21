@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import ButtonGroup from '.'
 // TYPES & INTERFACES
-import { ButtonProps } from '../../../interfaces/atomProps'
+import { ButtonProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing, storybook } from './index.mocks.json'
 

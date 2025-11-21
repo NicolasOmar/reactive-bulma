@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tile from '.'
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
+import { TileProps } from '@interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

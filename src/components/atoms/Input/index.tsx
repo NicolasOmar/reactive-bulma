@@ -1,8 +1,8 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { InputProps } from '../../../interfaces/atomProps'
+import { InputProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Input: React.FC<InputProps> = ({
   testId = null,

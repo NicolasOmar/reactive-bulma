@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // TYPES & INTERFACES
-import { ColumnGroupProps } from '../../../interfaces/moleculeProps'
-import { ColumnGapType } from '../../../types/styleTypes'
+import { ColumnGroupProps } from '@interfaces/moleculeProps'
+import { ColumnGapType } from '@customTypes/styleTypes'
 // COMPONENTS
-import { Column } from '../../atoms'
+import { Column } from '@components/atoms'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const parseGapCssClass = (gapPropValue: ColumnGapType | null | undefined) => {
   switch (gapPropValue) {
@@ -15,7 +17,7 @@ const parseGapCssClass = (gapPropValue: ColumnGapType | null | undefined) => {
     case undefined:
       return 'is-3'
     default:
-      return gapPropValue
+      return `${COMMON_CLASSES.IS}${gapPropValue}`
   }
 }
 
@@ -30,13 +32,14 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
   isHorizontallyCentered = null,
   gap = undefined
 }) => {
+  const columnGapValue = parseGapCssClass(gap)
   const columnGroupClasses = parseClasses([
     'columns',
     isMultiline ? 'is-multiline' : null,
     isMobileLayout ? 'is-mobile' : null,
     isVerticallyCentered ? 'is-vcentered' : null,
     isHorizontallyCentered ? 'is-centered' : null,
-    parseGapCssClass(gap),
+    columnGapValue,
     cssClasses
   ])
   const columnGroupTestId =
@@ -45,18 +48,25 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({
       tag: 'columns',
       parsedClasses: columnGroupClasses
     })
+
+  const memoizedColumnsInGroup = useMemo(
+    () =>
+      listOfColumns.map(columnItemConfig => (
+        <Column
+          key={`column-group-item-${generateKey()}`}
+          {...columnItemConfig}
+        />
+      )),
+    [listOfColumns]
+  )
+
   return (
     <section
       data-testid={columnGroupTestId}
       className={columnGroupClasses}
       style={style ?? undefined}
     >
-      {listOfColumns.map(columnItemConfig => (
-        <Column
-          key={`column-group-item-${generateKey()}`}
-          {...columnItemConfig}
-        />
-      ))}
+      {memoizedColumnsInGroup}
     </section>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { LevelItemProps } from '../../../interfaces/moleculeProps'
+import { LevelItemProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const LevelItem: React.FC<LevelItemProps> = ({
   testId = null,

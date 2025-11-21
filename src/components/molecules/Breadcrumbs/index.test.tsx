@@ -4,10 +4,12 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Breadcrumbs from '.'
 // TYPES & INTERFACES
-import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
+import { BreadcrumbsProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // MOCKS
 import { testing } from './index.mocks.json'
-import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
+import breacrumbItemMocks from '@components/atoms/BreadcrumbItem/index.mocks.json'
 
 const breadcrumbItems = Array(5)
   .fill(null)
@@ -30,7 +32,7 @@ describe('Breadcrumbs', () => {
   test('Should render the breadcrumbs with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
-        /is-|has-/gm,
+        TEST_ID_REGEXP.IS_HAS,
         ''
       )}`
       const classTestObject: BreadcrumbsProps = {

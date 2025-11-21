@@ -3,14 +3,14 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import Card from '.'
-import { Title } from '../../atoms'
+import { Title } from '@components/atoms'
 // TYPES & INTERFACES
-import { CardFooterProps, CardProps } from '../../../interfaces/organismProps'
+import { CardFooterProps, CardProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { createObjArray, generateKey } from '../../../functions/generators'
+import { createObjArray, generateKey } from '@functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
-import imageMocks from '../../atoms/Image/index.mocks.json'
+import imageMocks from '@components/atoms/Image/index.mocks.json'
 
 describe('Card', () => {
   const {

@@ -3,9 +3,9 @@ import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import NavBarBrand from '.'
-import { Image } from '../../atoms'
+import { Image } from '@components/atoms'
 // TYPES & INTERFACES
-import { NavBarBrandProps } from '../../../interfaces/moleculeProps'
+import { NavBarBrandProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

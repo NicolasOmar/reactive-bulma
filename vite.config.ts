@@ -43,5 +43,15 @@ export default defineConfig({
         entryFileNames: '[name].js'
       }
     },
+  },
+  resolve: {
+    alias: {
+      '@constants': resolve(__dirname, 'src/constants'),
+      '@components': resolve(__dirname, 'src/components'),
+      '@design': resolve(__dirname, 'src/design'),
+      '@functions': resolve(__dirname, 'src/functions'),
+      '@interfaces': resolve(__dirname, 'src/interfaces'),
+      '@customTypes': resolve(__dirname, 'src/types')
+    }
   }
 })

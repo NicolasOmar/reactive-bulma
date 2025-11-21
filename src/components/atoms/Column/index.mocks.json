@@ -6,7 +6,24 @@
     "testButtonText": "This is a button",
     "testNarrowColumn": {
       "isNarrow": true
-    }
+    },
+    "testClasses": [
+      {
+        "name": "size",
+        "value": "normal",
+        "result": "is-normal"
+      },
+      {
+        "name": "offset",
+        "value": "2",
+        "result": "is-offset-2"
+      },
+      {
+        "name": "isNarrow",
+        "value": true,
+        "result": "is-narrow"
+      }
+    ]
   },
   "storybook": {
     "argTypes": {

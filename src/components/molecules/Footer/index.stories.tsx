@@ -4,7 +4,7 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 import Footer from '.'
 import ButtonGroup from '../ButtonGroup'
 // TYPES & INTERFACES
-import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
+import { ButtonGroupProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'

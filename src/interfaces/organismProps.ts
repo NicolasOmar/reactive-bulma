@@ -17,16 +17,18 @@ import {
   TileProps
 } from './atomProps'
 // TYPES & INTERFACES
-import { BasicColorType, SizeWithHeightType } from '../types/styleTypes'
+import { ColorType, SizeWithHeightType } from '../types/styleTypes'
 import { ChildrenType, NavBarFixedPositionType } from '../types/domTypes'
 
 export interface FormFieldProps extends ElementProps {
   /** `Attribute` `Required` Single or multiple `FormFieldConfig` config objects which will be wrapped around the `FormField` */
-  config: FormFieldInputProps | FormFieldInputProps[]
+  inputsConfig: FormFieldInputProps | FormFieldInputProps[]
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
   isHorizontal?: boolean
   /** `Styling` Will group the list of inputs in a same wrapper (useful for several inputs with same usage, as a complex address) */
   isGrouped?: boolean
+  /** `Attribute` Will add one or tow new controls to be working next to the main one */
+  withAddons?: boolean
 }
 
 export interface PanelProps extends ElementProps {
@@ -37,7 +39,7 @@ export interface PanelProps extends ElementProps {
   /** `Attribute` `Required` A list of configuration objects that will render a list of block with different components, based on `PanelBlockList` component */
   blockList: PanelBlockProps[]
   /** `Styling` Color based on bulma's text color tokens */
-  color?: BasicColorType
+  color?: ColorType
 }
 
 export interface LevelProps extends ElementProps {
@@ -61,7 +63,7 @@ export interface HeroProps extends ElementProps {
   /** `Styling` Set hero's size */
   size?: SizeWithHeightType
   /** `Styling` Color based on bulma's text color tokens */
-  color?: BasicColorType
+  color?: ColorType
 }
 
 export interface TileGroupProps
@@ -86,7 +88,7 @@ export interface NavBarProps extends ElementProps {
   /** `Styling` Sets navbar's position at screen's top or bottom */
   fixedPosition?: NavBarFixedPositionType
   /** `Styling` Color based on bulma's text color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Sets navbar's color as transparent */
   isTransparent?: boolean
   /** `Styling` Adds a small padding around the navbar */
@@ -108,6 +110,36 @@ export interface CardProps extends ElementProps {
   content: ChildrenType
   /** `Attribute` A list of footer links that will be rendered on card's bottom, below its content */
   footerLinks?: CardFooterProps[]
+}
+
+export interface TableProps extends ElementProps {
+  /** `Attribute` `Required` Configuration object that will display table's head */
+  head: TableHeadCellProps[]
+  /** `Attribute` `Required` Configuration object that will display table's body */
+  body: TableRowProps[]
+  /** `Attribute` Configuration object that will display table's foot */
+  foot?: TableHeadCellProps[]
+  /** `Styling` It will add a Bordered styling to the table. It can be combined with other mentioned styling properties. */
+  isBordered?: boolean
+  /** `Styling` It will add a Striped styling to the table. It can be combined with other mentioned styling properties. */
+  isStriped?: boolean
+  /** `Styling` It will add a Narrow styling to the table. It can be combined with other mentioned styling properties. */
+  isNarrow?: boolean
+  /** `Styling` It will add a Hoverable styling to the table. It can be combined with other mentioned styling properties. */
+  isHoverable?: boolean
+  /** `Styling` It will add a Fullwidth styling to the table. It can be combined with other mentioned styling properties. */
+  isFullwidth?: boolean
+  /** `Styling` Will create a container around the table in order to make it scrollable */
+  isContained?: boolean
+}
+
+export interface TableElementProps {
+  tableTestId: string
+  tableClasses: string
+  style: React.CSSProperties | null
+  head: TableHeadCellProps[]
+  body: TableProps['body']
+  foot: TableHeadCellProps[] | null
 }
 
 export interface TableProps extends ElementProps {

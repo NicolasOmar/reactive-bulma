@@ -30,7 +30,7 @@
       },
       {
         "name": "gap",
-        "value": "is-6",
+        "value": "6",
         "result": "is-6"
       }
     ]

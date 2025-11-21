@@ -2,7 +2,7 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import NavBarBrand from '.'
-import { Image } from '../../atoms'
+import { Image } from '@components/atoms'
 // TYPES & INTERFACES
 // FUNCTIONS
 // MOCKS

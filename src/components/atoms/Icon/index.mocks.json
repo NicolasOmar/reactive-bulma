@@ -10,10 +10,10 @@
       "iconLabel": "snowflake"
     },
     "colored": {
-      "color": "has-text-info"
+      "color": "info"
     },
     "bigSize": {
-      "size": "is-large"
+      "size": "large"
     },
     "withDarkMode": {
       "colorMode": "dark"
@@ -22,10 +22,9 @@
       "isSpinning": true
     },
     "baseIconTestId": "test-icon-home-24px",
-    "colors": ["has-text-black", "has-text-danger", "has-text-warning"],
-    "sizes": ["is-small", "is-medium", "is-large"],
+    "colors": ["black", "danger", "warning"],
+    "sizes": ["small", "medium", "large"],
     "testClasses": {
-      "colorMode": "light",
       "isSpinning": "spin"
     }
   },

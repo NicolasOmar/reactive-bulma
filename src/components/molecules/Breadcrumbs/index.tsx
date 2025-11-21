@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
-import { BreadcrumbItem } from '../../atoms'
+import { BreadcrumbItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { BreadcrumbsProps } from '../../../interfaces/moleculeProps'
+import { BreadcrumbsProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   testId = 'breadcrumbs',
@@ -19,29 +21,35 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   separator = null,
   size = null
 }) => {
+  const breadcrumbsBaseClass = 'breadcrumb'
   const breadcrumbsContainerClasses = parseClasses([
-    'breadcrumb',
-    alignment,
-    separator,
-    size,
+    breadcrumbsBaseClass,
+    alignment ? `${COMMON_CLASSES.IS}${alignment}` : null,
+    separator ? `has-${separator}-separator` : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     containerCssClasses
   ])
   const breadcrumbsContainerTestId =
     containerTestId ??
     parseTestId({
-      tag: 'breadcrumb',
+      tag: breadcrumbsBaseClass,
       parsedClasses: breadcrumbsContainerClasses,
       rules: [
-        {
-          regExp: /breadcrumb/gm,
-          replacer: ''
-        },
-        {
-          regExp: /is-|has-/gm,
-          replacer: '-'
-        }
+        { regExp: TEST_ID_REGEXP.BREADCRUMB, replacer: '' },
+        { regExp: TEST_ID_REGEXP.IS_HAS, replacer: '-' }
       ]
     })
+
+  const memoizedBreadcrumbs = useMemo(
+    () =>
+      items.map(itemConfig => (
+        <BreadcrumbItem
+          key={`${breadcrumbsBaseClass}-item-${generateKey()}`}
+          {...itemConfig}
+        />
+      )),
+    [items]
+  )
 
   return (
     <nav
@@ -54,12 +62,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         className={cssClasses ?? undefined}
         style={style ?? undefined}
       >
-        {items.map(itemConfig => (
-          <BreadcrumbItem
-            key={`breadcrumb-item-${generateKey()}`}
-            {...itemConfig}
-          />
-        ))}
+        {memoizedBreadcrumbs}
       </ul>
     </nav>
   )

@@ -1,15 +1,11 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
-import { PanelBlock, PanelTabs } from '../../molecules'
+import { PanelBlock, PanelTabs } from '@components/molecules'
 // TYPES & INTERFACES
-import { PanelProps } from '../../../interfaces/organismProps'
+import { PanelProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
-
-const generateHeader = (headerText: string) => (
-  <p className='panel-heading'>{headerText}</p>
-)
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const Panel: React.FC<PanelProps> = ({
   testId = null,
@@ -24,20 +20,30 @@ const Panel: React.FC<PanelProps> = ({
   const panelTestId =
     testId ?? parseTestId({ tag: 'panel', parsedClasses: panelClasses })
 
+  const memoizedTabs = useMemo(
+    () => (panelTabs ? <PanelTabs {...panelTabs} /> : null),
+    [panelTabs]
+  )
+  const memoizedBlocks = useMemo(
+    () =>
+      blockList.map(blockConfig => (
+        <PanelBlock
+          key={`panel-block-item-${generateKey()}`}
+          {...blockConfig}
+        />
+      )),
+    [blockList]
+  )
+
   return (
     <article
       data-testid={panelTestId}
       className={panelClasses}
       style={style ?? undefined}
     >
-      {generateHeader(headerText)}
-      {panelTabs ? <PanelTabs {...panelTabs} /> : null}
-      {blockList.map(blockConfig => (
-        <PanelBlock
-          key={`panel-block-item-${generateKey()}`}
-          {...blockConfig}
-        />
-      ))}
+      <p className='panel-heading'>{headerText}</p>
+      {memoizedTabs}
+      {memoizedBlocks}
     </article>
   )
 }

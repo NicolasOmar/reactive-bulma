@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import TextArea from '.'
 // TYPES & INTERFACES
-import { TextAreaProps } from '../../../interfaces/atomProps'
+import { TextAreaProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing, storybook } from './index.mocks.json'
 

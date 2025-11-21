@@ -3,16 +3,16 @@ import { cleanup, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import TileGroup from '.'
-import { TileBox } from '../../molecules'
+import { TileBox } from '@components/molecules'
 // TYPES & INTERFACES
-import { TileGroupProps } from '../../../interfaces/organismProps'
-import { TileProps } from '../../../interfaces/atomProps'
-import { BasicColorType } from '../../../types/styleTypes'
+import { TileGroupProps } from '@interfaces/organismProps'
+import { TileProps } from '@interfaces/atomProps'
+import { ColorType } from '@customTypes/styleTypes'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
-import tileMocks from '../../atoms/Tile/index.mocks.json'
+import tileMocks from '@components/atoms/Tile/index.mocks.json'
 
 describe('TileGroup', () => {
   const { basicTestId, extensionTestId, testClasses, testChildrenColors } =
@@ -21,7 +21,7 @@ describe('TileGroup', () => {
     externalParser: i => ({
       context: 'is-parent',
       children: (
-        <TileBox color={testChildrenColors[i] as BasicColorType}>
+        <TileBox color={testChildrenColors[i] as ColorType}>
           {tileMocks.testing.basicChild.children}
         </TileBox>
       )

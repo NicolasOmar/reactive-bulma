@@ -1,23 +1,35 @@
 import React from 'react'
-import { fireEvent, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import TableHeadCell from '.'
 // TYPES & INTERFACES
-import { TableHeadCellProps } from '../../../interfaces/atomProps'
+import { TableHeadCellProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { renderTestingTableContainer } from '../../../functions/jest'
+import { renderTestingTableContainer } from '@functions/jest'
 // MOCKS
 import { testing } from './index.mocks.json'
 
 describe('TableHeadCell', () => {
-  const { basicTestId, testBaseConfig } = testing
+  const { basicTestId, testBaseConfig, testClasses } = testing
 
   test('Should render the component', () => {
     renderTestingTableContainer(<TableHeadCell {...testBaseConfig} />)
     const testTableHeadCell = screen.getByTestId(basicTestId)
 
     expect(testTableHeadCell).toBeInTheDocument()
+  })
+
+  test('Should render the button with specific classes', () => {
+    Object.keys(testClasses).forEach(prop => {
+      const classValue = (testClasses as Record<string, string>)[prop]
+      const classObj = { ...testBaseConfig, [prop]: classValue }
+      const testIdWithClass = `${basicTestId}-${classValue.replace('is-', '')}`
+      render(<TableHeadCell {...classObj} />)
+      const testClassButton = screen.getByTestId(testIdWithClass)
+      expect(testClassButton.className).toContain(classValue)
+      cleanup()
+    })
   })
 
   test('Should check that the component has been clicked', () => {

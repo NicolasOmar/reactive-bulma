@@ -3,9 +3,9 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Pagination from '.'
 // TYPES & INTERFACES
-import { PaginationItemProps } from '../../../interfaces/atomProps'
+import { PaginationItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 
@@ -22,7 +22,19 @@ export const BasicExample = Template.bind({})
 
 export const Centered = Template.bind({})
 Centered.args = {
-  alignment: 'is-centered'
+  alignment: 'centered'
+}
+
+export const BigSize = Template.bind({})
+BigSize.args = {
+  ...Centered.args,
+  size: 'large'
+}
+
+export const Rounded = Template.bind({})
+Rounded.args = {
+  ...Centered.args,
+  isRounded: true
 }
 
 export const CustomNavigationButtons = Template.bind({})

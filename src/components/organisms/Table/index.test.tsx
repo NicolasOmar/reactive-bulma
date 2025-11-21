@@ -4,9 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Table from '.'
 // TYPES & INTERFACES
-import { TableProps } from '../../../interfaces/organismProps'
+import { TableProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { testing } from './index.mocks.json'
 

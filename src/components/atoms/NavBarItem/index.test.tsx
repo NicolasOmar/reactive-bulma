@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import NavBarItem from '.'
 // TYPES & INTERFACES
-import { NavBarItemProps } from '../../../interfaces/atomProps'
+import { NavBarItemProps } from '@interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

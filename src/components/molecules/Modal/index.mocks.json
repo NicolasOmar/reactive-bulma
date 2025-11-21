@@ -24,7 +24,7 @@
         "color": "is-danger"
       }
     ],
-    "testImageSrc": "https://bulma.io/images/placeholders/256x256.png",
+    "testImageSrc": "https://bulma.io/assets/images/placeholders/256x256.png",
     "parameters": {
       "componentSubtitle": "A classic modal overlay, in which you can include any content you want",
       "docs": {

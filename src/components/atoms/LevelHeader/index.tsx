@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { LevelHeaderProps } from '../../../interfaces/atomProps'
+import { LevelHeaderProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseTestId } from '../../../functions/parsers'
+import { parseTestId } from '@functions/parsers'
 
 const LevelHeader: React.FC<LevelHeaderProps> = ({
   testId = null,

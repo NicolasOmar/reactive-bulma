@@ -4,7 +4,9 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Hero from '.'
 // TYPES & INTERFACES
-import { HeroProps } from '../../../interfaces/organismProps'
+import { HeroProps } from '@interfaces/organismProps'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'
@@ -28,7 +30,7 @@ describe('Hero', () => {
   test('Should render the component with specific classes', () => {
     testClasses.forEach(({ name, value, result }) => {
       const testIdWithClass = `${basicTestId}-${result.replace(
-        /is-|has-/gm,
+        TEST_ID_REGEXP.IS_HAS,
         ''
       )}`
       const classTestObject: HeroProps = {
@@ -48,7 +50,7 @@ describe('Hero', () => {
     const largeTestId = `${basicTestId}-large`
     const bigSizeConfig = {
       ...bigSizeProps,
-      size: 'is-large'
+      size: 'large'
     } as HeroProps
 
     render(<Hero {...bigSizeConfig} />)
@@ -64,7 +66,7 @@ describe('Hero', () => {
     const fullSizeTestId = `${basicTestId}-fullheight`
     const fullSizeConfig = {
       ...bigSizeProps,
-      size: 'is-fullheight'
+      size: 'fullheight'
     } as HeroProps
 
     render(<Hero {...fullSizeConfig} />)

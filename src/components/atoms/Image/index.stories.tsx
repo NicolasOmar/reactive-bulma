@@ -24,7 +24,12 @@ export const BasicExample = Template.bind({})
 
 export const WithFixedStyle = Template.bind({})
 WithFixedStyle.args = {
-  fixedSize: 'is-3by5'
+  fixedSize: '3by5'
+}
+
+export const FullSized = Template.bind({})
+FullSized.args = {
+  fixedSize: 'fullwidth'
 }
 
 export const IsRounded = Template.bind({})

@@ -1,5 +1,6 @@
 {
   "testing": {
+    "baseTestId": "test-title",
     "baseConfig": {
       "main": {
         "text": "Welcome to ReactiveBulma",
@@ -10,7 +11,7 @@
       "main": {
         "text": "Big size title",
         "type": "title",
-        "size": "is-1"
+        "size": "1"
       }
     },
     "withSubtitle": {
@@ -31,7 +32,7 @@
       "secondary": {
         "text": "And this, the subtitle",
         "type": "subtitle",
-        "size": "is-1"
+        "size": "1"
       }
     },
     "spacedTitle": {
@@ -45,7 +46,7 @@
         "type": "subtitle"
       }
     },
-    "sizes": ["is-1", "is-2", "is-3", "is-4"]
+    "sizes": ["1", "2", "3", "4"]
   },
   "storybook": {
     "argTypes": {
@@ -53,7 +54,7 @@
         "table": {
           "type": {
             "summary": "TitleSectionProps",
-            "detail": "{ text: string, size?: TitleSizeType, type: 'title' | 'subtitle' }"
+            "detail": "{ text: string, size?: `TitleSizeType`, type: 'title' | 'subtitle' }"
           }
         }
       },
@@ -61,7 +62,7 @@
         "table": {
           "type": {
             "summary": "TitleSectionProps",
-            "detail": "{ text: string, size?: TitleSizeType, type: 'title' | 'subtitle' }"
+            "detail": "{ text: string, size?: `TitleSizeType`, type: 'title' | 'subtitle' }"
           }
         }
       }

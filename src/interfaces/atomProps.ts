@@ -6,21 +6,22 @@ import {
   ClickeableProps,
   NamedInputProps,
   InteractiveProps,
-  InteractiveOnChangeProps
+  InteractiveOnChangeProps,
+  ColoredProps
 } from './commonProps'
 // TYPES & INTERFACES
 import {
-  BasicColorType,
+  ColorType,
   ColumnOffsetType,
   ColumnSizeType,
   FixedImageSizeType,
-  IconColorModeType,
-  ElementSizeType,
-  SizeWithoutNormalType,
-  TextColorType,
+  SizeWithNormalType,
+  BaseSizeType,
   TitleSizeType,
   RightLeftAlignType,
-  CommonSizeType
+  CommonSizeType,
+  ColorModeType,
+  GridCellPositionType
 } from '../types/styleTypes'
 import {
   DropdownItemType,
@@ -37,7 +38,7 @@ export interface ColumnProps
   children?: ChildrenType
   /** `Styling` Set column's size */
   size?: ColumnSizeType
-  /** `Styling` Set column's offset (moving it as you set its size */
+  /** `Styling` Set column's offset (moving it as you set its `size`) */
   offset?: ColumnOffsetType
   /** `Styling` Set if the column only will take the space it needs */
   isNarrow?: boolean
@@ -46,14 +47,18 @@ export interface ColumnProps
 export interface ButtonProps
   extends ElementProps,
     React.ComponentPropsWithoutRef<'button'> {
+  /** `Attribute` The component will be rendered as an anchor instead a button */
+  isAnAnchor?: boolean
+  /** `Attribute` In case the component has `isAnAnchor` as `true`, it will include an url to be reffered */
+  anchorHref?: string
   /** `Attribute` The text will be shown in the `Button` */
   text?: string
   /** `Attribute` Will disable the button */
   isDisabled?: boolean
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
-  /** `Styling` Will adjust the selected color with a ligther style */
-  isLightColor?: boolean
+  color?: ColorType
+  /** `Styling` Will adjust the selected color with a ligther or darker style */
+  colorMode?: ColorModeType
   /** `Styling` Will invert button's colors (typography in color and background in white or black) */
   isInvertedColor?: boolean
   /** `Styling` Similar to `isInvertedColor`, but button's border will be colored */
@@ -66,8 +71,12 @@ export interface ButtonProps
   isStatic?: boolean
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
   isSelected?: boolean
+  /** `Styling` Will adjust button's width to its container fullest */
+  isFullWidth?: boolean
+  /** `Styling` Will adjust button's size for a responsive design, adjustable to its size */
+  isResponsive?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: ElementSizeType
+  size?: SizeWithNormalType
   /** `Function` Click function, alone does not nothing, but can be reused for other components */
   onClick?: () => void
 }
@@ -80,9 +89,9 @@ export interface ProgressBarProps
   /** `Attribute` Sets the entire bar length comparing with current `value` */
   max?: number
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Set progress bar's size */
-  size?: ElementSizeType
+  size?: SizeWithNormalType
   /** `Styling` Will change `value` for an animated loading */
   isLoading?: boolean
 }
@@ -94,29 +103,30 @@ export interface BlockProps
   children?: ChildrenType
 }
 
-export interface TagProps
-  extends ComposedElementProps,
-    React.ComponentPropsWithoutRef<'span'> {
+interface BaseTagProps extends React.ComponentPropsWithoutRef<'span'> {
   /** `Attribute` `Required` The text will be shown in the `Tag` */
   text: string
   /** `Attribute` Will add a delete button (for both single or addon cases) */
   withDelete?: boolean
-  /** `Attribute` Will add a second tag element (that could have its own text, color and delete) */
-  withAddon?: boolean
-  /** `Attribute` The text will be shown in the tag's addon */
-  addonText?: string
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Will adjust the selected color with a ligther style */
   isLight?: boolean
   /** `Styling` Will add round borders to tag's shape */
   isRounded?: boolean
   /** `Styling` Set tag's size */
-  size?: SizeWithoutNormalType
-  /** `Styling` Color on tag's addon based on bulma's color tokens */
-  addonColor?: BasicColorType
+  size?: BaseSizeType
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
+}
+
+export interface TagProps extends ElementProps, BaseTagProps {}
+
+export interface TagWithAddonProps extends ComposedElementProps, BaseTagProps {
+  /** `Attribute` `Required` The text will be shown in the tag's addon */
+  addonText: string
+  /** `Styling` Color on tag's addon based on bulma's color tokens */
+  addonColor?: ColorType
 }
 
 export interface ImageProps
@@ -165,11 +175,11 @@ export interface IconProps extends ComposedElementProps {
   /** `Attribute` Sets the text you want to show next to the icon */
   text?: string
   /** `Styling` Color based on bulma's text color tokens */
-  color?: TextColorType
+  color?: ColorType
   /** `Styling` Set icons's size */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Special usage in case you want to set as dark or light mode */
-  colorMode?: IconColorModeType
+  colorMode?: ColorModeType
   /** `Styling` Animates the icon spinning 360° */
   isSpinning?: boolean
   /** `Styling` Used for `InputControl` styling purpose only. Will move the Icon itself to control's Input side */
@@ -191,9 +201,9 @@ export interface InputProps
   /** `Attribute` Will show the input as a normal one, but is not editable and has no shadow */
   isReadonly?: boolean
   /** `Styling` Color based on bulma's text color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Set input's size */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Will add round borders to input's shape */
   isRounded?: boolean
   /** `Styling` Will add a specific border when the input is hovered by the user */
@@ -213,7 +223,7 @@ export interface TextAreaProps extends Omit<InputProps, 'isRounded' | 'type'> {
 
 export interface DeleteProps extends ElementProps, ClickeableProps {
   /** `Styling` Set icons's size */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
 }
 
 export interface SelectOption {
@@ -236,9 +246,9 @@ export interface SelectProps
   /** `Attribute` Will allow multiple selection */
   isMultiple?: boolean
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Set select's size */
-  size?: ElementSizeType
+  size?: SizeWithNormalType
   /** `Styling`Will add round borders to input's shape */
   isRounded?: boolean
   /** `Styling`Will add a specific border when the input is hovered by the user */
@@ -264,9 +274,9 @@ export interface FileProps
   /** `Styling` Changes styling to a box style, making the button bigger and file name's position below the button */
   isBoxed?: boolean
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Set button's size */
-  size?: ElementSizeType
+  size?: SizeWithNormalType
 }
 
 export interface CheckBoxProps
@@ -307,6 +317,8 @@ export interface BreadcrumbItemProps
     ClickeableProps {
   /** `Attribute` `Required` Indicates item text that will be shown */
   text: string
+  /** `Attribute` Adds an `Icon` component before the text */
+  icon?: IconProps
   /** `Styling` Marks the item as the one where user is located (based on breadcrumb hierarchy) */
   isActiveItem?: boolean
 }
@@ -371,7 +383,7 @@ export interface TileProps extends ElementProps {
   /** `Styling` Set tile's size */
   size?: CommonSizeType
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Used for hierarchy level as ancestor or parent. It selects its children in a vertical format (like a column) */
   isVertical?: boolean
 }
@@ -383,12 +395,39 @@ export interface NavBarItemProps extends ElementProps, ClickeableProps {
   isActive?: boolean
 }
 
-export interface TableHeadCellProps extends ElementProps, ClickeableProps {
+export interface TableHeadCellProps
+  extends ElementProps,
+    ColoredProps,
+    ClickeableProps {
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
 }
 
-export interface TableCellProps extends ElementProps, ClickeableProps {
+export interface TableCellProps
+  extends ElementProps,
+    ColoredProps,
+    ClickeableProps {
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
+}
+
+export interface GridCellProps
+  extends ElementProps,
+    React.ComponentPropsWithoutRef<'section'> {
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the cell */
+  children?: ChildrenType
+  /** `Styling` Will adjust cell's position in the grid in specific points. If you want to set a specific position, work with wny of the other col/row `Start` or `StartFromEnd` properties */
+  position?: GridCellPositionType
+  /** `Styling` Change which column a cell starts at */
+  colStart?: number
+  /** `Styling` Change which row a cell starts at */
+  rowStart?: number
+  /** `Styling` Change which column a cell ends at, counting from the end */
+  colStartFromEnd?: number
+  /** `Styling` Change which row a cell ends at, counting from the end */
+  rowStartFromEnd?: number
+  /** `Styling` Change how many columns a cell spans */
+  colSpan?: number
+  /** `Styling` Change how many rows a cell spans */
+  rowSpan?: number
 }

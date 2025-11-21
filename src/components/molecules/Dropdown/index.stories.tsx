@@ -24,3 +24,21 @@ AllItemsAreLinks.args = {
     type: 'link'
   }))
 }
+
+export const Hoverable = Template.bind({})
+Hoverable.args = {
+  ...AllItemsAreLinks.args,
+  isHoverable: true
+}
+
+export const RightAligned = Template.bind({})
+RightAligned.args = {
+  ...AllItemsAreLinks.args,
+  isRightAligned: true
+}
+
+export const DropdownContentUp = Template.bind({})
+DropdownContentUp.args = {
+  ...AllItemsAreLinks.args,
+  isContentUp: true
+}

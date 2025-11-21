@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Panel from '.'
 // TYPES & INTERFACES
-import { PanelProps } from '../../../interfaces/organismProps'
+import { PanelProps } from '@interfaces/organismProps'
 // MOCKS
 import { testing } from './index.mocks.json'
-import panelTabsMock from '../../molecules/PanelTabs/index.mocks.json'
+import panelTabsMock from '@components/molecules/PanelTabs/index.mocks.json'
 
 describe('Panel', () => {
   const { basicTestId, basicConfig, testClasses } = testing

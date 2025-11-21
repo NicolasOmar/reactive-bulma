@@ -1,0 +1,67 @@
+import React from 'react'
+import { StoryFn, Meta } from '@storybook/react'
+// COMPONENTS
+import Grid from '.'
+// TYPES & INTERFACES
+// FUNCTIONS
+// MOCKS
+import { storybook, testing } from './index.mocks.json'
+
+const renderGridCells = (listLength: number = 5) =>
+  Array(listLength)
+    .fill(null)
+    .map(() => ({
+      children: <p>{testing.testParagraph}</p>
+    }))
+
+export default {
+  title: 'Molecules/Grid',
+  component: Grid,
+  ...storybook,
+  args: { listOfCells: renderGridCells() }
+} as Meta<typeof Grid>
+
+const Template: StoryFn<typeof Grid> = args => <Grid {...args} />
+
+export const BasicExample = Template.bind({})
+
+export const LotsOfCells = Template.bind({})
+LotsOfCells.args = {
+  listOfCells: renderGridCells(25)
+}
+
+export const HugeColumnGap = Template.bind({})
+HugeColumnGap.args = {
+  ...LotsOfCells.args,
+  columnGap: '8'
+}
+
+export const HugeRowGap = Template.bind({})
+HugeRowGap.args = {
+  ...LotsOfCells.args,
+  rowGap: '8'
+}
+
+export const HugeGridGap = Template.bind({})
+HugeGridGap.args = {
+  ...LotsOfCells.args,
+  gap: '8'
+}
+
+export const FixedGrid = Template.bind({})
+FixedGrid.args = {
+  ...LotsOfCells.args,
+  isFixed: true
+}
+
+export const FixedGridWithThreeColumns = Template.bind({})
+FixedGridWithThreeColumns.args = {
+  ...FixedGrid.args,
+  fixedColumnsCount: '3'
+}
+
+export const FixedGridWithAutoColumns = Template.bind({})
+FixedGridWithAutoColumns.args = {
+  ...FixedGrid.args,
+  isAutoColumns: true
+}

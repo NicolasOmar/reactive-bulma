@@ -4,12 +4,12 @@
     "testClasses": [
       {
         "name": "size",
-        "value": "is-fullheight",
+        "value": "fullheight",
         "result": "is-fullheight"
       },
       {
         "name": "color",
-        "value": "is-danger",
+        "value": "danger",
         "result": "is-danger"
       }
     ],

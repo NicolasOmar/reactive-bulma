@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import TextArea from '.'
 // TYPES & INTERFACES
-import { TextAreaProps } from '../../../interfaces/atomProps'
+import { TextAreaProps } from '@interfaces/atomProps'
 // MOCKS
 import { testing } from './index.mocks.json'
 

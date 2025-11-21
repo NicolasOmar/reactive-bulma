@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import PanelBlock from '.'
 // TYPES & INTERFACES
-import { PanelBlockProps } from '../../../interfaces/moleculeProps'
+import { PanelBlockProps } from '@interfaces/moleculeProps'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

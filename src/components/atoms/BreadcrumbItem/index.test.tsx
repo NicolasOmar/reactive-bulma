@@ -5,6 +5,7 @@ import '@testing-library/jest-dom'
 import BreadcrumbItem from '.'
 // MOCKS
 import { testing } from './index.mocks.json'
+import iconMocks from '../Icon/index.mocks.json'
 
 describe('BreadcrumbItem', () => {
   const { basicTestId, basicContainerTestId, testText } = testing
@@ -18,5 +19,16 @@ describe('BreadcrumbItem', () => {
     expect(testBreadcrumbItem).toBeInTheDocument()
     expect(testContainer).toBeInTheDocument()
     expect(testItemText).toBeInTheDocument()
+  })
+
+  test('Should render an included Icon', () => {
+    const tabWithIconConfig = {
+      text: testText,
+      icon: iconMocks.testing.baseConfig
+    }
+    render(<BreadcrumbItem {...tabWithIconConfig} />)
+    const testIcon = screen.getByTestId(iconMocks.testing.baseIconTestId)
+
+    expect(testIcon).toBeInTheDocument()
   })
 })

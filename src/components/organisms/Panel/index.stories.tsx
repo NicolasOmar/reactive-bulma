@@ -3,10 +3,10 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import Panel from '.'
 // TYPES & INTERFACES
-import { PanelProps } from '../../../interfaces/organismProps'
-import { PanelBlockProps } from '../../../interfaces/moleculeProps'
+import { PanelProps } from '@interfaces/organismProps'
+import { PanelBlockProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
 

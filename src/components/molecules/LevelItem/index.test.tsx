@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import LevelItem from '.'
 // TYPES & INTERFACES
-import { LevelItemProps } from '../../../interfaces/moleculeProps'
+import { LevelItemProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

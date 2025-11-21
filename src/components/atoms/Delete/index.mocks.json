@@ -2,9 +2,9 @@
   "testing": {
     "baseDeleteTestId": "test-delete",
     "bigSize": {
-      "size": "is-large"
+      "size": "large"
     },
-    "sizes": ["is-small","is-medium","is-large"]
+    "sizes": ["small", "medium", "large"]
   },
   "storybook": {
     "parameters": {
