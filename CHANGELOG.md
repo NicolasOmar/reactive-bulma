@@ -1,3 +1,24 @@
+# [4.4.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.28...v4.4.0) (2025-11-23)
+
+
+### Bug Fixes
+
+* Adding alias to vite, tsconfig and jest files to shorter import references ([15e0905](https://github.com/NicolasOmar/reactive-bulma/commit/15e0905d97e149155fbbb76a4371983e019bd399))
+* Adding colored property to table elements and sections ([b8680d2](https://github.com/NicolasOmar/reactive-bulma/commit/b8680d2f3e600b8e0aaca65760d42f0f1d6bd2e2))
+* Breadcrumbs now can use Icon alongside its text ([29d3d10](https://github.com/NicolasOmar/reactive-bulma/commit/29d3d10fea9831a5de02b7f89e86b0c22e8cb252))
+* solving some issues related to dark mode implementation on storybook ([708d953](https://github.com/NicolasOmar/reactive-bulma/commit/708d95341f0cf397640ad1be7b4af045a1bdcb4a))
+* updating dependencies versions ([02d0e7f](https://github.com/NicolasOmar/reactive-bulma/commit/02d0e7f77952d68f4e6c674baa881590709837cf))
+
+
+### Features
+
+* Tag component splitted on TagWithAddon for better logic handling ([f9ca6d5](https://github.com/NicolasOmar/reactive-bulma/commit/f9ca6d5575f975025a34d90972b50d04755f00bb))
+* Update Bulma and React to last major versions ([#636](https://github.com/NicolasOmar/reactive-bulma/issues/636))([#559](https://github.com/NicolasOmar/reactive-bulma/issues/559))([#698](https://github.com/NicolasOmar/reactive-bulma/issues/698)) ([b48bbf5](https://github.com/NicolasOmar/reactive-bulma/commit/b48bbf5003a7be46f01f316d8b555e8689e0f287))
+* updating bulma version to last major ([0d26ba4](https://github.com/NicolasOmar/reactive-bulma/commit/0d26ba40cfe22509525ad1517b9bab43e7922758))
+* updating bulma version to last major ([27f6f2f](https://github.com/NicolasOmar/reactive-bulma/commit/27f6f2f3a7e7457bc1e829efb027cd8c1d6b3155))
+* updating react version to last major ([7850861](https://github.com/NicolasOmar/reactive-bulma/commit/7850861b2cfd9702d5ca8e781d2487dfc058c5df))
+* updating react version to last major ([ba90326](https://github.com/NicolasOmar/reactive-bulma/commit/ba90326b3e1a0e382f70d8bab1f2d42d4fad9c78))
+
 ## [4.3.28](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.27...v4.3.28) (2025-11-16)
 
 
