@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.4.0...v5.0.0) (2025-11-23)
+
+
+### Features
+
+* Add missing v5 tag ([#703](https://github.com/NicolasOmar/reactive-bulma/issues/703))([#702](https://github.com/NicolasOmar/reactive-bulma/issues/702)) ([44f2074](https://github.com/NicolasOmar/reactive-bulma/commit/44f2074892c7cb3103a67e7fef4358d694f00f66))
+
+
+### BREAKING CHANGES
+
+* Properties related to color, size, alignment, and others have been renamed for easier use. Also Tag component has been replaced by two (TagWithAddon).
+
 # [4.4.0](https://github.com/NicolasOmar/reactive-bulma/compare/v4.3.28...v4.4.0) (2025-11-23)
 
 
