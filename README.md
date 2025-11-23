@@ -207,19 +207,12 @@ After launching the next major version (with the needed major updates), I will c
 
 In case you want actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
 
+<details>
+<summary>Here is the status table I used to keep track of the worked milestones/versions. (v5 included)</summary>
+
 | Version | Progress | Open issues | Closed issues
 | :---: | :---: | :---: | :---: |
 | `v5.0.0` | ![v5.0.0, progress][badge-progress-500] | ![v5.0.0, open][badge-issues-open-500] | ![v5.0.0, closed][badge-issues-closed-500] |
-| `v4.0.0` | ![v4.0.0, progress][badge-progress-400] | ![v4.0.0, open][badge-issues-open-400] | ![v4.0.0, closed][badge-issues-closed-400] |
-| `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
-| `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
-| `v1.0.0` | ![v1.0.0, progress][badge-progress-100] | ![v1.0.0, open][badge-issues-open-100] | ![v1.0.0, closed][badge-issues-closed-100] |
-
-<details>
-<summary>Here is the status table I used to keep track of the worked milestones/versions. (before v5)</summary>
-
-| Version | Progress | Open issues | Closed issues
-| :---: | :---: | :---: | :---: |
 | `v4.0.0` | ![v4.0.0, progress][badge-progress-400] | ![v4.0.0, open][badge-issues-open-400] | ![v4.0.0, closed][badge-issues-closed-400] |
 | `v3.0.0` | ![v3.0.0, progress][badge-progress-300] | ![v3.0.0, open][badge-issues-open-300] | ![v3.0.0, closed][badge-issues-closed-300] |
 | `v2.0.0` | ![v2.0.0, progress][badge-progress-200] | ![v2.0.0, open][badge-issues-open-200] | ![v2.0.0, closed][badge-issues-closed-200] |
@@ -240,9 +233,9 @@ In case you want actual short-term status, go to the [project board](https://git
 [badge-progress-400]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=informational
 [badge-issues-open-400]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=orange
 [badge-issues-closed-400]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/4?label=%20&style=flat&color=success
-[badge-progress-500]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/5?label=%20&style=flat&color=informational
-[badge-issues-open-500]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/5?label=%20&style=flat&color=orange
-[badge-issues-closed-500]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/5?label=%20&style=flat&color=success
+[badge-progress-500]: https://img.shields.io/github/milestones/progress-percent/nicolasomar/reactive-bulma/6?label=%20&style=flat&color=informational
+[badge-issues-open-500]: https://img.shields.io/github/milestones/issues-open/nicolasomar/reactive-bulma/6?label=%20&style=flat&color=orange
+[badge-issues-closed-500]: https://img.shields.io/github/milestones/issues-closed/nicolasomar/reactive-bulma/6?label=%20&style=flat&color=success
 
 ## Changelog
 
