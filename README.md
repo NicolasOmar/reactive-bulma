@@ -129,6 +129,7 @@ In case you have cloned the repo, it will show you the following folders:
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
 - `src:`
+  - `constants:` Location of shared constant values to be used in interfaces and component implementations.
   - `components:` Location of all used components, using [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/)
     - `atoms` (from `v1.0.0`).
     - `molecules` (from `v2.0.0`).
