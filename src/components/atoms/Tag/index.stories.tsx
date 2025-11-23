@@ -19,7 +19,7 @@ export const BasicExample = Template.bind({})
 export const Colored = Template.bind({})
 Colored.args = {
   ...BasicExample.args,
-  color: 'is-danger'
+  color: 'danger'
 }
 
 export const Rounded = Template.bind({})
@@ -37,30 +37,11 @@ LightColor.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const WithDeleteButton = Template.bind({})
 WithDeleteButton.args = {
   ...Colored.args,
-  withDelete: true
-}
-
-export const WithAnAddon = Template.bind({})
-WithAnAddon.args = {
-  ...Colored.args,
-  withAddon: true,
-  addonText: 'Addon'
-}
-
-export const ColoredAddon = Template.bind({})
-ColoredAddon.args = {
-  ...WithAnAddon.args,
-  addonColor: 'is-info'
-}
-
-export const WithDeleteAddon = Template.bind({})
-WithDeleteAddon.args = {
-  ...WithAnAddon.args,
   withDelete: true
 }

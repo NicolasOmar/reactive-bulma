@@ -1,10 +1,10 @@
 import React from 'react'
 // COMPONENTS
-import { Tile } from '../../atoms'
+import { Tile } from '@components/atoms'
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
+import { TileProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const TileBox: React.FC<TileProps> = ({
   testId = null,

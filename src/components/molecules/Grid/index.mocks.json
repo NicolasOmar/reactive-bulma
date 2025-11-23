@@ -1,0 +1,51 @@
+{
+  "testing": {
+    "basicTestId": "test-grid",
+    "basicContainerTestId": "test-fixed-grid",
+    "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
+    "testClasses": [
+      {
+        "name": "gap",
+        "value": "0",
+        "result": "is-gap-0"
+      },
+      {
+        "name": "columnGap",
+        "value": "0",
+        "result": "is-column-gap-0"
+      },
+      {
+        "name": "rowGap",
+        "value": "0",
+        "result": "is-row-gap-0"
+      },
+      {
+        "name": "cellMinWidth",
+        "value": "32",
+        "result": "is-col-min-32"
+      }
+    ],
+    "testContainerClasses": [
+      {
+        "name": "fixedColumnsCount",
+        "value": "12",
+        "result": "has-12-cols"
+      },
+      {
+        "name": "isAutoColumns",
+        "value": true,
+        "result": "has-auto-count"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "A smart 2D grid with flexible columns",
+      "docs": {
+        "description": {
+          "component": "Bulma v1 comes with a new Grid. This grid is a 2 dimensional layout component that features flexible columns: Bulma will fit as many columns as possible, given a minimum column width and a column and row gap."
+        }
+      }
+    }
+  }
+}

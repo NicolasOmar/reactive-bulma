@@ -1,6 +1,6 @@
 {
   "testing": {
-    "basicTestId": "test-tileGroup",
+    "basicTestId": "test-tile-group",
     "extensionTestId": "ancestor",
     "testClasses": [
       {
@@ -14,7 +14,7 @@
         "result": "is-vertical"
       }
     ],
-    "testChildrenColors": ["is-info", "is-primary", "is-danger"]
+    "testChildrenColors": ["info", "primary", "danger"]
   },
   "storybook": {
     "parameters": {

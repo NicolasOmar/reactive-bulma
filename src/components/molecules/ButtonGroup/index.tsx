@@ -1,11 +1,11 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { ButtonGroupProps } from '../../../interfaces/moleculeProps'
+import { ButtonGroupProps } from '@interfaces/moleculeProps'
 // COMPONENTS
-import { Button } from '../../atoms'
+import { Button } from '@components/atoms'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
   testId = null,

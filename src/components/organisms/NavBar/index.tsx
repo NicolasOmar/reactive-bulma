@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 // COMPONENTS
-import { NavBarItem } from '../../atoms'
-import { NavBarBrand, NavBarDropdown } from '../../molecules'
+import { NavBarItem } from '@components/atoms'
+import { NavBarBrand, NavBarDropdown } from '@components/molecules'
 // TYPES & INTERFACES
-import { NavBarMenuProps, NavBarProps } from '../../../interfaces/organismProps'
-import { NavBarItemProps } from '../../../interfaces/atomProps'
-import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarMenuProps, NavBarProps } from '@interfaces/organismProps'
+import { NavBarItemProps } from '@interfaces/atomProps'
+import { NavBarDropdownProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const renderNavBarMenuSection = (
   menuSectionConfig: NavBarMenuProps | null,
@@ -23,12 +26,12 @@ const renderNavBarMenuSection = (
       {menuSectionConfig.itemList.map(itemConfig =>
         (itemConfig as NavBarItemProps).children !== undefined ? (
           <NavBarItem
-            key={`navbar-section${menuSection}-${generateKey()}`}
+            key={`navbar-section-${menuSection}-${generateKey()}`}
             {...(itemConfig as NavBarItemProps)}
           />
         ) : (
           <NavBarDropdown
-            key={`navbar-section${menuSection}-${generateKey()}`}
+            key={`navbar-section-${menuSection}-${generateKey()}`}
             {...(itemConfig as NavBarDropdownProps)}
           />
         )
@@ -49,25 +52,48 @@ const NavBar: React.FC<NavBarProps> = ({
   isSpaced = false,
   hasShadow = false
 }) => {
+  const navBarBaseClass = 'navbar'
   const navBarClasses = parseClasses([
-    'navbar',
+    navBarBaseClass,
     fixedPosition,
-    color,
-    isTransparent ? 'is-transparent' : null,
-    isSpaced ? 'is-spaced' : null,
-    hasShadow ? 'has-shadow' : null,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    isTransparent ? COMMON_CLASSES.TRANSPARENT : null,
+    isSpaced ? COMMON_CLASSES.SPACED : null,
+    hasShadow ? COMMON_CLASSES.SHADOW : null,
     cssClasses
   ])
   const navBarTestId =
     testId ??
     parseTestId({
-      tag: 'navbar',
+      tag: navBarBaseClass,
       parsedClasses: navBarClasses,
       rules: [
-        { regExp: /is-|has-/gm, replacer: '-' },
-        { regExp: /navbar/gm, replacer: '' }
+        { regExp: TEST_ID_REGEXP.IS_HAS, replacer: '-' },
+        { regExp: TEST_ID_REGEXP.NAVBAR, replacer: '' }
       ]
     })
+
+  const memoizedBrand = useMemo(
+    () =>
+      brandConfig ? (
+        <section
+          data-testid='navbar-brand'
+          className='navbar-brand'
+        >
+          {<NavBarBrand {...brandConfig} />}
+        </section>
+      ) : null,
+    [brandConfig]
+  )
+
+  const memoizedMenuSection = useCallback(
+    (
+      menuSectionConfig: NavBarMenuProps | null,
+      menuSection: 'start' | 'end',
+      testId: string
+    ) => renderNavBarMenuSection(menuSectionConfig, menuSection, testId),
+    []
+  )
 
   return (
     <nav
@@ -75,18 +101,10 @@ const NavBar: React.FC<NavBarProps> = ({
       className={navBarClasses}
       style={style ?? undefined}
     >
-      {brandConfig ? (
-        <section
-          data-testid='navbar-brand'
-          className='navbar-brand'
-        >
-          {<NavBarBrand {...brandConfig} />}
-        </section>
-      ) : null}
-
+      {memoizedBrand}
       <section className='navbar-menu'>
-        {renderNavBarMenuSection(itemsAtStart, 'start', navBarTestId)}
-        {renderNavBarMenuSection(itemsAtEnd, 'end', navBarTestId)}
+        {memoizedMenuSection(itemsAtStart, 'start', navBarTestId)}
+        {memoizedMenuSection(itemsAtEnd, 'end', navBarTestId)}
       </section>
     </nav>
   )

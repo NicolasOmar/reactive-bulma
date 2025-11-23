@@ -4,9 +4,11 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Icon from '.'
 // TYPES & INTERFACES
-import { IconProps } from '../../../interfaces/atomProps'
-import { SizeWithoutNormalType } from '../../../types/styleTypes'
-import { IconSizeEnum } from '../../../types/domTypes'
+import { IconProps } from '@interfaces/atomProps'
+import { BaseSizeType } from '@customTypes/styleTypes'
+import { IconSizeEnum } from '@customTypes/domTypes'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // MOCKS
 import { testing } from './index.mocks.json'
 
@@ -37,12 +39,13 @@ describe('Icon', () => {
 
   test('Should render with different colors', () => {
     colors.forEach(_color => {
+      const parsedColor = `${COMMON_CLASSES.HAS_TEXT}${_color}`
       const coloredConfig = {
         ...baseConfig,
         ...textIncluded,
         color: _color
       } as IconProps
-      const coloredTestId = `test-icon-container-${_color.replace(
+      const coloredTestId = `test-icon-container-${parsedColor.replace(
         'has-text-',
         ''
       )}`
@@ -56,13 +59,13 @@ describe('Icon', () => {
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
       const sizedTestId = `test-icon-home-${
-        IconSizeEnum[_size as SizeWithoutNormalType]
+        IconSizeEnum[_size as BaseSizeType]
       }px`
       const sizedConfig = { ...baseConfig, size: _size } as IconProps
 
       render(<Icon {...sizedConfig} />)
       const testColorTag = screen.getByTestId(sizedTestId)
-      expect(testColorTag.classList).toContain(_size)
+      expect(testColorTag.classList).toContain(`${COMMON_CLASSES.IS}${_size}`)
     })
   })
 

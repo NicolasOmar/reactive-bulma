@@ -4,7 +4,7 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 import Tile from '.'
 import { Image } from '../index'
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
+import { TileProps } from '@interfaces/atomProps'
 // FUNCTIONS
 // MOCKS
 import { storybook, testing } from './index.mocks.json'

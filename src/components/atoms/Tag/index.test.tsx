@@ -4,16 +4,15 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import Tag from '.'
 // TYPES & INTERFACES
-import {
-  BasicColorType,
-  SizeWithoutNormalType
-} from '../../../types/styleTypes'
-import { TagProps } from '../../../interfaces/atomProps'
+import { ColorType, BaseSizeType } from '@customTypes/styleTypes'
+import { TagProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // MOCKS
 import { testing } from './index.mocks.json'
 
 describe('Tag', () => {
-  const { baseConfig, colors, testClasses, addonConfig, sizes } = testing
+  const { baseConfig, colors, testClasses, sizes } = testing
   let tagConfig: TagProps = baseConfig
 
   test('Should render with required props only', () => {
@@ -24,29 +23,29 @@ describe('Tag', () => {
 
   test('Should render with different colors', () => {
     colors.forEach(_color => {
-      const coloredTestId = `test-tag-${_color.replace('is-', '')}`
+      const coloredTestId = `test-tag-${_color}`
       const testColoredConfig = {
         ...baseConfig,
-        color: _color as BasicColorType
+        color: _color as ColorType
       }
 
       render(<Tag {...testColoredConfig} />)
       const testColorTag = screen.getByTestId(coloredTestId)
-      expect(testColorTag.classList).toContain(_color)
+      expect(testColorTag.classList).toContain(`${COMMON_CLASSES.IS}${_color}`)
     })
   })
 
   test('Should render with different sizes', () => {
     sizes.forEach(_size => {
-      const resizedTestId = `test-tag-${_size.replace('is-', '')}`
+      const resizedTestId = `test-tag-${_size}`
       const testResizedConfig = {
         ...baseConfig,
-        size: _size as SizeWithoutNormalType
+        size: _size as BaseSizeType
       }
 
       render(<Tag {...testResizedConfig} />)
       const testSizedTag = screen.getByTestId(resizedTestId)
-      expect(testSizedTag.classList).toContain(_size)
+      expect(testSizedTag.classList).toContain(`${COMMON_CLASSES.IS}${_size}`)
     })
   })
 
@@ -68,29 +67,6 @@ describe('Tag', () => {
     render(<Tag {...tagConfig} />)
 
     const clickButton = screen.getByTestId('test-tag-delete')
-    fireEvent.click(clickButton)
-    expect(tagConfig.onDeleteClick).toHaveBeenCalled()
-    expect(tagConfig.onDeleteClick).toHaveBeenCalledTimes(1)
-  })
-
-  test('Should render the tags variation with its addon text', () => {
-    const tagsTestId = 'test-tags-has-addons'
-
-    render(<Tag {...{ ...baseConfig, ...addonConfig }} />)
-    const testTags = screen.getByTestId(tagsTestId)
-    expect(testTags).toBeInTheDocument()
-  })
-
-  test('Should check that its delete button has been clicked with the tags variation', () => {
-    tagConfig = {
-      ...baseConfig,
-      withAddon: true,
-      withDelete: true,
-      onDeleteClick: jest.fn()
-    }
-    render(<Tag {...tagConfig} />)
-
-    const clickButton = screen.getByTestId('test-tags-has-addons-delete')
     fireEvent.click(clickButton)
     expect(tagConfig.onDeleteClick).toHaveBeenCalled()
     expect(tagConfig.onDeleteClick).toHaveBeenCalledTimes(1)

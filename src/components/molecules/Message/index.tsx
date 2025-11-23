@@ -1,10 +1,12 @@
 import React from 'react'
 // COMPONENTS
-import { Delete } from '../../atoms'
+import { Delete } from '@components/atoms'
 // TYPES & INTERFACES
-import { MessageProps } from '../../../interfaces/moleculeProps'
+import { MessageProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Message: React.FC<MessageProps> = ({
   testId = null,
@@ -16,9 +18,16 @@ const Message: React.FC<MessageProps> = ({
   color = null,
   size = null
 }) => {
-  const messageClasses = parseClasses(['message', color, size, cssClasses])
+  const messageBaseClass = 'message'
+  const messageClasses = parseClasses([
+    messageBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    cssClasses
+  ])
   const messageTestId =
-    testId ?? parseTestId({ tag: 'message', parsedClasses: messageClasses })
+    testId ??
+    parseTestId({ tag: messageBaseClass, parsedClasses: messageClasses })
 
   return (
     <article
@@ -29,7 +38,7 @@ const Message: React.FC<MessageProps> = ({
       {headerText && (
         <section
           data-testid={`${messageTestId}-header`}
-          className='message-header'
+          className={`${messageBaseClass}-header`}
         >
           <p>{headerText}</p>
           {deleteButton ? <Delete {...deleteButton} /> : null}
@@ -37,7 +46,7 @@ const Message: React.FC<MessageProps> = ({
       )}
       <section
         data-testid={`${messageTestId}-body`}
-        className='message-body'
+        className={`${messageBaseClass}-body`}
       >
         {bodyText}
       </section>

@@ -9,11 +9,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "saturday"
-      time: "09:30"
-      timezone: "America/Argentina/Cordoba"
+      day: "sunday"
+      time: "09:00"
+      timezone: "Europe/Madrid"
     assignees:
       - "nicolasomar"
+    milestone: 5
     target-branch: "main"
     versioning-strategy: increase-if-necessary
 
@@ -21,9 +22,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "saturday"
-      time: "09:30"
-      timezone: "America/Argentina/Cordoba"
+      day: "sunday"
+      time: "09:00"
+      timezone: "Europe/Madrid"
     assignees:
       - "nicolasomar"
+    milestone: 5
     target-branch: "main"

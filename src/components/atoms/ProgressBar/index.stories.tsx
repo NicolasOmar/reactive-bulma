@@ -24,7 +24,7 @@ HalfValue.args = {
 export const Colored = Template.bind({})
 Colored.args = {
   ...HalfValue.args,
-  color: 'is-primary'
+  color: 'primary'
 }
 
 export const MaxBeyond100 = Template.bind({})
@@ -37,7 +37,7 @@ MaxBeyond100.args = {
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...MaxBeyond100.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const Loading = Template.bind({})

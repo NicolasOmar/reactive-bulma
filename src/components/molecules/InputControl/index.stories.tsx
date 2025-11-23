@@ -3,11 +3,11 @@ import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import InputControl from '.'
 // TYPES & INTERFACES
-import { InputProps } from '../../../interfaces/atomProps'
-import { InputControlProps } from '../../../interfaces/moleculeProps'
+import { InputProps } from '@interfaces/atomProps'
+import { InputControlProps } from '@interfaces/moleculeProps'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import iconMocks from '../../atoms/Icon/index.mocks.json'
+import iconMocks from '@components/atoms/Icon/index.mocks.json'
 
 export default {
   title: 'Molecules/InputControl',
@@ -31,12 +31,21 @@ WithBothIcons.args = {
   rightIcon: iconMocks.testing.otherIcon
 }
 
+export const WithLabel = Template.bind({})
+WithLabel.args = testing.withLabel
+
+export const WithLabelAndHelper = Template.bind({})
+WithLabelAndHelper.args = {
+  ...WithLabel.args,
+  helper: testing.withHelper
+}
+
 export const ErrorState = Template.bind({})
 ErrorState.args = {
-  ...WithBothIcons.args,
+  ...WithLabelAndHelper.args,
   inputConfig: {
     ...(testing.baseConfig.inputConfig as InputProps),
-    color: 'is-danger'
+    color: 'danger'
   }
 }
 

@@ -14,5 +14,13 @@ export default {
       lines: 95,
       statements: 95,
     },
-  }
+  },
+  moduleNameMapper: {
+    '^@constants/(.*)$': '<rootDir>/src/constants/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@design/(.*)$': '<rootDir>/src/design/$1',
+    '^@functions/(.*)$': '<rootDir>/src/functions/$1',
+    '^@interfaces/(.*)$': '<rootDir>/src/interfaces/$1',
+    '^@customTypes/(.*)$': '<rootDir>/src/types/$1'
+  },
 };

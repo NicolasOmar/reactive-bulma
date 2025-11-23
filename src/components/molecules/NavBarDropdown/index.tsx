@@ -1,25 +1,11 @@
-import React from 'react'
+import React, { Fragment, useMemo } from 'react'
 // COMPONENTS
-import { NavBarItem } from '../../atoms'
+import { NavBarItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
-import { NavBarItemProps } from '../../../interfaces/atomProps'
+import { NavBarDropdownProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
-
-const renderDropdownItem = (dropdownItemConfig: NavBarItemProps | 'divider') =>
-  dropdownItemConfig === 'divider' ? (
-    <hr
-      key={`navbar-dropdown-divider-${generateKey()}`}
-      className='navbar-divider'
-    />
-  ) : (
-    <NavBarItem
-      key={`navbar-dropdown-item-${generateKey()}`}
-      {...dropdownItemConfig}
-    />
-  )
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
   testId = null,
@@ -34,7 +20,8 @@ const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
   isActive = false,
   isHoverable = false,
   hasDropdownUp = false,
-  hasBoxedMenu = false
+  hasBoxedMenu = false,
+  isArrowLess = null
 }) => {
   const navBarDropdownContainerClasses = parseClasses([
     'navbar-item',
@@ -60,12 +47,36 @@ const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
     hasBoxedMenu ? 'is-boxed' : null,
     cssClasses
   ])
+  const navBarLinkClasses = parseClasses([
+    'navbar-link',
+    isArrowLess ? 'is-arrowless' : null
+  ])
   const navBarDropdownTestId =
     testId ??
     parseTestId({
       tag: 'navbar-dropdown',
       parsedClasses: navBarDropdownClasses
     })
+
+  const memoizedNavbarItems = useMemo(
+    () =>
+      items.map(_itemConfig => {
+        const isDividerItem = _itemConfig === 'divider'
+        const itemKey = isDividerItem
+          ? 'navbar-dropdown-divider'
+          : 'navbar-dropdown-item'
+        return (
+          <Fragment key={`${itemKey}-${generateKey()}`}>
+            {isDividerItem ? (
+              <hr className='navbar-divider' />
+            ) : (
+              <NavBarItem {..._itemConfig} />
+            )}
+          </Fragment>
+        )
+      }),
+    [items]
+  )
 
   return (
     <section
@@ -74,7 +85,7 @@ const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
       style={containerStyle ?? undefined}
     >
       <a
-        className='navbar-link'
+        className={navBarLinkClasses}
         aria-hidden='true'
       >
         {text}
@@ -85,7 +96,7 @@ const NavBarDropdown: React.FC<NavBarDropdownProps> = ({
         className={navBarDropdownClasses}
         style={style ?? undefined}
       >
-        {items.map(renderDropdownItem)}
+        {memoizedNavbarItems}
       </section>
     </section>
   )

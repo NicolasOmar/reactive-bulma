@@ -2,7 +2,7 @@ name: Check builds
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["main", "feature/updating-bulma-to-v1"]
 
 jobs:
   build:
@@ -10,9 +10,9 @@ jobs:
 
     steps:
     - name: 1/5 | Checkout repo
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
     - name: 2/5 | Setup Node environment
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: latest
     - name: 3/5 | Install depedencies

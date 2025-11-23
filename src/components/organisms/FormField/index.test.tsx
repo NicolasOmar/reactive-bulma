@@ -4,10 +4,10 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import FormField from '.'
 // TYPES & INTERFACES
-import { FormFieldProps } from '../../../interfaces/organismProps'
-import { FormFieldInputProps } from '../../../interfaces/moleculeProps'
+import { FormFieldProps } from '@interfaces/organismProps'
+import { FormFieldInputProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import mocks from './index.mocks.json'
 
@@ -15,11 +15,11 @@ describe('FormField', () => {
   const { basicTestId, testClasses, basicGroupedInputTestId, baseConfig } =
     mocks.testing
   const baseTestConfig = {
-    config: baseConfig.config as FormFieldInputProps
+    inputsConfig: baseConfig.inputsConfig as FormFieldInputProps
   }
   const listOfGroupedInputControls = createObjArray({
     numberOfItems: 2,
-    externalParser: () => baseConfig.config
+    externalParser: () => baseConfig.inputsConfig
   })
 
   test('Should render the component', () => {
@@ -51,7 +51,7 @@ describe('FormField', () => {
 
   test('Should render a grouped list of inputs', () => {
     const testFieldWithGroupedInputList = {
-      config: listOfGroupedInputControls as FormFieldInputProps[],
+      inputsConfig: listOfGroupedInputControls as FormFieldInputProps[],
       isGrouped: true
     }
 
@@ -67,7 +67,7 @@ describe('FormField', () => {
 
   test('Should render first input from a list when is FormField is not grouped', () => {
     const testFieldWithInputList = {
-      config: listOfGroupedInputControls as FormFieldInputProps[]
+      inputsConfig: listOfGroupedInputControls as FormFieldInputProps[]
     }
 
     render(<FormField {...testFieldWithInputList} />)

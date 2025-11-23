@@ -1,78 +1,47 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { TagProps } from '../../../interfaces/atomProps'
+import { TagProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Tag: React.FC<TagProps> = ({
   testId = null,
-  containerTestId = null,
   cssClasses = null,
-  containerCssClasses = null,
   style = null,
-  containerStyle = null,
   text,
   withDelete = false,
-  withAddon = false,
-  addonText = null,
   color = null,
   isLight = null,
   isRounded = null,
   size = null,
-  addonColor = null,
   onDeleteClick = null
 }) => {
-  const tagContainerClasses = parseClasses([
-    'tags',
-    'has-addons',
-    size ? size.replace('is-', 'are-') : null,
-    containerCssClasses
-  ])
+  const tagBaseClass = 'tag'
   const tagClasses = parseClasses([
-    'tag',
-    color,
-    isLight && !withAddon ? 'is-light' : null,
-    isRounded && !withAddon ? 'is-rounded' : null,
-    size,
+    tagBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    isLight ? COMMON_CLASSES.LIGHT : null,
+    isRounded ? COMMON_CLASSES.ROUNDED : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     cssClasses
   ])
-  const tagAddonClasses = parseClasses(['tag', addonColor])
-  const tagLabel = withAddon ? 'tags' : 'tag'
   const tagTestId =
     testId ??
     parseTestId({
-      tag: tagLabel,
-      parsedClasses: withAddon ? tagContainerClasses : tagClasses,
-      separator: withAddon ? '-' : ''
+      tag: tagBaseClass,
+      parsedClasses: tagClasses,
+      rules: [
+        { regExp: TEST_ID_REGEXP.TAG, replacer: '' },
+        { regExp: TEST_ID_REGEXP.IS, replacer: '-' }
+      ]
     })
-  const tagContainerTestId = containerTestId ?? `${tagTestId}-container`
   const tagDeleteTestId = `${tagTestId}-delete`
 
-  return withAddon ? (
-    <section
-      data-testid={tagContainerTestId}
-      style={containerStyle ?? undefined}
-      className={tagContainerClasses}
-    >
-      <span
-        data-testid={tagTestId}
-        className={tagClasses}
-      >
-        {text}
-      </span>
-      {withDelete ? (
-        <a
-          data-testid={tagDeleteTestId}
-          className='tag is-delete'
-          title='delete'
-          aria-hidden='true'
-          onClick={onDeleteClick ?? undefined}
-        ></a>
-      ) : (
-        <span className={tagAddonClasses}>{addonText}</span>
-      )}
-    </section>
-  ) : (
+  return (
     <span
       data-testid={tagTestId}
       style={style ?? undefined}

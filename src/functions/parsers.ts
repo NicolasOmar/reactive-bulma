@@ -1,3 +1,5 @@
+// CONSTANTS
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // TYPES & INTERFACES
 import { ParseTestIdProps } from '../interfaces/functionProps'
 
@@ -7,7 +9,11 @@ import { ParseTestIdProps } from '../interfaces/functionProps'
  */
 export const parseClasses = (
   _classes: Array<string | null | undefined>
-): string => _classes.filter(_class => _class).join(' ')
+): string =>
+  _classes
+    .filter(_class => _class)
+    .join(' ')
+    .trim()
 
 /**
  * @param { ParseTestIdProps } config Configuration object
@@ -29,7 +35,7 @@ export const parseTestId = (config: ParseTestIdProps): string => {
   } else {
     fixedClassString = fixedClassString
       .replace(`${config.tag}`, '')
-      .replace(/is-/gm, '-')
+      .replace(TEST_ID_REGEXP.IS, '-')
   }
 
   return `test-${config.tag}${fixedClassString.replace(

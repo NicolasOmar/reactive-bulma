@@ -1,8 +1,10 @@
 import React from 'react'
 // TYPES & INTERFACES
-import { ProgressBarProps } from '../../../interfaces/atomProps'
+import { ProgressBarProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
   testId = null,
@@ -10,21 +12,22 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   style = null,
   value = 0,
   max = 100,
-  color = 'is-primary',
+  color = 'primary',
   size = null,
   isLoading = false
 }) => {
+  const progressBaseClass = 'progress'
   const fixedValue: number = value > max || value < 0 ? 0 : value
   const progressClasses: string = parseClasses([
-    'progress',
-    color,
-    size,
+    progressBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
     cssClasses
   ])
   const progressTestId =
     testId ??
     parseTestId({
-      tag: 'progress',
+      tag: progressBaseClass,
       parsedClasses: progressClasses
     })
 

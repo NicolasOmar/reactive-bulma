@@ -1,9 +1,9 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { DropdownTriggerProps } from '../../../interfaces/atomProps'
+import { DropdownTriggerProps } from '@interfaces/atomProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const DropdownTrigger: React.FC<DropdownTriggerProps> = ({
   testId = null,

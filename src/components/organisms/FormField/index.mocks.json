@@ -15,12 +15,14 @@
       }
     ],
     "baseConfig": {
-      "config": {
-        "labelText": "Is a form field example",
-        "type": "input",
-        "input": {
-          "inputConfig": {
-            "type": "text"
+      "inputsConfig": {
+        "mainInput": {
+          "type": "input",
+          "config": {
+            "labelText": "Is a form field example",
+            "inputConfig": {
+              "type": "text"
+            }
           }
         }
       }

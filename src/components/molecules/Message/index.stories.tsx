@@ -27,17 +27,17 @@ WithHeader.args = {
 export const Colored = Template.bind({})
 Colored.args = {
   ...WithHeader.args,
-  color: 'is-primary'
+  color: 'primary'
 }
 
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,
-  size: 'is-large'
+  size: 'large'
 }
 
 export const WithDeleteButton = Template.bind({})
 WithDeleteButton.args = {
   ...LargeSize.args,
-  deleteButton: { size: 'is-medium' }
+  deleteButton: { size: 'medium' }
 }

@@ -4,17 +4,17 @@
     "testClasses": [
       {
         "name": "alignment",
-        "value": "is-centered",
+        "value": "centered",
         "result": "is-centered"
       },
       {
         "name": "separator",
-        "value": "has-arrow-separator",
+        "value": "arrow",
         "result": "has-arrow-separator"
       },
       {
         "name": "size",
-        "value": "is-small",
+        "value": "small",
         "result": "is-small"
       }
     ]

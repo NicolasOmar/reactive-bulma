@@ -6,12 +6,12 @@
     "testClasses": [
       {
         "name": "color",
-        "value": "is-primary",
+        "value": "primary",
         "result": "is-primary"
       },
       {
         "name": "size",
-        "value": "is-large",
+        "value": "large",
         "result": "is-large"
       }
     ]

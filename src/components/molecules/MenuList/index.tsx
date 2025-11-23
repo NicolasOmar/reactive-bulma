@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
-import { MenuItem } from '../../atoms'
+import { MenuItem } from '@components/atoms'
 // TYPES & INTERFACES
-import { MenuListProps } from '../../../interfaces/moleculeProps'
+import { MenuListProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const MenuList: React.FC<MenuListProps> = ({
   testId = null,
@@ -17,13 +17,9 @@ const MenuList: React.FC<MenuListProps> = ({
   const menuListTestId =
     testId ?? parseTestId({ tag: 'menu-list', parsedClasses: menuListClasses })
 
-  return (
-    <ul
-      data-testid={menuListTestId}
-      className={menuListClasses}
-      style={style ?? undefined}
-    >
-      {itemList.map(item => {
+  const memoizedMenuItems = useMemo(
+    () =>
+      itemList.map(item => {
         if ('subListTitle' in item) {
           return (
             <li key={`sub-list-menu-item-${generateKey()}`}>
@@ -46,7 +42,17 @@ const MenuList: React.FC<MenuListProps> = ({
             />
           )
         }
-      })}
+      }),
+    [itemList]
+  )
+
+  return (
+    <ul
+      data-testid={menuListTestId}
+      className={menuListClasses}
+      style={style ?? undefined}
+    >
+      {memoizedMenuItems}
     </ul>
   )
 }

@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
-import { TableCell, TableHeadCell } from '../../atoms'
+import { TableCell, TableHeadCell } from '@components/atoms'
 // TYPES & INTERFACES
-import { TableRowProps } from '../../../interfaces/moleculeProps'
+import { TableRowProps } from '@interfaces/moleculeProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const TableRow: React.FC<TableRowProps> = ({
   testId = null,
   cssClasses = null,
   style = null,
+  color = null,
   headCell = null,
   listOfCells,
   isSelected = false,
@@ -18,10 +21,27 @@ const TableRow: React.FC<TableRowProps> = ({
 }) => {
   const tableRowClasses = parseClasses([
     isSelected ? 'is-selected' : null,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
     cssClasses
   ])
   const tableRowTestId =
     testId ?? parseTestId({ tag: 'table-row', parsedClasses: tableRowClasses })
+
+  const memoizedCell = useMemo(
+    () => (headCell ? <TableHeadCell {...headCell} /> : null),
+    [headCell]
+  )
+
+  const memoizedTableCells = useMemo(
+    () =>
+      listOfCells.map(_cellConfig => (
+        <TableCell
+          key={`table-row-${generateKey()}`}
+          {..._cellConfig}
+        />
+      )),
+    [listOfCells]
+  )
 
   return (
     <tr
@@ -30,13 +50,8 @@ const TableRow: React.FC<TableRowProps> = ({
       style={style ?? undefined}
       onClick={onClick ?? undefined}
     >
-      {headCell ? <TableHeadCell {...headCell} /> : null}
-      {listOfCells.map(_cellConfig => (
-        <TableCell
-          key={`table-row-${generateKey()}`}
-          {..._cellConfig}
-        />
-      ))}
+      {memoizedCell}
+      {memoizedTableCells}
     </tr>
   )
 }

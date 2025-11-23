@@ -1,6 +1,7 @@
 // COMMON PROPS
 import {
   ClickeableProps,
+  ColoredProps,
   ComposedElementProps,
   ElementProps
 } from './commonProps'
@@ -12,6 +13,7 @@ import {
   ColumnProps,
   DeleteProps,
   DropdownItemProps,
+  GridCellProps,
   IconProps,
   InputProps,
   MenuItemProps,
@@ -22,18 +24,24 @@ import {
   TabItemProps,
   TableCellProps,
   TableHeadCellProps,
+  TagProps,
   TextAreaProps
 } from './atomProps'
 // TYPES & INTERFACES
 import {
-  BasicColorType,
+  ColorType,
   RightCenteredAlignType,
   BreadcrumbSeparatorType,
   ColumnGapType,
-  SizeWithoutNormalType,
+  BaseSizeType,
   TabsFormatType,
   MediumAndLargeSizeType,
-  RightLeftAlignType
+  RightLeftAlignType,
+  GridGapType,
+  GridColumnGapType,
+  GridRowGapType,
+  GridCellMinWidthType,
+  FixedGridColumnsType
 } from '../types/styleTypes'
 import {
   ChildrenType,
@@ -71,7 +79,7 @@ export interface NotificationProps extends ElementProps {
   /** `Atribute` Includes a `Delete` config object that will be shown */
   deleteButton?: DeleteProps
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Will adjust the selected color with a ligther style */
   isLightColor?: boolean
 }
@@ -84,10 +92,16 @@ export interface BreadcrumbsProps extends ComposedElementProps {
   /** `Styling` Will adjust element position on screen */
   separator?: BreadcrumbSeparatorType | null
   /** `Styling` Set breadcrumb's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
 }
 
 export interface DropdownProps extends ElementProps {
+  /** `Styling` Will display dropdown content when the user hovers the mouse on the input */
+  isHoverable?: boolean
+  /** `Styling` Will align dropdown's content to the right */
+  isRightAligned?: boolean
+  /** `Styling` Will set dropdown's menu above its input */
+  isContentUp?: boolean
   /** `Atribute` `Required` Sets the name will be shown on the dropdown input */
   inputText: string
   /** `Attribute` Sets a relationship between dropdown trigger's button and dropdown's menu to toggle display */
@@ -104,9 +118,9 @@ export interface MessageProps extends ElementProps {
   /** `Atribute` Includes a `Delete` config object that will be shown */
   deleteButton?: DeleteProps
   /** `Styling` Color based on bulma's color tokens */
-  color?: BasicColorType
+  color?: ColorType
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
 }
 
 interface MenuSubListProps {
@@ -156,7 +170,7 @@ export interface PaginationProps extends ComposedElementProps {
   /** `Styling` Will add round borders to each page's shape */
   isRounded?: boolean
   /** `Styling` Set button's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Will adjust the pages position on screen */
   alignment?: RightCenteredAlignType | null
 }
@@ -174,7 +188,7 @@ export interface TabsProps extends ElementProps {
   /** `Styling` Will adjust the tabs position on screen */
   alignment?: RightCenteredAlignType
   /** `Styling` Set tab's size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Set tab's size on bulma's size tokens */
   format?: TabsFormatType
   /** `Styling` Will add round tabs borders. Only visible if `format` is set to `is-toggle` */
@@ -183,19 +197,30 @@ export interface TabsProps extends ElementProps {
   isFullWidth?: boolean
 }
 
+export interface HelperProps {
+  text?: string
+  color?: ColorType
+}
+
 export interface InputControlProps extends ElementProps {
+  /** `Attribute` Sets a custom label above the Input to indicate its usage */
+  labelText?: string
   /** `Attribute` `Required` control's input configuration which will be wrapped */
   inputConfig: InputProps
+  /** `Attribute` Sets a custom text below the input to show a message */
+  helper?: HelperProps
   /** `Attribute` `Icon` configuration that will be shown in Input's left side */
   leftIcon?: IconProps
   /** `Attribute` `Icon` configuration that will be shown in Input's right side */
   rightIcon?: IconProps
   /** `Styling` Set control and its input size on bulma's size tokens */
-  size?: SizeWithoutNormalType
+  size?: BaseSizeType
   /** `Styling` Will add an animated spinner on input's right side */
   isLoading?: boolean
   /** `Styling` Used for `FormField` styling purpose only. Will strech the input and its container in full-width */
   isExpanded?: boolean
+  /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
+  isHorizontal?: boolean
 }
 
 export interface PanelBlockItemProps {
@@ -271,6 +296,8 @@ export interface NavBarDropdownProps extends ComposedElementProps {
   hasDropdownUp?: boolean
   /** `Styling` Sets dropdown's menu design like a box, also adds some animation when its diplayed */
   hasBoxedMenu?: boolean
+  /** `Styling` Removes dropdown's indicating arrow */
+  isArrowLess?: boolean
 }
 
 interface BrandConfigProps extends Omit<NavBarItemProps, 'children'> {
@@ -284,7 +311,10 @@ export interface NavBarBrandProps extends ElementProps {
   isBurgerActive?: boolean
 }
 
-export interface TableRowProps extends ElementProps, ClickeableProps {
+export interface TableRowProps
+  extends ElementProps,
+    ColoredProps,
+    ClickeableProps {
   /** `Attribute` Configuration object to inject a `TableHeaderCell` as row's head */
   headCell?: TableHeadCellProps
   /** `Attribute` `Required` List of `TableCell` that will be rendered on the table */
@@ -298,7 +328,8 @@ export enum FormFieldType {
   SELECT = 'select',
   CHECKBOX = 'checkbox',
   RADIOBUTTON = 'radiobutton',
-  TEXTAREA = 'textarea'
+  TEXTAREA = 'textarea',
+  BUTTON = 'button'
 }
 
 export type FormFieldConfig =
@@ -307,19 +338,49 @@ export type FormFieldConfig =
   | CheckBoxProps
   | RadioButtonProps
   | TextAreaProps
+  | ButtonProps
 
-export interface FormFieldHelper {
-  text?: string
-  color?: BasicColorType
+export interface FormFieldElement {
+  type: FormFieldType
+  config: FormFieldConfig
 }
 
 export interface FormFieldInputProps extends ElementProps {
-  /** `Attribute` Sets a custom text before the wrapped input to indicate its usage */
-  labelText?: string
-  type: FormFieldType
-  input: FormFieldConfig
-  /** `Attribute` Sets a custom text below the input to show a message */
-  helper?: FormFieldHelper
+  /** `Attribute` `Required` Main input that will use the provided label and helper */
+  mainInput: FormFieldElement
+  /** `Attribute` Input that will be included at main's left (will work only if `withAddons` is in `true`) */
+  leftInput?: FormFieldElement
+  /** `Attribute` Input that will be included at main's right (will work only if `withAddons` is in `true`) */
+  rightInput?: FormFieldElement
   /** `Styling` Will adjust field's sections (label, input/s and helper) in horizontal position */
   isHorizontal?: boolean
+}
+
+export interface TagListProps extends ElementProps {
+  /** `Attribute` List of tags to fix their space evenly */
+  listOfTags: TagProps[]
+}
+
+export interface CheckboxGroupProps extends ElementProps {
+  /** `Attribute` `Required` A list of Checkbox config objetcs to be rendered in the same space */
+  listOfCheckboxes: CheckBoxProps[]
+}
+
+export interface GridProps extends ComposedElementProps {
+  /** `Attribute` `Required` `GridCell` A list of Cell config objetcs to be rendered as part of the grid */
+  listOfCells: GridCellProps[]
+  /** `Styling` Will change the space between columns and rows at the same level. This value will be nullify if `isFixed` is true */
+  gap?: GridGapType
+  /** `Styling` Will change the space between columns. This value will be nullify if `gap` has a value or if `isFixed` is true */
+  columnGap?: GridColumnGapType
+  /** `Styling` Will change the space between rows. This value will be nullify if `gap` has a value or if `isFixed` is true */
+  rowGap?: GridRowGapType
+  /** `Styling` Will change the minimum column width by increments of `1.5rem` */
+  cellMinWidth?: GridCellMinWidthType
+  /** `Styling` Will set a fixed amount of columns per row. If is not set at `fixedColumnsCount`, it will be set at 2 columns */
+  isFixed?: boolean
+  /** `Styling` Will change the amount of columns shown per row */
+  fixedColumnsCount?: FixedGridColumnsType
+  /** `Styling` Will set grid's columns automatically, changing its count for each breakpoint */
+  isAutoColumns?: boolean
 }

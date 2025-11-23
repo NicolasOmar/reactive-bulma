@@ -2,21 +2,21 @@ import React from 'react'
 import { StoryFn, Meta } from '@storybook/react-vite'
 // COMPONENTS
 import TileGroup from '.'
-import { TileBox } from '../../molecules'
+import { TileBox } from '@components/molecules'
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
-import { BasicColorType } from '../../../types/styleTypes'
+import { TileProps } from '@interfaces/atomProps'
+import { ColorType } from '@customTypes/styleTypes'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook, testing } from './index.mocks.json'
-import tileMocks from '../../atoms/Tile/index.mocks.json'
+import tileMocks from '@components/atoms/Tile/index.mocks.json'
 
 const threeParentTiles = createObjArray({
   externalParser: i => ({
     context: 'is-parent',
     children: (
-      <TileBox color={testing.testChildrenColors[i] as BasicColorType}>
+      <TileBox color={testing.testChildrenColors[i] as ColorType}>
         {tileMocks.testing.basicChild.children}
       </TileBox>
     )
@@ -33,7 +33,7 @@ export default {
       {
         context: 'is-parent',
         children: (
-          <TileBox color='is-info'>
+          <TileBox color='info'>
             {tileMocks.testing.basicChild.children}
           </TileBox>
         )
@@ -43,14 +43,14 @@ export default {
         children: [
           <TileBox
             key={'test-title-box-item'}
-            size='is-3'
-            color='is-primary'
+            size='3'
+            color='primary'
           >
             {tileMocks.testing.basicChild.children}
           </TileBox>,
           <TileBox
             key={'test-title-box-item'}
-            color='is-danger'
+            color='danger'
           >
             {tileMocks.testing.basicChild.children}
           </TileBox>
@@ -76,26 +76,24 @@ ThreeUnequalColumns.args = {
   groupConfig: [
     {
       context: 'is-parent',
-      size: 'is-7',
+      size: '7',
       children: (
-        <TileBox color='is-info'>
+        <TileBox color='info'>{tileMocks.testing.basicChild.children}</TileBox>
+      )
+    },
+    {
+      context: 'is-parent',
+      children: (
+        <TileBox color='primary'>
           {tileMocks.testing.basicChild.children}
         </TileBox>
       )
     },
     {
       context: 'is-parent',
+      size: '2',
       children: (
-        <TileBox color='is-primary'>
-          {tileMocks.testing.basicChild.children}
-        </TileBox>
-      )
-    },
-    {
-      context: 'is-parent',
-      size: 'is-2',
-      children: (
-        <TileBox color='is-danger'>
+        <TileBox color='danger'>
           {tileMocks.testing.basicChild.children}
         </TileBox>
       )
@@ -106,12 +104,18 @@ ThreeUnequalColumns.args = {
 export const ThreeColumnsInHalfScreen = Template.bind({})
 ThreeColumnsInHalfScreen.args = {
   context: 'is-ancestor',
-  size: 'is-6',
+  size: '6',
   groupConfig: [
     {
       context: 'is-parent',
       children: (
-        <TileBox color='is-info'>
+        <TileBox color='info'>{tileMocks.testing.basicChild.children}</TileBox>
+      )
+    },
+    {
+      context: 'is-parent',
+      children: (
+        <TileBox color='primary'>
           {tileMocks.testing.basicChild.children}
         </TileBox>
       )
@@ -119,15 +123,7 @@ ThreeColumnsInHalfScreen.args = {
     {
       context: 'is-parent',
       children: (
-        <TileBox color='is-primary'>
-          {tileMocks.testing.basicChild.children}
-        </TileBox>
-      )
-    },
-    {
-      context: 'is-parent',
-      children: (
-        <TileBox color='is-danger'>
+        <TileBox color='danger'>
           {tileMocks.testing.basicChild.children}
         </TileBox>
       )

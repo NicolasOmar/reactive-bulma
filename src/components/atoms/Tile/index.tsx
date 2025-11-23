@@ -1,9 +1,12 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { TileProps } from '../../../interfaces/atomProps'
+import { TileProps } from '@interfaces/atomProps'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
+import { TEST_ID_REGEXP } from '@constants/regExp'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
 
 const Tile: React.FC<TileProps> = ({
   testId = null,
@@ -15,26 +18,27 @@ const Tile: React.FC<TileProps> = ({
   color = null,
   isVertical = false
 }) => {
+  const tileBaseClass = 'tile'
   const tileClasses = parseClasses([
-    'tile',
+    tileBaseClass,
     context,
-    size,
-    color ? `notification ${color}` : null,
-    isVertical ? 'is-vertical' : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    color ? `${COMMON_CLASSES.NOTIFICATION} ${color}` : null,
+    isVertical ? `${COMMON_CLASSES.VERTICAL}` : null,
     cssClasses
   ])
   const tileTestId =
     testId ??
     parseTestId({
-      tag: 'tile',
+      tag: tileBaseClass,
       parsedClasses: tileClasses,
       rules: [
         {
-          regExp: /notification |tile/gm,
+          regExp: TEST_ID_REGEXP.TILE,
           replacer: ''
         },
         {
-          regExp: /is-/gm,
+          regExp: TEST_ID_REGEXP.IS,
           replacer: '-'
         }
       ]

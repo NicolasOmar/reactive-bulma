@@ -6,28 +6,25 @@ import Breadcrumbs from '.'
 import {
   RightCenteredAlignType,
   BreadcrumbSeparatorType
-} from '../../../types/styleTypes'
+} from '@customTypes/styleTypes'
 // FUNCTIONS
-import { createObjArray } from '../../../functions/generators'
+import { createObjArray } from '@functions/generators'
 // MOCKS
 import { storybook } from './index.mocks.json'
-import breacrumbItemMocks from '../../atoms/BreadcrumbItem/index.mocks.json'
+import breacrumbItemMocks from '@components/atoms/BreadcrumbItem/index.mocks.json'
 
 const externalParser = (i: number) => ({
   text: breacrumbItemMocks.testing.testText,
   isActiveItem: i === 4
 })
 
-const alignmentOptions: Array<RightCenteredAlignType> = [
-  'is-centered',
-  'is-right'
-]
+const alignmentOptions: Array<RightCenteredAlignType> = ['centered', 'right']
 
 const separatorOptions: Array<BreadcrumbSeparatorType> = [
-  'has-arrow-separator',
-  'has-bullet-separator',
-  'has-dot-separator',
-  'has-succeeds-separator'
+  'arrow',
+  'bullet',
+  'dot',
+  'succeeds'
 ]
 
 export default {
@@ -55,15 +52,15 @@ export const BasicExample = Template.bind({})
 
 export const SeparatedByDots = Template.bind({})
 SeparatedByDots.args = {
-  separator: 'has-dot-separator'
+  separator: 'dot'
 }
 
 export const BigSize = Template.bind({})
 BigSize.args = {
-  size: 'is-large'
+  size: 'large'
 }
 
 export const AlignedToRight = Template.bind({})
 AlignedToRight.args = {
-  alignment: 'is-right'
+  alignment: 'right'
 }

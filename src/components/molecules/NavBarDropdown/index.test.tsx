@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 // COMPONENTS
 import NavBarDropdown from '.'
 // TYPES & INTERFACES
-import { NavBarDropdownProps } from '../../../interfaces/moleculeProps'
+import { NavBarDropdownProps } from '@interfaces/moleculeProps'
 // FUNCTIONS
 // MOCKS
 import { testing } from './index.mocks.json'

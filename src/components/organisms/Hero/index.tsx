@@ -1,11 +1,15 @@
 import React from 'react'
 // COMPONENTS
 // TYPES & INTERFACES
-import { HeroProps } from '../../../interfaces/organismProps'
-import { ChildrenType, HeroContentType } from '../../../types/domTypes'
-import { SizeWithHeightType } from '../../../types/styleTypes'
+import { HeroProps } from '@interfaces/organismProps'
+import { ChildrenType, HeroContentType } from '@customTypes/domTypes'
+import { SizeWithHeightType } from '@customTypes/styleTypes'
+// CONSTANTS
+import { COMMON_CLASSES } from '@constants/classes'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
+import { parseClasses, parseTestId } from '@functions/parsers'
+
+const heroBaseClass = 'hero'
 
 const renderHeroSection = (
   content: ChildrenType | null,
@@ -13,10 +17,10 @@ const renderHeroSection = (
   testId: string,
   size: SizeWithHeightType | null
 ) =>
-  type === 'body' || size === 'is-fullheight' ? (
+  type === 'body' || size === 'fullheight' ? (
     <section
       data-testid={`${testId}-${type}`}
-      className={`hero-${type}`}
+      className={`${heroBaseClass}-${type}`}
     >
       {content}
     </section>
@@ -32,9 +36,14 @@ const Hero: React.FC<HeroProps> = ({
   color = null,
   size = null
 }) => {
-  const heroClasses = parseClasses(['hero', color, size, cssClasses])
+  const heroClasses = parseClasses([
+    heroBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    cssClasses
+  ])
   const heroTestId =
-    testId ?? parseTestId({ tag: 'hero', parsedClasses: heroClasses })
+    testId ?? parseTestId({ tag: heroBaseClass, parsedClasses: heroClasses })
 
   return (
     <section

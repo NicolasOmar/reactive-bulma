@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 // COMPONENTS
-import { Image } from '../../atoms'
+import { Image } from '@components/atoms'
 // TYPES & INTERFACES
-import { CardProps } from '../../../interfaces/organismProps'
+import { CardProps } from '@interfaces/organismProps'
 // FUNCTIONS
-import { parseClasses, parseTestId } from '../../../functions/parsers'
-import { generateKey } from '../../../functions/generators'
+import { parseClasses, parseTestId } from '@functions/parsers'
+import { generateKey } from '@functions/generators'
 
 const Card: React.FC<CardProps> = ({
   testId = null,
@@ -20,13 +20,9 @@ const Card: React.FC<CardProps> = ({
   const cardTestId =
     testId ?? parseTestId({ tag: 'card', parsedClasses: cardClasses })
 
-  return (
-    <section
-      data-testid={cardTestId}
-      className={cardClasses}
-      style={style ?? undefined}
-    >
-      {headerText ? (
+  const memoizedHeader = useMemo(
+    () =>
+      headerText ? (
         <header
           data-testid={`${cardTestId}-header`}
           className='card-header'
@@ -44,36 +40,50 @@ const Card: React.FC<CardProps> = ({
             </span>
           </button>
         </header>
-      ) : null}
-      {image ? (
+      ) : null,
+    [headerText, cardTestId]
+  )
+
+  const memoizedImage = useMemo(
+    () =>
+      image ? (
         <section
           data-testid={`${cardTestId}-image`}
           className='card-image'
         >
           <Image {...image} />
         </section>
-      ) : null}
-      {
-        <section
-          data-testid={`${cardTestId}-content`}
-          className='card-content'
-        >
-          {Array.isArray(content) ? (
-            content.map((_contentConfig, i) => (
-              <section
-                key={`card-content-item-${generateKey()}`}
-                data-testid={`${cardTestId}-content-item-${i}`}
-                className='content'
-              >
-                {_contentConfig}
-              </section>
-            ))
-          ) : (
-            <section className='content'>{content}</section>
-          )}
-        </section>
-      }
-      {footerLinks ? (
+      ) : null,
+    [image, cardTestId]
+  )
+
+  const memoizedContent = useMemo(
+    () => (
+      <section
+        data-testid={`${cardTestId}-content`}
+        className='card-content'
+      >
+        {Array.isArray(content) ? (
+          content.map((_contentConfig, i) => (
+            <section
+              key={`card-content-item-${generateKey()}`}
+              data-testid={`${cardTestId}-content-item-${i}`}
+              className='content'
+            >
+              {_contentConfig}
+            </section>
+          ))
+        ) : (
+          <section className='content'>{content}</section>
+        )}
+      </section>
+    ),
+    [cardTestId, content]
+  )
+
+  const memoizedFooter = useMemo(
+    () =>
+      footerLinks ? (
         <section className='card-footer'>
           {footerLinks.map((_footerConfig, i) => (
             <a
@@ -87,7 +97,20 @@ const Card: React.FC<CardProps> = ({
             </a>
           ))}
         </section>
-      ) : null}
+      ) : null,
+    [footerLinks, cardTestId]
+  )
+
+  return (
+    <section
+      data-testid={cardTestId}
+      className={cardClasses}
+      style={style ?? undefined}
+    >
+      {memoizedHeader}
+      {memoizedImage}
+      {memoizedContent}
+      {memoizedFooter}
     </section>
   )
 }

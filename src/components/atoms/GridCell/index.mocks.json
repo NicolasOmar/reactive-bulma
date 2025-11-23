@@ -1,0 +1,53 @@
+{
+  "testing": {
+    "basicTestId": "test-cell",
+    "testParagraph": "Lorem ipsum dolor sit amet dolores clita et clita vel. Sit qui takimata elit. Tincidunt sit ipsum vel gubergren sit ut invidunt et stet iriure magna invidunt.",
+    "testClasses": [
+      {
+        "name": "position",
+        "value": "col-start",
+        "result": "is-col-start"
+      },
+      {
+        "name": "colSpan",
+        "value": 3,
+        "result": "is-col-span-3"
+      },
+      {
+        "name": "rowSpan",
+        "value": 6,
+        "result": "is-row-span-6"
+      },
+      {
+        "name": "colStart",
+        "value": 3,
+        "result": "is-col-start-3"
+      },
+      {
+        "name": "rowStart",
+        "value": 6,
+        "result": "is-row-start-6"
+      },
+      {
+        "name": "colStartFromEnd",
+        "value": 3,
+        "result": "is-col-from-end-3"
+      },
+      {
+        "name": "rowStartFromEnd",
+        "value": 6,
+        "result": "is-row-from-end-6"
+      }
+    ]
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Each cell that composes a grid system",
+      "docs": {
+        "description": {
+          "component": "Each Bulma grid is comprised of several cells. You can adjust the width and height of each of these cells individually, and for each separate breakpoint."
+        }
+      }
+    }
+  }
+}

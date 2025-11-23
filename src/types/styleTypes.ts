@@ -1,136 +1,128 @@
-export type CommonSizeType =
-  | 'is-1'
-  | 'is-2'
-  | 'is-3'
-  | 'is-4'
-  | 'is-5'
-  | 'is-6'
-  | 'is-7'
-  | 'is-8'
-  | 'is-9'
-  | 'is-10'
-  | 'is-11'
-  | 'is-12'
+type ZeroSizesType = '0'
+
+type SixSizesTypes = '1' | '2' | '3' | '4' | '5' | '6'
+
+type EightSizesTypes = SixSizesTypes | '7' | '8'
+
+type TwelveSizesTypes = EightSizesTypes | '9' | '10' | '11' | '12'
+
+export type CommonSizeType = TwelveSizesTypes
 
 export type AbstractSizeType =
-  | 'is-three-quarters'
-  | 'is-two-thirds'
-  | 'is-half'
-  | 'is-one-third'
-  | 'is-one-quarter'
-  | 'is-full'
-  | 'is-four-fifths'
-  | 'is-three-fifths'
-  | 'is-two-fifths'
-  | 'is-one-fifth'
+  | 'three-quarters'
+  | 'two-thirds'
+  | 'half'
+  | 'one-third'
+  | 'one-quarter'
+  | 'full'
+  | 'four-fifths'
+  | 'three-fifths'
+  | 'two-fifths'
+  | 'one-fifth'
 
 export type ColumnSizeType = CommonSizeType | AbstractSizeType
 
-export type ColumnOffsetType =
-  | 'is-offset-1'
-  | 'is-offset-2'
-  | 'is-offset-3'
-  | 'is-offset-4'
-  | 'is-offset-5'
-  | 'is-offset-6'
-  | 'is-offset-7'
-  | 'is-offset-8'
-  | 'is-offset-9'
-  | 'is-offset-10'
-  | 'is-offset-11'
-  | 'is-offset-12'
+export type ColumnOffsetType = TwelveSizesTypes
 
-export type TitleSizeType = 'is-1' | 'is-2' | 'is-3' | 'is-4' | 'is-5' | 'is-6'
+export type TitleSizeType = SixSizesTypes
 
-export type BasicColorType =
-  | 'is-white'
-  | 'is-light'
-  | 'is-dark'
-  | 'is-black'
-  | 'is-text'
-  | 'is-ghost'
-  | 'is-primary'
-  | 'is-link'
-  | 'is-info'
-  | 'is-success'
-  | 'is-warning'
-  | 'is-danger'
+export type ColorType =
+  | 'white'
+  | 'light'
+  | 'dark'
+  | 'black'
+  | 'text'
+  | 'ghost'
+  | 'primary'
+  | 'link'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'danger'
 
-export type TextColorType =
-  | 'has-text-white'
-  | 'has-text-black'
-  | 'has-text-light'
-  | 'has-text-dark'
-  | 'has-text-primary'
-  | 'has-text-link'
-  | 'has-text-info'
-  | 'has-text-success'
-  | 'has-text-warning'
-  | 'has-text-danger'
+export type ColorModeType = 'light' | 'dark'
 
 export type FixedImageSizeType =
-  | 'is-16x16'
-  | 'is-24x24'
-  | 'is-32x32'
-  | 'is-48x48'
-  | 'is-64x64'
-  | 'is-96x96'
-  | 'is-128x128'
-  | 'is-square'
-  | 'is-1by1'
-  | 'is-5by4'
-  | 'is-4by3'
-  | 'is-3by2'
-  | 'is-5by3'
-  | 'is-16by9'
-  | 'is-2by1'
-  | 'is-3by1'
-  | 'is-4by5'
-  | 'is-3by4'
-  | 'is-2by3'
-  | 'is-3by5'
-  | 'is-9by16'
-  | 'is-1by2'
-  | 'is-1by3'
+  | '16x16'
+  | '24x24'
+  | '32x32'
+  | '48x48'
+  | '64x64'
+  | '96x96'
+  | '128x128'
+  | 'square'
+  | '1by1'
+  | '5by4'
+  | '4by3'
+  | '3by2'
+  | '5by3'
+  | '16by9'
+  | '2by1'
+  | '3by1'
+  | '4by5'
+  | '3by4'
+  | '2by3'
+  | '3by5'
+  | '9by16'
+  | '1by2'
+  | '1by3'
+  | 'fullwidth'
 
-export type ElementSizeType =
-  | 'is-small'
-  | 'is-normal'
-  | 'is-medium'
-  | 'is-large'
+export type BaseSizeType = 'small' | 'medium' | 'large'
 
-export type SizeWithoutNormalType = Exclude<ElementSizeType, 'is-normal'>
+export type SizeWithNormalType = BaseSizeType | 'normal'
 
-export type SizeWithHeightType =
-  | SizeWithoutNormalType
-  | 'is-halfheight'
-  | 'is-fullheight'
+export type SizeWithHeightType = BaseSizeType | 'halfheight' | 'fullheight'
 
-export type MediumAndLargeSizeType = Exclude<SizeWithoutNormalType, 'is-small'>
+export type MediumAndLargeSizeType = Exclude<BaseSizeType, 'small'>
 
-export type IconColorModeType = 'light' | 'dark'
+export type ColumnGapType = EightSizesTypes
 
-export type ColumnGapType =
-  | 'is-0'
-  | 'is-1'
-  | 'is-2'
-  | 'is-3'
-  | 'is-4'
-  | 'is-5'
-  | 'is-6'
-  | 'is-7'
-  | 'is-8'
+export type ElementAlignType = 'centered' | 'right' | 'left'
 
-export type ElementAlignType = 'is-centered' | 'is-right' | 'is-left'
+export type RightCenteredAlignType = Exclude<ElementAlignType, 'left'>
 
-export type RightCenteredAlignType = Exclude<ElementAlignType, 'is-left'>
+export type RightLeftAlignType = Exclude<ElementAlignType, 'centered'>
 
-export type RightLeftAlignType = Exclude<ElementAlignType, 'is-centered'>
+export type BreadcrumbSeparatorType = 'arrow' | 'bullet' | 'dot' | 'succeeds'
 
-export type BreadcrumbSeparatorType =
-  | 'has-arrow-separator'
-  | 'has-bullet-separator'
-  | 'has-dot-separator'
-  | 'has-succeeds-separator'
+export type TabsFormatType = 'boxed' | 'toggle'
 
-export type TabsFormatType = 'is-boxed' | 'is-toggle'
+export type GridGapType = ZeroSizesType | EightSizesTypes
+
+export type GridColumnGapType = ZeroSizesType | EightSizesTypes
+
+export type GridRowGapType = ZeroSizesType | EightSizesTypes
+
+export type GridCellMinWidthType =
+  | TwelveSizesTypes
+  | '13'
+  | '14'
+  | '15'
+  | '16'
+  | '17'
+  | '18'
+  | '19'
+  | '20'
+  | '21'
+  | '22'
+  | '23'
+  | '24'
+  | '25'
+  | '26'
+  | '27'
+  | '28'
+  | '29'
+  | '30'
+  | '31'
+  | '32'
+
+export type FixedGridColumnsType = ZeroSizesType | TwelveSizesTypes
+
+export type GridCellPositionType =
+  | 'col-start'
+  | 'col-from-end'
+  | 'col-span'
+  | 'row-start'
+  | 'row-from-end'
+  | 'row-span'
