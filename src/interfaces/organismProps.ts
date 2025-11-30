@@ -67,8 +67,7 @@ export interface HeroProps extends ElementProps {
 }
 
 export interface TileGroupProps
-  extends ElementProps,
-    Pick<TileProps, 'context' | 'isVertical' | 'size'> {
+  extends ElementProps, Pick<TileProps, 'context' | 'isVertical' | 'size'> {
   /** `Attribute` `Required` A list of `Title` configurations that will be displayed in a grid mode on the screen */
   groupConfig: TileProps[]
 }

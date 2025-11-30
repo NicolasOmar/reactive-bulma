@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    branches: ["main", "feature/updating-bulma-to-v1"]
+    branches: ["main"]
     
 jobs:
   security:
@@ -24,6 +24,6 @@ jobs:
         command: test
         args: --all-projects --detection-depth=4 --dev --show-vulnerable-paths=all --sarif-file-output=snyk.sarif
     - name: 3/3 | Upload Snyk result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v3
+      uses: github/codeql-action/upload-sarif@v4
       with:
         sarif_file: snyk.sarif

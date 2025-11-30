@@ -31,7 +31,7 @@ Component library based on React, Bulma, Typescript and Vite
 
 ## Purpose
 
-After studying [an Udemy course about Typescript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge in a meaningful tool. Therefore, I began this project to understand how to create a component library and investigate the best ways to maintain and nourish it, as well as any professional-level alternatives.
+After studying [an Udemy course on TypeScript](https://github.com/NicolasOmar/typescript-practice), I wanted to start a new project to practice my new knowledge with a meaningful tool. Therefore, I began this project to understand how to create a component library and investigate the best ways to maintain and nourish it, as well as any professional-level alternatives.
 
 ## Status
 
@@ -125,23 +125,23 @@ Several quick start options are available:
 
 In case you have cloned the repo, it will show you the following folders:
 - `_templates:` Dedicated to [Hygen](https://www.hygen.io/) configuration and implementation files. Dedicated to creating new components from customizable templates.
-- `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge. commits like unit test coverage collection.
+- `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge commits like unit test coverage collection.
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
 - `src:`
-  - `constants:` Location of shared constant values to be used in interfaces and component implementations.
   - `components:` Location of all used components, using [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/)
     - `atoms` (from `v1.0.0`).
     - `molecules` (from `v2.0.0`).
     - `organisms` (from `v3.0.0`).
-  - `design`: Location of common design tokens (coded on `.mdx` files) displayed above components sections in the storybook's instance.
+  - `constants:` Location of shared constant values to be used in interfaces and component implementations.
+  - `design`: Location of standard design tokens (coded on `.mdx` files) displayed above component sections in the storybook's instance.
   - `functions`: Dedicated to parsers and helper functions for repetitive logic.
-  - `interfaces`: Dedicated to components and functions typing interfaces.
+  - `interfaces`: Dedicated to component and function typing interfaces.
   - `types`: Dedicated to Bulma's style typesetting (part of the component's properties).
 
 ## Documentation
 
-Reactive bulma's documentation, included in this repo in the root directory, is built with [Storybook](https://storybook.js.org/) and publicly hosted on `Netlify` at <https://reactivebulma.netlify.app/>. The docs may also be run locally.
+Reactive Bulma's documentation, included in this repo in the root directory, is built with [Storybook](https://storybook.js.org/) and publicly hosted on `Netlify` at <https://reactivebulma.netlify.app/>. The docs can also be run locally.
 
 ### Running documentation locally
 - Go to the `reactive-bulma` folder (where you cloned the repo before).
@@ -199,13 +199,13 @@ Given the mentioned release logic, `main` is the only static branch, and each de
 
 ## Roadmap
 
-Since mid-September 2025, I have begun updating ReactiveBulma's main tools to their latest major versions ([Bulma v1](https://bulma.io/documentation/start/migrating-to-v1/) and [React v19](https://react.dev/blog/2024/12/05/react-19)), which includes issues and pull requests I wrapped in version `v5`.
+From mid-September to the end of November (2025), I updated ReactiveBulma's main tools to their latest major versions ([Bulma v1](https://bulma.io/documentation/start/migrating-to-v1/) and [React v19](https://react.dev/blog/2024/12/05/react-19)), which includes issues and pull requests I wrapped [in version](https://github.com/NicolasOmar/reactive-bulma/milestone/6?closed=1) `v5`.
 
-At the same time, I am updating the rest of the dependencies every week, creating alongside its related PR, branch, and PR to maintain track of those updates. 
+Nowadays, I am updating the rest of the dependencies every week, creating a PR alongside its related branch and PR to maintain track of those updates. 
 
-After launching the next major version (with the needed major updates), I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I migrated all custom components to where I now have code that I can get rid of and, in that process, find new opportunities to enhance components' usability.
+For the near future. I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I migrated all custom components, leaving me with code I can get rid of and, in the process, finding new opportunities to enhance component usability.
 
-In case you want actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
+If you want the actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
 
 <details>
 <summary>Here is the status table I used to keep track of the worked milestones/versions. (v5 included)</summary>
