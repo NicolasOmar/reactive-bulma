@@ -14,7 +14,6 @@ updates:
       timezone: "Europe/Madrid"
     assignees:
       - "nicolasomar"
-    milestone: 5
     target-branch: "main"
     versioning-strategy: increase-if-necessary
 
@@ -27,5 +26,4 @@ updates:
       timezone: "Europe/Madrid"
     assignees:
       - "nicolasomar"
-    milestone: 5
     target-branch: "main"

@@ -312,9 +312,7 @@ export interface NavBarBrandProps extends ElementProps {
 }
 
 export interface TableRowProps
-  extends ElementProps,
-    ColoredProps,
-    ClickeableProps {
+  extends ElementProps, ColoredProps, ClickeableProps {
   /** `Attribute` Configuration object to inject a `TableHeaderCell` as row's head */
   headCell?: TableHeadCellProps
   /** `Attribute` `Required` List of `TableCell` that will be rendered on the table */

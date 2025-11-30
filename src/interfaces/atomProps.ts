@@ -32,8 +32,7 @@ import {
 } from '../types/domTypes'
 
 export interface ColumnProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'section'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the column */
   children?: ChildrenType
   /** `Styling` Set column's size */
@@ -45,8 +44,7 @@ export interface ColumnProps
 }
 
 export interface ButtonProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'button'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'button'> {
   /** `Attribute` The component will be rendered as an anchor instead a button */
   isAnAnchor?: boolean
   /** `Attribute` In case the component has `isAnAnchor` as `true`, it will include an url to be reffered */
@@ -82,8 +80,7 @@ export interface ButtonProps
 }
 
 export interface ProgressBarProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'progress'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'progress'> {
   /** `Attribute` Sets colored bar at the level against `max` value (`100` by default) */
   value?: number
   /** `Attribute` Sets the entire bar length comparing with current `value` */
@@ -97,8 +94,7 @@ export interface ProgressBarProps
 }
 
 export interface BlockProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'section'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the block */
   children?: ChildrenType
 }
@@ -130,8 +126,7 @@ export interface TagWithAddonProps extends ComposedElementProps, BaseTagProps {
 }
 
 export interface ImageProps
-  extends ComposedElementProps,
-    React.ComponentPropsWithoutRef<'figure'> {
+  extends ComposedElementProps, React.ComponentPropsWithoutRef<'figure'> {
   /** `Attribute` `Required` The image source that will be shown */
   src: string
   /** `Attribute` A description text for the image, useful for accessibility purposes */
@@ -143,15 +138,13 @@ export interface ImageProps
 }
 
 export interface BoxProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'section'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the box */
   children?: ChildrenType
 }
 
 export interface TitleSectionProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'p'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'p'> {
   /** `Attribute` Sets the text you want to show */
   text: string
   /** `Styling` Set text size */
@@ -187,9 +180,7 @@ export interface IconProps extends ComposedElementProps {
 }
 
 export interface InputProps
-  extends ElementProps,
-    InteractiveProps,
-    NamedInputProps {
+  extends ElementProps, InteractiveProps, NamedInputProps {
   /** `Attribute` `Required` What type of input will be used */
   type: InputType
   /** `Attribute` The value that will be shown on the input */
@@ -232,9 +223,7 @@ export interface SelectOption {
 }
 
 export interface SelectProps
-  extends ComposedElementProps,
-    InteractiveOnChangeProps,
-    NamedInputProps {
+  extends ComposedElementProps, InteractiveOnChangeProps, NamedInputProps {
   /** `Attribute` Will disable the input */
   isDisabled?: boolean
   /** `Attribute` Indicates the select contained on the select */
@@ -258,9 +247,7 @@ export interface SelectProps
 }
 
 export interface FileProps
-  extends ComposedElementProps,
-    InteractiveProps,
-    NamedInputProps {
+  extends ComposedElementProps, InteractiveProps, NamedInputProps {
   /** `Attribute` The name of the file to be uploaded */
   fileName?: string
   /** `Attribute` The icon displayed in file's button" */
@@ -280,9 +267,7 @@ export interface FileProps
 }
 
 export interface CheckBoxProps
-  extends ComposedElementProps,
-    InteractiveOnChangeProps,
-    NamedInputProps {
+  extends ComposedElementProps, InteractiveOnChangeProps, NamedInputProps {
   /** `Attribute` Shows the checkbox as checked or unchecked */
   isChecked?: boolean
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
@@ -292,7 +277,8 @@ export interface CheckBoxProps
 }
 
 export interface RadioButtonItemProps
-  extends Pick<ElementProps, 'testId' | 'style'>,
+  extends
+    Pick<ElementProps, 'testId' | 'style'>,
     InteractiveOnChangeProps,
     NamedInputProps {
   /** `Attribute` `Required` Sets radiobutton's text*/
@@ -304,8 +290,7 @@ export interface RadioButtonItemProps
 }
 
 export interface RadioButtonProps
-  extends ComposedElementProps,
-    InteractiveOnChangeProps {
+  extends ComposedElementProps, InteractiveOnChangeProps {
   /** `Attribute` `Required` Indicates the options contained to be selected */
   options: RadioButtonItemProps[]
   /** `Attribute` `Required` Sets the name that will relate this checkbox with the others */
@@ -313,8 +298,7 @@ export interface RadioButtonProps
 }
 
 export interface BreadcrumbItemProps
-  extends ComposedElementProps,
-    ClickeableProps {
+  extends ComposedElementProps, ClickeableProps {
   /** `Attribute` `Required` Indicates item text that will be shown */
   text: string
   /** `Attribute` Adds an `Icon` component before the text */
@@ -324,8 +308,7 @@ export interface BreadcrumbItemProps
 }
 
 export interface DropdownTriggerProps
-  extends ComposedElementProps,
-    ClickeableProps {
+  extends ComposedElementProps, ClickeableProps {
   /** `Attribute` `Required` Sets the name will be shown on the dropdown input */
   menuText: string
   /** `Attribute` Sets a relationship between trigger's button and dropdown's menu to toggle display */
@@ -396,24 +379,19 @@ export interface NavBarItemProps extends ElementProps, ClickeableProps {
 }
 
 export interface TableHeadCellProps
-  extends ElementProps,
-    ColoredProps,
-    ClickeableProps {
+  extends ElementProps, ColoredProps, ClickeableProps {
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
 }
 
 export interface TableCellProps
-  extends ElementProps,
-    ColoredProps,
-    ClickeableProps {
+  extends ElementProps, ColoredProps, ClickeableProps {
   /** `Attribute` `Required` It will display cell's content, which could be text, an html tag or a custom component */
   content: SingleChildType
 }
 
 export interface GridCellProps
-  extends ElementProps,
-    React.ComponentPropsWithoutRef<'section'> {
+  extends ElementProps, React.ComponentPropsWithoutRef<'section'> {
   /** `Attribute` Reffers to the component or array of components that will be shown inside the cell */
   children?: ChildrenType
   /** `Styling` Will adjust cell's position in the grid in specific points. If you want to set a specific position, work with wny of the other col/row `Start` or `StartFromEnd` properties */

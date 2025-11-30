@@ -42,12 +42,12 @@ export interface BlureableProps<
 }
 
 export interface InteractiveProps
-  extends ClickeableProps,
-    ChangeableProps,
-    BlureableProps {}
+  extends ClickeableProps, ChangeableProps, BlureableProps {}
 
-export interface InteractiveOnChangeProps
-  extends Omit<InteractiveProps, 'onChange'> {
+export interface InteractiveOnChangeProps extends Omit<
+  InteractiveProps,
+  'onChange'
+> {
   /** `Function` Reffers to each time the user click the element (I recommend using this one rather than the `onClick` method). Alone does not nothing, but can be reused for other components */
   onChange?: (event: React.ChangeEvent | React.FormEvent) => void
 }

@@ -2,7 +2,7 @@ name: Check builds
 
 on:
   pull_request:
-    branches: ["main", "feature/updating-bulma-to-v1"]
+    branches: ["main"]
 
 jobs:
   build:
