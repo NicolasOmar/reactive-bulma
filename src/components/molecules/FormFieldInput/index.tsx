@@ -39,6 +39,15 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
     containerTestId: testId ?? `test-form-field-container-${element.type}`
   }
 
+  const inputLabel = element.fieldLabel ? (
+    <label
+      data-testid={`test-form-field-${element.type}-label`}
+      className='label'
+    >
+      {element.fieldLabel}
+    </label>
+  ) : null
+
   switch (element.type) {
     case FormFieldType.INPUT:
       return (
@@ -51,6 +60,7 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
     case FormFieldType.SELECT:
       return (
         <section className='control'>
+          {inputLabel}
           <Select
             {...(element.config as SelectProps)}
             {...otherProps}
@@ -60,6 +70,7 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
     case FormFieldType.CHECKBOX:
       return (
         <section className='control'>
+          {inputLabel}
           <Checkbox
             {...(element.config as CheckBoxProps)}
             {...otherProps}
@@ -69,6 +80,7 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
     case FormFieldType.RADIOBUTTON:
       return (
         <section className='control'>
+          {inputLabel}
           <RadioButton
             {...(element.config as RadioButtonProps)}
             {...otherProps}
@@ -78,6 +90,7 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
     case FormFieldType.TEXTAREA:
       return (
         <section className='control'>
+          {inputLabel}
           <TextArea
             {...(element.config as TextAreaProps)}
             {...otherProps}
@@ -87,6 +100,7 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
     case FormFieldType.BUTTON:
       return (
         <section className='control'>
+          {inputLabel}
           <Button
             {...(element.config as ButtonProps)}
             {...otherProps}

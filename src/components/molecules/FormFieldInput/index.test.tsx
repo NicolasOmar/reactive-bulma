@@ -68,6 +68,77 @@ describe('FormFieldInput', () => {
     }
   })
 
+  test('Should render different input cases with its label', () => {
+    const cases = [
+      {
+        config: {
+          ...selectConfigCase,
+          mainInput: {
+            ...selectConfigCase.mainInput,
+            fieldLabel: 'Select Input'
+          }
+        },
+        lookByContainer: true
+      },
+      {
+        config: {
+          ...checkboxConfigCase,
+          mainInput: {
+            ...selectConfigCase.mainInput,
+            fieldLabel: 'Select Input'
+          }
+        },
+        lookByContainer: true
+      },
+      {
+        config: {
+          ...radioButtonConfigCase,
+          mainInput: {
+            ...radioButtonConfigCase.mainInput,
+            fieldLabel: 'Checkbox Input'
+          }
+        },
+        lookByContainer: true
+      },
+      {
+        config: {
+          ...textAreaConfigCase,
+          mainInput: {
+            ...textAreaConfigCase.mainInput,
+            fieldLabel: 'TextArea Input'
+          }
+        },
+        lookByContainer: false
+      },
+      {
+        config: {
+          ...buttonConfigCase,
+          mainInput: {
+            ...textAreaConfigCase.mainInput,
+            fieldLabel: 'TextArea Input'
+          }
+        },
+        lookByContainer: false
+      }
+    ]
+
+    for (const inputCase of cases) {
+      const typeString = inputCase.config.mainInput.type
+      const caseTestId = inputCase.lookByContainer
+        ? `test-form-field-container-${typeString}`
+        : `test-form-field-${typeString}`
+      const labelTestId = `test-form-field-${typeString}-label`
+
+      render(<FormFieldInput {...(inputCase.config as FormFieldInputProps)} />)
+
+      const caseFormField = screen.getByTestId(caseTestId)
+      const labelFormField = screen.getByTestId(labelTestId)
+      expect(caseFormField).toBeInTheDocument()
+      expect(labelFormField).toBeInTheDocument()
+      cleanup()
+    }
+  })
+
   test('Should render the three inputs', () => {
     const testIds = ['hello', 'how-are-you', 'goodbye']
 
