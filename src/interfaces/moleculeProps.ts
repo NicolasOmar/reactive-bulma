@@ -340,6 +340,7 @@ export type FormFieldConfig =
 
 export interface FormFieldElement {
   type: FormFieldType
+  fieldLabel?: string
   config: FormFieldConfig
 }
 
