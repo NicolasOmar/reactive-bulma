@@ -31,9 +31,25 @@ SelectCase.args = {
   ...(testing.selectConfigCase as FormFieldInputProps)
 }
 
+export const SelectWithLabel = Template.bind({})
+SelectWithLabel.args = {
+  mainInput: {
+    ...(testing.selectConfigCase.mainInput as FormFieldElement),
+    fieldLabel: 'Select with label'
+  }
+}
+
 export const CheckboxCase = Template.bind({})
 CheckboxCase.args = {
   ...(testing.checkboxConfigCase as FormFieldInputProps)
+}
+
+export const CheckboxWithLabel = Template.bind({})
+CheckboxWithLabel.args = {
+  mainInput: {
+    ...(testing.checkboxConfigCase.mainInput as FormFieldElement),
+    fieldLabel: 'Checkbox with label'
+  }
 }
 
 export const RadiobuttonCase = Template.bind({})
@@ -41,11 +57,26 @@ RadiobuttonCase.args = {
   ...(testing.radioButtonConfigCase as FormFieldInputProps)
 }
 
+export const RadiobuttonWithLabel = Template.bind({})
+RadiobuttonWithLabel.args = {
+  mainInput: {
+    ...(testing.radioButtonConfigCase.mainInput as FormFieldElement),
+    fieldLabel: 'Radiobutton with label'
+  }
+}
+
 export const TextareaCase = Template.bind({})
 TextareaCase.args = {
   ...(testing.textAreaConfigCase as FormFieldInputProps)
 }
 
+export const TextareaWithLabel = Template.bind({})
+TextareaWithLabel.args = {
+  mainInput: {
+    ...(testing.textAreaConfigCase.mainInput as FormFieldElement),
+    fieldLabel: 'Textarea with label'
+  }
+}
 export const LeftAddonSelect = Template.bind({})
 LeftAddonSelect.args = {
   mainInput: testing.inputConfigCase.mainInput as FormFieldElement,
