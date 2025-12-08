@@ -1,3 +1,10 @@
+## [5.0.3](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.2...v5.0.3) (2025-12-08)
+
+
+### Bug Fixes
+
+* Add a label for non-input variants in FormFieldInput ([#719](https://github.com/NicolasOmar/reactive-bulma/issues/719))([#718](https://github.com/NicolasOmar/reactive-bulma/issues/718)) ([b09c90e](https://github.com/NicolasOmar/reactive-bulma/commit/b09c90ed456b8b4e747585cbc3251036b19cc294))
+
 ## [5.0.2](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.1...v5.0.2) (2025-12-07)
 
 
