@@ -38,7 +38,7 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
       element.config?.testId ?? testId ?? `test-form-field-${element.type}`,
     containerTestId: testId ?? `test-form-field-container-${element.type}`
   }
-  console.warn(element.fieldLabel)
+
   const inputLabel = element.fieldLabel ? (
     <label
       data-testid={`test-form-field-${element.type}-label`}
