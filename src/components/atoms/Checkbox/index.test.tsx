@@ -7,16 +7,20 @@ import Checkbox from '.'
 import { testing } from './index.mocks.json'
 
 describe('Checkbox', () => {
-  const { basicTestId, basicExample, disabledMode } = testing
+  const { basicTestId, basicExample, exampleWithLabel, disabledMode } = testing
 
   test('Should render with minimal config', () => {
-    render(<Checkbox />)
+    render(<Checkbox {...basicExample} />)
     const minimalTestCheckBox = screen.getByTestId(basicTestId)
     expect(minimalTestCheckBox).toBeInTheDocument()
   })
 
   test('Should render with included text content', () => {
-    render(<Checkbox {...basicExample} />)
+    const caseWithLabel = {
+      ...basicExample,
+      ...exampleWithLabel
+    }
+    render(<Checkbox {...caseWithLabel} />)
     const testTextContentCheckBox = screen.getByTestId(
       `${basicTestId}-with-component`
     )
@@ -24,7 +28,7 @@ describe('Checkbox', () => {
   })
 
   test('Should check that the checkbox has been clicked', () => {
-    const clickeableConfig = { onChange: jest.fn() }
+    const clickeableConfig = { ...basicExample, onChange: jest.fn() }
 
     render(<Checkbox {...clickeableConfig} />)
     const clickCheckBox = screen.getByTestId(basicTestId)
@@ -36,6 +40,7 @@ describe('Checkbox', () => {
 
   test('Should check that it has not been clicked because it is disabled', () => {
     const notClickeableConfig = {
+      ...basicExample,
       ...disabledMode,
       onChange: jest.fn()
     }
