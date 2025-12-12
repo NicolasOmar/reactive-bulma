@@ -268,6 +268,8 @@ export interface FileProps
 
 export interface CheckBoxProps
   extends ComposedElementProps, InteractiveOnChangeProps, NamedInputProps {
+  /** `Attribute` `Required` Sets checkbox's value */
+  value: string | number
   /** `Attribute` Shows the checkbox as checked or unchecked */
   isChecked?: boolean
   /** `Attribute` Sets checkbox's text that will be shown next to its control */
@@ -281,8 +283,10 @@ export interface RadioButtonItemProps
     Pick<ElementProps, 'testId' | 'style'>,
     InteractiveOnChangeProps,
     NamedInputProps {
-  /** `Attribute` `Required` Sets radiobutton's text*/
+  /** `Attribute` `Required` Sets radiobutton's text */
   label: string
+  /** `Attribute` `Required` Sets radiobutton's value */
+  value: string | number
   /** `Attribute` Shows the radiobutton as checked or unchecked */
   isChecked?: boolean
   /** `Attribute` Will disable the checkbox */

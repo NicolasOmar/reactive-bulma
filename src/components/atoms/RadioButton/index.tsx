@@ -46,6 +46,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
               type='radio'
               style={_optionConfig.style ?? undefined}
               name={name}
+              value={_optionConfig.value}
               defaultChecked={_optionConfig.isChecked}
               disabled={_optionConfig.isDisabled}
               onClick={onClick}

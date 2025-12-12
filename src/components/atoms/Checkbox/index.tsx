@@ -17,6 +17,7 @@ const Checkbox: React.FC<CheckBoxProps> = ({
   label = null,
   isChecked,
   name,
+  value,
   isDisabled = false,
   onClick,
   onChange,
@@ -59,6 +60,7 @@ const Checkbox: React.FC<CheckBoxProps> = ({
         data-testid={checkboxTestId}
         type='checkbox'
         name={name}
+        value={value}
         className={cssClasses ?? undefined}
         style={style ?? undefined}
         defaultChecked={isChecked}
