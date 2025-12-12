@@ -1,3 +1,10 @@
+## [5.0.4](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.3...v5.0.4) (2025-12-12)
+
+
+### Bug Fixes
+
+* Fix radiobuttons and checkbox missing value attribute ([#721](https://github.com/NicolasOmar/reactive-bulma/issues/721))([#720](https://github.com/NicolasOmar/reactive-bulma/issues/720)) ([58bedae](https://github.com/NicolasOmar/reactive-bulma/commit/58bedae4177b19e083c9cb18aea27aaba288e49d))
+
 ## [5.0.3](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.2...v5.0.3) (2025-12-08)
 
 
