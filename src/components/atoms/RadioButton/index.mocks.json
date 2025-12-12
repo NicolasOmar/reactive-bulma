@@ -5,16 +5,16 @@
     "basicExample": {
       "name": "basicExample",
       "options": [
-        { "label": "Test checkbox" }
+        { "label": "Test checkbox", "value": "Test checkbox" }
       ]
     },
     "severalOptions": {
       "name": "severalExamples",
       "options": [
-        { "label": "Test checkbox 1" },
-        { "label": "Test checkbox 2" },
-        { "label": "Test checkbox 3" },
-        { "label": "Test checkbox 4" }
+        { "label": "Test checkbox 1", "value": "Test checkbox 1" },
+        { "label": "Test checkbox 2", "value": "Test checkbox 2" },
+        { "label": "Test checkbox 3", "value": "Test checkbox 3" },
+        { "label": "Test checkbox 4", "value": "Test checkbox 4" }
       ]
     }
   },

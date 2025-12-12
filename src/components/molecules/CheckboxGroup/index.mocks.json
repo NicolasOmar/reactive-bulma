@@ -2,13 +2,13 @@
   "testing": {
     "basicTestId": "test-checkboxes",
     "baseListOfCases": [
-      { "label": "Monday" },
-      { "label": "Thuesday" },
-      { "label": "Wednsday" },
-      { "label": "Thursday" },
-      { "label": "Friday" },
-      { "label": "Saturday" },
-      { "label": "Sunday" }
+      { "label": "Monday", "value": "Monday" },
+      { "label": "Thuesday", "value": "Thuesday" },
+      { "label": "Wednsday", "value": "Wednsday" },
+      { "label": "Thursday", "value": "Thursday" },
+      { "label": "Friday", "value": "Friday" },
+      { "label": "Saturday", "value": "Saturday" },
+      { "label": "Sunday", "value": "Sunday" }
     ]
   },
   "storybook": {
