@@ -9,7 +9,11 @@ import { testing, storybook } from './index.mocks.json'
 export default {
   title: 'Atoms/Checkbox',
   component: Checkbox,
-  args: testing.basicExample,
+  args: {
+    ...testing.basicExample,
+    ...testing.exampleWithLabel,
+    name: 'example-checkbox'
+  },
   ...storybook
 } as Meta<typeof Checkbox>
 

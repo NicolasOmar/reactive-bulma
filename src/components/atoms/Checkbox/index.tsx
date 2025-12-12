@@ -51,12 +51,13 @@ const Checkbox: React.FC<CheckBoxProps> = ({
   }
 
   return (
-    <label
+    <section
       data-testid={checkboxContainerTestId}
       className={checkboxContainerClasses}
       style={containerStyle ?? undefined}
     >
       <input
+        id={name}
         data-testid={checkboxTestId}
         type='checkbox'
         name={name}
@@ -69,8 +70,13 @@ const Checkbox: React.FC<CheckBoxProps> = ({
         onChange={onChange}
         onBlur={onBlur}
       />
-      <p style={checkboxBaseStyle}>{label}</p>
-    </label>
+      <label
+        style={checkboxBaseStyle}
+        htmlFor={name}
+      >
+        {label}
+      </label>
+    </section>
   )
 }
 
