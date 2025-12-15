@@ -1,3 +1,10 @@
+## [5.0.6](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.5...v5.0.6) (2025-12-15)
+
+
+### Bug Fixes
+
+* FormField and FormFieldInput testIds rendering fixed ([#731](https://github.com/NicolasOmar/reactive-bulma/issues/731))([#730](https://github.com/NicolasOmar/reactive-bulma/issues/730)) ([da498f1](https://github.com/NicolasOmar/reactive-bulma/commit/da498f1ef48c48d5a96501ce9b62af8663c684d9))
+
 ## [5.0.5](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.4...v5.0.5) (2025-12-14)
 
 
