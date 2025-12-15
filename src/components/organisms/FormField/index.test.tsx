@@ -12,8 +12,13 @@ import { createObjArray } from '@functions/generators'
 import mocks from './index.mocks.json'
 
 describe('FormField', () => {
-  const { basicTestId, testClasses, basicGroupedInputTestId, baseConfig } =
-    mocks.testing
+  const {
+    basicTestId,
+    testClasses,
+    basicGroupedInputTestId,
+    baseConfig,
+    customTestId
+  } = mocks.testing
   const baseTestConfig = {
     inputsConfig: baseConfig.inputsConfig as FormFieldInputProps
   }
@@ -21,11 +26,33 @@ describe('FormField', () => {
     numberOfItems: 2,
     externalParser: () => baseConfig.inputsConfig
   })
+  const customTestIdConfig = {
+    ...baseConfig,
+    inputsConfig: {
+      ...baseConfig.inputsConfig,
+      mainInput: {
+        ...baseConfig.inputsConfig.mainInput,
+        config: {
+          ...baseConfig.inputsConfig.mainInput.config,
+          inputConfig: {
+            ...baseConfig.inputsConfig.mainInput.config.inputConfig,
+            testId: customTestId
+          }
+        }
+      }
+    }
+  }
 
   test('Should render the component', () => {
     render(<FormField {...baseTestConfig} />)
     const testFormField = screen.getByTestId(basicTestId)
 
+    expect(testFormField).toBeInTheDocument()
+  })
+
+  test('Should render the component with a custom testId', () => {
+    render(<FormField {...(customTestIdConfig as FormFieldProps)} />)
+    const testFormField = screen.getByTestId(customTestId)
     expect(testFormField).toBeInTheDocument()
   })
 

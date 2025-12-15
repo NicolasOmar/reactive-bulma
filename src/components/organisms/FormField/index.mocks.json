@@ -2,6 +2,7 @@
   "testing": {
     "basicTestId": "test-field",
     "basicGroupedInputTestId": "test-grouped-input-control",
+    "customTestId": "custom-form-field-test-id",
     "testClasses": [
       {
         "name": "isHorizontal",

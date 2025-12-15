@@ -33,19 +33,14 @@ const FormField: React.FC<FormFieldProps> = ({
 
     if (isGrouped) {
       return Array.isArray(inputsConfig) ? (
-        inputsConfig.map((_singleConfig, i) => {
-          const parsedSingleConfig = {
-            ..._singleConfig,
-            isHorizontal: _singleConfig.isHorizontal ?? isHorizontal,
-            testId: `test-grouped-input-control-${i}`
-          }
-          return (
-            <FormFieldInput
-              key={fieldBodyKey}
-              {...parsedSingleConfig}
-            />
-          )
-        })
+        inputsConfig.map((_singleConfig, i) => (
+          <FormFieldInput
+            key={fieldBodyKey}
+            {..._singleConfig}
+            isHorizontal={_singleConfig.isHorizontal ?? isHorizontal}
+            testId={_singleConfig.testId ?? `test-grouped-input-control-${i}`}
+          />
+        ))
       ) : (
         <FormFieldInput
           key={fieldBodyKey}
