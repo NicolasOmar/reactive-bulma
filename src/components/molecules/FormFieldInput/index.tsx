@@ -36,7 +36,10 @@ const renderInput = ({ testId, element, isHorizontal }: RenderInputProps) => {
   const otherProps = {
     testId:
       element.config?.testId ?? testId ?? `test-form-field-${element.type}`,
-    containerTestId: testId ?? `test-form-field-container-${element.type}`
+    containerTestId:
+      (element.config as RadioButtonProps)?.containerTestId ??
+      testId ??
+      `test-form-field-container-${element.type}`
   }
 
   const inputLabel = element.fieldLabel ? (
