@@ -135,6 +135,8 @@ export interface ImageProps
   alt?: string
   /** `Styling` Will add round borders to image's shape */
   fixedSize?: FixedImageSizeType
+  /** `Styling` Will change the image for an animated background occupating its size, and it but will not remain clickeable */
+  isSkeleton?: boolean
   /** `Styling` Sets image size based on one of fixed ratios/fixed sizes */
   isRounded?: boolean
 }
@@ -177,6 +179,8 @@ export interface IconProps extends ComposedElementProps {
   colorMode?: ColorModeType
   /** `Styling` Animates the icon spinning 360° */
   isSpinning?: boolean
+  /** `Styling` Will change the icon for an animated background occupating the input, and it but will not remain clickable */
+  isSkeleton?: boolean
   /** `Styling` Used for `InputControl` styling purpose only. Will move the Icon itself to control's Input side */
   position?: RightLeftAlignType
 }

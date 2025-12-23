@@ -32,6 +32,11 @@ FullSized.args = {
   fixedSize: 'fullwidth'
 }
 
+export const Skeleton = Template.bind({})
+Skeleton.args = {
+  isSkeleton: true
+}
+
 export const IsRounded = Template.bind({})
 IsRounded.args = {
   isRounded: true

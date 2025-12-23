@@ -15,12 +15,14 @@ const Image: React.FC<ImageProps> = ({
   src,
   alt = null,
   fixedSize = null,
+  isSkeleton = false,
   isRounded = false
 }) => {
   const imageBaseClass = 'image'
   const imageContainerClasses = parseClasses([
     imageBaseClass,
     fixedSize ? `${COMMON_CLASSES.IS}${fixedSize}` : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
     containerCssClasses
   ])
   const imageClasses = parseClasses([

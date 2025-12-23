@@ -27,6 +27,9 @@ UsingOtherIcon.args = testing.otherIcon as IconProps
 export const Colored = Template.bind({})
 Colored.args = testing.colored as IconProps
 
+export const Skeleton = Template.bind({})
+Skeleton.args = testing.skeleton as IconProps
+
 export const WithBigSize = Template.bind({})
 WithBigSize.args = testing.bigSize as IconProps
 
