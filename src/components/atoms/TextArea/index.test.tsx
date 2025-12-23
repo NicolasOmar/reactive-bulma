@@ -19,7 +19,10 @@ describe('TextArea', () => {
 
   test('Should render with a value', () => {
     const testValue = '150'
-    const basicProps = { value: testValue } as TextAreaProps
+    const basicProps = {
+      value: testValue,
+      onChange: jest.fn()
+    } as TextAreaProps
 
     render(<TextArea {...basicProps} />)
     const testAreaWithText = screen.getByText(testValue)

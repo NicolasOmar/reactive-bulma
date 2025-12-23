@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 import { SelectProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
+import { COMMON_CLASSES } from '@constants/classes'
 
 const Select: React.FC<SelectProps> = ({
   testId = null,
@@ -32,10 +33,10 @@ const Select: React.FC<SelectProps> = ({
         'select',
         color,
         size,
-        isMultiple ? 'is-multiple' : null,
-        isRounded ? 'is-rounded' : null,
-        isHovered ? 'is-hovered' : null,
-        isFocused ? 'is-focused' : null,
+        isMultiple ? COMMON_CLASSES.MULTIPLE : null,
+        isRounded ? COMMON_CLASSES.ROUNDED : null,
+        isHovered ? COMMON_CLASSES.HOVERED : null,
+        isFocused ? COMMON_CLASSES.FOCUSED : null,
         containerCssClasses
       ]),
     [

@@ -3,7 +3,8 @@
     "basicTestId": "test-image",
     "testSrc": "https://bulma.io/assets/images/placeholders/256x256.png",
     "testClasses": {
-      "isRounded": "is-rounded"
+      "isRounded": "is-rounded",
+      "isSkeleton": "is-skeleton"
     }
   },
   "storybook": {

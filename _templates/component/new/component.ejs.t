@@ -16,7 +16,7 @@ const <%= name %>: React.FC<<%= name %>Props> = ({
   style = null,
   <%= testStylingPropName %> = null
 }) => {
-  const <%= underName %>BaseClass = <%= underName %>
+  const <%= underName %>BaseClass = '<%= underName %>'
   const <%= underName %>Classes = parseClasses([
     <%= underName %>BaseClass,
     <%= testStylingPropName %> ? '<%= testStylingPropValue %>' : null,

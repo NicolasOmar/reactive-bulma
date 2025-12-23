@@ -48,6 +48,7 @@ const Icon: React.FC<IconProps> = ({
   size = null,
   colorMode = null,
   isSpinning = false,
+  isSkeleton = false,
   position = null
 }) => {
   const iconContainerClasses = parseClasses([
@@ -62,6 +63,7 @@ const Icon: React.FC<IconProps> = ({
     `${mdiBaseClass}-${iconLabel}`,
     colorMode ? `${mdiBaseClass}-${COMMON_CLASSES.IS}${colorMode}` : null,
     isSpinning ? `${mdiBaseClass}-spin` : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
     size ? `${mdiBaseClass}-${IconSizeEnum[size]}px` : `${mdiBaseClass}-24px`,
     cssClasses
   ])

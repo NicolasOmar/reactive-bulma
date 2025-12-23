@@ -65,6 +65,8 @@ export interface ButtonProps
   isRounded?: boolean
   /** `Styling` Will change `text` for an animated spinner, but will remain clickeable */
   isLoading?: boolean
+  /** `Styling` Will change `text` and its input for an animated background occupating the input, and it but will not remain clickeable */
+  isSkeleton?: boolean
   /** `Styling` Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */
@@ -112,6 +114,8 @@ interface BaseTagProps extends React.ComponentPropsWithoutRef<'span'> {
   isRounded?: boolean
   /** `Styling` Set tag's size */
   size?: BaseSizeType
+  /** `Styling` Will change the tag for an animated background occupating its size, and it but will not remain clickeable */
+  isSkeleton?: boolean
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
 }
@@ -133,6 +137,8 @@ export interface ImageProps
   alt?: string
   /** `Styling` Will add round borders to image's shape */
   fixedSize?: FixedImageSizeType
+  /** `Styling` Will change the image for an animated background occupating its size, and it but will not remain clickeable */
+  isSkeleton?: boolean
   /** `Styling` Sets image size based on one of fixed ratios/fixed sizes */
   isRounded?: boolean
 }
@@ -160,6 +166,8 @@ export interface TitleProps {
   main?: TitleSectionProps
   /** `Attribute` Subtitle title configuration object */
   secondary?: TitleSectionProps
+  /** `Styling` Will change both titles for an animated background occupating its size, and it but will not remain clickeable */
+  isSkeleton?: boolean
 }
 
 export interface IconProps extends ComposedElementProps {
@@ -175,6 +183,8 @@ export interface IconProps extends ComposedElementProps {
   colorMode?: ColorModeType
   /** `Styling` Animates the icon spinning 360° */
   isSpinning?: boolean
+  /** `Styling` Will change the icon for an animated background occupating the input, and it but will not remain clickable */
+  isSkeleton?: boolean
   /** `Styling` Used for `InputControl` styling purpose only. Will move the Icon itself to control's Input side */
   position?: RightLeftAlignType
 }
@@ -191,6 +201,8 @@ export interface InputProps
   isDisabled?: boolean
   /** `Attribute` Will show the input as a normal one, but is not editable and has no shadow */
   isReadonly?: boolean
+  /** `Styling` Will change the input for an animated background occupating it entirely, and it but will not remain clickable */
+  isSkeleton?: boolean
   /** `Styling` Color based on bulma's text color tokens */
   color?: ColorType
   /** `Styling` Set input's size */
@@ -412,4 +424,11 @@ export interface GridCellProps
   colSpan?: number
   /** `Styling` Change how many rows a cell spans */
   rowSpan?: number
+}
+
+export interface SkeletonProps extends ElementProps {
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the box */
+  children?: ChildrenType
+  /** Styling: How the Skeleton's children will be shown. Will be `block` by default */
+  displayType?: 'block' | 'lines'
 }

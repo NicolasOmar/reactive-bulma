@@ -27,23 +27,22 @@ const FormField: React.FC<FormFieldProps> = ({
     testId ?? parseTestId({ tag: 'field', parsedClasses: formFieldClasses })
 
   const memorizedFormInput = useMemo(() => {
-    const fieldBodyKey = isGrouped
-      ? `grouped-input-control-body-${generateKey()}`
-      : `input-control-body-${generateKey()}`
-
     if (isGrouped) {
       return Array.isArray(inputsConfig) ? (
-        inputsConfig.map((_singleConfig, i) => (
-          <FormFieldInput
-            key={fieldBodyKey}
-            {..._singleConfig}
-            isHorizontal={_singleConfig.isHorizontal ?? isHorizontal}
-            testId={_singleConfig.testId ?? `test-grouped-input-control-${i}`}
-          />
-        ))
+        inputsConfig.map((_singleConfig, i) => {
+          const fieldBodyKey = `grouped-input-control-body-${generateKey()}`
+          return (
+            <FormFieldInput
+              key={fieldBodyKey}
+              {..._singleConfig}
+              isHorizontal={_singleConfig.isHorizontal ?? isHorizontal}
+              testId={_singleConfig.testId ?? `test-grouped-input-control-${i}`}
+            />
+          )
+        })
       ) : (
         <FormFieldInput
-          key={fieldBodyKey}
+          key={`input-control-body-${generateKey()}`}
           {...inputsConfig}
           isHorizontal={inputsConfig.isHorizontal ?? isHorizontal}
         />

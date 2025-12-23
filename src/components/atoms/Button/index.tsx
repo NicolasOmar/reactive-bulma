@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 // TYPES & INTERFACES
 import { ButtonProps } from '@interfaces/atomProps'
 // CONSTANTS
@@ -21,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   isOutlined = false,
   isRounded = false,
   isLoading = false,
+  isSkeleton = false,
   isStatic = false,
   isSelected = false,
   isFullWidth = false,
@@ -29,44 +30,25 @@ const Button: React.FC<ButtonProps> = ({
   onClick = null
 }) => {
   const buttonBaseClass = 'button'
-  const buttonClasses = useMemo(
-    () =>
-      parseClasses([
-        buttonBaseClass,
-        color ? `${COMMON_CLASSES.IS}${color}` : null,
-        colorMode ? `${COMMON_CLASSES.IS}${colorMode}` : null,
-        isInvertedColor ? COMMON_CLASSES.INVERTED : null,
-        isOutlined ? COMMON_CLASSES.OUTLINED : null,
-        isRounded ? COMMON_CLASSES.ROUNDED : null,
-        isLoading ? COMMON_CLASSES.LOADING : null,
-        isStatic ? COMMON_CLASSES.STATIC : null,
-        isSelected ? COMMON_CLASSES.SELECTED : null,
-        isFullWidth ? COMMON_CLASSES.FULL_WIDTH : null,
-        isResponsive ? COMMON_CLASSES.RESPONSIVE : null,
-        size ? `${COMMON_CLASSES.IS}${size}` : null,
-        cssClasses
-      ]),
-    [
-      color,
-      colorMode,
-      isInvertedColor,
-      isOutlined,
-      isRounded,
-      isLoading,
-      isStatic,
-      isSelected,
-      isFullWidth,
-      isResponsive,
-      size,
-      cssClasses
-    ]
-  )
-  const buttonTestId = useMemo(
-    () =>
-      testId ??
-      parseTestId({ tag: buttonBaseClass, parsedClasses: buttonClasses }),
-    [testId, buttonClasses]
-  )
+  const buttonClasses = parseClasses([
+    buttonBaseClass,
+    color ? `${COMMON_CLASSES.IS}${color}` : null,
+    colorMode ? `${COMMON_CLASSES.IS}${colorMode}` : null,
+    isInvertedColor ? COMMON_CLASSES.INVERTED : null,
+    isOutlined ? COMMON_CLASSES.OUTLINED : null,
+    isRounded ? COMMON_CLASSES.ROUNDED : null,
+    isLoading ? COMMON_CLASSES.LOADING : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
+    isStatic ? COMMON_CLASSES.STATIC : null,
+    isSelected ? COMMON_CLASSES.SELECTED : null,
+    isFullWidth ? COMMON_CLASSES.FULL_WIDTH : null,
+    isResponsive ? COMMON_CLASSES.RESPONSIVE : null,
+    size ? `${COMMON_CLASSES.IS}${size}` : null,
+    cssClasses
+  ])
+  const buttonTestId =
+    testId ??
+    parseTestId({ tag: buttonBaseClass, parsedClasses: buttonClasses })
 
   return isAnAnchor ? (
     <a

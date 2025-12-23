@@ -7,7 +7,8 @@ import { COMMON_CLASSES } from '@constants/classes'
 import { parseClasses } from '@functions/parsers'
 
 const renderTitleSection = (
-  section?: TitleSectionProps
+  section?: TitleSectionProps,
+  isSkeleton?: boolean
 ): React.ReactElement | null => {
   if (section === undefined) return null
 
@@ -16,6 +17,7 @@ const renderTitleSection = (
     type,
     size ? `${COMMON_CLASSES.IS}${size}` : null,
     type === 'title' && isSpaced ? 'is-spaced' : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
     cssClasses
   ])
   const titleSectionTestId = section?.testId ?? `test-${section?.type}`
@@ -31,14 +33,14 @@ const renderTitleSection = (
   )
 }
 
-const Title: React.FC<TitleProps> = ({ main, secondary }) => {
+const Title: React.FC<TitleProps> = ({ main, secondary, isSkeleton }) => {
   const memoizedMainTitleSection = useMemo(
-    () => renderTitleSection(main),
-    [main]
+    () => renderTitleSection(main, isSkeleton),
+    [main, isSkeleton]
   )
   const memoizedSecondaryTitleSection = useMemo(
-    () => renderTitleSection(secondary),
-    [secondary]
+    () => renderTitleSection(secondary, isSkeleton),
+    [secondary, isSkeleton]
   )
 
   return (

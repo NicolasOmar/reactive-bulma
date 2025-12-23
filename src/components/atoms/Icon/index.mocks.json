@@ -12,6 +12,9 @@
     "colored": {
       "color": "info"
     },
+    "skeleton": {
+      "isSkeleton": true
+    },
     "bigSize": {
       "size": "large"
     },
@@ -25,7 +28,8 @@
     "colors": ["black", "danger", "warning"],
     "sizes": ["small", "medium", "large"],
     "testClasses": {
-      "isSpinning": "spin"
+      "isSpinning": "spin",
+      "isSkeleton": "is-skeleton"
     }
   },
   "storybook": {

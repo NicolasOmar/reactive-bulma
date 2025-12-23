@@ -27,5 +27,11 @@ WithSubtitles.args = testing.withSubtitle as TitleProps
 export const WithBiggerSubtitles = Template.bind({})
 WithBiggerSubtitles.args = testing.biggerSubtitle as TitleProps
 
+export const Skeleton = Template.bind({})
+Skeleton.args = {
+  ...testing.biggerSubtitle,
+  isSkeleton: true
+} as TitleProps
+
 export const SpicedTitle = Template.bind({})
 SpicedTitle.args = testing.spacedTitle as TitleProps

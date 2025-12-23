@@ -1,5 +1,5 @@
 import React from 'react'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 // COMPONENTS
 import TableCell from '.'
@@ -27,7 +27,7 @@ describe('TableCell', () => {
       const classValue = (testClasses as Record<string, string>)[prop]
       const classObj = { ...testBaseConfig, [prop]: classValue }
       const testIdWithClass = `${basicTestId}-${classValue.replace(TEST_ID_REGEXP.IS, '')}`
-      render(<TableCell {...classObj} />)
+      renderTestingTableContainer(<TableCell {...classObj} />)
       const testClassButton = screen.getByTestId(testIdWithClass)
       expect(testClassButton.className).toContain(classValue)
       cleanup()
