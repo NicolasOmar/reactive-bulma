@@ -114,6 +114,8 @@ interface BaseTagProps extends React.ComponentPropsWithoutRef<'span'> {
   isRounded?: boolean
   /** `Styling` Set tag's size */
   size?: BaseSizeType
+  /** `Styling` Will change the tag for an animated background occupating its size, and it but will not remain clickeable */
+  isSkeleton?: boolean
   /** `Function` Click function for `delete` option, alone does not nothing, but can be reused for other components */
   onDeleteClick?: () => void
 }
@@ -164,6 +166,8 @@ export interface TitleProps {
   main?: TitleSectionProps
   /** `Attribute` Subtitle title configuration object */
   secondary?: TitleSectionProps
+  /** `Styling` Will change both titles for an animated background occupating its size, and it but will not remain clickeable */
+  isSkeleton?: boolean
 }
 
 export interface IconProps extends ComposedElementProps {

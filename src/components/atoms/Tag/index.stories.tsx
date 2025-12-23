@@ -40,6 +40,12 @@ LargeSize.args = {
   size: 'large'
 }
 
+export const Skeleton = Template.bind({})
+Skeleton.args = {
+  ...LargeSize.args,
+  isSkeleton: true
+}
+
 export const WithDeleteButton = Template.bind({})
 WithDeleteButton.args = {
   ...Colored.args,

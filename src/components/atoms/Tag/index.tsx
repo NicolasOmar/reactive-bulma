@@ -18,6 +18,7 @@ const Tag: React.FC<TagProps> = ({
   isLight = null,
   isRounded = null,
   size = null,
+  isSkeleton = false,
   onDeleteClick = null
 }) => {
   const tagBaseClass = 'tag'
@@ -27,6 +28,7 @@ const Tag: React.FC<TagProps> = ({
     isLight ? COMMON_CLASSES.LIGHT : null,
     isRounded ? COMMON_CLASSES.ROUNDED : null,
     size ? `${COMMON_CLASSES.IS}${size}` : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
     cssClasses
   ])
   const tagTestId =
