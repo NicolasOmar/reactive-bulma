@@ -1,3 +1,19 @@
+# [5.1.0](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.7...v5.1.0) (2025-12-23)
+
+
+### Bug Fixes
+
+* Adding new component Skeleton ([ea5ab1f](https://github.com/NicolasOmar/reactive-bulma/commit/ea5ab1f13729f353f826ce746c751dc5efe5095a))
+* Addition of skeleton in Icon and Image components ([c80d4e6](https://github.com/NicolasOmar/reactive-bulma/commit/c80d4e6b494fa4081e00bad01c9a52af11addfa0))
+* Addition of skeleton in Input and TextaArea components ([bba6162](https://github.com/NicolasOmar/reactive-bulma/commit/bba61621d6e2c0cb2eb8d1bb7c73b271850ba40e))
+* Addition of skeleton in Tag and Title components ([8a064f8](https://github.com/NicolasOmar/reactive-bulma/commit/8a064f877d63699ae0d466710f0a1dee3f80b54c))
+* First addition of skeleton in Button component ([ea56f61](https://github.com/NicolasOmar/reactive-bulma/commit/ea56f61243233549dfeb6ae99737e654179efa88))
+
+
+### Features
+
+* Create Skeleton component ([#741](https://github.com/NicolasOmar/reactive-bulma/issues/741))([#740](https://github.com/NicolasOmar/reactive-bulma/issues/740)) ([dfe5831](https://github.com/NicolasOmar/reactive-bulma/commit/dfe583117152d6106ba5aa6c59d71b2dd08f8c84))
+
 ## [5.0.7](https://github.com/NicolasOmar/reactive-bulma/compare/v5.0.6...v5.0.7) (2025-12-21)
 
 
