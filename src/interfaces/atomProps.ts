@@ -425,3 +425,10 @@ export interface GridCellProps
   /** `Styling` Change how many rows a cell spans */
   rowSpan?: number
 }
+
+export interface SkeletonProps extends ElementProps {
+  /** `Attribute` Reffers to the component or array of components that will be shown inside the box */
+  children?: ChildrenType
+  /** Styling: How the Skeleton's children will be shown. Will be `block` by default */
+  displayType?: 'block' | 'lines'
+}

@@ -1,0 +1,15 @@
+{
+  "testing": {
+    "basicTestId": "test-skeleton-block"
+  },
+  "storybook": {
+    "parameters": {
+      "componentSubtitle": "Used to the pre-built of any children components",
+      "docs": {
+        "description": {
+          "component": "A skeleton loader is a loading state that acts as a placeholder for content in an interface. Bulma v1 ships with 2 skeleton elements, and skeleton variants for most Bulma components."
+        }
+      }
+    }
+  }
+}
