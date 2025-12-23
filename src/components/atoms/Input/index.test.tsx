@@ -20,7 +20,11 @@ describe('Input', () => {
 
   test('Should render with a text value', () => {
     const testValue = '150'
-    const basicProps = { ...basicExample, value: testValue } as InputProps
+    const basicProps = {
+      ...basicExample,
+      value: testValue,
+      onChange: jest.fn()
+    } as InputProps
 
     render(<Input {...basicProps} />)
     const testInputWithText = screen.getByTestId(basicTestId)
