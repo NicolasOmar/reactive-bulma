@@ -4,7 +4,8 @@
     "testClasses": {
       "isRounded": "is-rounded",
       "isHovered": "is-hovered",
-      "isFocused": "is-focused"
+      "isFocused": "is-focused",
+      "isSkeleton": "is-skeleton"
     },
     "basicExample": {
       "type": "text"
@@ -20,6 +21,9 @@
     },
     "bigSize": {
       "size": "is-large"
+    },
+    "skeleton": {
+      "isSkeleton": true
     },
     "rounded": {
       "isRounded": true

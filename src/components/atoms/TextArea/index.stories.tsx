@@ -26,6 +26,9 @@ Colored.args = testing.redColored as TextAreaProps
 export const WithBigSize = Template.bind({})
 WithBigSize.args = testing.bigSize as TextAreaProps
 
+export const Skeleton = Template.bind({})
+Skeleton.args = testing.skeleton as TextAreaProps
+
 export const Hovered = Template.bind({})
 Hovered.args = testing.hovered as TextAreaProps
 

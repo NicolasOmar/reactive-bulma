@@ -4,7 +4,8 @@
     "testClasses": {
       "isHovered": "is-hovered",
       "isFocused": "is-focused",
-      "isFixedSize": "has-fixed-size"
+      "isFixedSize": "has-fixed-size",
+      "isSkeleton": "is-skeleton"
     },
     "withText": {
       "text": "Welcome to reactive-bulma"
@@ -14,6 +15,9 @@
     },
     "bigSize": {
       "size": "is-large"
+    },
+    "skeleton": {
+      "isSkeleton": true
     },
     "hovered": {
       "isHovered": true

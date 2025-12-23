@@ -30,6 +30,9 @@ Colored.args = testing.redColored as InputProps
 export const WithBigSize = Template.bind({})
 WithBigSize.args = testing.bigSize as InputProps
 
+export const Skeleton = Template.bind({})
+Skeleton.args = testing.skeleton as InputProps
+
 export const Rounded = Template.bind({})
 Rounded.args = testing.rounded as InputProps
 

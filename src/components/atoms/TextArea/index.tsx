@@ -3,6 +3,7 @@ import React from 'react'
 import { TextAreaProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
+import { COMMON_CLASSES } from '@constants/classes'
 
 const TextArea: React.FC<TextAreaProps> = ({
   testId = null,
@@ -14,6 +15,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   rows = null,
   isDisabled = false,
   isReadonly = false,
+  isSkeleton = false,
   isFixedSize = false,
   color = null,
   size = null,
@@ -26,9 +28,10 @@ const TextArea: React.FC<TextAreaProps> = ({
     'textarea',
     color,
     size,
-    isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null,
+    isHovered ? COMMON_CLASSES.HOVERED : null,
+    isFocused ? COMMON_CLASSES.FOCUSED : null,
     isFixedSize ? 'has-fixed-size' : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
     cssClasses
   ])
   const textAreaTestId =

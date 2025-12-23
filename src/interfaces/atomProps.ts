@@ -201,6 +201,8 @@ export interface InputProps
   isDisabled?: boolean
   /** `Attribute` Will show the input as a normal one, but is not editable and has no shadow */
   isReadonly?: boolean
+  /** `Styling` Will change the input for an animated background occupating it entirely, and it but will not remain clickable */
+  isSkeleton?: boolean
   /** `Styling` Color based on bulma's text color tokens */
   color?: ColorType
   /** `Styling` Set input's size */

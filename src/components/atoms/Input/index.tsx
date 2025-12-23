@@ -3,6 +3,7 @@ import React from 'react'
 import { InputProps } from '@interfaces/atomProps'
 // FUNCTIONS
 import { parseClasses, parseTestId } from '@functions/parsers'
+import { COMMON_CLASSES } from '@constants/classes'
 
 const Input: React.FC<InputProps> = ({
   testId = null,
@@ -14,6 +15,7 @@ const Input: React.FC<InputProps> = ({
   placeholder = null,
   isDisabled = false,
   isReadonly = false,
+  isSkeleton = false,
   color = null,
   size = null,
   isRounded = null,
@@ -27,9 +29,10 @@ const Input: React.FC<InputProps> = ({
     'input',
     color,
     size,
-    isRounded ? 'is-rounded' : null,
-    isHovered ? 'is-hovered' : null,
-    isFocused ? 'is-focused' : null,
+    isRounded ? COMMON_CLASSES.ROUNDED : null,
+    isHovered ? COMMON_CLASSES.HOVERED : null,
+    isFocused ? COMMON_CLASSES.FOCUSED : null,
+    isSkeleton ? COMMON_CLASSES.SKELETON : null,
     cssClasses
   ])
   const inputTestId =
