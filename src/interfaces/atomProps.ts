@@ -65,6 +65,8 @@ export interface ButtonProps
   isRounded?: boolean
   /** `Styling` Will change `text` for an animated spinner, but will remain clickeable */
   isLoading?: boolean
+  /** `Styling` Will change `text` and its input for an animated background occupating the input, and it but will not remain clickeable */
+  isSkeleton?: boolean
   /** `Styling` Similar to `isDisabled`, but will remove any color style */
   isStatic?: boolean
   /** `Styling` Sets the button style when a User selects it (useful for an attached `ButtonGroup`) */

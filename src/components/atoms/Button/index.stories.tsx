@@ -68,6 +68,12 @@ LoadingState.args = {
   isLoading: true
 }
 
+export const SkeletonState = Template.bind({})
+SkeletonState.args = {
+  ...Colored.args,
+  isSkeleton: true
+}
+
 export const LargeSize = Template.bind({})
 LargeSize.args = {
   ...Colored.args,

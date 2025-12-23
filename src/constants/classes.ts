@@ -14,6 +14,7 @@ export const COMMON_CLASSES = {
   ROUNDED: 'is-rounded',
   TOGGLE_ROUNDED: 'is-toggle-rounded',
   LOADING: 'is-loading',
+  SKELETON: 'is-skeleton',
   EXPANDED: 'is-expanded',
   ACTIVE: 'is-active',
   ICON_LEFT: 'has-icons-left',
