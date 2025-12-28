@@ -37,20 +37,22 @@ jobs:
           TITLE: Check weekly dependency updates
           ASSIGNEES: nicolasomar
           MILESTONE: maintenance
-          LABELS: dependencies,enhancement
+          LABELS: dependencies
           BODY: |
             ### Objective
 
             Update ReactiveBulma's dependencies to the latest versions from last week.
 
             ---
+              
             ### Description
 
-            After reaching the last version per the original roadmap, the following long-term objective is to maintain a healthy project that the community can use. This requires checking all dependencies for possible updates, applying them, and ensuring functionality has not been affected.
+            After reaching the last version per the original roadmap, the following long-term objective is to maintain a healthy project that the community can use. It is necessary to check all dependencies for possible updates, apply them, and ensure functionality has not been affected.
 
-            In case of issues after the mentioned updates, it will be necessary to fix them before pushing the changes to avoid affecting the community.
+            In case of issues after the mentioned updates, they must be resolved before pushing the changes to avoid affecting the community.
 
             ---
+              
             ### Tasks
 
             - [ ] Run the script for the update and wait until the new installed versions. `npm run update`.

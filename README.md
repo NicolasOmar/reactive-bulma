@@ -120,6 +120,10 @@ Several quick start options are available:
 - Clone the repo: `git clone https://github.com/NicolasOmar/reactive-bulma.git`.
 - Install with [npm](https://www.npmjs.com/package/reactive-bulma): `npm install reactive-bulma@latest`
   - Before cloning this repo, I recommend installing [Node](https://nodejs.org/en/download/) `>=20.10.0` to install packages.
+- Once the package has been installed, add at your's React main application file (`main.jsx/tsx`) the following line to inject bulma's styles:
+```jsx
+import '../node_modules/reactive-bulma/dist/reactive-bulma.css'
+```
 
 ## Folder structure
 
@@ -148,7 +152,7 @@ Reactive Bulma's documentation, included in this repo in the root directory, is 
 - Open a console and run `npm install` to install the Node.js dependencies, including Storybook (the site builder).
 - Run `npm start`.
 - Wait until a new tab opens with url <http://localhost:6006/> in your browser. 
-  - If you want to initiate it in the background, you can run `npm run start:cli.`
+  - If you want to initiate it in the background, you can run `npm run start:cli`.
 
 Learn more about `Storybook` by reading its [documentation](https://storybook.js.org/docs/react/get-started/install).
 
@@ -199,13 +203,13 @@ Given the mentioned release logic, `main` is the only static branch, and each de
 
 ## Roadmap
 
-From mid-September to the end of November (2025), I updated ReactiveBulma's main tools to their latest major versions ([Bulma v1](https://bulma.io/documentation/start/migrating-to-v1/) and [React v19](https://react.dev/blog/2024/12/05/react-19)), which includes issues and pull requests I wrapped [in version](https://github.com/NicolasOmar/reactive-bulma/milestone/6?closed=1) `v5`.
+From mid-September to the end of November (2025), I updated ReactiveBulma's main tools to their latest major versions ([Bulma v1](https://bulma.io/documentation/start/migrating-to-v1/) and [React v19](https://react.dev/blog/2024/12/05/react-19)), which includes issues and pull requests I wrapped [in version `v5`](https://github.com/NicolasOmar/reactive-bulma/milestone/6?closed=1).
 
-Nowadays, I am updating the rest of the dependencies every week, creating a PR alongside its related branch and PR to maintain track of those updates. 
-
-For the near future. I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I migrated all custom components, leaving me with code I can get rid of and, in the process, finding new opportunities to enhance component usability.
+Nowadays, I am updating the rest of the dependencies every week, creating a PR alongside its related branch and PR to maintain track of those updates.
 
 If you want the actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
+
+During 2026, I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I use this library to build its UI.
 
 <details>
 <summary>Here is the status table I used to keep track of the worked milestones/versions. (v5 included)</summary>
