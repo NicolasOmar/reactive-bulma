@@ -95,6 +95,7 @@ After studying [an Udemy course on TypeScript](https://github.com/NicolasOmar/ty
 [![eslint dependency][badge-dependency-eslint]][link-package-dependencies]
 [![husky dependency][badge-dependency-husky]][link-package-dependencies]
 [![hygen dependency][badge-dependency-hygen]][link-package-dependencies]
+[![commitlint dependency][badge-dependency-commitlint]][link-package-dependencies]
 
 [badge-dependency-react]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/react/main?logo=react
 [badge-dependency-bulma]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/bulma/main?logo=bulma
@@ -111,6 +112,7 @@ After studying [an Udemy course on TypeScript](https://github.com/NicolasOmar/ty
 [badge-dependency-eslint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/eslint/main?logo=eslint
 [badge-dependency-husky]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/husky/main?logo=husky
 [badge-dependency-hygen]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/hygen/main?logo=hygen
+[badge-dependency-commitlint]: https://img.shields.io/github/package-json/dependency-version/nicolasomar/reactive-bulma/dev/@commitlint/cli/main?logo=commitlint
 [link-package-dependencies]: https://github.com/NicolasOmar/reactive-bulma/blob/main/package.json
 
 ## Quick start
