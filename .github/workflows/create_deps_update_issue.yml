@@ -63,6 +63,5 @@ jobs:
             - [ ] Check that the storybook instance runs locally without stoppers and maintains the previous features. `npm run start`.
             - [ ] Check storybook build process runs without stoppers. `npm run build:storybook.`
             - [ ] Create the branch and PR associated with the abovementioned changes.
-            - [ ] Wait until PR-related workflows run OK.
           PINNED: false
           CLOSE_PREVIOUS: false
