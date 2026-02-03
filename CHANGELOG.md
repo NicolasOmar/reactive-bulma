@@ -1,3 +1,10 @@
+## [5.1.6](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.5...v5.1.6) (2026-02-03)
+
+
+### Bug Fixes
+
+* Dependencies version updated. 03/02/26 ([#784](https://github.com/NicolasOmar/reactive-bulma/issues/784))([#783](https://github.com/NicolasOmar/reactive-bulma/issues/783)) ([da4461e](https://github.com/NicolasOmar/reactive-bulma/commit/da4461e90e758c05eef5f6efa3465d37bfc8cc65))
+
 ## [5.1.5](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.4...v5.1.5) (2026-01-25)
 
 
