@@ -61,7 +61,7 @@
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
     "@eslint/compat": "^2.0.2",
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@mdi/font": "^7.4.47",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
