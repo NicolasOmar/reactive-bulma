@@ -1,3 +1,11 @@
+## [5.1.10](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.9...v5.1.10) (2026-03-04)
+
+
+### Bug Fixes
+
+* updating majority of dependencies ([26c714e](https://github.com/NicolasOmar/reactive-bulma/commit/26c714eb0a24c12fa41bf8c9c744d4030bcd10b6))
+* updating specific dependency for eslint ([b46b344](https://github.com/NicolasOmar/reactive-bulma/commit/b46b344355060be380127ff2d385d4e8b34559c9))
+
 ## [5.1.9](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.8...v5.1.9) (2026-02-23)
 
 
