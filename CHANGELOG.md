@@ -1,3 +1,11 @@
+## [5.1.11](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.10...v5.1.11) (2026-03-23)
+
+
+### Bug Fixes
+
+* undoing some broken updates ([dda16cf](https://github.com/NicolasOmar/reactive-bulma/commit/dda16cf6c4b8a2eeba964bbbb8069fcd41ca3a9c))
+* updating majority of versions ([4a642b0](https://github.com/NicolasOmar/reactive-bulma/commit/4a642b0bbda2021e65b1b82946b751da47089fc8))
+
 ## [5.1.10](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.9...v5.1.10) (2026-03-04)
 
 
