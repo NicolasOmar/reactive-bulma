@@ -1,3 +1,11 @@
+## [5.1.14](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.13...v5.1.14) (2026-05-18)
+
+
+### Bug Fixes
+
+* adding missing vite env file after eslint changes ([98f6cac](https://github.com/NicolasOmar/reactive-bulma/commit/98f6cac1ec6badfcade85454c71179ec54b269ea))
+* Dependencies version updated. 18/05/26 ([#828](https://github.com/NicolasOmar/reactive-bulma/issues/828))([#827](https://github.com/NicolasOmar/reactive-bulma/issues/827))([#826](https://github.com/NicolasOmar/reactive-bulma/issues/826))([#825](https://github.com/NicolasOmar/reactive-bulma/issues/825))([#824](https://github.com/NicolasOmar/reactive-bulma/issues/824)) ([5876001](https://github.com/NicolasOmar/reactive-bulma/commit/58760017ec662080f7271652948390f3a55628d9))
+
 ## [5.1.13](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.12...v5.1.13) (2026-04-20)
 
 
