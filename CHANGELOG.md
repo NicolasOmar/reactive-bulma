@@ -1,3 +1,10 @@
+## [5.1.15](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.14...v5.1.15) (2026-05-25)
+
+
+### Bug Fixes
+
+* upgrading part of the depenedencies ([b669f69](https://github.com/NicolasOmar/reactive-bulma/commit/b669f69583e7a6a1012e4ad1270b4991d2d8e419))
+
 ## [5.1.14](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.13...v5.1.14) (2026-05-18)
 
 
