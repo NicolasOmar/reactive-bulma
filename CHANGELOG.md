@@ -1,3 +1,12 @@
+## [5.1.16](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.15...v5.1.16) (2026-06-08)
+
+
+### Bug Fixes
+
+* updating eslint realted packages and fixing broken linter new rules ([eee1a61](https://github.com/NicolasOmar/reactive-bulma/commit/eee1a613d386afabf6e49316b7aac1f9f5e91a37))
+* updating missing eslint related package ([9f1f399](https://github.com/NicolasOmar/reactive-bulma/commit/9f1f3992b785e454391ea198c1045e4baec96f04))
+* updating several dependencies and codecov task ([6829b79](https://github.com/NicolasOmar/reactive-bulma/commit/6829b79b4ca22571c5d69251c73ce9a81ddf966f))
+
 ## [5.1.15](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.14...v5.1.15) (2026-05-25)
 
 
