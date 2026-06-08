@@ -17,4 +17,4 @@ export const createObjArray = <ImportedProps>({
 }: CreateObjArrayProps = {}): ImportedProps[] | GenericObjectProps[] =>
   Array(numberOfItems)
     .fill(null)
-    .map((_, i) => (externalParser ? externalParser(i) : { text: `${++i}` }))
+    .map((_, i) => (externalParser ? externalParser(i) : { text: `${i + 1}` }))

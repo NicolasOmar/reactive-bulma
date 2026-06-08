@@ -13,8 +13,8 @@ import { testing } from './index.mocks.json'
 const createTestPages = (numberOfPages = 3) => {
   const testPages = Array(numberOfPages)
     .fill(null)
-    .map((_, i) => ({ text: `${++i}` }))
-  const testValues = testPages.map((_, i) => (++i).toString())
+    .map((_, i) => ({ text: `${i + 1}` }))
+  const testValues = testPages.map((_, i) => (i + 1).toString())
 
   return { testPages, testValues }
 }

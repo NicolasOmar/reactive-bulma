@@ -8,7 +8,7 @@ describe('Generators', () => {
     expect(basicRun).toStrictEqual(mocks.createObjArray.basicExamples)
 
     const externalParserRun = createObjArray({
-      externalParser: i => ({ external: `${++i * 2}` })
+      externalParser: i => ({ external: `${(i + 1) * 2}` })
     })
     expect(externalParserRun).toStrictEqual(
       mocks.createObjArray.externalParserExamples

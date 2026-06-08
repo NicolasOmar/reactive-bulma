@@ -12,7 +12,7 @@ import { storybook, testing } from './index.mocks.json'
 
 const externalParser = (i: number) => ({
   isActive: i === 0,
-  text: `Tab #${++i}`
+  text: `Tab #${i + 1}`
 })
 
 export default {

@@ -23,14 +23,14 @@ describe('Card', () => {
     headerTextConfig
   } = testing
   const footerItems = createObjArray<CardFooterProps>({
-    externalParser: i => ({ text: `Link #${++i}` })
+    externalParser: i => ({ text: `Link #${i + 1}` })
   })
   const listOfContents = Array(3)
     .fill(null)
     .map((_, i) => (
       <Title
         key={`test-title-for-card-conent-${generateKey()}`}
-        main={{ text: `Test content #${++i}`, type: 'title' }}
+        main={{ text: `Test content #${i + 1}`, type: 'title' }}
       />
     ))
 

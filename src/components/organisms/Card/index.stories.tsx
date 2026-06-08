@@ -18,7 +18,7 @@ export default {
 } as Meta<typeof Card>
 
 const footerItems = createObjArray<CardFooterProps>({
-  externalParser: i => ({ text: `Link #${++i}` })
+  externalParser: i => ({ text: `Link #${i + 1}` })
 }) as CardFooterProps[]
 
 const Template: StoryFn<typeof Card> = args => <Card {...args} />

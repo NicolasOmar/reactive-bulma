@@ -14,7 +14,7 @@ const testTableData = createObjArray<{ header: string; body: string }>({
   numberOfItems: 7,
   externalParser: i => ({
     header: `Header #${++i}`,
-    body: `Row #${++i}`
+    body: `Row #${i + 1}`
   })
 })
 const headConfig = testTableData.map(({ header }) => ({ content: header }))
@@ -24,7 +24,7 @@ const bodyConfig = {
 const bodyConfigWithHeader = {
   headCell: { content: 'Header cell' },
   listOfCells: bodyConfig.listOfCells.filter(
-    (_, i, originalList) => ++i < originalList.length
+    (_, i, originalList) => i + 1 < originalList.length
   )
 }
 const basicTableConfig = {

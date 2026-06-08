@@ -128,7 +128,7 @@ const Pagination: React.FC<PaginationProps> = ({
         )
       }
 
-      if (pageIndex === --length) {
+      if (pageIndex === length - 1) {
         return (
           <React.Fragment
             key={`last-${paginationBaseClass}-item-${generateKey()}`}
