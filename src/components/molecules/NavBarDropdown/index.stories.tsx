@@ -11,7 +11,7 @@ import { storybook, testing } from './index.mocks.json'
 
 const itemListWithDividers = createObjArray({
   numberOfItems: 5,
-  externalParser: i => ({ children: `Dropdown item #${++i}` })
+  externalParser: i => ({ children: `Dropdown item #${i + 1}` })
 }) as NavBarItemProps[]
 
 export default {

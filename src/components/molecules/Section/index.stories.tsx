@@ -16,7 +16,7 @@ const tabs = createObjArray({
   numberOfItems: 7,
   externalParser: (i: number) => ({
     isActive: i === 0,
-    text: `Tab #${++i}`
+    text: `Tab #${i + 1}`
   })
 })
 

@@ -15,7 +15,7 @@ import navBarBrandMocks from '@components/molecules/NavBarBrand/index.mocks.json
 
 const itemListWithDividers = createObjArray({
   numberOfItems: 7,
-  externalParser: i => ({ children: `Dropdown item #${++i}` })
+  externalParser: i => ({ children: `Dropdown item #${i + 1}` })
 }) as NavBarItemProps[]
 
 describe('NavBar', () => {

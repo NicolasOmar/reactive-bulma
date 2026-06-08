@@ -14,7 +14,7 @@ const testTableData = createObjArray<{ header: string; body: string }>({
   numberOfItems: 7,
   externalParser: i => ({
     header: `Header #${++i}`,
-    body: `Row #${++i}`
+    body: `Row #${i + 1}`
   })
 })
 const headConfig = testTableData.map(({ header }) => ({ content: header }))

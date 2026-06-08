@@ -26,7 +26,7 @@ describe('PanelTabs', () => {
     const lastTabIsActiveConfig = {
       tabList: testTabListConfig.tabList.map((_tabItem, i, originalist) => ({
         ..._tabItem,
-        isActive: ++i === originalist.length
+        isActive: i + 1 === originalist.length
       }))
     }
     render(<PanelTabs {...lastTabIsActiveConfig} />)

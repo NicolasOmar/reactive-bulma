@@ -40,11 +40,11 @@ const severalElementBlocks = createObjArray({
           ? {
               inputConfig: {
                 type: 'text',
-                placeholder: `Hello again ${++i}`
+                placeholder: `Hello again ${i + 1}`
               }
             }
           : {
-              text: `Hello again ${++i}`,
+              text: `Hello again ${i + 1}`,
               color: 'is-danger',
               isOutlined: true
             }
