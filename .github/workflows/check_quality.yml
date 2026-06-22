@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 1/8 | Checkout repo
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
@@ -28,7 +28,7 @@ jobs:
     - name: 6/8 | Run unit tests suite
       run: npm run test:ci
     - name: 7/8 | Run Codecov Uploader
-      uses: codecov/codecov-action@v6
+      uses: codecov/codecov-action@v7
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage/coverage-final.json
