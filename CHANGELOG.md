@@ -1,3 +1,13 @@
+## [5.1.18](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.17...v5.1.18) (2026-06-22)
+
+
+### Bug Fixes
+
+* fixing some audit warnings ([5e60fdc](https://github.com/NicolasOmar/reactive-bulma/commit/5e60fdc923958f7a8941189630f9b5fd252f1c89))
+* updating babel to v8 ([7680a31](https://github.com/NicolasOmar/reactive-bulma/commit/7680a31122dec6c6892410d330c1eed3d245c8f9))
+* updating some packages and workflow tasks ([c80172c](https://github.com/NicolasOmar/reactive-bulma/commit/c80172c63546f981d24edb0fc36e5c67c79aca11))
+* updating some workflow tasks ([eddaf85](https://github.com/NicolasOmar/reactive-bulma/commit/eddaf85e9346939f3d2327770db5477514676ef4))
+
 ## [5.1.17](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.16...v5.1.17) (2026-06-14)
 
 
