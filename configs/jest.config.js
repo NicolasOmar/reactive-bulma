@@ -1,6 +1,22 @@
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+
+// This config lives in configs/, so rootDir and the babel config path are
+// resolved explicitly against the repo root instead of relying on defaults
+// (which would otherwise point at configs/).
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const rootDir = resolve(__dirname, '..')
+
 export default {
+  rootDir,
   testEnvironment: 'jsdom',
   verbose: true,
+  transform: {
+    '^.+\\.(t|j)sx?$': [
+      'babel-jest',
+      { configFile: resolve(__dirname, './babel.config.cjs') }
+    ]
+  },
   collectCoverageFrom: [
     'src/components/**/*.tsx',
     '!src/components/**/*.stories.tsx',

@@ -187,8 +187,8 @@ Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/doc
 
 In case you want to make your fork, I recommend you to update at least weekly using a custom command `npm run update`, which will run the following commands in order:
 - `update:deps`: Using a [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) script, you will be able to choose which dependencies want to update to the latest version
-- `update:doctor`: Runs build and test checks to ensure your update will not break any current build.
-- `update:storybook`: Updates storybook to the latest version (following its recommended command) followed for a build check (similar to update:doctor, but for Storybook only)
+- `check:project`: Runs build and test checks to ensure your update will not break any current build.
+- `update:storybook`: Updates storybook to the latest version (following its recommended command) followed for a build check (similar to check:project, but for Storybook only)
 
 ## Versioning
 
@@ -210,8 +210,6 @@ From mid-September to the end of November (2025), I updated ReactiveBulma's main
 Nowadays, I am updating the rest of the dependencies every week, creating a PR alongside its related branch and PR to maintain track of those updates.
 
 If you want the actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
-
-During 2026, I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I use this library to build its UI.
 
 <details>
 <summary>Here is the status table I used to keep track of the worked milestones/versions. (v5 included)</summary>

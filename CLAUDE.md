@@ -12,13 +12,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | Build library | `npm run build` |
 | Build Storybook | `npm run build:storybook` |
 | Run all tests | `npm test` |
-| Run tests with coverage | `npm run test:ci` |
+| Run tests with coverage | `npm run npm run test:coverage` |
 | Run only changed tests | `npm run test:diff` |
 | Lint | `npm run lint` |
-| Format check | `npm run prettier:ci` |
-| Format write | `npm run prettier` |
+| Format check | `npm run format` |
+| Format write | `npm run format:check` |
 | TypeScript compile check | `npm run compile` |
-| Full health check (lint + prettier + test + build) | `npm run update:doctor` |
+| Full health check (lint + prettier + test + build) | `npm run check:project` |
 | Generate a new component scaffold | `npm run create` |
 
 ### Running a single test file
@@ -28,7 +28,7 @@ npx jest src/components/atoms/Button/index.test.tsx --no-coverage
 ```
 
 ### Coverage thresholds
-`jest.config.js` enforces **95%** globally on branches, functions, lines, and statements. `collectCoverageFrom` targets `src/components/**/*.tsx` (excluding stories) and `src/functions/**.ts`.
+`configs/jest.config.js` enforces **95%** globally on branches, functions, lines, and statements. `collectCoverageFrom` targets `src/components/**/*.tsx` (excluding stories) and `src/functions/**.ts`.
 
 ## Architecture
 
@@ -55,7 +55,7 @@ The `index.mocks.json` has two top-level keys:
 - `storybook` — argTypes and parameters for the story
 
 ### Path aliases
-Used throughout the codebase (defined in `tsconfig.json`, `vite.config.ts`, and `jest.config.js`):
+Used throughout the codebase (defined in `tsconfig.json`, `configs/vite.config.ts`, and `configs/jest.config.js`):
 
 | Alias | Resolves to |
 |---|---|
@@ -98,7 +98,7 @@ Every component follows the same pattern:
 ### Git hooks (Husky)
 - **pre-commit**: runs `lint-staged` (prettier + eslint on staged `.ts`/`.tsx` files).
 - **commit-msg**: enforces conventional commits via `commitlint` (`@commitlint/config-conventional`).
-- **pre-push**: runs `build`, `build:storybook`, `lint`, `prettier:ci`, and `test:ci`.
+- **pre-push**: runs `build`, `build:storybook`, `lint`, `format`, and `npm run test:coverage`.
 
 ### CI (GitHub Actions)
 - `check_build.yml` — builds library + storybook on PRs to `main`.

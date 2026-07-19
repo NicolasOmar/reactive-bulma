@@ -15,10 +15,10 @@ Welcome to the Reactive Bulma codebase! This document provides essential guideli
 - Start the application: `npm start`
 - Build the project in production mode: `npm run build`
 - Run unit tests: `npm test`
-- Check code coverage: `npm run test:ci`
+- Check code coverage: `npm run npm run test:coverage`
 - Lint the project: `npm run lint`
-- Execute code styles: `npm run prettier`
-- Check code's general health: `npm run update:doctor`
+- Execute code styles: `npm run format:check`
+- Check code's general health: `npm run check:project`
 
 ### Storybook
 - Start Storybook locally: `npm run storybook`
