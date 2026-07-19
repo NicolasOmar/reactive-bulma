@@ -16,7 +16,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: 2/8 | Setup Node environment
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v7
       with:
         node-version: latest
     - name: 3/8 | Install depedencies
@@ -24,9 +24,9 @@ jobs:
     - name: 4/8 | Run linter check
       run: npm run lint
     - name: 5/8 | Run prettier check
-      run: npm run prettier:ci
+      run: npm run format:check
     - name: 6/8 | Run unit tests suite
-      run: npm run test:ci
+      run: npm run test:coverage
     - name: 7/8 | Run Codecov Uploader
       uses: codecov/codecov-action@v7
       with:
@@ -39,3 +39,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dproject.settings=configs/sonar-project.properties
+          -Dsonar.projectBaseDir=.

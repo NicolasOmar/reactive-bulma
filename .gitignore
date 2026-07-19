@@ -133,3 +133,9 @@ dist
 storybook-static
 *storybook.log
 .vscode
+
+# agents in general
+.claude
+.github/copilot-instructions.md
+CLAUDE.md
+AGENTS.md

@@ -5,16 +5,22 @@ import { fileURLToPath } from 'url'
 import { glob } from 'glob'
 import dts from 'vite-plugin-dts'
 
+// This config lives in configs/, so every project-relative path is resolved
+// against the repo root rather than __dirname (which would point at configs/).
+const projectRoot = fileURLToPath(new URL('..', import.meta.url))
+
 // https://vite.dev/config/
 export default defineConfig({
+  root: projectRoot,
   plugins: [
     react(),
     dts({ include: ['src'] })
   ],
   build: {
+    outDir: resolve(projectRoot, 'dist'),
     emptyOutDir: false,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(projectRoot, 'src/index.ts'),
       formats: ['es']
     },
     rollupOptions: {
@@ -22,6 +28,7 @@ export default defineConfig({
       input: Object.fromEntries(
         // https://rollupjs.org/configuration-options/#input
         glob.sync('src/**/*.{ts,tsx}', {
+          cwd: projectRoot,
           ignore: [
             "src/**/*.{stories,test}.{ts,tsx}",
             "src/**/jest.tsx"
@@ -35,7 +42,7 @@ export default defineConfig({
           ),
           // 2. The absolute path to the entry file
           // src/nested/foo.ts becomes /project/src/nested/foo.ts
-          fileURLToPath(new URL(file, import.meta.url))
+          resolve(projectRoot, file)
         ])
       ),
       output: {
@@ -46,12 +53,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@constants': resolve(__dirname, 'src/constants'),
-      '@components': resolve(__dirname, 'src/components'),
-      '@design': resolve(__dirname, 'src/design'),
-      '@functions': resolve(__dirname, 'src/functions'),
-      '@interfaces': resolve(__dirname, 'src/interfaces'),
-      '@customTypes': resolve(__dirname, 'src/types')
+      '@constants': resolve(projectRoot, 'src/constants'),
+      '@components': resolve(projectRoot, 'src/components'),
+      '@design': resolve(projectRoot, 'src/design'),
+      '@functions': resolve(projectRoot, 'src/functions'),
+      '@interfaces': resolve(projectRoot, 'src/interfaces'),
+      '@customTypes': resolve(projectRoot, 'src/types')
     }
   }
 })

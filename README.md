@@ -9,7 +9,7 @@
 
 <div align="center">
 
-Component library based on React, Bulma, Typescript and Vite
+Component library based on React, Bulma, TypeScript, and Vite
 
 <div align="left">
 
@@ -122,7 +122,7 @@ Several quick start options are available:
 - Clone the repo: `git clone https://github.com/NicolasOmar/reactive-bulma.git`.
 - Install with [npm](https://www.npmjs.com/package/reactive-bulma): `npm install reactive-bulma@latest`
   - Before cloning this repo, I recommend installing [Node](https://nodejs.org/en/download/) `>=20.10.0` to install packages.
-- Once the package has been installed, add at your's React main application file (`main.jsx/tsx`) the following line to inject bulma's styles:
+- Once the package has been installed, add to your React main application file (`main.jsx/tsx`) the following line to inject Bulma's styles:
 ```jsx
 import '../node_modules/reactive-bulma/dist/reactive-bulma.css'
 ```
@@ -134,13 +134,14 @@ In case you have cloned the repo, it will show you the following folders:
 - `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge commits like unit test coverage collection.
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
+- `configs:` Used to wrap all the configuration files related to local and third-party services.
 - `src:`
   - `components:` Location of all used components, using [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/)
     - `atoms` (from `v1.0.0`).
     - `molecules` (from `v2.0.0`).
     - `organisms` (from `v3.0.0`).
   - `constants:` Location of shared constant values to be used in interfaces and component implementations.
-  - `design`: Location of standard design tokens (coded on `.mdx` files) displayed above component sections in the storybook's instance.
+  - `design`: Location of standard design tokens (coded in `.mdx` files) displayed above component sections in the Storybook instance.
   - `functions`: Dedicated to parsers and helper functions for repetitive logic.
   - `interfaces`: Dedicated to component and function typing interfaces.
   - `types`: Dedicated to Bulma's style typesetting (part of the component's properties).
@@ -168,16 +169,16 @@ const App = () => (
   <Button text="This is a test" />
 );
 ```
-To see all component variants and code snippets go to the [Documentation](#documentation) section.
+To see all component variants and code snippets, go to the [Documentation](#documentation) section.
 
 If you want to create a custom component for your forked Reactive Bulma version, the easiest way is by running the creation script I made, which [instructions are here](#how-to-create-a-template-component).
 
 ### How to create a template component
 
-After some time, I understood that creating component files is a repetitive and time-consuming task, so I made issue [#180](https://github.com/NicolasOmar/reactive-bulma/issues/180) to implement a library called [Hygen](https://www.hygen.io), whose function is to provide a way to generate templates for generic files that can consume time at the long term. You can run the script by the following steps:
+After some time, I understood that creating component files is a repetitive and time-consuming task, so I made issue [#180](https://github.com/NicolasOmar/reactive-bulma/issues/180) to implement a library called [Hygen](https://www.hygen.io), whose function is to provide a way to generate templates for generic files that can consume time in the long term. You can run the script by following the steps:
 
 - Open a console and run `npm run create` in your console.
-- An will assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
+- An assistant will appear asking about how your component will be named. You can answer with text separated with spaces (` `), underscores  (`_`), or hyphens (`-`)
 - Then, the assistant will ask in which folder you want to create it (based on its type following [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/))
 - Finally, the script should create all base files to reduce time and focus on custom implementation.
 
@@ -185,17 +186,17 @@ Learn more about `Hygen` by reading its [documentation](https://www.hygen.io/doc
 
 ### How to update all dependencies
 
-In case you want to make your fork, I recommend you to update at least weekly using a custom command `npm run update`, which will run the following commands in order:
-- `update:deps`: Using a [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) script, you will be able to choose which dependencies want to update to the latest version
-- `update:doctor`: Runs build and test checks to ensure your update will not break any current build.
-- `update:storybook`: Updates storybook to the latest version (following its recommended command) followed for a build check (similar to update:doctor, but for Storybook only)
+In case you want to make your fork, I recommend you update at least weekly using a custom command `npm run update`, which will run the following commands in order:
+- `update:deps`: Using a [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) script, you will be able to choose which dependencies you want to update to the latest version
+- `check:project`: Runs build and test checks to ensure your update will not break any current build.
+- `update:storybook`: Updates Storybook to the latest version (following its recommended command), followed by a build check (similar to check:project, but for Storybook only)
 
 ## Versioning
 
-After investigating [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/) (refer to [#3](https://github.com/NicolasOmar/reactive-bulma/issues/3)) and finishing the last version according to the original roadmap, I decided to give the following meaning to project's versions after `v4.0.0`:
-- Major versions (`5.0.0`, `6.0.0` and beyond) will refer to milestones achievement and significant changes on existing components that will need extra attention before the update.
+After investigating [semantic-release documentation](https://semantic-release.gitbook.io/semantic-release/) (refer to [#3](https://github.com/NicolasOmar/reactive-bulma/issues/3)) and finishing the last version according to the original roadmap, I decided to give the following meaning to the project's versions after `v4.0.0`:
+- Major versions (`5.0.0`, `6.0.0` and beyond) will refer to milestone achievements and significant changes on existing components that will need extra attention before the update.
 - Minor versions (`4.1.0`, `4.2.0`, and so on) will refer to new components or modifications of existing ones.
-- Patch versions (`4.0.1`, `4.0.2`, and so on) will refer to bug fixes or weekly dependencies updates.
+- Patch versions (`4.0.1`, `4.0.2`, and so on) will refer to bug fixes or weekly dependency updates.
 
 To check the current project's status, go to the [Roadmap](#roadmap) section.
 
@@ -210,8 +211,6 @@ From mid-September to the end of November (2025), I updated ReactiveBulma's main
 Nowadays, I am updating the rest of the dependencies every week, creating a PR alongside its related branch and PR to maintain track of those updates.
 
 If you want the actual short-term status, go to the [project board](https://github.com/users/NicolasOmar/projects/3) (powered by `GitHub Projects`).
-
-During 2026, I will continue with my full-stack app [MyPets](https://github.com/NicolasOmar/my-pets), where I use this library to build its UI.
 
 <details>
 <summary>Here is the status table I used to keep track of the worked milestones/versions. (v5 included)</summary>

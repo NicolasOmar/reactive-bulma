@@ -123,8 +123,8 @@ Please follow the present coding style of the project. In order to ensure style 
 - Before each commit:
   - `npm run lint-staged`: Checks each Typescript-related file follows linting rules and code styling.
 - And before each push:
-  - `npm run prettier:ci`: Runs prettier to ensure it maintain code styling.
-  - `npm run test:ci`: Checks all unit test runs without errors and with a code coverage percentage up to **90%**.
+  - `npm run format:check`: Runs prettier to ensure it maintain code styling.
+  - `npm run test:coverage`: Checks all unit test runs without errors and with a code coverage percentage up to **90%**.
   - `npm run build`: Checks rollup can build library to be shipped to production in a new version.
   - `npm run build:storybook`: Checks storybook can compile a build to be shipped to production (in that new version aswell).
 
