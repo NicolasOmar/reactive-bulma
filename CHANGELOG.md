@@ -1,3 +1,13 @@
+## [5.1.20](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.19...v5.1.20) (2026-07-19)
+
+
+### Bug Fixes
+
+* npm audit fixes ([2cacf9b](https://github.com/NicolasOmar/reactive-bulma/commit/2cacf9b670554fe636131acc79651b5ce01dbff3))
+* readme and document-related files reviewed for grammatics ([9f82a4d](https://github.com/NicolasOmar/reactive-bulma/commit/9f82a4d1e8ada66f6cef0af75b74be1fea01da45))
+* updating several packages and fixing new errors after update ([42bbf32](https://github.com/NicolasOmar/reactive-bulma/commit/42bbf320021bd4171d7ee53185eda8e68a6435fb))
+* updating several packages. moving config files to a separated folder ([02a1bfd](https://github.com/NicolasOmar/reactive-bulma/commit/02a1bfd427b447bb195936e544901a2247d92006))
+
 ## [5.1.19](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.18...v5.1.19) (2026-07-12)
 
 
