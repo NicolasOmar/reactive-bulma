@@ -3,12 +3,7 @@ import React from 'react'
 export type ButtonType = 'submit' | 'reset' | 'button'
 
 export type InputType =
-  | 'text'
-  | 'password'
-  | 'email'
-  | 'tel'
-  | 'number'
-  | 'date'
+  'text' | 'password' | 'email' | 'tel' | 'number' | 'date'
 
 export type DropdownItemType = 'item' | 'link' | 'divider'
 
@@ -20,9 +15,9 @@ export type ChildrenType = string | React.ReactElement | React.ReactElement[]
 export type SingleChildType = Exclude<ChildrenType, React.ReactElement[]>
 
 export enum IconSizeEnum {
-  'small' = 24,
-  'medium' = 36,
-  'large' = 48
+  small = 24,
+  medium = 36,
+  large = 48
 }
 
 export type TileContextType = 'is-child' | 'is-parent' | 'is-ancestor'
