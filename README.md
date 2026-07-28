@@ -130,10 +130,10 @@ import '../node_modules/reactive-bulma/dist/reactive-bulma.css'
 ## Folder structure
 
 In case you have cloned the repo, it will show you the following folders:
-- `_templates:` Dedicated to [Hygen](https://www.hygen.io/) configuration and implementation files. Dedicated to creating new components from customizable templates.
 - `.github:` [Github Actions](https://github.com/features/actions/) files used to run post-merge commits like unit test coverage collection.
 - `.husky:` Dedicated to [Husky](https://typicode.github.io/husky/) configuration files.
 - `.storybook:` Dedicated to [Storybook](https://storybook.js.org/) configuration files.
+- `_templates:` Dedicated to [Hygen](https://www.hygen.io/) configuration and implementation files. Dedicated to creating new components from customizable templates.
 - `configs:` Used to wrap all the configuration files related to local and third-party services.
 - `src:`
   - `components:` Location of all used components, using [Atomic Design hierarchy structure](https://atomicdesign.bradfrost.com/chapter-2/)
