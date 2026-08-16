@@ -1,3 +1,13 @@
+## [5.1.24](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.23...v5.1.24) (2026-08-16)
+
+
+### Bug Fixes
+
+* minor updates added ([b052edc](https://github.com/NicolasOmar/reactive-bulma/commit/b052edc5b7aada7b9357e67be74c46b81567ac60))
+* other updates added ([d0627f9](https://github.com/NicolasOmar/reactive-bulma/commit/d0627f91126bc5ace641d58d1684f3c28e0af4c7))
+* patch updates added ([991f8b2](https://github.com/NicolasOmar/reactive-bulma/commit/991f8b2cd022e6405dc7afeca8b32ab314a12c93))
+* workflows have been unified in a single multi step ([3dab6f6](https://github.com/NicolasOmar/reactive-bulma/commit/3dab6f6c8f76beb531ac37b1a9461eba69c3bad2))
+
 ## [5.1.23](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.22...v5.1.23) (2026-08-10)
 
 
