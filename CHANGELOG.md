@@ -1,3 +1,13 @@
+## [5.1.26](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.25...v5.1.26) (2026-08-31)
+
+
+### Bug Fixes
+
+* npm audir fixes ([0e9b404](https://github.com/NicolasOmar/reactive-bulma/commit/0e9b4048fff5323d04f3ec622d92f28398d18d57))
+* packages patch updates ([e329d7d](https://github.com/NicolasOmar/reactive-bulma/commit/e329d7df178edff921409edb594f2a24ced6b433))
+* updating minor packages ([401ec46](https://github.com/NicolasOmar/reactive-bulma/commit/401ec46ee546c0c40ff424210557a055add55201))
+* updating other minor packages ([0e200b7](https://github.com/NicolasOmar/reactive-bulma/commit/0e200b70438e0bbf23db3751adfe4e133b7ef9ee))
+
 ## [5.1.25](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.24...v5.1.25) (2026-08-23)
 
 
