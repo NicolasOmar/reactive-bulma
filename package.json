@@ -47,7 +47,7 @@
     "lint-staged": "lint-staged -v",
     "setup": "npm ci && husky",
     "update": "npm run update:deps && npm run check:project && npm run update:storybook",
-    "update:deps": "ncu -i --format group --configFilePath configs --configFileName .ncurc.cjs",
+    "update:deps": "ncu -i --format group --peer --configFilePath configs --configFileName .ncurc.cjs",
     "update:storybook": "npx storybook@latest upgrade && npm run build:storybook",
     "check:project": "npm run format:check && npm run lint && npm run build && npm run build:storybook && npm run test",
     "create": "hygen component new",
