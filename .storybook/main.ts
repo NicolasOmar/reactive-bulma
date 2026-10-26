@@ -2,6 +2,7 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
+import { mergeConfig } from 'vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -25,6 +26,10 @@ const config: StorybookConfig = {
   },
   typescript: {
     reactDocgen: 'react-docgen-typescript'
-  }
+  },
+  // Storybook's own preview runtime (iframe chunk) exceeds Vite's default
+  // 500 kB warning limit; it's a docs site, not part of the library bundle.
+  viteFinal: config =>
+    mergeConfig(config, { build: { chunkSizeWarningLimit: 1500 } })
 }
 export default config
