@@ -1,3 +1,12 @@
+## [5.1.31](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.30...v5.1.31) (2026-10-26)
+
+
+### Bug Fixes
+
+* minor updates added ([76ad6b0](https://github.com/NicolasOmar/reactive-bulma/commit/76ad6b090afcb0171a4db9e68fe8cab89f00126c))
+* patch updates added ([6273dd9](https://github.com/NicolasOmar/reactive-bulma/commit/6273dd9ca5645e43d50c18d513a9bc08d538b9f6))
+* run npm audit fix ([b6e723a](https://github.com/NicolasOmar/reactive-bulma/commit/b6e723a1cd7033f79e237005de13f7db94e41fb9))
+
 ## [5.1.30](https://github.com/NicolasOmar/reactive-bulma/compare/v5.1.29...v5.1.30) (2026-10-19)
 
 
